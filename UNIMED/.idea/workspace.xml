@@ -13,17 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="formSolicitacaoPagamento.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="205" column="72" selection-start-line="205" selection-start-column="72" selection-end-line="205" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -193,16 +183,15 @@
       <updated>1525440115141</updated>
       <workItem from="1525440116809" duration="18911000" />
       <workItem from="1525860772211" duration="694000" />
-      <workItem from="1525869373966" duration="7175000" />
+      <workItem from="1525869373966" duration="7782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26780000" />
+    <option name="totallyTimeSpent" value="27387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -420,8 +409,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="205" column="72" selection-start-line="205" selection-start-column="72" selection-end-line="205" selection-end-column="72" />
+        <state relative-caret-position="209">
+          <caret line="204" column="72" selection-start-line="204" selection-start-column="72" selection-end-line="204" selection-end-column="72" />
         </state>
       </provider>
     </entry>

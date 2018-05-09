@@ -63,14 +63,6 @@
         #map #infowindow-content {
             display: inline;
         }
-
-        /*#btn-esconder {*/
-        /*position: absolute;*/
-        /*right: 0;*/
-        /*z-index: 1000;*/
-        /*margin-right: 34px;*/
-        /*margin-top: 10px;*/
-        /*}*/
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTJSJx5RHWfAOsZnpHVn2gONfACdSxHno&libraries=places&callback=initMap"
             async defer></script>
@@ -151,17 +143,15 @@
                             </select>
                         </div>
                     </li>
-                    <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
-                        <div class="col-md-6" style="padding: 0; padding-right:15px">
-                            <label for="responsavel">Responsável</label>
-                            <input type="text" class="form-control" id="responsavel" name="responsavel" placeholder="Favor informar o nome do evento.">
-                        </div>
-                        <div class="col-md-6" style="padding: 0">
-                            <label for="valorInscricao">Valor de Inscrição</label>
-                            <div class="input-group">
-                                <span class="input-group-addon">R$</span>
-                                <input type="text" class="form-control" id="valorInscricao" name="valorInscricao">
-                            </div>
+                    <li class="list-group-item">
+                        <label for="responsavel">Responsável</label>
+                        <input type="text" class="form-control" id="responsavel" name="responsavel" placeholder="Favor informar o nome do evento.">
+                    </li>
+                    <li class="list-group-item">
+                        <label for="valorInscricao">Valor de Inscrição</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">R$</span>
+                            <input type="text" class="form-control" id="valorInscricao" name="valorInscricao">
                         </div>
                     </li>
                     <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
