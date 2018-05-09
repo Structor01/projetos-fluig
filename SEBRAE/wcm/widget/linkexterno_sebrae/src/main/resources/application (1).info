@@ -1,0 +1,17 @@
+application.type=widget
+application.code=linkexterno_sebrae
+application.title=Links Externos
+application.description=Widget de Links Externos para SEBRAE GO
+application.category=LULOS
+application.renderer=freemarker
+developer.code=lulos
+developer.name=Lulos Business Consulting
+developer.url=http://www.lulos.com.br
+application.uiwidget=true
+application.mobileapp=true
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=linkexterno_sebrae
+application.resource.js.1=/resources/js/linkexterno_sebrae.js
+application.resource.css.2=/resources/css/linkexterno_sebrae.css
+application.tenant.code=1

@@ -1,0 +1,9 @@
+function setSelectedZoomItem(selectedItem) {
+  if( selectedItem.inputId == "gestor"){
+    $("#gestor_matricula").val(selectedItem["colleagueId"]);
+  }
+  
+  if( selectedItem.inputId == "colaborador"){
+    $("#colaborador_matricula").val(selectedItem["colleagueId"]);
+  }
+}

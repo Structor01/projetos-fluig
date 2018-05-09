@@ -1,0 +1,24 @@
+function displayFields(form,customHTML){
+	
+}
+
+function getUsuario() {
+
+	var user = getValue("WKUser");
+	var c1 = DatasetFactory.createConstraint("colleaguePK.colleagueId", user,user, ConstraintType.MUST);
+	var datasetUser = DatasetFactory.getDataset("colleague", null, [ c1 ], null);
+	var colleague = new Array();
+	if (datasetUser.rowsCount > 0) {
+
+		colleague = [datasetUser.getValue(0, "colleaguePK.colleagueId"),
+		             datasetUser.getValue(0, "colleagueName"),
+		             datasetUser.getValue(0, "adminUser"),
+		             datasetUser.getValue(0, "mail"),
+		             datasetUser.getValue(0, "currentProject"),
+		             datasetUser.getValue(0, "especializationArea"),
+								 datasetUser.getValue(0, "login")
+		             ]
+	}
+
+	return colleague;
+}

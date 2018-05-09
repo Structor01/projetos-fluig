@@ -1,0 +1,121 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="custom.js"></script>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<input type="hidden" name="nSol" id="nSol" value="" />
+			<input type="hidden" name="aprovado" id="aprovado" value="" />
+
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Cabeçalho Padrão -->
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<table>
+								<tr>
+									<td  class="col-md-2">
+										<img src="logo_cmz.png" style="width:100%"/>
+									</td>
+									<td class="col-md-7">
+										<h1 style="font-size:14px; margin:0; padding:0; text-align:center">
+											<span style="font-size:12px; font-weight:light">Sorveteria Creme Mel S. A</span>
+											<br />
+											AÇÃO
+										</h1>
+									</td>
+									<td class="col-md-3">
+										<p style="margin:0; padding:0; font-size:12px"><b>C.2_0002</b></p>
+										<p style="margin:0; padding:0; font-size:12px">
+											Qualidade
+										</p>
+										<p style="margin:0; padding:0; font-size:12px">
+											N° Versão/Revisão: 1.000 Data: 05/02/2018
+										</p>
+										<p style="margin:0; padding:0; font-size:12px">
+											Página: 1/1
+										</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12 ob">
+						<label for="causa">Título</label>
+						<input type="text" class="form-control" id="titulo" name="titulo" value="" readonly>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-md"></span> Solicitação</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="dtAbertura">Data de Abertura</label>
+								<input class="form-control" type="text" id="dtAbertura" name="dtAbertura" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="solicitante">Responsável</label>
+								<input class="form-control" type="text" id="resp" name="resp" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="matricula">Matrícula</label>
+								<input class="form-control" type="text" id="matricula" name="matricula" value="" readonly/>
+							</div>
+							<div class="form-group col-md-3 ob">
+								<!-- <input type="hidden" class="form-control" id="setor_id" name="setor_id" value=""> -->
+								<label for="setor">Setor</label>
+								<input type="text" class="form-control" id="setor" name="setor" value="" readonly>
+							</div>
+							<div class="form-group col-md-12 ob">
+								<label for="causa">Causa/Razão</label>
+								<input type="text" class="form-control" id="causa" name="causa" value="" readonly>
+							</div>
+							<div class="form-group col-md-12 ob">
+								<label for="acao">Ação</label>
+								<!-- <input type="text" class="form-control" id="acao" name="acao" value=""> -->
+								<textarea class="form-control" style="resize:vertical" id="acao" name="acao" rows="2" readonly></textarea>
+							</div>
+							<div class="form-group col-md-12 zoomIn ob">
+								<label for="obsSol">Observação</label>
+								<textarea class="form-control" style="resize:vertical;" id="obsSol" name="obsSol" rows="2" readonly></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-time fluigicon-md"></span> Prazo</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-md-6">
+								<label for="dtInicial">Data Inicial</label>
+								<input type="text" class="form-control date" data-acao id="dtInicial" name="dtInicial" value="">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="prazoConclusao">Prazo Conclusão</label>
+								<input type="text" class="form-control date" data-acao id="prazoConclusao" name="prazoConclusao" value="">
+							</div>
+							<div class="form-group col-md-12 ob">
+								<label for="obs">Observação</label>
+								<!-- <input type="text" class="form-control" id="acao" name="acao" value=""> -->
+								<textarea class="form-control" style="resize:vertical" id="observacao" name="observacao" rows="2"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

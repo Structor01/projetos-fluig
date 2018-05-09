@@ -1,0 +1,236 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../vcXMLRPC.js"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+	<div class="panel-body">
+		<div class="panel-group">
+			<legend id="zoomTitle"></legend>
+			<div class="row">
+			    <div class="form-group col-xs-7 col-sm-7">
+						<select type="text" class="form-control" id="zoomIndex" placeholder=""></select>
+	    		</div>
+	    		<div class="form-group col-xs-5 col-sm-5">
+					<div class="input-group fs-full-width fluig-filter">
+	                    <input class="form-control" id="zoomSearch" placeholder="Buscar" type="text">
+	                    <div class="fs-cursor-pointer input-group-addon" onclick="search()">
+	                        <span class="fluigicon fluigicon-search"></span>
+	                    </div>
+	                </div>
+				</div>
+			</div>
+		</div>
+		<div id="zoomTable"></div>
+	</div>
+</div>
+<script type="text/javascript">
+var struct, datatable, token, url;
+var dataParam = {token: '', search: '', memvar: getURLParameter('memVar')};
+var field = getURLParameter('field');
+var key = getURLParameter('key');
+var company = getURLParameter('company');
+var loading = FLUIGC.loading(window);
+
+loading.show();
+
+$(document).ready(function(){
+	var keyLogin;
+
+	try {
+	    var c1 = DatasetFactory.createConstraint("key", "FWWSURL", "FWWSURL", ConstraintType.MUST);
+	    var c2 = DatasetFactory.createConstraint("key", "FWLKKEY", "FWLKKEY", ConstraintType.MUST);
+	    var c3 = DatasetFactory.createConstraint("company", company, company, ConstraintType.MUST);
+	    
+	    var dataset;
+
+		dataset = DatasetFactory.getDataset("MP_PARAM", null, [c1, c2, c3], null); //Tento buscar utilizando a company
+
+		if (dataset.values.length == 0)
+	    	dataset = DatasetFactory.getDataset("MP_PARAM", null, [c1, c2], null); //Se não encontrar, busco sem a company
+
+	    // define informações para zoom do HTML gerado pelo FormView
+	    for (var i = 0; i < dataset.values.length; i++) {
+	        if (dataset.values[i]["key"].trim() == "FWWSURL")
+	            url = dataset.values[i]["value"]
+	        else if (dataset.values[i]["key"].trim() == "FWLKKEY")
+	            keyLogin = dataset.values[i]["value"]
+	    }
+	}
+	catch (e){
+ 	    FLUIGC.toast({
+    		message: e,
+	    	type: 'danger'
+    	});
+	}
+
+	if (url){
+		request('w_zoomLogin.apl', 'keylogin=' + keyLogin, 
+			function(data){
+				dataParam.token = token = data.token;
+				getStruct();
+			});
+	}
+
+	$('#zoomIndex').change(function (){
+	    var value = $('option:selected', this).val();
+	    datatable.destroy();
+	    load(eval(value) - 1);
+	});
+});
+
+var load = function(index){
+	var header = [], render = [];
+
+    $(struct.AINDEXSEARCH[index][4]).each(function (i, col) {
+    	header.push({'title':$.trim(col.CDESCRI)});
+    	render.push('col' + i);
+    });
+
+    datatable = FLUIGC.datatable('#zoomTable', {
+    	dataRequest: {
+    		url: url + '/w_zoomPage.apl',
+    		options: {
+    			dataType: "jsonp",
+    			data: dataParam,
+    			crossDomain: true,
+    			cache: false
+    		},
+    		limit: 6,
+    		formatData: function(data) {
+            	var lines = [];
+            	$(data.ALINES).each(function (i, e){
+            		var item = {};
+
+            		for (var i = 0; i < e[0].length; i++){
+            			item['col' + i] = e[0][i];
+            		}
+            		item.recno = e[1];
+
+            		lines.push(item);
+            	});
+         	   	return lines;
+        	}
+    	},
+    	renderContent: render,
+	    header: header,
+	    search: {enabled:false}
+		}, function(err, data) {
+			if (err && err.error){
+		 	    FLUIGC.toast({
+	        		message: err.error,
+    		    	type: 'danger'
+		    	});
+			}
+		});
+
+    datatable.on('fluig.datatable.onselectrow', 
+		function(data) {
+			loading.show();
+			request('w_zoomReturn.apl', 'token=' + token + '&recno=' + datatable.getData()[data.selectedIndex].recno,
+				function(data){
+				    if (window.opener && !window.opener.closed) {
+				        var next = 0, name = this.field, $document = $(window.opener.document)
+				        var $input = $document.find('input[name="' + this.field + '"]').first();
+
+				        if (!$input.attr('readonly')) {
+				            setValue($input.get(), data.ALINES[0][0]);
+
+				            $document.find('input').each(function (i, e) {
+				                var $e = $(e)
+				                if ($e.attr('name') == name) {
+				                    next = 1;
+				                }
+				                else if (next > 0) {
+				                    if (next >= data.ALINES.length)
+				                        return false;
+
+				                    setValue(e, data.ALINES[next][0]);
+				                    next++;
+				                }
+				            });
+				        }
+				    }
+					window.close();
+				})
+		});
+}
+
+var setValue = function(e, v){
+    var value;
+
+    if (v == null) {
+        value = '';
+    }
+    else {
+        value = v;
+    }
+
+    $(e).val(value);
+}
+
+var getStruct = function(){
+	request('w_zoomStruct.apl', 'token=' + token + '&key=' + key,
+		function(data){
+	        var $index = $('#zoomIndex');
+
+	        struct = data;
+
+	        $index.empty();
+	        $(struct.AINDEXSEARCH).each(function (i, e) {
+	            $index.append('<option value="' + eval(e[1]) + '">' + $.trim(e[3]) + '</option>');
+	        });
+
+	        document.title = struct.CTITLE;
+	        $('#zoomTitle').html(struct.CTITLE);
+	        
+	        load(0);
+
+	        loading.hide();
+		});
+};
+
+var search = function(){
+	dataParam.search = $.trim($('#zoomSearch').val());
+	datatable.reload();
+}
+
+var request = function(action, data, done){
+    $.ajax({
+    	url: url + '/' + action,
+        dataType: "jsonp",
+        data: data,
+        crossDomain: true,
+        timeout: 30000
+    })
+    .done(function (data){
+    	if (data.error && data.error.length > 0) {
+	    	loading.hide();
+	 	    FLUIGC.toast({
+	        	message: data.error,
+	        	type: 'danger'
+	    	});		
+    	}
+    	else{
+    		done(data);
+    	}
+    })
+    .fail(function (jqXHR, textStatus){
+    	loading.hide();
+ 	    FLUIGC.toast({
+        	message: 'Ocorreu um erro ao acessar o servidor ' + url +', verifique o dataset MP_PARAM e o log do TOTVS Microsiga Protheus',
+        	type: 'danger'
+    	});
+    });	
+};
+
+function getURLParameter(name) {
+    return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1]);
+};
+</script>
+</body>

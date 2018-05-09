@@ -1,0 +1,41 @@
+function validateForm(form) {
+	var activity = getValue('WKNumState');
+	if ((form.getValue("nm_solicitante") == null || form
+			.getValue("nm_solicitante") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "Nome do Solicitante n\u00E3o pode ser vazio.";
+	}
+	if ((form.getValue("num_cpf_Solicit") == null || form
+			.getValue("num_cpf_Solicit") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "CPF do Solicitante n\u00E3o pode ser vazio.";
+	}
+	if ((form.getValue("li_empresa") == null || form.getValue("li_empresa") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "Empresa n\u00E3o pode ser vazio.";
+	}
+	if ((form.getValue("li_area") == null || form.getValue("li_area") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "\u00C1rea n\u00E3o pode ser vazio.";
+	}
+	if ((form.getValue("mot_viagem") == null || form.getValue("mot_viagem") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "Motivo da Viagem n\u00E3o pode ser vazio.";
+	}
+	if ((form.getValue("loc_origem") == null || form.getValue("loc_origem") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "Local de Origem n\u00E3o pode ser vazio.";
+	}
+	if ((form.getValue("loc_destino") == null || form.getValue("loc_destino") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "Local Destino n\u00E3o pode ser vazio.";
+	}
+	if ((form.getValue("dat_saida") == null || form.getValue("dat_saida") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "Data de Sa\u00EDda n\u00E3o pode ser vazio.";
+	}
+	if ((form.getValue("dat_retorno") == null || form.getValue("dat_retorno") == "")
+			&& (getValue('WKNumProces') == null || (getValue('WKNumProces') > 0 && getValue('WKCompletTask') == 'true'))) {
+		throw "Data de Retorno n\u00E3o pode ser vazio.";
+	}
+}

@@ -1,0 +1,426 @@
+<!--
+	 Alteração
+		Arthur Barros (TOTVS)
+			Inicio 11/12/2017 15:31:00
+-->
+<html>
+<head>
+	<title>Solicita&ccedil;&atilde;o de Compras</title>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<form name="form" role="form">
+		<div class="fluig-style-guide">
+			<div class="page-content container-fluid">
+				<div class="row">
+					<div class="col-md-12 col-xs-12">
+						<div class="page-header">
+							<div class="row">
+								<div class="col-md-12 col-xs-12 containerH1">
+									<h1 class="fs-no-margin fs-ellipsis fs-full-width">
+										<img src="img/icone-protheus.png" class="fluigicon"
+										style="width: 25px;" alt="Icone Protheus" />
+										Solicita&ccedil;&atilde;o de Compras
+									</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<img src="img/icone-union.png" class="fluigicon"
+								style="width: 25px;" alt="Icone UniON" /> Solicitante
+							</h3>
+						</div>
+						<div class="panel-body">
+							<input type="hidden" id='idSolicitante' name='idSolicitante'>
+							<input type="hidden" id='idUserProtheus' name='idUserProtheus'>
+							<input type="hidden" id='compraDireta' name='compraDireta' value=''>
+							<input type="hidden" id='centroCusto_id'name='centroCusto_id' value=''>
+							<input type="hidden" id='gestorImediato_id' name='gestorImediato_id' value=''>
+							<input type="hidden" id='codComprador' name='codComprador' value=''>
+
+							<div class="form-group col-sm-3 col-xs-12" data-type="textbox" data-show-properties="" data-field-name="dataAbertura">
+								<label>Data Abertura</label>
+								<input type="text" class="form-control" name="dataAbertura" id="dataAbertura" readonly>
+							</div>
+
+							<div class="form-group col-sm-5 col-xs-12" data-type="textbox" data-show-properties="" data-field-name="nomeSolicitante">
+								<label>Nome</label>
+								<input type="text" class="form-control" name="nomeSolicitante" id="nomeSolicitante" readonly>
+							</div>
+
+							<div class="form-group col-sm-2 col-xs-12 nSolicitacao hide">
+								<label>Solicita&ccedil;&atilde;o Fluig</label>
+								<input type="text" class="form-control" name="solicitacaoFluig" id="solicitacaoFluig" readonly>
+							</div>
+
+							<div class="form-group col-sm-2 col-xs-12 nSolicitacao hide">
+								<label>Solicita&ccedil;&atilde;o de Compra</label>
+								<input type="text" class="form-control" name="solicitacaoCompra" id="solicitacaoCompra" readonly>
+							</div>
+
+							<div class="form-group col-sm-6 col-xs-12 ob" data-type="textbox" data-show-properties="" data-field-name="matriculaSolicitante">
+								<label>Centro de Custo</label>
+								<input type="text" class="form-control" name="centroCusto" id="centroCusto" readonly>
+							</div>
+
+							<div class="form-group col-sm-6 col-xs-12" data-type="textbox" data-show-properties="" data-field-name="matriculaSolicitante">
+								<label>Gestor Imediato</label>
+								<input type="text" class="form-control" name="gestorImediato" id="gestorImediato" readonly>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<img src="img/icone-union.png" class="fluigicon"
+								style="width: 25px;" alt="Icone UniON" /> Dados da Compra
+							</h3>
+						</div>
+						<div class="panel-body">
+							<input type="hidden" id="grupoProd" name="grupoProd" value="" />
+							<div class="form-group col-md-4 col-sm-3 col-xs-12 ob">
+								<label for="txtNome">Grupo Produto</label> <input
+								style="width: 250px'" type="zoom" class="form-control"
+								name="zoomGrupoProduto" id="zoomGrupoProduto"
+								data-zoom="{
+									'displayKey':'CDESCRICAO',
+									'datasetId':'dsConsultaGrupoProduto',
+									'fields':[
+									{
+										'field':'CCODIGO',
+										'label':'Código'
+									},
+									{
+										'field':'CDESCRICAO',
+										'label':'Descrição',
+										'standard':'true',
+										'search': 'true'
+									}
+									]
+								}" />
+							</div>
+							<div class="form-group col-md-4 col-sm-4 col-xs-12 ob">
+								<label for="txtNome">Filial</label>
+								<input type="hidden" id='codFilial' name='codFilial'>
+								<input
+								style="width: 250px'" type="zoom" class="form-control"
+								name="zoomFilial" id="zoomFilial"
+								data-zoom="{
+									'displayKey':'CNOMEFIL',
+									'datasetId':'dsConsultaFilial',
+									'fields':[
+									{
+										'field':'CFILEMP',
+										'label':'Filial',
+										'standard':'true',
+										'search': 'true'
+									},
+									{
+										'field':'CNOMEFIL',
+										'label':'Descrição'
+									}
+									]
+								}" />
+							</div>
+							<div class="form-group col-md-4 col-sm-4 col-xs-12 ob">
+								<label for="txtNome">Filial Entrega</label>
+								<input type="hidden" id='codFilialEnt' name='codFilialEnt'>
+								<input style="width: 250px'" type="zoom" class="form-control"
+								name="zoomFilialEntrega" id="zoomFilialEntrega"
+								data-zoom="{
+									'displayKey':'CNOMEFIL',
+									'datasetId':'dsConsultaFilial',
+									'fields':[
+									{
+										'field':'CFILEMP',
+										'label':'Filial'
+									},
+									{
+										'field':'CNOMEFIL',
+										'label':'Descrição',
+										'standard':'true',
+										'search': 'true'
+									}
+									]
+								}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<img src="img/icone-union.png" class="fluigicon"
+								style="width: 25px;" alt="Icone UniON" /> Produtos
+							</h3>
+						</div>
+						<div class="panel-body">
+							<a style="margin-bottom:1rem;" id="uploadBt" class="file-input-wrapper btn btn-default mb-2 fs-clearfix fs-float-right">
+								<span id="uploadId">Buscar Arquivo(s)</span>
+								<input
+								id="teste"
+								type="file"
+								name="teste"
+								data-url="/ecm/upload"
+								class="btn btn-primary btn-sm btn-block testeupload"
+								title="Buscar Arquivo(s)"/>
+							</a>
+							<a style="margin-bottom:1rem; margin-right:1rem;" id="removeBt" class="file-input-wrapper btn btn-danger mb-2 fs-clearfix fs-float-right hide">
+								<span id="removerLink">Remover Arquivo</span>
+							</a>
+							<a style="padding:.5rem; font-weight:bolder; display:none;" id="verAnexo" target="_blank" href="">Ver Anexo</a>
+							<input id="folder2" name="folder2" type="hidden" />
+							<input id="idArquivo2" name="idArquivo2" type="hidden"/>
+							<input id="publiclink" name="publiclink" type="hidden" />
+
+							<table class="table table-striped" id="tbSolCompras" tablename="tbSolCompras" noaddbutton="true" nodeletebutton="true" customFnDelete="fnCustomDelete(this)">
+								<thead>
+									<tr></tr>
+								</thead>
+								<tbody>
+									<tr class="rowPF" id="idx" detail="true" detailname="tbSolCompras">
+										<td class="trash-pai">
+											<div class="form-group" style="padding-top:.5rem">
+												<span class="fluigicon fluigicon-trash fluigicon-md fs-cursor-pointer" onclick="fnCustomDelete(this)"></span>
+											</div>
+										</td>
+										<td>
+											<input type="hidden" id="codProduto" name="codProduto" class="form-control">
+											<div class="row">
+												<div class="col-md-9 col-sm-9 col-xl-12 form-group">
+													<label>Produto</label>
+													<input
+													type="zoom"
+													id = "zoomProduto"
+													name="zoomProduto"
+													class="form-control"
+													data-zoom="{
+														'displayKey':'CDESCRICAO',
+														'datasetId':'dsConsultaProduto',
+														'maximumSelectionLength':'1',
+														'placeholder':'Escolha o Produto',
+														'fields':[
+														{
+															'field':'CCODIGO',
+															'label':'Código',
+															'search':'true',
+															'standard':'true'
+														},{
+															'field':'CDESCRICAO',
+															'label':'Descrição'
+														},{
+															'field':'CODGRUPO',
+															'label':'Grupo'
+														},{
+															'field':'UM',
+															'label':'Unidade'
+														}
+														]
+													}"
+													/>
+												</div>
+
+												<div class="form-group col-md-1 col-sm-1 col-xl-12">
+													<label>Unidade</label>
+													<input id="unidade" name="unidade" class="form-control" type="text" readonly />
+												</div>
+
+												<div class="form-group col-md-2 col-sm-2 col-xl-12">
+													<label>Quantidade</label>
+													<input id="qtde" name="qtde" class="form-control onlyNumber" type="text" />
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-12 col-xl-12 form-group ob obs" data-type="textbox" data-field-name="obsProduto">
+													<label>Motivo:</label>
+													<textarea id="obsProduto" name="obsProduto" class="form-control" type="text" rows='2'></textarea>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div id='divBtnAddProduto1' name='divBtnAddProduto1' class="form-group">
+								<button class="btn btn-primary" name="btAddProduto" id="btAddProduto">Novo Produto</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default aprovacao">
+						<div class="panel-heading">
+							<h3 class="panel-title"><img src="img/icone-union.png" class="fluigicon" style="width: 25px;" alt="Icone UniON" />	Aprova&ccedil;&atilde;o</h3>
+						</div>
+						<div class="panel-body">
+							<input type="hidden" name="responsavel_id" id="responsavel_id" readonly>
+							<div class="form-group col-sm-12 col-md-4 col-xs-12">
+								<label for="responsavel" class="control-label">Respons&aacute;vel</label> <br>
+								<input type="text" name="responsavel" id="responsavel" class="form-control" readonly>
+							</div>
+							<div class="form-group gestorResp col-sm-12 col-md-4 col-xs-12">
+								<label for="responsavel" class="control-label">Gestor Imediato</label></label> <br>
+								<input type="text" name="gestorImediatoResp" id="gestorImediatoResp" class="form-control" readonly>
+							</div>
+							<div class="form-group col-sm-12 col-md-4 col-xs-12">
+								<label for="dtAprov" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+								<input type="text" name="dtAprov" id="dtAprov" class="form-control" readonly>
+							</div>
+							<div class="form-group ob col-sm-12 col-md-4 col-xs-12">
+								<label for="aprovado" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+								<select class="form-control" name="aprovado" id="aprovado">
+									<option value="">Selecione</option>
+									<option value="Aprovado">Aprovado</option>
+									<option value="Reprovado">Reprovado</option>
+									<option value="Cancelado">Cancelado</option>
+								</select>
+							</div>
+							<div class="form-group ob col-xs-12">
+								<label for="parecer" class="control-label">Parecer</label>
+								<textarea class="form-control" name="parecer" id="parecer" rows="2"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default aprovacaoDir hide">
+						<div class="panel-heading">
+							<h3 class="panel-title"><img src="img/icone-union.png" class="fluigicon" style="width: 25px;" alt="Icone UniON" />	Aprova&ccedil;&atilde;o</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-6">
+								<label for="responsavel">Aprovador</label> <br>
+								<input type="text" name="aprovadorDirCompra" id="aprovadorDirCompra" class="form-control" readonly>
+							</div>
+							<div class="form-group ob col-xs-12 col-md-6">
+								<label for="aprovado" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+								<select class="form-control" name="aprovaDirCompras" id="aprovaDirCompras">
+									<option value="">Selecione</option>
+									<option value="S">Aprovado</option>
+									<option value="N">Reprovado</option>
+								</select>
+							</div>
+							<div class="form-group ob col-xs-12">
+								<label for="parecer" class="control-label">Parecer</label> <br>
+								<textarea class="form-control" name="parecerDirCompra" id="parecerDirCompra" rows="2"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default pedidosCompras">
+						<div class="panel-heading">
+							<h3 class="panel-title"><img src="img/icone-union.png" class="fluigicon" style="width: 25px;" alt="Icone UniON" />	Pedidos de Compras</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group fs-clearfix">
+								<div class="table-responsive">
+									<table tablename="tablePedidoCompra" id="tablePedidoCompra" class="table" noaddbutton="true" nodeletebutton="true">
+										<thead>
+											<tr class="tableHeadRow">
+												<th class="tableColumn">N. Pedido de Compra</th>
+												<th class="tableColumn">N. Solicitação Fluig</th>
+												<th class="tableColumn">Descrição</th>
+												<th class="tableColumn">Data</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="tableBodyRow">
+												<td class="col-sm-2 col-xs-12">
+													<div class="form-group" data-type="textbox" data-field-name="histUsuario">
+														<input class="form-control" type="text" name="nPedido" id="nPedido" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-2 col-xs-12">
+													<div class="form-group">
+														<input class="form-control" type="text" name="nSolFluig" id="nSolFluig" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-5 col-xs-12">
+													<div class="form-group">
+														<input class="form-control" type="text" name="descPedido" id="descPedido" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-3 col-xs-12">
+													<div class="form-group">
+														<input class="form-control" type="text" name="dataPedido" id="dataPedido" readonly/>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><img src="img/icone-union.png" class="fluigicon" style="width: 25px;" alt="Icone UniON" />	Historico do Cadastro</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group fs-clearfix">
+								<div class="table-responsive">
+									<table tablename="tableHistorico" id="tableHistorico" class="table" noaddbutton="true" nodeletebutton="true">
+										<thead>
+											<tr class="tableHeadRow">
+												<th class="tableColumn">Usu&aacute;rio</th>
+												<th class="tableColumn">Data</th>
+												<th class="tableColumn">Status</th>
+												<th class="tableColumn">Intera&ccedil;&atilde;o</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="tableBodyRow">
+												<td class="col-sm-2 col-xs-12">
+													<div class="form-field" data-type="textbox" data-field-name="histUsuario">
+														<input class="form-control" type="text" name="histUsuario" id="histUsuario" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-2 col-xs-12">
+													<div class="foHrm-field" data-type="textbox" data-field-name="histData">
+														<input class="form-control" type="text" name="histData" id="histData" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-3 col-xs-12">
+													<div class="form-field" data-type="textbox" data-field-name="histStatus">
+														<input class="form-control" type="text" name="histStatus" id="histStatus" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-5 col-xs-12">
+													<div class="form-field" data-type="textbox" data-field-name="histInt">
+														<textarea class="form-control" rows="2" name="histInt" id="histInt" readonly></textarea>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC-mobile.js"></script>
+	<script language="javascript" type="text/javascript" src="jquery.mask.min.js"></script>
+	<script language="javascript" type="text/javascript" src="enviaEmailNotificacao.js"></script>
+	<script language="javascript" type="text/javascript" src="custom.js"></script>
+	<script language="javascript" type="text/javascript" src="zoom.js"></script>
+	<!-- <script language="javascript" type="text/javascript" src="validacao.js"></script> -->
+	<script language="javascript" type="text/javascript" src="util.js"></script>
+	<script language="javascript" type="text/javascript" src="imagem.js"></script>
+	<script language="javascript" type="text/javascript"
+	src="jquery.fileupload.js"></script>
+	<script language="javascript" type="text/javascript"
+	src="upload_file_rest.js"></script>
+
+</body>
+</html>

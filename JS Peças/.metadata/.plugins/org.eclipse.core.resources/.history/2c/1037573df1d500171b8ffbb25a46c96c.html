@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form</title>
+
+<link rel="stylesheet" type="text/css"
+	href="http://fluig.jspecas.com.br/resources/style-guide/css/fluig-style-guide.min.css">
+<script src="http://fluig.jspecas.com.br/resources/js/jquery/jquery.js"></script>
+<script
+	src="http://fluig.jspecas.com.br/resources/js/jquery/jquery-ui.min.js"></script>
+<script
+	src="http://fluig.jspecas.com.br/resources/js/mustache/mustache-min.js"></script>
+<script
+	src="http://fluig.jspecas.com.br/resources/style-guide/js/fluig-style-guide.min.js"></script>
+
+<!-- CUSTOM -->
+<link
+	href="http://fluig.jspecas.com.br/resources/style-guide/css/fluig-style-guide-filter.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="http://fluig.jspecas.com.br/resources/style-guide/css/fluig-style-guide-ratingstars.min.css"
+	rel="stylesheet" type="text/css">
+<script
+	src="http://fluig.jspecas.com.br/resources/style-guide/js/fluig-style-guide-filter.min.js"></script>
+<script
+	src="http://fluig.jspecas.com.br/resources/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+</head>
+<script type="text/javascript"
+	src="http://fluig.jspecas.com.br/webdesk/vcXMLRPC.js"></script>
+	
+<body class="fluig-style-guide">
+
+	<form
+		class="totvs-form grid vertical create-form-components ui-sortable t0"
+		name="cadastroDeClientes" id="cadastroDeClientes"
+		style="padding-left: 10px; padding-right: 10px;">
+
+		<h1 class="title-form-application">Formulário de Cadastro de
+			Clientes</h1>
+
+		<fieldset id="fsSolicitante">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Solicitante</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group fs-clearfix">
+
+						<div class="col-md-4 col-sm-12 col-xs-12">
+							<label for="solicitanteNome" class="control-label">Nome</label> <input
+								type="text" class="form-control" name="solicitanteNome"
+								id="solicitanteNome" readonly />
+						</div>
+
+						<div class="col-md-2 col-sm-12 col-xs-12">
+							<label for="solicitanteData" class="control-label">Data</label> <input
+								type="text" class="form-control" name="solicitanteData"
+								id="solicitanteData" readonly />
+						</div>
+
+						<div class="col-md-2 col-sm-12 col-xs-12">
+							<label for="solicitanteHora" class="control-label">Hora</label> <input
+								type="text" class="form-control" name="solicitanteHora"
+								id="solicitanteHora" readonly />
+						</div>
+
+					</div>
+
+					<div class="form-group fs-clearfix">
+
+						<div class="col-md-2 col-sm-12 col-xs-12">
+							<label class="control-label">Tipo de Cadastro</label>
+							<div class="">
+								<input type="radio" name="tipoDeCadastro" id="tipoDeCadastro"
+									value="F">Pessoa Física <br> <input type="radio"
+									name="tipoDeCadastro" id="tipoDeCadastro" value="J">Pessoa
+								Jurídica
+							</div>
+						</div>
+
+					</div>
+					<div class="form-group fs-clearfix" id="divCpfOuCnpj"
+						style="display: none;">
+
+						<div class="col-md-2 col-sm-12 col-xs-12">
+							<label for="cpfOuCnpj" class="control-label">CPF</label> <input
+								type="text" class="form-control" name="cpfOuCnpj" id="cpfOuCnpj" />
+						</div>
+						<br>
+						<button id="btnValidarCpfOuCnpj" name="btnValidarCpfOuCnpj"
+							class="btn btn-primary">Validar</button>
+
+					</div>
+
+				</div>
+			</div>
+		</fieldset>
+
+
+		<fieldset id="fsCadastroPessoaFisica" style="display: none;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Cadastro Pessoa Física</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group fs-clearfix">
+
+						<fieldset id="fsDadosCliente">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Dados do Cliente</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-4 col-sm-12 col-xs-12">
+											<label for="pfNome" class="control-label">Nome
+												Completo <span> * </span>
+											</label> <input type="text" class="form-control" name="pfNome"
+												id="pfNome" required />
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfCpf" class="control-label">CPF <span>
+													* </span>
+											</label> <input type="text" class="form-control" name="pfCpf"
+												id="pfCpf" readonly />
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfRG" class="control-label">RG (Doc.
+												Identidade) <span> * </span>
+											</label> <input type="number" class="form-control" name="pfRG"
+												id="pfRG" required />
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfOrgaoEmissaoRG" class="control-label">Orgão
+												Emissor <span> * </span>
+											</label> <input type="text" class="form-control"
+												name="pfOrgaoEmissaoRG" id="pfOrgaoEmissaoRG" required />
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDataNascimento" class="control-label">Data
+												Nascimento <span> * </span>
+											</label> <input type="date" class="form-control"
+												name="pfDataNascimento" id="pfDataNascimento" required />
+										</div>
+
+									</div>
+
+									<div class="form-group fs-clearfix">
+
+										<div class=" col-md-3 col-sm-12 col-xs-12"
+											id="divZoomNaturalidadeUF">
+											<div class="form-field" data-type="zoomfield"
+												data-show-properties="" data-field-name="zoomNaturalidadeUF">
+												<label for="zoomNaturalidadeUF" class="control-label">UF</label>
+												<input type="zoom" name="zoomNaturalidadeUF"
+													id="zoomNaturalidadeUF"
+													data-zoom="{
+													  'displayKey':'DESCRICAO_UF',
+													  'datasetId':'dsUf',
+													  'fields':[
+														   {'field':'UF','label':'UF'},
+														   {'field':'DESCRICAO_UF','label':'Descrição','standard':'true','search':'true'}
+													  ]}"
+													class="form-control" value="" placeholder=""
+													data-size="small" />
+											</div>
+										</div>
+
+										<div class=" col-md-4 col-sm-12 col-xs-12">
+											<div class="form-field" data-type="zoomfield"
+												data-show-properties=""
+												data-field-name="zoomNaturalidadeMunicipio">
+												<label for="zoomNaturalidadeMunicipio" class="control-label">Municícpio
+													(Cidade)</label> <input type="zoom"
+													name="zoomNaturalidadeMunicipio"
+													id="zoomNaturalidadeMunicipio"
+													data-zoom="{
+													  'displayKey':'DESCRICAO_CIDADE',
+													  'datasetId':'dsCidade',
+													  'fields':[
+													  	   {'field':'UF','label':'UF'},
+														   {'field':'DESCRICAO_CIDADE','label':'Descrição','standard':'true','search':'true'}
+													  ]}"
+													class="form-control" value="" placeholder=""
+													data-size="small" />
+											</div>
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfEstadoCivil" class="control-label">Estado
+												Civil</label> <select class="form-control" name="pfEstadoCivil"
+												id=pfEstadoCivil><option value="">Selecione</option></select>
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfGrauInstrucao" class="control-label">Grau
+												Instrucão </label> <select class="form-control"
+												name="pfGrauInstrucao" id=pfGrauInstrucao><option
+													value="">Selecione</option></select>
+										</div>
+
+									</div>
+
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfTelefone" class="control-label">Telefone
+												<span> * </span>
+											</label> <input type="text" class="form-control phone"
+												id="pfTelefone" name="pfTelefone" required>
+										</div>
+
+										<div class="col-md-4 col-sm-12 col-xs-12">
+											<label for="pfEmail" class="control-label">E-mail <span>
+													* </span>
+											</label> <input type="email" class="form-control" id="pfEmail"
+												name="pfEmail" required>
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset id="fsDadosResidenciais">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Endereco</h3>
+								</div>
+								<div class="panel-body">
+
+									<table tablename="pfTabelaEndereco"
+										class="table table-condensed" nodeletebutton="true"
+										noaddbutton="true">
+										<thead>
+											<tr>
+												<td></td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="form-group fs-clearfix">
+
+														<div class="col-md-2 col-sm-12 col-xs-12">
+															<label for="pfEnderecoCEP" class="control-label">CEP
+																<span> * </span>
+															</label> <input type="text" class="form-control cep"
+																id="pfEnderecoCEP" name="pfEnderecoCEP" required>
+														</div>
+
+														<div class="col-md-5 col-sm-12 col-xs-12">
+															<label for="pfEnderecoLogradouro" class="control-label">Endereco
+																<span> * </span>
+															</label> <input type="text" class="form-control"
+																id="pfEnderecoLogradouro" name="pfEnderecoLogradouro"
+																required>
+														</div>
+
+														<div class="col-md-5 col-sm-12 col-xs-12">
+															<label for="pfEnderecoComplemento" class="control-label">Complemento
+															</label> <input type="text" class="form-control"
+																id="pfEnderecoComplemento" name="pfEnderecoComplemento">
+														</div>
+
+
+													</div>
+
+													<div class="form-group fs-clearfix">
+
+														<div class="col-md-3 col-sm-12 col-xs-12">
+															<label for="pfEnderecoBairro" class="control-label">Bairro
+																<span> * </span>
+															</label> <input type="text" class="form-control"
+																id="pfEnderecoBairro" name="pfEnderecoBairro" required>
+														</div>
+
+														<div class=" col-md-3 col-sm-12 col-xs-12"
+															id="divZoomEnderecoUF">
+															<input type="text" id="enderecoCidadeUF"
+																name="enderecoCidadeUF" style="display: none;" />
+															<div class="form-field" data-type="zoomfield"
+																data-show-properties="" data-field-name="zoomEnderecoUF">
+																<label for="zoomEnderecoUF" class="control-label">UF</label>
+																<input type="zoom" name="zoomEnderecoUF"
+																	id="zoomEnderecoUF"
+																	data-zoom="{
+													  'displayKey':'DESCRICAO_UF',
+													  'datasetId':'dsUf',
+													  'fields':[
+														   {'field':'UF','label':'UF'},
+														   {'field':'DESCRICAO_UF','label':'Descrição','standard':'true','search':'true'}
+													  ]}"
+																	class="form-control" value="" placeholder=""
+																	data-size="small" />
+															</div>
+														</div>
+
+														<div class=" col-md-4 col-sm-12 col-xs-12"
+															id="divZoomEnderecoCidade">
+															<input type="text" id="enderecoCidadeID"
+																name="enderecoCidadeID" style="display: none;" />
+															<div class="form-field" data-type="zoomfield"
+																data-show-properties=""
+																data-field-name="zoomEnderecoCidade">
+																<label for="zoomEnderecoCidade" class="control-label">Municícpio</label>
+																<input type="zoom" name="zoomEnderecoCidade"
+																	id="zoomEnderecoCidade"
+																	data-zoom="{
+																	  'displayKey':'DESCRICAO_CIDADE',
+																	  'datasetId':'dsCidade',
+																	  'fields':[
+																	  	   {'field':'CODIGO','label':'Código'},
+																	  	   {'field':'UF','label':'UF'},
+																		   {'field':'DESCRICAO_CIDADE','label':'Descrição','standard':'true','search':'true'}
+																	  ]}"
+																	class="form-control" value="" placeholder=""
+																	data-size="small" />
+															</div>
+														</div>
+
+
+													</div>
+
+													<div class="form-group fs-clearfix">
+														<div class="col-md-2 col-sm-12 col-xs-12">
+															<label for="pfInscricaoEstadual" class="control-label">Inscrição
+																Estadual </label> <input type="text" class="form-control"
+																id="pfInscricaoEstadual" name="pfInscricaoEstadual">
+														</div>
+													</div>
+
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="form-group fs-clearfix">
+										<button class="btn btn-primary btn-block"
+											id="btnPFNovoEndereco" data-pesquisar-evento="">Novo
+											Endereço</button>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset id="fsDadosProfissionais">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Dados Profissionais</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-6 col-sm-12 col-xs-12">
+											<label for="pfDadosProfissionaisEmpresa"
+												class="control-label">Empresa </label> <input type="text"
+												class="form-control" id="pfDadosProfissionaisEmpresa"
+												name="pfDadosProfissionaisEmpresa">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosProfissionaisCnpj" class="control-label">CNPJ
+											</label> <input type="text" class="form-control"
+												id="pfDadosProfissionaisCnpj"
+												name="pfDadosProfissionaisCnpj">
+										</div>
+
+									</div>
+
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-6 col-sm-12 col-xs-12">
+											<label for="pfDadosProfissionaisEndereco"
+												class="control-label">Endereço </label> <input type="text"
+												class="form-control" id="pfDadosProfissionaisEndereco"
+												name="pfDadosProfissionaisEndereco">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosProfissionaisBairro" class="control-label">Bairro</label>
+											<input type="text" class="form-control"
+												id="pfDadosProfissionaisBairro"
+												name="pfDadosProfissionaisBairro">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosProfissionaisUF" class="control-label">UF</label>
+											<input type="text" class="form-control"
+												id="pfDadosProfissionaisUF" name="pfDadosProfissionaisUF">
+										</div>
+
+									</div>
+
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosProfissionaisTelefone"
+												class="control-label">Telefone</label> <input type="text"
+												class="form-control" id="pfDadosProfissionaisTelefone"
+												name="pfDadosProfissionaisTelefone">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosProfissionaisAdmissao"
+												class="control-label">Data Admissão</label> <input
+												type="text" class="form-control"
+												id="pfDadosProfissionaisAdmissao"
+												name="pfDadosProfissionaisAdmissao">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosProfissionaisProfissao"
+												class="control-label">Profissão</label> <input type="text"
+												class="form-control" id="pfDadosProfissionaisProfissao"
+												name="pfDadosProfissionaisProfissao">
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset id="fsDadosConjugue">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Dados Cônjuge</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-4 col-sm-12 col-xs-12">
+											<label for="pfDadosConjugueNome" class="control-label">Nome</label>
+											<input type="text" class="form-control"
+												id="pfDadosConjugueNome" name="pfDadosConjugueNome">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosConjugueCpf" class="control-label">CPF</label>
+											<input type="text" class="form-control"
+												id="pfDadosConjugueCpf" name="pfDadosConjugueCpf">
+										</div>
+
+									</div>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-4 col-sm-12 col-xs-12">
+											<label for="pfDadosConjugueEmpresa" class="control-label">Empresa
+												que trabalha</label> <input type="text" class="form-control"
+												id="pfDadosConjugueEmpresa" name="pfDadosConjugueEmpresa">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosConjugueCargo" class="control-label">Cargo</label>
+											<input type="text" class="form-control"
+												id="pfDadosConjugueCargo" name="pfDadosConjugueCargo">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosConjugueAdmissao" class="control-label">Data
+												Admissão</label> <input type="date" class="form-control"
+												id="pfDadosConjugueAdmissao" name="pfDadosConjugueAdmissao">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfDadosConjugueTelefone" class="control-label">Telefone</label>
+											<input type="text" class="form-control"
+												id="pfDadosConjugueTelefone" name="pfDadosConjugueTelefone">
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset id="fsFinanceiro">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Financeiro e Tipo de Operação</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfFinanceiroSalarioBruto" class="control-label">Salário
+												Bruto</label> <input type="number" class="form-control"
+												id="pfFinanceiroSalarioBruto"
+												name="pfFinanceiroSalarioBruto">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfFinanceiroOutrosRendimentos"
+												class="control-label">Outros Rendimentos (mensal)</label> <input
+												type="number" class="form-control"
+												id="pfFinanceiroOutrosRendimentos"
+												name="pfFinanceiroOutrosRendimentos">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfFinanceiroTotalRendimentos"
+												class="control-label">Total de Rendimentos</label> <input
+												type="number" class="form-control"
+												id="pfFinanceiroTotalRendimentos"
+												name="pfFinanceiroTotalRendimentos">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="pfFinanceiroPatrimonio" class="control-label">Patrimônio</label>
+											<input type="number" class="form-control"
+												id="pfFinanceiroPatrimonio" name="pfFinanceiroPatrimonio">
+										</div>
+
+									</div>
+									<div class="form-group fs-clearfix">
+										<div class="col-md-12 col-sm-12 col-xs-12">
+											<label for="pfFinanceiroPatrimonio" class="control-label">Observações
+												Gerais: </label>
+											<textarea rows="5" class="form-control"
+												id="pfFinanceiroObservacoesGerais"
+												name="pfFinanceiroObservacoesGerais"></textarea>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset id="fsReferenciasPessoais">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Referencias Pessoais</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="table-responsive">
+
+											<table tablename="pfTabelaReferenciaPessoal"
+												id="pfTabelaReferenciaPessoal" class="table table-condensed"
+												nodeletebutton="true" noaddbutton="true">
+												<thead>
+													<tr class="tableHeadRow">
+														<td>Nome</td>
+														<td>Grau Parentesco</td>
+														<td>Telefone</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td><input type="text" id="pfReferenciaPessoalNome"
+															name="pfReferenciaPessoalNome" class="form-control"></td>
+														<td><input type="text"
+															id="pfReferenciaPessoalGParentesco"
+															name="pfReferenciaPessoalGParentesco"
+															class="form-control"></td>
+														<td><input type="text"
+															id="pfReferenciaPessoalTelefone"
+															name="pfReferenciaPessoalTelefone" class="form-control"></td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="form-group fs-clearfix">
+												<button class="btn btn-primary btn-block"
+													id="btnPFNovoReferenciaPessoal" data-pesquisar-evento="">Novo
+													Referencia Pessoal</button>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset id="fsReferenciasComerciais">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Referencias Comerciais</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="table-responsive">
+
+											<table tablename="pfTabelaReferenciaComercial"
+												id="pfTabelaReferenciaComercial" class="table table-condensed" nodeletebutton="true" noaddbutton="true">
+												<thead>
+													<tr class="tableHeadRow">
+														<td>Empresa</td>
+														<td>Cliente Desde</td>
+														<td>Tipo do Produto</td>
+														<td>Forma de Pagamento</td>
+														<td>Contato</td>
+														<td>Telefone</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td><input type="text"
+															id="pfReferenciaComercialEmpresa"
+															name="pfReferenciaComercialEmpresa" class="form-control"></td>
+														<td><input type="text"
+															id="pfReferenciaComercialDesde"
+															name="pfReferenciaComercialDesde" class="form-control"></td>
+														<td><input type="text"
+															id="pfReferenciaComercialTProduto"
+															name="pfReferenciaComercialTProduto" class="form-control"></td>
+														<td><input type="text"
+															id="pfReferenciaComercialFPagto"
+															name="pfReferenciaComercialFPagto" class="form-control"></td>
+														<td><input type="text"
+															id="pfReferenciaComercialContato"
+															name="pfReferenciaComercialContato" class="form-control"></td>
+														<td><input type="text"
+															id="pfReferenciaComercialTelefone"
+															name="pfReferenciaComercialTelefone" class="form-control"></td>
+													</tr>
+												</tbody>
+											</table>
+											<div class="form-group fs-clearfix">
+												<button class="btn btn-primary btn-block"
+													id="btnPFNovoReferenciaComercial" data-pesquisar-evento="">Novo
+													Referencia Comercial</button>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+
+		<fieldset id="fsCadastroPessoaJuridica" style="display: none;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Cadastro Pessoa Jurídica</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group fs-clearfix">
+
+						<fieldset id="fsDadosEmpresa">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Dados da Empresa</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-4 col-sm-12 col-xs-12">
+											<label for="fsDadosEmpresaRazaoSocial" class="control-label">Razão
+												Social <span>*</span>
+											</label> <input type="text" class="form-control"
+												id="pfDadosEmprsaRazaoSocial"
+												name="fsDadosEmpresaRazaoSocial" required>
+										</div>
+
+										<div class="col-md-4 col-sm-12 col-xs-12">
+											<label for="fsDadosEmprsaFantasia" class="control-label">Nome
+												Fantasia <span>*</span>
+											</label> <input type="text" class="form-control"
+												id="pfDadosEmprsaFantasia" name="fsDadosEmprsaFantasia"
+												required>
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="fsDadosEmprsaCnpj" class="control-label">CNPJ
+											</label> <input type="text" class="form-control"
+												id="pfDadosEmprsaCnpj" name="fsDadosEmprsaCnpj" readonly>
+										</div>
+
+									</div>
+
+									<div class="form-group fs-clearfix">
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="fsDadosEmprsaInscEstadual" class="control-label">Inscricao
+												Estadual</label> <input type="number" class="form-control"
+												id="pfDadosEmprsaInscEstadual"
+												name="fsDadosEmprsaInscEstadual">
+										</div>
+
+										<div class="col-md-2 col-sm-12 col-xs-12">
+											<label for="fsDadosEmprsaInscMunicipal" class="control-label">Inscrição
+												Municipal</label> <input type="number" class="form-control"
+												id="pfDadosEmprsaInscMunicipal"
+												name="fsDadosEmprsaInscMunicipal">
+										</div>
+
+									</div>
+
+
+								</div>
+
+							</div>
+
+						</fieldset>
+
+						<fieldset id="fsEndereco">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Endereço Empresa</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="panel-body">
+											<div class="form-group fs-clearfix">
+
+												<div class="col-md-2 col-sm-12 col-xs-12">
+													<label for="pjEnderecoCEP" class="control-label">CEP
+														<span> * </span>
+													</label> <input type="text" class="form-control cep"
+														id="pjEnderecoCEP" name="pjEnderecoCEP" required>
+												</div>
+
+												<div class="col-md-6 col-sm-12 col-xs-12">
+													<label for="pjEnderecoLogradouro" class="control-label">Endereco
+														<span> * </span>
+													</label> <input type="text" class="form-control"
+														id="pjEnderecoLogradouro" name="pjEnderecoLogradouro"
+														required>
+												</div>
+
+												<div class="col-md-4 col-sm-12 col-xs-12">
+													<label for="pjEnderecoBairro" class="control-label">Bairro
+														<span> * </span>
+													</label> <input type="text" class="form-control"
+														id="pjEnderecoBairro" name="pjEnderecoBairro" required>
+												</div>
+
+
+											</div>
+
+											<div class="form-group fs-clearfix">
+
+												<div class="col-md-2 col-sm-12 col-xs-12">
+													<label for="pjEnderecoUF" class="control-label">UF
+														<span> * </span>
+													</label> <input type="text" class="form-control" id="pjEnderecoUF"
+														name="pjEnderecoUF" required>
+												</div>
+
+												<div class="col-md-4 col-sm-12 col-xs-12">
+													<label for="pjEnderecoCidade" class="control-label">Bairro
+														<span> * </span>
+													</label> <input type="text" class="form-control"
+														id="pjEnderecoCidade" name="pjEnderecoCidade" required>
+												</div>
+
+												<div class="col-md-2 col-sm-12 col-xs-12">
+													<label for="pjEnderecoTelefone" class="control-label">Telefone
+														<span> * </span>
+													</label> <input type="text" class="form-control"
+														id="pjEnderecoTelefone" name="pjEnderecoTelefone" required>
+												</div>
+
+												<div class="col-md-4 col-sm-12 col-xs-12">
+													<label for="pjEnderecoEmail" class="control-label">E-mai
+														<span> * </span>
+													</label> <input type="email" class="form-control"
+														id="pjEnderecoEmail" name="pjEnderecoEmail" required>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+
+						<fieldset id="fsDadosDosSocios">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Pessoas Dados dos Sócios /
+										Administradores / Procuradores</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="table-responsive">
+
+											<table tablename="pjTabelaDadosSocios"
+												id="pjTabelaDadosSocios" class="table">
+												<thead>
+													<tr class="tableHeadRow">
+														<td>Nome</td>
+														<td>CPF / CNPJ</td>
+														<td>Cargo</td>
+														<td>% no Capital</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td><input type="text" id="pjDadoSocioNome"
+															name="pjDadoSocioNome" class="form-control"></td>
+														<td><input type="text" id="pjDadoSocioCpfOuCnpj"
+															name="pjDadoSocioCpfOuCnpj" class="form-control"></td>
+														<td><input type="text" id="pjDadoSocioCargo"
+															name="pjDadoSocioCargo" class="form-control"></td>
+														<td><input type="text" id="pjDadoSocioCapital"
+															name="pjDadoSocioCapital" class="form-control"></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset id="fsPessoaAutorizada">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Pessoas Autorizadas para Compras /
+										Retirada de Mercadoria</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="table-responsive">
+
+											<table tablename="pjTabelaPessoasAutorizadas"
+												id="pjTabelaPessoasAutorizadas" class="table">
+												<thead>
+													<tr class="tableHeadRow">
+														<td>Nome</td>
+														<td>CPF</td>
+														<td>Cargo</td>
+														<td>Telefone</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td><input type="text" id="pjPessoaAutorizadaNome"
+															name="pjPessoaAutorizadaNome" class="form-control"></td>
+														<td><input type="text" id="pjPessoaAutorizadaCpf"
+															name="pjPessoaAutorizadaCpf" class="form-control"></td>
+														<td><input type="text" id="pjPessoaAutorizadaCargo"
+															name="pjPessoaAutorizadaCargo" class="form-control"></td>
+														<td><input type="text"
+															id="pjPessoaAutorizadaTelefone"
+															name="pjPessoaAutorizadaTelefone" class="form-control"></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+						<fieldset id="fsReferenciasComerciais">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Pessoas Autorizadas para Compras /
+										Retirada de Mercadoria</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group fs-clearfix">
+
+										<div class="table-responsive">
+
+											<table tablename="pjReferenciasComerciais"
+												id="pjReferenciasComerciais" class="table">
+												<thead>
+													<tr class="tableHeadRow">
+														<td>Empresa</td>
+														<td>Compra desde</td>
+														<td>Conceito</td>
+														<td>Forma de Pagamento</td>
+														<td>Contato / Nome</td>
+														<td>Telefone</td>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td><input type="text"
+															id="pjReferenciaComercialEmpresa"
+															name="pjReferenciaComercialEmpresa" class="form-control"></td>
+														<td><input type="text"
+															id="pjReferenciaComercialDesde"
+															name="pjReferenciaComercialDesde" class="form-control"></td>
+														<td><input type="text"
+															id="pjReferenciaComercialConceito"
+															name="pjReferenciaComercialConceito" class="form-control"></td>
+														<td><input type="text"
+															id="pjReferenciaComercialPagamento"
+															name="pjReferenciaComercialPagamento"
+															class="form-control"></td>
+														<td><input type="text"
+															id="pjReferenciaComercialContato"
+															name="pjReferenciaComercialContato" class="form-control"></td>
+														<td><input type="text"
+															id="pjReferenciaComercialTelefone"
+															name="pjReferenciaComercialTelefone" class="form-control"></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</fieldset>
+
+					</div>
+				</div>
+			</div>
+		</fieldset>
+
+
+
+
+	</form>
+
+
+	<script type="text/javascript">
+		var keyDown = false, ctrl = 17, vKey = 86, Vkey = 118;
+
+		$(document).keydown(function(e) {
+			if (e.keyCode == ctrl)
+				keyDown = true;
+		}).keyup(function(e) {
+			if (e.keyCode == ctrl)
+				keyDown = false;
+		});
+
+		$('[data-only-numbers]').on('keypress', function(e) {
+			if (!e) {
+				var e = window.event;
+			}
+
+			if (e.keyCode > 0 && e.which == 0) {
+				return true;
+			}
+
+			if (e.keyCode) {
+				code = e.keyCode;
+			} else if (e.which) {
+				code = e.which;
+			}
+
+			if (code == 46) {
+				return true;
+			}
+
+			var character = String.fromCharCode(code);
+			if (character == '\b' || character == ' ' || character == '\t') {
+				return true;
+			}
+			if (keyDown && (code == vKey || code == Vkey)) {
+				return (character);
+			} else {
+				return (/[0-9]$/.test(character));
+			}
+		}).on('focusout', function(e) {
+			var $this = $(this);
+			if ($this.val() == "") {
+				return true;
+			}
+			$this.val($this.val().replace(/[^0-9\.]/g, ''));
+		}).on('paste', function(e) {
+			var $this = $(this);
+			setTimeout(function() {
+				$this.val($this.val().replace(/[^0-9\.]/g, ''));
+			}, 5);
+		});
+
+		$('.create-form-components')
+				.on(
+						'keyup',
+						'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]',
+						function() {
+							validationFieldsForm($(this), $(this).parents(
+									'.form-field').data('type'));
+						});
+
+		$('.create-form-components')
+				.on(
+						'change',
+						'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]',
+						function() {
+							validationFieldsForm($(this), $(this).parents(
+									'.form-field').data('type'));
+						});
+
+		function validationFieldsForm(field, type) {
+			if (type === "checkbox" || type === "radio") {
+				if (!field.is(':checked')) {
+					field.parents('.form-field').addClass('required');
+				} else {
+					field.parents('.form-field').removeClass('required');
+				}
+			} else {
+				if (!field.val().trim()) {
+					field.parents('.form-field').addClass('required');
+				} else {
+					field.parents('.form-field').removeClass('required');
+				}
+			}
+		}
+
+		var $zoomPreview = $(".zoom-preview");
+		if ($zoomPreview.length) {
+			$zoomPreview.parent().removeClass("input-group");
+			$zoomPreview.remove();
+		}
+
+		var ratings = $(".rating");
+		if (ratings.length > 0)
+			ratingStars(ratings);
+		function ratingStars(stars) {
+			$.each(stars, function(i, obj) {
+				var field = $(this).closest(".form-group")
+						.find(".rating-value");
+				var tgt = $(obj);
+				tgt.html("");
+				var rating = FLUIGC.stars(tgt, {
+					value : field.val()
+				});
+				rating.on("click", function(o) {
+					field.val($(this).index() + 1);
+				});
+			});
+		}
+
+		$.each($("[data-date]"), function(i, o) {
+			var id = $(o).attr("id");
+			FLUIGC.calendar("#" + id);
+		});
+
+		$(document).ready(function() {
+			$.each($("[data-date]"), function(i, o) {
+				var id = $(o).attr("id");
+				if ($("#" + id).attr("readonly")) {
+					$("#" + id).data('DateTimePicker').disable();
+				}
+			});
+		});
+	</script>
+	<script src="custom.js"></script>
+	<script src="jquery.mask.js"></script>
+</body>
+</html>

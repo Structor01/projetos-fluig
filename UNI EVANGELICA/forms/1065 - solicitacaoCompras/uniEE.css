@@ -1,0 +1,14 @@
+div.containerH1 {
+    height: 5em;
+    position: relative }
+div.containerH1 h1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+    
+.alinhaTable {
+	margin-top: 13px!important;
+}

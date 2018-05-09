@@ -1,0 +1,17 @@
+application.type=widget
+application.code=externoTop
+application.title=Acesso Externo Top
+application.description=Portal para acesso publico de widgts publicos para colaboradores sem autenticação
+application.category=LULOS
+application.renderer=freemarker
+developer.code=luvaniolopes
+developer.name=Luvânio Lopes
+developer.url=http://www.lulos.com.br
+application.uiwidget=true
+application.mobileapp=true
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=externoTop
+application.resource.js.1=/resources/js/externoTop.js
+application.resource.css.2=/resources/css/externoTop.css
+application.tenant.code=1

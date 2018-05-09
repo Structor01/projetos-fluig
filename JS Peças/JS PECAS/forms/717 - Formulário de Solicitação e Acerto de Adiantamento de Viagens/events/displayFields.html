@@ -1,0 +1,39 @@
+function displayFields(form, customHTML) {
+	var activity = getValue('WKNumState');
+	if (activity == 1 || activity == 0) {
+		loadConfigUser(form, getValue("WKUser"));
+
+	}
+	if(activity == 4) {
+		loadNumProcess(form, getValue("WKNumProces"));
+	}
+}
+
+function loadConfigUser(form, user){
+	//Setar nome de usuÃ¡rio
+	var c1 = DatasetFactory.createConstraint("colleaguePK.colleagueId",user,user,ConstraintType.MUST);
+
+	var fields = new Array("colleagueName", "mail");
+	var constraints = new Array(c1);
+	var dataset = DatasetFactory.getDataset("colleague",fields,constraints,null);
+	var userName = "";
+
+	if(dataset.rowsCount == 1){
+		userName = dataset.getValue(0, "colleagueName");
+	}
+
+	form.setValue('nm_solicitante',userName);
+}
+
+function loadNumProcess(form, numProcess){
+	//Setar numero da solicitacao
+	var c1 = DatasetFactory.createConstraint("workflowProcessPK.processInstanceId", numProcess, numProcess, ConstraintType.MUST);
+
+	var fields = new Array("workflowProcessPK.processInstanceId");
+	var constraints = new Array(c1);
+	var dataset = DatasetFactory.getDataset("workflowProcess",fields,constraints,null);
+	var numSolicitacao = dataset.getValue(0, "workflowProcessPK.processInstanceId");
+
+	form.setValue('num_solicitao', numSolicitacao);
+
+}

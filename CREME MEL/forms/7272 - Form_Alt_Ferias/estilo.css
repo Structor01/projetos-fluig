@@ -1,0 +1,78 @@
+body{
+	font-family: Arial;
+}
+
+#cor_tabela {
+    border-collapse: collapse; /* CSS2 */
+    border: solid #000000 1px;
+}
+
+
+.borda {
+    border-collapse: collapse; /* CSS2 */
+    border: solid #000000 1px;
+	width: 100%;
+}
+
+.input_tabela {
+	width: 99%;
+	text-transform: uppercase;
+}
+
+#rodape {
+    border-collapse: collapse; /* CSS2 */
+    border: solid #000000 1px;
+}
+
+#titulo_sup {
+    text-align: center;
+    background-color: #C7C9C9;
+    /*border-bottom:1px #000 solid;*/
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+    color: #FFF;
+    background-color: #000;
+}
+
+#titulo {
+    text-align: center;
+    font-weight: bold;
+    background-color: #C7C9C9;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+    /*border-bottom:1px #000 solid;*/
+}
+
+#espaco{
+    line-height:150%;
+}
+
+#borda_tabela{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+	text-align: left;
+}
+
+/*
+table.fixo { table-layout:fixed; }
+
+table.fixo td {
+    overflow: hidden;
+    width: 20px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #C7C9C9;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+    
+}*/
+
+#alinhamento{
+    position: absolute;
+	top: 25%;
+    right: 1%;
+}

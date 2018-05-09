@@ -1,0 +1,234 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="custom.js"></script>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<input type="hidden" name="nSol" id="nSol" value="" />
+			<div class="container-fluid">
+				<div class="row">
+					<!-- Cabeçalho Padrão -->
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<table>
+								<tr>
+									<td  class="col-md-2">
+										<img src="logo_cmz.png" style="width:100%"/>
+									</td>
+									<td class="col-md-7">
+										<h1 style="font-size:14px; margin:0; padding:0; text-align:center">
+											<span style="font-size:12px; font-weight:light">Sorveteria Creme Mel S. A</span>
+											<br />
+											PLANO DE AÇÃO
+										</h1>
+									</td>
+									<td class="col-md-3">
+										<p style="margin:0; padding:0; font-size:12px"><b>C.2_0001</b></p>
+										<p style="margin:0; padding:0; font-size:12px">
+											Qualidade
+										</p>
+										<p style="margin:0; padding:0; font-size:12px">
+											N° Versão/Revisão: 2.000 Data: 05/02/2018
+										</p>
+										<p style="margin:0; padding:0; font-size:12px">
+											Página: 1/1
+										</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-md"></span> Solicitação</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-4">
+								<label for="dtAbertura">Data de Abertura</label>
+								<input class="form-control" type="text" id="dtAbertura" name="dtAbertura" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-4">
+								<label for="solicitante">Solicitante</label>
+								<input class="form-control" type="text" id="solicitante" name="solicitante" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-4">
+								<label for="matricula">Matrícula</label>
+								<input class="form-control" type="text" id="matricula" name="matricula" value="" readonly/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12 ob">
+						<label for="titulo">Título</label>
+						<input type="text" class="form-control" id="titulo" name="titulo" value="">
+					</div>
+					<!-- <div class="form-group col-md-4 ob">
+						<label for="resp">Gestor 2</label>
+						<input type="hidden" class="form-control" id="coGest_id" name="coGest_id" value="">
+						<input
+						type="zoom"
+						class="form-control"
+						id = "coGest"
+						name="coGest"
+						data-zoom="{
+							'displayKey':'colleagueName',
+							'datasetId':'colleague',
+							'maximumSelectionLength':'1',
+							'placeholder':'Escolha o usuário',
+							'fields':[
+							{
+								'field':'colleagueId',
+								'label':'ID'
+							},{
+								'field':'colleagueName',
+								'label':'Nome',
+								'standard':'true'
+							}
+							]
+						}"
+						/>
+					</div> -->
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<span class="fluigicon fluigicon-activity-list-pending fluigicon-md"></span>
+								Plano de Acão
+							</h3>
+						</div>
+						<div class="panel-body fs-no-padding">
+							<div class="table-responsive">
+								<table class="table table-striped fs-no-margin" id="itemPlano" tablename="itemPlano" noaddbutton="true" nodeletebutton="true" >
+									<thead>
+										<tr></tr>
+									</thead>
+									<tbody>
+										<tr class="tableBodyRow" detail="true" detailname="itemPlano" id="tr_itemPlano" name="tr_itemPlano">
+											<td>
+												<input type="hidden" name="statusCor" id="statusCor" value="" />
+											</td>
+											<td>
+												<div class="form-group col-md-12 col-xs-12 text-right delPaiFilho">
+													<span class="fs-cursor-pointer" id="delPaiFilho" style="color:#aaa; font-weight:bolder;" onclick="delPaiFilho(this)">X</span>
+												</div>
+												<div class="form-group col-md-4 ob">
+													<label for="causa">Causa/Razão</label>
+													<input type="text" class="form-control" id="causa" name="causa" value="">
+												</div>
+												<div class="form-group col-md-4 ob">
+													<label for="resp">Responsável</label>
+													<input type="hidden" class="form-control" id="resp_id" name="resp_id" value="">
+													<input
+													type="zoom"
+													class="form-control"
+													id = "resp"
+													name="resp"
+													data-zoom="{
+														'displayKey':'colleagueName',
+														'datasetId':'colleague',
+														'maximumSelectionLength':'1',
+														'placeholder':'Escolha o usuário',
+														'fields':[
+														{
+															'field':'colleagueId',
+															'label':'ID'
+														},{
+															'field':'colleagueName',
+															'label':'Nome',
+															'standard':'true'
+														}
+														]
+													}"
+													/>
+												</div>
+												<div class="form-group col-md-4 zoomIn ob">
+													<!-- <input type="hidden" class="form-control" id="setor_id" name="setor_id" value=""> -->
+													<label for="setor">Setor</label>
+													<input
+													type="zoom"
+													class="form-control"
+													id = "setor"
+													name="setor"
+													data-zoom="{
+														'displayKey':'areaDescription',
+														'datasetId':'destinationArea',
+														'maximumSelectionLength':'1',
+														'placeholder':'Escolha o setor',
+														'fields':[
+														{
+															'field':'areaDescription',
+															'label':'Setor',
+															'standard':'true'
+														}
+														]
+													}"
+													/>
+												</div>
+												<div class="form-group col-md-12 zoomIn ob">
+													<label for="acao">Ação</label>
+													<!-- <input type="text" class="form-control" id="acao" name="acao" value=""> -->
+													<textarea class="form-control" style="resize:vertical" id="acao" name="acao" rows="2"></textarea>
+												</div>
+												<div class="form-group col-md-12 zoomIn ob">
+													<label for="obsSol">Observação</label>
+													<!-- <input type="text" class="form-control" id="acao" name="acao" value=""> -->
+													<textarea class="form-control" style="resize:vertical;" id="obsSol" name="obsSol" rows="2"></textarea>
+												</div>
+												<div data-acao class="form-group col-md-3 zoomIn">
+													<label for="statusItem">Status</label>
+													<input type="text" class="form-control" data-acao id="statusItem" name="statusItem" value="">
+												</div>
+												<div data-acao class="form-group col-md-3 zoomIn">
+													<label for="dtInicial">Data Inicial</label>
+													<input type="text" class="form-control"  id="dtInicial" name="dtInicial" value="">
+												</div>
+												<div data-acao class="form-group col-md-3 zoomIn">
+													<label for="prazoConclusao">Prazo Conclusão</label>
+													<input type="text" class="form-control" data-acao id="prazoConclusao" name="prazoConclusao" value="">
+												</div>
+												<div class="form-group col-md-2 hide">
+													<label for="verSol">Solicitação Fluig</label>
+													<span class="form-control verSol" id="verSol" data-acao name="verSol"><a target="_blank" href=""></a></span>
+												</div>
+											</td>
+											<td width="30">
+												<div data-acao class="form-group col-md-12 opt">
+													<span onclick="zoomIn(this)" class="fluigicon fluigicon-zoom-in fluigicon-sm"></span>
+												</div>
+												<div data-assumir onclick="assumirSol(this)" class="form-group col-md-12 opt">
+													<span class="label label-default">Assumir</span>
+												</div>
+												<div data-mover onclick="moverSol(this)" class="form-group col-md-12 opt">
+													<span class="label label-default">Mover</span>
+												</div>
+												<div data-cancelar onclick="cancelarSol(this)" class="form-group col-md-12 opt">
+													<span class="label label-danger">Cancelar</span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="form-group">
+								<button type="button" style="margin:1rem" class="btn btn-default" name="inputAdicionar" id="inputAdicionar">Adicionar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="zoom.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<body class="fluig-style-guide">
+	<form name="form" role="form">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-md"></span> Cadastro</h3>
+			</div>
+			<div class="panel-body">
+				<input type="hidden" id="gestor_matricula" name="gestor_matricula" value="" />
+				<input type="hidden" id="colaborador_matricula" name="colaborador_matricula" value="" />
+
+				<div class="form-group col-xs-12 col-md-6">
+					<label for="colaborador">Colaborador</label>
+					<input
+					    type="zoom"
+					    id = "colaborador"
+					    name="colaborador"
+					    data-zoom="{
+					        'displayKey':'colleagueName',
+					        'datasetId':'colleague',
+					        'maximumSelectionLength':'1',
+					        'placeholder':'Escolha o Colaborador',
+					        'fields':[
+					            {
+					               'field':'colleagueId',
+					               'label':'ID'
+					            },{
+					              'field':'colleagueName',
+					              'label':'Nome',
+					              'standard':'true'
+					            }
+					        ]
+					     }"
+					/>
+				</div>
+				<div class="form-group col-xs-12 col-md-6">
+					<label for="gestor">Gestor</label>
+					<input
+					    type="zoom"
+					    id = "gestor"
+					    name="gestor"
+					    data-zoom="{
+					        'displayKey':'colleagueName',
+					        'datasetId':'colleague',
+					        'maximumSelectionLength':'1',
+					        'placeholder':'Escolha o usuário',
+					        'fields':[
+					            {
+					               'field':'colleagueId',
+					               'label':'ID'
+					            },{
+					              'field':'colleagueName',
+					              'label':'Nome',
+					              'standard':'true'
+					            }
+					        ]
+					     }"
+					/>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

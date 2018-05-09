@@ -1,0 +1,183 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="custom.js"></script>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<table>
+								<tr>
+									<td  class="col-md-2">
+										<img src="logo_cmz.png" style="width:100%"/>
+									</td>
+									<td class="col-md-7">
+										<h1 style="font-size:14px; margin:0; padding:0; text-align:center">
+											<span style="font-size:12px; font-weight:light">Sorveteria Creme Mel S. A</span>
+											<br />
+											PROGRAMAÇÃO REFEIÇÃO
+											<br />
+											<span style="font-size:12px; font-weight:light">Final de semana/Feriado</span>
+										</h1>
+									</td>
+									<td class="col-md-3">
+										<p style="margin:0; padding:0; font-size:12px"><b>F.78_0001</b></p>
+										<p style="margin:0; padding:0; font-size:12px">
+											Refeitório
+										</p>
+										<p style="margin:0; padding:0; font-size:12px">
+											N° Versão/Revisão: 1.000 Data: 05/05/2016
+										</p>
+										<p style="margin:0; padding:0; font-size:12px">
+											Página: 1/1
+										</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-info fluigicon-md"></span> Nota</h3>
+						</div>
+						<div class="panel-body">
+							<p>
+								1 - A Programação de final de semana deve ser enviada até <b>às 12h de Sexta-Feira</b>, após este horário o Refeitório considerará como 0 (zero) as refeições para seu departamento;
+							</p>
+							<p>
+								2 - Programação de feriados deve ser enviada com no mínimo <b>02 dias úteis de antecedência</b> ao feriado.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-xs-12 col-md-12 ob">
+						<label for="centro_custo">Centro de Custo</label>
+						<input
+						type="zoom"
+						id = "centro_custo"
+						name="centro_custo"
+						class="form-control"
+						data-zoom="{
+							'displayKey':'DESCRIÇÃO',
+							'datasetId':'Centro_Custo',
+							'maximumSelectionLength':'1',
+							'placeholder':'Escolha o Centro de Custo',
+							'fields':[
+							{
+								'field':'CC',
+								'label':'ID'
+							},{
+								'field':'DESCRIÇÃO',
+								'label':'Descrição',
+								'standard':'true'
+							}
+							]
+						}"
+						/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-food fluigicon-md"></span> Quantidade de Colaboladores</h3>
+						</div>
+						<div class="panel-body">
+							<div class="col-md-12 fs-no-margin fs-no-padding">
+								<div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
+									<table class="table" cellspacing="0" tablename="ingre" noaddbutton=true nodeletebutton=true>
+										<thead>
+											<tr class="tableHeadRow">
+												<th class="excluirPaiFilho"></th>
+												<th class="tableColumn">Data</th>
+												<th class="tableColumn">Café</th>
+												<th class="tableColumn">Almoço</th>
+												<th class="tableColumn">Jantar</th>
+												<th class="tableColumn">Ceia</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="rowPF" id="idx">
+												<td class="excluirPaiFilho">
+													<div class="form-group" style="padding-top:.5rem">
+														<span class="fs-cursor-pointer" id="delPaiFilho" style="color:#aaa; font-weight:bolder;" onclick="delPaiFilho(this)">X</span>
+													</div>
+												</td>
+												<td >
+													<div class="form-group">
+														<input class="form-control" type="text" id="date" name="date" value="" />
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<input class="form-control" onkeyup="valorTotal()" type="number" id="cafe" name="cafe" value="" />
+													</div>
+												</td>
+												<td >
+													<div class="form-group">
+														<input class="form-control" onkeyup="valorTotal()"  type="number" id="almoco" name="almoco" value="" />
+													</div>
+												</td>
+												<td >
+													<div class="form-group">
+														<input class="form-control" onkeyup="valorTotal()"  type="number" id="jantar" name="jantar" value="" />
+													</div>
+												</td>
+												<td >
+													<div class="form-group">
+														<input class="form-control" onkeyup="valorTotal()" type="number" id="ceia" name="ceia" value="" />
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="form-group">
+									<button type="button" style="margin-left:15px" class="btn btn-default inicio" name="inputAdicionar" id="inputAdicionar">Adicionar</button>
+								</div>
+								<table>
+									<tr>
+										<td class="col-md-3">
+											<div class="input-group">
+												<span class="input-group-addon">Café</span>
+												<input type="text" name="cafeTotal" id="cafeTotal" readonly class="form-control">
+											</div>
+										</td>
+										<td class="col-md-3">
+											<div class="input-group">
+												<span class="input-group-addon">Almoço</span>
+												<input type="text" name="almocoTotal" id="almocoTotal" readonly class="form-control">
+											</div>
+										</td>
+										<td class="col-md-3">
+											<div class="input-group">
+												<span class="input-group-addon">Jantar</span>
+												<input type="text" name="jantarTotal" id="jantarTotal" readonly class="form-control">
+											</div>
+										</td>
+										<td class="col-md-3">
+											<div class="input-group">
+												<span class="input-group-addon">Ceia</span>
+												<input type="text" name="ceiaTotal" id="ceiaTotal" readonly class="form-control">
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

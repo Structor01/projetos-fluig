@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicitação de Pagamento">
+    <meta name="author" content="Totvs - GO / Unimed Goiânia">
+
+    <title>Solicita&ccedil;&atilde;o de Pagamento</title>
+
+    <link rel="stylesheet" type="text/css" href="/portal/resources/style-guide/css/fluig-style-guide.min.css">
+    <link href="/portal/resources/css/jquery-ui/jquery.ui.min.css" type="text/css" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="unimed.css"/>
+    <script src="/portal/resources/js/jquery/jquery.js"></script>
+    <script src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+    <script src="/portal/resources/js/mustache/mustache-min.js"></script>
+    <script src="/portal/resources/style-guide/js/fluig-style-guide.min.js"></script>
+
+    <link href="/portal/resources/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css">
+    <link href="/portal/resources/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css">
+    <script src="/portal/resources/style-guide/js/fluig-style-guide-filter.min.js"></script>
+    <script language="javascript" type="text/javascript" src="custom.js"></script>
+    <script language="javascript" type="text/javascript" src="zoom.js"></script>
+    <script language="javascript" type="text/javascript" src="validacao.js"></script>
+    <script language="javascript" type="text/javascript" src="util.js"></script>
+    <!-- vcXMLRPC -->
+    <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+    <script type="text/javascript" src="../vcXMLRPC-mobile.js"></script>
+</head>
+
+<body class="fluig-style-guide">
+<div class="container-fluid" style="padding-bottom: 3rem">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="pull-left">
+                            <img src="logo-unimed.png" width="150px" height="70px" />
+                        </div>
+                    </div>
+                    <div class="col-md-8 containerH1">
+                        <h1 class="fs-no-margin fs-ellipsis fs-full-width">Solicita&ccedil;&atilde;o de Pagamento</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="alert alert-success" role="alert" id='divAlert'></div>
+        </div>
+        <div class="col-md-12">
+            <form name="form" role="form" id="formulario" name="formulario">
+
+                <!--Check relation fsDadosFicha-->
+
+                <ul id="fsDadosFicha" class="list-group col-md-6">
+                    <li class="list-group-item primaryCl" onclick="$('.tgSlide').slideToggle()">
+                        <span class="fluigicon fluigicon-user fluigicon-sm"></span> Solicitante
+                        <span class="fluigicon fluigicon-pointer-down fluigicon-sm fs-float-right"></span>
+                    </li>
+                    <li class="list-group-item tgSlide">
+                        <label>Data Abertura</label>
+                        <div class="input-group date">
+                            <input type="text" class="form-control" name="dataAbertura" id="dataAbertura" readonly>
+                            <div class="input-group-addon">
+                                <span class="fluigicon fluigicon-calendar"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item tgSlide">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" name="nomeSolicitante" id="nomeSolicitante" readonly>
+                        <input type="hidden" id='idSolicitante' name="idSolicitante">
+                    </li>
+                    <li class="list-group-item tgSlide">
+                        <label>Matrícula</label>
+                        <input type="text" class="form-control" name="matriculaSolicitante" id="matriculaSolicitante" readonly>
+                    </li>
+                </ul>
+
+                <!--Check relation fsDadosPesquisa-->
+
+                <ul id="fsDadosPesquisa" class="list-group col-md-6">
+                    <li class="list-group-item primaryCl" onclick="$('.tgSlide').slideToggle()">
+                        <span class="fluigicon fluigicon-tag fluigicon-sm"></span> Fornecedor
+                        <span class="fluigicon fluigicon-pointer-down fluigicon-sm fs-float-right"></span>
+                    </li>
+                    <li class="list-group-item tgSlide">
+                        <label>Unidade</label>
+                        <input type="zoom" class="form-control"
+                               name="zoomUnidadePesq" id="zoomUnidadePesq"
+                               data-zoom="{
+								'displayKey':'CNOMEFIL',
+								'datasetId':'dsUnidadeUnimed',
+								'fields':[{
+								'field':'CEMPRESA',
+								      'label':'Empresa'
+								},{
+								      'field':'CFILEMP',
+								      'label':'Filial'
+								    },
+								    {
+								      'field':'CNOMEFIL',
+								      'label':'Descrição',
+								      'standard':'true',
+								      'search': 'true'
+								    }
+								]
+					}" />
+                    </li>
+                    <!--<li class="list-group-item tgSlide">-->
+                    <!--<label>Nome</label>-->
+                    <!--<input type="text" class="form-control" name="nomeFornecedor" id="nomeFornecedor" placeholder="Pesquise por Nome do Fornecedor">-->
+                    <!--</li>-->
+                    <li class="list-group-item tgSlide">
+                        <label>CPF / CNPJ</label>
+                        <input type="text" class="form-control" name="cpfPessoaFisica" id="cpfPessoaFisica" onkeypress="maskCpf(this)" onblur="maskCpf(this)" placeholder="Pesquise por CPF ou CNPJ">
+                    </li>
+                </ul>
+
+                <fieldset id="fsNav" name="fsNav" class="col-md-12">
+                    <nav style="border:none;" class="navbar navbar-default" role="navigation">
+                        <div id="bs-example-navbar-collapse-1">
+                            <ul class="nav nav-tabs clearfix" role="tablist">
+                                <li class='active'><a href="#navPagamento" id="aNavPagamento" style="display: none;" role="tab"
+                                                      data-toggle="tab">Pagamento</a></li>
+                                <li><a href="#navRateio" id="aNavRateio" style="display: none;" role="tab" data-toggle="tab">Rateio</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <fieldset class="tab-pane" id="navPagamento">
+                                <fieldset id="dadosFornecedor" class="col-md-5">
+                                    <ul id="fsDadosFicha" class="list-group">
+                                        <li class="list-group-item primaryCl" onclick="$('.tgSlide').slideToggle()">
+                                            <span class="fluigicon fluigicon-user fluigicon-sm"></span> Dados do Fornecedor
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Rateio</label>
+                                            <div>
+                                                <!--<input type="checkbox" id="rateio" name="rateio" value="N"/>-->
+                                                <input class="switch" data-on-text="Sim" data-size="small" data-off-text="Não" name="rateio" id="rateio" type="checkbox">
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Nome Favorecido</label>
+                                            <input type="text" class="form-control" name="nomeFavorecido" id="nomeFavorecido" readonly/>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>CPF / CNPJ Favorecido</label>
+                                            <input type="text" class="form-control" name="idFornecedor" id="idFornecedor" readonly>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input type="hidden" id="cEmpresa" name="cEmpresa">
+                                            <input type="hidden" id="cFilEmp" name="cFilEmp">
+                                            <input type="hidden" id="cLojaForn" name="cLojaForn">
+                                            <input type="hidden" id="cCodigoForn" name="cCodigoForn">
+                                            <input type="hidden" id="dtLimVenc" name="dtLimVenc">
+                                            <input type="hidden" id="idRespGerencia" name="idRespGerencia">
+                                            <input type="hidden" id="idRespDiretoria" name="idRespDiretoria">
+                                            <input type="hidden" id="idRateio" name="idRateio">
+                                            <input type="hidden" id="idDirf" name="idDirf" value='2'>
+                                            <label>Unidade</label>
+                                            <input type="zoom" class="form-control"
+                                                   name="zoomUnidade" id="zoomUnidade"
+                                                   data-zoom="{
+															        'displayKey':'CNOMEFIL',
+															        'datasetId':'dsUnidadeUnimed',
+															        'fields':[
+																		{
+															              'field':'CEMPRESA',
+															              'label':'Empresa'
+															            },
+																		{
+															              'field':'CFILEMP',
+															              'label':'Filial'
+															            },
+															            {
+															              'field':'CNOMEFIL',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
+															            }
+															        ]
+															     }" />
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Centro Custo Solicitante</label>
+                                            <input type="hidden" id="CODCCUSTOSOLIC" name="CODCCUSTOSOLIC">
+                                            <input type="zoom" class="form-control"
+                                                   name="zoomCCustoSolic" id="zoomCCustoSolic"
+                                                   data-zoom="{
+															        'displayKey':'CDESCRICAO',
+															        'datasetId':'dsCentroCustoUnimed',
+															        'fields':[
+																		{
+															              'field':'CCODIGO',
+															              'label':'Código'
+															            },
+															            {
+															              'field':'CDESCRICAO',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
+															            }
+															        ]
+															     }" />
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Centro Custo Pagador</label>
+                                            <input type="hidden" id="CODCCUSTO" name="CODCCUSTO">
+                                            <input type="zoom" class="form-control"
+                                                   name="zoomCCusto" id="zoomCCusto"
+                                                   data-zoom="{
+															        'displayKey':'CDESCRICAO',
+															        'datasetId':'dsCentroCustoUnimed',
+															        'fields':[
+																		{
+															              'field':'CCODIGO',
+															              'label':'Código'
+															            },
+															            {
+															              'field':'CDESCRICAO',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
+															            }
+															        ]
+															     }" />
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Tipo Contrato</label>
+                                            <select class="form-control" name="tipoContrato" id="tipoContrato">
+                                                <option value="..">Selecione..</option>
+                                                <option value="Fixo">Fixo</option>
+                                                <option value="Variavel">Variavel</option>
+                                                <option value="Vencido">Vencido</option>
+                                            </select>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Telefone</label>
+                                            <input type="text" class="form-control" name="telefone" id="telefone">
+                                        </li>
+                                        <li class="list-group-item">
+                                            <label>Contato</label>
+                                            <input type="text" class="form-control" name="contato" id="contato">
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                                <fieldset id="dadosPagamento" class="col-md-7">
+                                    <ul id="divDadosPagamento" class="list-group">
+                                        <li class="list-group-item primaryCl" onclick="$('.tgSlide').slideToggle()">
+                                            <span class="fluigicon fluigicon-money fluigicon-sm"></span> Dados do Pagamento
+                                        </li>
+                                        <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+                                            <div class="col-md-6" style="padding: 0; padding-right:15px">
+                                                <label>Valor Bruto (R$)</label>
+                                                <input class="form-control" type="text" name="valorPagamento" id="valorPagamento" size="12" onKeyUp="maskIt(this,event,'###.###.###,##',true)"/>
+                                            </div>
+                                            <div class="col-md-6" style="padding: 0">
+                                                <label>Valor Líquido (R$)</label>
+                                                <input class="form-control" type="text" name="valorPagtoLiquido" id="valorPagtoLiquido" size="12" onKeyUp="maskIt(this,event,'###.###.###,##',true)"/>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Nota Fiscal</label>
+                                            <input class="form-control" type="text" name="notaFiscal" id="notaFiscal"/>
+                                        </li>
+                                        <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+                                            <div class="col-md-6" style="padding: 0; padding-right:15px">
+                                                <label>Data de Vencimento</label>
+                                                <div class="input-group date" id="f_divDtVenc">
+                                                    <input type="text" class="form-control"
+                                                           name="dtVenc" id="dtVenc" data-date=""/>
+                                                    <span class="input-group-addon" id="btnDtVenc">
+														<span class="fluigicon fluigicon-calendar"></span>
+													</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6" style="padding: 0;">
+                                                <label>Data Emissão</label>
+                                                <div class="input-group date" id="f_divDtEmissao">
+                                                    <input type="text" class="form-control"
+                                                           name="dtEmissao" id="dtEmissao" data-date=""/>
+                                                    <span class="input-group-addon" id="btnDtEmissao">
+														<span class="fluigicon fluigicon-calendar"></span>
+													</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Natureza</label>
+                                            <input type="hidden" id="CODNATUREZA" name="CODNATUREZA">
+                                            <input type="zoom" class="form-control"
+                                                   name="zoomNatureza" id="zoomNatureza"
+                                                   data-zoom="{
+															        'displayKey':'CNATUREZA',
+															        'datasetId':'dsNatureza',
+															        'fields':[
+																		{
+															              'field':'CNATUREZA',
+															              'label':'Código'
+															            },
+															            {
+															              'field':'CDESCRICAO',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
+															            }
+															        ]
+															     }" />
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Descri&ccedil;&atilde;o</label>
+                                            <input class="form-control" type="text" name="descNatureza" id="descNatureza" readonly/>
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Conta Contábil</label>
+                                            <input class="form-control" type="text" name="contaContabil" id="contaContabil" readonly/>
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Tipo Pagto</label>
+                                            <input type="hidden" id="CODTIPOPAGTO" name="CODTIPOPAGTO">
+                                            <input type="zoom" class="form-control"
+                                                   name="zoomTipoPagto" id="zoomTipoPagto"
+                                                   data-zoom="{
+															   'displayKey':'CDESCRICAO',
+															        'datasetId':'dsTipoPagamento',
+															        'fields':[
+																		{
+															              'field':'CCODIGO',
+															              'label':'Código'
+															            },
+															            {
+															              'field':'CDESCRICAO',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
+															            }
+															        ]
+															     }" />
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Forma Pagto</label>
+                                            <input type="hidden" id="CODFORMPAGTO" name="CODFORMPAGTO">
+                                            <input type="zoom" class="form-control"
+                                                   name="zoomFormaPagto" id="zoomFormaPagto"
+                                                   data-zoom="{
+															        'displayKey':'CDESCRICAO',
+															        'datasetId':'dsFormaPagto',
+															        'fields':[
+																		{
+															              'field':'CCODIGO',
+															              'label':'Código'
+															            },
+															            {
+															              'field':'CDESCRICAO',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
+															            }
+															        ]
+															     }" />
+                                        </li>
+                                        <li class="list-group-item "  id='divGeraDirf' style="display: none;">
+                                            <label>Gera DIRF?</label>
+                                            <input type="checkbox" id="dirf" name="dirf" value="2"/>
+                                        </li>
+                                        <li class="list-group-item " id='divRetencao' style="display: none;">
+                                            <label>Reten&ccedil;&atilde;o</label>
+                                            <input type="hidden" id="CODRETENCAO" name="CODRETENCAO">
+                                            <input type="zoom" class="form-control"
+                                                   name="zoomConsultaRetencao" id="zoomConsultaRetencao"
+                                                   data-zoom="{
+															        'displayKey':'CDESCRICAO',
+															        'datasetId':'dsConsultaRetencao',
+															        'fields':[
+																		{
+															              'field':'CCODIGO',
+															              'label':'Código'
+															            },
+															            {
+															              'field':'CDESCRICAO',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
+															            }
+															        ]
+															     }" />
+                                        </li>
+                                        <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+                                            <div class="col-md-4" style="padding: 0; padding-right:15px">
+                                                <label>Código do Banco</label>
+                                                <input type="hidden" name="CBANCOFOR" id="CBANCOFOR"/>
+                                                <input class="form-control" type="text" name="cBanco" id="cBanco"/>
+                                            </div>
+                                            <div class="col-md-4" style="padding: 0; padding-right:15px">
+                                                <label>Agência</label>
+                                                <input type="hidden" name="CAGENCIAFOR" id="CAGENCIAFOR"/>
+                                                <input class="form-control" type="text" name="cAgencia" id="cAgencia"/>
+                                            </div>
+                                            <div class="col-md-4" style="padding: 0;">
+                                                <label>Dig. Agência</label>
+                                                <input type="hidden" name="CDIGAGENCIAFOR" id="CDIGAGENCIAFOR"/>
+                                                <input class="form-control" type="text" name="cDigAgencia" id="cDigAgencia"/>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+                                            <div class="col-md-8" style="padding: 0; padding-right:15px">
+                                                <label>Conta Corrente</label>
+                                                <input type="hidden" name="CCONTAFOR" id="CCONTAFOR"/>
+                                                <input class="form-control" type="text" name="cCCorrente" id="cCCorrente"/>
+                                            </div>
+                                            <div class="col-md-3" style="padding: 0; padding-right:15px">
+                                                <label>Dig. CC</label>
+                                                <input type="hidden" name="CDIGCONTAFOR" id="CDIGCONTAFOR"/>
+                                                <input class="form-control" type="text" name="cDigCCorrente" id="cDigCCorrente"/>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Código de Barra</label>
+                                            <input maxlength="500" class="form-control" name="codBarra" id="codBarra" readonly>
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Referente</label>
+                                            <textarea rows="3" class="form-control" name="referente" id="referente"></textarea>
+                                        </li>
+                                        <li class="list-group-item ">
+                                            <label>Histórico</label>
+                                            <textarea rows="3" class="form-control" name="historico" id="historico"></textarea>
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                            </fieldset>
+                            <fieldset class="tab-pane" id="navRateio">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Cadastro de Rateio</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="form-group col-md-9">
+                                            <label for="descricao">Descrição</label>
+                                            <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="descricao"
+                                                    name="descricao"
+                                                    placeholder="Insira uma descrição para este rateio.">
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="descricao">Valor Total</label>
+                                            <input
+                                                    type="text"
+                                                    class="form-control money"
+                                                    id="qtTotalRateio"
+                                                    name="qtTotalRateio"
+                                            >
+                                        </div>
+                                        <ul class="list-group col-md-12 fs-clear-both">
+                                            <li class="list-group-item">
+                                                <span class="fluigicon fluigicon-process-adhoc fluigicon-sm"></span> Lista de Rateio
+                                            </li>
+                                            <li class="list-group-item">
+                                                <div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
+                                                    <table class="table" cellspacing="0" tablename="tableRateio" noaddbutton=true nodeletebutton=true>
+                                                        <thead>
+                                                        <tr class="tableHeadRow">
+                                                            <th class="excluirPaiFilho"></th>
+                                                            <th class="tableColumn">Centro de Custo</th>
+                                                            <th class="tableColumn">Valor (R$)</th>
+                                                            <th class="tableColumn">Percentual</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr class="rowPF" id="idx">
+                                                            <td class="excluirPaiFilho col-md-1">
+                                                                <div class="form-group" style="padding-top:.5rem">
+                                                                    <span class="fs-cursor-pointer" id="delPaiFilho" style="color:#aaa; font-weight:bolder;" onclick="fnWdkRemoveChild(this)">X</span>
+                                                                </div>
+                                                            </td>
+                                                            <td class="col-md-5">
+                                                                <div class="form-group">
+                                                                    <input type="zoom" class="form-control"
+                                                                           name="zoomCCustoRateio" id="zoomCCustoRateio"
+                                                                           data-zoom="{
+															        'displayKey':'CDESCRICAO',
+															        'datasetId':'dsCentroCustoUnimed',
+															        'placeholder':'Escolha o Centro de Custo',
+															        'fields':[
+																		{
+															              'field':'CCODIGO',
+															              'label':'Código'
+															            },
+															            {
+															              'field':'CDESCRICAO',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
+															            }
+															        ]
+															     }" />
+                                                                </div>
+                                                            </td>
+                                                            <td class="col-md-3">
+                                                                <div class="form-group">
+                                                                    <input class="form-control money" type="text" id="valorRateio" name="valorRateio" value="" />
+                                                                </div>
+                                                            </td>
+                                                            <td class="col-md-3">
+                                                                <div class="form-group">
+                                                                    <input class="form-control percentual" type="text" id="percentualRateio" name="percentualRateio" value="" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="form-group">
+                                                    <button type="button" style="margin-left:15px" class="btn btn-default inicio" name="inputAdicionar" onclick="addChild()">Adicionar</button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </nav>
+                </fieldset>
+
+                <fieldset id="fsDadosAprovacao" style='display: none;'>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <span class="fluigicon fluigicon-transfer fluigicon-lg icone-span"></span> Aprova&ccedil;&otilde;es e Processamentos</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="accordion">
+                                <h3 id="h3DivRespGer">Aprova&ccedil;&atilde;o Gerencia</h3>
+                                <div class="accordion" id="divRespGer">
+                                    <div class="row">
+                                        <div class="col-md-4" id='div1'>
+                                            <div class="col-md-12">
+                                                <label for="respGerencia" class="control-label">Respons&aacute;vel</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="respGerencia" id="respGerencia" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="dtAprovGerencia" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="dtAprovGerencia" id="dtAprovGerencia" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="aprovGerencia" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" name="aprovGerencia" id="aprovGerencia">
+                                                    <option value="..">Selecione..</option>
+                                                    <option value="Sim">Sim</option>
+                                                    <option value="Não">N&atilde;o</option>
+                                                    <option value="Cancelar">Cancelar</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <label for="parecerGerencia" class="control-label">Parecer</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <textarea class="form-control" name="parecerGerencia" id="parecerGerencia" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 id="h3DivRespDir">Aprova&ccedil;&atilde;o Diretoria</h3>
+                                <div class="accordion" id="divRespDir">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="respDiretoria" class="control-label">Respons&aacute;vel</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="respDiretoria" id="respDiretoria" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="dtAprovDiretoria" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="dtAprovDiretoria" id="dtAprovDiretoria" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="aprovDiretoria" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" name="aprovDiretoria" id="aprovDiretoria">
+                                                    <option value='..'>Selecione..</option>
+                                                    <option value="Sim">Sim</option>
+                                                    <option value="Não">N&atilde;o</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <label for="parecerDiretoria" class="control-label">Parecer</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <textarea class="form-control" name="parecerDiretoria" id="parecerDiretoria" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 id="h3DivRespDirFin">Aprova&ccedil;&atilde;o Diretoria Financeira</h3>
+                                <div class="accordion" id="divRespDirFin">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="respDirFin" class="control-label">Respons&aacute;vel</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="respDirFin" id="respDirFin" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="dtAprovDirFin" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="dtAprovDirFin" id="dtAprovDirFin" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="aprovDirFin" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" name="aprovDirFin" id="aprovDirFin">
+                                                    <option value="..">Selecione..</option>
+                                                    <option value="Sim">Sim</option>
+                                                    <option value="Não">N&atilde;o</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <label for="parecerDirFin" class="control-label">Parecer</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <textarea class="form-control" name="parecerDirFin" id="parecerDirFin" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 id="h3DivRespCont">Aprova&ccedil;&atilde;o Contabilidade</h3>
+                                <div class="accordion" id="divRespCont">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="respCont" class="control-label">Respons&aacute;vel</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="respCont" id="respCont" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="dtAprovCont" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="dtAprovCont" id="dtAprovCont" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="aprovCont" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" name="aprovCont" id="aprovCont">
+                                                    <option value="..">Selecione..</option>
+                                                    <option value="Sim">Sim</option>
+                                                    <option value="Não">N&atilde;o</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <label for="parecerCont" class="control-label">Parecer</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <textarea class="form-control" name="parecerCont" id="parecerCont" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 id="h3DivRespFin">Aprova&ccedil;&atilde;o Financeiro</h3>
+                                <div class="accordion" id="divRespFin">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="respFin" class="control-label">Respons&aacute;vel</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="respFin" id="respFin" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="dtAprovFin" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <input type="text" name="dtAprovFin" id="dtAprovFin" class="form-control" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="col-md-12">
+                                                <label for="aprovFin" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" name="aprovFin" id="aprovFin">
+                                                    <option value="..">Selecione..</option>
+                                                    <option value="Sim">Sim</option>
+                                                    <option value="Não">N&atilde;o</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <label for="parecerFin" class="control-label">Parecer</label> <br>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <textarea class="form-control" name="parecerFin" id="parecerFin" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //permite digitar somente numeros
+    $('body').on('keypress', '[data-only-numbers]', function(ev) {
+        var k = ev.keyCode || ev.which;
+        //Permite apagar o conteÃºdo do campo usando as teclas 'backspace' ou 'delete' no firefox.
+        //Nos outros navegadores o keypress nÃ£o gera evento.
+        if (k == 8 || k == 46) {
+            return true;
+        }
+        k = String.fromCharCode(k);
+        if (isNaN(k)) {
+            return false;
+        }
+        return true;
+    });
+
+    $('.create-form-components')
+        .on(
+            'keyup',
+            'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]',
+            function() {
+                validationFieldsForm($(this), $(this).parents(
+                    '.form-field').data('type'));
+            });
+
+    $('.create-form-components')
+        .on(
+            'change',
+            'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]',
+            function() {
+                validationFieldsForm($(this), $(this).parents(
+                    '.form-field').data('type'));
+            });
+
+    function validationFieldsForm(field, type) {
+        if (type === "checkbox" || type === "radio") {
+            if (!field.is(':checked')) {
+                field.parents('.form-field').addClass('required');
+            } else {
+                field.parents('.form-field').removeClass('required');
+            }
+        } else {
+            if (!field.val().trim()) {
+                field.parents('.form-field').addClass('required');
+            } else {
+                field.parents('.form-field').removeClass('required');
+            }
+        }
+    }
+
+    var $zoomPreview = $(".zoom-preview");
+    if ($zoomPreview.length) {
+        $zoomPreview.parent().removeClass("input-group");
+        $zoomPreview.remove();
+    }
+
+    var ratings = $(".rating");
+    if (ratings.length > 0)
+        ratingStars(ratings);
+    function ratingStars(stars) {
+        $.each(stars, function(i, obj) {
+            var field = $(this).closest(".form-group")
+                .find(".rating-value");
+            var tgt = $(obj);
+            tgt.html("");
+            var rating = FLUIGC.stars(tgt, {
+                value : field.val()
+            });
+            rating.on("click", function(o) {
+                field.val($(this).index() + 1);
+            });
+        });
+    }
+
+    $.each($("[data-date]"), function(i, o) {
+        var id = $(o).parent().attr("id");
+        FLUIGC.calendar("#" + id);
+    });
+</script>
+
+</body>
+</html>

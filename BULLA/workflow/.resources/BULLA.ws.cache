@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
+ <object class="java.util.HashMap">
+  <void method="put">
+   <string>volume</string>
+   <array class="java.lang.String" length="1">
+    <void index="0">
+     <string>Default</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>camposFormulario, documentoId = 32449</string>
+   <array class="java.lang.String" length="26">
+    <void index="0">
+     <string>acao</string>
+    </void>
+    <void index="1">
+     <string>alinhamentoClienteConsultor</string>
+    </void>
+    <void index="2">
+     <string>alinhamentoClienteData</string>
+    </void>
+    <void index="3">
+     <string>alinhamentoClienteObs</string>
+    </void>
+    <void index="4">
+     <string>conheceMetodoBulla</string>
+    </void>
+    <void index="5">
+     <string>conheceMetodoBullaAplicacao</string>
+    </void>
+    <void index="6">
+     <string>dtFormatted</string>
+    </void>
+    <void index="7">
+     <string>dtReuniao</string>
+    </void>
+    <void index="8">
+     <string>dtReuniaoComercial</string>
+    </void>
+    <void index="9">
+     <string>dtSolicitacao</string>
+    </void>
+    <void index="10">
+     <string>empresa</string>
+    </void>
+    <void index="11">
+     <string>empresaCod</string>
+    </void>
+    <void index="12">
+     <string>empresasDesc</string>
+    </void>
+    <void index="13">
+     <string>jaIniciouCurso</string>
+    </void>
+    <void index="14">
+     <string>ligarClienteData</string>
+    </void>
+    <void index="15">
+     <string>ligarClienteDesc</string>
+    </void>
+    <void index="16">
+     <string>nomeSolicitante</string>
+    </void>
+    <void index="17">
+     <string>objetivoCliente</string>
+    </void>
+    <void index="18">
+     <string>obsReuniaoComercial</string>
+    </void>
+    <void index="19">
+     <string>oQuePrecisaAcontecer</string>
+    </void>
+    <void index="20">
+     <string>prazo</string>
+    </void>
+    <void index="21">
+     <string>responsavel</string>
+    </void>
+    <void index="22">
+     <string>responsavelCod</string>
+    </void>
+    <void index="23">
+     <string>solicitacao</string>
+    </void>
+    <void index="24">
+     <string>terminou</string>
+    </void>
+    <void index="25">
+     <string>tipoAprova</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>mecanismoGrupo</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Setor Administrativo</string>
+      </void>
+      <void property="groupId">
+       <string>Setor Administrativo</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Setor de Estoque</string>
+      </void>
+      <void property="groupId">
+       <string>Setor de Estoque</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Setor de Vendas</string>
+      </void>
+      <void property="groupId">
+       <string>Setor de Vendas</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Diretoria</string>
+      </void>
+      <void property="groupId">
+       <string>Diretoria</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Financeiro Consultoria</string>
+      </void>
+      <void property="groupId">
+       <string>Financeiro</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Sucesso do Cliente</string>
+      </void>
+      <void property="groupId">
+       <string>Sucesso do Cliente</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>CLIENTES BULLA DIAGNÓSTICO FINANCEIRO</string>
+      </void>
+      <void property="groupId">
+       <string>CLIENTES BULLA DIAGNÓSTICO FINANCEIRO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>CLIENTES BULLA CONSULTORIA TRADICIONAL</string>
+      </void>
+      <void property="groupId">
+       <string>CLIENTES BULLA CONSULTORIA TRADICIONAL</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>CLIENTES BULLA CONSULTORIA À DISTÂNCIA</string>
+      </void>
+      <void property="groupId">
+       <string>CLIENTES BULLA CONSULTORIA À DISTÂNCIA</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Moderator group Fluig</string>
+      </void>
+      <void property="groupId">
+       <string>MODERATOR_Fluig</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Member group Fluig</string>
+      </void>
+      <void property="groupId">
+       <string>MEMBER_Fluig</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Moderator group Bulla Consultoria | Interno</string>
+      </void>
+      <void property="groupId">
+       <string>MODERATOR_Bulla</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Member group Bulla Consultoria | Interno</string>
+      </void>
+      <void property="groupId">
+       <string>MEMBER_Bulla</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Moderator group Farmácias Brasília</string>
+      </void>
+      <void property="groupId">
+       <string>MODERATOR_farmacias-brasilia</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Member group Farmácias Brasília</string>
+      </void>
+      <void property="groupId">
+       <string>MEMBER_farmacias-brasilia</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Moderator group Fluig Teste</string>
+      </void>
+      <void property="groupId">
+       <string>MODERATOR_lms-150</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Member group Fluig Teste</string>
+      </void>
+      <void property="groupId">
+       <string>MEMBER_lms-150</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Comercial Consultoria</string>
+      </void>
+      <void property="groupId">
+       <string>Comercial Consultoria</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Coleta de Dados</string>
+      </void>
+      <void property="groupId">
+       <string>Coleta de Dados</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Elaboração de Projetado</string>
+      </void>
+      <void property="groupId">
+       <string>Elaboração de Projetado</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Moderator group CONSULTORIA BULLA</string>
+      </void>
+      <void property="groupId">
+       <string>MODERATOR_lms-203</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Member group CONSULTORIA BULLA</string>
+      </void>
+      <void property="groupId">
+       <string>MEMBER_lms-203</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>expediente</string>
+   <array class="java.lang.String" length="4">
+    <void index="0">
+     <string>Default</string>
+    </void>
+    <void index="1">
+     <string>PADRÃO</string>
+    </void>
+    <void index="2">
+     <string>SETOR ESTOQUE</string>
+    </void>
+    <void index="3">
+     <string>SETOR VENDAS</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>mecanismoPapel</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>admin</string>
+      </void>
+      <void property="roleId">
+       <string>admin</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Líder de Setor</string>
+      </void>
+      <void property="roleId">
+       <string>LiderdeSetor</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Setor Estoque</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Setor_Estoque</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Setor Vendas</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Setor_Vendas</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Setor Crediário</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Setor_Crediario</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Setor Financeiro</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Setor_Financeiro</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Setor Caixa</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Setor_Caixa</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Coleta de Dados</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Coleta_de_Dados</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Sucesso do Cliente</string>
+      </void>
+      <void property="roleId">
+       <string>Sucesso_do_Cliente</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Relatórios</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Relatorios</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Setor Compras</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Setor_Compras</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultor Setor Marketing</string>
+      </void>
+      <void property="roleId">
+       <string>Consultor_Setor_Marketing</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Consultado</string>
+      </void>
+      <void property="roleId">
+       <string>Consultado</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>CEO</string>
+      </void>
+      <void property="roleId">
+       <string>CEO</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gerente de Operações</string>
+      </void>
+      <void property="roleId">
+       <string>Gerente_de_Operacoes</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Financeiro Consultoria</string>
+      </void>
+      <void property="roleId">
+       <string>Financeiro_Consultoria</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Diretor Consultoria</string>
+      </void>
+      <void property="roleId">
+       <string>Diretor_Consultoria</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>mecanismo</string>
+   <array class="[Ljava.lang.Object;" length="9">
+    <void index="0">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Associação</string>
+      </void>
+      <void index="1">
+       <string>Associado</string>
+      </void>
+     </array>
+    </void>
+    <void index="1">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Campo de Formulário</string>
+      </void>
+      <void index="1">
+       <string>Campo Formulário</string>
+      </void>
+     </array>
+    </void>
+    <void index="2">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Executor de Atividade</string>
+      </void>
+      <void index="1">
+       <string>Executor Atividade</string>
+      </void>
+     </array>
+    </void>
+    <void index="3">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupo</string>
+      </void>
+      <void index="1">
+       <string>Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="4">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupos do Colaborador</string>
+      </void>
+      <void index="1">
+       <string>Grupos Colaborador</string>
+      </void>
+     </array>
+    </void>
+    <void index="5">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Papel</string>
+      </void>
+      <void index="1">
+       <string>Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="6">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Grupo</string>
+      </void>
+      <void index="1">
+       <string>Pool Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="7">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Papel</string>
+      </void>
+      <void index="1">
+       <string>Pool Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="8">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Usuário</string>
+      </void>
+      <void index="1">
+       <string>Usuário</string>
+      </void>
+     </array>
+    </void>
+   </array>
+  </void>
+ </object>
+</java>

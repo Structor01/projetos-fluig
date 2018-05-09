@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;JS PECAS&apos;&#x0A;- Original project: &apos;JS PECAS&apos;&#x0A;- Original element: &apos;wcm_vagas&apos;" description="Delete element" element1="wcm/widget/wcm_vagas" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1511454095028" subPackages="false" version="1.0"/>
+</session>

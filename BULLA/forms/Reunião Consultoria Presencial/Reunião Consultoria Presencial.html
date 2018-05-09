@@ -1,0 +1,218 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+    <script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="mask.js"></script>
+    <script type="text/javascript" src="custom.js"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+    <form name="form" role="form">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="panel panel-default marcarReuniao">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Reunião com Cliente</h3>
+                    </div>
+                    <input type="hidden" name="solicitacao" id="solicitacao" value="">
+                    <input type="hidden" name="sequencia" id="sequencia" value="1">
+                    <input type="hidden" name="roleResp" id="roleResp" value="">
+                    <input type="hidden" name="clienteId" id="clienteId" value="">
+                    <div class="panel-body">
+                        <div class="form-group fs-clear-both col-md-12 hide">
+                            <label for="ultimaReuniao">Ultimas Reuniões</label>
+                            <input
+                                    type="zoom"
+                                    id = "ultimaReuniao"
+                                    name="ultimaReuniao"
+                                    class="form-control"
+                                    data-zoom="{
+										'displayKey':'dataReuniao',
+										'datasetId':'dsReuniaoConsultoriaPresencial',
+										'maximumSelectionLength':'1',
+										'placeholder':'Ver Dados de Outras Reuniões',
+										'fields':[
+											{
+											   'field':'dataReuniao',
+											   'label':'Data'
+											}
+										]
+									 }"
+                            />
+                        </div>
+
+                        <div class="form-group fs-clear-both clienteDes col-md-8 hide ob">
+                            <label>Cliente(s)</label>
+                            <input type="text" class="form-control" id="clienteDes" name="clienteDes" value="" readonly>
+                        </div>
+
+                        <div class="form-group fs-clear-both clientes col-md-8 ob">
+                            <label>Cliente(s)</label>
+                            <input
+                                    type="zoom"
+                                    id = "cliente"
+                                    name="cliente"
+                                    class="form-control"
+                                    data-zoom="{
+                                'displayKey':'fantasia',
+                                'datasetId':'dsClientes',
+                                'maximumSelectionLength':'100',
+                                'placeholder':'Escolha a Empresa',
+                             'fields':[
+                             {
+                                'field':'cod',
+                                'label':'Código'
+                            },{
+                                'field':'fantasia',
+                                'label':'Fantasia',
+                            'standard':'true'
+                            },{
+                            'field':'Razão Social',
+                            'label':'razaoSocial'
+                            },{
+                            'field':'doc',
+                            'label':'CNPJ/CPF'
+                            }
+                            ]
+                            }"
+                            />
+                        </div>
+
+                        <div class="form-group col-md-4 ob">
+                            <label>Data de Reunião</label>
+                            <div class="input-group">
+                                <input type="hidden" class="form-control" name="dtFormatted" id="dtFormatted">
+                                <input type="text" class="form-control date" onblur="verificaDataReuniao(this)" name="dtReuniao" id="dtReuniao">
+                                <div class="input-group-addon">
+                                    <span class="fluigicon fluigicon-calendar"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
+                                <table class="table" cellspacing="0" tablename="ingre" noaddbutton=true nodeletebutton=true>
+                                    <thead>
+                                    <tr class="tableHeadRow">
+                                        <th class="excluirPaiFilho"></th>
+                                        <th class="tableColumn">Inicio</th>
+                                        <th class="tableColumn">Fim</th>
+                                        <th class="tableColumn">Observação</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="rowPF" id="idx">
+                                        <td class="excluirPaiFilho">
+                                            <div class="form-group" style="padding-top:.5rem">
+                                                <span class="fs-cursor-pointer" id="delPaiFilho" style="color:#aaa; font-weight:bolder;" onclick="delPaiFilho(this)">X</span>
+                                            </div>
+                                        </td>
+                                        <td class="form-group col-md-2 ob">
+                                            <div class="input-group time">
+                                                <input type="text" class="form-control time" name="inicio" id="inicio">
+                                                <div class="input-group-addon">
+                                                    <span class="fluigicon fluigicon-time"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="form-group col-md-2 ob">
+                                            <div class="input-group time">
+                                                <input type="text" class="form-control time" name="fim" id="fim">
+                                                <div class="input-group-addon">
+                                                    <span class="fluigicon fluigicon-time"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="form-group">
+                                            <input type="text" class="form-control" name="obsHorario" id="obsHorario">
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" style="margin-left:15px" class="btn btn-default inicio" name="inputAdicionar" id="inputAdicionar">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default acaoReuniao hide">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Reunião</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group col-md-4 acao ob">
+                            <label>Ação</label>
+                            <select class="form-control" onchange="this.value == 'R' ? $('.motivoRemacar').removeClass('hide') :  $('.motivoRemacar').addClass('hide')" name="acao" id="acao">
+                                <option value="">Selecione</option>
+                                <option value="A">Avançar</option>
+                                <option value="R">Remarcar</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-12 motivoRemacar hide ob">
+                            <label>Motivo</label>
+                            <textarea class="form-control" name="motivoRemacar" id="motivoRemacar" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default checklist hide">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Check List da Reunião</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
+                                <table class="table" cellspacing="0" tablename="checklist" noaddbutton=true nodeletebutton=true>
+                                    <thead>
+                                    <tr class="tableHeadRow">
+                                        <th width="2%" class="tableColumn"></th>
+                                        <th class="tableColumn"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr id="checklistRow">
+                                        <td>
+                                            <!--<i class="material-icons">check_box</i>-->
+                                            <span class="fs-cursor-pointer" onclick="mark(this)">
+                                                <input type="hidden" class="markInput" name="mark" id="mark" value="">
+                                                <i class="material-icons">check_box_outline_blank</i>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="form-group col-md-4">
+                                                <input type="text" class="form-control" name="atividade" id="atividade" readonly>
+                                                <input type="hidden" class="form-control" name="papel" id="papel" readonly>
+                                            </div>
+                                            <div  class="form-group col-md-12 relatorioPai ob hide">
+                                                <label>Relatório</label>
+                                                <textarea type="text" class="form-control" name="relatorio" id="relatorio" style="resize: vertical" rows="30"></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default historico hide">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Histórico</h3>
+                    </div>
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

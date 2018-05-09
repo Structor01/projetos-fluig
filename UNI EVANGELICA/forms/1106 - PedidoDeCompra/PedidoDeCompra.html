@@ -1,0 +1,422 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script src="jquery.mask.min.js"></script>
+	<script src="custom.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style>
+	.centerAll {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	</style>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<div class="page-content container-fluid">
+			<form name="form" role="form">
+				<div class="row">
+					<div class="col-md-12 col-xs-12">
+						<div class="page-header">
+							<div class="row">
+								<div class="col-md-12 col-xs-12 containerH1">
+									<h1 class="fs-no-margin fs-ellipsis fs-full-width">
+										<img src="img/icone-protheus.png" class="fluigicon"
+										style="width: 25px;" alt="Icone Protheus" />
+										Pedido de Compra
+									</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<img src="img/icone-union.png" class="fluigicon"
+								style="width: 25px;" alt="Icone UniON" /> Solicitação
+							</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-sm-3 col-xs-12">
+								<label>Solicitação</label>
+								<input type="text" class="form-control" name="numeroSolicitacaoProtheus" id="numeroSolicitacaoProtheus" readonly>
+							</div>
+							<div class="form-group col-sm-3 col-xs-12">
+								<label>Cotação</label>
+								<input type="text" class="form-control" name="numeroCotacaoProtheus" id="numeroCotacaoProtheus" readonly>
+							</div>
+							<div class="form-group col-sm-3 col-xs-12">
+								<label>Pedido</label>
+								<input type="text" class="form-control" name="numeroPedidoProtheus" id="numeroPedidoProtheus" readonly>
+							</div>
+							<div class="form-group col-sm-3 col-xs-12">
+								<label>Emissão</label>
+								<input type="text" data-date class="form-control" name="emissao" id="emissao" readonly>
+							</div>
+							<div class="form-group col-sm-6 col-xs-12">
+								<label>Fornecedor</label>
+								<input type="text" class="form-control" name="fornecedor" id="fornecedor" readonly>
+							</div>
+							<div class="form-group col-sm-3 col-xs-12">
+								<label>Contato Fornecedor</label>
+								<input type="text" class="form-control" name="contato" id="contato" readonly>
+							</div>
+							<div class="form-group col-sm-3 col-xs-12">
+								<label>Condição de Pagamento</label>
+								<input type="text" class="form-control" name="condicaoPagamento" id="condicaoPagamento" readonly>
+							</div>
+							<div class="form-group col-sm-4 col-xs-12 hide">
+								<label>Solicitante ID</label>
+								<input type="text" class="form-control" name="numeroSolicitante" id="numeroSolicitante" readonly/>
+							</div>
+							<div class="form-group col-sm-6 col-xs-12">
+								<label>Unidade Solicitante</label>
+								<input type="text" class="form-control" name="filial" id="filial" readonly>
+							</div>
+							<div class="form-group col-sm-6 col-xs-12">
+								<label>Unidade Entrega</label>
+								<input type="text" class="form-control" name="localEntrega" id="localEntrega" readonly>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default justificativa">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<img src="img/icone-union.png" class="fluigicon"
+								style="width: 25px;" alt="Icone UniON" /> Justificativa
+							</h3>
+						</div>
+
+						<div class="panel-body">
+							<div class="form-group col-xs-12">
+								<textarea class="form-control" name="justificativa" id="justificativa" rows="2" readonly></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<img src="img/icone-union.png" class="fluigicon"
+								style="width: 25px;" alt="Icone UniON" /> Histórico da Cotação
+								<span style="font-size:10px; font-weight:light; margin-top:1rem" onclick="$('.histCot').toggle()" class="fs-float-right fs-cursor-pointer">Ocultar / Mostar</span>
+							</h3>
+						</div>
+						<div class="panel-body histCot fs-no-padding">
+							<div class="form-group fs-clearfix fs-no-margin">
+								<div class="table-responsive">
+									<table class="table table-striped fs-no-margin" id="tabelaHistCotacao" tablename="tabelaHistCotacao" noaddbutton="true" nodeletebutton="true" >
+										<thead>
+											<tr>
+												<th width="400">Descrição</th>
+												<th width="300">Fornecedor</th>
+												<th>Quantidade</th>
+												<th>Valor Unit.</th>
+												<th>Total</th>
+												<th>Cond. Pagto</th>
+												<th>Entrega</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="tableBodyRow" detail="true" detailname="tabelaHistCotacao" id="tr_tabelaHistCot" name="tr_itensPedido">
+												<td>
+													<div class="form-group">
+														<input type="text" class="form-control" name="descricaoCot" id="descricaoCot" readonly>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<input type="text" class="form-control" name="fornecedorCot" id="fornecedorCot" readonly>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<input type="text" class="form-control" name="qtdCot" id="qtdCot" readonly>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<input type="text" class="form-control money" name="valorUnCot" id="valorUnCot" readonly>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<input type="text" class="form-control money" name="totalCot" id="totalCot" readonly>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<input type="text" class="form-control" name="condPgCot" id="condPgCot" readonly>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<input type="text" class="form-control" name="entregaCot" id="entregaCot" readonly>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" id="verAnexo" style="margin:1rem;" class="btn btn-primary"><a style="color:white" target="_blank" href="#">Ver Anexo</a></button>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<img src="img/icone-union.png" class="fluigicon"
+								style="width: 25px;" alt="Icone UniON" /> Itens do Pedido
+							</h3>
+
+						</div>
+						<div class="panel-body fs-no-padding">
+							<div class="form-group fs-clearfix fs-no-margin">
+								<input type="hidden" name="tipoEntrega" id="tipoEntrega" value="" />
+								<div class="table-responsive">
+									<table class="table table-striped fs-no-margin" id="tabelaItensPedido" tablename="tabelaItensPedido" noaddbutton="true" nodeletebutton="true" >
+										<thead>
+											<tr></tr>
+										</thead>
+										<tbody>
+											<tr class="tableBodyRow" detail="true" detailname="tabelaItensPedido" id="tr_itensPedido" name="tr_itensPedido">
+												<td style="background:green;">
+													<i id="aprovacao" style="color:white" onclick="reprovar(this)" data-iconaprov class="material-icons fs-cursor-pointer">check_circle</i>
+												</td>
+												<td style="padding:1.5rem">
+													<input type="hidden" id="aprovadoCamp" data-aprov="L" name="aprovadoCamp" value="L" />
+													<div class="form-group col-sm-2 col-xs-12">
+														<label>Item</label>
+														<input class="form-control" type="text" name="item" id="item" readonly/>
+													</div>
+													<div class="form-group col-sm-2 col-xs-12">
+														<label>Quantidade</label>
+														<input class="form-control" type="text" name="quantidade" id="quantidade" readonly/>
+													</div>
+													<div class="form-group col-sm-2 col-xs-12">
+														<label>Quantidade Entregue</label>
+														<input class="form-control" type="text" name="quantidadeEntregue" id="quantidadeEntregue" readonly/>
+													</div>
+													<div class="form-group col-sm-1 col-xs-12">
+														<label>Unidade</label>
+														<input class="form-control" type="text" name="unidadeMedida" id="unidadeMedida" readonly/>
+													</div>
+													<div class="form-group col-sm-5 col-xs-12">
+														<label>Produto</label>
+														<input class="form-control" type="text" name="produto" id="produto" readonly/>
+													</div>
+													<div class="form-group col-sm-3 col-xs-12">
+														<label>Preço</label>
+														<input class="form-control money" type="text" name="preco" id="preco" readonly/>
+													</div>
+													<div class="form-group col-sm-3 col-xs-12">
+														<label>Desconto</label>
+														<input class="form-control money" type="text" name="desconto" id="desconto" readonly/>
+													</div>
+													<div class="form-group col-sm-3 col-xs-12">
+														<label>Total</label>
+														<input class="form-control money" type="text" name="total" id="total" readonly/>
+													</div>
+													<div class="form-group col-sm-1 col-xs-12"></div>
+													<div class="form-group col-sm-2 col-xs-12 verDetalhes">
+														<button type="button" style="margin-top:1.5rem" onclick="modalMaisDetalhes(this)" class="btn btn-link form-control">
+															<span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Ver detalhes
+														</button>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<div class="input-group">
+							<span class="input-group-addon">Valor Total</span>
+							<input type="text" name="valorTotalPedido" value="" id="valorTotalPedido" class="form-control money" placeholder="" readonly>
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<div class="input-group">
+							<span class="input-group-addon">Desconto</span>
+							<input type="text" class="form-control money" value="" id="valorDesconto" name="valorDesconto" placeholder="" readonly>
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<div class="input-group">
+							<span class="input-group-addon">Valor Frete</span>
+							<input type="text" class="form-control money" value="" id="valorFrete" name="valorFrete" placeholder="" readonly>
+						</div>
+					</div>
+					<div class="form-group col-md-3">
+						<div class="input-group">
+							<span class="input-group-addon">Total + IPI</span>
+							<input type="text" class="form-control money" value="" id="valorTotalIPI" name="valorTotalIPI" placeholder="" readonly>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default aprovacao">
+						<div class="panel-heading">
+							<h3 class="panel-title"><img src="img/icone-union.png" class="fluigicon" style="width: 25px;" alt="Icone UniON" />	Aprova&ccedil;&atilde;o</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-sm-12 col-md-4 col-xs-12">
+								<label for="responsavel" class="control-label">Respons&aacute;vel</label> <br>
+								<input type="text" name="respAprov" id="respAprov" class="form-control" readonly>
+							</div>
+							<div class="form-group col-sm-12 col-md-4 col-xs-12">
+								<label for="dtAprov" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+								<input type="text" name="dtAprov" id="dtAprov" class="form-control" readonly>
+							</div>
+
+							<div class="form-group col-sm-12 col-md-4 col-xs-12 ob">
+								<label for="aprovado" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+								<select class="form-control" name="parecerLiberacao" id="parecerLiberacao">
+									<option value="">Selecione</option>
+									<option value="A">Aprovado</option>
+									<option value="J">Justificar</option>
+									<option value="P">Parecer</option>
+									<option value="C">Cancelado</option>
+								</select>
+							</div>
+
+							<div class="form-group col-sm-12 col-md-4 col-xs-12 ob hide zoomColleagueParecer">
+								<input type="hidden" name="ColleagueParecerId" id="ColleagueParecerId" />
+								<label for="aprovado" class="control-label">Reponsável Parecer</label><br>
+								<input
+								type="zoom"
+								id = "zoomColleagueParecer"
+								name="zoomColleagueParecer"
+								data-zoom="{
+									'displayKey':'colleagueName',
+									'datasetId':'colleague',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha o usuário',
+									'fields':[
+									{
+										'field':'colleagueId',
+										'label':'ID'
+									},{
+										'field':'colleagueName',
+										'label':'Nome',
+										'standard':'true'
+									}
+									]
+								}"
+								/>
+							</div>
+
+							<div class="form-group col-xs-12 ob">
+								<label for="parecer" class="control-label">Parecer</label>
+								<textarea class="form-control" name="parecerAprov" id="parecerAprov" rows="2"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default justifica hide">
+						<div class="panel-heading">
+							<h3 class="panel-title"><img src="img/icone-union.png" class="fluigicon" style="width: 25px;" alt="Icone UniON" />	Justificar</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-sm-12 col-md-4 col-xs-12">
+								<label for="respJustifica" class="control-label">Respons&aacute;vel</label> <br>
+								<input type="text" name="respJustifica" id="respJustifica" class="form-control" readonly>
+							</div>
+							<div class="form-group col-sm-12 col-md-4 col-xs-12">
+								<label for="dtAprov" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+								<input type="text" name="dtJustifica" id="dtJustifica" class="form-control" readonly>
+							</div>
+							<div class="form-group col-xs-12 ob">
+								<label for="parecer" class="control-label">Parecer</label>
+								<textarea class="form-control" name="parecerJustifica" id="parecerJustifica" rows="2"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default parecer hide">
+						<div class="panel-heading">
+							<h3 class="panel-title"><img src="img/icone-union.png" class="fluigicon" style="width: 25px;" alt="Icone UniON" />	Parecer</h3>
+						</div>
+						<div class="panel-body">
+							<input type="hidden" name="responsavel_id" id="responsavel_id" readonly>
+							<div class="form-group col-sm-12 col-md-4 col-xs-12">
+								<label for="responsavel" class="control-label">Respons&aacute;vel</label> <br>
+								<input type="text" name="respParecer" id="respParecer" class="form-control" readonly>
+							</div>
+							<div class="form-group col-sm-12 col-md-4 col-xs-12">
+								<label for="dtAprov" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+								<input type="text" name="dtParecer" id="dtParecer" class="form-control" readonly>
+							</div>
+							<div class="form-group col-xs-12 ob">
+								<label for="parecer" class="control-label">Parecer</label>
+								<textarea class="form-control" name="parecerEsp" id="parecerEsp" rows="2"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-warning" id="div_historicoMovimentacao">
+						<div class="panel-heading">
+							<span class="fluigicon fluigicon-library fluigicon-md"></span>
+							<strong>Hist&oacute;rico</strong>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="table-responsive">
+									<table tablename="tabelaHistoricoPedidoCompra" id="tabelaHistoricoPedidoCompra" class="table" noaddbutton="true" nodeletebutton="true">
+										<thead>
+											<tr class="tableHeadRow">
+												<th class="tableColumn">Usu&aacute;rio</th>
+												<th class="tableColumn">Data</th>
+												<th class="tableColumn">Situa&ccedil;&atilde;o</th>
+												<th class="tableColumn">Observa&ccedil;&atilde;o</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="tableBodyRow">
+												<td class="col-sm-2 col-xs-12">
+													<div class="form-field" data-type="textbox" data-field-name="historico">
+														<input type="hidden" name="historicoLoginUsuario" id="historicoLoginUsuario" />
+														<input class="form-control" type="text" name="historicoUsuario" id="historicoUsuario" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-2 col-xs-12">
+													<div class="foHrm-field" data-type="textbox" data-field-name="historicoData">
+														<input class="form-control" type="text" name="historicoData" id="historicoData" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-2 col-xs-12">
+													<div class="form-field" data-type="textbox" data-field-name="historicoSituacao">
+														<input class="form-control" type="text" name="historicoSituacao" id="historicoSituacao" readonly/>
+													</div>
+												</td>
+												<td class="col-sm-6 col-xs-12">
+													<div class="form-field" data-type="textbox" data-field-name="historicoObservacao">
+														<textarea class="form-control" rows="2" name="historicoObservacao" id="historicoObservacao" readonly></textarea>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=Cp1252" />
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulários de Cadastro de Eventos no Sebrae-GO">
+    <meta name="author" content="Luvânio Lopes">
+	<title>Cadastro de Eventos - Sebrae-GO</title>
+	
+	<link rel="stylesheet" type="text/css" href="/resources/style-guide/css/fluig-style-guide.min.css">
+    <script src="/resources/js/jquery/jquery.js"></script>
+    <script src="/resources/js/jquery/jquery-ui.min.js"></script>
+    <script src="/resources/js/mustache/mustache-min.js"></script>
+    <script src="/resources/style-guide/js/fluig-style-guide.min.js"></script>
+
+    <!-- CUSTOM -->
+    <link href="/resources/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css">
+    <link href="/resources/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css">
+    <script src="/resources/style-guide/js/fluig-style-guide-filter.min.js"></script>
+    <script src="/resources/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+    
+<!--     JS -->
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+	<script src="assets/js/zoom.js"></script>
+</head>
+<!-- <body onload='init()'> -->
+<body id="KitEventos">
+	<div class="fluig-style-guide">
+		<!-- Container -->
+		<div class="page-content container-fluid">
+			<div class="row">
+				<!-- Header Form -->
+				<div class="col-md-12 col-xs-12">
+					<div class="page-header">
+						<div class="row">
+							<div class="col-md-8 col-xs-8">
+								<h1 class="fs-no-margin fs-ellipsis fs-full-width">Cadastro de Eventos</h1>
+							</div>
+							<div class="col-md-4 col-xs-4">
+								<div class="pull-right">
+									<img src="/portal/resources/images/1/logo_image.png" width="97px" height="50px" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 col-xs-12">
+					<form class="form-horizontal" role="form" action="">
+						<!--Panel Dados Solicitação -->
+						<fieldset id="fdDadosGerais">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Dados do Contato</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<div class="col-sm-12 col-xs-12">
+											<label for="dsNome" class="control-label">Nome do Evento</label> 
+											<input type="text" name="dsNome" id="dsNome" class="form-control" placeholder="Favor informar nome do evento" />
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="hidden" name="cdEstado" id="cdEstado" />
+										<div class="col-sm-6 col-xs-12">
+											<label for="zoom">Estado</label>
+											<input class="form-control" name="dsUf" id="dsUf"
+												dataset="rm_estados" 
+											    datasetvalue="nmEstado"
+											    type="zoom"
+											    data-zoom="{
+											        'displayKey':'nmEstado',
+											        'datasetId':'rm_estados',
+											        'fields':[
+											            {
+											               'field':'cdEstado',
+											               'label':'UF'
+											              
+											            },{
+											               'field':'nmEstado',
+											               'label':'Nome',
+											               'standard':'true',
+											               'search':true
+											            }
+											        ]
+											     }" 
+											/>
+											<div class="input-group-addon zoom-preview" style="display:none"></div>	
+										</div>
+										<div class="col-sm-6 col-xs-12">
+											<label for="zoom">Cidade</label>
+											<input class="form-control" name="dsCidade" id="dsCidade"
+												dataset="rm_municipio" 
+											    datasetvalue="NOMEMUNICIPIO"
+											    type="zoom"
+											    data-zoom="{
+											        'displayKey':'NOMEMUNICIPIO',
+											        'datasetId':'rm_municipio',
+											        'fields':[
+											            {
+											               'field':'CODETDMUNICIPIO',
+											               'label':'UF'
+											              
+											            },{
+											               'field':'NOMEMUNICIPIO',
+											               'label':'Município',
+											               'standard':'true',
+											               'search':true
+											            }
+											        ]
+											     }" 
+											/>
+											<div class="input-group-addon zoom-preview" style="display:none"></div>	
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 col-xs-12">
+											<label for="dsLocal" class="control-label">Local</label>
+											<textarea class="form-control" rows="3" name="dsLocal" id="dsLocal"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-12 col-xs-12">
+											<label for="dsEndereco" class="control-label">Endereço</label>
+											<textarea class="form-control" rows="3" name="dsEndereco" id="dsEndereco" placeholder="Ex: Av. Brasil, 1234"></textarea>
+										</div>
+									</div>		
+								</div>
+							</div>
+						</fieldset>
+							<!-- Panel Período -->
+						<fieldset id="fdPeriodo">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Período</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<div class="col-sm-6 col-xs-12">
+											<label for="dtInicio" class="control-label">Data de Início</label>
+											<input type="date" name="dtInicio" class="form-control" id="dtInicio"/>
+										</div>
+										<div class="col-sm-6 col-xs-12">
+											<label for="hrInicio" class="control-label">Hora de Início</label>
+											<input type="time" name="hrInicio" class="form-control" id="hrInicio" />
+										</div>
+									</div>	
+									<div class="form-group">
+										<div class="col-sm-6 col-xs-12">
+											<label for="dtFim" class="control-label">Data de Término</label>
+											<input type="date" name="dtFim" class="form-control" id="dtFim"/>
+										</div>
+										<div class="col-sm-6 col-xs-12">
+											<label for="hrFim" class="control-label">Hora de Término</label>
+											<input type="time" name="hrFim" class="form-control" id="hrFim" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						<!--Panel Detalhamento-->
+						<fieldset id="fdDetalhamento">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Detalhamento</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<div class="col-sm-6 col-xs-12">
+											<label for="zoom">Tipo de Evento</label>
+											<input class="form-control" name="dsTipo" id="dsTipo"
+												dataset="dsTipoEvento" 
+											    datasetvalue="Tipo"
+											    type="zoom"
+											    data-zoom="{
+											        'displayKey':'Tipo',
+											        'datasetId':'dsTipoEvento',
+											        'fields':[
+											            {
+											               'field':'Tipo',
+											               'label':'Tipo',
+											               'standard':'true',
+											               'search':true
+											            }
+											        ]
+											     }" 
+											/>
+											<div class="input-group-addon zoom-preview" style="display:none"></div>	
+										</div>
+										<div class="col-sm-6 col-xs-12">
+											<label for="zoom">Unidade Vinculada</label>
+											<input class="form-control" name="dsUnidade" id="dsUnidade"
+												dataset="dsUnidadeEvento" 
+											    datasetvalue="Unidade"
+											    type="zoom"
+											    data-zoom="{
+											        'displayKey':'Unidade',
+											        'datasetId':'dsUnidadeEvento',
+											        'fields':[
+											            {
+											               'field':'Unidade',
+											               'label':'Unidade',
+											               'standard':'true',
+											               'search':true
+											            }
+											        ]
+											     }" 
+											/>
+											<div class="input-group-addon zoom-preview" style="display:none"></div>	
+										</div>
+										<div class="col-sm-12 col-xs-12">
+											<label for="dsResponsavel" class="control-label">Responsável</label> 
+											<input type="text" name="dsResponsavel" id="dsResponsavel" class="form-control" />
+										</div>
+										<div class="col-sm-6 col-xs-12">
+											<label for="dsTelefone" class="control-label">Telefone</label> 
+											<input type="text" name="dsTelefone" id="dsTelefone" class="form-control" />
+										</div>
+										<div class="col-sm-6 col-xs-12">
+											<label for="dsEmail" class="control-label">E-mail</label> 
+											<input type="text" name="dsEmail" id="dsEmail" class="form-control" />
+										</div>
+										<div class="col-sm-12 col-xs-12">
+											<label for="dsPublicoAlvo" class="control-label">Público-alvo</label>
+											<textarea class="form-control" rows="3" name="dsPublicoAlvo" id="dsPublicoAlvo"></textarea>
+										</div>
+										<div class="col-sm-12 col-xs-12">
+											<label for="dsObservacao" class="control-label">Observação</label>
+											<textarea class="form-control" rows="3" name="dsObservacao" id="dsObservacao" ></textarea>
+										</div>
+										<div class="col-sm-12 col-xs-12">
+											<label for="dsValor" class="control-label">Valor da Inscrição por Participante</label> 
+											<div class="input-group">
+											    <span class="input-group-addon">R$</span>
+											    <input type="text" name="dsValor" id="dsValor" class="form-control" />
+											</div>
+											
+										</div>
+										<div class="col-sm-12 col-xs-12">
+									        <label for="dsAnexo">Anexo</label>
+									        <input type="file" id="dsAnexo" name="dsAnexo">
+									    </div>
+									</div>
+								</div>
+							</div>
+						</fieldset>			
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

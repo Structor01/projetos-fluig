@@ -1,0 +1,17 @@
+function setSelectedZoomItem(selectedItem) {
+  if( selectedItem.inputId == "gestor"){
+    $("#gestor_matricula").val(selectedItem["colleagueId"]);
+  }
+
+  if( selectedItem.inputId == "colaborador"){
+    validar(selectedItem["colleagueId"]);
+    $("#colaborador_matricula").val(selectedItem["colleagueId"]);
+  }
+}
+
+function validar(e) {
+  var c1 = DatasetFactory.createConstraint("colaborador_matricula", e, e, ConstraintType.MUST);
+  var datasetUser = DatasetFactory.getDataset("colleague", null, [ c1 ], null);
+  var colleague = new Array();
+  (datasetUser.rowsCount == 0) ? alert('Sim'+e) : alert('Não'+e);
+}

@@ -1,0 +1,105 @@
+function enableFields(form) {
+	var activity = getValue('WKNumState');
+	if (activity == 1 || activity == 0) {
+		//form.setEnabled('vr_pro_total', false);
+		form.setEnabled('num_solicitao', false);
+		form.setEnabled('vr_rea_deslo', false);
+		form.setEnabled('vr_rea_alimen', false);
+		form.setEnabled('vr_rea_gerais', false);
+		form.setEnabled('vr_rea_total', false);
+		form.setEnabled('vr_acer_vr_pro_total', false);
+		form.setEnabled('nm_solicitante', false);
+		form.setEnabled('checkbox15opc0', false);
+	}
+	if(activity != 0) {
+		form.setEnabled('vr_pro_gerais', false);
+	}
+	if (activity == 16) {
+		form.setEnabled('num_solicitao', false);
+		form.setEnabled('nm_solicitante', false);
+		form.setEnabled('num_cpf_Solicit', false);
+		form.setEnabled('li_empresa', false);
+		form.setEnabled('li_empresa', false);
+		form.setEnabled('li_area', false);
+		form.setEnabled('mot_viagem', false);
+		form.setEnabled('loc_origem', false);
+		form.setEnabled('loc_destino', false);
+		form.setEnabled('dat_saida', false);
+		form.setEnabled('dat_retorno', false);
+		form.setEnabled('vr_pro_deslo', false);
+		form.setEnabled('vr_pro_alimen', false);
+		form.setEnabled('vr_pro_total', false);
+		form.setEnabled('num_solic_orca', false);
+		form.setEnabled('checkbox15opc0', true);
+		form.setEnabled('vr_rea_total', false);
+		form.setEnabled('vr_acer_total', false);
+	}
+	if (activity == 4) {
+		form.setEnabled('nm_solicitante', false);
+		form.setEnabled('num_solicitao', false);
+		form.setEnabled('num_cpf_Solicit', false);
+		form.setEnabled('li_empresa', false);
+		form.setEnabled('li_area', false);
+		form.setEnabled('mot_viagem', false);
+		form.setEnabled('loc_origem', false);
+		form.setEnabled('loc_destino', false);
+		form.setEnabled('dat_saida', false);
+		form.setEnabled('dat_retorno', false);
+		form.setEnabled('vr_pro_deslo', false);
+		form.setEnabled('vr_pro_alimen', false);
+		form.setEnabled('vr_pro_total', false);
+		form.setEnabled('num_solic_orca', false);
+		form.setEnabled('checkbox15opc0', false);
+		form.setEnabled('vr_rea_deslo', false);
+		form.setEnabled('vr_rea_alimen', false);
+		form.setEnabled('vr_rea_gerais', false);
+		form.setEnabled('vr_rea_total', false);
+		form.setEnabled('vr_acer_total', false);
+	}
+	if (activity == 20) {
+		form.setEnabled('num_solicitao', false);
+		form.setEnabled('nm_solicitante', false);
+		form.setEnabled('num_cpf_Solicit', false);
+		form.setEnabled('li_empresa', false);
+		form.setEnabled('li_area', false);
+		form.setEnabled('mot_viagem', false);
+		form.setEnabled('loc_origem', false);
+		form.setEnabled('loc_destino', false);
+		form.setEnabled('dat_saida', false);
+		form.setEnabled('dat_retorno', false);
+		form.setEnabled('vr_pro_deslo', false);
+		form.setEnabled('vr_pro_alimen', false);
+		form.setEnabled('vr_pro_total', false);
+		form.setEnabled('num_solic_orca', false);
+		form.setEnabled('checkbox15opc0', false);
+		form.setEnabled('vr_rea_deslo', false);
+		form.setEnabled('vr_pro_alimen', false);
+		form.setEnabled('vr_rea_gerais', false);
+		form.setEnabled('vr_rea_total', false);
+		form.setEnabled('vr_acer_total', false);
+	}
+	if (activity == 12) {
+		form.setEnabled('num_solicitao', false);
+		form.setEnabled('nm_solicitante', false);
+		form.setEnabled('num_cpf_Solicit', false);
+		form.setEnabled('num_cpf_Solicit', false);
+		form.setEnabled('li_empresa', false);
+		form.setEnabled('li_empresa', false);
+		form.setEnabled('li_area', false);
+		form.setEnabled('mot_viagem', false);
+		form.setEnabled('loc_origem', false);
+		form.setEnabled('loc_destino', false);
+		form.setEnabled('dat_saida', false);
+		form.setEnabled('dat_retorno', false);
+		form.setEnabled('vr_pro_deslo', false);
+		form.setEnabled('vr_pro_alimen', false);
+		form.setEnabled('vr_pro_total', false);
+		form.setEnabled('num_solic_orca', false);
+		form.setEnabled('checkbox15opc0', false);
+		form.setEnabled('vr_rea_deslo', false);
+		form.setEnabled('vr_rea_alimen', false);
+		form.setEnabled('vr_rea_gerais', false);
+		form.setEnabled('vr_rea_total', false);
+		form.setEnabled('vr_acer_total', false);
+	}
+}

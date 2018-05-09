@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--####################################################
+##### Desenvolvido: Cristiano R. Ferreira        #######
+##### Email: cristianorodrigues@crememel.com.br  #######
+##### Data: 21/03/2016                           #######
+########################################################-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<title>F.45_0004 - Adiantamento Financeiro</title>
+	<script language="JavaScript" type="text/javascript" src="MascaraValidacao.js"></script> 
+	<script language="JavaScript" type="text/javascript" src="zoom.js"></script> 
+</head>
+<body>
+    <form name="Form_Sol_Adiant_Financeiro">
+    <!-- Cabeçalho da página -->
+	<table id="cor_tabela" width="99%"> 
+		<tr style="font-size:13px">
+		 <td width="20%">
+			<img alt="Creme Mel" src="crememel.png" style="float:left; height:58px; width:59px" />
+			<img alt="Zecas" src="zecas.png" style="float:left; height:58px; width:94px" />
+	     </td>
+	    
+	     <td width="45%">
+	       	<center>Sorveteria Creme Mel S.A<br />
+			<b>ADIANTAMENTO FINANCEIRO </b></center>
+	     </td>
+	     <td width="30%">
+	       <b>F.45_0004</b><br />
+	           Financeiro<br />
+	           N&deg; Vers&atilde;o/Revis&atilde;o: 1.002 Data: 18/04/2016<br />
+	           P&aacute;gina: 1/1 
+	      </td>
+	     </tr>
+	 </table>
+     <!-- Fim do Cabeçalho da página -->
+    
+    <!-- ############################################################################################### -->
+    
+    <!-- Inicio do corpo do formulario -->
+    <br />
+    <table id="borda" width="99%">
+	 	<tr>
+	 		<td id="titulo" colspan="6">
+	 			DADOS DO SOLICITANTE
+	 		</td>
+	 	</tr>
+	 	
+	 	<tr id="espaco">
+	 		<td>
+	 			Nome:
+	 		</td>
+	 		<td>
+	 			<input type="text" name="nome_solic" size="40px"/>
+	 		</td>
+	 		<td>
+	 			Matr&iacute;cula:
+	 		</td>
+	 		<td colspan="2">
+	 			<input type="text" name="mat_solic" size="40px" autofocus />
+	 		</td>
+            <td></td>
+	 	</tr>
+        
+		<tr id="espaco">
+			<td>
+	 			Cargo:
+	 		</td>
+	 		<td>
+	 			<input type="text" name="cargo_solic" size="40px"/>
+	 		</td>
+	 		<td>
+	 			<a href="#" data-toggle="tooltip" title="N&uacute;mero do Centro de Custo">C.C:</a>
+	 		</td>
+	 		<td colspan="2">
+	 			<input type="text" name="centrocusto_solic" size="40px" />
+	 		</td>
+	 		<td></td>
+		</tr>
+ 	
+        <tr id="espaco">
+	 		<td>
+	 			<a href="#" data-toggle="tooltip" title="Registro Geral">RG:</a>
+	 		</td>
+	 		<td>
+	 			<input type="text" name="rg_solic" size="40px" onKeyPress="MascaraRG(Form_Sol_Adiant_Financeiro.rg_solic);" maxlength="14" />
+	 		</td>
+	 		<td>
+	 			<a href="#" data-toggle="tooltip" title="Cadastro de Pessoa F&iacute;sica">CPF:</a>
+	 		</td>
+	 		<td colspan="3">
+	 			<input type="text" name="cpf_solic" size="40px" onBlur="ValidarCPF(Form_Sol_Adiant_Financeiro.cpf_solic);" onKeyPress="MascaraCPF(Form_Sol_Adiant_Financeiro.cpf_solic);" maxlength="14" />
+	 		</td>
+	 	</tr>
+        
+        <tr id="espaco">
+            <td>
+	 			Data Nascimento:
+	 		</td>
+	 		<td colspan="5">
+	 			<input type="text" name="dt_solic" id="dt_solic" onKeyPress="mascaraInteiro();" OnKeyUp="mascaraData(this);" size="40px" maxlength="11"/>
+	 		</td>
+        </tr>
+        
+        <tr id="espaco">
+	 		<td>
+	 			E-mail:
+	 		</td>
+	 		<td>
+	 			<input type="text" name="email_solic" size="40px"/>
+	 		</td>
+	 		<td>
+	 			Unidade:
+	 		</td>
+	 		<td colspan="2">
+                <select name="unidade_solic" id="selectUnidade">
+                    <option value="0101">CREME MEL - MATRIZ</option>          
+                    <option value="0104">CREME MEL - VITORIA DA CONQUISTA</option> 
+                    <option value="0105">CREME MEL - BRASILIA</option>
+                    <option value="0106">CREME MEL - BETIM</option>
+                    <option value="0107">CREME MEL - UBERL&Acirc;NDIA</option>                    
+                    <option value="0111">CREME MEL - MONTES CLAROS</option>
+                    <option value="0112">CREME MEL - MARANH&Atilde;O</option>
+					<option value="0113">CREME MEL - TOCANTINS</option>
+                    <option value="0201">ZECAS SORVETES</option>
+					<option value="OUTROS">OUTROS</option>
+                </select>
+	 		</td>
+            <td></td>
+	 	</tr>
+        
+        <tr id="espaco">
+            <td>
+	 			Situa&ccedil;&atilde;o Funcional:
+	 		</td>
+	 		<td colspan="5">
+	 			<input type="radio" name="sit_func_solic" value="efetivo">Efetivo &nbsp;
+				<input type="radio" name="sit_func_solic" value="terceiro">Terceiro &nbsp;
+                <input type="radio" name="sit_func_solic" id="sit_func_solic" value="outros" onclick="javascript:habilita_outros();">Outros
+                <input type="text" name="sit_func_solic_text" id="sit_func_solic_text" size="40px"/>
+	 		</td>
+        </tr>
+	 </table>
+	 
+	 <br />
+	 
+	 <table id="borda" width="99%">
+        <tr>
+	 		<td id="titulo" colspan="6">
+	 			ADIANTAMENTO
+	 		</td>
+	 	</tr>
+	 	
+        <tr id="espaco">
+	 		<td colspan="6">
+	 			<b>Discriminar abaixo: data de recolhimento, unidade a recolher, valor e nome do gestor imediato</b>
+	 		</td>
+        </tr>
+         
+        <tr>
+            <td>
+	 			Data:
+            </td>
+            <td>
+              <input type="text" name="data_adiant_fin" id="data_adiant_fin" size="40px" onKeyPress="mascaraInteiro();" OnKeyUp="mascaraData_fin(this);" maxlength="10"/>   
+            </td>
+            <td>
+	 			Unidade:
+            </td>
+            <td>
+                <select name="unid_adiant_fin" id="unid_adiant_fin">
+                    <option value="0101">CREME MEL - MATRIZ</option>          
+                    <option value="0104">CREME MEL - VITORIA DA CONQUISTA</option> 
+                    <option value="0105">CREME MEL - BRASILIA</option>
+                    <option value="0106">CREME MEL - BETIM</option>
+                    <option value="0107">CREME MEL - UBERL&Acirc;NDIA</option>
+                    <option value="0111">CREME MEL - MONTES CLAROS</option>
+                    <option value="0112">CREME MEL - MARANHR&Atilde;O</option>
+					<option value="0113">CREME MEL - TOCANTINS</option>
+                    <option value="0201">ZECAS SORVETES</option>
+					<option value="OUTROS">OUTROS</option>
+                </select>
+            </td>
+            <td>
+	 			Valor:
+            </td>
+            <td>
+                R$<input type="text" name="valor_adiant_fin" id="valor_adiant_fin" size="20px" onKeyUp="moeda(this);" onblur="validaMoeda();"/>
+            </td>
+        </tr>
+		<tr>
+			<td colspan="6">
+			<div id="td_Gest" style="visibility:">
+				Nome do gestor imediato:&nbsp; <input type="text" name="GestCol" id="GestCol" />
+					<a href="javascript:openZoom();" name="link_zoom1" id="link_zoom1" >
+						<img src="zoom2.gif" id="zoom1" border="0"/>
+					</a>
+					<input type="hidden" name="GestMat" id="GestMat" />
+			</div>
+			</td>
+		</tr>
+       </table>
+       
+       <br />
+       
+	   <table id="borda" width="99%">
+        <tr>
+	 		<td id="titulo" colspan="6">
+	 			JUSTIFICATIVA DO ADIANTAMENTO
+	 		</td>
+	 	</tr>
+        <tr>
+            <td colspan="6">
+                <textarea name="det_obj_adiant" style="margin: 0px; width: 99.4%; height: 60px;"></textarea>
+            </td>
+        </tr>
+	   </table>
+	 
+	   <br />
+	 
+       <table id="borda" width="99%">
+        <tr>
+	 		<td id="titulo" colspan="6">
+	 			APROVA&Ccedil;&Atilde;O
+	 		</td>
+	 	</tr>
+       	<tr>
+			<td colspan="6">
+				<center>
+	 			<input type="radio" name="aprova" id="aprova_sim" value="aprova_sim" />Sim&nbsp;
+				<input type="radio" name="aprova" id="aprova_nao" value="aprova_nao" />N&atilde;o &nbsp;
+				<input type="radio" name="aprova" id="aprova_talvez" value="aprova_talvez" checked hidden />
+				<br />
+				<textarea name="aprova_detalhe" style="margin: 0px; width: 99.4%; height: 60px;" id="aprova_detalhe">Em caso negativo, favor detalhar motivo.</textarea>
+				</center>
+	 		</td>
+		</tr>
+	   </table>
+	  
+	   <br />
+	   
+	   <table id="borda" width="99%" >
+        <tr>
+	 		<td id="titulo" colspan="5">
+	 			COMPROVANTE RECEBIMENTO
+	 		</td>
+	 	</tr>
+		
+		<tr id="espaco" align="center">
+			<td width="30%">
+				<br /><br />
+                &nbsp;
+	 		</td>
+			
+	 		<td>
+                <br /><br />
+				__________________________,&nbsp;
+	 		</td>
+			<td>
+				<br /><br />
+                ____/____/____&nbsp;
+	 		</td>
+			<td>
+                <br /><br />
+				________________________________________
+	 		</td>
+			
+			<td width="30%">
+				<br /><br />
+                &nbsp;
+	 		</td>
+	 	</tr>
+		
+		<tr id="espaco" align="center"> 
+			<td width="30%">
+                &nbsp;
+	 		</td>
+			
+	 		<td>				
+               <center> Cidade </center>
+	 		</td>
+			<td>				
+                Data
+	 		</td>
+			<td>
+                Assinatura por extenso
+	 		</td>
+			
+			<td width="30%">
+                &nbsp;
+	 		</td>
+	 	</tr>
+	   </table>
+	  
+	   <br />
+	   
+	   <table id="borda" width="99%">
+        <tr>
+	 		<td id="titulo_sup" colspan="6">
+	 			NOTA: Caso o valor coletado n&atilde;o seja justificado/acertado em no M&Aacute;XIMO 30 dias, o mesmo ser&aacute; descontado em folha de pagamento. 
+	 		</td>
+	 	</tr>
+	   </table>
+    
+    <!-- Fim do corpo do formulario  -->
+    
+    <!-- ############################################################################################### -->
+    
+    <!-- Rodapé da página -->
+    <br />
+	<table style="width:99%; text-align:center;" border="1px" id="borda" cellspacing="0" cellpadding="2">
+      <tr align="center" style="font-weight:bold;">
+        <td>Armazenamento</td>
+        <td>Acesso/Prote&ccedil;&atilde;o</td>
+        <td>Recupera&ccedil;&atilde;o</td>
+        <td>Reten&ccedil;&atilde;o</td>
+        <td>Descarte</td>
+      </tr>
+      <tr align="center">
+        <td>Eletr&ocirc;nico no ECM e em pasta f&iacute;sica no Financeiro</td>
+        <td>Envolvidos/ECM (eletr&ocirc;nico) e Equipe Financeiro (f&iacute;sico)</td>
+        <td>Por data e nome do solicitante</td>
+        <td>Indeterminado (eletr&ocirc;nico) e 5 anos (f&iacute;sico)</td>
+        <td>Deletar (eletr&ocirc;nico) e Destruir (f&iacute;sico)</td>
+      </tr>
+    </table>
+    <br />
+    <!-- Fim do rodapé da página -->
+</form>
+</body>
+</html>

@@ -1,0 +1,140 @@
+ <html>
+	<head>
+		<!-- Includes Padrões ExtJS -->
+		<link rel="stylesheet" type="text/css" href="/BPMSLibs/extjs/resources/css/ext-all.css">
+		<link rel="stylesheet" type="text/css" href="/BPMSLibs/bpms/form/estilo.css">
+		<link rel="stylesheet" type="text/css" href="/BPMSLibs/bpms/form/lovCombo.css">
+		<link rel="stylesheet" type="text/css" href="/BPMSLibs/bpms/form/GroupSummary.css">
+
+		<script type="text/javascript" src="/BPMSLibs/extjs/adapter/ext/ext-base-debug.js"></script>
+		<script type="text/javascript" src="/BPMSLibs/extjs/ext-all-debug.js"></script>
+		<script type="text/javascript" src="/BPMSLibs/extjs/src/locale/ext-lang-pt_BR.js"></script>
+		
+		<script type="text/javascript" src="/BPMSLibs/bpms/form/Ext.ux.TextMask.js"></script>
+		<script type="text/javascript" src="/BPMSLibs/bpms/form/lovCombo.js"></script>
+		<script type="text/javascript" src="/BPMSLibs/bpms/form/GroupSummary.js"></script>
+		
+		<style type="text/css">
+			.tabelaPrioridade {
+				font-size:12px;
+				background-color:#ffffff;
+				padding:5px;
+			}
+			.tabelaPrioridade th {
+				background-color:#2a2a2a;
+				color:#ffffff;
+				font-weight:bold;
+				padding:5px;
+			}
+			.tabelaPrioridade td {
+				padding:5px;
+			}
+			.corsim {
+				background-color:#d2d2d2;
+			}
+		</style>
+		
+		<title id="page-title">BPM Solutions</title>
+	</head>
+	<body>
+	
+	<!-- Interface de Comunicação -->
+	<script type="text/javascript" src="/BPMSLibs/bpms/form/transitionData2Form.js"></script>
+	
+	<!-- SOAP -->
+	<script type="text/javascript" src="/BPMSLibs/bpms/form/soapclient.js"></script>
+	
+	<!-- Load Dynamic Files -->
+	<script type="text/javascript" src="/BPMSLibs/bpms/form/onDemandLoad.js"></script>
+	
+	<!-- Money Field -->
+	<script type="text/javascript" src="/BPMSLibs/bpms/form/moneyField.js"></script>
+	
+	<!-- Regras do Formulário -->
+	
+	<script type="text/javascript" src="rules.js"></script>
+	<script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript" src="interface.js"></script>
+	
+	<!-- Formulário Principal -->
+	<form style="display:none;">
+	
+	<!-- Controle Internos -->
+	<input type="text" name="hashpai" style="display:none;" disabledmode="control"/>
+	<input type="text" name="ultAtendimento" style="display:none;" disabledmode="control"/>
+	<input type="text" name="atiAtual" style="display:none;" disabledmode="control"/>
+	
+	<!-- Solicitação -->
+	<input type="text" name="numSolicitacao" style="display:none;" disabledmode="control"/>
+	<input type="text" name="datSolicitacao" style="display:none;" disabledmode="control"/>
+	<input type="text" name="staSolicitacao" style="display:none;" disabledmode="control"/>
+	<input type="text" name="matSolicitante" style="display:none;" disabledmode="control"/>
+	<input type="text" name="nomSolicitante" style="display:none;" disabledmode="control"/>
+	<input type="text" name="matNomeado" style="display:none;" disabledmode="control"/>
+	<input type="text" name="nomNomeado" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codUnidade" style="display:none;" disabledmode="control"/>
+	<input type="text" name="desUnidade" style="display:none;" disabledmode="control"/>
+	<input type="text" name="graRamSolicitante" style="display:none;" disabledmode="control"/>
+	<input type="text" name="numTelefone" style="display:none;" disabledmode="control"/>
+	<textarea name="desChamado" style="display:none;" disabledmode="control"></textarea>
+	
+	<!-- Informações de Classificação do Chamado -->
+	<input type="text" name="codPrioridade" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codTipSolicitacao" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codDetalhe" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codTendencia" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codGravidade" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codUrgencia" style="display:none;" disabledmode="control"/>
+	<input type="text" name="graBasConhecimento" style="display:none;" disabledmode="control"/>
+	
+	<!-- Atendimento Nível 1 -->
+	<input type="text" name="datIniAteNivel1" style="display:none;" disabledmode="control"/>
+	<input type="text" name="datFimAteNivel1" style="display:none;" disabledmode="control"/>
+	<input type="text" name="matResAteNivel1" style="display:none;" disabledmode="control"/>
+	<input type="text" name="nomResAteNivel1" style="display:none;" disabledmode="control"/>
+	<input type="text" name="desArqAneProNivel1" style="display:none;" disabledmode="control"/>
+	<input type="text" name="conAltAneProNivel1" style="display:none;" disabledmode="control"/>
+	<input type="text" name="numDocAneProNivel1" style="display:none;" disabledmode="control"/>
+	<input type="text" name="verDocAneProNivel1" style="display:none;" disabledmode="control"/>
+	<input type="text" name="desAcaAteNivel1" style="display:none;" disabledmode="control"/>
+	<textarea name="desAnaAteNivel1" style="display:none;" disabledmode="control"></textarea>
+	
+	<!-- Atendimento Nível 2 -->
+	<input type="text" name="datIniAteNivel2" style="display:none;" disabledmode="control"/>
+	<input type="text" name="datFimAteNivel2" style="display:none;" disabledmode="control"/>
+	<input type="text" name="matResAteNivel2" style="display:none;" disabledmode="control"/>
+	<input type="text" name="nomResAteNivel2" style="display:none;" disabledmode="control"/>
+	<input type="text" name="desArqAneProNivel2" style="display:none;" disabledmode="control"/>
+	<input type="text" name="conAltAneProNivel2" style="display:none;" disabledmode="control"/>
+	<input type="text" name="numDocAneProNivel2" style="display:none;" disabledmode="control"/>
+	<input type="text" name="verDocAneProNivel2" style="display:none;" disabledmode="control"/>
+	<input type="text" name="desAcaAteNivel2" style="display:none;" disabledmode="control"/>
+	<textarea name="desAnaAteNivel2" style="display:none;" disabledmode="control"></textarea>
+	
+	<!-- Atendimento Nível 3 -->
+	<input type="text" name="datIniAteNivel3" style="display:none;" disabledmode="control"/>
+	<input type="text" name="datFimAteNivel3" style="display:none;" disabledmode="control"/>
+	<input type="text" name="matResAteNivel3" style="display:none;" disabledmode="control"/>
+	<input type="text" name="nomResAteNivel3" style="display:none;" disabledmode="control"/>
+	<input type="text" name="desArqAneProNivel3" style="display:none;" disabledmode="control"/>
+	<input type="text" name="conAltAneProNivel3" style="display:none;" disabledmode="control"/>
+	<input type="text" name="numDocAneProNivel3" style="display:none;" disabledmode="control"/>
+	<input type="text" name="verDocAneProNivel3" style="display:none;" disabledmode="control"/>
+	<input type="text" name="desAcaAteNivel3" style="display:none;" disabledmode="control"/>
+	<textarea name="desAnaAteNivel3" style="display:none;" disabledmode="control"></textarea>
+	
+	<!-- Avaliação do Atendimento -->
+	<input type="text" name="codAvaliacao" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codCorAtencao" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codAgiAtendimento" style="display:none;" disabledmode="control"/>
+	<input type="text" name="codSolApresentada" style="display:none;" disabledmode="control"/>
+	<textarea name="desComentario" style="display:none;" disabledmode="control"></textarea>
+	
+	<textarea name="msgError" style="display:none;" disabledmode="control"></textarea>
+	</form>
+	
+	<!-- Container de Form de Upload -->
+	<iframe style="display:none;" id="iframeUpload" src="/BPMSLibs/bpms/upload/upload.html"></iframe>
+	
+	</body>
+</html>

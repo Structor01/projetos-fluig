@@ -1,0 +1,713 @@
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/components/base64/jquery.base64.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<style type="text/css">
+		.fw-table-tr td {vertical-align: top;}
+	</style>
+</head>
+<body onload="fwInit()">
+<div class="fluig-style-guide">
+<form class="form-horizontal" name="form" role="form">
+<input type="hidden" id="ecmvalidate" name="ecmvalidate" value=""/>
+<input type="hidden" id="ecmcompany" name="ecmcompany" value=""/>
+<input type="hidden" id="companyId" name="companyId" value=""/>
+<input type="hidden" id="branchId" name="branchId" value=""/>
+<input type="hidden" id="WKDef" name="WKDef" value=""/>
+<input type="hidden" id="WKVersDef" name="WKVersDef" value=""/>
+<input type="hidden" id="WKNumProces" name="WKNumProces" value=""/>
+<input type="hidden" id="WKNumState" name="WKNumState" value=""/>
+<div class="page-header">
+<h1>Solicitação de Justificativa de horário
+</h1>
+</div>
+<div id="GPEW011" class="panel">
+		
+		
+
+<div class="fw-form-view fs-display-none panel-group" id="GPEW011_RH3">
+    <div class="panel panel-default">
+<div class="panel-body panel-collapse collapse in fs-clearfix" id="GPEW011_RH3_PANEL">
+		
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="RH3_CODIGO" class="col-sm-4 control-label">Código<span style="color:red">*</span>:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control fw-input-uppercase" name="RH3_CODIGO" id="RH3_CODIGO" readonly="readonly"  maxlength="5"/>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="RH3_MAT" class="col-sm-4 control-label">Matricula:</label>
+        <div class="col-sm-8">
+			<div class="input-group fs-full-width">
+<input type="text" class="form-control" name="RH3_MAT" id="RH3_MAT" readonly="readonly"  maxlength="6"/>
+<div class="input-group-addon" onClick="openZoom('RH3_MAT','SRA')">
+            	<span class="fluigicon fluigicon-search fs-cursor-pointer"></span>
+            </div>
+          	</div>
+        </div>
+    </div>
+		
+</div>
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="RA_ADMISSA" class="col-sm-4 control-label">Data de Admissao:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control " name="RA_ADMISSA" id="RA_ADMISSA" mask="00/00/0000" readonly="readonly"/>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="RH3_NOME" class="col-sm-4 control-label">Nome:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control fw-input-uppercase" name="RH3_NOME" id="RH3_NOME" readonly="readonly"  maxlength="50"/>
+        </div>
+    </div>
+		
+</div>
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="RH3_DTSOLI" class="col-sm-4 control-label">Data Solic.:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control " name="RH3_DTSOLI" id="RH3_DTSOLI" mask="00/00/0000" readonly="readonly"/>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="RH3_EMP" class="col-sm-4 control-label">Empresa:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RH3_EMP" id="RH3_EMP" readonly="readonly"  maxlength="2"/>
+        </div>
+    </div>
+		
+</div>
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="RH3_EMPINI" class="col-sm-4 control-label">Empresa Inic:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RH3_EMPINI" id="RH3_EMPINI" readonly="readonly"  maxlength="2"/>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="RH3_EMPAPR" class="col-sm-4 control-label">Empresa Apr.:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RH3_EMPAPR" id="RH3_EMPAPR" readonly="readonly"  maxlength="2"/>
+        </div>
+    </div>
+		
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+		
+		
+
+<div class="fw-form-view fs-display-none panel-group" id="GPEW011_RH">
+    <div class="panel panel-default">
+<div class="panel-body panel-collapse collapse in fs-clearfix" id="GPEW011_RH_PANEL">
+		
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="RF0_FILIAL" class="col-sm-4 control-label">Filial:</label>
+        <div class="col-sm-8">
+			<div class="input-group fs-full-width">
+<input type="text" class="form-control" name="RF0_FILIAL" id="RF0_FILIAL" readonly="readonly"  maxlength="8"/>
+<div class="input-group-addon" onClick="openZoom('RF0_FILIAL','SM0')">
+            	<span class="fluigicon fluigicon-search fs-cursor-pointer"></span>
+            </div>
+          	</div>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="RF0_MAT" class="col-sm-4 control-label">Numero da Matricula:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RF0_MAT" id="RF0_MAT" readonly="readonly"  maxlength="10"/>
+        </div>
+    </div>
+		
+</div>
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="TMP_NOME" class="col-sm-4 control-label">Nome:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="TMP_NOME" id="TMP_NOME" readonly="readonly"  maxlength="30"/>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="RF0_DTPREI" class="col-sm-4 control-label">Data Inicio Periodo:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RF0_DTPREI" id="RF0_DTPREI" readonly="readonly"  maxlength="12"/>
+        </div>
+    </div>
+		
+</div>
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="RF0_DTPREF" class="col-sm-4 control-label">Data Fim do Periodo:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RF0_DTPREF" id="RF0_DTPREF" readonly="readonly"  maxlength="12"/>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="RF0_HORINI" class="col-sm-4 control-label">Horario Inicial:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RF0_HORINI" id="RF0_HORINI" readonly="readonly"  maxlength="9"/>
+        </div>
+    </div>
+		
+</div>
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="RF0_HORFIM" class="col-sm-4 control-label">Horario Final:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RF0_HORFIM" id="RF0_HORFIM" readonly="readonly"  maxlength="9"/>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="RF0_CODABO" class="col-sm-4 control-label">Cod.Pre Abono:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control" name="RF0_CODABO" id="RF0_CODABO" readonly="readonly"  maxlength="7"/>
+        </div>
+    </div>
+		
+</div>
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="TMP_ABOND" class="col-sm-4 control-label">Descrição:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control fw-input-uppercase" name="TMP_ABOND" id="TMP_ABOND" readonly="readonly"  maxlength="50"/>
+        </div>
+    </div>
+
+</div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+		
+		
+
+<div class="fw-form-view fs-display-none panel-group" id="GPEW011_APR">
+    <div class="panel panel-default">
+<div class="panel-body panel-collapse collapse in fs-clearfix" id="GPEW011_APR_PANEL">
+		
+	
+<div class="row">
+
+    <div class="form-group col-sm-6">
+<label for="TMP_OPER" class="col-sm-4 control-label">Operação:</label>
+        <div class="col-sm-8">
+<select type="text" class="form-control" name="TMP_OPER" id="TMP_OPER" >
+			
+<option value="1">Aprovar</option>
+			
+<option value="2">Reprovar</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+<label for="TMP_OBSER" class="col-sm-4 control-label">Observação:</label>
+        <div class="col-sm-8">
+<input type="text" class="form-control fw-input-uppercase" name="TMP_OBSER" id="TMP_OBSER"   maxlength="250"/>
+        </div>
+    </div>
+		
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</div>
+</form>
+</div>
+<script>
+var fluigData = {load:true};
+var _WKDef, _WKVersDef, _WKNumProces, _WKNumState;
+var p = {
+    byPassKeys: [9, 16, 17, 18, 36, 37, 38, 39, 40, 91],
+    getCaret: function (el) {
+        var sel,
+            pos = 0,
+            ctrl = el.get(0),
+            dSel = document.selection,
+            cSelStart = ctrl.selectionStart;
+
+        // IE Support
+        if (dSel && !~navigator.appVersion.indexOf("MSIE 10")) {
+            ctrl.focus();
+            sel = dSel.createRange ();
+            sel.moveStart ('character', -ctrl.value.length);
+            pos = sel.text.length;
+        } 
+        // Firefox support
+        else if (cSelStart || cSelStart === '0') {
+            pos = cSelStart;
+        }
+        
+        return pos;
+    },
+    setCaret: function(el, pos) {
+        var range, ctrl = el.get(0);
+
+        if (ctrl.setSelectionRange) {
+            ctrl.focus();
+            ctrl.setSelectionRange(pos,pos);
+        } else if (ctrl.createTextRange) {
+            range = ctrl.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    },
+    behaviour: function(e) {
+        e = e || window.event;
+        var keyCode = e.keyCode || e.which;
+        var input = $(e.target);
+        if ($.inArray(keyCode, p.byPassKeys) === -1) {
+
+            var changeCaret, caretPos = p.getCaret(input);
+            if (caretPos < input.val().length) {
+                changeCaret = true;
+            }
+
+            var new_val = input.val().toUpperCase();
+            if (new_val !== input.val())               
+                input.val(new_val);
+
+            // change caret but avoid CTRL+A
+            if (changeCaret && !(keyCode === 65 && e.ctrlKey)) {
+                p.setCaret(input, caretPos);     
+            }
+        }
+    }
+};
+
+var fwViewState = function() {
+    var c1, c2, constraints, dataset;
+    var currState = 1;
+    var containers = [];
+
+    if (_WKDef == ""){
+    	$('.fw-form-view').toggleClass('fs-display-none');
+        return;
+    }
+
+    if (!_WKNumState)
+        _WKNumState = 0;
+
+    // tratamento de view por atividade (1=editavel, 2=visivel, 3=oculto)
+    
+    if (_WKNumState > 1) {
+        if (DatasetFactory.getDatasetValues){
+           var filter = new Object();
+           filter["processTaskPK.processInstanceId"] = _WKNumProces;
+           filter["processTaskPK.movementSequence"] = _WKNumState - 1;
+           dataset = DatasetFactory.getDatasetValues("processTask", filter);
+
+           currState = dataset.length == 0 ? 0 : dataset[0]['choosedSequence'];
+       }
+       else{
+           c1 = DatasetFactory.createConstraint("processTaskPK.processInstanceId", _WKNumProces, _WKNumProces, ConstraintType.MUST);
+           c2 = DatasetFactory.createConstraint("processTaskPK.movementSequence", _WKNumState - 1, _WKNumState - 1, ConstraintType.MUST);
+           constraints = new Array(c1, c2);
+           dataset = DatasetFactory.getDataset("processTask", null, constraints, null);
+
+           currState = dataset.values.length == 0 ? 0 : dataset.values[0]["choosedSequence"];
+      }
+    }
+
+    c1 = DatasetFactory.createConstraint("sequence", currState, currState, ConstraintType.MUST);
+    constraints = new Array(c1);
+    dataset = DatasetFactory.getDataset(_WKDef + "_VIEWSTATE", null, constraints, null);
+
+    for (var i = 0; i < dataset.values.length; i++) {
+        if (dataset.values[i]["sequence"] == currState) {
+            var id = '#' + dataset.values[i]["id"].trim();
+            switch (dataset.values[i]["option"]) {
+                case "1": // alteravel
+                    $(id).toggleClass('fs-display-none').find(".date").each(setCalendar);
+                    containers.push(id);
+                    break;
+                
+                case "2": // visivel
+                    var $view = $(id);
+                    $view.toggleClass('fs-display-none');
+                    $('input[type!="checkbox"],textarea', $view).unbind().prop('readOnly', true);
+                    $('select,input[type="checkbox"],button', $view).prop('disabled', true);
+                    $('td > input', $view).each(function (index, elem){
+                                                    var $elem = $(elem);
+                                                    var onclick = $elem.attr('onclick');
+                                                    if (onclick && onclick.indexOf('wdkAddChild') >= 0){
+                                                        $elem.parents('tr').hide();
+                                                    }
+                                                });
+                    $('.bpm-mobile-trash-column', $view).find('i').hide();
+                    containers.push(id);
+                    break;
+                
+                case "3": // oculto
+                    containers.push(id);
+                    break;
+            }
+        }
+    }
+
+    $('.fw-form-view').each(function(){
+        var $this = $(this);
+        if (containers.indexOf('#' + $this.attr('id')) < 0){
+            $this.toggleClass('fs-display-none').find(".date").each(setCalendar);
+        }
+    });
+};
+
+var fwGetFluigData = function(){
+    var companyId, result;
+    
+    if (fluigData.load){
+        fluigData.load = false;
+        fluigData.idmUrl = getWKProperty('IDENTITYURL');
+        fluigData.appId = getWKProperty('APPLICATIONID');
+
+        if (fluigData.idmUrl && fluigData.idmUrl.substr(fluigData.idmUrl.length - 1) == "/")
+            fluigData.idmUrl = fluigData.idmUrl.substr(0,url.length-1);
+
+        companyId = $('#companyId').val();
+        if ($.trim(companyId).length > 0){
+            fluigData.company = companyId;
+        }
+        else{
+            result = parent.WCMSpaceAPI.IdentityContextRest.COMPANY({async: false});
+            if (result && result.id){
+                fluigData.company = result.id;
+                $('#ecmcompany').val(result.id);
+            }
+      }
+    }
+    return fluigData;
+};
+
+var fwGetFieldsValues = function(){
+    var $ = jQuery;
+    var json = {};
+    var fieldArr = [];
+
+    $("table[tablename]").each(function(){
+        var $this = $(this);
+        var gridName = $this.attr('tablename');
+
+        json[gridName] = {index: $this.data('index'), rows:[]};
+        
+        if (!json[gridName].index){
+            json[gridName].index = 0;
+        }
+
+        $("tr .fw-table-td", this).each(function(index){
+            if (index == 0){
+                $("input, select, texarea", this).each(function(){
+                  var fieldName = $(this).attr("name");
+                  if (fieldName){
+                    fieldArr.push(fieldName);
+                  }
+                });
+            }
+            else {
+                var row = {};
+                $("input, select, texarea", this).each(function(){
+                  var fieldName = $(this).attr("name");
+                  if (fieldName && fieldName.lastIndexOf('___') > 0){
+                    fieldArr.push(fieldName);
+                    row[fieldName.substring(0, fieldName.lastIndexOf('___'))] = $(this).val();
+                  }
+                });
+                json[gridName].rows.push(row);
+            }
+        })
+    });
+
+    $("input, select, texarea").each(function(){
+      var fieldName = $(this).attr("name");
+      if (fieldName && fieldArr.indexOf(fieldName) < 0)
+        json[fieldName] = $(this).val();
+    });
+
+    return $.base64.encode(JSON.stringify(json));
+};
+
+var fwOpenRequestSAML = function(uri, id, relayState){
+  var url = uri + '/cloudpass/launchpad/launchApp/' + encodeURI(id) + '?RelayState=' + encodeURI(escape(relayState))
+  window.open(url);
+};
+
+var fwRelatedAction = function(param){
+  var json = decodeURI(param);
+  var relatedActionContent = JSON.parse(json);
+
+  var fluigData = fwGetFluigData();
+
+  if (fluigData.company && fluigData.idmUrl && fluigData.idmAppId){
+
+    var relayState = "company="+fluigData.company+"&" +
+                     "fluig=1&" +
+                     "module="+relatedActionContent.module+"&" +
+                     "routine="+relatedActionContent.routine+"&" +
+                     "operation="+relatedActionContent.operation+"&" +
+                     "row="+ fwGetFieldsValues();
+    var uri = fluigData.idmUrl + "/cloudpass/launchpad/launchApp";
+
+    fwOpenRequestSAML(uri, fluigData.idmAppId, relayState);
+  }else{
+    console.log("fluigData");
+    console.dir(fluigData);
+    FLUIGC.toast({
+        message: "Nao foi possivel encontrar os dados do Fluig Identity. Verifique se o sincronismo do TOTVS Microsiga Protheus com FluigIdentiy foi realizado e as informações do dataset MP_PARAM",
+        type: 'danger'
+    });
+  }
+};
+
+var openZoom = function(field, key){
+    var obj = {userCode : parent.WCMAPI.userCode, userEmail : parent.WCMAPI.userEmail};
+
+    $("input, select, texarea").each(function(){
+      var fieldName = $(this).attr("name");
+      obj[fieldName] = $(this).val();
+    });
+    var fluigData = fwGetFluigData();
+    var company = '';
+    if (fluigData.company)
+        company = fluigData.company;
+
+    window.open('fwzoom.html?key=' + key +
+        '&field=' + field +
+        '&memVar=' + $.base64.encode(JSON.stringify(obj)) +
+        '&company=' + company,
+        'fwzoom', 'width=640,height=480,location=0,directories=no,menubar=0,scrollbars=0,resizable=1,titlebar=0');
+};
+
+var setCalendar = function(){
+    var readonly = $('input:first-child', this).attr('readonly');
+    if (readonly == undefined || readonly == '')
+        FLUIGC.calendar('#' + $(this).attr('id'));
+};
+
+var tdPreset = function(td, columns, collapse){
+    var $td = $(td);
+    var selector = '';
+    var firstId = $('input[id]', $td).first().attr('id');
+    var suffix;
+
+    if (!firstId)
+       firstId = $('span[id]', $td).first().attr('id');
+
+    suffix = firstId.substr(firstId.lastIndexOf('___'));
+
+    if (columns !== null){
+        for (var i = 0; i < columns.length; i++){
+            selector += '[id!="' +  columns[i] + suffix + '"]';
+        }
+    }
+    else {
+        selector += '[id!="' +  firstId + '"]';
+    }
+
+    // função para minimizar / maximizar, trocando o icone + / -
+    var click = function(){
+            var $this = $(this);
+            var selector = $this.data('selector');
+            $('.form-control[type!="hidden"]' + selector, $this.parents('.fw-table-td')).parents('.form-group').toggle();
+            $('span', $this).toggleClass('fluigicon-minus-circle').toggleClass('fluigicon-plus-circle');
+        } 
+
+    if (collapse){
+        $('.form-control[type!="hidden"]' + selector, $td).parents('.form-group').hide();
+        $(".fw-table-collapse", $td).data('selector', selector).click(click).find('span').removeClass('fluigicon-minus-circle').addClass('fluigicon-plus-circle');
+    }
+    else {
+        $(".fw-table-collapse", $td).data('selector', selector).click(click);
+    }
+
+    $td.click(function(){
+        var $td = $(this);
+        var $tr = $td.parent();
+
+        $('tr', $td.parents('tbody')[0]).each(function (index){
+            if ($(this).is($tr)){
+                $($tr.parents('table')[0]).data('index', index);
+                return false;
+            }
+        });
+    });
+};
+
+var addItem = function(tablename){
+    var $table = $("table[tablename='" + tablename + "']");
+    
+    wdkAddChild(tablename);
+    
+    $table.find('.fw-table-td:last').each(function(){
+        var $this = $(this);
+
+        tdPreset(this, $table.data('collapseFields'), false);
+
+        // looking for inputs with data-mask attribute
+        $('*[data-mask]', $this).each(function() {
+            var input = $(this),
+                options = {};
+
+            if (input.attr('data-mask-reverse') === 'true') {
+                options.reverse = true;
+            }
+
+            if (input.attr('data-mask-maxlength') === 'false') {
+                options.maxlength = false;
+            }
+
+            input.mask(input.attr('data-mask'), options);
+        });
+
+        $('*[mask]', $this).each(function() {
+            var input = $(this);
+            input.mask(input.attr('mask'));
+        });
+
+        $('.date', $this).each(setCalendar);
+
+        $('.fw-input-uppercase', $this).on('keyup.fw-table-input-uppercase', p, function(e){ e.data.behaviour(e); });
+    });
+};
+
+var fwInit = function(){
+
+    _WKDef = $('#WKDef').val();
+    _WKVersDef = $('#WKVersDef').val();
+    _WKNumProces = $('#WKNumProces').val();
+    _WKNumState = $('#WKNumState').val();
+
+    // verifica integração com Identity
+    if (!FLUIGC.utilities.checkDevice().isMobile){
+        var fluigData = fwGetFluigData();
+
+        if ($('#relatedActions') && (fluigData.idmUrl && fluigData.idmurl != "") &&
+           (fluigData.idmAppId && fluigData.idmAppId != "") &&
+           (fluigData.company && fluigData.company != "") ){
+
+            $('#relatedActions').show();
+        }
+
+        if ($.trim(_WKDef).length == 0){
+            _WKDef = WKDef;
+            _WKVersDef = WKVersDef;
+            _WKNumProces = WKNumProces;
+            _WKNumState = WKNumState;
+        }
+    }
+
+    // picture @! do ADVPL
+    $('.fw-input-uppercase').on('keyup.fw-input-uppercase', p, function(e){ e.data.behaviour(e); });
+
+    // tratamento de view por atividade (1=editavel, 2=visivel, 3=oculto)
+    fwViewState();
+
+    $('table[tablename]').each(function(){
+        var $this = $(this);
+        var tablename = $this.attr('tablename');
+        var collapseFields = getWKProperty(tablename);
+
+        if (collapseFields){
+            collapseFields = collapseFields.split(',');
+        }
+        
+        $this.data('collapseFields', collapseFields);
+
+        // tratamento para guardar linha do grid selecionada
+        $('.fw-table-td', $this).each(function(){
+            if ($(this).parent().attr('detail') === undefined){
+                tdPreset(this, collapseFields, true);
+            }
+        });
+    });    
+};
+
+var getWKProperty = function(property){
+    var value = null;
+
+    try {
+        if (DatasetFactory.getDatasetValues){
+            var filter = new Object();
+            filter["advancedProcessPropertiesPK.version"] = _WKVersDef;
+            filter["advancedProcessPropertiesPK.processId"] = _WKDef;
+            filter["advancedProcessPropertiesPK.propertyId"] = property;
+            var dataset = DatasetFactory.getDatasetValues("advancedProcessProperties", filter);
+
+            if (dataset.length > 0){
+                value = dataset[0]['propertieValue'];
+            }
+        }
+        else {
+            var c1 = DatasetFactory.createConstraint("advancedProcessPropertiesPK.version", _WKVersDef, _WKVersDef, ConstraintType.MUST);
+            var c2 = DatasetFactory.createConstraint("advancedProcessPropertiesPK.processId", _WKDef, _WKDef, ConstraintType.MUST);
+            var c3 = DatasetFactory.createConstraint("advancedProcessPropertiesPK.propertyId", property, property, ConstraintType.MUST);
+            var constraints = new Array(c1, c2, c3);
+            var dataset = DatasetFactory.getDataset("advancedProcessProperties", null, constraints, null);
+
+            if (dataset.values.length > 0){
+                value = dataset.values[0]['propertieValue'];
+            }
+        }
+    }
+    catch(e){
+        console.log(e);
+    }
+    return value;
+};
+</script>
+</body>
+</html>
+

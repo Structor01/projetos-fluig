@@ -1,0 +1,77 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<div class="panel panel-default" id="div_feedback">
+				<div class="panel-heading">
+					<span class="fluigicon fluigicon-hammer fluigicon-sm"></span>
+					<strong>Cadastro Comprador X Grupo de Produto</strong>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12 col-sm-4 col-md-4" id="div_feedBackProduto">
+							<label>Comprador</label></label><label class="campo-obrigatorio">
+								<sup>&lowast;</sup>
+							</label>
+							<input type="hidden" name="codigoSolicitante" id="codigoSolicitante" value="" />
+							<input style="width: 250px'" type="zoom" class="form-control" name="ZoomSolicitante" id="ZoomSolicitante"
+							data-zoom="{
+								'displayKey':'NOMECOMPRADOR',
+								'datasetId':'dsConsultaCompradores',
+								'fields':[
+								{
+									'field':'FLUIG',
+									'label':'Código'
+								},{
+									'field':'NOMECOMPRADOR',
+									'label':'Nome',
+									'standard':'true',
+									'search': 'true'
+								},{
+									'field':'DESCRICAO',
+									'label':'Descrição'
+								}
+								]
+							}" />
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4" id="div_feedBackProcesso">
+							<label>Grupo de Produto</label><label class="campo-obrigatorio">
+								<sup>&lowast;</sup>
+							</label>
+							<input type="hidden" name="codGrupo" id="codGrupo" value="" />
+							<input
+							type="zoom"
+							class="form-control"
+							name="zoomGrupoProduto" id="zoomGrupoProduto"
+							data-zoom="{
+								'displayKey':'CDESCRICAO',
+								'datasetId':'dsConsultaGrupoProduto',
+								'fields':[
+								{
+									'field':'CCODIGO',
+									'label':'Código'
+								},
+								{
+									'field':'CDESCRICAO',
+									'label':'Descrição',
+									'standard':'true',
+									'search': 'true'
+								}
+								]
+							}" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript" src="javascript/zoom.js"></script>
+</body>
+</html>

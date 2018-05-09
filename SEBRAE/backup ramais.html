@@ -1,0 +1,178 @@
+<div class="page-content container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel-group">
+                <div class="panel panel-default panel-body" id="panelTable">
+                    <div class="form-horizontal">
+                        <!-- datatable -->
+                        <div class="scrooltable table-responsive" id="target" data-isolated-scroll>
+                            <script type="text/template" class="mydatatable-template-row-area-buttons">
+                                <div id="datatable-area" class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="pull-right">
+                                                <h4><span class="label label-primary">P&aacute;gina <i id="pages"></i></span></h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </script>
+                            <script type="text/template" class="template_datatable">
+                                <tr>
+                                    <td>{{id}}</td>
+                                    <td>{{nome}}</td>
+                                    <td>{{email}}</td>
+                                    <td>{{datadenascimento}}</td>
+                                    <td>{{telefone}}</td>
+                                    <td>{{celular}}</td>
+                                    <td>{{ramal}}</td>
+                                    <td>{{departamento}}</td>
+                                    <td>{{unidade}}</td>
+                                    <td>{{cargo}}</td>
+                                    <td>{{papel}}</td>
+                                </tr>
+                            </script>
+                            <div id="tableRamal"></div>
+                        </div>
+                        <script type="text/template" class="template_datatable_edit">
+
+							</script>
+                    </div>
+                </div>
+
+                <div class="panel panel-default panel-body" id="modalProgressBar" style="display: none;">
+                    <div class="form-horizontal">
+                        <!-- progressBar -->
+                        <div class="progress" style="display: none;">
+                            <div class="progress-bar" id="progressBar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default panel-body" id="mapGoogle" style="display: none;">
+                    <div class="form-horizontal">
+                        <div id="map"></div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default panel-body" id="modalCadastro" style="display: none;">
+                    <div class="form-horizontal">
+                        <fieldset class="clearfix">
+                            <legend>
+                                <h3 class="panel-title"><strong>Cadastro de Dist&acirc;ncia</strong></h3>
+                            </legend>
+                            <div class="form-group">
+                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                    <div class="form-field" data-type="zoomfield" data-show-properties="" data-field-name="uforigem">
+                                        <label for="uforigem" class="control-label">UF Origem</label>
+                                        <select class="form-control" name="uforigem" id="uforigem" data-size="small">
+                                            <option value="--">Selecione</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="AP">Amap&aacute;</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Cear&aacute;</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Esp&iacute;rito Santo</option>
+                                            <option value="GO">Goi&aacute;s</option>
+                                            <option value="MA">Maranh&atilde;o</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="PA">Par&aacute;</option>
+                                            <option value="PB">Para&iacute;ba</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piau&iacute;</option>
+                                            <option value="PR">Paran&aacute;</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RO">Rond&ocirc;nia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="SP">S&atilde;o Paulo</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                    <div class="form-field" data-type="zoomfield" data-show-properties="" data-field-name="munorigem">
+                                        <input type="hidden" name="codorigem" id="codorigem"/>
+                                        <input type="hidden" name="cidorigem" id="cidorigem"/>
+                                        <label for="munorigem" class="control-label">Munic&iacute;pio Origem</label>
+                                        <input type="zoom" class="form-control" name="munorigem" id="munorigem" data-size="small" data-zoom="{'displayKey':'nmMunicipio','filterValues':'cdEstado,GO','datasetId':'rm_municipio_estado','fields':[{'field':'cdMunicipio','label':'C&oacute;digo Munic&iacute;pio','standard':'true','search':'true'},{'field':'nmMunicipio','label':'Munic&iacute;pio','search':'true'}]}"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                    <div class="form-field" data-type="zoomfield" data-show-properties="" data-field-name="ufdestino">
+                                        <label for="ufdestino" class="control-label">UF Destino</label>
+                                        <select class="form-control" name="ufdestino" id="ufdestino" data-size="small">
+                                            <option value="--">Selecione</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="AP">Amap&aacute;</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Cear&aacute;</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Esp&iacute;rito Santo</option>
+                                            <option value="GO">Goi&aacute;s</option>
+                                            <option value="MA">Maranh&atilde;o</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="PA">Par&aacute;</option>
+                                            <option value="PB">Para&iacute;ba</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piau&iacute;</option>
+                                            <option value="PR">Paran&aacute;</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RO">Rond&ocirc;nia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="SP">S&atilde;o Paulo</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                                    <div class="form-field" data-type="zoomfield" data-show-properties="" data-field-name="mundestino">
+                                        <input type="hidden" name="coddestino" id="coddestino"/>
+                                        <input type="hidden" name="ciddestino" id="ciddestino"/>
+                                        <label for="mundestino" class="control-label">Munic&iacute;pio Destino</label>
+                                        <input type="zoom" class="form-control" name="mundestino" id="mundestino" data-size="small" data-zoom="{'displayKey':'nmMunicipio','filterValues':'cdEstado,GO','datasetId':'rm_municipio_estado','fields':[{'field':'cdMunicipio','label':'C&oacute;digo Munic&iacute;pio','standard':'true','search':'true'},{'field':'nmMunicipio','label':'Munic&iacute;pio','search':'true'}]}"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                                    <div class="form-field" data-type="textbox" data-show-properties="" data-field-name="distancia">
+                                        <label for="distancia" class="control-label">Dist&acirc;ncia</label>
+                                        <input type="text" class="form-control" name="distancia" id="distancia" data-size="small"/>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                                    <div class="form-field" data-type="buttonfield" data-show-properties="" data-field-name="btnCalculate">
+                                        <label for="btnCalculate" class="control-label">&nbsp;</label>
+                                        <button type="button" name="btnCalculate" id="btnCalculate" class="btn btn-info form-control">Calcular</button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12">
+                                    <div class="form-field" data-type="buttonfield" data-show-properties="" data-field-name="btnSave">
+                                        <label for="btnSave" class="control-label">&nbsp;</label>
+                                        <button type="button" name="btnSave" id="btnSave" class="btn btn-info form-control">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

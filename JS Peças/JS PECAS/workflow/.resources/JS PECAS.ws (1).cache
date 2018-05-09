@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
+ <object class="java.util.HashMap">
+  <void method="put">
+   <string>volume</string>
+   <array class="java.lang.String" length="1">
+    <void index="0">
+     <string>Default</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>camposFormulario, documentoId = 1462</string>
+   <array class="java.lang.String" length="79">
+    <void index="0">
+     <string>pfFinanceiroTotalRendimentos</string>
+    </void>
+    <void index="1">
+     <string>tipoDeCadastro</string>
+    </void>
+    <void index="2">
+     <string>pfDadosProfissionaisProfissao</string>
+    </void>
+    <void index="3">
+     <string>pfReferenciaComercialDesde</string>
+    </void>
+    <void index="4">
+     <string>pfReferenciaComercialTelefone</string>
+    </void>
+    <void index="5">
+     <string>pfCpf</string>
+    </void>
+    <void index="6">
+     <string>fsDadosEmprsaInscMunicipal</string>
+    </void>
+    <void index="7">
+     <string>pjDadoSocioNome</string>
+    </void>
+    <void index="8">
+     <string>pjEnderecoEmail</string>
+    </void>
+    <void index="9">
+     <string>zoomEnderecoCidade</string>
+    </void>
+    <void index="10">
+     <string>pfDadosProfissionaisEmpresa</string>
+    </void>
+    <void index="11">
+     <string>pfReferenciaComercialTProduto</string>
+    </void>
+    <void index="12">
+     <string>pfDadosConjugueCargo</string>
+    </void>
+    <void index="13">
+     <string>pfEmail</string>
+    </void>
+    <void index="14">
+     <string>pjEnderecoCEP</string>
+    </void>
+    <void index="15">
+     <string>zoomEnderecoUF</string>
+    </void>
+    <void index="16">
+     <string>pfDadosProfissionaisUF</string>
+    </void>
+    <void index="17">
+     <string>fsDadosEmprsaFantasia</string>
+    </void>
+    <void index="18">
+     <string>pfDadosProfissionaisCnpj</string>
+    </void>
+    <void index="19">
+     <string>pjPessoaAutorizadaNome</string>
+    </void>
+    <void index="20">
+     <string>pjDadoSocioCapital</string>
+    </void>
+    <void index="21">
+     <string>pjEnderecoLogradouro</string>
+    </void>
+    <void index="22">
+     <string>pfDadosConjugueEmpresa</string>
+    </void>
+    <void index="23">
+     <string>pfReferenciaComercialContato</string>
+    </void>
+    <void index="24">
+     <string>pjPessoaAutorizadaTelefone</string>
+    </void>
+    <void index="25">
+     <string>cpfOuCnpj</string>
+    </void>
+    <void index="26">
+     <string>pfGrauInstrucao</string>
+    </void>
+    <void index="27">
+     <string>pfFinanceiroOutrosRendimentos</string>
+    </void>
+    <void index="28">
+     <string>pfDadosProfissionaisTelefone</string>
+    </void>
+    <void index="29">
+     <string>fsDadosEmprsaCnpj</string>
+    </void>
+    <void index="30">
+     <string>solicitanteNome</string>
+    </void>
+    <void index="31">
+     <string>pfEstadoCivil</string>
+    </void>
+    <void index="32">
+     <string>pjEnderecoUF</string>
+    </void>
+    <void index="33">
+     <string>pjEnderecoCidade</string>
+    </void>
+    <void index="34">
+     <string>pfDadosProfissionaisEndereco</string>
+    </void>
+    <void index="35">
+     <string>pjPessoaAutorizadaCargo</string>
+    </void>
+    <void index="36">
+     <string>pfDataNascimento</string>
+    </void>
+    <void index="37">
+     <string>pfInscricaoEstadual</string>
+    </void>
+    <void index="38">
+     <string>pfDadosConjugueAdmissao</string>
+    </void>
+    <void index="39">
+     <string>zoomNaturalidadeUF</string>
+    </void>
+    <void index="40">
+     <string>pjDadoSocioCargo</string>
+    </void>
+    <void index="41">
+     <string>enderecoCidadeID</string>
+    </void>
+    <void index="42">
+     <string>pjReferenciaComercialTelefone</string>
+    </void>
+    <void index="43">
+     <string>zoomNaturalidadeMunicipio</string>
+    </void>
+    <void index="44">
+     <string>pfOrgaoEmissaoRG</string>
+    </void>
+    <void index="45">
+     <string>pjDadoSocioCpfOuCnpj</string>
+    </void>
+    <void index="46">
+     <string>pfRG</string>
+    </void>
+    <void index="47">
+     <string>enderecoCidadeUF</string>
+    </void>
+    <void index="48">
+     <string>pfFinanceiroSalarioBruto</string>
+    </void>
+    <void index="49">
+     <string>pfEnderecoCEP</string>
+    </void>
+    <void index="50">
+     <string>pfFinanceiroPatrimonio</string>
+    </void>
+    <void index="51">
+     <string>pjReferenciaComercialDesde</string>
+    </void>
+    <void index="52">
+     <string>pjEnderecoBairro</string>
+    </void>
+    <void index="53">
+     <string>pjPessoaAutorizadaCpf</string>
+    </void>
+    <void index="54">
+     <string>solicitanteData</string>
+    </void>
+    <void index="55">
+     <string>pjReferenciaComercialEmpresa</string>
+    </void>
+    <void index="56">
+     <string>pjReferenciaComercialPagamento</string>
+    </void>
+    <void index="57">
+     <string>pfNome</string>
+    </void>
+    <void index="58">
+     <string>pfDadosProfissionaisBairro</string>
+    </void>
+    <void index="59">
+     <string>pfEnderecoBairro</string>
+    </void>
+    <void index="60">
+     <string>pfReferenciaPessoalGParentesco</string>
+    </void>
+    <void index="61">
+     <string>pfDadosConjugueTelefone</string>
+    </void>
+    <void index="62">
+     <string>pfTelefone</string>
+    </void>
+    <void index="63">
+     <string>pfFinanceiroObservacoesGerais</string>
+    </void>
+    <void index="64">
+     <string>pfDadosProfissionaisAdmissao</string>
+    </void>
+    <void index="65">
+     <string>fsDadosEmpresaRazaoSocial</string>
+    </void>
+    <void index="66">
+     <string>pfReferenciaComercialFPagto</string>
+    </void>
+    <void index="67">
+     <string>fsDadosEmprsaInscEstadual</string>
+    </void>
+    <void index="68">
+     <string>pfDadosConjugueNome</string>
+    </void>
+    <void index="69">
+     <string>pfReferenciaPessoalTelefone</string>
+    </void>
+    <void index="70">
+     <string>pfDadosConjugueCpf</string>
+    </void>
+    <void index="71">
+     <string>pfReferenciaPessoalNome</string>
+    </void>
+    <void index="72">
+     <string>pfEnderecoLogradouro</string>
+    </void>
+    <void index="73">
+     <string>pjReferenciaComercialContato</string>
+    </void>
+    <void index="74">
+     <string>pfReferenciaComercialEmpresa</string>
+    </void>
+    <void index="75">
+     <string>solicitanteHora</string>
+    </void>
+    <void index="76">
+     <string>pjEnderecoTelefone</string>
+    </void>
+    <void index="77">
+     <string>pfEnderecoComplemento</string>
+    </void>
+    <void index="78">
+     <string>pjReferenciaComercialConceito</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>expediente</string>
+   <array class="java.lang.String" length="2">
+    <void index="0">
+     <string>Default</string>
+    </void>
+    <void index="1">
+     <string>padrao</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>mecanismoPapel</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>AprovadorContencioso</string>
+      </void>
+      <void property="roleId">
+       <string>AprovadorContencioso</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>AprovadorContrato</string>
+      </void>
+      <void property="roleId">
+       <string>AprovadorContrato</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Solicitante de Adiantamento de Viagem</string>
+      </void>
+      <void property="roleId">
+       <string>Solicita_Adiant_Viagem</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>AprovadorSocietario</string>
+      </void>
+      <void property="roleId">
+       <string>AprovadorSocietario</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>AprovadorProcuracoes</string>
+      </void>
+      <void property="roleId">
+       <string>AprovadorProcuracoes</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>admin</string>
+      </void>
+      <void property="roleId">
+       <string>admin</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Aprovadores de Adiantamento de Viagem</string>
+      </void>
+      <void property="roleId">
+       <string>Viagem</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>1</long>
+      </void>
+      <void property="roleDescription">
+       <string>Validação do Financeiro para Adiantamento de Viagem</string>
+      </void>
+      <void property="roleId">
+       <string>Financeiro_Viagem</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
+   <string>camposFormulario, documentoId = 717</string>
+   <array class="java.lang.String" length="25">
+    <void index="0">
+     <string>vr_rea_gerais</string>
+    </void>
+    <void index="1">
+     <string>mot_viagem</string>
+    </void>
+    <void index="2">
+     <string>vr_rea_total</string>
+    </void>
+    <void index="3">
+     <string>vr_pro_gerais</string>
+    </void>
+    <void index="4">
+     <string>li_area</string>
+    </void>
+    <void index="5">
+     <string>num_solicitao</string>
+    </void>
+    <void index="6">
+     <string>checkbox15opc0</string>
+    </void>
+    <void index="7">
+     <string>num_solic_orca</string>
+    </void>
+    <void index="8">
+     <string>loc_destino</string>
+    </void>
+    <void index="9">
+     <string>vr_rea_deslo</string>
+    </void>
+    <void index="10">
+     <string>vr_acer_total</string>
+    </void>
+    <void index="11">
+     <string>dat_saida</string>
+    </void>
+    <void index="12">
+     <string>li_empresa</string>
+    </void>
+    <void index="13">
+     <string>vr_rea_alimen</string>
+    </void>
+    <void index="14">
+     <string>vr_pro_total</string>
+    </void>
+    <void index="15">
+     <string>idEmpresa</string>
+    </void>
+    <void index="16">
+     <string>vr_pro_alimen</string>
+    </void>
+    <void index="17">
+     <string>nm_solicitante</string>
+    </void>
+    <void index="18">
+     <string>column3_2</string>
+    </void>
+    <void index="19">
+     <string>num_cpf_Solicit</string>
+    </void>
+    <void index="20">
+     <string>loc_origem</string>
+    </void>
+    <void index="21">
+     <string>column2_2</string>
+    </void>
+    <void index="22">
+     <string>dat_retorno</string>
+    </void>
+    <void index="23">
+     <string>column1_2</string>
+    </void>
+    <void index="24">
+     <string>vr_pro_deslo</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
+   <string>mecanismo</string>
+   <array class="[Ljava.lang.Object;" length="9">
+    <void index="0">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Associação</string>
+      </void>
+      <void index="1">
+       <string>Associado</string>
+      </void>
+     </array>
+    </void>
+    <void index="1">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Campo de Formulário</string>
+      </void>
+      <void index="1">
+       <string>Campo Formulário</string>
+      </void>
+     </array>
+    </void>
+    <void index="2">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Executor de Atividade</string>
+      </void>
+      <void index="1">
+       <string>Executor Atividade</string>
+      </void>
+     </array>
+    </void>
+    <void index="3">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupo</string>
+      </void>
+      <void index="1">
+       <string>Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="4">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Grupos do Colaborador</string>
+      </void>
+      <void index="1">
+       <string>Grupos Colaborador</string>
+      </void>
+     </array>
+    </void>
+    <void index="5">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Papel</string>
+      </void>
+      <void index="1">
+       <string>Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="6">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Grupo</string>
+      </void>
+      <void index="1">
+       <string>Pool Grupo</string>
+      </void>
+     </array>
+    </void>
+    <void index="7">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição para um Papel</string>
+      </void>
+      <void index="1">
+       <string>Pool Papel</string>
+      </void>
+     </array>
+    </void>
+    <void index="8">
+     <array class="java.lang.Object" length="2">
+      <void index="0">
+       <string>Atribuição por Usuário</string>
+      </void>
+      <void index="1">
+       <string>Usuário</string>
+      </void>
+     </array>
+    </void>
+   </array>
+  </void>
+ </object>
+</java>

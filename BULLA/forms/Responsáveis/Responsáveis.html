@@ -1,0 +1,117 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+    <script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="custom.js"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+    <form name="form" role="form">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Responsáveis</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <label>Tipo de Pessoa</label>
+                            <div class="form-group">
+                                <label class="radio-inline">
+                                    <input type="radio" class="tipoPessoa" name="tipoPessoa" value="J"> Jurídica
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" class="tipoPessoa" name="tipoPessoa" value="F"> Física
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2 ambos">
+                            <label for="codResp">Código</label>
+                            <input type="text" class="form-control" name="codResp" id="codResp" placeholder="" readonly>
+                        </div>
+                        <div class="form-group col-md-5 ambos">
+                            <label for="nomeResp">Responsável</label>
+                            <input type="text" class="form-control" name="nomeResp" id="nomeResp">
+                        </div>
+                        <div class="form-group col-md-3 ambos">
+                            <label for="cpfResp">CPF</label>
+                            <input type="text" onblur="" class="form-control cpf" name="cpfResp" id="cpfResp">
+                        </div>
+                        <div class="form-group col-md-2 ambos">
+                            <label for="rgResp">RG</label>
+                            <input type="text" class="form-control" name="rgResp" id="rgResp">
+                        </div>
+                        <div class="form-group col-md-2 ambos">
+                            <label for="telefoneResp">Telefone</label>
+                            <input type="text" class="form-control fone" name="telefoneResp" id="telefoneResp">
+                        </div>
+                        <div class="form-group col-md-3 ambos">
+                            <label for="skypeResp">Skype</label>
+                            <input type="text" class="form-control" name="skypeResp" id="skypeResp">
+                        </div>
+                        <div class="form-group col-md-4 ambos">
+                            <label for="emailResp">E-mail</label>
+                            <input type="text" class="form-control email" name="emailResp" id="emailResp">
+                        </div>
+                        <div class="form-group col-md-3 ambos">
+                            <label for="nascimentoResp">Nascimento</label>
+                            <div class="input-group date">
+                                <input type="text" class="form-control" id="nascimentoResp" name="nascimentoResp" placeholder="dd/mm/aaaa">
+                                <span class="input-group-addon">
+                                    <span class="fluigicon fluigicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default fs-clear-both">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Endereço</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group col-md-2">
+                                    <label for="cep">CEP</label>
+                                    <input type="text" onblur="getAddress(this)" class="form-control" name="cepFisica">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="rua">Rua</label>
+                                    <input type="text" class="form-control" name="ruaFisica">
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label for="numeroFisica">Número</label>
+                                    <input type="text" class="form-control" name="numeroFisica">
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="complemento">Complemento</label>
+                                    <input type="text" class="form-control" name="complementoFisica">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="bairro">Bairro</label>
+                                    <input type="text" class="form-control" name="bairroFisica">
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="cidade">Cidade</label>
+                                    <input type="text" class="form-control" name="cidadeFisica">
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <label for="uf">UF</label>
+                                    <input type="text" class="form-control" name="ufFisica">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 fisica">
+                            <label>Observação</label>
+                            <textarea class="form-control" style="resize:vertical" name="obsFisica" class="obsFisica" rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

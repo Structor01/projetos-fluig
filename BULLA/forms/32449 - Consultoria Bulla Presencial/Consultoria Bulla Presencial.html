@@ -1,0 +1,322 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="custom.js"></script>
+</head>
+<body>
+<div class="fluig-style-guide">
+	<form name="form" role="form">
+		<input type="hidden" name="terminou" id="terminou" value="">
+		<input type="hidden" name="solicitacao" id="solicitacao" value="">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="panel panel-default taxinomia hide">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Taxinomia <small onclick="$('#taxinomiaC').toggle()" class="fs-float-right">Mostrar/Ocultar</small></h3>
+
+					</div>
+					<div style="display: none;" id="taxinomiaC" class="panel-body">
+						<p><b>DLP E DFC DE COLETA:</b> OCO_NOME DO CLIENTE_MÊS.ANO INICIO_MÊS.ANO FIM (OCO_JOSÉ_02.17_01.18);</p>
+
+						<p><b>EXTRATO DO SIMPLES:</b> SIMPLES_NOME DO CLIENTE_MÊS.ANO DE REFERÊNCIA DO EXTRATO (SIMPLES_JOSÉ_01.18);</p>
+
+						<p><b>IMPOSTOS DO LUCRO REAL OU PRESUMIDO:</b> IF_NOME DO CLIENTE_MÊS.ANO DA COLETA (IF_JOSÉ_02.18);</p>
+
+						<p><b>PLANTA BAIXA:</b> PB_NOME DO CLIENTE_MÊS.ANO DA COLETA DO ARQUIVO (PB_JOSÉ_01.18);</p>
+
+						<p><b>QUADRO DE FUNCIONÁRIOS:</b> QF_NOME DO CLIENTE_NOME FANTASIA DA FARMÁCIA (QF_JOSÉ_DROGARIA SAÚDE);</p>
+
+						<p><b>FOTOS DA FARMÁCIA:</b> FF_NOME DO CLIENTE_NOME FANTASIA DA FARMÁCIA (FF_JOSÉ_DROGARIA SAÚDE);</p>
+
+						<p><b>FOTOS DO CONCORRENTE:</b> FCO_NOME DO CLIENTE_NOME FANTASIA DA FARMÁCIA (FCO_JOSÉ_DROGARIA SAÚDE);</p>
+
+						<p><b>RELATÓRIO DE COLETA:</b> RC_NOME DO CLIENTE_NOME FANTASIA DA FARMÁCIA (RC_JOSÉ_DROGARIA SAÚDE);</p>
+
+						<p><b>FLUXO DE CAIXA:</b> FC_NOME DO CLIENTE_MÊS.ANO DO FLUXO DE CAIXA (FC_NOME DO CLIENTE_01.18);</p>
+
+						<p><b>EXTRATO BANCÁRIO:</b> EXBC_CLIENTE_MÊS.ANO DO EXTRATO (EXBC_JOSÉ_02.18);</p>
+
+						<p><b>SALDO BANCÁRIO:</b> SBC_CLIENTE_MÊS.ANO DO SALDO (SBC_JOSÉ_02.18);</p>
+					</div>
+				</div>
+				<div class="panel panel-default infoIni">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Info</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-4">
+							<label for="dtSolicitacao">Data da Solicitação</label>
+							<div class="input-group date">
+								<input type="text" class="form-control" id="dtSolicitacao" name="dtSolicitacao" value="" readonly>
+								<div class="input-group-addon">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<label for="nomeSolicitante">Solicitante</label>
+							<input type="text" class="form-control" id="nomeSolicitante" name="nomeSolicitante" value="" readonly>
+						</div>
+						<div class="form-group col-md-4 ob">
+							<label for="prazo">Prazo</label>
+							<div class="input-group date">
+								<input type="text" class="form-control" id="prazo" name="prazo">
+								<div class="input-group-addon">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-md-5 ob">
+							<input type="hidden" name="responsavelCod" id="responsavelCod">
+							<label for="responsavel">Responsável</label>
+							<input
+									type="zoom"
+									id = "responsavel"
+									name="responsavel"
+									class="form-control"
+									data-zoom="{
+                                        'displayKey':'nomeResp',
+                                        'datasetId':'dsFormResp',
+                                        'maximumSelectionLength':'1',
+                                        'placeholder':'Escolha o Responsável',
+                                        'fields':[
+                                            {
+                                               'field':'codResp',
+                                               'label':'Código'
+                                            },{
+                                              'field':'nomeResp',
+                                              'label':'Nome',
+                                              'standard':'true'
+                                            },{
+                                              'field':'emailResp',
+                                              'label':'Email',
+                                              'standard':'true'
+                                            }
+                                        ]
+                                     }"
+							/>
+						</div>
+						<div class="form-group empresaZoom col-md-12 hide ob">
+							<input type="hidden" name="empresaCod" id="empresaCod">
+							<label for="empresa">Empresa</label>
+							<input
+									type="zoom"
+									id = "empresa"
+									name="empresa"
+									class="form-control"
+									data-zoom="{
+                                        'displayKey':'fantasia',
+                                        'datasetId':'dsFarmacia',
+                                        'maximumSelectionLength':'100',
+                                        'placeholder':'Escolha a Empresa',
+                                        'fields':[
+                                            {
+                                               'field':'fantasia',
+                                               'label':'Fantasia'
+                                            },{
+                                               'field':'razaoSocial',
+                                               'label':'Razão Social'
+                                            },{
+                                               'field':'doc',
+                                               'label':'Documento'
+                                            }
+                                        ]
+                                     }"
+							/>
+						</div>
+
+						<input class="hide" name="empresasDesc" id="empresaDesc" value="">
+
+						<div class="form-group empresas col-md-12 hide"></div>
+					</div>
+				</div>
+
+				<div class="panel panel-default alinhamentoComercial hide">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-discuss fluigicon-sm"></span> Informação</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-4 ob">
+							<label for="dtSolicitacao">Data da Reunião</label>
+							<div class="input-group dateHour">
+								<input type="text" class="form-control" id="dtReuniaoComercial" name="dtReuniaoComercial" value="">
+								<div class="input-group-addon">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-md-12">
+							<label for="obsReuniaoComercial">Observação</label>
+							<textarea class="form-control" style="resize: initial" name="obsReuniaoComercial" id="obsReuniaoComercial" rows="2"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="alinhamentoCliente hide">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-discuss fluigicon-sm"></span> Cliente</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-md-4 ob">
+								<label for="alinhamentoClienteData">Data do Contato</label>
+								<div class="input-group dateHour">
+									<input type="text" class="form-control" id="alinhamentoClienteData" name="alinhamentoClienteData" value="" readonly>
+									<div class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar"></span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="alinhamentoClienteConsultor">Consultor</label>
+								<input type="text" class="form-control" id="alinhamentoClienteConsultor" name="alinhamentoClienteConsultor" value="" readonly>
+							</div>
+
+
+							<div class="form-group col-md-4 ob">
+								<label>Você conhece o Método Bulla</label>
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" name="conheceMetodoBulla" type="radio" value="S"> Sim
+									</label>
+								</div>
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" name="conheceMetodoBulla" type="radio" value="N"> Não
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group col-md-8 ob">
+								<label>O que aprendeu com o Método Bulla? E o que já aplicou?</label>
+								<textarea class="form-control" style="resize: initial" rows="2" name="conheceMetodoBullaAplicacao" id="conheceMetodoBullaAplicacao" readonly></textarea>
+							</div>
+
+							<div class="form-group col-md-4 ob">
+								<label>Já iniciou o curso no Academia Farma?</label>
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" name="jaIniciouCurso" type="radio" value="S"> Sim
+									</label>
+								</div>
+								<div class="form-check">
+									<label class="form-check-label">
+										<input class="form-check-input" name="jaIniciouCurso" type="radio" value="N"> Não
+									</label>
+								</div>
+							</div>
+
+							<div class="form-group col-md-12">
+								<label for="alinhamentoClienteObs">Observação</label>
+								<textarea class="form-control" style="resize: initial" name="alinhamentoClienteObs" id="alinhamentoClienteObs" rows="2" ></textarea>
+							</div>
+
+							<div class="panel panel-default fs-clear-both">
+								<div class="panel-heading">
+									<h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Objetivo</h3>
+								</div>
+								<div class="panel-body">
+									<div class="form-group col-md-12 ob">
+										<label for="objetivoCliente">Quais são os objetivos do cliente com a consultoria?</label>
+										<textarea class="form-control" style="resize: initial" name="objetivoCliente" id="objetivoCliente" rows="2" ></textarea>
+									</div>
+									<div class="form-group col-md-12 ob">
+										<label for="oQuePrecisaAcontecer">O que precisa acontecer até o fim da consultoria, para dizer que valeu a pena contratar os nossos serviços?</label>
+										<textarea class="form-control" style="resize: initial" name="oQuePrecisaAcontecer" id="oQuePrecisaAcontecer" rows="2" ></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default marcarReuniao hide">
+					<div class="panel-heading">
+						<h3 class="panel-title">Reunião de Apresentação de Relatório</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-4 ob">
+							<label>Data de Reunião</label>
+							<div class="input-group">
+								<input type="hidden" class="form-control" name="dtFormatted" id="dtFormatted">
+								<input type="text" class="form-control date" onblur="verificaDataReuniao(this)" name="dtReuniao" id="dtReuniao">
+								<div class="input-group-addon">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="aprovaGestor hide">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-phone fluigicon-sm"></span> Aprovação Gestor</h3>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label>Aprovação do Gestor</label>
+							<input type="hidden" name="tipoAprova" id="tipoAprova" value="">
+							<select class="form-control" name="acao" id="acao">
+								<option value="">Selecione</option>
+								<option value="A">Aprovar</option>
+								<option value="R">Reprovar</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="ligarCliente hide">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-phone fluigicon-sm"></span> Contato com Cliente</h3>
+						</div>
+						<div class="panel-body">
+							<div class="col-md-12">
+								<div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
+									<table class="table" cellspacing="0" tablename="ingre" noaddbutton=true nodeletebutton=true>
+										<thead>
+										<tr class="tableHeadRow"></tr>
+										</thead>
+										<tbody>
+										<tr class="rowPF" id="idx">
+											<td class="excluirPaiFilho col-md-1">
+												<div class="form-group col-md-3 ob">
+													<label for="ligarClienteData">Data do Contato</label>
+													<div class="input-group">
+														<input type="text" class="form-control" id="ligarClienteData" name="ligarClienteData" value="" readonly>
+														<div class="input-group-addon">
+															<span class="fluigicon fluigicon-calendar"></span>
+														</div>
+													</div>
+												</div>
+												<div class="form-group col-md-12 ob">
+													<label>Descrição</label>
+													<textarea type="text" class="form-control" id="ligarClienteDesc" name="ligarClienteDesc" rows="4"></textarea>
+												</div>
+											</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<!--<div class="form-group">-->
+								<!--<button type="button" style="margin-left:15px" class="btn btn-default inicio" name="inputAdicionar" id="inputAdicionar">Adicionar</button>-->
+								<!--</div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>

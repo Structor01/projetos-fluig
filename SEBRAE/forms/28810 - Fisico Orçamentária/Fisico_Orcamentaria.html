@@ -1,0 +1,740 @@
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css" />
+<link type="text/css" rel="stylesheet" href="formFisicoOrc.css" />
+<link rel="stylesheet" type="text/css" href="/portal/resources/style-guide/css/fluig-style-guide-filter.min.css">
+<script type="text/javascript" src="/webdesk/vcXMLRPC.js" charset="utf-8"></script>
+<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide-filter.min.js"></script>
+<script type="text/javascript" src="validateForm.js" charset="utf-8"></script>
+<script type="text/javascript" src="activities.js" charset="utf-8"></script>
+<script type="text/javascript" src="requiredFields.js" charset="utf-8"></script>
+<script type="text/javascript" src="script.js" charset="utf-8"></script>
+<script type="text/javascript" src="jquery.maskMoney.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("input.dinheiro").maskMoney({
+			showSymbol : true,
+			symbol : "R$",
+			decimal : ",",
+			thousands : ".",
+			allowNegative : true,
+			allowZero : true
+		});
+		$("input.dinheiro2").maskMoney({
+			showSymbol : true,
+			symbol : "R$",
+			decimal : ",",
+			thousands : ".",
+			allowNegative : true,
+			allowZero : true
+		});
+		
+		$(".dinheiro").on("blur", function(){
+			if(this.value.indexOf(",") > -1){
+				var value = this.value.split(",")[0];
+				this.value = value + ",00";
+			}
+			calculaValores();
+		});
+		$(".dinheiro2").on("blur", function(){
+			if(this.value.indexOf(",") > -1){
+				var value = this.value.split(",")[0];
+				this.value = value + ",00";
+			}
+			calculaValoresNovo();
+		});
+		$(".dinheiro3").on("blur", function(){
+			if(this.value.indexOf(",") > -1){
+				var value = this.value.split(",")[0];
+				this.value = value + ",00";
+			}
+			calcMetas();
+		});	
+	});
+	function somenteNumeros(num) {
+		num.value=num.value.replace(/\D/g,'');
+    }
+	function somenteNumerosN(num) {
+		num.value=num.value.replace(/(?!^-)[^0-9.]/g, "");  
+    }
+	
+	
+</script>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<input type="hidden" name="gerenteSolicitante" id="gerenteSolicitante" /> 
+			<input type="hidden" name="loginSolicitante" id="loginSolicitante" />
+			<input type="hidden" name="secaoUsuario" id="secaoUsuario"/>
+
+			<div class="panel panel-default" id="painelSolicitacao">
+				<div class="panel-body">
+					<h1>Solicita&ccedil;&atilde;o de Altera&ccedil;&atilde;o F&iacute;sico Or&ccedil;ament&aacute;rio</h1>
+				</div>
+			</div>			
+
+			<div class="panel panel-default" id="painelCabecalho">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Informa&#231;&#245;es Cabe&#231;alho da Solicita&#231;&#227;o</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="txtCodSolicitacao">Solicita&#231;&#227;o</label> 
+							<input type="text" class="form-control" name="txtCodSolicitacao" id="txtCodSolicitacao" maxlength="40" readonly="readonly" />
+						</div>
+						<div class="col-md-2">
+							<label for="txtDataSolicitacao">Data da Solicita&ccedil;&atilde;o</label> 
+							<input type="text" class="form-control"	name="txtDataSolicitacao" id="txtDataSolicitacao" maxlength="40" readonly="readonly" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-4">
+							<label for="txtNomeSolicitante">Solicitante</label> 
+							<input type="text" class="form-control" name="txtNomeSolicitante" id="txtNomeSolicitante" maxlength="40" readonly="readonly" />
+						</div>
+						<div class="col-md-4">
+							<label for="txtUnidadeSolicitante">Unidade</label> 
+							<input type="text" class="form-control" name="txtUnidadeSolicitante" id="txtUnidadeSolicitante" maxlength="10" readonly="readonly" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default" id="painelDados">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Dados da Solicita&ccedil;&atilde;o de Altera&ccedil;&atilde;o F&iacute;sico Or&ccedil;ament&aacute;rio</b>
+					</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="row">
+						<div class="form-group col-md-4">
+							<label for="cpProjeto">Projeto/Atividade</label>
+								<input type="zoom" class="form-control" id = "cpProjeto" name="cpProjeto"
+								    data-zoom="{
+								        'displayKey':'NOME',
+								        'datasetId':'WSProjeto',
+								        'fields':[
+								            {
+								               'field':'CODCCUSTO',
+								               'label':'Codigo'
+								            },{
+								              'field':'NOME',
+								              'label':'Unidade',
+								              'standard':'true'
+								            }
+								        ]
+								     }" 
+								/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-4">
+							<label for="txtNovoProjeto">Novo Projeto/Atividade?</label> 
+							<input type="text" class="form-control" name="txtNovoProjeto" id="txtNovoProjeto" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-5">
+							<label for="cmbTipoAlteracao">Tipo Altera&#231;&#227;o</label> 
+							<select name="cmbTipoAlteracao" id="cmbTipoAlteracao" class="selectpicker form-control" onchange="novoProjeto();">
+								<option value="">Selecione...</option>
+								<option value="1">Transfer&#234;ncia de Recursos/Metas entre Projetos</option>
+								<option value="2">Adi&#231;&#227;o/Redu&#231;&#227;o de Recursos e Metas</option>
+								<option value="3">Adi&#231;&#227;o de Recursos e Metas</option>
+								<option value="4">Redu&#231;&#227;o de Recursos e Metas</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-4" id="painelNovoProjeto">
+							<label for="cpNovoProjeto">Projeto/Atividade de Destino</label>
+							<input type="zoom" class="form-control" id = "cpNovoProjeto" name="cpNovoProjeto"
+							    data-zoom="{
+							        'displayKey':'NOME',
+							        'datasetId':'WSProjeto',
+							        'fields':[
+							            {
+							               'field':'CODCCUSTO',
+							               'label':'Codigo'
+							            },{
+							              'field':'NOME',
+							              'label':'Unidade',
+							              'standard':'true'
+							            }
+							        ]
+							     }" 
+							/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cmbPrioridade">Prioridade</label> 
+							<select name="cmbPrioridade" id="cmbPrioridade" class="selectpicker form-control" onchange="prioridade();">
+								<option value="">Selecione...</option>
+								<option value="Imediato">Imediato</option>
+								<option value="Futura">Futura</option>
+								<option value="Reposicao">Reposi&#231;&#227;o caso necess&#225;rio</option>
+							</select>
+						</div>
+						<div class="col-md-2" id="painelQuando">
+							<label for="txtquando">Quando?</label>
+							<div class="input-group date">
+								<input style="background-color: #fff;" type="text" class="form-control" name="txtQuando" id="txtQuando" mask="00/00/0000"
+									readonly="readonly" onblur="verificaData();" /> 
+								<span class="input-group-addon fs-cursor-pointer"> 
+									<span class="fluigicon fluigicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<div class="col-md-3" id="painelProduto">
+							<label for="cmbProduto">Produto Nacional?</label>
+							<input type="zoom" class="form-control" name="cmbProduto" id="cmbProduto" 
+								data-zoom="{
+								    'displayKey':'produto',
+							        'datasetId':'ds_produtos',
+							        'fields':[
+							            {
+							              'field':'produto',
+							              'label':'Produto',
+							              'standard':'true'
+							            }
+							        ]
+							     }" />
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<div class="col-md-12">
+							<div id="alerta"></div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-4">
+							<label for="postArquivoAnexo">Arquivo de Evid&#234;ncia da Necessidade</label>
+							<input type="file" class="btn btn-primary btn-sm" id="postArquivoAnexo" name="postArquivoAnexo" accept=".docx,.doc"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="cpJustificativa">Necessidade de altera&#231;&#227;o físico-or&#231;ament&#225;ria.</label>
+							<textarea class="form-control" name="cpJustificativa" id="cpJustificativa" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default" id="painelOrcamento">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Or&ccedil;amento</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-6">
+							<table class="table table-bordered">
+								<thead>
+									<tr class="active">
+										<th>Valores Originais (SGE)</th>
+										<th>Ajuste</th>
+										<th>Valores Finais (SGE)</th>
+									</tr>
+								<thead>
+								<tbody>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtCsnOrig">CSN</label> 
+											<input type="text" class="form-control dinheiro" name="txtCsnOrig" id="txtCsnOrig" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsnAjuste">CSN</label> 
+											<input type="text" class="form-control dinheiro" name="txtCsnAjuste" id="txtCsnAjuste" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsnFinal">CSN</label> 
+											<input type="text" class="form-control" name="txtCsnFinal" id="txtCsnFinal" readonly="readonly" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtCsnPropOrig">CSN Proposta</label> 
+											<input type="text" class="form-control dinheiro" name="txtCsnPropOrig" id="txtCsnPropOrig" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsnPropAjuste">CSN Proposta</label> 
+											<input type="text" class="form-control dinheiro" name="txtCsnPropAjuste" id="txtCsnPropAjuste" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsnPropFinal">CSN Proposta</label> 
+											<input type="text" class="form-control"	name="txtCsnPropFinal" id="txtCsnPropFinal" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtCsoOrig">CSO</label> 
+											<input type="text" class="form-control dinheiro" name="txtCsoOrig" id="txtCsoOrig" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsoAjuste">CSO</label> 
+											<input type="text" class="form-control dinheiro" name="txtCsoAjuste" id="txtCsoAjuste" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsoFinal">CSO</label> 
+											<input type="text" class="form-control" name="txtCsoFinal" id="txtCsoFinal" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtEbOrig">EB</label> 
+											<input type="text" class="form-control dinheiro" name="txtEbOrig" id="txtEbOrig" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtEbAjuste">EB</label> 
+											<input type="text" class="form-control dinheiro" name="txtEbAjuste" id="txtEbAjuste" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtEbFinal">EB</label> 
+											<input type="text" class="form-control" name="txtEbFinal" id="txtEbFinal" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtConvenioOrig">Conv&#234;nio</label> 
+											<input type="text" class="form-control dinheiro" name="txtConvenioOrig" id="txtConvenioOrig" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtConvenioAjuste">Conv&#234;nio</label> 
+											<input type="text" class="form-control dinheiro" name="txtConvenioAjuste" id="txtConvenioAjuste" value="0,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtConvenioFinal">Conv&#234;nio</label> 
+											<input type="text" class="form-control"	name="txtConvenioFinal" id="txtConvenioFinal" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtTotalOrig">Total</label> 
+											<input type="text" class="form-control" name="txtTotalOrig"	id="txtTotalOrig" readonly="readonly"/>
+										</td>
+										<td class="col-md-2">
+											<label for="txtTotalAjuste">Total</label> 
+											<input type="text" class="form-control" name="txtTotalAjuste" id="txtTotalAjuste" readonly="readonly" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtTotalFinal">Total</label>
+											<input type="text" class="form-control" name="txtTotalFinal" id="txtTotalFinal" readonly="readonly" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default" id="painelMetas">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Metas</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-4">
+							<br/>
+							<button class="btn btn-primary add-metas">Adicionar Metas</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<br/>
+							<table class="table table-bordered" tablename="tblMetas" noaddbutton="true">
+								<thead>
+									<tr class="active">
+										<th>Meta</th>
+										<th>De</th>
+										<th>Ajuste</th>
+										<th>Novo</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="col-md-7">
+											<input type="zoom" class="form-control quick-search" name="cmbInstrumento" id="cmbInstrumento" 
+												data-zoom="{
+												    'displayKey':'meta',
+											        'datasetId':'ds_metas',
+											        'fields':[
+											            {
+											              'field':'meta',
+											              'label':'Meta',
+											              'standard':'true'
+											            }
+											        ]
+											     }" />
+										</td>
+										<td class="col-md-1">
+											<input type="text" class="form-control dinheiro3" name="txtMetasDe" id="txtMetasDe" value="0,00"/>
+										</td>
+										<td class="col-md-1">
+											<input type="text" class="form-control dinheiro3" name="txtMetasAj" id="txtMetasAj" value="0,00" />
+										</td>
+										<td class="col-md-1">
+											<input type="text" class="form-control" name="txtMetasNovo" id="txtMetasNovo" readonly="readonly"/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default" id="painelGerencia">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Autoriza&ccedil;&atilde;o Ger&#234;ncia</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="dtAutorizaGer">Data Autoriza&#231;&#227;o</label> 
+							<input type="text" class="form-control" name="dtAutorizaGer" id="dtAutorizaGer" readonly="readonly" />
+						</div>
+						<div class="col-md-3">
+							<label for="txtAutorizaGer">Gerente</label> 
+							<input type="text" class="form-control" name="txtAutorizaGer" id="txtAutorizaGer" maxlength="40" readonly="readonly" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cmbAutorizaGer">Autoriza&#231;&#227;o</label> 
+							<select name="cmbAutorizaGer" id="cmbAutorizaGer" class="selectpicker form-control">
+								<option value="">Selecione...</option>
+								<option value="Autorizar">Autorizado</option>
+								<option value="Devolver">Devolver para Corre&ccedil;&atilde;o</option>
+								<option value="Cancelar">Cancelar</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row" id="painelHistoricoGerencia">
+						<div class="col-md-12">
+							<label for="cpHistGerencia">Histórico Ger&#234;ncia</label>
+								<textarea class="form-control" name="cpHistGerencia" id="cpHistGerencia" rows="3" readonly="readonly"></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="cpObsGerencia">Observa&ccedil;&atilde;o Ger&#234;ncia</label>
+							<textarea class="form-control" name="cpObsGerencia" id="cpObsGerencia" rows="3"
+								placeholder="Quando selecionar Devolver para corre&#231;&#227;o ou Cancelar &#233; necess&#225;rio preencher com a Jusificativa neste campo."></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default" id="painelValidaOrc">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Valida&ccedil;&atilde;o Or&ccedil;amento</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="dtValidaOrc">Data Valida&ccedil;&atilde;o do Or&ccedil;amento</label> 
+							<input type="text" class="form-control"	name="dtValidaOrc" id="dtValidaOrc" maxlength="40" readonly="readonly" />
+						</div>
+						<div class="col-md-3">
+							<label for="txtValidaOrc">Colaborador Ciente</label> 
+							<input type="text" class="form-control" name="txtValidaOrc" id="txtValidaOrc" maxlength="40" readonly="readonly" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cmbValidaOrc">Validar</label> 
+							<select name="cmbValidaOrc" id="cmbValidaOrc" class="selectpicker form-control">
+								<option value="">Selecione</option>
+								<option value="Validado">Validado</option>
+								<option value="Nao">Devolver para Corre&ccedil;&atilde;o</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row" id="painelHistoricoOrc">
+						<div class="col-md-12">
+							<label for="cpHistOrc">Histórico Or&#231;amento</label>
+							<textarea class="form-control" name="cpHistOrc" id="cpHistOrc" rows="3" readonly="readonly"></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="ObsValidadorOrc">Observa&ccedil;&atilde;o Validador</label>
+							<textarea class="form-control" name="ObsValidadorOrc" id="ObsValidadorOrc" rows="3"
+								placeholder="Quando selecionar Devolver para corre&#231;&#227;o &#233; necess&#225;rio preencher a Jusificativa neste campo."></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default" id="painelUGE">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Parecer UGE</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="dtParecerUGE">Data Parecer</label> 
+							<input type="text" class="form-control" name="dtParecerUGE" id="dtParecerUGE" maxlength="40" readonly="readonly" />
+						</div>
+						<div class="col-md-3">
+							<label for="txtParecerUGE">Gerente</label> 
+							<input type="text" class="form-control" name="txtParecerUGE" id="txtParecerUGE"	maxlength="40" readonly="readonly" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cmbAutorizaUGE">Autoriza&#231;&#227;o</label> 
+							<select name="cmbAutorizaUGE" id="cmbAutorizaUGE" class="selectpicker form-control">
+								<option value="">Selecione...</option>
+								<option value="Autorizar">Autorizado</option>
+								<option value="Devolver">Devolver para Corre&#231;&#227;o</option>
+								<option value="Cancelar">Cancelar</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row" id="painelHistoricoUGE">
+						<div class="col-md-12">
+							<label for="cpHistUGE">Histórico Parecer UGE</label>
+							<textarea class="form-control" name="cpHistUGE" id="cpHistUGE" rows="3" readonly="readonly"></textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="cpParecerUGE">Parecer UGE</label>
+							<textarea class="form-control" name="cpParecerUGE" id="cpParecerUGE" rows="3"
+								placeholder="Quando selecionar Devolver para corre&#231;&#227;o ou Cancelar &#233; necess&#225;rio preencher a Jusificativa neste campo."></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default" id="painelSuper">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Parecer SUPERINTEND&#202;NCIA</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="dtParecerSuper">Data Autoriza&#231;&#227;o</label> 
+							<input type="text" class="form-control" name="dtParecerSuper" id="dtParecerSuper" maxlength="40" readonly="readonly" />
+						</div>
+						<div class="col-md-3">
+							<label for="txtParecerSuper">Superintendente</label> 
+							<input type="text" class="form-control" name="txtParecerSuper" id="txtParecerSuper" maxlength="40" readonly="readonly" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cmbAutorizaSuper">Autoriza&#231;&#227;o</label> 
+							<select name="cmbAutorizaSuper" id="cmbAutorizaSuper" class="selectpicker form-control">
+								<option value="">Selecione...</option>
+								<option value="Autorizar">Autorizado</option>
+								<option value="Corrigir">Corrigir</option>
+								<option value="Cancelar">Cancelar</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="cpObsSuper">Parecer Superintendente</label>
+							<textarea class="form-control" name="cpObsSuper" id="cpObsSuper" rows="3"
+								placeholder="Quando selecionar Devolver para corre&#231;&#227;o ou Cancelar &#233; necess&#225;rio preencher a Jusificativa neste campo."></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-default" id="painelProjetoSGE">
+				<div class="panel-heading ">
+					<h3 class="panel-title">
+						<b>Altera Projeto SGE</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="dtAlteraSGE">Data Altera&#231;&#227;o SGE</label>
+							<div class="input-group ddd data-sge">
+								<input style="background-color: #fff;" type="text" class="form-control" name="dtAlteraSGE" id="dtAlteraSGE" mask="00/00/0000" readonly="" /> 
+									<span class="input-group-addon fs-cursor-pointer"> <span class="fluigicon fluigicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label for="txtAlteraSGE">Gestor de Projetos</label> 
+							<input type="text" class="form-control" name="txtAlteraSGE" id="txtAlteraSGE" maxlength="40" readonly="readonly" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cmbIncorporadoSGE">Incorporado SGE?</label> 
+							<select name="cmbIncorporadoSGE" id="cmbIncorporadoSGE"	class="selectpicker form-control">
+								<option value="">Selecione...</option>
+								<option value="Sim">Sim</option>
+								<option value="Nao">N&#227;o</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cmbValorAlterado">Valores Alterados?</label> 
+							<select name="cmbValorAlterado" id="cmbValorAlterado" class="selectpicker form-control" onchange="mostraQuadro();">
+								<option value="">Selecione...</option>
+								<option value="Sim">Sim</option>
+								<option value="Nao">N&#227;o</option>
+							</select>
+						</div>
+
+						<div class="col-md-6" id="painelQuadroAjuste">
+							<table class="table table-bordered">
+								<thead>
+									<tr class="active">
+										<th>Valores Originais (SGE)</th>
+										<th>Ajuste</th>
+										<th>Valores Finais (SGE)</th>
+									</tr>
+								<thead>
+								<tbody>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtCsnOrig1">CSN</label> 
+											<input type="text" class="form-control dinheiro" name="txtCsnOrig1" id="txtCsnOrig1" mask="#00.000.000.000.000,00" value="0,00" readonly="readonly" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsnAjuste1">CSN</label> 
+											<input type="text" class="form-control" name="txtCsnAjuste1" id="txtCsnAjuste1" value="0,00"  />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsnFinal1">CSN</label> 
+											<input type="text" class="form-control" name="txtCsnFinal1" id="txtCsnFinal1" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtCsnProp1">CSN Proposta</label>
+											<input type="text" class="form-control" name="txtCsnProp1" id="txtCsnProp1" mask="#00.000.000.000.000,00" value="0,00" readonly="readonly" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsnPropAjuste1">CSN Proposta</label>
+											<input type="text" class="form-control dinheiro2" name="txtCsnPropAjuste1" id="txtCsnPropAjuste1" value="0,00"  />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsnPropFinal1">CSN Proposta</label>
+											<input type="text" class="form-control"	name="txtCsnPropFinal1" id="txtCsnPropFinal1" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtCsoOrig1">CSO</label>
+											<input type="text" class="form-control" name="txtCsoOrig1" id="txtCsoOrig1" mask="#00.000.000.000.000,00" value="0,00" readonly="readonly" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsoAjuste1">CSO</label>
+											<input type="text" class="form-control dinheiro2" name="txtCsoAjuste1" id="txtCsoAjuste1" value="0,00"  />
+										</td>
+										<td class="col-md-2">
+											<label for="txtCsoFinal1">CSO</label>
+											<input type="text" class="form-control" name="txtCsoFinal1" id="txtCsoFinal1" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtEbOrig1">EB</label>
+											<input type="text" class="form-control" name="txtEbOrig1" id="txtEbOrig1" mask="#00.000.000.000.000,00" value="0,00" readonly="readonly" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtEbAjuste1">EB</label>
+											<input type="text" class="form-control dinheiro2" name="txtEbAjuste1" id="txtEbAjuste1" value="0,00"  />
+										</td>
+										<td class="col-md-2">
+											<label for="txtEbFinal1">EB</label> 
+											<input type="text" class="form-control" name="txtEbFinal1" id="txtEbFinal1" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtConvenioOrig1">Conv&#234;nio</label>
+											<input type="text" class="form-control"	name="txtConvenioOrig1" id="txtConvenioOrig1" mask="#00.000.000.000.000,00" value="0,00" readonly="readonly" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtConvenioAjuste1">Conv&#234;nio</label> 
+											<input type="text" class="form-control dinheiro2" name="txtConvenioAjuste1" id="txtConvenioAjuste1" value="0,00"  />
+										</td>
+										<td class="col-md-2">
+											<label for="txtConvenioFinal1">Conv&#234;nio</label>
+											<input type="text" class="form-control" name="txtConvenioFinal1" id="txtConvenioFinal1" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+									<tr>
+										<td class="col-md-2">
+											<label for="txtTotalOrig1">Total</label> 
+											<input type="text" class="form-control" name="txtTotalOrig1" id="txtTotalOrig1" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtTotalAjuste1">Total</label>
+											<input type="text" class="form-control" name="txtTotalAjuste1" id="txtTotalAjuste1" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+										<td class="col-md-2">
+											<label for="txtTotalFinal1">Total</label>
+											<input type="text" class="form-control" name="txtTotalFinal1" id="txtTotalFinal1" readonly="readonly" mask="#00.000.000.000.000,00" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="cpConsideraSolic">Considera&ccedil;ões</label>
+							<textarea class="form-control" name="cpConsideraSolic" id="cpConsideraSolic" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+
+<script type="text/template" class="template-upload">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="texto-upload">Enviando arquivo...</h2>
+		</div>
+	</div>
+	<div class="row linha-progresso-upload">
+		<div class="col-md-12">
+			<div class="progress">
+    			<div class="progress-bar progress-bar-success progresso-upload" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+        			<span class="sr-only">0% Completo</span>
+    			</div>
+			</div>
+		</div>
+	</div>
+</script>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="http://fluig.crememel.com.br/resources/style-guide/css/fluig-style-guide.min.css">
+	<script src="http://fluig.crememel.com.br/resources/js/jquery/jquery.js"></script>
+	<script src="http://fluig.crememel.com.br/resources/js/jquery/jquery-ui.min.js"></script>
+	<script src="http://fluig.crememel.com.br/resources/js/mustache/mustache-min.js"></script>
+	<script src="http://fluig.crememel.com.br/resources/style-guide/js/fluig-style-guide.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC-mobile.js"></script>
+	<script src="custom.js"></script>
+</head>
+<body class="fluig-style-guide">
+	<form name="form" role="form">
+		<input type="hidden" name="atividade" id="atividade" value="" />
+		<input type="hidden" name="filial_n" id="filial_n" value="" />
+		<input type="hidden" name="gestor_n" id="gestor_n" value="" />
+		<input type="hidden" name="empresa_n" id="empresa_n" value="" />
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-md-2">
+					<img src="logo_cmz.png" style="width:100%"/>
+				</div>
+				<div class="col-md-7">
+					<h1 style="font-size:16px; text-align:center">
+						<span style="font-weight:light">Sorveteria Creme Mel S. A</span><br />
+						INCLUSÃO/ALTERAÇÃO DE FÉRIAS
+					</h1>
+				</div>
+				<div class="col-md-3">
+					<p style="margin:0; padding:0;"><b>F.55_0044</b></p>
+					<p style="margin:0; padding:0;">
+						Administração Recursos Humanos
+					</p>
+					<p style="margin:0; padding:0;">
+						N. Versão/Revisão: 1.002 Data: 04/10/2016
+					</p>
+					<p style="margin:0; padding:0;">
+						Página: 1/1
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="alert alert-danger" role="alert">
+			<strong>NOTA!</strong> O prazo <u>máximo</u> para alteração da programação de férias é até o dia 15 do mês que antecede o mês programado.
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-md"></span> Solicitante</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group col-xs-12 col-md-4">
+					<label for="codigoCliente">Data de Abertura</label>
+					<input class="form-control" type="text" id="dtAbertura" name="dtAbertura" value="" readonly/>
+				</div>
+				<div class="form-group col-xs-12 col-md-4">
+					<label for="codigoCliente">Solicitante</label>
+					<input class="form-control" type="text" id="solicitante" name="solicitante" value="" readonly/>
+				</div>
+				<div class="form-group col-xs-12 col-md-4">
+					<label for="codigoCliente">Matrícula</label>
+					<input class="form-control" type="text" id="matricula" name="matricula" value="" readonly/>
+				</div>
+				<div class="form-group col-xs-12 col-md-4">
+					<label for="codigoCliente">Cargo</label>
+					<input class="form-control" type="text" id="cargo" name="cargo" value="" readonly/>
+				</div>
+				<div class="form-group col-xs-12 col-md-4">
+					<label for="codigoCliente">Departamento</label>
+					<input
+					class="inicio"
+					type="zoom"
+					id = "depto"
+					name="depto"
+					data-zoom="{
+						'displayKey':'areaDescription',
+						'datasetId':'destinationArea',
+						'maximumSelectionLength':'1',
+						'placeholder':'Escolha o Departamento',
+						'fields':[
+						{
+							'field':'areaDescription',
+							'label':'Departamento',
+							'standard':'true'
+						}
+						]
+					}"
+					/>
+				</div>
+				<div class="form-group col-xs-12 col-md-4">
+					<label for="gestor_imediato">Gestor Imediato</label>
+					<input
+					type="zoom"
+					class="inicio"
+					id = "gestor_imediato"
+					name="gestor_imediato"
+					data-zoom="{
+						'displayKey':'Colaborador',
+						'datasetId':'Gestores',
+						'maximumSelectionLength':'1',
+						'placeholder':'Escolha o Gestor',
+						'fields':[
+						{
+							'field':'Matricula',
+							'label':'Matricula'
+						},{
+							'field':'Colaborador',
+							'label':'Gestor',
+							'standard':'true'
+						}
+						]
+					}"
+					/>
+				</div>
+				<div class="form-group col-xs-12 col-md-4">
+					<label for="filial">Filial</label>
+					<input
+					type="zoom"
+					class="inicio"
+					id = "filial"
+					name="filial"
+					data-zoom="{
+						'displayKey':'CCODIGO',
+						'datasetId':'ds_filial',
+						'maximumSelectionLength':'1',
+						'placeholder':'Escolha a Filial',
+						'fields':[
+						{
+							'field':'CCODIGO',
+							'label':'Filial',
+							'standard':'true'
+						},{
+							'field':'CDESCRICAO',
+							'label':'Descrição'
+						}
+						]
+					}"
+					/>
+				</div>
+				<div class="form-group col-xs-12 col-md-4">
+					<label for="motivo">Motivo Solicitação</label>
+					<select class="form-control" mobile="true" name="motivo" id="motivo">
+						<option value="">Selecione</option>
+						<option value="1">Inclusão</option>
+						<option value="2">Alteração</option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-md-12 fs-no-margin fs-no-padding">
+					<div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
+						<table class="table" cellspacing="0" tablename="ingre" noaddbutton=true nodeletebutton=true>
+							<thead>
+								<tr class="tableHeadRow">
+									<th class="excluirPaiFilho"></th>
+									<th class="tableColumn">Colaborador</th>
+									<th class="tableColumn">N&ordm; Matrícula</th>
+									<th class="tableColumn dataAnterior hide">Data Anterior</th>
+									<th class="tableColumn">Data Inicial</th>
+									<th class="tableColumn">Quantidade de Dias</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="rowPF" id="idx">
+									<td class="excluirPaiFilho">
+										<div class="form-group" style="padding-top:.5rem">
+											<span class="fs-cursor-pointer" id="delPaiFilho" style="color:#aaa; font-weight:bolder;" onclick="delPaiFilho(this)">X</span>
+										</div>
+									</td>
+									<td class="col-md-4">
+										<div class="form-group">
+											<input
+											type="zoom"
+											class="inicio"
+											id = "colaborador"
+											name="colaborador"
+											data-zoom="{
+												'displayKey':'NOME',
+												'datasetId':'ds_RHFuncionarios',
+												'maximumSelectionLength':'1',
+												'placeholder':'Escolha o Colaborador',
+												'filterValues':'NOME, A',
+												'fields':[
+												{
+													'field':'MATRICULA',
+													'label':'Matricula'
+												},{
+													'field':'NOME',
+													'label':'Nome'
+												},{
+													'field':'FILIAL',
+													'label':'Filial',
+													'standard':'true'
+												}
+												]
+											}"
+											/>
+										</div>
+									</td>
+									<td class="col-md-3">
+										<div class="form-group">
+											<input class="form-control" type="text" id="pf_matricula" name="pf_matricula" value="" readonly/>
+										</div>
+									</td>
+									<td class="col-md-2 dataAnterior hide">
+										<div class="form-group">
+											<input class="form-control inicio" type="text" id="dt_anterior" name="dt_anterior" value="" />
+										</div>
+									</td>
+									<td class="col-md-2">
+										<div class="form-group">
+											<input class="form-control inicio" type="text" id="dt_ferias" name="dt_ferias" value="" />
+										</div>
+									</td>
+									<td class="col-md-2">
+										<div class="form-group">
+											<input class="form-control inicio" type="text" id="q_dias" name="q_dias" value="" />
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="form-group">
+						<button type="button" style="margin-left:15px" class="btn btn-default inicio" name="inputAdicionar" id="inputAdicionar">Adicionar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-default">
+			
+			<div class="panel-body">
+				<div class="form-group col-xs-12 col-md-6">
+					<label for="aprovacao_gestor">Aprovação Gestor</label>
+					<select class="form-control disable-0 gestor" mobile="true" name="aprovacao_gestor" id="aprovacao_gestor">
+						<option value="">Selecione</option>
+						<option value="1">Aprovado</option>
+						<option value="2">Reprovado</option>
+						<option value="3">Cancelado</option>
+					</select>
+				</div>
+				<div class="form-group col-xs-12 col-md-6">
+					<label for="aprovacao_rh">Aprovação RH</label>
+					<select class="form-control disable-0 rh" mobile="true" name="aprovacao_rh" id="aprovacao_rh">
+						<option value="">Selecione</option>
+						<option value="1">Aprovado</option>
+						<option value="2">Reprovado</option>
+						<option value="3">Cancelado</option>
+					</select>
+				</div>
+				<div id="obs_gestor" class="form-group col-xs-12 col-md-12 hide">
+					<label for="obs_gestor">Observação do Gestor</label>
+					<textarea class="form-control"  name="obs_gestor" rows="3"></textarea>
+				</div>
+				<div id="obs_rh" class="form-group col-xs-12 col-md-12 hide">
+					<label for="obs_gestor">Observação do RH</label>
+					<textarea class="form-control"  name="obs_rh" rows="3"></textarea>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

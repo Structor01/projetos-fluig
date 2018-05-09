@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/resources/style-guide/css/fluig-style-guide.min.css">
+	<link rel="stylesheet" type="text/css" href="custom.css">
+	<script src="/resources/js/jquery/jquery.js"></script>
+	<script src="/resources/js/jquery/jquery-ui.min.js"></script>
+	<script src="/resources/js/mustache/mustache-min.js"></script>
+	<script src="/resources/style-guide/js/fluig-style-guide.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC-mobile.js"></script>
+	<script src="custom.js"></script>
+	<script src="mask.js"></script>
+	<style>
+	form {
+		padding-right: 10px;
+	}
+	#logo{
+		max-width: 100%;
+		padding: 1rem;
+	}
+	#title {
+		text-align: center;
+	}
+	#aviso {
+		margin-top: 1rem;
+	}
+	</style>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- <img id="logo" class="col-md-2 col-xs-12" src="logo_cmz.png"  />
+				<h2 class="col-md-10 col-xs-12" id="title">Formulário de Relatório Prestação de Contas</h2> -->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="col-md-2">
+							<img src="logo_cmz.png" style="width:100%"/>
+						</div>
+						<div class="col-md-7">
+							<h1 style="font-size:16px; text-align:center"><span style="font-weight:light">Sorveteria Creme Mel S. A</span>
+								<br />
+								<b>RELATÓRIO PRESTAÇÃO DE CONTAS</b>
+							</h1>
+						</div>
+						<div class="col-md-3">
+							<p style="margin:0; padding:0;"><b>F.45_0002</b></p>
+							<p style="margin:0; padding:0;">
+								Administração Financeiro
+							</p>
+							<p style="margin:0; padding:0;">
+								N. Versão/Revisão: 1.002 Data: 04/10/2016
+							</p>
+							<p style="margin:0; padding:0;">
+								Página: 1/1
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<form name="form" role="form">
+					<input type="hidden" name="atividade" id="atividade" value="" />
+					<input type="hidden" name="gestor_n" id="gestor_n" value="" />
+					<input type="hidden" name="resp_fin" id="resp_fin" value="" />
+
+					<div id="aviso" class="alert alert-warning alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+						<strong>Atenção!</strong> Faça o anexo do comprovante na aba anexos acima.
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-md"></span> Solicitante</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="codigoCliente">Data de Abertura</label>
+								<input class="form-control" type="text" id="dtAbertura" name="dtAbertura" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="codigoCliente">Solicitante</label>
+								<input class="form-control" type="text" id="solicitante" name="solicitante" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="codigoCliente">Matrícula</label>
+								<input class="form-control" type="text" id="matricula" name="matricula" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="codigoCliente">Cargo</label>
+								<input class="form-control" type="text" id="cargo" name="cargo" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-2 ob">
+								<label for="empresa">Empresa</label>
+								<select class="form-control" mobile="true" id="empresa" name="empresa">
+									<option value="">Selecione</option>
+									<option value="Creme Mel">Creme Mel</option>
+									<option value="Zecas">Zecas</option>
+								</select>
+							</div>
+							<div class="form-group col-xs-12 col-md-3 ob">
+								<label for="codigoCliente">Departamento</label>
+								<input
+								type="zoom"
+								class="form-control"
+								id = "depto"
+								name="depto"
+								data-zoom="{
+									'displayKey':'areaDescription',
+									'datasetId':'destinationArea',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha o Departamento',
+									'fields':[
+									{
+										'field':'areaDescription',
+										'label':'Departamento',
+										'standard':'true'
+									}
+									]
+								}"
+								/>
+							</div>
+
+							<div class="form-group col-xs-12 col-md-4 ob">
+								<label for="gestor_imediato">Gestor Imediato</label>
+								<input
+								type="zoom"
+								id = "gestor_imediato"
+								name="gestor_imediato"
+								class="form-control"
+								data-zoom="{
+									'displayKey':'Colaborador',
+									'datasetId':'Gestores',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha o Gestor',
+									'fields':[
+									{
+										'field':'Colaborador',
+										'label':'Gestor',
+										'standard':'true'
+									}
+									]
+								}"
+								/>
+							</div>
+
+							<div class="form-group col-xs-12 col-md-3 ob">
+								<label for="centro_custo">Centro de Custo</label>
+								<input
+								type="zoom"
+								id = "centro_custo"
+								name="centro_custo"
+								class="form-control"
+								data-zoom="{
+									'displayKey':'DESCRIÇÃO',
+									'datasetId':'Centro_Custo',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha o Centro de Custo',
+									'fields':[
+									{
+										'field':'CC',
+										'label':'ID'
+									},{
+										'field':'DESCRIÇÃO',
+										'label':'Descrição',
+										'standard':'true'
+									}
+									]
+								}"
+								/>
+							</div>
+
+							<div class="form-group col-xs-12 col-md-3 ob">
+								<label for="utilizador_despesa">Tipo da despesa</label>
+								<select class="form-control" mobile="true" name="tipo_despesa" id="tipo_despesa">
+									<option value="">Selecione</option>
+									<option value="1">Viagem</option>
+									<option value="2">Compra sem Nota Fiscal</option>
+									<option value="3">Outro</option>
+								</select>
+							</div>
+
+							<div id="outro_tipo_despesa" class="form-group col-xs-12 col-md-3">
+								<label for="outro_tipo_despesa">Tipo da despesa</label>
+								<input class="form-control" type="text" name="outro_tipo_despesa" value="" />
+							</div>
+
+							<div class="form-group col-xs-12 col-md-3 ob">
+								<label for="utilizador_despesa">Utilizador da despesa</label>
+								<select class="form-control" mobile="true" id="utilizador_despesa" name="utilizador_despesa">
+									<option value="">Selecione</option>
+									<option value="1">Colaborador</option>
+									<option value="2">Terceiro</option>
+									<option value="3">Outro</option>
+								</select>
+							</div>
+							<div id="outro_utilizador_despesa" class="form-group col-xs-12 col-md-3">
+								<label for="outro_utilizador_despesa">Utilizador da despesa</label>
+								<input class="form-control" type="text" name="outro_utilizador_despesa" value="" />
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default viagem">
+						<div class="panel-heading">
+							<h3 class="panel-title"><i class="material-icons">card_travel</i> Viagem</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="meio_transporte">Meio de Transporte</label>
+								<select class="form-control" mobile="true" id="meio_transporte" name="meio_transporte">
+									<option value="">Selecione</option>
+									<option value="1">Aéreo</option>
+									<option value="2">Ônibus</option>
+									<option value="3">Veículo Creme Mel</option>
+									<option value="4">Veículo Particular</option>
+									<option value="5">Táxi</option>
+								</select>
+							</div>
+							<div class="form-group col-xs-12 col-md-3 veiculo_creme_mel">
+								<label for="veiculo_creme_mel">Veículo</label>
+								<input class="form-control" type="text" id="veiculo_creme_mel" name="veiculo_creme_mel" value="" />
+							</div>
+							<div class="form-group col-xs-12 col-md-3 veiculo_creme_mel">
+								<label for="km_saida">KM Saída</label>
+								<input class="form-control" type="text" id="km_saida" name="km_saida" value="" />
+							</div>
+							<div class="form-group col-xs-12 col-md-3 veiculo_creme_mel">
+								<label for="km_chegada">KM Chegada</label>
+								<input class="form-control" type="text" id="km_chegada" name="km_chegada" value="" />
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="local_saida">Local de Saída</label>
+								<input class="form-control" type="text" id="local_saida" name="local_saida" value="" />
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="local_saida">Local de Chegada</label>
+								<input class="form-control" type="text" id="local_chegada" name="local_chegada" value="" />
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="only-date">Data de Saída</label>
+								<div class="input-group date" id="dt_saidaPai">
+									<input type="text" name="dt_saida" class="form-control">
+									<span class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="only-date">Data de Chegada</label>
+								<div class="input-group date" id="dt_chegadaPai">
+									<input type="text" name="dt_chegada" class="form-control">
+									<span class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="qt_diarias">Quantidade de Diárias</label>
+								<input class="form-control number" type="text" id="qt_diarias" name="qt_diarias" value="" />
+							</div>
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="qt_refeicoes">Quantidade de Refeições</label>
+								<input class="form-control number" type="text" id="qt_refeicoes" name="qt_refeicoes" value="" />
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-user-comment fluigicon-md"></span> Observações</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-12">
+								<textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-money-circle fluigicon-md"></span> Adiantamento Financeiro</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-3">
+								<label for="adiantamento_financeiro">Pegou adiantamento financeiro?</label>
+								<select class="form-control" mobile="true" id="adiantamento_financeiro" name="adiantamento_financeiro">
+									<option value="">Selecione</option>
+									<option value="1">Sim</option>
+									<option value="2">Não</option>
+								</select>
+							</div>
+							<div class="form-group col-xs-12 col-md-2 adiantamento">
+								<label for="only-date">Data</label>
+								<div class="input-group date">
+									<input type="text" name="dt_adiantamento" class="form-control">
+									<span class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+							<div class="form-group col-xs-12 col-md-4 adiantamento">
+								<label for="adiantamento_unidade">Unidade</label>
+								<input
+								type="zoom"
+								id = "adiantamento_unidade"
+								name="adiantamento_unidade"
+								data-zoom="{
+									'displayKey':'CDESCRICAO',
+									'datasetId':'ds_filial',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha a Unidade',
+									'fields':[
+									{
+										'field':'CCODIGO',
+										'label':'ID'
+									},
+									{
+										'field':'CDESCRICAO',
+										'label':'Filial'
+									}
+									]
+								}"
+								/>
+							</div>
+							<div class="form-group col-xs-12 col-md-3 adiantamento">
+								<label for="valor_adiantamento">Valor</label>
+								<input class="form-control valor" type="text" id="valor_adiantamento" onblur="valorTotal()" name="valor_adiantamento" value="" />
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-file fluigicon-md"></span> Discriminar conforme documento fiscal</h3>
+						</div>
+						<div class="panel-body fs-no-padding">
+							<div class="col-md-12 fs-no-margin fs-no-padding">
+								<div class="form-field table-responsive" data-type="tabledetail" data-show-properties="" data-field-name="tabledetail">
+									<table class="table" cellspacing="0" tablename="ingre"
+									noaddbutton=true nodeletebutton=true>
+									<thead>
+										<tr class="tableHeadRow">
+											<th></th>
+											<th class="tableColumn">Data</th>
+											<th class="tableColumn">Estabelecimento</th>
+											<th class="tableColumn">Cidade</th>
+											<th class="tableColumn">Descrição</th>
+											<th class="tableColumn">Valor</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="rowPF">
+											<td>
+												<div class="form-group" style="padding-top:.5rem">
+													<span class="fs-cursor-pointer" id="delPaiFilho" style="color:#aaa; font-weight:bolder;" onclick="delPaiFilho(this)">X</span>
+												</div>
+											</td>
+											<td class="col-md-1">
+												<div class="form-group">
+													<input type="text" class="form-control" name="dt_doc" id="dt_doc" >
+												</div>
+											</td>
+											<td class="col-md-3">
+												<div class="form-group">
+													<input type="text" name="estabelecimento" class="form-control" />
+												</div>
+											</td>
+											<td class="col-md-2">
+												<div class="form-group">
+													<input type="text" name="cidade" class="form-control" />
+												</div>
+											</td>
+											<td class="col-md-4">
+												<div class="form-group">
+													<input type="text" name="descricao" class="form-control" />
+												</div>
+											</td>
+											<td class="col-md-2">
+												<div class="form-group">
+													<input type="text" id="valor" name="valor" onblur="valorTotal()" class="form-control valor" />
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="form-group">
+								<button type="button" style="margin-left:15px" class="btn btn-default" name="inputAdicionar"
+								id="inputAdicionar" onclick="wdkAddChild('ingre')">Adicionar</button>
+							</div>
+							<div class="form-group col-md-3">
+								<div class="input-group">
+									<span class="input-group-addon">Valor Total</span>
+									<input type="text" name="valor_total" id="valor_total" readonly class="form-control">
+								</div>
+							</div>
+							<div class="form-group col-md-3">
+								<div class="input-group">
+									<span class="input-group-addon">Valor Reembolso</span>
+									<input type="text" name="valor_reembolso" id="valor_reembolso" readonly class="form-control">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-check-circle-on fluigicon-md"></span> Aprovação</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-xs-12 col-md-6">
+							<label for="aprovacao_gestor">Aprovação do Gestor</label>
+							<select class="form-control disable-0 gestor" mobile="true" id="aprovacao_gestor" name="aprovacao_gestor">
+								<option value="">Selecione</option>
+								<option value="1">Aprovado</option>
+								<option value="2">Reprovado</option>
+								<option value="3">Cancelar</option>
+							</select>
+						</div>
+						<div class="form-group col-xs-12 col-md-6">
+							<label for="aprovacao_financeiro">Aprovação do Financeiro</label>
+							<select class="form-control disable-0 financeiro" mobile="true" id="aprovacao_financeiro" name="aprovacao_financeiro">
+								<option value="">Selecione</option>
+								<option value="1">Aprovado</option>
+								<option value="2">Reprovado</option>
+								<option value="3">Cancelar</option>
+							</select>
+						</div>
+						<div class="form-group col-xs-12 col-md-12 hide">
+							<label for="aprovacao_financeiro">Observação do Financeiro</label>
+							<textarea class="form-control" name="observacao_financeiro" id="observacao_financeiro" rows="3"></textarea>
+						</div>
+						<div class="form-group col-xs-12 col-md-12 hide">
+							<label for="aprovacao_financeiro">Observação do Gestor</label>
+							<textarea class="form-control" name="observacao_gestor" id="observacao_gestor" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-check-circle-on fluigicon-md"></span> Comprovante Recebimento</h3>
+					</div>
+					<div class="panel-body">
+						<table id="borda" width="99%" >
+							<tr id="espaco" align="center">
+								<td width="30%">
+									<br /><br />
+									&nbsp;
+								</td>
+								<td>
+									<br /><br />
+									__________________________,&nbsp;
+								</td>
+								<td>
+									<br /><br />
+									____/____/____&nbsp;
+								</td>
+								<td>
+									<br /><br />
+									________________________________________
+								</td>
+
+								<td width="30%">
+									<br /><br />
+									&nbsp;
+								</td>
+							</tr>
+
+							<tr id="espaco" align="center">
+								<td width="30%">
+									&nbsp;
+								</td>
+
+								<td>
+									<center> Cidade </center>
+								</td>
+								<td>
+									Data
+								</td>
+								<td>
+									Assinatura por extenso
+								</td>
+
+								<td width="30%">
+									&nbsp;
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

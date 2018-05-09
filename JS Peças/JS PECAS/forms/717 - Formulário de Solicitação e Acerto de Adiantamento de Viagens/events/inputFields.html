@@ -1,0 +1,10 @@
+function inputFields(form) {
+	if (form && form.getValue("dat_saida") && form.getValue("dat_saida").match("^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$")) {
+		var split = form.getValue("dat_saida").split('/');
+		form.setValue("dat_saida", split[2] + '-' + split[1] + '-' + split[0]);
+	}
+	if (form && form.getValue("dat_retorno") && form.getValue("dat_retorno").match("^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$")) {
+		var split = form.getValue("dat_retorno").split('/');
+		form.setValue("dat_retorno", split[2] + '-' + split[1] + '-' + split[0]);
+	}
+}

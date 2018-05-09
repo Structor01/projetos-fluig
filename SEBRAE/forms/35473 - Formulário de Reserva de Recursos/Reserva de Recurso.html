@@ -1,0 +1,297 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<link rel="stylesheet" type="text/css" href="/portal/resources/css/fluig-style-guide-filter.min.css">
+	<script src="/portal/resources/js/fluig-style-guide-filter.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.mask.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="custom.js"></script>
+	<style>
+		.fluig-style-guide .panel-default>.panel-heading {
+			color: #FFF !important;
+			background-color: #0080ff!important;
+			border-color: #0080ff!important;
+		}
+
+
+		.fluig-style-guide .input-group-addon {
+			border: 1px solid #0080ff!important;
+			background-color: #0080ff!important;
+			color: #FFF !important;
+		}
+
+		.fluigicon.fluigicon-trash.fluigicon-md {
+			line-height: 0px;
+		}
+
+		.btn-default {
+			border: 1px solid #0080ff!important;
+			background-color: #0080ff!important;
+			color: #FFF !important;
+		}
+
+		.btn-default:hover {
+			background-color: #0A8ECC!important;
+		}
+
+		button {
+			margin-right: .5rem;
+		}
+	</style>
+</head>
+<body>
+<div class="fluig-style-guide">
+	<form name="form" role="form">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="page-header col-md-12">
+					<div class="row">
+						<div class="col-md-8 col-xs-8">
+							<h1 class="fs-no-margin fs-ellipsis fs-full-width">Solicitação de Recursos</h1>
+						</div>
+						<div class="col-md-4 col-xs-4">
+							<div class="pull-right">
+								<img src="http://www.peruibe3.sp.gov.br/portal/wp-content/uploads/2018/03/sebrae-466x300.jpg" height="50px" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="aprovacao" class="panel panel-default fs-clear-both aprovacao hide">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-certificate fluigicon-sm"></span> Aprovação</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-3">
+							<label for="slAprova">Aprovado?</label>
+							<select id="slAprova" name="slAprova" class="form-control" onchange="$(this).val() != 'Aprovado' ? $('.aprovaObs').removeClass('hide') : $('.aprovaObs').val().addClass('hide')">
+								<option value="Aprovado">Aprovado</option>
+								<option value="Reprovado">Reprovado</option>
+								<option value="Refazer">Refazer</option>
+							</select>
+						</div>
+						<div class="form-group col-md-12 aprovaObs">
+							<label for="slAprova">Aprovaç</label>
+							<textarea class="form-control" name="aprovaObs" rows="3" style="resize: none"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default fs-clear-both">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Dados Gerais</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-3">
+							<label for="dtSolicitacao">Data Solicitação</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="dtSolicitacao" name="dtSolicitacao" readonly>
+								<div class="input-group-addon">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<label for="solicitante">Solicitante</label>
+							<input type="text" class="form-control" id="solicitante" name="solicitante" readonly>
+							<input type="hidden" class="form-control" id="solicitanteId" name="solicitanteId" readonly>
+						</div>
+						<div class="form-group col-md-5">
+							<label for="solicitanteInformado">Solicitante Informado</label>
+							<input type="zoom"
+								   class="form-control" name="solicitanteInformado" id="solicitanteInformado"
+								   dataset="colleague" datasetvalue="coleagueName"
+								   data-zoom="{
+												'datasetId':'colleague',
+												'displayKey':'colleagueName',
+												'filterValues':'active,true',
+												'fields':[
+													{'field':'colleagueName','label':'Nome','standard':true,'search':true},
+													{'field':'mail','label':'E-mail'}]}"
+
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default fs-clear-both">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-notes fluigicon-sm"></span> Recursos</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-5">
+							<label for="recurso">Recurso</label>
+							<input type="hidden" class="form-control" id="codigoRecurso" name="codigoRecurso" readonly>
+							<input type="zoom"
+								   class="form-control" name="recurso" id="recurso"
+								   dataset="sebrae_cadastra_recursos" datasetvalue="dsNome"
+								   data-zoom="{
+												'datasetId':'sebrae_cadastra_recursos',
+												'displayKey':'dsNome',
+												'filterValues':'dsAtivo,S',
+												'fields':[
+													{'field':'id','label':'Id'},
+													{'field':'dsNome','label':'Nome','standard':true,'search':true},
+													{'field':'dsQuantidade','label':'Quantidade'}
+												]}"
+							/>
+						</div>
+						<div class="form-group col-md-2">
+							<label for="responsavel">Quant.</label>
+							<input type="text" class="form-control" id="quantidade" name="quantidade" readonly>
+						</div>
+						<div class="form-group col-md-5">
+							<label for="responsavel">Responsável</label>
+							<input type="hidden" class="form-control" id="responsavelAprovacao" name="responsavelAprovacao" readonly>
+							<input type="text" class="form-control" id="responsavel" name="responsavel" readonly>
+						</div>
+						<div class="form-group col-md-12">
+							<label for="descricaoRecurso">Descrição do Recurso</label>
+							<textarea class="form-control" rows="3" style="resize: none" id="descricaoRecurso" name="descricaoRecurso" readonly></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default fs-clear-both horarios hide">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<span class="fluigicon fluigicon-time fluigicon-sm"></span> Horários
+						</h3>
+						<span class="fs-float-right" style="margin-top: -1rem; color:white;">
+							<a style="color:white" onclick="verTodos()">Ver todos</a>
+						</span>
+					</div>
+					<div class="panel-body">
+						<ul class="list-group col-md-4">
+							<li class="list-group-item disabled">
+								Preencha os campos abaixo:
+							</li>
+							<li class="list-group-item">
+								<label for="qtSolicitada">Quantidade</label>
+								<input type="text" class="form-control" id="qtSolicitada" name="qtSolicitada">
+							</li>
+							<li class="list-group-item">
+								<label for="dtSolicitacao">Data Inicial</label>
+								<div class="input-group date" onclick="dateSet(this)">
+									<input type="text" class="form-control dateReserva" id="dtInicio" name="dtInicio">
+									<div class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar" onclick="dateSet(this)"></span>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<label for="dtSolicitacao">Data Final</label>
+								<div class="input-group date">
+									<input type="text" class="form-control dateReserva" id="dtFinal" name="dtFinal">
+									<div class="input-group-addon" onclick="dateSet(this)">
+										<span class="fluigicon fluigicon-calendar"></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<ul class="list-group col-md-8">
+							<li class="list-group-item disabled">
+								Recursos Reservados
+							</li>
+							<li class="list-group-item">
+								<table class="table table-hover">
+									<thead>
+									<th>
+										Solicitante
+									</th>
+									<th>
+										Quantidade
+									</th>
+									<th>
+										Início
+									</th>
+									<th>
+										Fim
+									</th>
+									</thead>
+									<tbody id="rowReserva"></tbody>
+								</table>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="panel panel-default recursos hide">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<span class="fluigicon fluigicon-glass fluigicon-sm"></span> Necessidades no Recurso
+						</h3>
+					</div>
+					<div class="panel-body">
+						<ul class="list-group col-md-4">
+							<li class="list-group-item disabled">
+								Recursos
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcBolachaII">
+									<input type="checkbox" id="rcBolacha" name="rcBolacha" value="bolacha"> Bolachas (sal/doce)
+								</label>
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcEquipamentosII">
+									<input type="checkbox" id="rcEquipamentos" name="rcEquipamentos" value="equipamentos"> Equipamentos
+								</label>
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcFilmeII">
+									<input type="checkbox" id="rcFilme" name="rcFilme" value="filme"> Exibirá Filme
+								</label>
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcSalaII">
+									<input type="checkbox" id="rcSala" name="rcSala" value="sala"> Formato de Salas
+								</label>
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcChaII">
+									<input type="checkbox" id="rcCha" name="rcCha" value="cha"> Garrafa de Chá
+								</label>
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcCafeII" >
+									<input type="checkbox" id="rcCafe" name="rcCafe" value="cafe"> Garrafa de Café
+								</label>
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcParticipanteII">
+									<input type="checkbox" id="rcParticipante" name="rcParticipante" value="participante" onclick="ativaRec(this)"> Número de Participante
+								</label>
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcFinalidadeII">
+									<input type="checkbox" id="rcFinalidade" name="rcFinalidade" value="finalidade" onclick="ativaRec(this)"> Finalidade
+								</label>
+							</li>
+							<li class="list-group-item">
+								<label class="checkbox-inline" id="rcObservacaoII">
+									<input type="checkbox" id="rcObservacao" name="rcObservacao" value="observacao" onclick="ativaRec()"> Observação
+								</label>
+							</li>
+						</ul>
+						<div class="form-group col-md-8 col-sm-12 fs-float-right" id="rcParticipanteObsII">
+							<label for="rcParticipanteObs" class="control-label">Participante</label>
+							<textarea class="form-control"id="rcParticipanteObs" name="rcParticipanteObs" rows="3" readonly></textarea>
+						</div>
+						<div class="form-group col-md-8 col-sm-12 fs-float-right" id="rcFinalidadeObsII">
+							<label for="rcFinalidadeObs" class="control-label" >Finalidade</label>
+							<textarea class="form-control"id="rcFinalidadeObs" name="rcFinalidadeObs" rows="3" readonly></textarea>
+						</div>
+						<div class="form-group col-md-8 col-sm-12 fs-float-right" id="rcObservacaoObsII">
+							<label for="rcObservacaoObs" class="control-label" >Observação</label>
+							<textarea class="form-control"id="rcObservacaoObs" name="rcObservacaoObs" rows="3" readonly></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>

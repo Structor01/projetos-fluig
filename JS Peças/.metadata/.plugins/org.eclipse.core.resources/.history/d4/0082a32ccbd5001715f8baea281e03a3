@@ -1,0 +1,4 @@
+function validateForm(form){
+  var colab = form.getValue("colaborador_matricula");
+  var gestor = form.getValue("gestor_matricula");
+}

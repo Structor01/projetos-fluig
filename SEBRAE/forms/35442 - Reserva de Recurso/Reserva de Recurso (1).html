@@ -1,0 +1,173 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<link rel="stylesheet" type="text/css" href="/portal/resources/css/fluig-style-guide-filter.min.css">
+	<script src="/portal/resources/js/fluig-style-guide-filter.min.js"></script>
+	<script type="text/javascript" src="/resources/js/jquery.mask.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="custom.js"></script>
+	<style>
+		.fluig-style-guide .panel-default>.panel-heading {
+			color: #FFF !important;
+			background-color: #0080ff!important;
+			border-color: #0080ff!important;
+		}
+
+
+		.fluig-style-guide .input-group-addon {
+			border: 1px solid #0080ff!important;
+			background-color: #0080ff!important;
+			color: #FFF !important;
+		}
+
+		.fluigicon.fluigicon-trash.fluigicon-md {
+			line-height: 0px;
+		}
+
+		.btn-default {
+			border: 1px solid #0080ff!important;
+			background-color: #0080ff!important;
+			color: #FFF !important;
+		}
+
+		.btn-default:hover {
+			background-color: #0A8ECC!important;
+		}
+
+		button {
+			margin-right: .5rem;
+		}
+	</style>
+</head>
+<body>
+<div class="fluig-style-guide">
+	<form name="form" role="form">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="page-header col-md-12">
+					<div class="row">
+						<div class="col-md-8 col-xs-8">
+							<h1 class="fs-no-margin fs-ellipsis fs-full-width">Solicitação de Recursos</h1>
+						</div>
+						<div class="col-md-4 col-xs-4">
+							<div class="pull-right">
+								<img src="http://www.peruibe3.sp.gov.br/portal/wp-content/uploads/2018/03/sebrae-466x300.jpg" height="50px" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default fs-clear-both">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Dados Gerais</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-3">
+							<label for="dtSolicitacao">Data Solicitação</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="dtSolicitacao" name="dtSolicitacao" readonly>
+								<div class="input-group-addon">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-md-4">
+							<label for="solicitante">Solicitante</label>
+							<input type="text" class="form-control" id="solicitante" name="solicitante" readonly>
+						</div>
+						<div class="form-group col-md-5">
+							<label for="solicitanteInformado">Solicitante Informado</label>
+							<input type="zoom"
+								   class="form-control" name="solicitanteInformado" id="solicitanteInformado"
+								   dataset="colleague" datasetvalue="coleagueName"
+								   data-zoom="{
+												'datasetId':'colleague',
+												'displayKey':'colleagueName',
+												'filterValues':'active,true',
+															'fields':[
+																	{'field':'colleagueName','label':'Nome','standard':true,'search':true},
+																	{'field':'mail','label':'E-mail'}]}"
+
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default fs-clear-both">
+					<div class="panel-heading">
+						<h3 class="panel-title"><span class="fluigicon fluigicon-notes fluigicon-sm"></span> Recursos</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-group col-md-12">
+							<label for="recurso">Recurso</label>
+							<input type="hidden" class="form-control" id="codigoRecurso" name="codigoRecurso" readonly>
+							<input type="zoom"
+								   class="form-control" name="recurso" id="recurso"
+								   dataset="sebrae_cadastra_recursos" datasetvalue="dsNome"
+								   data-zoom="{
+												'datasetId':'sebrae_cadastra_recursos',
+												'displayKey':'dsNome',
+												'filterValues':'dsAtivo,S',
+												'fields':[
+													{'field':'id','label':'Id'},
+													{'field':'dsNome','label':'Nome','standard':true,'search':true},
+													{'field':'dsQuantidade','label':'Quantidade'}
+												]}"
+							/>
+						</div>
+						<div class="form-group col-md-12">
+							<label for="descricaoRecurso">Descrição do Recurso</label>
+							<textarea class="form-control" rows="3" style="resize: none" id="descricaoRecurso" name="descricaoRecurso" readonly></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default fs-clear-both">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<span class="fluigicon fluigicon-time fluigicon-sm"></span> Horários
+						</h3>
+					</div>
+					<div class="panel-body">
+						<ul class="list-group col-md-4">
+							<li class="list-group-item disabled">
+								Preencha os campos abaixo:
+							</li>
+							<li class="list-group-item">
+								<label for="dtSolicitacao">Data Inicial</label>
+								<div class="input-group date">
+									<input type="text" class="form-control date dateReserva" id="dtInicio" name="dtInicio">
+									<div class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar"></span>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<label for="dtSolicitacao">Data Final</label>
+								<div class="input-group">
+									<input type="text" class="form-control date dateReserva" id="dtFinal" name="dtFinal">
+									<div class="input-group-addon">
+										<span class="fluigicon fluigicon-calendar"></span>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<ul class="list-group col-md-8">
+							<li class="list-group-item disabled">
+								Recursos Reservados
+							</li>
+							<li class="list-group-item">
+
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>

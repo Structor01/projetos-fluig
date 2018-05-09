@@ -1,0 +1,142 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<link type="text/css" rel="stylesheet" href="custom.css"/>
+	<script src="/resources/js/jquery/jquery.js"></script>
+	<script src="/resources/js/jquery/jquery-ui.min.js"></script>
+	<script src="/resources/js/mustache/mustache-min.js"></script>
+	<script src="/resources/style-guide/js/fluig-style-guide.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC-mobile.js"></script>
+	<script src="custom.js"></script>
+	<script src="mask.js"></script>
+	<style>
+	form {
+		padding-right: 10px;
+	}
+	#logo{
+		max-width: 100%;
+		padding: 1rem;
+	}
+	#title {
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- <img id="logo" class="col-md-2 col-xs-12" src="logo-crememel.jpg"  />
+				<h2 class="col-md-10 col-xs-12" id="title">Envio de Comprovante</h2> -->
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="col-md-2">
+							<img src="logo-crememel.jpg" style="width:100%"/>
+						</div>
+						<div class="col-md-7">
+							<h1 style="font-size:16px; text-align:center">
+								<span style="font-weight:light">Sorveteria Creme Mel S. A</span><br />
+								<b>ENVIO DE COMPROVANTE</b>
+							</h1>
+						</div>
+						<div class="col-md-3">
+							<p style="margin:0; padding:0;"><b>F.55_0044</b></p>
+							<p style="margin:0; padding:0;">
+								Administração Financeiro
+							</p>
+							<p style="margin:0; padding:0;">
+								N. Versão/Revisão: 1.002 Data: 04/10/2016
+							</p>
+							<p style="margin:0; padding:0;">
+								Página: 1/1
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div id="aviso" class="alert alert-warning alert-dismissible" role="alert">
+					<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<strong>Atenção!</strong> Faça o anexo do comprovante na aba anexos acima.
+				</div>
+				<form name="form" role="form">
+					<input type="hidden" id="ativ" name="atividade" value="" />
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-md"></span> Solicitação</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-4">
+								<label for="ecp_dtAbertura">Data de Abertura</label>
+								<input class="form-control" type="text" id="ecp_dtAbertura" name="ecp_dtAbertura" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-4">
+								<label for="ecp_solicitante">Solicitante</label>
+								<input class="form-control" type="text" id="ecp_solicitante" name="ecp_solicitante" value="" readonly/>
+							</div>
+							<div class="form-group col-xs-12 col-md-4">
+								<label for="ecp_matricula">Matrícula</label>
+								<input class="form-control" type="text" id="ecp_matricula" name="ecp_matricula" value="" readonly/>
+							</div>
+							<div class="form-group col-12 col-md-4">
+								<label for="ecp_codigoCliente">Código Cliente + Loja</label>
+								<input class="form-control" type="text" id="ecp_codigoCliente" name="ecp_codigoCliente" value="" />
+							</div>
+							<div class="form-group col-12 col-md-4">
+								<label for="ecp_pedidoVenda">Pedido de Venda</label>
+								<input class="form-control" type="text" id="ecp_pedidoVenda" name="ecp_pedidoVenda" value="" />
+							</div>
+							<div class="form-group col-12 col-md-4">
+								<label for="ecp_filial">Filial</label>
+								<input
+								type="zoom"
+								class="form-control"
+								id = "ecp_filial"
+								name="ecp_filial"
+								data-zoom="{
+									'displayKey':'CDESCRICAO',
+									'datasetId':'ds_filial',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha a Unidade',
+									'fields':[
+									{
+										'field':'CCODIGO',
+										'label':'ID'
+									},
+									{
+										'field':'CDESCRICAO',
+										'label':'Filial'
+									}
+									]
+								}"
+								/>
+							</div>
+						</div>
+					</div>
+					<div id="ecp_aprovacaoPai" class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"><span class="fluigicon fluigicon-file-approval fluigicon-md"></span> Aprovação</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-group col-xs-12 col-md-4">
+								<label for="ecp_aprovacao">Aprovação</label>
+								<select class="form-control" mobile="true" name="ecp_aprovacao" id="ecp_aprovacao">
+									<option value="">Selecione</option>
+									<option value="1">Atendido</option>
+									<option value="2">Negado</option>
+								</select>
+							</div>
+							<div id="ecp_motivoNegadoPai" class="form-group col-xs-12 col-md-12">
+								<label for="ecp_motivoNegado">Motivo</label>
+								<textarea class="form-control" name="ecp_motivoNegado" id="ecp_motivoNegado" rows="3"></textarea>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

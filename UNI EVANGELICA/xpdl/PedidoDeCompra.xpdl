@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://www.wfmc.org/2009/XPDL2.2">
+  <PackageHeader>
+    <XPDLVersion>2.2</XPDLVersion>
+    <Vendor>Fluig BPMN Modeler</Vendor>
+    <Created>Fri Dec 01 13:16:42 BRST 2017</Created>
+  </PackageHeader>
+  <RedefinableHeader>
+    <Version>17</Version>
+  </RedefinableHeader>
+  <ExternalPackages/>
+  <Participants/>
+  <DataStores/>
+  <Pools>
+    <Pool Id="pool1" Name="Pedido de Compra" BoundaryVisible="true" Process="PedidoDeCompra">
+      <Lanes>
+        <Lane Id="swimlane2" Name="Protheus" ParentPool="pool1">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="143.0" Width="961.0" FillColor="E8FFF3">
+              <Coordinates XCoordinate="30.0" YCoordinate="143.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Id="swimlane3" Name="Compras" ParentPool="pool1">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="143.0" Width="961.0" FillColor="E8FFF3">
+              <Coordinates XCoordinate="30.0" YCoordinate="429.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Id="swimlane10" Name="Almoxarifado" ParentPool="pool1">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="143.0" Width="961.0" FillColor="F2F2FF">
+              <Coordinates XCoordinate="30.0" YCoordinate="572.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Id="swimlane24" Name="Solicitante" ParentPool="pool1">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="143.0" Width="961.0" FillColor="F2F2FF">
+              <Coordinates XCoordinate="30.0" YCoordinate="0.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Id="swimlane33" Name="Aprovador" ParentPool="pool1">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="143.0" Width="961.0" FillColor="F2F2FF">
+              <Coordinates XCoordinate="30.0" YCoordinate="286.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+        <Lane Id="swimlane34" Name="Assessoria" ParentPool="pool1">
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="146.0" Width="961.0" FillColor="EAFFF4">
+              <Coordinates XCoordinate="30.0" YCoordinate="715.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Lane>
+      </Lanes>
+      <NodeGraphicsInfos>
+        <NodeGraphicsInfo Height="861.0" Width="991.0" FillColor="FFFFFF">
+          <Coordinates XCoordinate="10.0" YCoordinate="10.0"/>
+        </NodeGraphicsInfo>
+      </NodeGraphicsInfos>
+    </Pool>
+    <Pool Id="pool9" Name="Pool" BoundaryVisible="true" Process="PedidoDeCompra">
+      <Lanes/>
+    </Pool>
+    <Pool Id="pool23" Name="Pool" BoundaryVisible="true" Process="PedidoDeCompra">
+      <Lanes/>
+    </Pool>
+  </Pools>
+  <Associations/>
+  <Artifacts/>
+  <WorkflowProcesses>
+    <WorkflowProcess Id="PedidoDeCompra" Name="PedidoDeCompra">
+      <ProcessHeader>
+        <Created>Fri Dec 01 13:16:42 BRST 2017</Created>
+      </ProcessHeader>
+      <RedefinableHeader/>
+      <ActivitySets/>
+      <Activities>
+        <Activity Id="b1c295c6-6628-9887-bc1e-7c37220223bb" Name="Início">
+          <Event>
+            <StartEvent Trigger="None"/>
+          </Event>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="35.0" Width="35.0">
+              <Coordinates XCoordinate="130.0" YCoordinate="219.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="add1138d-d5e6-22a4-ee21-fef18c8c5b01" Name="Fim">
+          <Event>
+            <EndEvent Result="None"/>
+          </Event>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="35.0" Width="35.0">
+              <Coordinates XCoordinate="530.0" YCoordinate="365.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="93316eb5-3267-5ae0-239c-3ab6125be9a1" Name="Fim">
+          <Event>
+            <EndEvent Result="None"/>
+          </Event>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="35.0" Width="35.0">
+              <Coordinates XCoordinate="900.0" YCoordinate="65.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="3b52f288-9ef5-0f30-9f03-d429efb38482" Name="Fim">
+          <Event>
+            <EndEvent Result="None"/>
+          </Event>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="35.0" Width="35.0">
+              <Coordinates XCoordinate="171.0" YCoordinate="65.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="c662b7c4-5e90-3e20-2c97-bd6d510d5635" Name="Aprovar">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="56.0" Width="106.0">
+              <Coordinates XCoordinate="217.0" YCoordinate="354.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="7ce21df3-9153-1968-cb7f-47515d722fc9" Name="Justificar">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="56.0" Width="106.0">
+              <Coordinates XCoordinate="390.0" YCoordinate="54.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="be4150b1-63c5-a332-460e-abab712d285f" Name="Aguardar Produto">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="70.0" Width="106.0">
+              <Coordinates XCoordinate="570.0" YCoordinate="600.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="b7612600-2e3d-755c-8cea-f530a4249d10" Name="Retirar Produto">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="56.0" Width="106.0">
+              <Coordinates XCoordinate="730.0" YCoordinate="54.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ecaa90a0-e143-9292-bf44-e7ef85677249" Name="Parecer">
+          <Implementation>
+            <Task/>
+          </Implementation>
+          <ExtendedAttributes/>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="56.0" Width="106.0">
+              <Coordinates XCoordinate="390.0" YCoordinate="772.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="3cc2200a-8ef6-36f0-dbb7-a95ec7eba265" Name="Aprov?">
+          <Route/>
+          <ExtendedAttributes>
+            <ExtendedAttribute Name="FLUIG_conditions" Value="&lt;list>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>1&lt;/order>
+    &lt;expression>hAPI.getCardValue(&amp;apos;parecerLiberacao&amp;apos;) == &amp;apos;C&amp;apos;&lt;/expression>
+    &lt;targetTask>add1138d-d5e6-22a4-ee21-fef18c8c5b01&lt;/targetTask>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>2&lt;/order>
+    &lt;expression>hAPI.getCardValue(&amp;apos;parecerLiberacao&amp;apos;) == &amp;apos;J&amp;apos;&lt;/expression>
+    &lt;targetTask>7ce21df3-9153-1968-cb7f-47515d722fc9&lt;/targetTask>
+    &lt;mechanism>Executor Atividade&lt;/mechanism>
+    &lt;mecanismoAtribuicaoConfiguracao class=&quot;org.eclipse.bpmn2.impl.AssignmentControllerExecutorMechanism&quot;>
+      &lt;idNode>startevent4&lt;/idNode>
+      &lt;returns>0&lt;/returns>
+      &lt;mechanismName>Executor Atividade&lt;/mechanismName>
+    &lt;/mecanismoAtribuicaoConfiguracao>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>3&lt;/order>
+    &lt;expression>hAPI.getCardValue(&amp;apos;parecerLiberacao&amp;apos;) == &amp;apos;A&amp;apos;&lt;/expression>
+    &lt;targetTask>be4150b1-63c5-a332-460e-abab712d285f&lt;/targetTask>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+&lt;/list>"/>
+          </ExtendedAttributes>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="88.0" Width="60.0">
+              <Coordinates XCoordinate="412.0" YCoordinate="338.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="7895879b-3f8b-ef9d-b5d9-99e5ea60f425" Name="Justi?">
+          <Route/>
+          <ExtendedAttributes>
+            <ExtendedAttribute Name="FLUIG_conditions" Value="&lt;list>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>1&lt;/order>
+    &lt;expression>hAPI.getCardValue(&amp;apos;parecerJustificativa&amp;apos;) == &amp;apos;C&amp;apos;&lt;/expression>
+    &lt;targetTask>3b52f288-9ef5-0f30-9f03-d429efb38482&lt;/targetTask>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>2&lt;/order>
+    &lt;expression>hAPI.getCardValue(&amp;apos;parecerJustificativa&amp;apos;) == &amp;apos;J&amp;apos;&lt;/expression>
+    &lt;targetTask>c662b7c4-5e90-3e20-2c97-bd6d510d5635&lt;/targetTask>
+    &lt;mechanism>Executor Atividade&lt;/mechanism>
+    &lt;mecanismoAtribuicaoConfiguracao class=&quot;org.eclipse.bpmn2.impl.AssignmentControllerExecutorMechanism&quot;>
+      &lt;idNode>task5&lt;/idNode>
+      &lt;returns>1&lt;/returns>
+      &lt;mechanismName>Executor Atividade&lt;/mechanismName>
+    &lt;/mecanismoAtribuicaoConfiguracao>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+&lt;/list>"/>
+          </ExtendedAttributes>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="88.0" Width="60.0">
+              <Coordinates XCoordinate="241.0" YCoordinate="38.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+        <Activity Id="ed40d0ab-1576-433e-322d-51ac853eea7e" Name="Entrega Parcial?">
+          <Route/>
+          <ExtendedAttributes>
+            <ExtendedAttribute Name="FLUIG_conditions" Value="&lt;list>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>1&lt;/order>
+    &lt;expression>hAPI.getCardValue(&amp;apos;tipoEntrega&amp;apos;) == &amp;apos;T&amp;apos;&lt;/expression>
+    &lt;targetTask>b7612600-2e3d-755c-8cea-f530a4249d10&lt;/targetTask>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+  &lt;org.eclipse.bpmn2.impl.ConditionImpl>
+    &lt;order>2&lt;/order>
+    &lt;expression>hAPI.getCardValue(&amp;apos;tipoEntrega&amp;apos;) == &amp;apos;P&amp;apos;&lt;/expression>
+    &lt;targetTask>be4150b1-63c5-a332-460e-abab712d285f&lt;/targetTask>
+  &lt;/org.eclipse.bpmn2.impl.ConditionImpl>
+&lt;/list>"/>
+          </ExtendedAttributes>
+          <NodeGraphicsInfos>
+            <NodeGraphicsInfo Height="102.0" Width="60.0">
+              <Coordinates XCoordinate="753.0" YCoordinate="584.0"/>
+            </NodeGraphicsInfo>
+          </NodeGraphicsInfos>
+        </Activity>
+      </Activities>
+      <DataObjects/>
+      <DataInputOutputs/>
+      <DataStoreReferences/>
+      <Transitions>
+        <Transition Id="b267384b-fed7-6bcb-f8f8-eacadb3d04f3" Name="" From="c662b7c4-5e90-3e20-2c97-bd6d510d5635" To="3cc2200a-8ef6-36f0-dbb7-a95ec7eba265">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="323.0" YCoordinate="382.0"/>
+              <Coordinates XCoordinate="412.0" YCoordinate="382.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="b99ae22a-98ea-5b67-09d4-55cd23727154" Name="" From="3cc2200a-8ef6-36f0-dbb7-a95ec7eba265" To="7ce21df3-9153-1968-cb7f-47515d722fc9">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="412.0" YCoordinate="382.0"/>
+              <Coordinates XCoordinate="443.0" YCoordinate="110.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="2ab0b7f-d67d-1027-cb83-2e42f0827bc7" Name="" From="3cc2200a-8ef6-36f0-dbb7-a95ec7eba265" To="add1138d-d5e6-22a4-ee21-fef18c8c5b01">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="472.0" YCoordinate="382.0"/>
+              <Coordinates XCoordinate="530.0" YCoordinate="382.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="17380a1b-a491-c242-4c9b-392c9c11b5a3" Name="" From="3cc2200a-8ef6-36f0-dbb7-a95ec7eba265" To="be4150b1-63c5-a332-460e-abab712d285f">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="442.0" YCoordinate="338.0"/>
+              <Coordinates XCoordinate="442.0" YCoordinate="313.0"/>
+              <Coordinates XCoordinate="622.0" YCoordinate="313.0"/>
+              <Coordinates XCoordinate="623.0" YCoordinate="600.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="fb40c6f1-a74c-20cb-958e-1dd10842a912" Name="" From="b1c295c6-6628-9887-bc1e-7c37220223bb" To="c662b7c4-5e90-3e20-2c97-bd6d510d5635">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="147.0" YCoordinate="254.0"/>
+              <Coordinates XCoordinate="147.0" YCoordinate="381.0"/>
+              <Coordinates XCoordinate="217.0" YCoordinate="382.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="d6013f97-df88-a4c0-393e-e40916737b76" Name="" From="b7612600-2e3d-755c-8cea-f530a4249d10" To="93316eb5-3267-5ae0-239c-3ab6125be9a1">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="836.0" YCoordinate="82.0"/>
+              <Coordinates XCoordinate="900.0" YCoordinate="82.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="acff8209-dac4-c65f-5d9d-dab7cf581c24" Name="" From="7ce21df3-9153-1968-cb7f-47515d722fc9" To="7895879b-3f8b-ef9d-b5d9-99e5ea60f425">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="390.0" YCoordinate="82.0"/>
+              <Coordinates XCoordinate="301.0" YCoordinate="82.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="d5893908-9b99-819d-85d8-53fc719b1042" Name="" From="7895879b-3f8b-ef9d-b5d9-99e5ea60f425" To="c662b7c4-5e90-3e20-2c97-bd6d510d5635">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="241.0" YCoordinate="126.0"/>
+              <Coordinates XCoordinate="270.0" YCoordinate="382.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="11ad3d6e-562a-275e-3032-6b88b8b655da" Name="" From="7895879b-3f8b-ef9d-b5d9-99e5ea60f425" To="3b52f288-9ef5-0f30-9f03-d429efb38482">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="241.0" YCoordinate="82.0"/>
+              <Coordinates XCoordinate="206.0" YCoordinate="82.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="45b6c8c-478d-fb51-03da-1d7783231f48" Name="" From="3cc2200a-8ef6-36f0-dbb7-a95ec7eba265" To="ecaa90a0-e143-9292-bf44-e7ef85677249">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="412.0" YCoordinate="426.0"/>
+              <Coordinates XCoordinate="443.0" YCoordinate="800.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="11b10607-5d37-cf59-8f82-640ce438aeff" Name="" From="ecaa90a0-e143-9292-bf44-e7ef85677249" To="c662b7c4-5e90-3e20-2c97-bd6d510d5635">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="390.0" YCoordinate="800.0"/>
+              <Coordinates XCoordinate="270.0" YCoordinate="799.0"/>
+              <Coordinates XCoordinate="270.0" YCoordinate="410.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="d2b1a155-20b1-94eb-eb34-4be93f8053bc" Name="" From="be4150b1-63c5-a332-460e-abab712d285f" To="ed40d0ab-1576-433e-322d-51ac853eea7e">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="676.0" YCoordinate="635.0"/>
+              <Coordinates XCoordinate="753.0" YCoordinate="635.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="ce6803b6-c3ad-ac58-8e69-1cda488d41ab" Name="" From="ed40d0ab-1576-433e-322d-51ac853eea7e" To="b7612600-2e3d-755c-8cea-f530a4249d10">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="753.0" YCoordinate="635.0"/>
+              <Coordinates XCoordinate="783.0" YCoordinate="110.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+        <Transition Id="b229793f-78b2-bcf5-4451-2413ea084b91" Name="" From="ed40d0ab-1576-433e-322d-51ac853eea7e" To="be4150b1-63c5-a332-460e-abab712d285f">
+          <Condition/>
+          <ExtendedAttributes/>
+          <ConnectorGraphicsInfos>
+            <ConnectorGraphicsInfo>
+              <Coordinates XCoordinate="783.0" YCoordinate="686.0"/>
+              <Coordinates XCoordinate="781.0" YCoordinate="712.0"/>
+              <Coordinates XCoordinate="623.0" YCoordinate="712.0"/>
+              <Coordinates XCoordinate="623.0" YCoordinate="670.0"/>
+            </ConnectorGraphicsInfo>
+          </ConnectorGraphicsInfos>
+        </Transition>
+      </Transitions>
+      <ExtendedAttributes>
+        <ExtendedAttribute Name="FLUIG_category" Value=""/>
+        <ExtendedAttribute Name="FLUIG_cardIndex" Value="PedidoDeCompra"/>
+        <ExtendedAttribute Name="FLUIG_formSource" Value="local"/>
+      </ExtendedAttributes>
+    </WorkflowProcess>
+  </WorkflowProcesses>
+  <ExtendedAttributes/>
+</Package>

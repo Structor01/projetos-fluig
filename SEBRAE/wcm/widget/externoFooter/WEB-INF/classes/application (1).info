@@ -1,0 +1,17 @@
+application.type=widget
+application.code=externoFooter
+application.title=Acesso Externo Footer
+application.description=Portal para acesso publico de widgts publicos para colaboradores sem autenticação
+application.category=LULOS
+application.renderer=freemarker
+developer.code=luvaniolopes
+developer.name=Luvânio Lopes
+developer.url=http://www.lulos.com.br
+application.uiwidget=true
+application.mobileapp=true
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=externoFooter
+application.resource.js.1=/resources/js/externoFooter.js
+application.resource.css.2=/resources/css/externoFooter.css
+application.tenant.code=1

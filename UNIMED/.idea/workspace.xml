@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b4bd8427-6780-48f7-a7df-1bb8c9b318ee" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>style=&quot;width: 250px&quot;</find>
+      <find>adn</find>
+      <find>add</find>
+      <find>btnAdicionar</find>
+      <find>consulta</find>
+      <find>consultafornecedor</find>
+      <find>display</find>
+      <find>tratarAccordion</find>
+      <find>cpfp</find>
+      <find>consultaFornecedor</find>
+      <find>MensagemAlerta</find>
+      <find>function</find>
+      <find>mensa</find>
+      <find>men</find>
+      <find>consultaf</find>
+      <find>wdkremo</find>
+      <find>fnWdkRemoveChild</find>
+      <find>WdkRemoveChild</find>
+      <find>centro</find>
+      <find>wdkadd</find>
+      <find>remove</find>
+      <find>removec</find>
+      <find>wdkremove</find>
+      <find>&lt;ul</find>
+      <find>wdk</find>
+      <find>centro</find>
+      <find>adho</find>
+      <find>replace</find>
+      <find>toas</find>
+      <find>rateio</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/unimed.css" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_8.html" />
+        <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/custom.js" />
+        <option value="$PROJECT_DIR$/datasets/Unimed Homologaçao/dsFornecedor.js" />
+        <option value="$PROJECT_DIR$/../SENAR/wcm/widget/gestaoRelacionamento/src/main/webapp/resources/js/gestaoRelacionamento.js" />
+        <option value="$PROJECT_DIR$/forms/Cadastro de Rateio/Cadastro de Rateio.html" />
+        <option value="$PROJECT_DIR$/forms/Cadastro de Rateio/custom.js" />
+        <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="UNIMED" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UNIMED" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UNIMED" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UNIMED" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UNIMED" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UNIMED" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="6 - Formulário Solicitação de Pagamento" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UNIMED" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UNIMED" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="6 - Formulário Solicitação de Pagamento" type="462c0819:PsiDirectoryNode" />
+              <item name="events" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UNIMED" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UNIMED" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="Cadastro de Rateio" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="HTML" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/forms/Cadastro de Rateio" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4bd8427-6780-48f7-a7df-1bb8c9b318ee" name="Default" comment="" />
+      <created>1525440115141</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525440115141</updated>
+      <workItem from="1525440116809" duration="18911000" />
+      <workItem from="1525860772211" duration="694000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="19605000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../SEBRAE/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="192" column="29" lean-forward="true" selection-start-line="166" selection-start-column="24" selection-end-line="192" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/events/displayFields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-953" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="7" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/validacao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="262" column="64" selection-start-line="262" selection-start-column="61" selection-end-line="262" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Containers/com.evernote.Evernote/Data/Documents/.evernote/118763066-personal-www.evernote.com/external-edits/B3A8D60C-21AE-453F-AC15-A31FC59D4BC5/table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-683">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/Unimed Homologaçao/dsFornecedor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/unimed.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="1" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/UNIMED/UNIMED/forms/27 - formSolicitacaoPagamento/custom.js" />
+    <entry file="file://$USER_HOME$/Desktop/UNIMED/UNIMED/forms/SolPgTotvs/custom.js" />
+    <entry file="file://$USER_HOME$/Desktop/UNIMED/UNIMED-HOMOLOG/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html" />
+    <entry file="file://$USER_HOME$/Desktop/UNIMED/UNIMED-HOMOLOG/forms/6 - Formulário Solicitação de Pagamento/custom.js" />
+    <entry file="file://$USER_HOME$/Library/Containers/com.evernote.Evernote/Data/Documents/.evernote/118763066-personal-www.evernote.com/external-edits/003F760C-4BA7-4C8C-AE01-7AAA6A3CB7E9/table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../BULLA/wcm/widget/cadastroCliente/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="293" column="71" lean-forward="true" selection-start-line="293" selection-start-column="71" selection-end-line="293" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SENAR/wcm/widget/gestaoRelacionamento/src/main/webapp/resources/js/gestaoRelacionamento.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="196" column="45" lean-forward="true" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="380" column="85" lean-forward="true" selection-start-line="380" selection-start-column="62" selection-end-line="380" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CREME MEL/forms/15516 - Formulário de Relatório Prestação de Contas/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2138" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CREME MEL/forms/15516 - Formulário de Relatório Prestação de Contas/Formulário_de_Relatório_Prestação_de_Contas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3392" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CREME MEL/forms/15499 - Formulário de Envio de Comprovante de Pagamento/Formulário_de_Envio_de_Comprovante_de_Pagamento.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CREME MEL/forms/15499 - Formulário de Envio de Comprovante de Pagamento/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../BULLA/wcm/widget/listaResp/src/main/webapp/resources/js/listaResp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="136" column="12" lean-forward="true" selection-start-line="136" selection-start-column="12" selection-end-line="140" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/Cadastro de Rateio/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1667">
+          <caret line="524" column="38" selection-start-line="524" selection-start-column="38" selection-end-line="524" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/Cadastro de Rateio/Cadastro de Rateio.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="106" column="22" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="106" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

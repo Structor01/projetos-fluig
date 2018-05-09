@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/Users/arthurbarros/Google Drive/TOTVS/FLUIG/Projetos/JS Peças/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2989647953.index
+2113461898.index
+2185422082.index
+3611396900.index
+4181718296.index
+3951582130.index

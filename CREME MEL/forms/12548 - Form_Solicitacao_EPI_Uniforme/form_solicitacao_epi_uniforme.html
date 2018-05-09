@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--########################################################
+##### Desenvolvido: Luzanilton Filho                 #######
+##### Email: luzanilton.camara@zecassorvetes.com.br  #######
+##### Data: 01/03/2017                               #######
+############################################################-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="estilo.css">
+<title>F.56_0003 - Solicita&ccedil;&atilde;o de EPI / Uniforme</title>
+<script language="JavaScript" type="text/javascript" src="validacao.js"></script>
+<script language="JavaScript" type="text/javascript" src="funcoes.js"></script>
+<script language="JavaScript" type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+</head>
+<body>
+  <form name="form_solicita_epi">
+    
+    <!-- Cabecalho da pagina -->
+    <table id="cor_tabela" width="100%"> 
+        <tr style="font-size:13px">
+         <td width="20%">
+            <img alt="Creme Mel" src="crememel.png" style="float:left; height:58px; width:59px" />
+            <img alt="Zecas" src="zecas.png" style="float:left; height:58px; width:94px" />
+         </td>
+        
+         <td width="45%">
+               <center>Sorveteria Creme Mel S.A.<br />
+            <b>SOLICITA&Ccedil;&Atilde;O DE EPI / UNIFORME</b></center>
+         </td>
+         <td width="30%">
+           <b>F.56_0003</b><br />
+               Seguran&ccedil;a do Trabalho<br />
+               N&deg; Vers&atilde;o/Revis&atilde;o: 1.003 Data: 02/03/2017<br />
+               P&aacute;gina: 1/1 
+          </td>
+         </tr>
+     </table>
+     <br />
+     <!-- Fim do Cabecalho da pagina -->
+
+     <!-- ############################################################################################### -->
+     <!-- Inicio do corpo do formulario -->
+
+     <table class="borda">
+         <tr id="espaco">
+          <td colspan=4 id="titulo">IDENTIFICA&Ccedil;&Atilde;O</td>
+         </tr>
+         <tr id="borda">
+          <td>Solicitante: &nbsp;</td>
+          <td><input type="text" name="solicitante" id="solicitante" size="60px" readonly /></td>
+          <td>Data da  Solicita&ccedil;&atilde;o: &nbsp; </td>
+          <td><input type="text" name="data_solic" id="data_solic" size="20px" readonly />
+                <script type="text/javascript">
+                    //Inicia campos com valores padrão
+                        var today = new Date();
+                        var dd = today.getDate();
+                        var mm = today.getMonth()+1; //January is 0!
+                        var yyyy = today.getFullYear();
+                        if (dd<10) { dd='0'+dd } 
+                        if (mm<10) { mm='0'+mm } 
+                        var today = dd+'/'+mm+'/'+yyyy;
+                        document.getElementById("data_solic").value = today;
+                </script>
+          </td>
+         </tr>
+         <tr id="borda">
+          <td>Cargo:&nbsp;</td>
+          <td colspan="3"><input type="text" name="cargo" id="cargo" size="60px" onkeyup="alteraMaiusculo(0)" /></td>
+         </tr>
+         <tr id="borda">
+          <td>Unidade: &nbsp; </td>
+          <td colspan="3"><select name="unidade" id="unidade" dataset="listaFiliais" datasetkey="Codigo" datasetvalue="Filial">
+                          </select>
+            </td>
+         </tr>
+         <tr id="borda">
+          <td>Centro de Custo:&nbsp;</td>
+          <td colspan="3">
+             <input type="text" name="centro_custo" id="centro_custo" size="40px" onkeyup="alteraMaiusculo(1)" />
+          </td>
+         </tr>
+     </table>
+     <br />
+     <table class="borda" id="linhasTabela"> 
+         <tr id="espaco">
+          <td id="titulo">N&deg;</td>
+          <td id="titulo">DESCRI&Ccedil;&Atilde;O EPI / UNIFORME</td>
+          <td id="titulo">QUANTIDADE</td>
+         </tr>
+         <tr id="espaco">
+          <td id="borda_tabela">01<input type="hidden" name="cod_epi01" id="cod_epi01" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi01" id="des_epi01" size="85px" /><a href="javascript:openZoom(01);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi01" id="qtd_epi01" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">02<input type="hidden" name="cod_epi02" id="cod_epi02" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi02" id="des_epi02" size="85px" /><a href="javascript:openZoom(02);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi02" id="qtd_epi02" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">03<input type="hidden" name="cod_epi03" id="cod_epi03" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi03" id="des_epi03" size="85px" /><a href="javascript:openZoom(03);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi03" id="qtd_epi03" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">04<input type="hidden" name="cod_epi04" id="cod_epi04" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi04" id="des_epi04" size="85px" /><a href="javascript:openZoom(04);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi04" id="qtd_epi04" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">05<input type="hidden" name="cod_epi05" id="cod_epi05" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi05" id="des_epi05" size="85px" /><a href="javascript:openZoom(05);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi05" id="qtd_epi05" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">06<input type="hidden" name="cod_epi06" id="cod_epi06" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi06" id="des_epi06" size="85px" /><a href="javascript:openZoom(06);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi06" id="qtd_epi06" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">07<input type="hidden" name="cod_epi07" id="cod_epi07" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi07" id="des_epi07" size="85px" /><a href="javascript:openZoom(07);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi07" id="qtd_epi07" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">08<input type="hidden" name="cod_epi08" id="cod_epi08" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi08" id="des_epi08" size="85px" /><a href="javascript:openZoom(08);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi08" id="qtd_epi08" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">09<input type="hidden" name="cod_epi09" id="cod_epi09" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi09" id="des_epi09" size="85px" /><a href="javascript:openZoom(09);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi09" id="qtd_epi09" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">10<input type="hidden" name="cod_epi10" id="cod_epi10" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi10" id="des_epi10" size="85px" /><a href="javascript:openZoom(10);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi10" id="qtd_epi10" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">11<input type="hidden" name="cod_epi11" id="cod_epi11" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi11" id="des_epi11" size="85px" /><a href="javascript:openZoom(11);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi11" id="qtd_epi11" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">12<input type="hidden" name="cod_epi12" id="cod_epi12" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi12" id="des_epi12" size="85px" /><a href="javascript:openZoom(12);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi12" id="qtd_epi12" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">13<input type="hidden" name="cod_epi13" id="cod_epi13" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi13" id="des_epi13" size="85px" /><a href="javascript:openZoom(13);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi13" id="qtd_epi13" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">14<input type="hidden" name="cod_epi14" id="cod_epi14" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi14" id="des_epi14" size="85px" /><a href="javascript:openZoom(14);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi14" id="qtd_epi14" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">15<input type="hidden" name="cod_epi15" id="cod_epi15" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi15" id="des_epi15" size="85px" /><a href="javascript:openZoom(15);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi15" id="qtd_epi15" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">16<input type="hidden" name="cod_epi16" id="cod_epi16" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi16" id="des_epi16" size="85px" /><a href="javascript:openZoom(16);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi16" id="qtd_epi16" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">17<input type="hidden" name="cod_epi17" id="cod_epi17" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi17" id="des_epi17" size="85px" /><a href="javascript:openZoom(17);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi17" id="qtd_epi17" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">18<input type="hidden" name="cod_epi18" id="cod_epi18" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi18" id="des_epi18" size="85px" /><a href="javascript:openZoom(18);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi18" id="qtd_epi18" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">19<input type="hidden" name="cod_epi19" id="cod_epi19" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi19" id="des_epi19" size="85px" /><a href="javascript:openZoom(19);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi19" id="qtd_epi19" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">20<input type="hidden" name="cod_epi20" id="cod_epi20" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi20" id="des_epi20" size="85px" /><a href="javascript:openZoom(20);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi20" id="qtd_epi20" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">21<input type="hidden" name="cod_epi21" id="cod_epi21" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi21" id="des_epi21" size="85px" /><a href="javascript:openZoom(21);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi21" id="qtd_epi21" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">22<input type="hidden" name="cod_epi22" id="cod_epi22" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi22" id="des_epi22" size="85px" /><a href="javascript:openZoom(22);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi22" id="qtd_epi22" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">23<input type="hidden" name="cod_epi23" id="cod_epi23" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi23" id="des_epi23" size="85px" /><a href="javascript:openZoom(23);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi23" id="qtd_epi23" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">24<input type="hidden" name="cod_epi24" id="cod_epi24" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi24" id="des_epi24" size="85px" /><a href="javascript:openZoom(24);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi24" id="qtd_epi24" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr>
+          <td id="borda_tabela">25<input type="hidden" name="cod_epi25" id="cod_epi25" size="40px" readonly /></td>
+          <td           id="borda_tabela"><input type="text" name="des_epi25" id="des_epi25" size="85px" /><a href="javascript:openZoom(25);"><img class="zooming" src="zoom2.gif" border="0"/></a></td>
+          <td           id="borda_tabela"><input type="text" name="qtd_epi25" id="qtd_epi25" size="20px" class="input_tabela" onkeypress="return somenteNumero(event)" onblur="calculaqtdtotal()" /></td>
+         </tr>
+         <tr id="borda_tabela">
+          <td colspan=2 id="borda_tabela">QUANTIDADE TOTAL:</td>
+          <td id="borda_tabela"><input type="text" name="qtd_total" id="qtd_total" size="20px" class="input_tabela" readonly /></td>
+         </tr>
+     </table>
+
+  </form>
+  
+  <!-- Fim do corpo do formulario -->
+  <!-- ############################################################################################### -->
+
+  <!-- Rodape da pagina -->
+  <br />
+  <table style="width:100%;" id="rodape" border="1px">
+    <tr align="center" style="font-weight:bold;">
+      <td>Armazenamento</td>
+      <td>Acesso/Prote&ccedil;&atilde;o</td>
+      <td>Recupera&ccedil;&atilde;o</td>
+      <td>Reten&ccedil;&atilde;o</td>
+      <td>Descarte</td>
+    </tr>
+    <tr align="center">
+      <td>ECM</td>
+      <td>Usu&aacute;rios/ECM</td>
+      <td>Por n&deg; da solicita&ccedil;&atilde;o/ Nome do solicitante</td>
+      <td>Indeterminado</td>
+      <td>Deletar</td>
+    </tr>
+  </table>
+  <br />
+  <!-- Fim do rodapé da página -->
+    
+</body>
+</html>
