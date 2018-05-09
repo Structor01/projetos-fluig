@@ -33,8 +33,6 @@ function addChild() {
             message: "Por favor, preencha o valor total!",
             type: 'danger'
         });
-
-
 }
 
 function mask() {

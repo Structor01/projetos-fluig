@@ -5,7 +5,7 @@ function createDataset(fields, constraints, sortFields) {
     //Cria as colunas
     dataset.addColumn("CCODIGO");
     dataset.addColumn("CDESCRICAO");
-      
+
     //Cria os registros
     
     var listaEmpresas = ServiceManager.getService('WS_UNIMED_PROTHEUS');

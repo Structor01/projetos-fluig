@@ -232,37 +232,37 @@ var beforeSendValidate = function(numState, nextState) {
  * @param valorPagto
  * @returns '' - caso esteja ok / Mensagem de erro
  */
-function validaRateio(valorPagto) {
-	
-	var valor = valorPagto;
-	
-	var tableValor = $('table#tableRateio tbody tr [id^="valorRateio___"]');
-	var tableCC = $('table#tableRateio tbody tr [id^="zoomCr___"]');
-	var retorno = new Array();
-	
-	if (tableCC.length > 0) {
-		for(var i = 0; i < tableCC.length; i++){
-	
-			if (tableCC[i].value == '') {
-				retorno.push('Centro de Custo do Rateio não preenchido');
-				retorno.push(tableCC[i].id);
-			}
-			if (isNaN(parseFloat(tableValor[i].value)) || parseFloat(tableValor[i].value.replace(/[^\d]+/gi,'.')) == 0) {
-				retorno.push('Valor do Rateio não preenchido');
-				retorno.push(tableValor[i].id);
-			}
-			//Verifica Duplicidade
-			for(var j = 0; j < tableCC.length; j++){
-				if (tableCC[i].value == tableCC[j].value && i != j) {
-					retorno.push('Centro de Custo do Rateio Duplicado');
-					retorno.push(tableCC[i].id);
-				}
-			}
-		}
-	} else {
-		retorno.push('Centro de Custo por Rateio. Informe ao menos um registro de Rateio');
-		retorno.push('');
-	}
-	return retorno;
-	
-};
+// function validaRateio(valorPagto) {
+//
+// 	var valor = valorPagto;
+//
+// 	var tableValor = $('table#tableRateio tbody tr [id^="valorRateio___"]');
+// 	var tableCC = $('table#tableRateio tbody tr [id^="zoomCr___"]');
+// 	var retorno = new Array();
+//
+// 	if (tableCC.length > 0) {
+// 		for(var i = 0; i < tableCC.length; i++){
+//
+// 			if (tableCC[i].value == '') {
+// 				retorno.push('Centro de Custo do Rateio não preenchido');
+// 				retorno.push(tableCC[i].id);
+// 			}
+// 			if (isNaN(parseFloat(tableValor[i].value)) || parseFloat(tableValor[i].value.replace(/[^\d]+/gi,'.')) == 0) {
+// 				retorno.push('Valor do Rateio não preenchido');
+// 				retorno.push(tableValor[i].id);
+// 			}
+// 			//Verifica Duplicidade
+// 			for(var j = 0; j < tableCC.length; j++){
+// 				if (tableCC[i].value == tableCC[j].value && i != j) {
+// 					retorno.push('Centro de Custo do Rateio Duplicado');
+// 					retorno.push(tableCC[i].id);
+// 				}
+// 			}
+// 		}
+// 	} else {
+// 		retorno.push('Centro de Custo por Rateio. Informe ao menos um registro de Rateio');
+// 		retorno.push('');
+// 	}
+// 	return retorno;
+//
+// };

@@ -21,7 +21,6 @@
     <link href="/portal/resources/style-guide/css/fluig-style-guide-filter.min.css" rel="stylesheet" type="text/css">
     <link href="/portal/resources/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css">
     <script src="/portal/resources/style-guide/js/fluig-style-guide-filter.min.js"></script>
-    <script type="text/javascript" src="jquery.mask.min.js"></script>
     <script language="javascript" type="text/javascript" src="custom.js"></script>
     <script language="javascript" type="text/javascript" src="zoom.js"></script>
     <script language="javascript" type="text/javascript" src="validacao.js"></script>
@@ -203,6 +202,12 @@
 															              'label':'Descrição',
 															              'standard':'true',
 															              'search': 'true'
+															            },
+															            {
+															              'field':'CIDFLUIGRESP',
+															              'label':'Descrição',
+															              'standard':'true',
+															              'search': 'true'
 															            }
 															        ]
 															     }" />
@@ -307,6 +312,9 @@
 															              'label':'Descrição',
 															              'standard':'true',
 															              'search': 'true'
+															            },{
+															              'field':'CCONTACONTABIL',
+															              'label':'Conta'
 															            }
 															        ]
 															     }" />
@@ -489,7 +497,7 @@
                                                                     <span class="fs-cursor-pointer" id="delPaiFilho" style="color:#aaa; font-weight:bolder;" onclick="fnWdkRemoveChild(this)">X</span>
                                                                 </div>
                                                             </td>
-                                                            <td class="col-md-5">
+                                                            <td class="col-md-6">
                                                                 <div class="form-group">
                                                                     <input type="zoom" class="form-control"
                                                                            name="zoomCCustoRateio" id="zoomCCustoRateio"
@@ -512,14 +520,14 @@
 															     }" />
                                                                 </div>
                                                             </td>
-                                                            <td class="col-md-3">
+                                                            <td class="col-md-2">
                                                                 <div class="form-group">
-                                                                    <input class="form-control money" type="text" id="valorRateio" name="valorRateio" value="" />
+                                                                    <input class="form-control money" type="text" id="valorRateio" onblur="getRateioValores()" name="valorRateio" value="" />
                                                                 </div>
                                                             </td>
-                                                            <td class="col-md-3">
+                                                            <td class="col-md-2">
                                                                 <div class="form-group">
-                                                                    <input class="form-control percentual" type="text" id="percentualRateio" name="percentualRateio" value="" />
+                                                                    <input class="form-control percentual" type="text" id="percentualRateio" onblur="getRateioValoresPercent()" name="percentualRateio" value="" />
                                                                 </div>
                                                             </td>
                                                         </tr>

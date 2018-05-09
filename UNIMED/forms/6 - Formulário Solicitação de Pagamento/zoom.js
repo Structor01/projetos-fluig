@@ -30,15 +30,7 @@ function setSelectedZoomItem(selectedItem){
             $('#percentualRateio___' + idx).val(rec['percentualRateio']);
 		}
 
-        var VALOR_TOTAL = $('#qtTotalRateio').val().replace('.','');
-        VALOR_TOTAL = VALOR_TOTAL.replace(',','.');
-
-        $('[id*=percentualRateio___]').each(function () {
-            var id = $(this).attr('id').split('___')[1];
-            var v = $(this).val().replace('%','') / 100 * parseFloat(VALOR_TOTAL);
-            $('#valorRateio___'+id).val(v);
-            $('#valorRateio___'+id).mask('000.000.000.000.000,00', {reverse: true});
-        });
+        getRateioValoresPercent();
     }
 
 	if(selectedItem.inputId == 'zoomUnidade' || selectedItem.inputId == 'zoomUnidadePesq'){
@@ -49,9 +41,9 @@ function setSelectedZoomItem(selectedItem){
 		var filtro = "CCODIGO," +selectedItem.CFILEMP;
 		$('#cEmpresa').val(selectedItem.CEMPRESA);
 		$('#cFilEmp').val(selectedItem.CFILEMP);
-		reloadZoomFilterValues("zoomTipoPagto", filtro);
-		reloadZoomFilterValues("zoomFormaPagto", filtro);
-		reloadZoomFilterValues("zoomNatureza", filtro);
+		// reloadZoomFilterValues("zoomTipoPagto", filtro);
+		// reloadZoomFilterValues("zoomFormaPagto", filtro);
+		// reloadZoomFilterValues("zoomNatureza", filtro);
 		var filtro2 = "CFILEMP," +selectedItem.CFILEMP;
 		// reloadZoomFilterValues("zoomCCusto", filtro2);
 		$('.btn-sucess').removeClass('btn-sucess');

@@ -1,3 +1,10 @@
+var beforeSendValidate = function(numState,nextState){
+    if($('#rateio').val() == 'S') {
+        var v = validaRateios(true);
+        if(v === false) throw "Erro! Por favor, corrija os rateios.";
+    }
+}
+
 function Inicio() {
     var atividade = WKNumState;
     var processo = WKNumProces;
@@ -246,8 +253,109 @@ $(document).ready(function(){
             $("#idDirf").val('2');
         }
     });
-
 });
+
+function addChild() {
+    var VALOR_TOTAL = $('#qtTotalRateio').val().replace('.','');
+    VALOR_TOTAL = VALOR_TOTAL.replace(',','.');
+
+    if(parseFloat(VALOR_TOTAL) > 0) {
+        var add = wdkAddChild('tableRateio');
+        // $('#')
+    }
+    else
+        FLUIGC.toast({
+            title: '',
+            message: "Por favor, preencha o valor total!",
+            type: 'danger'
+        });
+}
+
+
+function getRateioValoresPercent() {
+    var VALOR_TOTAL = $('#qtTotalRateio').val().replace('.','');
+    VALOR_TOTAL = VALOR_TOTAL.replace(',','.');
+
+    $('[id*=percentualRateio___]').each(function () {
+        var id = $(this).attr('id').split('___')[1];
+        var v = $(this).val().replace('%','') / 100 * parseFloat(VALOR_TOTAL);
+        $('#valorRateio___'+id).val(parseFloat(v).toFixed(2));
+    });
+
+    validaRateios();
+}
+
+function getRateioValores() {
+    var VALOR_TOTAL = $('#qtTotalRateio').val().replace('.','');
+    VALOR_TOTAL = VALOR_TOTAL.replace(',','.');
+
+    $('[id*=valorRateio___]').each(function () {
+        var v = (parseFloat($(this).val()) * 100) / VALOR_TOTAL;
+        var id = $(this).attr('id').split('___')[1];
+        $('#percentualRateio___'+id).val(v+'%');
+    });
+
+    validaRateios();
+}
+
+function validaRateios(final) {
+    var VALOR_TOTAL = $('#qtTotalRateio').val().replace('.','');
+    VALOR_TOTAL = VALOR_TOTAL.replace(',','.');
+
+    var valorT = 0;
+    $('[id*=valorRateio___]').each(function () {
+        valorT = parseFloat(valorT) +  parseFloat($(this).val());
+    });
+
+        if(valorT > VALOR_TOTAL) {
+        console.log('A soma dos valores é maior que o valor total');
+        FLUIGC.toast({
+            title: '',
+            message: "A soma dos valores é maior que o valor total!",
+            type: 'danger'
+        });
+
+        return false;
+    } else if(valorT < VALOR_TOTAL && final) {
+        FLUIGC.toast({
+            title: '',
+            message: "A soma dos valores é menor que o valor total!",
+            type: 'danger'
+        });
+
+        return false;
+    }
+
+    var valorP = 0;
+
+    $('[id*=percentualRateio___]').each(function () {
+        var id = $(this).attr('id').split('___')[1];
+        var v = $(this).val().replace('%','');
+        valorP = parseFloat(valorP) + parseFloat(v);
+    });
+
+    if(valorP > 100) {
+        console.log('A soma dos percentuais é maior que 100%');
+        FLUIGC.toast({
+            title: '',
+            message: "A soma dos percentuais é maior que 100%!",
+            type: 'danger'
+        });
+
+        return false;
+    }  else if(valorP < 100 && final) {
+        FLUIGC.toast({
+            title: '',
+            message: "A soma dos percentuais é menor que 100%!",
+            type: 'danger'
+        });
+
+        return false;
+    }
+
+    return true;
+}
+
 
 /**
  * Efetua calculo do total de Rateio, por percentual ou valor informado
