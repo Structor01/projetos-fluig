@@ -24,10 +24,21 @@ function setSelectedZoomItem(selectedItem){
         for(var i in dataset.values) {
         	var rec = dataset.values[i];
             var idx = wdkAddChild('tableRateio');
-            $('#zoomCCustoRateio___' + idx).val(rec['zoomCCustoRateio']);
+            // $('#zoomCCustoRateio___' + idx).val(rec['zoomCCustoRateio']);
+            setZoomData("zoomCCustoRateio___"+idx, rec['zoomCCustoRateio']);
             $('#valorRateio___' + idx).val(rec['valorRateio']);
             $('#percentualRateio___' + idx).val(rec['percentualRateio']);
 		}
+
+        var VALOR_TOTAL = $('#qtTotalRateio').val().replace('.','');
+        VALOR_TOTAL = VALOR_TOTAL.replace(',','.');
+
+        $('[id*=percentualRateio___]').each(function () {
+            var id = $(this).attr('id').split('___')[1];
+            var v = $(this).val().replace('%','') / 100 * parseFloat(VALOR_TOTAL);
+            $('#valorRateio___'+id).val(v);
+            $('#valorRateio___'+id).mask('000.000.000.000.000,00', {reverse: true});
+        });
     }
 
 	if(selectedItem.inputId == 'zoomUnidade' || selectedItem.inputId == 'zoomUnidadePesq'){
