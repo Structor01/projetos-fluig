@@ -96,6 +96,14 @@ function initMap() {
 $(document).ready(function() {
     $(this).mask('(00) 0000-0000#');
 
+    FLUIGC.calendar('.date', {
+        pickDate: true,
+        pickTime: true,
+        sideBySide: true
+    });
+
+    $('.money').mask('000.000.000.000.000,00', {reverse: true});
+
     $('.telefone').on('focus', function () {
         $(this).val().length == 15 ?
             $(this).mask('(00) 0 0000-0000') : $(this).mask('(00) 0000-0000#')

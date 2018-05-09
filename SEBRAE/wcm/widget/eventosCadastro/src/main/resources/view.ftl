@@ -102,6 +102,56 @@
                         </div>
                     </div>
                 </div>
+                <ul class="list-group col-md-8">
+                    <li class="list-group-item disabled">
+                        Detalhes
+                    </li>
+                    <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+                        <div class="col-md-6" style="padding: 0; padding-right:15px">
+                            <label for="tipoEvento">Tipo de Evento</label>
+                            <select class="form-control" name="tipoEvento" id="tipoEvento">
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6" style="padding: 0">
+                            <label for="unidadeVinculada">Unidade Vinculada</label>
+                            <select class="form-control" name="unidadeVinculada" id="unidadeVinculada">
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+                        <div class="col-md-8" style="padding: 0; padding-right:15px">
+                            <label for="responsavel">Responsável</label>
+                            <input type="text" class="form-control" id="responsavel" name="responsavel" placeholder="Favor informar o nome do evento.">
+                        </div>
+                        <div class="col-md-4" style="padding: 0">
+                            <label for="valorInscricao">Valor de Inscrição</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">R$</span>
+                                <input type="text" class="form-control money" id="valorInscricao" name="valorInscricao">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+                        <div class="col-md-6" style="padding: 0; padding-right:15px">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" class="form-control telefone" id="telefone" name="telefone">
+                        </div>
+                        <div class="col-md-6" style="padding: 0">
+                            <label for="email">E-mail</label>
+                            <input type="text" class="form-control" id="email" name="email">
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <label for="telefone">Público Alvo</label>
+                        <textarea type="text" rows="3" class="form-control" id="publicoAlvo" name="publicoAlvo"></textarea>
+                    </li>
+                    <li class="list-group-item">
+                        <label for="telefone">Observação</label>
+                        <textarea type="text" rows="3" class="form-control" id="observacao" name="observacao"></textarea>
+                    </li>
+                </ul>
                 <ul class="list-group col-md-4">
                     <li class="list-group-item disabled">
                         Horários do Eventos
@@ -124,53 +174,8 @@
                             </div>
                         </div>
                     </li>
-                </ul>
-                <ul class="list-group col-md-8">
-                    <li class="list-group-item disabled">
-                        Detalhes
-                    </li>
-                    <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
-                        <div class="col-md-6" style="padding: 0; padding-right:15px">
-                            <label for="tipoEvento">Tipo de Evento</label>
-                            <select class="form-control" name="tipoEvento" id="tipoEvento">
-                                <option value="">Selecione</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6" style="padding: 0">
-                            <label for="unidadeVinculada">Unidade Vinculada</label>
-                            <select class="form-control" name="unidadeVinculada" id="unidadeVinculada">
-                                <option value="">Selecione</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <label for="responsavel">Responsável</label>
-                        <input type="text" class="form-control" id="responsavel" name="responsavel" placeholder="Favor informar o nome do evento.">
-                    </li>
-                    <li class="list-group-item">
-                        <label for="valorInscricao">Valor de Inscrição</label>
-                        <div class="input-group">
-                            <span class="input-group-addon">R$</span>
-                            <input type="text" class="form-control" id="valorInscricao" name="valorInscricao">
-                        </div>
-                    </li>
-                    <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
-                        <div class="col-md-6" style="padding: 0; padding-right:15px">
-                            <label for="telefone">Telefone</label>
-                            <input type="text" class="form-control telefone" id="telefone" name="telefone">
-                        </div>
-                        <div class="col-md-6" style="padding: 0">
-                            <label for="email">E-mail</label>
-                            <input type="text" class="form-control" id="email" name="email">
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <label for="telefone">Público Alvo</label>
-                        <textarea type="text" rows="3" class="form-control" id="publicoAlvo" name="publicoAlvo"></textarea>
-                    </li>
-                    <li class="list-group-item">
-                        <label for="telefone">Observação</label>
-                        <textarea type="text" rows="3" class="form-control" id="observacao" name="observacao"></textarea>
+                    <li class="list-group-item fs-float-right" style="border: none; margin: .5rem">
+                        <button class="btn btn-success">Salvar</button>
                     </li>
                 </ul>
             </div>
