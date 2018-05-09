@@ -103,6 +103,7 @@ $(document).ready(function() {
     });
 
     $('.money').mask('000.000.000.000.000,00', {reverse: true});
+    $('.dateReserva').mask('00/00/0000 00:00');
 
     $('.telefone').on('focus', function () {
         $(this).val().length == 15 ?
