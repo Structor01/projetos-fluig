@@ -11,6 +11,25 @@ function setSelectedZoomItem(selectedItem){
 		$('#codRateio___'+tableId).val(selectedItem.CCODIGO);
 	}
 
+    // var tableId = selectedItem.inputId.substring(selectedItem.inputId.indexOf("___") + 3, selectedItem.inputId.indexOf("___") + 6);
+    //if(selectedItem.inputId.startsWith('zoomCr')){
+    if(selectedItem.inputId == 'zoomRateio'){
+        console.log(selectedItem);
+        var constraints = new Array();
+        constraints.push(DatasetFactory.createConstraint("tablename", 'tableRateio', 'tableRateio', ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("metadata#id", selectedItem.documentid, selectedItem.documentid, ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("metadata#version", selectedItem['metadata#version'], selectedItem['metadata#version'], ConstraintType.MUST));
+        var dataset = DatasetFactory.getDataset("dsRateios", null, constraints, null);
+        console.log(dataset.values);
+        for(var i in dataset.values) {
+        	var rec = dataset.values[i];
+            var idx = wdkAddChild('tableRateio');
+            $('#zoomCCustoRateio___' + idx).val(rec['zoomCCustoRateio']);
+            $('#valorRateio___' + idx).val(rec['valorRateio']);
+            $('#percentualRateio___' + idx).val(rec['percentualRateio']);
+		}
+    }
+
 	if(selectedItem.inputId == 'zoomUnidade' || selectedItem.inputId == 'zoomUnidadePesq'){
 		if (selectedItem.inputId == 'zoomUnidadePesq') {
 			setZoomData("zoomUnidade", selectedItem.CNOMEFIL);

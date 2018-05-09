@@ -27,7 +27,6 @@
     <script language="javascript" type="text/javascript" src="util.js"></script>
     <!-- vcXMLRPC -->
     <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
-    <script type="text/javascript" src="../vcXMLRPC-mobile.js"></script>
 </head>
 
 <body class="fluig-style-guide">
@@ -440,16 +439,26 @@
                                     </div>
                                     <div class="panel-body">
                                         <div class="form-group col-md-9">
-                                            <label for="descricao">Descrição</label>
-                                            <input
-                                                    type="text"
-                                                    class="form-control"
-                                                    id="descricao"
-                                                    name="descricao"
-                                                    placeholder="Insira uma descrição para este rateio.">
+                                            <label for="zoomRateio">Rateio</label>
+                                            <input type="zoom" class="form-control"
+                                                   name="zoomRateio" id="zoomRateio"
+                                                   data-zoom="{
+												        'displayKey':'descricao',
+														'datasetId':'dsRateios',
+														'placeholder':'Escolha o Centro de Custo',
+														'fields':[
+														    {
+															    'field':'descricao',
+															    'label':'Rateio',
+												                'standard':'true',
+															    'search': 'true'
+													        }
+												        ]
+						            		}" />
+
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label for="descricao">Valor Total</label>
+                                            <label for="qtTotalRateio">Valor Total</label>
                                             <input
                                                     type="text"
                                                     class="form-control money"

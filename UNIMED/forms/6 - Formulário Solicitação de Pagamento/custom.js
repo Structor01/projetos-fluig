@@ -229,6 +229,7 @@ $(document).ready(function(){
             } else {
                 $('#valorPagamentoRateio').html($('#valorPagamento').val());
                 $('#aNavRateio').css('display', 'block');
+                $('#qtTotalRateio').val($('#valorPagamento').val());
             }
         } else {
             $('#aNavRateio').css('display', 'none');
@@ -376,6 +377,7 @@ function formatBR(value, decimais) {
  * @param valor - CPF/CNPJ
  * @returns
  */
+
 function consultaFornecedor(valor) {
     var c1 = DatasetFactory.createConstraint('CCODIGO', $('#cFilEmp').val(), $('#cFilEmp').val(),ConstraintType.MUST);
     var c2 = DatasetFactory.createConstraint('CCNPJCPF', valor.replace(/[^\d]+/gi,''), valor.replace(/[^\d]+/gi,''),ConstraintType.MUST);
