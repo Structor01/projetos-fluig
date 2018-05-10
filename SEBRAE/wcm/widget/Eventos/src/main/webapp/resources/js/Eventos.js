@@ -3,6 +3,7 @@ var HelloWorld = SuperWidget.extend({
 
     init: function () {
         $('#calendar').fullCalendar({
+            lang: 'pt',
             events: [
                 {
                     title  : 'event1',
