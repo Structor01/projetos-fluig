@@ -1,34 +1,7 @@
 var HelloWorld = SuperWidget.extend({
     message: null,
-
+    calendarEv: [],
     init: function () {
-        $('#calendar').fullCalendar({
-            lang: 'pt',
-            events: [
-                {
-                    title  : 'event1',
-                    start  : '2018-05-01'
-                },
-                {
-                    title  : 'event2',
-                    start  : '2018-05-05',
-                    end    : '2018-05-07'
-                },
-                {
-                    title  : 'event3',
-                    start  : '2018-05-09T12:30:00',
-                    allDay : false // will make the time show
-                }
-            ],
-            eventClick: function(calEvent, jsEvent, view) {
-                alert('Event: ' + calEvent.title);
-                alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                alert('View: ' + view.name);
-                // change the border color just for fun
-                $(this).css('border-color', 'red');
-            }
-        });
-
         $.ajax({
             type: "post",
             url: "/api/public/2.0/authorize/client/invoke",
@@ -41,9 +14,15 @@ var HelloWorld = SuperWidget.extend({
             }),
             dataType: "json",
             success: function(data){
-               this.eventos = JSON.parse(data.content.result);
-               this.htmlC = ''
-               for(var i in this.eventos) {
+                this.eventos = JSON.parse(data.content.result);
+                this.htmlC = ''
+                this.calendarEv = new Array();
+                for(var i in this.eventos) {
+                    this.calendarEv.push({
+                        title: this.eventos[i]['TituloEvento'],
+                        start: this.eventos[i]['PeriodoInicial'],
+                        end: this.eventos[i]['PeriodoFinal']
+                    });
                     this.htmlC += '<tr>' +
                         '<td>' + this.eventos[i]['TituloEvento'] + '</td>' +
                         '<td>' + this.eventos[i]['DescProduto'] + '</td>' +
@@ -52,8 +31,19 @@ var HelloWorld = SuperWidget.extend({
                         '<td>' + disarrangeData(this.eventos[i]['PeriodoFinal']) + '</td>' +
                         '<td>' + this.eventos[i]['NomeCidade'] + '</td>' +
                         '</tr>';
-               }
-               $('#rowEventos').html(this.htmlC);
+                }
+                $('#rowEventos').html(this.htmlC);
+                $('#calendar').fullCalendar({
+                    lang: 'pt',
+                    events: calendarEv,
+                    eventClick: function(calEvent, jsEvent, view) {
+                        alert('Event: ' + calEvent.title);
+                        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                        alert('View: ' + view.name);
+                        // change the border color just for fun
+                        $(this).css('border-color', 'red');
+                    }
+                });
             },
             failure: function(errMsg) {
                 alert(errMsg);
