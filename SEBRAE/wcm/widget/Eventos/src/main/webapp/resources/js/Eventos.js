@@ -21,8 +21,8 @@ var HelloWorld = SuperWidget.extend({
                         '<td>' + this.eventos[i]['TituloEvento'] + '</td>' +
                         '<td>' + this.eventos[i]['DescProduto'] + '</td>' +
                         '<td>' + this.eventos[i]['DescUnidadeOrganizacional'] + '</td>' +
-                        '<td>' + this.eventos[i]['PeriodoInicial'] + '</td>' +
-                        '<td>' + this.eventos[i]['PeriodoFinal'] + '</td>' +
+                        '<td>' + disarrangeData(this.eventos[i]['PeriodoInicial']) + '</td>' +
+                        '<td>' + disarrangeData(this.eventos[i]['PeriodoFinal']) + '</td>' +
                         '<td>' + this.eventos[i]['NomeCidade'] + '</td>' +
                         '</tr>';
                }
@@ -47,3 +47,17 @@ var HelloWorld = SuperWidget.extend({
         $div.append($message);
     }
 });
+
+function arrangeData(e) {
+    var date = e.split('/');
+    var newDate = date[2] + '-' + date[1] + '-' + date[0] + 'T00:00:00';
+    return newDate;
+}
+
+function disarrangeData(e) {
+    var date = e.split('T');
+    date = date[0].split('-');
+    var hora = e.split('T')[1];
+    date = date[2]+'/'+date[1]+'/'+date[0] + ' ' + hora;
+    return date;
+}
