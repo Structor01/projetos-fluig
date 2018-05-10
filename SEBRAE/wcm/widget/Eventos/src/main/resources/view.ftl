@@ -47,10 +47,11 @@
 			<!--<input class="form-control" placeholder="Buscar" id="buscaEvento">-->
 			<!--</div>-->
 			<!--</div>-->
-			<button style="margin: 0.5rem" class="btn btn-link fs-float-right">
+			<button style="margin: 0.5rem" id="btn-calendar" onclick="changeView('calendar')" class="btn fs-float-right">
 				<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
 			</button>
-			<button style="margin: 0.5rem" class="btn btn-primary fs-float-right active">
+
+			<button style="margin: 0.5rem" id="btn-list" onclick="changeView('list')" class="btn btn-primary active fs-float-right">
 				<span class="fluigicon 	fluigicon-list fluigicon-sm"></span>
 			</button>
 		</div>
@@ -61,8 +62,8 @@
 					<h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Eventos</h3>
 				</div>
 				<div class="panel-body">
-					<div id="calendar"></div>
-					<div class="hide" id="lista">
+					<div class="viewEv" id="calendar"></div>
+					<div class="viewEv hide" id="lista">
 						<table class="table table-striped">
 							<thead>
 							<th>Nome do Evento</th>

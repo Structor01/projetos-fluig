@@ -87,3 +87,10 @@ function disarrangeData(e) {
     date = date[2]+'/'+date[1]+'/'+date[0] + ' ' + hora;
     return date;
 }
+
+function changeView(e) {
+    $('.btn').removeClass('btn-primary active');
+    $('#btn-'+e).addClass('btn-primary active');
+    $('.viewEv').addClass('hide');
+    $('#'+e).removeClass('hide');
+}
