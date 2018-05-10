@@ -1,23 +1,3 @@
-var HelloWorld = SuperWidget.extend({
-    message: null,
-
-    init: function () {
-        //code
-    },
-
-    bindings: {
-        local: {
-            'show-message': ['click_showMessage']
-        }
-    },
-
-    showMessage: function () {
-        $div = $('#helloMessage_' + this.instanceId);
-        $message = $('<div>').addClass('message').append(this.message);
-        $div.append($message);
-    }
-});
-
 function reqListener () {
     console.log(this.responseText);
 }
@@ -216,4 +196,25 @@ function substringMatcher(strs) {
         });
         cb(matches);
     };
+}
+
+function getSASdata() {
+    $.ajax({
+        type: "post",
+        url: "/api/public/2.0/authorize/client/invoke",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            serviceCode: 'SAS',
+            tenantCode: '1',
+            endpoint: '/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial=2017-05-03&PeriodoFinal=2018-05-03',
+            method: 'get'
+        }),
+        dataType: "json",
+        success: function(data){
+            console.log(JSON.parse(data.content.result));
+        },
+        failure: function(errMsg) {
+            alert(errMsg);
+        }
+    });
 }

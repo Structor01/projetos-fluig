@@ -2,7 +2,36 @@ var HelloWorld = SuperWidget.extend({
     message: null,
 
     init: function () {
-        //code
+        $.ajax({
+            type: "post",
+            url: "/api/public/2.0/authorize/client/invoke",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                serviceCode: 'SAS',
+                tenantCode: '1',
+                endpoint: '/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial=2018-01-03&PeriodoFinal=2018-12-03',
+                method: 'get'
+            }),
+            dataType: "json",
+            success: function(data){
+               this.eventos = JSON.parse(data.content.result);
+               this.htmlC = ''
+               for(var i in this.eventos) {
+                    this.htmlC += '<tr>' +
+                        '<td>' + this.eventos[i]['TituloEvento'] + '</td>' +
+                        '<td>' + this.eventos[i]['DescProduto'] + '</td>' +
+                        '<td>' + this.eventos[i]['DescUnidadeOrganizacional'] + '</td>' +
+                        '<td>' + this.eventos[i]['PeriodoInicial'] + '</td>' +
+                        '<td>' + this.eventos[i]['PeriodoFinal'] + '</td>' +
+                        '<td>' + this.eventos[i]['NomeCidade'] + '</td>' +
+                        '</tr>';
+               }
+               $('#rowEventos').html(this.htmlC);
+            },
+            failure: function(errMsg) {
+                alert(errMsg);
+            }
+        });
     },
 
     bindings: {
@@ -10,7 +39,8 @@ var HelloWorld = SuperWidget.extend({
             'show-message': ['click_showMessage']
         }
     },
-
+    eventos: null,
+    htmlC: '',
     showMessage: function () {
         $div = $('#helloMessage_' + this.instanceId);
         $message = $('<div>').addClass('message').append(this.message);
