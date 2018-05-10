@@ -44,6 +44,30 @@ function initMap() {
     var input = document.getElementById('pac-input');
 
     var autocomplete = new google.maps.places.Autocomplete(input);
+    var geocoder = new google.maps.Geocoder();
+    var marker = new google.maps.Marker({
+        map: map
+    });
+
+    google.maps.event.addListener(map, 'click', function(event) {
+        geocoder.geocode({
+            'latLng': event.latLng
+        }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    console.log(results[0].formatted_address);
+                }
+
+                marker.setPlace({
+                    location: event.geometry.location,
+                    placeId: event.place_id
+                });
+
+                marker.setVisible(true);
+            }
+        });
+    });
+
     autocomplete.bindTo('bounds', map);
 
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -51,9 +75,7 @@ function initMap() {
     var infowindow = new google.maps.InfoWindow();
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
-    var marker = new google.maps.Marker({
-        map: map
-    });
+
     marker.addListener('click', function () {
         infowindow.open(map, marker);
     });
@@ -91,6 +113,28 @@ function initMap() {
     });
 
     $('#map').css('height', '300px');
+}
+
+function tryCon() {
+    $.ajax({
+        type: 'GET',
+        url: 'http://sashomolog.sebraego.com.br/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial=2018-05-03&PeriodoFinal=2018-05-03',
+        contentType: 'application/json',
+        xhrFields: {
+            withCredentials: true
+        },
+
+        headers: {
+            'x-req': '7Q5BupbP1iAH7LkWIn4jgJeE1bdJBkE4Xn0HZFs3SfixVXB8I7xZcjI3+pmHWVVoS9FuHclSxCGkwpI4pHtPuRdPa52G973JU6JLqLFTx4s='
+        },
+        success: function() {
+            // Here's where you handle a successful response.
+        },
+
+        error: function() {
+            alert('fqwefqw');
+        }
+    });
 }
 
 $(document).ready(function() {

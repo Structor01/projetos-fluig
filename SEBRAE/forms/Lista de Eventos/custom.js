@@ -17,13 +17,30 @@ function getMapDetails(vPlace, map) {
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -16.696341, lng: -49.281054},
+        center: {
+            lat: -16.696341,
+            lng: -49.281054
+        },
         zoom: 14
     });
 
     var input = document.getElementById('pac-input');
 
     var autocomplete = new google.maps.places.Autocomplete(input);
+    var geocoder = new google.maps.Geocoder();
+
+    google.maps.event.addListener(map, 'click', function(event) {
+        geocoder.geocode({
+            'latLng': event.latLng
+        }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    console.log(results[0].formatted_address);
+                }
+            }
+        });
+    });
+
     autocomplete.bindTo('bounds', map);
 
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
