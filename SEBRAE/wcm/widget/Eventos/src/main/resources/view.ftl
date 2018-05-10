@@ -39,7 +39,7 @@
 	</style>
 	<div class="page-content container-fluid">
 		<div class="row">
-			<div class="form-group col-md-8">
+			<div class="form-group col-md-10">
 				<div class="input-group">
                     <span class="input-group-addon">
                         <span class="fluigicon fluigicon-search fluigicon-sm"></span>
@@ -47,13 +47,15 @@
 					<input class="form-control" placeholder="Buscar" id="buscaEvento">
 				</div>
 			</div>
-			<div class="form-group col-md-2">
-				<label></label>
-				<span class="fluigicon fluigicon-calendar fluigicon-md"></span>
+			<div class="form-group col-md-1">
+				<button class="btn btn-primary form-control">
+					<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
+				</button>
 			</div>
-			<div class="form-group col-md-2">
-				<label></label>
-				<span class="fluigicon 	fluigicon-list fluigicon-md"></span>
+			<div class="form-group col-md-1">
+				<button class="btn btn-primary form-control active">
+					<span class="fluigicon 	fluigicon-list fluigicon-sm"></span>
+				</button>
 			</div>
 		</div>
 		<div class="row">
@@ -76,8 +78,8 @@
 					</table>
 				</div>
 				<!--<div style="margin: 1rem" class="btn-group fs-float-right">-->
-					<!--<button type="button" onclick="prevP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-left fluigicon-sm"></span></button>-->
-					<!--<button type="button" onclick="nextP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-right fluigicon-sm"></span></button>-->
+				<!--<button type="button" onclick="prevP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-left fluigicon-sm"></span></button>-->
+				<!--<button type="button" onclick="nextP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-right fluigicon-sm"></span></button>-->
 				<!--</div>-->
 
 				<!--<button type="button" onclick="editCad()" style="margin: 1rem" class="btn btn-default fs-float-left">Editar meu ramal</button>-->
