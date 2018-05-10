@@ -90,7 +90,7 @@ function verificaDisponibildade(inicio,fim) {
             (
                 inicio.split(' ')[0].split('/')[0] == diaI &&
                 inicio.split(' ')[0].split('/')[1] == mesI &&
-                inicio.split(' ')[1] >= horaI
+                inicio.split(' ')[1] >= horaI && inicio.split(' ')[1] <= horaF
             ) || (
                 fim.split(' ')[0].split('/')[0] == diaF &&
                 fim.split(' ')[0].split('/')[1] == mesF &&
