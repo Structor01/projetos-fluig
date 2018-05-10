@@ -14,3 +14,7 @@ edit.file=edit.ftl
 locale.file.base.name=Eventos
 application.resource.js.1=/resources/js/Eventos.js
 application.resource.css.2=/resources/css/Eventos.css
+application.resource.css.3=/resources/css/fullcalendar.css
+application.resource.css.4=/resources/css/fullcalendar.print.css
+application.resource.js.5=/resources/js/moment.min.js
+application.resource.js.6=/resources/js/fullcalendar.js
