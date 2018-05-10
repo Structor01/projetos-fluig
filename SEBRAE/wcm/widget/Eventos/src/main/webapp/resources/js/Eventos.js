@@ -35,7 +35,7 @@ var HelloWorld = SuperWidget.extend({
                 $('#rowEventos').html(this.htmlC);
                 $('#calendar').fullCalendar({
                     lang: 'pt',
-                    events: calendarEv,
+                    events: this.calendarEv,
                     eventClick: function(calEvent, jsEvent, view) {
                         alert('Event: ' + calEvent.title);
                         alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
