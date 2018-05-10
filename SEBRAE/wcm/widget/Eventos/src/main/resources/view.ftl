@@ -54,6 +54,7 @@
 				<span class="fluigicon 	fluigicon-list fluigicon-sm"></span>
 			</button>
 		</div>
+
 		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -61,7 +62,7 @@
 				</div>
 				<div class="panel-body">
 					<div id="calendar"></div>
-					<div id="">
+					<div class="hide" id="lista">
 						<table class="table table-striped">
 							<thead>
 							<th>Nome do Evento</th>

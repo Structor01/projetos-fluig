@@ -6,16 +6,16 @@ var HelloWorld = SuperWidget.extend({
             events: [
                 {
                     title  : 'event1',
-                    start  : '2010-01-01'
+                    start  : '2018-05-01'
                 },
                 {
                     title  : 'event2',
-                    start  : '2010-01-05',
-                    end    : '2010-01-07'
+                    start  : '2018-05-05',
+                    end    : '2018-05-07'
                 },
                 {
                     title  : 'event3',
-                    start  : '2010-01-09T12:30:00',
+                    start  : '2018-05-09T12:30:00',
                     allDay : false // will make the time show
                 }
             ]
