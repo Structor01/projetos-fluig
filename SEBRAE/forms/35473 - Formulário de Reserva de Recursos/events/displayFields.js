@@ -1,6 +1,6 @@
 function displayFields(form, customHTML) {
     log.info('=================== getFormMode() '+form.getFormMode());
-    if (form.getFormMode() == "MOD" || form.getFormMode() == "ADD"){
+    if (form.getFormMode() == "MOD" || form.getFormMode() == "ADD") {
 
         var numActivity = getValue('WKNumState')
         var c1 = DatasetFactory.createConstraint("colleaguePK.colleagueId", getValue("WKUser"), getValue("WKUser"), ConstraintType.MUST);
@@ -36,6 +36,6 @@ function displayFields(form, customHTML) {
         }
     }
     /*InteraÃ§Ã£o com o HTML*/
-    customHTML.append("<script>function getWKNumState(){ return " + getValue('WKNumState') + ";}</script>");
+    customHTML.append("<script>function getWKNumState(){ return " + getValue('WKNumState') + ";} var formMode = '"+ form.getFormMode() +"' </script>");
 }
 

@@ -1,10 +1,4 @@
 $(document).ready(function () {
-    FLUIGC.calendar('.date', {
-        pickDate: true,
-        pickTime: true,
-        sideBySide: true
-    });
-
     if(getWKNumState() == 0) {
         $('#dtSolicitacao').val(getDateNow());
         $('#solicitante').val(top.WCMAPI.user);
@@ -12,12 +6,17 @@ $(document).ready(function () {
         // setZoomData('solicitanteInformado', top.WCMAPI.user);
     }
 
-    if(getWKNumState() == 5 || getWKNumState() == 4) {
+    if(getWKNumState() == 5 || getWKNumState() == 4 || formMode == 'VIEW') {
         $('.aprovacao').removeClass('hide');
         $('.horarios').removeClass('hide');
         $('.recursos').removeClass('hide');
     }
 
+    FLUIGC.calendar('.date', {
+        pickDate: true,
+        pickTime: true,
+        sideBySide: true
+    });
 
     $('.dateReserva').on('blur', function (ev) {
         onChangeDate(ev);
