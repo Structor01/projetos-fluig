@@ -71,9 +71,10 @@ var HelloWorld = SuperWidget.extend({
         $div.append($message);
     },
     sync: function () {
-        var constraints = new Array();
         for(var i in this.eventos) {
+            var constraints = new Array();
             constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(this.eventos[i]['PeriodoInicial']), "", ConstraintType.MUST));
+            constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + disarrangeData(this.eventos[i]['CodEvento']), "", ConstraintType.MUST));
             constraints.push(DatasetFactory.createConstraint("CardData", "dtInicio;" + disarrangeData(this.eventos[i]['PeriodoInicial']), "", ConstraintType.MUST));
             constraints.push(DatasetFactory.createConstraint("CardData", "endereco;" + this.eventos[i]['Local'], "", ConstraintType.MUST));
             constraints.push(DatasetFactory.createConstraint("CardData", "location;" + this.eventos[i]['Local'], "", ConstraintType.MUST));
@@ -82,6 +83,7 @@ var HelloWorld = SuperWidget.extend({
             constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + this.verificaTipoEv(this.eventos[i]['DescProduto']), "", ConstraintType.MUST));
             constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + this.eventos[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
             constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + this.eventos[i]['Preco'], "", ConstraintType.MUST));
+            this.salvarForm(constraints);
         }
     },
     criaRegistro: function (id) {
@@ -89,9 +91,9 @@ var HelloWorld = SuperWidget.extend({
         constraints.push(DatasetFactory.createConstraint("Parent Id", id, "", ConstraintType.MUST));
         return DatasetFactory.getDataset("dsCriaRegistro", null, constraints, null);
     },
-    salvarForm: function (cardId, constraints) {
+    salvarForm: function (constraints) {
         FLUIGC.loading(window).show();
-        var registro = criaRegistro(205485);
+        var registro = criaRegistro(36117);
         var cardId = registro.values[0]['Retorno'];
         console.log('Foi gravado um novo registro ' + cardId);
         var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
