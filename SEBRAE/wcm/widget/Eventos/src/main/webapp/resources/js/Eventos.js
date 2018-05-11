@@ -73,28 +73,15 @@ var HelloWorld = SuperWidget.extend({
     sync: function () {
         var constraints = new Array();
         for(var i in this.eventos) {
-            constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "dtInicio;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "email;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "endereco;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "location;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
+            constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(this.eventos[i]['PeriodoInicial']), "", ConstraintType.MUST));
+            constraints.push(DatasetFactory.createConstraint("CardData", "dtInicio;" + disarrangeData(this.eventos[i]['PeriodoInicial']), "", ConstraintType.MUST));
+            constraints.push(DatasetFactory.createConstraint("CardData", "endereco;" + this.eventos[i]['Local'], "", ConstraintType.MUST));
+            constraints.push(DatasetFactory.createConstraint("CardData", "location;" + this.eventos[i]['Local'], "", ConstraintType.MUST));
             constraints.push(DatasetFactory.createConstraint("CardData", "nomeEvento;" + this.eventos[i]['TituloEvento'], "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "observacao;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "publicoAlvo;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "responsavel;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "telefone;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + $("#cpfPesquisa").val(), "", ConstraintType.MUST));
-
-            this.htmlC += '<tr>' +
-                '<td>' + this.eventos[i]['TituloEvento'] + '</td>' +
-                '<td>' + this.eventos[i]['DescProduto'] + '</td>' +
-                '<td>' + this.eventos[i]['DescUnidadeOrganizacional'] + '</td>' +
-                '<td>' + disarrangeData(this.eventos[i]['PeriodoInicial']) + '</td>' +
-                '<td>' + disarrangeData(this.eventos[i]['PeriodoFinal']) + '</td>' +
-                '<td>' + this.eventos[i]['NomeCidade'] + '</td>' +
-                '</tr>';
+            constraints.push(DatasetFactory.createConstraint("CardData", "publicoAlvo;" + this.eventos[i]['PublicoEvento'], "", ConstraintType.MUST));
+            constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + this.verificaTipoEv(this.eventos[i]['DescProduto']), "", ConstraintType.MUST));
+            constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + this.eventos[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
+            constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + this.eventos[i]['Preco'], "", ConstraintType.MUST));
         }
     },
     criaRegistro: function (id) {
@@ -112,7 +99,13 @@ var HelloWorld = SuperWidget.extend({
         console.log(msg);
     },
     verificaTipoEv: function (ev) {
-        
+        var tipoEventos = DatasetFactory.getDataset("dsTipoEvento", null, null, null);
+        if(tipoEventos.values && tipoEventos.values.length) {
+            for(var i in tipoEventos.values) {
+                var rec = tipoEventos.values[i]['Tipo'];
+                 if(ev.indexOf(rec) > -1) return rec;
+            }
+        }
     }
 });
 
