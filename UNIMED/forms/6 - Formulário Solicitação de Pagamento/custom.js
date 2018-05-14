@@ -1,10 +1,3 @@
-var beforeSendValidate = function(numState,nextState){
-    if($('#rateio').val() == 'S') {
-        var v = validaRateios(true);
-        if(v === false) throw "Erro! Por favor, corrija os rateios.";
-    }
-}
-
 function Inicio() {
     var atividade = WKNumState;
     var processo = WKNumProces;

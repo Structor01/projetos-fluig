@@ -13,6 +13,11 @@ var beforeSendValidate = function(numState, nextState) {
 	$('#navRateio').removeClass('active');					
 	$('#aNavPagamento').attr('aria-expanded', true);
 	$('#navPagamento').addClass('active');
+
+    if($('#rateio').val() == 'S') {
+        var v = validaRateios(true);
+        if(v === false) throw "Erro! Por favor, corrija os rateios.";
+    }
 	
 //*Inicio	
 	if ( numState == '00' || numState == '01' || numState == '04' || numState == '08' || numState == '22' || numState == '44') {
@@ -56,15 +61,15 @@ var beforeSendValidate = function(numState, nextState) {
 			throw ('Data de Vencimento fora do prazo mínimo de 10 dias corridos!');
 		}
 
-		if ($('#zoomNatureza').val() == '' || $('#zoomNatureza').val() == undefined){
+		if ($('#zoomNatureza').val().length == 0){
 			$('#zoomNatureza').parent( 'div' ).addClass('has-error');
 			throw ('Natureza não informada!');
 		}		
-		if ($('#zoomTipoPagto').val() == '' || $('#zoomTipoPagto').val() == undefined){
+		if ($('#zoomTipoPagto').val().length == 0){
 			$('#zoomTipoPagto').parent( 'div' ).addClass('has-error');
 			throw ('Tipo de Pagamento não informado!');
 		}
-		if ($('#zoomFormaPagto').val() == '' || $('#zoomFormaPagto').val() == undefined){
+		if ($('#zoomFormaPagto').val().length == 0){
 			$('#zoomFormaPagto').parent( 'div' ).addClass('has-error');
 			throw ('Forma de Pagamento não informada!');
 		}
@@ -117,27 +122,28 @@ var beforeSendValidate = function(numState, nextState) {
 		if ($('#zoomCCusto').val() == '' || $('#zoomCCusto').val() == undefined){
 			$('#zoomCCusto').parent( 'div' ).addClass('has-error');
 			throw ('Centro de Custo Pagador não informado!');
-		} else
-			if ($('#idRateio').val() == 'S') {
-				$('#aNavRateio').attr('aria-expanded', true);
-				$('#navRateio').addClass('active');					
-				$('#aNavPagamento').attr('aria-expanded', false);
-				$('#navPagamento').removeClass('active');
-				var retornoRateio = validaRateio(valorPagto);
-				if ( retornoRateio[0] != '' && retornoRateio[0] != undefined) {
-					if (retornoRateio[1] != '') {
-						$('#'+retornoRateio[1]).parent( 'div' ).addClass('has-error');
-					}					
-					throw (retornoRateio[0]);
-				}
-				var total = $('#valorPagamento').val().replace(/[^\d]+/g,'');
-				var totalRateio = $('#valorRateioTotal').val().replace(/[^\d]+/g,'');
-				
-				if ( totalRateio != total) {
-					$('#valorRateioTotal').parent( 'div' ).addClass('has-error');
-					throw 'Valor Total do Rateio ' + $('#valorRateioTotal').val() + ' é diferente do Valor do Pagamento informado ' + $('#valorPagamento').val(); 
-				}
-			}
+		}
+		// else
+		// 	if ($('#idRateio').val() == 'S') {
+		// 		$('#aNavRateio').attr('aria-expanded', true);
+		// 		$('#navRateio').addClass('active');
+		// 		$('#aNavPagamento').attr('aria-expanded', false);
+		// 		$('#navPagamento').removeClass('active');
+		// 		var retornoRateio = validaRateio(valorPagto);
+		// 		if ( retornoRateio[0] != '' && retornoRateio[0] != undefined) {
+		// 			if (retornoRateio[1] != '') {
+		// 				$('#'+retornoRateio[1]).parent( 'div' ).addClass('has-error');
+		// 			}
+		// 			throw (retornoRateio[0]);
+		// 		}
+		// 		var total = $('#valorPagamento').val().replace(/[^\d]+/g,'');
+		// 		var totalRateio = $('#valorRateioTotal').val().replace(/[^\d]+/g,'');
+		//
+		// 		if ( totalRateio != total) {
+		// 			$('#valorRateioTotal').parent( 'div' ).addClass('has-error');
+		// 			throw 'Valor Total do Rateio ' + $('#valorRateioTotal').val() + ' é diferente do Valor do Pagamento informado ' + $('#valorPagamento').val();
+		// 		}
+		// 	}
 		
 		if ($('#idRespGerencia').val() == '') {
 			throw 'Centro de Custo Solicitante sem Responsável Gerência Cadastrado. Favor selecionar outro Centro de Custo.';

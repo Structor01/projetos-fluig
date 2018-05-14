@@ -11,6 +11,28 @@ function setSelectedZoomItem(selectedItem){
         $('#codRateio___'+tableId).val(selectedItem.CCODIGO);
     }
 
+    // var tableId = selectedItem.inputId.substring(selectedItem.inputId.indexOf("___") + 3, selectedItem.inputId.indexOf("___") + 6);
+    //if(selectedItem.inputId.startsWith('zoomCr')){
+    if(selectedItem.inputId == 'zoomRateio'){
+        console.log(selectedItem);
+        var constraints = new Array();
+        constraints.push(DatasetFactory.createConstraint("tablename", 'tableRateio', 'tableRateio', ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("metadata#id", selectedItem.documentid, selectedItem.documentid, ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("metadata#version", selectedItem['metadata#version'], selectedItem['metadata#version'], ConstraintType.MUST));
+        var dataset = DatasetFactory.getDataset("dsRateios", null, constraints, null);
+        console.log(dataset.values);
+        for(var i in dataset.values) {
+            var rec = dataset.values[i];
+            var idx = wdkAddChild('tableRateio');
+            // $('#zoomCCustoRateio___' + idx).val(rec['zoomCCustoRateio']);
+            setZoomData("zoomCCustoRateio___"+idx, rec['zoomCCustoRateio']);
+            $('#valorRateio___' + idx).val(rec['valorRateio']);
+            $('#percentualRateio___' + idx).val(rec['percentualRateio']);
+        }
+
+        getRateioValoresPercent();
+    }
+
     if(selectedItem.inputId == 'zoomUnidade' || selectedItem.inputId == 'zoomUnidadePesq'){
         if (selectedItem.inputId == 'zoomUnidadePesq') {
             setZoomData("zoomUnidade", selectedItem.CNOMEFIL);
@@ -19,9 +41,9 @@ function setSelectedZoomItem(selectedItem){
         var filtro = "CCODIGO," +selectedItem.CFILEMP;
         $('#cEmpresa').val(selectedItem.CEMPRESA);
         $('#cFilEmp').val(selectedItem.CFILEMP);
-        reloadZoomFilterValues("zoomTipoPagto", filtro);
-        reloadZoomFilterValues("zoomFormaPagto", filtro);
-        reloadZoomFilterValues("zoomNatureza", filtro);
+        // reloadZoomFilterValues("zoomTipoPagto", filtro);
+        // reloadZoomFilterValues("zoomFormaPagto", filtro);
+        // reloadZoomFilterValues("zoomNatureza", filtro);
         var filtro2 = "CFILEMP," +selectedItem.CFILEMP;
         // reloadZoomFilterValues("zoomCCusto", filtro2);
         $('.btn-sucess').removeClass('btn-sucess');
@@ -58,6 +80,32 @@ function setSelectedZoomItem(selectedItem){
         $('#CODCCUSTO').val(selectedItem.CCODIGO);
     }
 
+    // if(selectedItem.inputId == 'zoomCCustoSolic') {
+    //     $('#CODCCUSTOSOLIC').val(selectedItem.CCODIGO);
+    //     if ($('#zoomUnidade').val() == '') {
+    //         MensagemAlerta('Solicitação de Pagamento', 'Selecione primeiro a Unidade.');
+    //     } else
+    //     {
+    //         if (selectedItem.CIDFLUIGRESP == '') {
+    //             MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo sem Responsável Gerência Cadastrado. Favor selecionar outro Centro de Custo.');
+    //         } else {
+    //             $('#idRespGerencia').val(selectedItem.CIDFLUIGRESP.trim());
+    //             var centroCusto = selectedItem.CCODIGO.substr(0, 3);
+    //             var constraintDsCentroCustoUnimed1 = DatasetFactory.createConstraint('CDESCRICAO', centroCusto, centroCusto, ConstraintType.MUST);
+    //             var dsCentroCustoUnimed = DatasetFactory.getDataset('dsCentroCustoUnimed', null, new Array(constraintDsCentroCustoUnimed1), null);
+    //             if (dsCentroCustoUnimed.values.length > 0) {
+    //                 if (dsCentroCustoUnimed.values[0].CIDFLUIGRESP == '' || dsCentroCustoUnimed.values[0].CIDFLUIGRESP == undefined) {
+    //                     MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo sem Responsável Diretoria Cadastrado. Favor selecionar outro Centro de Custo.');
+    //                 } else {
+    //                     $('#idRespDiretoria').val(dsCentroCustoUnimed.values[0].CIDFLUIGRESP.trim());
+    //                 }
+    //             } else {
+    //                 MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo Sintético ' + centroCusto + ' não encontrado ou sem Responsável Diretoria cadastrada. Favor selecionar outro Centro de Custo.');
+    //             }
+    //         }
+    //     }
+    // }
+
     if(selectedItem.inputId == 'zoomCCustoSolic') {
         $('#CODCCUSTOSOLIC').val(selectedItem.CCODIGO);
         if ($('#zoomUnidade').val() == '') {
@@ -78,9 +126,13 @@ function setSelectedZoomItem(selectedItem){
                 if (dsCentroCustoUnimed.values.length > 0) {
                     var dsResp = '';
                     for(var i in dsCentroCustoUnimed.values) {
-                        if (dsCentroCustoUnimed.values[i].CCODIGO.indexOf(centroCusto) > -1 && dsCentroCustoUnimed.values[i].CDESCRICAO.indexOf('DIRETORIA') > -1) {
+                        var findCod = dsCentroCustoUnimed.values[i].CCODIGO;
+                        var findDesc = dsCentroCustoUnimed.values[i].CDESCRICAO;
+
+                        if (findCod.indexOf(centroCusto) > -1 && findDesc.indexOf('DIRETORIA') > -1) {
                             dsResp = dsCentroCustoUnimed.values[i].CIDFLUIGRESP;
-                            $('#idRespDiretoria').val(dsResp.trim());
+                            dsResp = dsResp.trim();
+                            $('#idRespDiretoria').val(dsResp);
                         }
                     }
 
@@ -92,7 +144,11 @@ function setSelectedZoomItem(selectedItem){
         }
     }
 }
-
+/**
+ * Função acionada ao eliminar uma tag(valor) de um campo zoom
+ * @param removedItem
+ * @returns
+ */
 function removedZoomItem(removedItem) {
 
     if (removedItem.inputId == 'zoomNatureza') {
@@ -138,4 +194,3 @@ function removedZoomItem(removedItem) {
 function setZoomData(instance, value){
     window[instance].setValue(value);
 }
-
