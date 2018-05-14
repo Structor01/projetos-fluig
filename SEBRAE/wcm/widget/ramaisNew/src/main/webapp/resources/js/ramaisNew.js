@@ -106,8 +106,8 @@ function goToUser(e) {
 function getRamais() {
     var html;
     var constraints = new Array();
-    constraints.push(DatasetFactory.createConstraint("ramal", "undefined", "undefined", ConstraintType.MUST_NOT));
-    constraints.push(DatasetFactory.createConstraint("ramal", "", "", ConstraintType.MUST_NOT));
+    // constraints.push(DatasetFactory.createConstraint("ramal", "undefined", "undefined", ConstraintType.MUST_NOT));
+    // constraints.push(DatasetFactory.createConstraint("ramal", "", "", ConstraintType.MUST_NOT));
     RAMAIS = DatasetFactory.getDataset("dsRamais", null, constraints, null);
     return paginate(0,MAX_LENGHT);
 }

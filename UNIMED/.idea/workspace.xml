@@ -13,7 +13,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="zoom.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -67,10 +77,10 @@
         <option value="$PROJECT_DIR$/datasets/UNIMED_PROD/dsTipoPagamento.js" />
         <option value="$PROJECT_DIR$/datasets/Unimed Homologaçao/dsNatureza.js" />
         <option value="$PROJECT_DIR$/forms/Cadastro de Rateio/custom.js" />
-        <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js" />
         <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/validacao.js" />
         <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/custom.js" />
         <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html" />
+        <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js" />
       </list>
     </option>
   </component>
@@ -89,6 +99,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,7 +151,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,14 +194,16 @@
       <workItem from="1525440116809" duration="18911000" />
       <workItem from="1525860772211" duration="694000" />
       <workItem from="1525869373966" duration="7782000" />
+      <workItem from="1526303935063" duration="56000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27387000" />
+    <option name="totallyTimeSpent" value="27443000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -308,22 +320,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/dsListaRateio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/dsListaRateio.js" />
     <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/getDataset.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" selection-start-line="14" selection-end-line="15" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/jquery.mask.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/UNIMED_PROD/dsNatureza.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -357,13 +360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="19" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="26" column="76" lean-forward="true" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -411,6 +407,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="204" column="72" selection-start-line="204" selection-start-column="72" selection-end-line="204" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
         </state>
       </provider>
     </entry>

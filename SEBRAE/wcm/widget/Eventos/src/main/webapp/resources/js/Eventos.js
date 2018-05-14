@@ -17,6 +17,7 @@ var HelloWorld = SuperWidget.extend({
                 this.eventos = JSON.parse(data.content.result);
                 this.htmlC = ''
                 this.calendarEv = new Array();
+                return sync(this.eventos);
                 for(var i in this.eventos) {
                     this.calendarEv.push({
                         title: this.eventos[i]['TituloEvento'],
@@ -69,45 +70,6 @@ var HelloWorld = SuperWidget.extend({
         $div = $('#helloMessage_' + this.instanceId);
         $message = $('<div>').addClass('message').append(this.message);
         $div.append($message);
-    },
-    sync: function () {
-        for(var i in this.eventos) {
-            var constraints = new Array();
-            constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(this.eventos[i]['PeriodoInicial']), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + disarrangeData(this.eventos[i]['CodEvento']), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "dtInicio;" + disarrangeData(this.eventos[i]['PeriodoInicial']), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "endereco;" + this.eventos[i]['Local'], "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "location;" + this.eventos[i]['Local'], "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "nomeEvento;" + this.eventos[i]['TituloEvento'], "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "publicoAlvo;" + this.eventos[i]['PublicoEvento'], "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + this.verificaTipoEv(this.eventos[i]['DescProduto']), "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + this.eventos[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
-            constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + this.eventos[i]['Preco'], "", ConstraintType.MUST));
-            this.salvarForm(constraints);
-        }
-    },
-    criaRegistro: function (id) {
-        var constraints = new Array();
-        constraints.push(DatasetFactory.createConstraint("Parent Id", id, "", ConstraintType.MUST));
-        return DatasetFactory.getDataset("dsCriaRegistro", null, constraints, null);
-    },
-    salvarForm: function (constraints) {
-        FLUIGC.loading(window).show();
-        var registro = criaRegistro(36117);
-        var cardId = registro.values[0]['Retorno'];
-        console.log('Foi gravado um novo registro ' + cardId);
-        var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
-        msg == '' ? msg = 'O registro ' + cardId + ' foi alterado!' : false;
-        console.log(msg);
-    },
-    verificaTipoEv: function (ev) {
-        var tipoEventos = DatasetFactory.getDataset("dsTipoEvento", null, null, null);
-        if(tipoEventos.values && tipoEventos.values.length) {
-            for(var i in tipoEventos.values) {
-                var rec = tipoEventos.values[i]['Tipo'];
-                 if(ev.indexOf(rec) > -1) return rec;
-            }
-        }
     }
 });
 
@@ -130,6 +92,55 @@ function changeView(e) {
     $('#btn-'+e).addClass('btn-primary active');
     $('.viewEv').addClass('hide');
     $('#'+e).removeClass('hide');
+}
+
+function sync(ev) {
+    console.log('start');
+    for(var i in ev) {
+        var constraints = new Array();
+        constraints.push(DatasetFactory.createConstraint("codSAS", ev[i]['CodEvento'], ev[i]['CodEvento'], ConstraintType.MUST));
+        var checkev = DatasetFactory.getDataset("dsEventos", null, constraints, null);
+        if(checkev && checkev.values.length > 0) continue; else constraints = new Array();
+        constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(ev[i]['PeriodoInicial']), "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + ev[i]['CodEvento'], "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "codCidade;" + ev[i]['CodCidade'], "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "dtInicio;" + disarrangeData(ev[i]['PeriodoInicial']), "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "endereco;" + ev[i]['Local'], "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "location;" + ev[i]['Local'], "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "nomeEvento;" + ev[i]['TituloEvento'], "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "publicoAlvo;" + ev[i]['PublicoEvento'], "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + verificaTipoEv(ev[i]['DescProduto']), "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + ev[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + ev[i]['Preco'], "", ConstraintType.MUST));
+        salvarForm(constraints);
+    }
+}
+
+function criaRegistro(id) {
+    var constraints = new Array();
+    constraints.push(DatasetFactory.createConstraint("Parent Id", id, "", ConstraintType.MUST));
+    return DatasetFactory.getDataset("dsCriaRegistro", null, constraints, null);
+}
+
+function salvarForm(constraints) {
+    FLUIGC.loading(window).show();
+    var registro = criaRegistro(36117);
+    var cardId = registro.values[0]['Retorno'];
+    console.log('Foi gravado um novo registro ' + cardId);
+    constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
+    var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
+    var msg = 'O registro ' + cardId + ' foi alterado!';
+    console.log(msg);
+}
+
+function verificaTipoEv(ev) {
+    var tipoEventos = DatasetFactory.getDataset("dsTipoEvento", null, null, null);
+    if(tipoEventos.values && tipoEventos.values.length) {
+        for(var i in tipoEventos.values) {
+            var rec = tipoEventos.values[i]['Tipo'];
+            if(ev.indexOf(rec) > -1) return rec;
+        }
+    }
 }
 
 // function getRandomColor() {
