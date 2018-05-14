@@ -40,14 +40,6 @@
 	</style>
 	<div class="page-content container-fluid">
 		<div class="row">
-			<!--<div class="form-group col-md-10">-->
-			<!--<div class="input-group">-->
-			<!--<span class="input-group-addon">-->
-			<!--<span class="fluigicon fluigicon-search fluigicon-sm"></span>-->
-			<!--</span>-->
-			<!--<input class="form-control" placeholder="Buscar" id="buscaEvento">-->
-			<!--</div>-->
-			<!--</div>-->
 			<button style="margin: 0.5rem" id="btn-calendar" onclick="changeView('calendar')" class="btn btn-primary active fs-float-right">
 				<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
 			</button>
