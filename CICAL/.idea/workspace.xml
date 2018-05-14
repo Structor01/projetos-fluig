@@ -17,8 +17,8 @@
       <file leaf-file-name="Formulario de Solicitacao de Uniforme.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+            <state relative-caret-position="159">
+              <caret line="56" column="113" selection-start-line="56" selection-start-column="113" selection-end-line="56" selection-end-column="113" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -48,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/custom.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -64,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/../UNIMED/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="229">
-              <caret line="269" column="45" lean-forward="true" selection-start-line="260" selection-start-column="40" selection-end-line="269" selection-end-column="45" />
+              <caret line="269" column="45" selection-start-line="260" selection-start-column="40" selection-end-line="269" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -156,25 +156,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526306183370</updated>
-      <workItem from="1526306184890" duration="4775000" />
+      <workItem from="1526306184890" duration="6275000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4775000" />
+    <option name="totallyTimeSpent" value="6275000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1366" y="32" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981412" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24981412" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32985073" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32985073" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -225,7 +225,7 @@
     <entry file="file://$PROJECT_DIR$/../UNIMED/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
-          <caret line="269" column="45" lean-forward="true" selection-start-line="260" selection-start-column="40" selection-end-line="269" selection-end-column="45" />
+          <caret line="269" column="45" selection-start-line="260" selection-start-column="40" selection-end-line="269" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -239,7 +239,7 @@
     <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -252,8 +252,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+        <state relative-caret-position="159">
+          <caret line="56" column="113" selection-start-line="56" selection-start-column="113" selection-end-line="56" selection-end-column="113" />
           <folding>
             <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
