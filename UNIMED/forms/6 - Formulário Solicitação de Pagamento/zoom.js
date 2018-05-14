@@ -74,15 +74,17 @@ function setSelectedZoomItem(selectedItem){
             } else {
                 $('#idRespGerencia').val(respId);
                 var centroCusto = cod.substr(0, 3);
-                var constraintDsCentroCustoUnimed1 = DatasetFactory.createConstraint('CDESCRICAO', centroCusto, centroCusto, ConstraintType.MUST);
-                var dsCentroCustoUnimed = DatasetFactory.getDataset('dsCentroCustoUnimed', null, new Array(constraintDsCentroCustoUnimed1), null);
+                var dsCentroCustoUnimed = DatasetFactory.getDataset('dsCentroCustoUnimed', null, null, null);
                 if (dsCentroCustoUnimed.values.length > 0) {
-                    var dsResp = dsCentroCustoUnimed.values[0].CIDFLUIGRESP;
-                    if (dsCentroCustoUnimed.values[0].CIDFLUIGRESP == '' || dsCentroCustoUnimed.values[0].CIDFLUIGRESP == undefined) {
-                        MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo sem Responsável Diretoria Cadastrado. Favor selecionar outro Centro de Custo.');
-                    } else {
-                        $('#idRespDiretoria').val(dsResp.trim());
+                    var dsResp = '';
+                    for(var i in dsCentroCustoUnimed.values) {
+                        if (dsCentroCustoUnimed.values[i].CCODIGO.indexOf(centroCusto) > -1 && dsCentroCustoUnimed.values[i].CDESCRICAO.indexOf('DIRETORIA') > -1) {
+                            dsResp = dsCentroCustoUnimed.values[i].CIDFLUIGRESP;
+                            $('#idRespDiretoria').val(dsResp.trim());
+                        }
                     }
+
+                    if(dsResp == '') MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo sem Responsável Diretoria Cadastrado. Favor selecionar outro Centro de Custo.');
                 } else {
                     MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo Sintético ' + centroCusto + ' não encontrado ou sem Responsável Diretoria cadastrada. Favor selecionar outro Centro de Custo.');
                 }
