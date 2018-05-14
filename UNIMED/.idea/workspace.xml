@@ -17,8 +17,8 @@
       <file leaf-file-name="zoom.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+            <state relative-caret-position="316">
+              <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -91,8 +91,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="-1366" />
+    <option name="y" value="32" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -194,25 +196,25 @@
       <workItem from="1525440116809" duration="18911000" />
       <workItem from="1525860772211" duration="694000" />
       <workItem from="1525869373966" duration="7782000" />
-      <workItem from="1526303935063" duration="343000" />
+      <workItem from="1526303935063" duration="1422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27730000" />
+    <option name="totallyTimeSpent" value="28809000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="-1366" y="32" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23345725" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32905984" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34477612" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -412,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+        <state relative-caret-position="316">
+          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
         </state>
       </provider>
     </entry>
