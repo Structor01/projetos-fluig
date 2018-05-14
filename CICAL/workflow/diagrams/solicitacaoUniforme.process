@@ -1058,7 +1058,7 @@
   <bpmn2:BpmnSwimLane id="swimlane8" name="Recursos Humanos" cores="adc9ac"/>
   <bpmn2:BpmnTask id="task9" name="Solicita&#xe7;&#xe3;o de Uniforme" incoming="flow10" outgoing="flow12" type="80" managerMechanism="" loopType="0" authNotify="true" expediente="" selecionaColaboradores="1" esforcoCalculo="0" executionAttempts="0" frequency="0"/>
   <bpmn2:SequenceFlow id="flow10" name="" sourceRef="startevent1" targetRef="task9" atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/>"/>
-  <bpmn2:BpmnTask id="task11" name="Tirar Medidas" incoming="flow12" outgoing="flow14" type="80" loopType="0" authNotify="true" expediente="" selecionaColaboradores="1" esforcoCalculo="0" executionAttempts="0" frequency="0"/>
+  <bpmn2:BpmnTask id="task11" name="Tirar Medidas" incoming="flow12" outgoing="flow14" type="80" managerMechanism="" loopType="0" authNotify="true" expediente="" selecionaColaboradores="1" esforcoCalculo="0" executionAttempts="0" frequency="0" deadlineFieldName="agendamento"/>
   <bpmn2:SequenceFlow id="flow12" name="" sourceRef="task9" targetRef="task11" atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/>"/>
   <bpmn2:BpmnTask id="task13" name="Fazer Pedido ao Fornecedor" incoming="flow14" outgoing="flow16" type="80" loopType="0" authNotify="true" expediente="" selecionaColaboradores="1" esforcoCalculo="0" executionAttempts="0" frequency="0"/>
   <bpmn2:SequenceFlow id="flow14" name="" sourceRef="task11" targetRef="task13" atividadeFluxo="" atividadeRetorno="" extendedFields="&lt;list/>"/>

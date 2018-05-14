@@ -4,4 +4,8 @@ $(document).ready(function () {
         pickTime: true,
         sideBySide: true
     });
+
+    if(task != 9 && mode == "ADD") {
+        $('#agendamentoR').hide();
+    }
 });
