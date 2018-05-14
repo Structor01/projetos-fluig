@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitação de Uniforme</processId>
-      <version>2</version>
+      <version>5</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>367</formId>
@@ -494,7 +494,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoUniforme</processId>
-        <version>2</version>
+        <version>5</version>
         <linkSequence>12</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -505,7 +505,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoUniforme</processId>
-        <version>2</version>
+        <version>5</version>
         <linkSequence>12</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
