@@ -3,7 +3,7 @@
   <pi:Diagram visible="true" gridUnit="10" diagramTypeId="BPMNdiagram" name="solicitacaoUniforme" snapToGrid="true" pictogramLinks="/0/@children.1/@link /0/@children.2/@link /0/@children.0/@link /0/@children.0/@children.1/@link /0/@children.0/@children.0/@link /0/@children.3/@link /0/@connections.0/@link /0/@children.4/@link /0/@connections.1/@link /0/@children.5/@link /0/@connections.2/@link /0/@children.6/@link /0/@connections.3/@link /0/@connections.4/@link" version="0.14.0">
     <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@styles.0/@renderingStyle/@adaptedGradientColoredAreas/@adaptedGradientColoredAreas.0/@gradientColor.2/@end/@color" foreground="/0/@colors.0" lineWidth="1" transparency="0.0" width="1000" height="1000"/>
     <children xsi:type="pi:ContainerShape" visible="true" active="true">
-      <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.9" foreground="/0/@colors.3" lineWidth="1" transparency="0.0" width="621" height="301" x="10" y="20" style="/0/@styles.7"/>
+      <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.9" foreground="/0/@colors.3" lineWidth="1" transparency="0.0" width="641" height="301" x="10" y="20" style="/0/@styles.7"/>
       <link businessObjects="pool4"/>
       <anchors xsi:type="pi:ChopboxAnchor"/>
       <anchors xsi:type="pi:ChopboxAnchor"/>
@@ -11,7 +11,7 @@
         <graphicsAlgorithm xsi:type="al:Ellipse" filled="false" lineVisible="false"/>
       </anchors>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.10" foreground="/0/@colors.3" lineWidth="1" transparency="0.0" width="591" height="150" x="30" style="/0/@styles.11"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.10" foreground="/0/@colors.3" lineWidth="1" transparency="0.0" width="611" height="150" x="30" style="/0/@styles.11"/>
         <link businessObjects="swimlane8"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
@@ -23,7 +23,7 @@
         </children>
       </children>
       <children xsi:type="pi:ContainerShape" visible="true" active="true">
-        <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.7" foreground="/0/@colors.3" lineWidth="1" transparency="0.0" width="591" height="151" x="30" y="150" style="/0/@styles.9"/>
+        <graphicsAlgorithm xsi:type="al:Rectangle" background="/0/@colors.7" foreground="/0/@colors.3" lineWidth="1" transparency="0.0" width="611" height="151" x="30" y="150" style="/0/@styles.9"/>
         <link businessObjects="swimlane5"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>
         <anchors xsi:type="pi:ChopboxAnchor"/>

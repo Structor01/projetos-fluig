@@ -90,11 +90,7 @@ function setSelectedZoomItem(selectedItem){
         }
     }
 }
-/**
- * Função acionada ao eliminar uma tag(valor) de um campo zoom
- * @param removedItem
- * @returns
- */
+
 function removedZoomItem(removedItem) {
 
     if (removedItem.inputId == 'zoomNatureza') {

@@ -16,11 +16,33 @@
 			<div class="row">
 				<ul class="list-group col-md-5">
 					<li class="list-group-item disabled">
-						<span class="fluigicon fluigicon-user fluigicon-sm"></span> Solicitante
+						<span class="fluigicon fluigicon-user fluigicon-md"></span> Solicitante
 					</li>
 					<li class="list-group-item">
 						<label for="nome">Nome</label>
-						<input type="text" class="form-control" id="nome" name="nome" placeholder="">
+						<!--<input type="text" class="form-control" id="nome" name="nome" placeholder="">-->
+						<input
+								type="zoom"
+								id = "nome"
+								name="nome"
+								class="form-control"
+								data-zoom="{
+									'displayKey':'colleagueName',
+									'datasetId':'colleague',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha o usuário',
+									'fields':[
+										{
+										  'field':'colleagueName',
+										  'label':'Nome',
+										  'standard':'true'
+										},{
+										  'field':'login',
+										  'label':'Login'
+										}
+									]
+								 }"
+						/>
 					</li>
 					<li class="list-group-item">
 						<label for="cpf">CPF</label>
@@ -37,7 +59,7 @@
 				</ul>
 				<ul class="list-group col-md-7">
 					<li class="list-group-item disabled">
-						<span class="fluigicon fluigicon-user-favorite fluigicon-sm"></span> Uniforme
+						<span class="fluigicon fluigicon-user-favorite fluigicon-md"></span> Uniforme
 					</li>
 					<li class="list-group-item">
 						<label for="tipoUniforme">Tipo Uniforme</label>
@@ -53,14 +75,17 @@
 							<input type="text" class="form-control" id="quantidade" name="quantidade" placeholder="">
 						</div>
 					</li>
-					<li class="list-group-item">
-						<label for="agendamento">Agendamento para tirar as medidas</label>
-						<div class="input-group date">
-							<input type="text" class="form-control" id="agendamento" name="agendamento" placeholder="">
-							<div class="input-group-addon">
-								<span class="fluigicon fluigicon-calendar"></span>
+					<li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+						<div class="col-md-6" style="padding: 0; padding-right:15px">
+							<label for="agendamento">Agendamento para tirar as medidas</label>
+							<div class="input-group date">
+								<input type="text" class="form-control" id="agendamento" name="agendamento" placeholder="">
+								<div class="input-group-addon">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</div>
 							</div>
 						</div>
+						<div class="col-md-6" style="padding: 0"></div>
 					</li>
 				</ul>
 			</div>

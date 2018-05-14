@@ -439,7 +439,7 @@
     <SwimLane>
       <color>FFFFFF</color>
       <height>301</height>
-      <width>621</width>
+      <width>641</width>
       <positionX>10</positionX>
       <positionY>20</positionY>
       <stateName>Solicitação de Uniforme</stateName>
@@ -455,7 +455,7 @@
     <SwimLane>
       <color>82b0b7</color>
       <height>151</height>
-      <width>591</width>
+      <width>611</width>
       <positionX>40</positionX>
       <positionY>170</positionY>
       <stateName>Solicitante</stateName>
@@ -471,7 +471,7 @@
     <SwimLane>
       <color>adc9ac</color>
       <height>150</height>
-      <width>591</width>
+      <width>611</width>
       <positionX>40</positionX>
       <positionY>20</positionY>
       <stateName>Recursos Humanos</stateName>

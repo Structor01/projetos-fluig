@@ -14,11 +14,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Formulario de Solicitacao de Uniforme.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Formulario de Solicitacao de Uniforme.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="57" column="54" lean-forward="true" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
+            <state relative-caret-position="150">
+              <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zoom.html" pinned="false" current-in-tab="false">
+        <entry file="file:///var/folders/c0/9ndnhxbn7799x_bt0br_1vfw0000gn/T/com.evernote.Evernote/com.evernote.Evernote/WebKitDnD.kRz0nL/zoom.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="24" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -32,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/custom.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -64,9 +76,10 @@
       <list>
         <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulário de Solicitação de Uniforme.html" />
         <option value="$PROJECT_DIR$/../SEBRAE/wcm/widget/Eventos/src/main/resources/view.ftl" />
-        <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html" />
         <option value="$USER_HOME$/Library/Containers/com.evernote.Evernote/Data/Documents/.evernote/118763066-personal-www.evernote.com/external-edits/CAB34CDB-945A-4010-95CC-1E702A7DE4F4/campo_fluig_data.html" />
         <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/custom.js" />
+        <option value="/var/folders/c0/9ndnhxbn7799x_bt0br_1vfw0000gn/T/com.evernote.Evernote/com.evernote.Evernote/WebKitDnD.kRz0nL/zoom.html" />
+        <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html" />
       </list>
     </option>
   </component>
@@ -143,12 +156,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526306183370</updated>
-      <workItem from="1526306184890" duration="2862000" />
+      <workItem from="1526306184890" duration="4775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2862000" />
+    <option name="totallyTimeSpent" value="4775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1366" y="32" width="1366" height="768" extended-state="0" />
@@ -209,13 +222,6 @@
         <state relative-caret-position="-1938" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="57" column="54" lean-forward="true" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../UNIMED/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -234,6 +240,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///var/folders/c0/9ndnhxbn7799x_bt0br_1vfw0000gn/T/com.evernote.Evernote/com.evernote.Evernote/WebKitDnD.kRz0nL/zoom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="24" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
