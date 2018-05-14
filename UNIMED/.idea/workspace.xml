@@ -17,16 +17,23 @@
       <file leaf-file-name="zoom.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="128">
+              <caret line="74" column="49" lean-forward="true" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formSolicitacaoPagamento.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Formulario de Solicitacao de Uniforme.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../CICAL/forms/367 - Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-814" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formSolicitacaoPagamento.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
+            <state relative-caret-position="315">
               <caret line="204" column="72" selection-start-line="204" selection-start-column="72" selection-end-line="204" selection-end-column="72" />
             </state>
           </provider>
@@ -205,12 +212,12 @@
       <workItem from="1525440116809" duration="18911000" />
       <workItem from="1525860772211" duration="694000" />
       <workItem from="1525869373966" duration="7782000" />
-      <workItem from="1526303935063" duration="2720000" />
+      <workItem from="1526303935063" duration="3083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30107000" />
+    <option name="totallyTimeSpent" value="30470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1366" y="32" width="1366" height="768" extended-state="0" />
@@ -414,18 +421,23 @@
         <state relative-caret-position="-448" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="315">
+          <caret line="204" column="72" selection-start-line="204" selection-start-column="72" selection-end-line="204" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="204" column="72" selection-start-line="204" selection-start-column="72" selection-end-line="204" selection-end-column="72" />
+        <state relative-caret-position="128">
+          <caret line="74" column="49" lean-forward="true" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CICAL/forms/367 - Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-814" />
       </provider>
     </entry>
   </component>
