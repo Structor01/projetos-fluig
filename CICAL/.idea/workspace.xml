@@ -14,7 +14,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Formulario de Solicitacao de Uniforme.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Formulario de Solicitacao de Uniforme.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
@@ -31,7 +31,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="displayFields.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/events/displayFields.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="displayFields.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SEBRAE/forms/35473 - Formulário de Reserva de Recursos/events/displayFields.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="46" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>numst</find>
+    </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -44,6 +67,7 @@
         <option value="$PROJECT_DIR$/forms/Tipos de Uniforme/Tipos de Uniforme.html" />
         <option value="$PROJECT_DIR$/forms/Tamanhos de Uniforme/Tamanhos de Uniforme.html" />
         <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html" />
+        <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/events/displayFields.js" />
       </list>
     </option>
   </component>
@@ -138,25 +162,25 @@
       <option name="presentableId" value="Default" />
       <updated>1526306183370</updated>
       <workItem from="1526306184890" duration="6693000" />
-      <workItem from="1526318795232" duration="1657000" />
+      <workItem from="1526318795232" duration="2007000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8350000" />
+    <option name="totallyTimeSpent" value="8700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1366" y="32" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981412" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24981412" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3283582" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3283582" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -299,6 +323,20 @@
             <element signature="n#style#0;n#div#0;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SEBRAE/forms/35473 - Formulário de Reserva de Recursos/events/displayFields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="46" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/events/displayFields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
