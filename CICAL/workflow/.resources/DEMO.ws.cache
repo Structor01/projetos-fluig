@@ -10,6 +10,35 @@
    </array>
   </void>
   <void method="put">
+   <string>camposFormulario, documentoId = 367</string>
+   <array class="java.lang.String" length="8">
+    <void index="0">
+     <string>agendamento</string>
+    </void>
+    <void index="1">
+     <string>centroCusto</string>
+    </void>
+    <void index="2">
+     <string>cpf</string>
+    </void>
+    <void index="3">
+     <string>funcao</string>
+    </void>
+    <void index="4">
+     <string>nome</string>
+    </void>
+    <void index="5">
+     <string>quantidade</string>
+    </void>
+    <void index="6">
+     <string>tamanho</string>
+    </void>
+    <void index="7">
+     <string>tipoUniforme</string>
+    </void>
+   </array>
+  </void>
+  <void method="put">
    <string>fichario</string>
    <object class="java.util.ArrayList">
     <void method="add">

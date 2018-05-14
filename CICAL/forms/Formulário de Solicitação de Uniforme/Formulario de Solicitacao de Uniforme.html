@@ -37,19 +37,30 @@
 				</ul>
 				<ul class="list-group col-md-7">
 					<li class="list-group-item disabled">
-						<i class="material-icons">portrait</i> Uniforme
+						<span class="fluigicon fluigicon-user-favorite fluigicon-sm"></span> Uniforme
 					</li>
 					<li class="list-group-item">
 						<label for="tipoUniforme">Tipo Uniforme</label>
 						<input type="text" class="form-control" id="tipoUniforme" name="tipoUniforme" placeholder="">
 					</li>
-					<li class="list-group-item">
-						<label for="tamanho">Tamanho</label>
-						<input type="text" class="form-control" id="tamanho" name="tamanho" placeholder="">
+					<li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
+						<div class="col-md-6" style="padding: 0; padding-right:15px">
+							<label for="tamanho">Tamanho</label>
+							<input type="text" class="form-control" id="tamanho" name="tamanho" placeholder="">
+						</div>
+						<div class="col-md-6" style="padding: 0">
+							<label for="quantidade">Quantidade</label>
+							<input type="text" class="form-control" id="quantidade" name="quantidade" placeholder="">
+						</div>
 					</li>
 					<li class="list-group-item">
-						<label for="quantidade">Quantidade</label>
-						<input type="text" class="form-control" id="quantidade" name="quantidade" placeholder="">
+						<label for="agendamento">Agendamento para tirar as medidas</label>
+						<div class="input-group date">
+							<input type="text" class="form-control" id="agendamento" name="agendamento" placeholder="">
+							<div class="input-group-addon">
+								<span class="fluigicon fluigicon-calendar"></span>
+							</div>
+						</div>
 					</li>
 				</ul>
 			</div>
