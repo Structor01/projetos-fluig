@@ -65,18 +65,20 @@ function setSelectedZoomItem(selectedItem){
         } else
         {
             var respId = selectedItem.CIDFLUIGRESP;
+            var cod = selectedItem.CCODIGO;
             if (respId.trim() == '') {
                 MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo sem Responsável Gerência Cadastrado. Favor selecionar outro Centro de Custo.');
             } else {
                 $('#idRespGerencia').val(respId.trim());
-                var centroCusto = selectedItem.CCODIGO.substr(0, 3);
+                var centroCusto = cod.substr(0, 3);
                 var constraintDsCentroCustoUnimed1 = DatasetFactory.createConstraint('CDESCRICAO', centroCusto, centroCusto, ConstraintType.MUST);
                 var dsCentroCustoUnimed = DatasetFactory.getDataset('dsCentroCustoUnimed', null, new Array(constraintDsCentroCustoUnimed1), null);
                 if (dsCentroCustoUnimed.values.length > 0) {
+                    var dsResp = dsCentroCustoUnimed.values[0].CIDFLUIGRESP;
                     if (dsCentroCustoUnimed.values[0].CIDFLUIGRESP == '' || dsCentroCustoUnimed.values[0].CIDFLUIGRESP == undefined) {
                         MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo sem Responsável Diretoria Cadastrado. Favor selecionar outro Centro de Custo.');
                     } else {
-                        $('#idRespDiretoria').val(dsCentroCustoUnimed.values[0].CIDFLUIGRESP.trim());
+                        $('#idRespDiretoria').val(dsResp.trim());
                     }
                 } else {
                     MensagemAlerta('Solicitação de Pagamento', 'Centro de Custo Sintético ' + centroCusto + ' não encontrado ou sem Responsável Diretoria cadastrada. Favor selecionar outro Centro de Custo.');
