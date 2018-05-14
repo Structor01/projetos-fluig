@@ -17,10 +17,15 @@
       <file leaf-file-name="zoom.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="57" column="107" lean-forward="true" selection-start-line="57" selection-start-column="107" selection-end-line="57" selection-end-column="107" />
+            <state relative-caret-position="127">
+              <caret line="21" column="58" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="58" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dsCentroCustoUnimed.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datasets/Unimed Homologaçao/dsCentroCustoUnimed.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="scratch_2.es6" pinned="false" current-in-tab="false">
@@ -41,10 +46,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validacao.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="validacao.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/validacao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
+            <state relative-caret-position="138">
               <caret line="125" column="8" selection-start-line="125" selection-start-column="11" selection-end-line="145" selection-end-column="13" />
             </state>
           </provider>
@@ -55,11 +60,34 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="formSolicitacaoPagamento.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="formSolicitacaoPagamento.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="255" column="77" selection-start-line="255" selection-start-column="77" selection-end-line="255" selection-end-column="77" />
+            <state relative-caret-position="-6984">
+              <caret line="275" column="56" selection-start-line="275" selection-start-column="44" selection-end-line="275" selection-end-column="56" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#10529#10537#0" expanded="true" />
+                <element signature="e#10537#10545#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formSolicitacaoPagamento.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../UNIMEDPROD/forms/52 - formSolicitacaoDePagamento/formSolicitacaoPagamento.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="602" column="50" selection-start-line="602" selection-start-column="34" selection-end-line="602" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reserva de Recurso.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SEBRAE/forms/35442 - Reserva de Recurso/Reserva de Recurso.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="67" column="44" lean-forward="true" selection-start-line="63" selection-start-column="16" selection-end-line="67" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -68,9 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mask(</find>
-      <find>dsnat</find>
-      <find>mask</find>
       <find>zoomNatureza</find>
       <find>tabler</find>
       <find>VALOR_TOTAL</find>
@@ -95,9 +120,12 @@
       <find>RATEIO</find>
       <find>zoomRateiota</find>
       <find>dados</find>
-      <find>pag</find>
       <find>data de</find>
       <find>zoom</find>
+      <find>pag</find>
+      <find>fsDadosAprovacao</find>
+      <find>apro</find>
+      <find>fsDadosFicha</find>
     </findStrings>
     <replaceStrings>
       <replace>getRateioValoresPercent</replace>
@@ -121,9 +149,9 @@
         <option value="$USER_HOME$/Library/Containers/com.evernote.Evernote/Data/Documents/.evernote/118763066-personal-www.evernote.com/external-edits/0681EF8D-0D8A-40DA-9251-DF7DE521C545/table.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.es6" />
         <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js" />
-        <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html" />
         <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/custom.js" />
         <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/validacao.js" />
+        <option value="$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html" />
       </list>
     </option>
   </component>
@@ -240,18 +268,18 @@
       <workItem from="1525860772211" duration="694000" />
       <workItem from="1525869373966" duration="7782000" />
       <workItem from="1526303935063" duration="3150000" />
-      <workItem from="1526324933788" duration="2688000" />
+      <workItem from="1526324933788" duration="4832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33225000" />
+    <option name="totallyTimeSpent" value="35369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1366" y="32" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23345725" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23345725" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -259,7 +287,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34477612" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.34477612" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -269,6 +297,25 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23345725" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.34477612" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -293,6 +340,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3060">
           <caret line="204" column="72" selection-start-line="204" selection-start-column="72" selection-end-line="204" selection-end-column="72" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#10529#10537#0" expanded="true" />
+            <element signature="e#10537#10545#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -477,27 +529,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="255" column="77" selection-start-line="255" selection-start-column="77" selection-end-line="255" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="107" lean-forward="true" selection-start-line="57" selection-start-column="107" selection-end-line="57" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/custom.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/validacao.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
+        <state relative-caret-position="138">
           <caret line="125" column="8" selection-start-line="125" selection-start-column="11" selection-end-line="145" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/zoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="21" column="58" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/Unimed Homologaçao/dsCentroCustoUnimed.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../UNIMEDPROD/forms/52 - formSolicitacaoDePagamento/formSolicitacaoPagamento.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="602" column="50" selection-start-line="602" selection-start-column="34" selection-end-line="602" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SEBRAE/forms/35442 - Reserva de Recurso/Reserva de Recurso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="67" column="44" lean-forward="true" selection-start-line="63" selection-start-column="16" selection-end-line="67" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/6 - Formulário Solicitação de Pagamento/formSolicitacaoPagamento.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6984">
+          <caret line="275" column="56" selection-start-line="275" selection-start-column="44" selection-end-line="275" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#10529#10537#0" expanded="true" />
+            <element signature="e#10537#10545#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
