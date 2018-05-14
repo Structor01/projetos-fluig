@@ -4394,6 +4394,41 @@
    </object>
   </void>
   <void method="put">
+   <string>mecanismoGrupo</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Moderator group Comunicados</string>
+      </void>
+      <void property="groupId">
+       <string>MODERATOR_Comunicados</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Member group Comunicados</string>
+      </void>
+      <void property="groupId">
+       <string>MEMBER_Comunicados</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.GroupDto">
+      <void property="groupDescription">
+       <string>Equipe Fluig Teste</string>
+      </void>
+      <void property="groupId">
+       <string>Fluig</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
    <string>expediente</string>
    <array class="java.lang.String" length="1">
     <void index="0">

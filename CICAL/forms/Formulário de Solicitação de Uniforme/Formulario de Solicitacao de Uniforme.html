@@ -62,16 +62,57 @@
 						<span class="fluigicon fluigicon-user-favorite fluigicon-md"></span> Uniforme
 					</li>
 					<li class="list-group-item">
-						<label for="tipoUniforme">Tipo Uniforme</label>
-						<input type="text" class="form-control" id="tipoUniforme" name="tipoUniforme" placeholder="">
+
+						<!--<input type="text" class="form-control" id="tipoUniforme" name="tipoUniforme" placeholder="">-->
 					</li>
 					<li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
 						<div class="col-md-6" style="padding: 0; padding-right:15px">
-							<label for="tamanho">Tamanho</label>
-							<input type="text" class="form-control" id="tamanho" name="tamanho" placeholder="">
+							<label for="tipoUniforme">Tipo Uniforme</label>
+							<input
+									type="zoom"
+									id = "tipoUniforme"
+									name="tipoUniforme"
+									class="form-control"
+									data-zoom="{
+									'displayKey':'tipoUniforme',
+									'datasetId':'dsTipoUniforme',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha o tipo de uniforme',
+									'fields':[
+										{
+										  'field':'tipoUniforme',
+										  'label':'Nome',
+										  'standard':'true'
+										}
+									]
+								 }"
+							/>
 						</div>
-						<div class="col-md-6" style="padding: 0">
-							<label for="quantidade">Quantidade</label>
+						<div class="col-md-4" style="padding: 0; padding-right:15px">
+							<label for="tamanho">Tamanho</label>
+							<!--<input type="text" class="form-control" id="tamanho" name="tamanho" placeholder="">-->
+							<input
+									type="zoom"
+									id = "tamanho"
+									name="tamanho"
+									class="form-control"
+									data-zoom="{
+									'displayKey':'tamanho',
+									'datasetId':'dsTamanhosUniforme',
+									'maximumSelectionLength':'1',
+									'placeholder':'Escolha o tipo de uniforme',
+									'fields':[
+										{
+										  'field':'tamanho',
+										  'label':'Tamanho',
+										  'standard':'true'
+										}
+									]
+								 }"
+							/>
+						</div>
+						<div class="col-md-2" style="padding: 0;">
+							<label for="quantidade">Qtd.</label>
 							<input type="text" class="form-control" id="quantidade" name="quantidade" placeholder="">
 						</div>
 					</li>

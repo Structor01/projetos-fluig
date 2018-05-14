@@ -14,20 +14,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Tipos de Uniforme.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forms/Tipos de Uniforme/Tipos de Uniforme.html">
+      <file leaf-file-name="Formulario de Solicitacao de Uniforme.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="23" column="119" selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tamanhos de Uniforme.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forms/Tamanhos de Uniforme/Tamanhos de Uniforme.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+            <state relative-caret-position="247">
+              <caret line="105" column="58" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
+              <folding>
+                <element signature="n#style#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,9 +41,9 @@
         <option value="$USER_HOME$/Library/Containers/com.evernote.Evernote/Data/Documents/.evernote/118763066-personal-www.evernote.com/external-edits/CAB34CDB-945A-4010-95CC-1E702A7DE4F4/campo_fluig_data.html" />
         <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/custom.js" />
         <option value="/var/folders/c0/9ndnhxbn7799x_bt0br_1vfw0000gn/T/com.evernote.Evernote/com.evernote.Evernote/WebKitDnD.kRz0nL/zoom.html" />
-        <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html" />
         <option value="$PROJECT_DIR$/forms/Tipos de Uniforme/Tipos de Uniforme.html" />
         <option value="$PROJECT_DIR$/forms/Tamanhos de Uniforme/Tamanhos de Uniforme.html" />
+        <option value="$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html" />
       </list>
     </option>
   </component>
@@ -89,6 +88,17 @@
               <item name="forms" type="462c0819:PsiDirectoryNode" />
               <item name="Tipos de Uniforme" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CICAL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CICAL" type="462c0819:PsiDirectoryNode" />
+              <item name="workflow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CICAL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CICAL" type="462c0819:PsiDirectoryNode" />
+              <item name="workflow" type="462c0819:PsiDirectoryNode" />
+              <item name="diagrams" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -128,12 +138,12 @@
       <option name="presentableId" value="Default" />
       <updated>1526306183370</updated>
       <workItem from="1526306184890" duration="6693000" />
-      <workItem from="1526318795232" duration="233000" />
+      <workItem from="1526318795232" duration="1657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6926000" />
+    <option name="totallyTimeSpent" value="8350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1366" y="32" width="1366" height="768" extended-state="0" />
@@ -170,6 +180,11 @@
         <state relative-caret-position="840">
           <caret line="56" column="113" selection-start-line="56" selection-start-column="113" selection-end-line="56" selection-end-column="113" />
           <folding>
+            <element signature="n#style#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -224,16 +239,6 @@
     <entry file="file://$PROJECT_DIR$/forms/Tipos de Uniforme/custom.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="56" column="113" selection-start-line="56" selection-start-column="113" selection-end-line="56" selection-end-column="113" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///var/folders/c0/9ndnhxbn7799x_bt0br_1vfw0000gn/T/com.evernote.Evernote/com.evernote.Evernote/WebKitDnD.kRz0nL/zoom.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -274,8 +279,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forms/Tamanhos de Uniforme/Tamanhos de Uniforme.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+        <state relative-caret-position="316">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workflow/diagrams/solicitacaoUniforme.process">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/Formulário de Solicitação de Uniforme/Formulario de Solicitacao de Uniforme.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="105" column="58" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#2;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#3;n#ul#1;n#div#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

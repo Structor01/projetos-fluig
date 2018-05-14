@@ -75,8 +75,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>120</positionX>
-      <positionY>79</positionY>
+      <positionX>115</positionX>
+      <positionY>69</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -110,6 +110,7 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -124,8 +125,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>85</positionX>
-      <positionY>215</positionY>
+      <positionX>80</positionX>
+      <positionY>205</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -174,8 +175,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>180</positionX>
-      <positionY>80</positionY>
+      <positionX>200</positionX>
+      <positionY>60</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -224,8 +225,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>260</positionX>
-      <positionY>215</positionY>
+      <positionX>200</positionX>
+      <positionY>205</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -274,8 +275,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>400</positionX>
-      <positionY>215</positionY>
+      <positionX>320</positionX>
+      <positionY>205</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -325,8 +326,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>560</positionX>
-      <positionY>230</positionY>
+      <positionX>450</positionX>
+      <positionY>220</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -439,9 +440,9 @@
     <SwimLane>
       <color>FFFFFF</color>
       <height>301</height>
-      <width>641</width>
+      <width>521</width>
       <positionX>10</positionX>
-      <positionY>20</positionY>
+      <positionY>10</positionY>
       <stateName>Solicitação de Uniforme</stateName>
       <type>1</type>
       <parentSequence>0</parentSequence>
@@ -454,10 +455,10 @@
     </SwimLane>
     <SwimLane>
       <color>82b0b7</color>
-      <height>151</height>
-      <width>611</width>
+      <height>150</height>
+      <width>491</width>
       <positionX>40</positionX>
-      <positionY>170</positionY>
+      <positionY>10</positionY>
       <stateName>Solicitante</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
@@ -470,10 +471,10 @@
     </SwimLane>
     <SwimLane>
       <color>adc9ac</color>
-      <height>150</height>
-      <width>611</width>
+      <height>151</height>
+      <width>491</width>
       <positionX>40</positionX>
-      <positionY>20</positionY>
+      <positionY>160</positionY>
       <stateName>Recursos Humanos</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
@@ -496,19 +497,19 @@
         <linkSequence>12</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>232</positionX>
-      <positionY>247</positionY>
+      <positionX>133</positionX>
+      <positionY>158</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoUniforme</processId>
         <version>2</version>
-        <linkSequence>14</linkSequence>
-        <bendSequence>1</bendSequence>
+        <linkSequence>12</linkSequence>
+        <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>308</positionX>
-      <positionY>107</positionY>
+      <positionX>252</positionX>
+      <positionY>158</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
