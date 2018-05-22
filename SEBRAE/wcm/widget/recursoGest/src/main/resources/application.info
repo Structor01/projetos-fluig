@@ -14,3 +14,6 @@ edit.file=edit.ftl
 locale.file.base.name=recursoGest
 application.resource.js.1=/resources/js/recursoGest.js
 application.resource.css.2=/resources/css/recursoGest.css
+application.resource.js.3=/resources/js/moment.min.js
+application.resource.js.4=/resources/js/fullcalendar.js
+application.resource.js.5=/resources/js/pt-br.js
