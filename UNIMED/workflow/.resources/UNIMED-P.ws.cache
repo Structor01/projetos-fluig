@@ -304,6 +304,63 @@
    </array>
   </void>
   <void method="put">
+   <string>mecanismoPapel</string>
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>3</long>
+      </void>
+      <void property="roleDescription">
+       <string>Coordenador</string>
+      </void>
+      <void property="roleId">
+       <string>Coordenador</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>3</long>
+      </void>
+      <void property="roleDescription">
+       <string>Diretor</string>
+      </void>
+      <void property="roleId">
+       <string>Diretor</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>3</long>
+      </void>
+      <void property="roleDescription">
+       <string>Gerente</string>
+      </void>
+      <void property="roleId">
+       <string>Gerente</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.WorkflowRoleDto">
+      <void property="companyId">
+       <long>3</long>
+      </void>
+      <void property="roleDescription">
+       <string>admin</string>
+      </void>
+      <void property="roleId">
+       <string>admin</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="put">
    <string>mecanismo</string>
    <array class="[Ljava.lang.Object;" length="9">
     <void index="0">

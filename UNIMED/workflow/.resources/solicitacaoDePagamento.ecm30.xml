@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitação de Pagamento</processId>
-      <version>11</version>
+      <version>13</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>52</formId>
@@ -107,6 +107,7 @@
       <stateDescription>Validar Preenchimento</stateDescription>
       <instruction></instruction>
       <deadlineTime>14400</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <engineAllocationId>Campo Formulário</engineAllocationId>
@@ -158,6 +159,7 @@
       <stateDescription>Aprovar Diretoria</stateDescription>
       <instruction></instruction>
       <deadlineTime>57600</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <engineAllocationId>Campo Formulário</engineAllocationId>
@@ -209,6 +211,7 @@
       <stateDescription>Aprovar Diretoria Financeira</stateDescription>
       <instruction></instruction>
       <deadlineTime>57600</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <engineAllocationId>Usuário</engineAllocationId>
@@ -260,6 +263,7 @@
       <stateDescription>Analisar Tributos</stateDescription>
       <instruction></instruction>
       <deadlineTime>57600</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <engineAllocationId>Pool Grupo</engineAllocationId>
@@ -311,6 +315,7 @@
       <stateDescription>Conferir Valores</stateDescription>
       <instruction></instruction>
       <deadlineTime>57600</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <engineAllocationId>Pool Grupo</engineAllocationId>
@@ -362,6 +367,7 @@
       <stateDescription>Gerar Titulo - Protheus</stateDescription>
       <instruction></instruction>
       <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <selectColleague>1</selectColleague>
@@ -411,6 +417,7 @@
       <stateDescription>Corrigir Erros</stateDescription>
       <instruction></instruction>
       <deadlineTime>14400</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
       <engineAllocationId>Pool Grupo</engineAllocationId>
@@ -818,7 +825,7 @@
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>11</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
@@ -830,7 +837,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>11</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Sim&apos;</condition>
@@ -841,7 +848,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>3</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>11</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Não&apos;</condition>
@@ -852,7 +859,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>4</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>11</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Cancelar&apos;</condition>
@@ -863,7 +870,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>20</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
@@ -875,7 +882,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>20</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Não&apos;</condition>
@@ -886,7 +893,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>3</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>20</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
@@ -898,7 +905,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDirFin&apos;) == &apos;Sim&apos;</condition>
@@ -909,7 +916,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDirFin&apos;) == &apos;Não&apos;</condition>
@@ -920,7 +927,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>30</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovCont&apos;) == &apos;Sim&apos;</condition>
@@ -931,7 +938,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>30</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovCont&apos;) == &apos;Não&apos;</condition>
@@ -942,7 +949,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>34</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovFin&apos;) == &apos;Sim&apos;</condition>
@@ -953,7 +960,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>11</version>
+        <version>13</version>
         <sequence>34</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovFin&apos;) == &apos;Não&apos;</condition>
@@ -1418,10 +1425,10 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
    	    var listaEmpresas = ServiceManager.getService(&apos;WS_UNIMED_PROTHEUS&apos;);
     	log.warn(&quot;--Debbug-- listaCliente: &quot; +listaEmpresas);
 //    var serviceHelper = listaEmpresas.getBean();
-        var serviceLocator = listaEmpresas.instantiate(&apos;_139._0._20._172._7780.WSUNIMED&apos;);
+        var serviceLocator = listaEmpresas.instantiate(&apos;_139._0._20._172._7784.WSUNIMED&apos;);
     	log.warn(&quot;--Debbug-- serviceLocator: &quot; +serviceLocator);
         var service = serviceLocator.getWSUNIMEDSOAP();
-    	var serviceTitulo= listaEmpresas.instantiate(&apos;_139._0._20._172._7780.ObjectFactory&apos;);
+    	var serviceTitulo= listaEmpresas.instantiate(&apos;_139._0._20._172._7784.ObjectFactory&apos;);
     	log.warn(&quot;--Debbug-- Tudo certo com o WS&quot;);    	
     	var titulo = serviceTitulo.createLISTAINCTITULOSPAGAR();
     	var arrayTitulo = serviceTitulo.createARRAYOFSTRUCTINCTITULOPAGAR();
@@ -1823,7 +1830,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
-        <version>11</version>
+        <version>13</version>
         <linkSequence>27</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1834,7 +1841,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
-        <version>11</version>
+        <version>13</version>
         <linkSequence>48</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1845,7 +1852,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoDePagamento</processId>
-        <version>11</version>
+        <version>13</version>
         <linkSequence>50</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1868,5 +1875,6 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
       <frequencyType>0</frequencyType>
     </ProcessStateService>
   </list>
+  <list/>
   <list/>
 </list>

@@ -1,4 +1,4 @@
-function servicetask41(attempt, message) {
+function servicetask78(attempt, message) {
 	
 
 	log.warn("--Debbug-- Atv Serviço - Inclusão de Titulos Protheus ");
@@ -10,7 +10,7 @@ function servicetask41(attempt, message) {
 	var cst2 = DatasetFactory.createConstraint("metadata#id", cardId, cardId, ConstraintType.MUST);
 	
     var constraints = new Array(cst1, cst2);   
-    var datasetPrincipal = DatasetFactory.getDataset("dsFormSolicitacaoDePagamento", null, constraints, null);
+    var datasetPrincipal = DatasetFactory.getDataset("dsFormSolicitacaoPagamento", null, constraints, null);
     log.warn("--Debbug-- datasetPrincipal");
     log.warn("--Debbug-- numProces: "+numProces);
     log.warn("--Debbug-- cardId: "+cardId);
@@ -22,10 +22,10 @@ function servicetask41(attempt, message) {
    	    var listaEmpresas = ServiceManager.getService('WS_UNIMED_PROTHEUS');
     	log.warn("--Debbug-- listaCliente: " +listaEmpresas);
 //    var serviceHelper = listaEmpresas.getBean();
-        var serviceLocator = listaEmpresas.instantiate('_139._0._20._172._7784.WSUNIMED');
+        var serviceLocator = listaEmpresas.instantiate('_139._0._20._172._7780.WSUNIMED');
     	log.warn("--Debbug-- serviceLocator: " +serviceLocator);
         var service = serviceLocator.getWSUNIMEDSOAP();
-    	var serviceTitulo= listaEmpresas.instantiate('_139._0._20._172._7784.ObjectFactory');
+    	var serviceTitulo= listaEmpresas.instantiate('_139._0._20._172._7780.ObjectFactory');
     	log.warn("--Debbug-- Tudo certo com o WS");    	
     	var titulo = serviceTitulo.createLISTAINCTITULOSPAGAR();
     	var arrayTitulo = serviceTitulo.createARRAYOFSTRUCTINCTITULOPAGAR();
@@ -193,8 +193,7 @@ function servicetask41(attempt, message) {
     	
     	var CCENTROCUSTO = datasetPrincipal.getValue(0, 'idRateio')
     	log.warn("--Debbug-- CCENTROCUSTO: "+CCENTROCUSTO);
-
-    	//*SE S, EXISTE RATEIO
+//*SE S, EXISTE RATEIO    	
     	if (CCENTROCUSTO == 'S') {
     		var documentId = datasetPrincipal.getValue(0, "metadata#id");
     	    var documentVersion = datasetPrincipal.getValue(0, "metadata#version");
@@ -204,14 +203,14 @@ function servicetask41(attempt, message) {
     	    var c3 = DatasetFactory.createConstraint("metadata#version", documentVersion, documentVersion, ConstraintType.MUST);	    
     	    
     	    var constraintsFilho = new Array(c1, c2, c3);	    
-    	    var datasetFilho = DatasetFactory.getDataset("dsFormSolicitacaoDePagamento", null, constraintsFilho, null);
+    	    var datasetFilho = DatasetFactory.getDataset("dsFormSolicitacaoPagamento", null, constraintsFilho, null);
     	    
     	    for (var j = 0; j < datasetFilho.values.length; j++) {
 //*FORMATA OBJETO ARRAY CENTRO CUSTO     	    	
     	    	var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
-    	    	log.warn("--Debbug-- [j]: "+j+ " // datasetFilho.values[j]: "+datasetFilho.getValue(j, 'codZRateio'));
-    	    	// log.dir(datasetFilho.values[j]);
-    	    	structCCusto.setCCENTROCUSTO(datasetFilho.getValue(j, 'codZRateio').toString());
+    	    	log.warn("--Debbug-- [j]: "+j+ " // datasetFilho.values[j]: "+datasetFilho.values[j]);
+    	    	log.dir(datasetFilho.values[j]);    	    	
+    	    	structCCusto.setCCENTROCUSTO(datasetFilho.getValue(j, 'codRateio'));
     	    	//structCCusto.setCCENTROCUSTO(datasetFilho.values[j].zoomCr);
     	    	var valorRateio = datasetFilho.getValue(j, 'valorRateio');
 				var valorRateio2 = valorRateio.replace('.', '').replace(',', '.');
@@ -240,8 +239,7 @@ function servicetask41(attempt, message) {
 
         	structTitulo.setLUSARATEIO(true)	
 	    	
-    	}
-    	else{
+    	} else{
     		//var valorCC = new java.math.BigInteger(0);
     		var valorCC = new java.math.BigDecimal(0);
     		var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
@@ -257,16 +255,15 @@ function servicetask41(attempt, message) {
         	log.warn("--Debbug-- CNATUREZA: " +structTitulo.getCNATUREZA());
         	structTitulo.setLUSARATEIO(false)	
     	}
+//*Aciona o DS para inclusão do titulo 
+    	structNatureza.setACENTROSCUSTO(arrayCCusto);
+    	arrayNatureza.getSTRUCTNATUREZAS().add(structNatureza);
+    	structTitulo.setANATUREZAS(arrayNatureza);
+    	arrayTitulo.getSTRUCTINCTITULOPAGAR().add(structTitulo);
 
+    	titulo.setAINCTITULOSPAGAR(arrayTitulo);	
+    	
     	try {
-            //*Aciona o DS para inclusão do titulo
-            structNatureza.setACENTROSCUSTO(arrayCCusto);
-            arrayNatureza.getSTRUCTNATUREZAS().add(structNatureza);
-            structTitulo.setANATUREZAS(arrayNatureza);
-            arrayTitulo.getSTRUCTINCTITULOPAGAR().add(structTitulo);
-            log.warn("--Debbug-- structTitulo: "+ structTitulo.toString());
-            titulo.setAINCTITULOSPAGAR(arrayTitulo);
-
     		var result = service.cadastracontaspagar(titulo);
     		log.warn("--Debbug-- result: " +result); 
     		log.warn("--Debbug-- qt registros retornados: " + result.getARETTITULOSPAGAR().getSTRUCTINCRETTITULOSPAGAR().get(0).getCNUMERO());
