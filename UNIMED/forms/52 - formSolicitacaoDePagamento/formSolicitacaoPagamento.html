@@ -119,6 +119,149 @@
                     </li>
                 </ul>
 
+                <fieldset id="fsDadosAprovacao"  style='display: none;' class="panel panel-default fs-clear-both">
+                    <div class="panel panel-default fs-clear-both hide" id="aprovGerenciaP">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Aprovação Gerência</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group col-md-4">
+                                <label for="respGerencia" class="control-label">Respons&aacute;vel</label> <br>
+                                <input type="text" name="respGerencia" id="respGerencia" class="form-control" readonly>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="dtAprovGerencia" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                <input type="text" name="dtAprovGerencia" id="dtAprovGerencia" class="form-control" readonly>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="aprovGerencia" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                <select class="form-control" name="aprovGerencia" id="aprovGerencia">
+                                    <option value="..">Selecione..</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">N&atilde;o</option>
+                                    <option value="Cancelar">Cancelar</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="parecerGerencia" class="control-label">Parecer</label> <br>
+                                <textarea class="form-control" name="parecerGerencia" id="parecerGerencia" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default fs-clear-both hide" id="aprovDiretoriaP">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Aprova&ccedil;&atilde;o Diretoria</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group col-md-4">
+                                <label for="respDiretoria" class="control-label">Respons&aacute;vel</label> <br>
+                                <input type="text" name="respDiretoria" id="respDiretoria" class="form-control" readonly>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="dtAprovDiretoria" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                <input type="text" name="dtAprovDiretoria" id="dtAprovDiretoria" class="form-control" readonly>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="aprovDiretoria" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                <select class="form-control" name="aprovDiretoria" id="aprovDiretoria">
+                                    <option value='..'>Selecione..</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">N&atilde;o</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="parecerDiretoria" class="control-label">Parecer</label> <br>
+                                <textarea class="form-control" name="parecerDiretoria" id="parecerDiretoria" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default fs-clear-both hide" id="aprovDiretoriaFP">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Aprova&ccedil;&atilde;o Diretoria Financeira</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group col-md-4">
+                                <label for="respDirFin" class="control-label">Respons&aacute;vel</label> <br>
+                                <input type="text" name="respDirFin" id="respDirFin" class="form-control" readonly>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="dtAprovDirFin" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                <input type="text" name="dtAprovDirFin" id="dtAprovDirFin" class="form-control" readonly>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="aprovDirFin" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                <select class="form-control" name="aprovDirFin" id="aprovDirFin">
+                                    <option value="..">Selecione..</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">N&atilde;o</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="parecerDirFin" class="control-label">Parecer</label> <br>
+                                <textarea class="form-control" name="parecerDirFin" id="parecerDirFin" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default fs-clear-both hide" id="aprovContabilP">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Aprova&ccedil;&atilde;o Contabilidade</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-4">
+                                <label for="respCont" class="control-label">Respons&aacute;vel</label> <br>
+                                <input type="text" name="respCont" id="respCont" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="dtAprovCont" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                <input type="text" name="dtAprovCont" id="dtAprovCont" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="aprovCont" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                <select class="form-control" name="aprovCont" id="aprovCont">
+                                    <option value="..">Selecione..</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">N&atilde;o</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="parecerCont" class="control-label">Parecer</label> <br>
+                                <textarea class="form-control" name="parecerCont" id="parecerCont" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default fs-clear-both hide" id="aprovFinP">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="fluigicon fluigicon-info-sign fluigicon-sm"></span> Aprova&ccedil;&atilde;o Financeiro</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-4">
+                                <label for="respFin" class="control-label">Respons&aacute;vel</label> <br>
+                                <input type="text" name="respFin" id="respFin" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="dtAprovFin" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
+                                <input type="text" name="dtAprovFin" id="dtAprovFin" class="form-control" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="aprovFin" class="control-label">Aprova&ccedil;&atilde;o</label><br>
+                                <select class="form-control" name="aprovFin" id="aprovFin">
+                                    <option value="..">Selecione..</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">N&atilde;o</option>
+                                </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="parecerFin" class="control-label">Parecer</label> <br>
+                                <textarea class="form-control" name="parecerFin" id="parecerFin" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
                 <fieldset id="fsNav" name="fsNav" class="col-md-12">
                     <nav style="border:none;" class="navbar navbar-default" role="navigation">
                         <div id="bs-example-navbar-collapse-1">
@@ -134,13 +277,6 @@
                                     <ul id="fsDadosFicha" class="list-group">
                                         <li class="list-group-item primaryCl" onclick="$('.tgSlide').slideToggle()">
                                             <span class="fluigicon fluigicon-user fluigicon-sm"></span> Dados do Fornecedor
-                                        </li>
-                                        <li class="list-group-item">
-                                            <label>Rateio</label>
-                                            <div>
-                                                <!--<input type="checkbox" id="rateio" name="rateio" value="N"/>-->
-                                                <input class="switch" data-on-text="Sim" data-size="small" data-off-text="Não" name="rateio" id="rateio" type="checkbox">
-                                            </div>
                                         </li>
                                         <li class="list-group-item">
                                             <label>Nome Favorecido</label>
@@ -259,13 +395,20 @@
                                             <span class="fluigicon fluigicon-money fluigicon-sm"></span> Dados do Pagamento
                                         </li>
                                         <li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
-                                            <div class="col-md-6" style="padding: 0; padding-right:15px">
+                                            <div class="col-md-5" style="padding: 0; padding-right:15px">
                                                 <label>Valor Bruto (R$)</label>
                                                 <input class="form-control" type="text" name="valorPagamento" id="valorPagamento" size="12" onKeyUp="maskIt(this,event,'###.###.###,##',true)"/>
                                             </div>
-                                            <div class="col-md-6" style="padding: 0">
+                                            <div class="col-md-5" style="padding: 0; padding-right:15px">
                                                 <label>Valor Líquido (R$)</label>
                                                 <input class="form-control" type="text" name="valorPagtoLiquido" id="valorPagtoLiquido" size="12" onKeyUp="maskIt(this,event,'###.###.###,##',true)"/>
+                                            </div>
+                                            <div class="col-md-2" style="padding: 0">
+                                                <label>Rateio</label>
+                                                <div>
+                                                    <!--<input type="checkbox" id="rateio" name="rateio" value="N"/>-->
+                                                    <input class="switch" data-on-text="Sim" data-size="small" data-off-text="Não" name="rateio" id="rateio" type="checkbox">
+                                                </div>
                                             </div>
                                         </li>
                                         <li class="list-group-item ">
@@ -485,6 +628,7 @@
                                                         <thead>
                                                         <tr class="tableHeadRow">
                                                             <th class="excluirPaiFilho"></th>
+                                                            <th class="tableColumn">Código</th>
                                                             <th class="tableColumn">Centro de Custo</th>
                                                             <th class="tableColumn">Valor (R$)</th>
                                                             <th class="tableColumn">Percentual</th>
@@ -497,7 +641,10 @@
                                                                     <span class="fs-cursor-pointer" id="delPaiFilho" style="color:#aaa; font-weight:bolder;" onclick="fnWdkRemoveChild(this)">X</span>
                                                                 </div>
                                                             </td>
-                                                            <td class="col-md-6">
+                                                            <td class="col-md-2">
+                                                                <input type="text" class="form-control" id="codZRateio" name="codZRateio" readonly>
+                                                            </td>
+                                                            <td class="col-md-4">
                                                                 <div class="form-group">
                                                                     <input type="zoom" class="form-control"
                                                                            name="zoomCCustoRateio" id="zoomCCustoRateio"
@@ -544,241 +691,6 @@
                             </fieldset>
                         </div>
                     </nav>
-                </fieldset>
-
-                <fieldset id="fsDadosAprovacao" style='display: none;'>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                <span class="fluigicon fluigicon-transfer fluigicon-lg icone-span"></span> Aprova&ccedil;&otilde;es e Processamentos</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div id="accordion">
-                                <h3 id="h3DivRespGer">Aprova&ccedil;&atilde;o Gerencia</h3>
-                                <div class="accordion" id="divRespGer">
-                                    <div class="row">
-                                        <div class="col-md-4" id='div1'>
-                                            <div class="col-md-12">
-                                                <label for="respGerencia" class="control-label">Respons&aacute;vel</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="respGerencia" id="respGerencia" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="dtAprovGerencia" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="dtAprovGerencia" id="dtAprovGerencia" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="aprovGerencia" class="control-label">Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <select class="form-control" name="aprovGerencia" id="aprovGerencia">
-                                                    <option value="..">Selecione..</option>
-                                                    <option value="Sim">Sim</option>
-                                                    <option value="Não">N&atilde;o</option>
-                                                    <option value="Cancelar">Cancelar</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-12">
-                                                <label for="parecerGerencia" class="control-label">Parecer</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" name="parecerGerencia" id="parecerGerencia" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <h3 id="h3DivRespDir">Aprova&ccedil;&atilde;o Diretoria</h3>
-                                <div class="accordion" id="divRespDir">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="respDiretoria" class="control-label">Respons&aacute;vel</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="respDiretoria" id="respDiretoria" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="dtAprovDiretoria" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="dtAprovDiretoria" id="dtAprovDiretoria" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="aprovDiretoria" class="control-label">Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <select class="form-control" name="aprovDiretoria" id="aprovDiretoria">
-                                                    <option value='..'>Selecione..</option>
-                                                    <option value="Sim">Sim</option>
-                                                    <option value="Não">N&atilde;o</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-12">
-                                                <label for="parecerDiretoria" class="control-label">Parecer</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" name="parecerDiretoria" id="parecerDiretoria" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <h3 id="h3DivRespDirFin">Aprova&ccedil;&atilde;o Diretoria Financeira</h3>
-                                <div class="accordion" id="divRespDirFin">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="respDirFin" class="control-label">Respons&aacute;vel</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="respDirFin" id="respDirFin" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="dtAprovDirFin" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="dtAprovDirFin" id="dtAprovDirFin" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="aprovDirFin" class="control-label">Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <select class="form-control" name="aprovDirFin" id="aprovDirFin">
-                                                    <option value="..">Selecione..</option>
-                                                    <option value="Sim">Sim</option>
-                                                    <option value="Não">N&atilde;o</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-12">
-                                                <label for="parecerDirFin" class="control-label">Parecer</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" name="parecerDirFin" id="parecerDirFin" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <h3 id="h3DivRespCont">Aprova&ccedil;&atilde;o Contabilidade</h3>
-                                <div class="accordion" id="divRespCont">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="respCont" class="control-label">Respons&aacute;vel</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="respCont" id="respCont" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="dtAprovCont" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="dtAprovCont" id="dtAprovCont" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="aprovCont" class="control-label">Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <select class="form-control" name="aprovCont" id="aprovCont">
-                                                    <option value="..">Selecione..</option>
-                                                    <option value="Sim">Sim</option>
-                                                    <option value="Não">N&atilde;o</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-12">
-                                                <label for="parecerCont" class="control-label">Parecer</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" name="parecerCont" id="parecerCont" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <h3 id="h3DivRespFin">Aprova&ccedil;&atilde;o Financeiro</h3>
-                                <div class="accordion" id="divRespFin">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="respFin" class="control-label">Respons&aacute;vel</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="respFin" id="respFin" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="dtAprovFin" class="control-label">Data da Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <input type="text" name="dtAprovFin" id="dtAprovFin" class="form-control" readonly>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="col-md-12">
-                                                <label for="aprovFin" class="control-label">Aprova&ccedil;&atilde;o</label><br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <select class="form-control" name="aprovFin" id="aprovFin">
-                                                    <option value="..">Selecione..</option>
-                                                    <option value="Sim">Sim</option>
-                                                    <option value="Não">N&atilde;o</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-12">
-                                                <label for="parecerFin" class="control-label">Parecer</label> <br>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" name="parecerFin" id="parecerFin" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                 </fieldset>
             </form>
         </div>
