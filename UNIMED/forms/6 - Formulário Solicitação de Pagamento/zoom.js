@@ -7,7 +7,7 @@ function setSelectedZoomItem(selectedItem){
     var tableId = selectedItem.inputId.substring(selectedItem.inputId.indexOf("___") + 3, selectedItem.inputId.indexOf("___") + 6);
 
     //if(selectedItem.inputId.startsWith('zoomCr')){
-    if(selectedItem.inputId == 'zoomCCustoRateio___'+tableId){
+    if(selectedItem.inputId == 'zoomCr___'+tableId){
         $('#codRateio___'+tableId).val(selectedItem.CCODIGO);
     }
 
@@ -27,7 +27,6 @@ function setSelectedZoomItem(selectedItem){
             // $('#zoomCCustoRateio___' + idx).val(rec['zoomCCustoRateio']);
             setZoomData("zoomCCustoRateio___"+idx, rec['zoomCCustoRateio']);
             $('#valorRateio___' + idx).val(rec['valorRateio']);
-            $('#codZRateio___' + idx).val(rec['codRateio']);
             $('#percentualRateio___' + idx).val(rec['percentualRateio']);
         }
 
@@ -128,9 +127,9 @@ function setSelectedZoomItem(selectedItem){
                     var dsResp = '';
                     for(var i in dsCentroCustoUnimed.values) {
                         var findCod = dsCentroCustoUnimed.values[i].CCODIGO;
-                        var findDesc = dsCentroCustoUnimed.values[i].CDESCRICAO;
+                        // var findDesc = dsCentroCustoUnimed.values[i].CDESCRICAO;
 
-                        if (findCod.indexOf(centroCusto) > -1 && findDesc.indexOf('DIRETORIA') > -1) {
+                        if (findCod == centroCusto.toString() + '010101') {
                             dsResp = dsCentroCustoUnimed.values[i].CIDFLUIGRESP;
                             dsResp = dsResp.trim();
                             $('#idRespDiretoria').val(dsResp);
@@ -160,10 +159,6 @@ function removedZoomItem(removedItem) {
     if (removedItem.inputId == 'zoomCCustoSolic') {
         $('#idRespGerencia').val('');
         $('#idRespDiretoria').val('');
-    }
-
-    if(removedItem.inputId == 'zoomRateio'){
-       $('[id*=zoomCCustoRateio___]').remove();
     }
 
     if (removedItem.inputId == 'zoomUnidade') {

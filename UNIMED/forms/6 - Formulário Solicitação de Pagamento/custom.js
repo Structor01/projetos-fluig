@@ -31,29 +31,27 @@ function Inicio() {
         $('#fsDadosAprovacao').css('display', 'block');
 //*Validar Preenchimento
         if	(atividade == 09 || atividade == 15)  {
-            $('#aprovGerenciaP').removeClass('hide');
+            tratarAccordion('0');
         } else
 //*Aprovar Diretoria
         if	(atividade == 16 || atividade == 18)  {
-            $('#aprovDiretoriaP').removeClass('hide');
+            tratarAccordion('1');
         } else
 //*Aprovar Diretoria Financeira
         if	(atividade == 17 || atividade == 23)  {
-            $('#aprovDiretoriaFP').removeClass('hide');
+            tratarAccordion('2');
         } else
 //*Análise Tributária - NF
         if	(atividade == 11 || atividade == 28)  {
             $('#divGeraDirf').css('display', 'block');
             habilitaCampos('#divRetencao');
-            $('#aprovContabilP').removeClass('hide');
-            // tratarAccordion('3');
+            tratarAccordion('3');
         } else
 //*Conferir Valores / Lançamento Contas a Pagar
         if	(atividade == 13 || atividade == 32)  {
             $('#divGeraDirf').css('display', 'block');
             $('#divRetencao').css('display', 'block');
-            $('#aprovFinP').removeClass('hide');
-            // tratarAccordion('4');
+            tratarAccordion('4');
         } else
 //*Corrigir os valores
         if	(atividade == 22 || atividade == 44)  {

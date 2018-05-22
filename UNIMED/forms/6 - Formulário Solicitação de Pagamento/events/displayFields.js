@@ -38,12 +38,7 @@ function displayFields(form, customHTML) {
     customHTML.append("\n   var numeroProcesso = '" + numProces + "';");	
 	customHTML.append("\n   Inicio();");
 	customHTML.append("\n </script>");
-
-	if(activity != 0 && activity != 1) {
-        form.setEnabled('zoomUnidadePesq', false);
-        form.setEnabled('cpfPessoaFisica', false);
-	}
-
+	
 	// Preenchimento dos campos do formulário
 	if (activity == 1 || activity == 0) {     
 		form.setValue('dataAbertura', currentTime);
