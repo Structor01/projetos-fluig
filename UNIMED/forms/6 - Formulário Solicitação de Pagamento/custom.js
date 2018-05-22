@@ -31,11 +31,11 @@ function Inicio() {
         $('#fsDadosAprovacao').css('display', 'block');
 //*Validar Preenchimento
         if	(atividade == 09 || atividade == 15)  {
-            tratarAccordion('0');
+            $('#aprovGerenciaP').removeClass('hide');
         } else
 //*Aprovar Diretoria
         if	(atividade == 16 || atividade == 18)  {
-            $('#aprovDiretoria').removeClass('hide');
+            $('#aprovDiretoriaP').removeClass('hide');
         } else
 //*Aprovar Diretoria Financeira
         if	(atividade == 17 || atividade == 23)  {
@@ -52,7 +52,7 @@ function Inicio() {
         if	(atividade == 13 || atividade == 32)  {
             $('#divGeraDirf').css('display', 'block');
             $('#divRetencao').css('display', 'block');
-            $('#aprovFinP')
+            $('#aprovFinP').removeClass('hide');
             // tratarAccordion('4');
         } else
 //*Corrigir os valores

@@ -2,59 +2,49 @@ var HelloWorld = SuperWidget.extend({
     message: null,
     calendarEv: [],
     init: function () {
-        $.ajax({
-            type: "post",
-            url: "/api/public/2.0/authorize/client/invoke",
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({
-                serviceCode: 'SAS',
-                tenantCode: '1',
-                endpoint: '/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial=2018-01-01&PeriodoFinal=2018-31-12',
-                method: 'get'
-            }),
-            dataType: "json",
-            success: function(data){
-                this.eventos = JSON.parse(data.content.result);
-                this.htmlC = ''
-                this.calendarEv = new Array();
-                return sync(this.eventos);
-                for(var i in this.eventos) {
-                    this.calendarEv.push({
-                        title: this.eventos[i]['TituloEvento'],
-                        start: this.eventos[i]['PeriodoInicial'],
-                        end: this.eventos[i]['PeriodoFinal']
-                    });
-                    this.htmlC += '<tr>' +
-                        '<td>' + this.eventos[i]['TituloEvento'] + '</td>' +
-                        '<td>' + this.eventos[i]['DescProduto'] + '</td>' +
-                        '<td>' + this.eventos[i]['DescUnidadeOrganizacional'] + '</td>' +
-                        '<td>' + disarrangeData(this.eventos[i]['PeriodoInicial']) + '</td>' +
-                        '<td>' + disarrangeData(this.eventos[i]['PeriodoFinal']) + '</td>' +
-                        '<td>' + this.eventos[i]['NomeCidade'] + '</td>' +
-                        '</tr>';
-                }
-                $('#rowEventos').html(this.htmlC);
-                $('#calendar').fullCalendar({
-                    lang: 'pt',
-                    events: this.calendarEv,
-                    eventClick: function(calEvent, jsEvent, view) {
-                        alert('Event: ' + calEvent.title);
-                        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                        alert('View: ' + view.name);
-                        // change the border color just for fun
-                        $(this).css('border-color', 'red');
-                    },
-                    viewRender: function(view, element) {
-                        $('.fc-content').each(function () {
-                            // var hex = getRandomColor();
-                            $(this).css('background-color', '#0080ff!important');
-                            $(this).find('span').css('color', 'white');
-                        });
-                    }
-                });
+        var constraints = new Array();
+        var today = new Date();
+        var m = today.getMonth() + 1 < 10 ? '0'+ parseInt(today.getMonth() + 1) : today.getMonth() + 1;
+        constraints.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
+        constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
+        var c5 = DatasetFactory.createConstraint("dtInicio", "%/"+m+"/%", "%/"+m+"/%", ConstraintType.MUST);
+        constraints.push(c5);
+        var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
+        this.eventos = dataset.values;
+        this.htmlC = ''
+        this.calendarEv = new Array();
+        // return sync(this.eventos);
+        for(var i in this.eventos) {
+            this.calendarEv.push({
+                title: this.eventos[i]['nomeEvento'],
+                start: switchMonth(this.eventos[i]['dtInicio']),
+                end: switchMonth(this.eventos[i]['dtFinal'])
+            });
+            this.htmlC += '<tr>' +
+                '<td>' + this.eventos[i]['nomeEvento'] + '</td>' +
+                '<td>' + this.eventos[i]['tipoEvento'] + '</td>' +
+                '<td>' + this.eventos[i]['unidadeVinculada'] + '</td>' +
+                '<td>' + this.eventos[i]['dtInicio'] + '</td>' +
+                '<td>' + this.eventos[i]['dtFinal'] + '</td>' +
+                '<td>' + this.eventos[i]['location'] + '</td>' +
+                '</tr>';
+        }
+        $('#rowEventos').html(this.htmlC);
+        $('#calendar').fullCalendar({
+            lang: 'pt',
+            events: this.calendarEv,
+            eventClick: function(calEvent, jsEvent, view) {
+                alert('Event: ' + calEvent.title);
+                alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                alert('View: ' + view.name);
+                $(this).css('border-color', 'red');
             },
-            failure: function(errMsg) {
-                alert(errMsg);
+            viewRender: function(view, element) {
+                $('.fc-content').each(function () {
+                    // var hex = getRandomColor();
+                    $(this).css('background-color', '#0080ff!important');
+                    $(this).find('span').css('color', 'white');
+                });
             }
         });
     },
@@ -70,6 +60,26 @@ var HelloWorld = SuperWidget.extend({
         $div = $('#helloMessage_' + this.instanceId);
         $message = $('<div>').addClass('message').append(this.message);
         $div.append($message);
+    },
+    SAS: function () {
+        $.ajax({
+            type: "post",
+            url: "/api/public/2.0/authorize/client/invoke",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                serviceCode: 'SAS',
+                tenantCode: '1',
+                endpoint: '/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial=2018-01-01&PeriodoFinal=2018-31-12',
+                method: 'get'
+            }),
+            dataType: "json",
+            success: function(data){
+                this.eventos = JSON.parse(data.content.result);
+            },
+            failure: function(errMsg) {
+                alert(errMsg);
+            }
+        });
     }
 });
 
@@ -101,7 +111,7 @@ function sync(ev) {
         constraints.push(DatasetFactory.createConstraint("codSAS", ev[i]['CodEvento'], ev[i]['CodEvento'], ConstraintType.MUST));
         var checkev = DatasetFactory.getDataset("dsEventos", null, constraints, null);
         if(checkev && checkev.values.length > 0) continue; else constraints = new Array();
-        constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(ev[i]['PeriodoInicial']), "", ConstraintType.MUST));
+        constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(ev[i]['PeriodoFinal']), "", ConstraintType.MUST));
         constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + ev[i]['CodEvento'], "", ConstraintType.MUST));
         constraints.push(DatasetFactory.createConstraint("CardData", "codCidade;" + ev[i]['CodCidade'], "", ConstraintType.MUST));
         constraints.push(DatasetFactory.createConstraint("CardData", "dtInicio;" + disarrangeData(ev[i]['PeriodoInicial']), "", ConstraintType.MUST));
@@ -141,6 +151,27 @@ function verificaTipoEv(ev) {
             if(ev.indexOf(rec) > -1) return rec;
         }
     }
+}
+
+function switchMonth(el) {
+    var v = el.split(' ');
+    var v1 = v[0].split('/');
+
+    return v1[1] + '/' + v1[0] + '/' +v1[2] + ' ' + v[1];
+}
+
+function getDateNow() {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = (today.getMonth() + 1) < 10 ? '0' + (today.getMonth() + 1)	: (today.getMonth() + 1);
+    var day = today.getDate() < 10 ? '0' + today.getDate() : today.getDate();
+    var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+    var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+    var second = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+    var currentHour = hour + ":" + minute + ":" + second;
+    var currentDate = day + '/' + month + '/' + year;
+    var currentTime = currentDate + "  " + currentHour;
+    return currentTime;
 }
 
 // function getRandomColor() {

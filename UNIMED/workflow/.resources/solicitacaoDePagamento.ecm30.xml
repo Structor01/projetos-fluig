@@ -1,0 +1,1872 @@
+<list>
+  <ProcessDefinition>
+    <processDefinitionPK>
+      <companyId>1</companyId>
+      <processId>solicitacaoDePagamento</processId>
+    </processDefinitionPK>
+    <processDescription>Solicitação de Pagamento</processDescription>
+    <instruction></instruction>
+    <active>true</active>
+    <publicProcess>false</publicProcess>
+    <volumeId>Default</volumeId>
+    <categoryId></categoryId>
+    <managerEngineAllocationId></managerEngineAllocationId>
+    <snapshotFrequency>0</snapshotFrequency>
+    <baseDay>0</baseDay>
+    <baseMonth>0</baseMonth>
+    <periodId>Default</periodId>
+    <uniqueCardVersion>false</uniqueCardVersion>
+    <keyWord></keyWord>
+    <complementsLevel>1</complementsLevel>
+    <notifyRequisitionerComplements>true</notifyRequisitionerComplements>
+    <notifyManagerComplements>false</notifyManagerComplements>
+    <deadlineTime>0</deadlineTime>
+    <warningDeadlineTime>0</warningDeadlineTime>
+    <notifyAuthorityComplements>true</notifyAuthorityComplements>
+  </ProcessDefinition>
+  <ProcessDefinitionVersion>
+    <processDefinitionVersionPK>
+      <companyId>1</companyId>
+      <processId>Solicitação de Pagamento</processId>
+      <version>11</version>
+    </processDefinitionVersionPK>
+    <versionDescription></versionDescription>
+    <formId>52</formId>
+    <editionMode>true</editionMode>
+    <updateAttachmentsVersion>false</updateAttachmentsVersion>
+    <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
+    <active>true</active>
+    <blockedVersion>false</blockedVersion>
+    <counterSign>false</counterSign>
+    <openInstances>0</openInstances>
+    <bpmnVersion>2</bpmnVersion>
+    <processStates/>
+    <favorito>false</favorito>
+    <inheritFormSecurity>false</inheritFormSecurity>
+    <mobileReady>true</mobileReady>
+  </ProcessDefinitionVersion>
+  <list>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>1</sequence>
+      </processStatePK>
+      <stateName>Início</stateName>
+      <stateDescription>Início</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>true</initialState>
+      <notifyAuthorityDelay>false</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>0</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>210</positionX>
+      <positionY>92</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>10</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>15</sequence>
+      </processStatePK>
+      <stateName>Validar Preenchimento</stateName>
+      <stateDescription>Validar Preenchimento</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>14400</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;idRespGerencia&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>360</positionX>
+      <positionY>184</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>18</sequence>
+      </processStatePK>
+      <stateName>Aprovar Diretoria</stateName>
+      <stateDescription>Aprovar Diretoria</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>57600</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;idRespDiretoria&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>260</positionX>
+      <positionY>310</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>23</sequence>
+      </processStatePK>
+      <stateName>Aprovar Diretoria Financeira</stateName>
+      <stateDescription>Aprovar Diretoria Financeira</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>57600</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;4040&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>580</positionX>
+      <positionY>300</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>28</sequence>
+      </processStatePK>
+      <stateName>Analisar Tributos</stateName>
+      <stateDescription>Analisar Tributos</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>57600</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;SETCON&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>410</positionX>
+      <positionY>423</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>32</sequence>
+      </processStatePK>
+      <stateName>Conferir Valores</stateName>
+      <stateDescription>Conferir Valores</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>57600</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;SETFIN&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>560</positionX>
+      <positionY>539</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>41</sequence>
+      </processStatePK>
+      <stateName>Gerar Titulo - Protheus</stateName>
+      <stateDescription>Gerar Titulo - Protheus</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>700</positionX>
+      <positionY>657</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>82</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>1</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>44</sequence>
+      </processStatePK>
+      <stateName>Corrigir Erros</stateName>
+      <stateDescription>Corrigir Erros</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>14400</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;TI&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>953</positionX>
+      <positionY>578</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>36</sequence>
+      </processStatePK>
+      <stateName>Intermediário</stateName>
+      <stateDescription>Intermediário</stateDescription>
+      <instruction>Evento intermediário do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>1</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>730</positionX>
+      <positionY>440</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>36</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <parentSequence>0</parentSequence>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>39</sequence>
+      </processStatePK>
+      <stateName>Intermediário</stateName>
+      <stateDescription>Intermediário</stateDescription>
+      <instruction>Evento intermediário do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>1</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>310</positionX>
+      <positionY>92</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>42</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <parentSequence>0</parentSequence>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>43</sequence>
+      </processStatePK>
+      <stateName>Intermediário</stateName>
+      <stateDescription>Intermediário</stateDescription>
+      <instruction>Evento intermediário do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>1</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>776</positionX>
+      <positionY>710</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>43</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <parentSequence>41</parentSequence>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>11</sequence>
+      </processStatePK>
+      <stateName>Exclusivo</stateName>
+      <stateDescription>Exclusivo</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>200</positionX>
+      <positionY>175</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>20</sequence>
+      </processStatePK>
+      <stateName>Exclusivo</stateName>
+      <stateDescription>Exclusivo</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>441</positionX>
+      <positionY>325</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>25</sequence>
+      </processStatePK>
+      <stateName>Exclusivo</stateName>
+      <stateDescription>Exclusivo</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>780</positionX>
+      <positionY>300</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>30</sequence>
+      </processStatePK>
+      <stateName>Exclusivo</stateName>
+      <stateDescription>Exclusivo</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>590</positionX>
+      <positionY>407</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>34</sequence>
+      </processStatePK>
+      <stateName>Exclusivo</stateName>
+      <stateDescription>Exclusivo</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>720</positionX>
+      <positionY>523</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>14</sequence>
+      </processStatePK>
+      <stateName>End with process cancellation</stateName>
+      <stateDescription>End with process cancellation</stateDescription>
+      <instruction>Atividade final do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>120</positionX>
+      <positionY>208</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>65</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>46</sequence>
+      </processStatePK>
+      <stateName>Fim</stateName>
+      <stateDescription>Fim</stateDescription>
+      <instruction>Atividade final do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>561</positionX>
+      <positionY>685</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>60</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+  </list>
+  <list>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>11</version>
+        <sequence>11</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
+hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
+      <destinationSequenceId>18</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>11</version>
+        <sequence>11</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Sim&apos;</condition>
+      <destinationSequenceId>28</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>3</expressionOrder>
+        <version>11</version>
+        <sequence>11</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Não&apos;</condition>
+      <destinationSequenceId>1</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>4</expressionOrder>
+        <version>11</version>
+        <sequence>11</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Cancelar&apos;</condition>
+      <destinationSequenceId>14</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>11</version>
+        <sequence>20</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
+hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Vencido&apos;</condition>
+      <destinationSequenceId>28</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>11</version>
+        <sequence>20</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Não&apos;</condition>
+      <destinationSequenceId>15</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>3</expressionOrder>
+        <version>11</version>
+        <sequence>20</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
+hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
+      <destinationSequenceId>23</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>11</version>
+        <sequence>25</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovDirFin&apos;) == &apos;Sim&apos;</condition>
+      <destinationSequenceId>28</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>11</version>
+        <sequence>25</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovDirFin&apos;) == &apos;Não&apos;</condition>
+      <destinationSequenceId>15</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>11</version>
+        <sequence>30</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovCont&apos;) == &apos;Sim&apos;</condition>
+      <destinationSequenceId>32</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>11</version>
+        <sequence>30</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovCont&apos;) == &apos;Não&apos;</condition>
+      <destinationSequenceId>36</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>11</version>
+        <sequence>34</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovFin&apos;) == &apos;Sim&apos;</condition>
+      <destinationSequenceId>41</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>11</version>
+        <sequence>34</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&apos;aprovFin&apos;) == &apos;Não&apos;</condition>
+      <destinationSequenceId>36</destinationSequenceId>
+    </ConditionProcessState>
+  </list>
+  <list>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>13</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>11</initialStateSequence>
+      <finalStateSequence>14</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>19</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>11</initialStateSequence>
+      <finalStateSequence>18</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>21</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>18</initialStateSequence>
+      <finalStateSequence>20</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>22</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>20</initialStateSequence>
+      <finalStateSequence>15</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>24</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>20</initialStateSequence>
+      <finalStateSequence>23</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>26</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>23</initialStateSequence>
+      <finalStateSequence>25</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>27</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>25</initialStateSequence>
+      <finalStateSequence>15</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>29</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>20</initialStateSequence>
+      <finalStateSequence>28</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>31</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>28</initialStateSequence>
+      <finalStateSequence>30</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>33</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>30</initialStateSequence>
+      <finalStateSequence>32</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>35</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>32</initialStateSequence>
+      <finalStateSequence>34</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>37</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>30</initialStateSequence>
+      <finalStateSequence>36</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>38</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>34</initialStateSequence>
+      <finalStateSequence>36</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>40</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>39</initialStateSequence>
+      <finalStateSequence>1</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>42</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>34</initialStateSequence>
+      <finalStateSequence>41</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>47</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>41</initialStateSequence>
+      <finalStateSequence>46</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>48</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>43</initialStateSequence>
+      <finalStateSequence>44</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>49</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>44</initialStateSequence>
+      <finalStateSequence>41</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>50</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>11</initialStateSequence>
+      <finalStateSequence>28</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>51</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>1</initialStateSequence>
+      <finalStateSequence>15</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>52</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>11</initialStateSequence>
+      <finalStateSequence>1</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>53</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>25</initialStateSequence>
+      <finalStateSequence>28</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>54</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>15</initialStateSequence>
+      <finalStateSequence>11</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>55</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>36</initialStateSequence>
+      <finalStateSequence>39</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <linkSequence>56</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>36</initialStateSequence>
+      <finalStateSequence>39</finalStateSequence>
+      <returnLabel></returnLabel>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+  </list>
+  <list/>
+  <list>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>servicetask41</eventId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function servicetask41(attempt, message) {
+	
+
+	log.warn(&quot;--Debbug-- Atv Serviço - Inclusão de Titulos Protheus &quot;);
+	var numProces = getValue(&quot;WKNumProces&quot;);
+	var cardId = getValue(&quot;WKCardId&quot;);
+	
+//*Obtendo dados do formulario	
+    var cst1 = DatasetFactory.createConstraint(&quot;metadata#active&quot;, true, true, ConstraintType.MUST);
+	var cst2 = DatasetFactory.createConstraint(&quot;metadata#id&quot;, cardId, cardId, ConstraintType.MUST);
+	
+    var constraints = new Array(cst1, cst2);   
+    var datasetPrincipal = DatasetFactory.getDataset(&quot;dsFormSolicitacaoDePagamento&quot;, null, constraints, null);
+    log.warn(&quot;--Debbug-- datasetPrincipal&quot;);
+    log.warn(&quot;--Debbug-- numProces: &quot;+numProces);
+    log.warn(&quot;--Debbug-- cardId: &quot;+cardId);
+    log.warn(&quot;--Debbug-- datasetPrincipal.rowsCount: &quot; +datasetPrincipal.rowsCount);
+    if (datasetPrincipal.rowsCount &gt; 0) {
+    	
+//*Acesso ao WS de Inclusão de Titulos no Protheus
+    	
+   	    var listaEmpresas = ServiceManager.getService(&apos;WS_UNIMED_PROTHEUS&apos;);
+    	log.warn(&quot;--Debbug-- listaCliente: &quot; +listaEmpresas);
+//    var serviceHelper = listaEmpresas.getBean();
+        var serviceLocator = listaEmpresas.instantiate(&apos;_139._0._20._172._7780.WSUNIMED&apos;);
+    	log.warn(&quot;--Debbug-- serviceLocator: &quot; +serviceLocator);
+        var service = serviceLocator.getWSUNIMEDSOAP();
+    	var serviceTitulo= listaEmpresas.instantiate(&apos;_139._0._20._172._7780.ObjectFactory&apos;);
+    	log.warn(&quot;--Debbug-- Tudo certo com o WS&quot;);    	
+    	var titulo = serviceTitulo.createLISTAINCTITULOSPAGAR();
+    	var arrayTitulo = serviceTitulo.createARRAYOFSTRUCTINCTITULOPAGAR();
+    	var structTitulo = serviceTitulo.createSTRUCTINCTITULOPAGAR();
+    	var arrayNatureza = serviceTitulo.createARRAYOFSTRUCTNATUREZAS();
+    	var structNatureza = serviceTitulo.createSTRUCTNATUREZAS();
+    	var arrayCCusto = serviceTitulo.createARRAYOFSTRUCTCENTROCUSTOPAGAR();
+    	var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
+    	var structCCusto2 = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
+    	log.warn(&quot;--Debbug-- Tudo certo com o Obj do WS&quot;);
+    	
+//*Formatar os campos principais do Objeto TITULO - 
+    	var CCODFILIAL = datasetPrincipal.getValue(0, &apos;cFilEmp&apos;);
+    	log.warn(&quot;--Debbug-- CCODFILIAL: &quot;+CCODFILIAL);
+    	if (CCODFILIAL == &apos;&apos;) {
+    		throw &apos;Codigo da Filial não preenchido! Favor verificar.&apos;;
+    	} else {
+    		titulo.setCCODFILIAL(CCODFILIAL);
+    	}
+    	var CCODGRUPO = datasetPrincipal.getValue(0, &apos;cEmpresa&apos;);
+    	log.warn(&quot;--Debbug-- CCODGRUPO: &quot;+CCODGRUPO);
+    	if (CCODGRUPO == &apos;&apos;) {
+    		throw &apos;Codigo da Empresa não preenchido! Favor verificar.&apos;;
+    	} else {
+        	titulo.setCCODGRUPO(CCODGRUPO);
+        }    	
+//*Formata STRUCT ARRAY DE TITULO
+    	var CLOJA = datasetPrincipal.getValue(0, &apos;cLojaForn&apos;)
+    	log.warn(&quot;--Debbug-- CLOJA: &quot;+CLOJA);
+    	if (CLOJA == &apos;&apos;) {
+    		throw &apos;Codigo da Loja do Fornecedor não preenchido! Favor verificar.&apos;;
+    	} else {
+    		structTitulo.setCLOJA(&apos;01&apos;);
+    		//structTitulo.setCLOJA(CLOJA);
+    	}    	
+    	
+    	var CFORNECEDOR = datasetPrincipal.getValue(0, &apos;cCodigoForn&apos;)
+    	log.warn(&quot;--Debbug-- CFORNECEDOR: &quot;+CFORNECEDOR);
+    	if (CFORNECEDOR == &apos;&apos;) {
+    		throw &apos;Codigo do Fornecedor não preenchido! Favor verificar.&apos;;
+    	} else {
+    		structTitulo.setCFORNECEDOR(CFORNECEDOR);
+    	}    	
+
+    	var CHISTORICO = datasetPrincipal.getValue(0, &apos;historico&apos;);
+    	if (CHISTORICO == null){CHISTORICO = &apos;&apos;;};
+   		structTitulo.setCHISTORICO(CHISTORICO);
+    	
+	    var data = &quot;&quot;+datasetPrincipal.getValue(0, &apos;dataAbertura&apos;);
+	    data = data.split(&apos; &apos;);
+	    var CEMISSAO = data[0].split(&apos;/&apos;).reverse().join(&apos;&apos;);        
+	    
+    	//var CEMISSAO = datasetPrincipal.getValue(0, &apos;dtEmissao&apos;).split(&apos;/&apos;).reverse().join(&apos;&apos;);
+    	
+    	log.warn(&quot;--Debbug-- CEMISSAO: &quot;+CEMISSAO);
+    	if (CEMISSAO == &apos;&apos;) {
+    		throw &apos;Data Emissão não preenchido! Favor verificar.&apos;;
+    	} else {
+    		structTitulo.setCEMISSAO(CEMISSAO);
+    	}    	
+
+/*    	var CAGENCIAFOR= parseInt(datasetPrincipal.getValue(0, &apos;cAgencia&apos;));
+    	log.warn(&quot;--Debbug-- CAGENCIAFOR: &quot;+CAGENCIAFOR);
+    	if (isNaN(CAGENCIAFOR) || CAGENCIAFOR == null) {
+    		structTitulo.setCAGENCIAFOR(&apos;&apos;);
+    	} else {
+        	structTitulo.setCAGENCIAFOR(CAGENCIAFOR);
+    	}*/    	
+    	
+    	var CAGENCIAFOR= datasetPrincipal.getValue(0, &apos;cAgencia&apos;);
+    	log.warn(&quot;--Debbug-- CAGENCIAFOR: &quot;+CAGENCIAFOR);
+    	if (CAGENCIAFOR == &apos;&apos; || CAGENCIAFOR == null) {
+    		structTitulo.setCAGENCIAFOR(&apos;&apos;);
+    	} else {
+        	structTitulo.setCAGENCIAFOR(CAGENCIAFOR);
+    	}    	
+    	
+    	//structTitulo.setCAGENCIAFOR(&apos;&apos;);
+/*    	var CBANCOFOR= parseInt(datasetPrincipal.getValue(0, &apos;cBanco&apos;));
+    	log.warn(&quot;--Debbug-- CBANCOFOR: &quot;+CBANCOFOR);
+    	if (isNaN(CBANCOFOR) || CBANCOFOR== null) {
+    		structTitulo.setCBANCOFOR(&apos;&apos;);
+    	} else {
+        	structTitulo.setCBANCOFOR(CBANCOFOR)
+    	}*/    	
+    	
+    	var CBANCOFOR= datasetPrincipal.getValue(0, &apos;cBanco&apos;);
+    	log.warn(&quot;--Debbug-- CBANCOFOR: &quot;+CBANCOFOR);
+    	if (CBANCOFOR == &apos;&apos; || CBANCOFOR== null) {
+    		structTitulo.setCBANCOFOR(&apos;&apos;);
+    	} else {
+        	structTitulo.setCBANCOFOR(CBANCOFOR)
+    	}    	
+    	
+    	//structTitulo.setCBANCOFOR(&apos;&apos;);
+
+/*    	var CCONTAFOR= parseInt(datasetPrincipal.getValue(0, &apos;cCCorrente&apos;));
+    	log.warn(&quot;--Debbug-- CCONTAFOR: &quot;+CCONTAFOR);
+    	if (isNaN(CCONTAFOR) || CCONTAFOR == null) {
+    		structTitulo.setCCONTAFOR(&apos;&apos;);
+    	} else {
+        	structTitulo.setCCONTAFOR(CCONTAFOR)
+    	}*/    	
+
+    	var CCONTAFOR= datasetPrincipal.getValue(0, &apos;cCCorrente&apos;);
+    	log.warn(&quot;--Debbug-- CCONTAFOR: &quot;+CCONTAFOR);
+    	if (CCONTAFOR == &apos;&apos; || CCONTAFOR == null) {
+    		structTitulo.setCCONTAFOR(&apos;&apos;);
+    	} else {
+        	structTitulo.setCCONTAFOR(CCONTAFOR)
+    	}    	
+
+    	var CCODIGOBARRA= datasetPrincipal.getValue(0, &apos;codBarra&apos;);
+    	log.warn(&quot;--Debbug-- CCODIGOBARRA: &quot;+CCODIGOBARRA);
+    	if (isNaN(CCODIGOBARRA) || CCODIGOBARRA == null) {
+    		structTitulo.setCCODIGOBARRA(&apos;&apos;);
+    	} else {
+        	structTitulo.setCCODIGOBARRA(CCODIGOBARRA)
+    	}    	
+    	
+    	//structTitulo.setCCONTAFOR(&apos;&apos;);
+    	//structTitulo.setCCODIGOBARRA(&apos;&apos;);
+
+    	var valor = datasetPrincipal.getValue(0, &apos;valorPagamento&apos;);
+    	log.warn(&quot;--Debbug-- valor: &quot;+valor);
+    	var valor2 = valor.replace(&apos;.&apos;, &apos;&apos;).replace(&apos;,&apos;, &apos;.&apos;);
+    	//teste.replace(/[^\d]+/g,&apos;&apos;)
+    	log.warn(&quot;--Debbug-- valor2: &quot;+valor2);
+    	//var NVALORTIT = new java.math.BigInteger(valor2);
+    	var NVALORTIT = new java.math.BigDecimal(valor2);
+    	log.warn(&quot;--Debbug-- NVALORTIT: &quot;+NVALORTIT);
+    	structTitulo.setNVALORTIT(NVALORTIT);
+        
+    	var CNUM = datasetPrincipal.getValue(0, &apos;notaFiscal&apos;)
+    	log.warn(&quot;--Debbug-- CNUM: &quot;+CNUM);
+    	structTitulo.setCNUM(CNUM);
+
+    	var CVENCIMENTO = datasetPrincipal.getValue(0, &apos;dtVenc&apos;).split(&apos;/&apos;).reverse().join(&apos;&apos;);
+    	log.warn(&quot;--Debbug-- CVENCIMENTO: &quot;+CVENCIMENTO);
+    	structTitulo.setCVENCIMENTO(CVENCIMENTO);
+
+    	var CTIPO = datasetPrincipal.getValue(0, &apos;CODTIPOPAGTO&apos;)
+    	log.warn(&quot;--Debbug-- CODTIPOPAGTO: &quot;+CTIPO);
+    	structTitulo.setCTIPO(CTIPO);    	
+
+    	var CFORMAPG = datasetPrincipal.getValue(0, &apos;CODFORMPAGTO&apos;)
+    	log.warn(&quot;--Debbug-- CFORMAPG: &quot;+CFORMAPG);
+    	structTitulo.setCFORMAPG(CFORMAPG);
+    	
+    	//Retenção
+    	
+    	var CDIRF = datasetPrincipal.getValue(0, &apos;idDirf&apos;);
+    	log.warn(&quot;--Debbug-- CDIRF: &quot;+CDIRF);
+    	structTitulo.setCDIRF(CDIRF);
+    	var CCODRETENCAO = &apos;&apos;;
+    	
+    	if (CDIRF == &apos;1&apos;) {
+    		CCODRETENCAO = datasetPrincipal.getValue(0, &apos;CODRETENCAO&apos;);
+    	}
+    	log.warn(&quot;--Debbug-- CCODRETENCAO: &quot;+CCODRETENCAO);
+    	structTitulo.setCCODRETENCAO(CCODRETENCAO);
+    	
+    	structTitulo.setCPARCELA(&apos;1&apos;)
+    	var perc = new java.math.BigInteger(100);
+    	
+    	var CCENTROCUSTO = datasetPrincipal.getValue(0, &apos;idRateio&apos;)
+    	log.warn(&quot;--Debbug-- CCENTROCUSTO: &quot;+CCENTROCUSTO);
+
+    	//*SE S, EXISTE RATEIO
+    	if (CCENTROCUSTO == &apos;S&apos;) {
+    		var documentId = datasetPrincipal.getValue(0, &quot;metadata#id&quot;);
+    	    var documentVersion = datasetPrincipal.getValue(0, &quot;metadata#version&quot;);
+    	    
+    	    var c1 = DatasetFactory.createConstraint(&quot;tablename&quot;, &apos;tableRateio&apos;, &apos;tableRateio&apos;, ConstraintType.MUST);
+    	    var c2 = DatasetFactory.createConstraint(&quot;metadata#id&quot;, documentId, documentId, ConstraintType.MUST);
+    	    var c3 = DatasetFactory.createConstraint(&quot;metadata#version&quot;, documentVersion, documentVersion, ConstraintType.MUST);	    
+    	    
+    	    var constraintsFilho = new Array(c1, c2, c3);	    
+    	    var datasetFilho = DatasetFactory.getDataset(&quot;dsFormSolicitacaoDePagamento&quot;, null, constraintsFilho, null);
+    	    
+    	    for (var j = 0; j &lt; datasetFilho.values.length; j++) {
+//*FORMATA OBJETO ARRAY CENTRO CUSTO     	    	
+    	    	var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
+    	    	log.warn(&quot;--Debbug-- [j]: &quot;+j+ &quot; // datasetFilho.values[j]: &quot;+datasetFilho.getValue(j, &apos;codZRateio&apos;));
+    	    	// log.dir(datasetFilho.values[j]);
+    	    	structCCusto.setCCENTROCUSTO(datasetFilho.getValue(j, &apos;codZRateio&apos;).toString());
+    	    	//structCCusto.setCCENTROCUSTO(datasetFilho.values[j].zoomCr);
+    	    	var valorRateio = datasetFilho.getValue(j, &apos;valorRateio&apos;);
+				var valorRateio2 = valorRateio.replace(&apos;.&apos;, &apos;&apos;).replace(&apos;,&apos;, &apos;.&apos;);
+				log.warn(&quot;--Debbug-- valorRateio2: &quot;+valorRateio2);
+    	    	//var NVALORRAT = new java.math.BigInteger(valorRateio2);
+    	    	var NVALORRAT = new java.math.BigDecimal(valorRateio2);
+    	    	log.warn(&quot;--Debbug-- NVALORRAT: &quot;+NVALORRAT);
+    	    	structCCusto.setNVALORRAT(NVALORRAT);
+    	    	log.warn(&quot;--Debbug-- structCCusto.getCCENTROCUSTO: &quot; +structCCusto.getCCENTROCUSTO());
+    	    	log.warn(&quot;--Debbug-- structCCusto.getNVALORRAT: &quot; +structCCusto.getNVALORRAT());
+    	    	arrayCCusto.getSTRUCTCENTROCUSTOPAGAR().add(structCCusto);
+    	    }
+    	    log.warn(&quot;--Debbug-- ESTRUTURA NATUREZA&quot;);
+	    	structNatureza.setNVALORRAT(NVALORTIT);
+	    	log.warn(&quot;--Debbug-- NVALORTIT: &quot; +structNatureza.getNVALORRAT());
+	    	structNatureza.setNPERCENTNAT(perc);
+	    	log.warn(&quot;--Debbug-- NPERCENTNAT: &quot; +structNatureza.getNPERCENTNAT());	    	
+	    	structNatureza.setCNATUREZA(datasetPrincipal.getValue(0, &apos;CODNATUREZA&apos;));
+	    	log.warn(&quot;--Debbug-- CNATUREZA: &quot; +structNatureza.getCNATUREZA());
+        	//structTitulo.setCCENTROCUSTO(&apos;&apos;)
+        	//structTitulo.setCNATUREZA(&apos;&apos;)
+        	structTitulo.setCCENTROCUSTO(datasetPrincipal.getValue(0, &apos;CODCCUSTO&apos;));
+        	log.warn(&quot;--Debbug-- CCENTROCUSTO: &quot; +structTitulo.getCCENTROCUSTO());
+        	structTitulo.setCNATUREZA(datasetPrincipal.getValue(0, &apos;CODNATUREZA&apos;));
+        	log.warn(&quot;--Debbug-- CNATUREZA: &quot; +structTitulo.getCNATUREZA());
+
+        	structTitulo.setLUSARATEIO(true)	
+	    	
+    	}
+    	else{
+    		//var valorCC = new java.math.BigInteger(0);
+    		var valorCC = new java.math.BigDecimal(0);
+    		var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
+    		structCCusto.setNVALORRAT(valorCC);
+    		structCCusto.setCCENTROCUSTO(&apos;&apos;);
+	    	arrayCCusto.getSTRUCTCENTROCUSTOPAGAR().add(structCCusto);	
+	    	structNatureza.setNVALORRAT(NVALORTIT);
+	    	structNatureza.setNPERCENTNAT(perc);
+	    	structNatureza.setCNATUREZA(&apos;&apos;);    		
+        	structTitulo.setCCENTROCUSTO(datasetPrincipal.getValue(0, &apos;CODCCUSTO&apos;));
+        	log.warn(&quot;--Debbug-- CCENTROCUSTO: &quot; +structTitulo.getCCENTROCUSTO());
+        	structTitulo.setCNATUREZA(datasetPrincipal.getValue(0, &apos;CODNATUREZA&apos;));
+        	log.warn(&quot;--Debbug-- CNATUREZA: &quot; +structTitulo.getCNATUREZA());
+        	structTitulo.setLUSARATEIO(false)	
+    	}
+
+    	try {
+            //*Aciona o DS para inclusão do titulo
+            structNatureza.setACENTROSCUSTO(arrayCCusto);
+            arrayNatureza.getSTRUCTNATUREZAS().add(structNatureza);
+            structTitulo.setANATUREZAS(arrayNatureza);
+            arrayTitulo.getSTRUCTINCTITULOPAGAR().add(structTitulo);
+            log.warn(&quot;--Debbug-- structTitulo: &quot;+ structTitulo.toString());
+            titulo.setAINCTITULOSPAGAR(arrayTitulo);
+
+    		var result = service.cadastracontaspagar(titulo);
+    		log.warn(&quot;--Debbug-- result: &quot; +result); 
+    		log.warn(&quot;--Debbug-- qt registros retornados: &quot; + result.getARETTITULOSPAGAR().getSTRUCTINCRETTITULOSPAGAR().get(0).getCNUMERO());
+    		log.warn(&quot;--Debbug-- SIZE: &quot; + result.getARETTITULOSPAGAR().getSTRUCTINCRETTITULOSPAGAR().size());
+    		var status = &apos;&apos;;
+    		
+    		if (result.getARETTITULOSPAGAR().getSTRUCTINCRETTITULOSPAGAR().size() &gt; 0){
+    			
+    			var registro = result.getARETTITULOSPAGAR().getSTRUCTINCRETTITULOSPAGAR().get(0);		
+    			 //Cria os registros
+    			status = (registro.isLSTATUS()) ? &apos;Ativo&apos; : &apos;Bloqueado&apos;;
+    			log.warn(&quot;--Debbug-- CERRO: &quot; +registro.getCERRO());
+    			log.warn(&quot;--Debbug-- CNUMERO: &quot; +registro.getCNUMERO());
+    			log.warn(&quot;--Debbug-- CPARCELA: &quot; +registro.getCPARCELA());
+    			log.warn(&quot;--Debbug-- CPREFIXO: &quot; +registro.getCPREFIXO());
+    			log.warn(&quot;--Debbug-- CTIPO: &quot; +registro.getCTIPO());
+    			log.warn(&quot;--Debbug-- status: &quot; +status);    			
+    			
+    		    if (registro.getCERRO() != &apos;&apos;) {
+    		    	throw &apos;Erro na Inclusão do Titulo no Protheus: - &apos; + registro.getCERRO() + &apos;.&apos;;
+    		    } else {
+    		    	return true;
+    		    }
+    		}
+    		
+    	}  catch (erro){
+    		log.warn(&quot;--Debbug-- erro: &quot; +erro);
+    		log.warn(&quot;--Debbug-- erro --linha: &quot; +erro.lineNumber);
+    		throw &apos;Erro na Inclusão do Titulo no Protheus: - &apos; + erro.message + &apos;.&apos;;
+    	}
+    	
+    } else {
+    	throw &apos;Não encontrado o formulário Id: &apos; + cardId + &apos; da Solicitação de Pagamento - &apos; + numProces +&apos;.&apos;;
+    }
+
+}</eventDescription>
+    </WorkflowProcessEvent>
+  </list>
+  <list/>
+  <list>
+    <SwimLane>
+      <color>FFFFFF</color>
+      <height>701</height>
+      <width>1481</width>
+      <positionX>50</positionX>
+      <positionY>50</positionY>
+      <stateName>Solicitação de Pagamento</stateName>
+      <type>1</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>1</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>82b0b7</color>
+      <height>116</height>
+      <width>1451</width>
+      <positionX>80</positionX>
+      <positionY>50</positionY>
+      <stateName>SwimLane</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>2</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>adc9ac</color>
+      <height>116</height>
+      <width>1451</width>
+      <positionX>80</positionX>
+      <positionY>282</positionY>
+      <stateName>SwimLane</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>3</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>d0daae</color>
+      <height>121</height>
+      <width>1451</width>
+      <positionX>80</positionX>
+      <positionY>630</positionY>
+      <stateName>SwimLane</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>4</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>d6e0d0</color>
+      <height>116</height>
+      <width>1451</width>
+      <positionX>80</positionX>
+      <positionY>166</positionY>
+      <stateName>SwimLane</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>5</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>c9c3ac</color>
+      <height>116</height>
+      <width>1451</width>
+      <positionX>80</positionX>
+      <positionY>514</positionY>
+      <stateName>SwimLane</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>6</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>9fc1c6</color>
+      <height>116</height>
+      <width>1451</width>
+      <positionX>80</positionX>
+      <positionY>398</positionY>
+      <stateName>SwimLane</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>1</version>
+        <sequence>7</sequence>
+      </swimLanePK>
+    </SwimLane>
+  </list>
+  <list/>
+  <list/>
+  <list>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>11</version>
+        <linkSequence>27</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>803</positionX>
+      <positionY>225</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>11</version>
+        <linkSequence>48</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>1005</positionX>
+      <positionY>724</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoDePagamento</processId>
+        <version>11</version>
+        <linkSequence>50</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>230</positionX>
+      <positionY>455</positionY>
+    </ProcessLinkBend>
+  </list>
+  <list/>
+  <list/>
+  <list/>
+  <list>
+    <ProcessStateService>
+      <companyId>1</companyId>
+      <processId>solicitacaoDePagamento</processId>
+      <version>1</version>
+      <sequence>41</sequence>
+      <attempts>0</attempts>
+      <sucessFullMessage>Integração executada com sucesso</sucessFullMessage>
+      <frequency>1</frequency>
+      <frequencyType>0</frequencyType>
+    </ProcessStateService>
+  </list>
+  <list/>
+</list>

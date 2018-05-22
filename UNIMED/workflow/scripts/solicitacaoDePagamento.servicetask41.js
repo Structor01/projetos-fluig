@@ -193,7 +193,8 @@ function servicetask41(attempt, message) {
     	
     	var CCENTROCUSTO = datasetPrincipal.getValue(0, 'idRateio')
     	log.warn("--Debbug-- CCENTROCUSTO: "+CCENTROCUSTO);
-//*SE S, EXISTE RATEIO    	
+
+    	//*SE S, EXISTE RATEIO
     	if (CCENTROCUSTO == 'S') {
     		var documentId = datasetPrincipal.getValue(0, "metadata#id");
     	    var documentVersion = datasetPrincipal.getValue(0, "metadata#version");
@@ -208,9 +209,9 @@ function servicetask41(attempt, message) {
     	    for (var j = 0; j < datasetFilho.values.length; j++) {
 //*FORMATA OBJETO ARRAY CENTRO CUSTO     	    	
     	    	var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
-    	    	log.warn("--Debbug-- [j]: "+j+ " // datasetFilho.values[j]: "+ datasetFilho.getValue(j, 'codRateio'));
-    	    	log.dir(datasetFilho.values[j]);    	    	
-    	    	structCCusto.setCCENTROCUSTO(datasetFilho.getValue(j, 'codRateio'));
+    	    	log.warn("--Debbug-- [j]: "+j+ " // datasetFilho.values[j]: "+datasetFilho.getValue(j, 'codZRateio'));
+    	    	// log.dir(datasetFilho.values[j]);
+    	    	structCCusto.setCCENTROCUSTO(datasetFilho.getValue(j, 'codZRateio').toString());
     	    	//structCCusto.setCCENTROCUSTO(datasetFilho.values[j].zoomCr);
     	    	var valorRateio = datasetFilho.getValue(j, 'valorRateio');
 				var valorRateio2 = valorRateio.replace('.', '').replace(',', '.');
@@ -219,7 +220,7 @@ function servicetask41(attempt, message) {
     	    	var NVALORRAT = new java.math.BigDecimal(valorRateio2);
     	    	log.warn("--Debbug-- NVALORRAT: "+NVALORRAT);
     	    	structCCusto.setNVALORRAT(NVALORRAT);
-    	    	log.warn("--Debbug-- structCCusto.getCCENTROCUSTO: " + structCCusto.getCCENTROCUSTO());
+    	    	log.warn("--Debbug-- structCCusto.getCCENTROCUSTO: " +structCCusto.getCCENTROCUSTO());
     	    	log.warn("--Debbug-- structCCusto.getNVALORRAT: " +structCCusto.getNVALORRAT());
     	    	arrayCCusto.getSTRUCTCENTROCUSTOPAGAR().add(structCCusto);
     	    }
@@ -239,7 +240,8 @@ function servicetask41(attempt, message) {
 
         	structTitulo.setLUSARATEIO(true)	
 	    	
-    	} else{
+    	}
+    	else{
     		//var valorCC = new java.math.BigInteger(0);
     		var valorCC = new java.math.BigDecimal(0);
     		var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
@@ -255,15 +257,16 @@ function servicetask41(attempt, message) {
         	log.warn("--Debbug-- CNATUREZA: " +structTitulo.getCNATUREZA());
         	structTitulo.setLUSARATEIO(false)	
     	}
-//*Aciona o DS para inclusão do titulo 
-    	structNatureza.setACENTROSCUSTO(arrayCCusto);
-    	arrayNatureza.getSTRUCTNATUREZAS().add(structNatureza);
-    	structTitulo.setANATUREZAS(arrayNatureza);
-    	arrayTitulo.getSTRUCTINCTITULOPAGAR().add(structTitulo);
 
-    	titulo.setAINCTITULOSPAGAR(arrayTitulo);	
-    	
     	try {
+            //*Aciona o DS para inclusão do titulo
+            structNatureza.setACENTROSCUSTO(arrayCCusto);
+            arrayNatureza.getSTRUCTNATUREZAS().add(structNatureza);
+            structTitulo.setANATUREZAS(arrayNatureza);
+            arrayTitulo.getSTRUCTINCTITULOPAGAR().add(structTitulo);
+            log.warn("--Debbug-- structTitulo: "+ structTitulo.toString());
+            titulo.setAINCTITULOSPAGAR(arrayTitulo);
+
     		var result = service.cadastracontaspagar(titulo);
     		log.warn("--Debbug-- result: " +result); 
     		log.warn("--Debbug-- qt registros retornados: " + result.getARETTITULOSPAGAR().getSTRUCTINCRETTITULOSPAGAR().get(0).getCNUMERO());
@@ -291,7 +294,7 @@ function servicetask41(attempt, message) {
     		
     	}  catch (erro){
     		log.warn("--Debbug-- erro: " +erro);
-    		log.warn("--Debbug-- erro --linha: " + erro.lineNumber);
+    		log.warn("--Debbug-- erro --linha: " +erro.lineNumber);
     		throw 'Erro na Inclusão do Titulo no Protheus: - ' + erro.message + '.';
     	}
     	

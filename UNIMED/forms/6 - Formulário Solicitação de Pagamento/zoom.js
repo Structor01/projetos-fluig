@@ -7,7 +7,7 @@ function setSelectedZoomItem(selectedItem){
     var tableId = selectedItem.inputId.substring(selectedItem.inputId.indexOf("___") + 3, selectedItem.inputId.indexOf("___") + 6);
 
     //if(selectedItem.inputId.startsWith('zoomCr')){
-    if(selectedItem.inputId == 'zoomCr___'+tableId){
+    if(selectedItem.inputId == 'zoomCCustoRateio___'+tableId){
         $('#codRateio___'+tableId).val(selectedItem.CCODIGO);
     }
 
@@ -27,6 +27,7 @@ function setSelectedZoomItem(selectedItem){
             // $('#zoomCCustoRateio___' + idx).val(rec['zoomCCustoRateio']);
             setZoomData("zoomCCustoRateio___"+idx, rec['zoomCCustoRateio']);
             $('#valorRateio___' + idx).val(rec['valorRateio']);
+            $('#codZRateio___' + idx).val(rec['codRateio']);
             $('#percentualRateio___' + idx).val(rec['percentualRateio']);
         }
 
@@ -159,6 +160,10 @@ function removedZoomItem(removedItem) {
     if (removedItem.inputId == 'zoomCCustoSolic') {
         $('#idRespGerencia').val('');
         $('#idRespDiretoria').val('');
+    }
+
+    if(removedItem.inputId == 'zoomRateio'){
+       $('[id*=zoomCCustoRateio___]').remove();
     }
 
     if (removedItem.inputId == 'zoomUnidade') {

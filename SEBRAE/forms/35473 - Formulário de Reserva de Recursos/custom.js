@@ -47,7 +47,7 @@ function onChangeDate(ev) {
         $('.dateReserva').eq(1).val().trim() != '' &&
         (
             arrangeData($('.dateReserva').eq(0).val()) != arrangeData($('.dateReserva').eq(1).val() ||
-                arrangeData($('.dateReserva').eq(0).val()) > arrangeData($('.dateReserva').eq(1).val())
+            arrangeData($('.dateReserva').eq(0).val()) > arrangeData($('.dateReserva').eq(1).val())
             ))
     ) {
         if(ev.type == 'blur') {
@@ -77,7 +77,7 @@ function verificaDisponibildade(inicio,fim) {
 
     for(var i in DATAS) {
         var dI = DATAS[i]['dtInicio'];
-        var dF = DATAS[i]['dtFim'];
+        var dF = DATAS[i]['dtFinal'];
         var diaI = dI.split(' ')[0].split('/')[0];
         var diaF = dF.split(' ')[0].split('/')[0];
         var mesI = dI.split(' ')[0].split('/')[1];
@@ -93,7 +93,7 @@ function verificaDisponibildade(inicio,fim) {
             ) || (
                 fim.split(' ')[0].split('/')[0] == diaF &&
                 fim.split(' ')[0].split('/')[1] == mesF &&
-                fim.split(' ')[1] <= horaF
+                fim.split(' ')[1] <= horaI && fim.split(' ')[1] >= horaF
             ) || (
                 arrangeData(inicio) < arrangeData(dI) && arrangeData(fim) > arrangeData(dF)
             ) || (
@@ -104,11 +104,11 @@ function verificaDisponibildade(inicio,fim) {
         ) {
             html += '<tr>' +
                 '   <td>'+ DATAS[i]["sol"] +'</td>' +
-                '   <td>'+ DATAS[i]["qt"] +'</td>' +
+                '   <td>'+ DATAS[i]["qtSolicitada"] +'</td>' +
                 '   <td>'+ dI +'</td>' +
                 '   <td>'+ dF +'</td>' +
                 '</tr>';
-            qtTotal += parseInt(DATAS[i]["qt"]);
+            qtTotal += parseInt(DATAS[i]["qtSolicitada"]);
         }
     }
 
@@ -134,11 +134,11 @@ function verTodos() {
 
     for(var i in DATAS) {
         html +='<tr><td>'+DATAS[i]['sol']+'</td>';
-        html +='<td>'+DATAS[i]['qt']+'</td>';
+        html +='<td>'+DATAS[i]['qtSolicitada']+'</td>';
         html +='<td>'+DATAS[i]['dtInicio']+'</td>';
-        html +='<td>'+DATAS[i]['dtFim']+'</td></tr>';
+        html +='<td>'+DATAS[i]['dtFinal']+'</td></tr>';
     }
-        html +='</tbody></table>';
+    html +='</tbody></table>';
 
     FLUIGC.modal({
         title: 'Reservas',
@@ -235,36 +235,40 @@ function atualizaProcessos(sol, atv, colab, comment) {
 }
 
 function getData(id) {
-    var constraints = new Array();
-    constraints.push(DatasetFactory.createConstraint("processId", 'reserva_recurso', 'reserva_recurso', ConstraintType.MUST));
-    var dataset = DatasetFactory.getDataset("dsGetAvailableProces", null, constraints, null);
-    DATAS = new Array();
-    for(var i in dataset.values) {
-        var nconstraints = new Array();
-        nconstraints.push(DatasetFactory.createConstraint("metadata#id", dataset.values[i]['cardId'], dataset.values[i]['cardId'], ConstraintType.MUST));
-        nconstraints.push(DatasetFactory.createConstraint("codigoRecurso", id, id, ConstraintType.MUST));
-        var doc = DatasetFactory.getDataset("dsReserva_Recursos", null, nconstraints, null);
-        if(doc.values && doc.values.length > 0) {
-            for(var r in doc.values) {
-                var process = false;
-                if(dataset.values[i]['codTask'] == '6' && arrangeData(getDateNow()) > arrangeData(doc.values[r]['dtFinal']))
-                    process = atualizaProcessos(
-                        dataset.values[i]["processInstanceId"],
-                        7,
-                        dataset.values[i]["requesterId"],
-                        'Movimentado Automáticamente'
-                    );
-                if(process) return getData(id);
+    // var constraints = new Array();
+    // constraints.push(DatasetFactory.createConstraint("processId", 'reserva_recurso', 'reserva_recurso', ConstraintType.MUST));
+    // var dataset = DatasetFactory.getDataset("dsGetAvailableProces", null, constraints, null);
+    // DATAS = new Array();
+    // for(var i in dataset.values) {
+    //     var nconstraints = new Array();
+    //     nconstraints.push(DatasetFactory.createConstraint("metadata#id", dataset.values[i]['cardId'], dataset.values[i]['cardId'], ConstraintType.MUST));
+    //     nconstraints.push(DatasetFactory.createConstraint("codigoRecurso", id, id, ConstraintType.MUST));
+    //     var doc = DatasetFactory.getDataset("dsReserva_Recursos", null, nconstraints, null);
+    //     if(doc.values && doc.values.length > 0) {
+    //         var process = false;
+    //         if(dataset.values[i]['codTask'] == '6' && arrangeData(getDateNow()) > arrangeData(doc.values[0]['dtFinal']))
+    //             process = atualizaProcessos(
+    //                 dataset.values[i]["processInstanceId"],
+    //                 7,
+    //                 dataset.values[i]["requesterId"],
+    //                 'Movimentado Automáticamente'
+    //             );
+    //
+    //         if(process) return getData(id);
+    //
+    //         DATAS.push({
+    //             sol: doc.values[0]['solicitanteInformado'],
+    //             dtInicio: doc.values[0]['dtInicio'],
+    //             dtFinal: doc.values[0]['dtFinal'],
+    //             qt: doc.values[0]['qtSolicitada']
+    //         });
+    //     }
+    // }
 
-                DATAS.push({
-                    sol: doc.values[r]['solicitanteInformado'],
-                    dtInicio: doc.values[r]['dtInicio'],
-                    dtFim: doc.values[r]['dtFinal'],
-                    qt: doc.values[r]['qtSolicitada']
-                });
-            }
-        }
-    }
+    var constraints = new Array();
+    constraints.push(DatasetFactory.createConstraint("codigoRecurso", id, id, ConstraintType.MUST));
+    var doc = DatasetFactory.getDataset("dsRecursosDisponiveis", null, constraints, null);
+    DATAS = doc.values;
 }
 
 function setSelectedZoomItem(selectObject) {

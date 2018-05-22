@@ -16,7 +16,7 @@ function addChild() {
             var temp = $(this).val().replace(".","");
             var v = (parseFloat(temp.replace(",",".")) * 100) / VALOR_TOTAL;
             $('#percentualRateio___'+add).val(v+'%');
-            $('#percentualRateio___'+add).mask('000%', {reverse: true});
+            $('#percentualRateio___'+add).mask('00.00%', {reverse: true});
         });
 
         $('#percentualRateio___'+add).on('keyup', function () {
@@ -37,5 +37,11 @@ function addChild() {
 
 function mask() {
     $('.money').mask('000.000.000.000.000,00', {reverse: true});
-    $('.percentual').mask('000%', {reverse: true});
+    $('.percentual').mask('00.00%', {reverse: true});
+}
+
+function setSelectedZoomItem(selectedItem){
+    if(selectedItem.inputId == 'zoomCCustoRateio___'+selectedItem.inputId.split('___')[1]) {
+        $('#codRateio___'+selectedItem.inputId.split('___')[1]).val(selectedItem['CCODIGO']);
+    }
 }
