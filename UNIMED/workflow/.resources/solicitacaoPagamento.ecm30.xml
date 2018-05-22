@@ -15,7 +15,7 @@
     <baseDay>0</baseDay>
     <baseMonth>0</baseMonth>
     <periodId>Default</periodId>
-    <uniqueCardVersion>true</uniqueCardVersion>
+    <uniqueCardVersion>false</uniqueCardVersion>
     <keyWord></keyWord>
     <complementsLevel>1</complementsLevel>
     <notifyRequisitionerComplements>true</notifyRequisitionerComplements>
@@ -28,10 +28,10 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitação de Pagamento</processId>
-      <version>2</version>
+      <version>15</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
-    <formId>6</formId>
+    <formId>52</formId>
     <editionMode>true</editionMode>
     <updateAttachmentsVersion>false</updateAttachmentsVersion>
     <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
@@ -126,8 +126,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>360</positionX>
-      <positionY>184</positionY>
+      <positionX>420</positionX>
+      <positionY>191</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -214,8 +214,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Associado</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssociatedController ConditionAssociated=&quot;OR&quot;&gt;&lt;ControlXML TypeAssociated=&quot;Grupo&quot;&gt;&lt;AssignmentController&gt;&lt;Group&gt;SETFIN&lt;/Group&gt;&lt;/AssignmentController&gt;&lt;/ControlXML&gt;&lt;ControlXML TypeAssociated=&quot;Papel&quot;&gt;&lt;AssignmentController&gt;&lt;Role&gt;Diretor&lt;/Role&gt;&lt;/AssignmentController&gt;&lt;/ControlXML&gt;&lt;/AssociatedController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;4040&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -231,7 +231,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>580</positionX>
-      <positionY>300</positionY>
+      <positionY>303</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -282,7 +282,7 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>410</positionX>
+      <positionX>420</positionX>
       <positionY>423</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
@@ -334,8 +334,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>560</positionX>
-      <positionY>539</positionY>
+      <positionX>580</positionX>
+      <positionY>547</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -384,8 +384,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>700</positionX>
-      <positionY>657</positionY>
+      <positionX>520</positionX>
+      <positionY>650</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -436,8 +436,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>953</positionX>
-      <positionY>578</positionY>
+      <positionX>706</positionX>
+      <positionY>654</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -581,8 +581,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>776</positionX>
-      <positionY>710</positionY>
+      <positionX>596</positionX>
+      <positionY>703</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -615,7 +615,7 @@
       <formFolder>0</formFolder>
       <automatic>true</automatic>
       <positionX>200</positionX>
-      <positionY>175</positionY>
+      <positionY>177</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -639,8 +639,8 @@
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <automatic>true</automatic>
-      <positionX>441</positionX>
-      <positionY>325</positionY>
+      <positionX>443</positionX>
+      <positionY>294</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -665,7 +665,7 @@
       <formFolder>0</formFolder>
       <automatic>true</automatic>
       <positionX>780</positionX>
-      <positionY>300</positionY>
+      <positionY>294</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -689,7 +689,7 @@
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <automatic>true</automatic>
-      <positionX>590</positionX>
+      <positionX>603</positionX>
       <positionY>407</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
@@ -714,8 +714,8 @@
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <automatic>true</automatic>
-      <positionX>720</positionX>
-      <positionY>523</positionY>
+      <positionX>717</positionX>
+      <positionY>525</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -753,8 +753,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>120</positionX>
-      <positionY>208</positionY>
+      <positionX>820</positionX>
+      <positionY>92</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -800,8 +800,8 @@
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>561</positionX>
-      <positionY>685</positionY>
+      <positionX>840</positionX>
+      <positionY>674</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -825,7 +825,7 @@
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>11</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
@@ -837,7 +837,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>11</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Sim&apos;</condition>
@@ -848,7 +848,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>3</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>11</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Não&apos;</condition>
@@ -859,7 +859,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>4</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>11</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovGerencia&apos;) == &apos;Cancelar&apos;</condition>
@@ -870,7 +870,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Fixo&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>20</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
@@ -882,7 +882,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>20</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Não&apos;</condition>
@@ -893,7 +893,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) != &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>3</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>20</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDiretoria&apos;) == &apos;Sim&apos; &amp;&amp;&#xd;
@@ -905,7 +905,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDirFin&apos;) == &apos;Sim&apos;</condition>
@@ -916,7 +916,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>25</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovDirFin&apos;) == &apos;Não&apos;</condition>
@@ -927,7 +927,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>30</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovCont&apos;) == &apos;Sim&apos;</condition>
@@ -938,7 +938,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>30</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovCont&apos;) == &apos;Não&apos;</condition>
@@ -949,7 +949,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>1</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>34</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovFin&apos;) == &apos;Sim&apos;</condition>
@@ -960,7 +960,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
         <expressionOrder>2</expressionOrder>
-        <version>2</version>
+        <version>15</version>
         <sequence>34</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&apos;aprovFin&apos;) == &apos;Não&apos;</condition>
@@ -1596,7 +1596,8 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     	
     	var CCENTROCUSTO = datasetPrincipal.getValue(0, &apos;idRateio&apos;)
     	log.warn(&quot;--Debbug-- CCENTROCUSTO: &quot;+CCENTROCUSTO);
-//*SE S, EXISTE RATEIO    	
+
+    	//*SE S, EXISTE RATEIO
     	if (CCENTROCUSTO == &apos;S&apos;) {
     		var documentId = datasetPrincipal.getValue(0, &quot;metadata#id&quot;);
     	    var documentVersion = datasetPrincipal.getValue(0, &quot;metadata#version&quot;);
@@ -1611,18 +1612,18 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     	    for (var j = 0; j &lt; datasetFilho.values.length; j++) {
 //*FORMATA OBJETO ARRAY CENTRO CUSTO     	    	
     	    	var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
-    	    	log.warn(&quot;--Debbug-- [j]: &quot;+j+ &quot; // datasetFilho.values[j]: &quot;+ datasetFilho.getValue(j, &apos;codRateio&apos;));
-    	    	log.dir(datasetFilho.values[j]);    	    	
-    	    	structCCusto.setCCENTROCUSTO(datasetFilho.getValue(j, &apos;codRateio&apos;));
+    	    	log.warn(&quot;--Debbug-- [j]: &quot;+j+ &quot; // datasetFilho.values[j]: &quot;+datasetFilho.getValue(j, &apos;codZRateio&apos;));
+    	    	// log.dir(datasetFilho.values[j]);
+    	    	structCCusto.setCCENTROCUSTO(datasetFilho.getValue(j, &apos;codZRateio&apos;).toString());
     	    	//structCCusto.setCCENTROCUSTO(datasetFilho.values[j].zoomCr);
     	    	var valorRateio = datasetFilho.getValue(j, &apos;valorRateio&apos;);
-				var valorRateio2 = valorRateio.replace(&apos;.&apos;, &apos;&apos;).replace(&apos;,&apos;, &apos;.&apos;);
+				var valorRateio2 = valorRateio;
 				log.warn(&quot;--Debbug-- valorRateio2: &quot;+valorRateio2);
     	    	//var NVALORRAT = new java.math.BigInteger(valorRateio2);
     	    	var NVALORRAT = new java.math.BigDecimal(valorRateio2);
     	    	log.warn(&quot;--Debbug-- NVALORRAT: &quot;+NVALORRAT);
     	    	structCCusto.setNVALORRAT(NVALORRAT);
-    	    	log.warn(&quot;--Debbug-- structCCusto.getCCENTROCUSTO: &quot; + structCCusto.getCCENTROCUSTO());
+    	    	log.warn(&quot;--Debbug-- structCCusto.getCCENTROCUSTO: &quot; +structCCusto.getCCENTROCUSTO());
     	    	log.warn(&quot;--Debbug-- structCCusto.getNVALORRAT: &quot; +structCCusto.getNVALORRAT());
     	    	arrayCCusto.getSTRUCTCENTROCUSTOPAGAR().add(structCCusto);
     	    }
@@ -1642,7 +1643,8 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
 
         	structTitulo.setLUSARATEIO(true)	
 	    	
-    	} else{
+    	}
+    	else{
     		//var valorCC = new java.math.BigInteger(0);
     		var valorCC = new java.math.BigDecimal(0);
     		var structCCusto = serviceTitulo.createSTRUCTCENTROCUSTOPAGAR();
@@ -1658,15 +1660,16 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
         	log.warn(&quot;--Debbug-- CNATUREZA: &quot; +structTitulo.getCNATUREZA());
         	structTitulo.setLUSARATEIO(false)	
     	}
-//*Aciona o DS para inclusão do titulo 
-    	structNatureza.setACENTROSCUSTO(arrayCCusto);
-    	arrayNatureza.getSTRUCTNATUREZAS().add(structNatureza);
-    	structTitulo.setANATUREZAS(arrayNatureza);
-    	arrayTitulo.getSTRUCTINCTITULOPAGAR().add(structTitulo);
 
-    	titulo.setAINCTITULOSPAGAR(arrayTitulo);	
-    	
     	try {
+            //*Aciona o DS para inclusão do titulo
+            structNatureza.setACENTROSCUSTO(arrayCCusto);
+            arrayNatureza.getSTRUCTNATUREZAS().add(structNatureza);
+            structTitulo.setANATUREZAS(arrayNatureza);
+            arrayTitulo.getSTRUCTINCTITULOPAGAR().add(structTitulo);
+            log.warn(&quot;--Debbug-- structTitulo: &quot;+ structTitulo.toString());
+            titulo.setAINCTITULOSPAGAR(arrayTitulo);
+
     		var result = service.cadastracontaspagar(titulo);
     		log.warn(&quot;--Debbug-- result: &quot; +result); 
     		log.warn(&quot;--Debbug-- qt registros retornados: &quot; + result.getARETTITULOSPAGAR().getSTRUCTINCRETTITULOSPAGAR().get(0).getCNUMERO());
@@ -1694,7 +1697,7 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     		
     	}  catch (erro){
     		log.warn(&quot;--Debbug-- erro: &quot; +erro);
-    		log.warn(&quot;--Debbug-- erro --linha: &quot; + erro.lineNumber);
+    		log.warn(&quot;--Debbug-- erro --linha: &quot; +erro.lineNumber);
     		throw &apos;Erro na Inclusão do Titulo no Protheus: - &apos; + erro.message + &apos;.&apos;;
     	}
     	
@@ -1710,9 +1713,9 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     <SwimLane>
       <color>FFFFFF</color>
       <height>701</height>
-      <width>1101</width>
-      <positionX>50</positionX>
-      <positionY>50</positionY>
+      <width>790</width>
+      <positionX>121</positionX>
+      <positionY>47</positionY>
       <stateName>Solicitação de Pagamento</stateName>
       <type>1</type>
       <parentSequence>0</parentSequence>
@@ -1726,10 +1729,10 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     <SwimLane>
       <color>82b0b7</color>
       <height>116</height>
-      <width>1071</width>
-      <positionX>80</positionX>
-      <positionY>50</positionY>
-      <stateName>SwimLane</stateName>
+      <width>760</width>
+      <positionX>151</positionX>
+      <positionY>47</positionY>
+      <stateName>Solicitante</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
       <swimLanePK>
@@ -1742,10 +1745,10 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     <SwimLane>
       <color>adc9ac</color>
       <height>116</height>
-      <width>1071</width>
-      <positionX>80</positionX>
-      <positionY>514</positionY>
-      <stateName>SwimLane</stateName>
+      <width>760</width>
+      <positionX>151</positionX>
+      <positionY>279</positionY>
+      <stateName>Diretoria</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
       <swimLanePK>
@@ -1757,11 +1760,11 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     </SwimLane>
     <SwimLane>
       <color>d0daae</color>
-      <height>116</height>
-      <width>1071</width>
-      <positionX>80</positionX>
-      <positionY>398</positionY>
-      <stateName>SwimLane</stateName>
+      <height>121</height>
+      <width>760</width>
+      <positionX>151</positionX>
+      <positionY>627</positionY>
+      <stateName>Protheus</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
       <swimLanePK>
@@ -1774,10 +1777,10 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     <SwimLane>
       <color>d6e0d0</color>
       <height>116</height>
-      <width>1071</width>
-      <positionX>80</positionX>
-      <positionY>166</positionY>
-      <stateName>SwimLane</stateName>
+      <width>760</width>
+      <positionX>151</positionX>
+      <positionY>163</positionY>
+      <stateName>Gestor</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
       <swimLanePK>
@@ -1789,11 +1792,11 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     </SwimLane>
     <SwimLane>
       <color>c9c3ac</color>
-      <height>121</height>
-      <width>1071</width>
-      <positionX>80</positionX>
-      <positionY>630</positionY>
-      <stateName>SwimLane</stateName>
+      <height>116</height>
+      <width>760</width>
+      <positionX>151</positionX>
+      <positionY>511</positionY>
+      <stateName>Financeiro</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
       <swimLanePK>
@@ -1806,10 +1809,10 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
     <SwimLane>
       <color>9fc1c6</color>
       <height>116</height>
-      <width>1071</width>
-      <positionX>80</positionX>
-      <positionY>282</positionY>
-      <stateName>SwimLane</stateName>
+      <width>760</width>
+      <positionX>151</positionX>
+      <positionY>395</positionY>
+      <stateName>Contabilidade</stateName>
       <type>2</type>
       <parentSequence>1</parentSequence>
       <swimLanePK>
@@ -1827,7 +1830,40 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
-        <version>2</version>
+        <version>15</version>
+        <linkSequence>13</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>258</positionX>
+      <positionY>172</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>13</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>836</positionX>
+      <positionY>172</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>19</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>230</positionX>
+      <positionY>343</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
         <linkSequence>27</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1838,23 +1874,122 @@ hAPI.getCardValue(&apos;tipoContrato&apos;) == &apos;Vencido&apos;</condition>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
-        <version>2</version>
-        <linkSequence>48</linkSequence>
+        <version>15</version>
+        <linkSequence>42</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>1005</positionX>
-      <positionY>724</positionY>
+      <positionX>749</positionX>
+      <positionY>622</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacaoPagamento</processId>
-        <version>2</version>
+        <version>15</version>
+        <linkSequence>42</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>572</positionX>
+      <positionY>622</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>47</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>777</positionX>
+      <positionY>729</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>49</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>759</positionX>
+      <positionY>629</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>49</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>593</positionX>
+      <positionY>629</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>49</linkSequence>
+        <bendSequence>3</bendSequence>
+      </processLinkBendPK>
+      <positionX>569</positionX>
+      <positionY>629</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
         <linkSequence>50</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>230</positionX>
       <positionY>455</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>51</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>227</positionX>
+      <positionY>164</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>51</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>471</positionX>
+      <positionY>164</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>53</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>804</positionX>
+      <positionY>397</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacaoPagamento</processId>
+        <version>15</version>
+        <linkSequence>53</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>473</positionX>
+      <positionY>397</positionY>
     </ProcessLinkBend>
   </list>
   <list/>

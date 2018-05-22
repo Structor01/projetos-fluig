@@ -106,6 +106,14 @@ function setSelectedZoomItem(selectedItem){
     //         }
     //     }
     // }
+    if(selectedItem.inputId == 'zoomCCustoRateio___'+selectedItem.inputId.split('___')[1]) {
+        if(selectedItem['CSTATUS'] == 'NAO BLOQUEADO' && selectedItem['CTIPO'] == "ANALITICO") {
+            $('#codRateio___'+selectedItem.inputId.split('___')[1]).val(selectedItem['CCODIGO']);
+        } else {
+            alert('Centro de Custo bloqueado!');
+            window['zoomCCustoRateio___'+selectedItem.inputId.split('___')[1]].clear();
+        }
+    }
 
     if(selectedItem.inputId == 'zoomCCustoSolic') {
         $('#CODCCUSTOSOLIC').val(selectedItem.CCODIGO);

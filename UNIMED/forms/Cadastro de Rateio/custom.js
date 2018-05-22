@@ -42,6 +42,15 @@ function mask() {
 
 function setSelectedZoomItem(selectedItem){
     if(selectedItem.inputId == 'zoomCCustoRateio___'+selectedItem.inputId.split('___')[1]) {
-        $('#codRateio___'+selectedItem.inputId.split('___')[1]).val(selectedItem['CCODIGO']);
+        if(selectedItem['CSTATUS'] == 'NAO BLOQUEADO' && selectedItem['CTIPO'] == "ANALITICO") {
+            $('#codRateio___'+selectedItem.inputId.split('___')[1]).val(selectedItem['CCODIGO']);
+        } else {
+            alert('Centro de Custo bloqueado!');
+            window['zoomCCustoRateio___'+selectedItem.inputId.split('___')[1]].clear();
+        }
     }
+}
+
+function setZoomData(instance, value){
+    window[instance].setValue(value);
 }

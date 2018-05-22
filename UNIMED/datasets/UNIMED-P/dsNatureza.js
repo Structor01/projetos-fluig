@@ -5,8 +5,8 @@ function defineStructure() {
     addColumn("CCONTACONTABIL");
 
     log.info("--OFFLINE-- defineStructure addColumn");
-    setKey(new Array( "CDESCRICAO"));
-    addIndex(new Array( "CDESCRICAO"));
+    setKey(new Array( "CNATUREZA"));
+    addIndex(new Array( "CNATUREZA"));
 
     log.info("--OFFLINE-- defineStructure FIM");
 }
@@ -35,7 +35,7 @@ function onSync(lastSyncDate){
                 ifNull(newerDataset.getValue(i,"CDESCRICAO"),""),
                 ifNull(newerDataset.getValue(i,"CCONTACONTABIL"),"")
             ));
-            updated.push(new Array(newerDataset.getValue(i,"CDESCRICAO")));
+            updated.push(new Array(newerDataset.getValue(i,"CNATUREZA")));
             log.info("--OFFLINE-- i: "+ (i + 1) + "/" + newerDataset.rowsCount + " updated: " + updated);
         }
 
@@ -71,10 +71,10 @@ function createDataset(fields, constraints, sortFields) {
     var listaEmpresas = ServiceManager.getService('WS_UNIMED_PROTHEUS');
     log.warn("--Debbug-- listaCliente: " +listaEmpresas);
 //    var serviceHelper = listaEmpresas.getBean();
-    var serviceLocator = listaEmpresas.instantiate('_139._0._20._172._7784.WSUNIMED');
+    var serviceLocator = listaEmpresas.instantiate('_139._0._20._172._7780.WSUNIMED');
     log.warn("--Debbug-- serviceLocator: " +serviceLocator);
     var service = serviceLocator.getWSUNIMEDSOAP();
-    var serviceCCusto= listaEmpresas.instantiate('_139._0._20._172._7784.ObjectFactory');
+    var serviceCCusto= listaEmpresas.instantiate('_139._0._20._172._7780.ObjectFactory');
     var ntrza = serviceCCusto.createNATUREZA();
     log.warn("--Debbug-- ntrza: " +ntrza);
 
@@ -88,13 +88,13 @@ function createDataset(fields, constraints, sortFields) {
 
     if (constraints != null) {
         for (var c = 0; c < constraints.length; c++){
-            // if (constraints[c].fieldName == "CCODIGO"){
-            //     log.warn("--Debbug-- CCODIGO: " + constraints[c].initialValue);
-            //     filtro = constraints[c].initialValue;
-            // }
+            if (constraints[c].fieldName == "CCODIGO"){
+                log.warn("--Debbug-- CCODIGO: " + constraints[c].initialValue);
+                filtro = constraints[c].initialValue;
+            }
             if (constraints[c].fieldName == "CNATUREZA"){
                 log.warn("--Debbug-- CNATUREZA: " + constraints[c].initialValue);
-                ntrza.setCNATUREZA(constraints[c].initialValue);
+                filtro = constraints[c].initialValue;
             }
         }
     }
@@ -109,17 +109,25 @@ function createDataset(fields, constraints, sortFields) {
         log.warn("--Debbug-- result: " +result);
         //lorg.dir(result);
         //log.warn("--Debbug-- qt registros retornados: " + result.getAEMPRESAS());
-        // log.warn("--Debbug-- qt registros retornados: " + result.getANATUREZA().getSTRUCTRETNATUREZA().get(0).getCDESCRICAO());
+        log.warn("--Debbug-- qt registros retornados: " + result.getANATUREZA().getSTRUCTRETNATUREZA().get(0).getCDESCRICAO());
         //log.warn("--Debbug-- length: " + result.getAEMPRESAS().getSTRUCTRETEMPRESAS().length);
         log.warn("--Debbug-- SIZE: " + result.getANATUREZA().getSTRUCTRETNATUREZA().size());
         var status = '';
 
-        for(var i=0;i<result.getANATUREZA().getSTRUCTRETNATUREZA().size();i++){
-            var registro = result.getANATUREZA().getSTRUCTRETNATUREZA().get(i);
-            log.warn(registro.getCNATUREZA() + registro.getCDESCRICAO() + registro.getCCONTACONTABIL());
-            dataset.addRow(new Array(registro.getCNATUREZA(), registro.getCDESCRICAO(),registro.getCCONTACONTABIL()));
-        }
+        for(var i = 0; i < result.getANATUREZA().getSTRUCTRETNATUREZA().size();i++){
 
+            var registro = result.getANATUREZA().getSTRUCTRETNATUREZA().get(i);
+
+            if(
+                filtro != '' &&
+                (registro.getCNATUREZA().indexOf(filtro) > -1 ||
+                registro.getCDESCRICAO().indexOf(filtro) > -1 ||
+                registro.getCCONTACONTABIL().indexOf(filtro) > -1)) {
+                dataset.addRow(new Array(registro.getCNATUREZA(), registro.getCDESCRICAO(), registro.getCCONTACONTABIL()));
+            } else if(filtro == '') {
+                dataset.addRow(new Array(registro.getCNATUREZA(), registro.getCDESCRICAO(), registro.getCCONTACONTABIL()));
+            }
+        }
     } catch (erro){
         log.warn("--Debbug-- erro: " +erro);
         log.warn("--Debbug-- erro --linha: " +erro.lineNumber);
