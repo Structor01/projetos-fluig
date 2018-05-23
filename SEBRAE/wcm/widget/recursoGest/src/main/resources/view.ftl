@@ -43,9 +43,10 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title"><span class="fluigicon fluigicon-filter fluigicon-sm"></span> Filtros</h3>
+					<span onclick="$('#filtros').slideToggle()" class="fluigicon fluigicon-pointer-down fluigicon-sm fs-float-right" style="margin-top: -1rem;"></span>
 				</div>
-				<div class="panel-body">
-					<div class="form-group col-3">
+				<div class="panel-body" id="filtros" style="display: none;">
+					<div class="form-group col-md-3">
 						<label for="porRecurso">Recurso</label>
 						<select class="form-control">
 							<option value="">Selecione</option>
