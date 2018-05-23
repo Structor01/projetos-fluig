@@ -69,7 +69,7 @@ var HelloWorld = SuperWidget.extend({
         }
 
         var constraintCA = new Array();
-        constraintCA.push(DatasetFactory.createConstraint("responsavelAprovacao", "F640", "F640", ConstraintType.MUST));
+        constraintCA.push(DatasetFactory.createConstraint("responsavelAprovacao", top.WCMAPI.userCode, top.WCMAPI.userCode, ConstraintType.MUST));
 
         if(filtro) {
             var f = filtro.split(',');
@@ -87,7 +87,7 @@ var HelloWorld = SuperWidget.extend({
         var calendarEventos = new Array();
         for(var i in processosAtivos.values) {
             calendarEventos.push({
-                title: processosAtivos.values[i]['recurso'],
+                title: processosAtivos.values[i]['documentid'] + ' - ' + processosAtivos.values[i]['recurso'],
                 start: switchMonth(processosAtivos.values[i]['dtInicio']),
                 end: switchMonth(processosAtivos.values[i]['dtFinal'])
             });
@@ -122,29 +122,55 @@ var HelloWorld = SuperWidget.extend({
                         'label': 'Fechar',
                         'autoClose': true
                     }]
-                }, function(err, data) {
-                    if(err) {
-                        // do error handling
-                    } else {
-                        // do something with data
-                    }
                 });
 
+                var form = DatasetFactory.getDataset(
+                    "dsReserva_Recursos",
+                    null,
+                    [DatasetFactory.createConstraint("documentid",
+                        calEvent.title.split(' - ')[0],
+                        calEvent.title.split(' - ')[0],
+                        ConstraintType.MUST)],
+                    null);
+
+                for(var i in form.values) {
+                    var r = form.values[i];
+                    var algumSelected = false;
+                    for(var i in Object.keys(r)) {
+                        if(Object.keys(r)[i].indexOf('rc') > -1 && Object.keys(r)[i].indexOf('Obs') == -1) {
+                            if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
+                                $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
+                                    .attr('checked','true');
+                                algumSelected = true;
+                            } else {
+                                $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']').parent().parent().remove();
+                            }
+                        }
+                    }
+                    if(algumSelected == false) {
+                        $('#instanceModal_C').find('.recursos').remove();
+                    }
+                }
+
                 $('#instanceModal_C').find('.title').val(calEvent.title);
-                $('#instanceModal_C').find('.start').val(transformDate(calEvent.start));
-                $('#instanceModal_C').find('.end').val(transformDate(calEvent.end));
+                $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
+                $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
+                $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
+                $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
+                $('#instanceModal_C').find('.start').val(switchMonth(calEvent.start['_i']));
+                $('#instanceModal_C').find('.end').val(switchMonth(calEvent.end['_i']));
             },
             viewRender: function(view, element) {
                 $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
                 $('a.fc-time-grid-event').css('padding', '5px');
                 $('a.fc-time-grid-event, .fc-content').css('background-color', 'rgba(0, 0, 0, 0)');
-                $('.fc-day-grid-event').css('border', 'none');
+                $('.fc-day-grid-event, .fc-time-grid-event').css('border', 'none');
                 $('.fc-list-item').find('td').css('padding','5px');
                 $('.fc-widget-header').css('padding','5px');
             }
         });
     },
-    email: "karoline.souza@sebraego.com.br"
+    email: top.WCMAPI.userEmail
 });
 
 function arrangeData(e) {
@@ -228,8 +254,10 @@ function transformDate(e) {
     var date = new Date(e);
     var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     var month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
+    var hour = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+    var minute = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
 
-    return  day + '/' + month + '/' + date.getFullYear();
+    return  day + '/' + month + '/' + date.getFullYear() + ' ' + hour + ":" + minute;
 }
 
 function getDateNow() {
