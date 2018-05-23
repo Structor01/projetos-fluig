@@ -42,12 +42,14 @@
 		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Filtros</h3>
+					<h3 class="panel-title"><span class="fluigicon fluigicon-filter fluigicon-sm"></span> Filtros</h3>
 				</div>
 				<div class="panel-body">
-					<div class="form-group">
+					<div class="form-group col-3">
 						<label for="porRecurso">Recurso</label>
-						<input type="email" class="form-control" id="porRecurso" placeholder="">
+						<select class="form-control">
+							<option value="">Selecione</option>
+						</select>
 					</div>
 				</div>
 			</div>
