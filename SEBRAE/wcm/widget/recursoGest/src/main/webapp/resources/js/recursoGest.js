@@ -2,38 +2,14 @@ var HelloWorld = SuperWidget.extend({
     message: null,
     calendarEv: [],
     init: function () {
-
-        // var constraints = new Array();
-        // var today = new Date();
-        // var m = today.getMonth() + 1 < 10 ? '0'+ parseInt(today.getMonth() + 1) : today.getMonth() + 1;
-        // constraints.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
-        // constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
-        // var c5 = DatasetFactory.createConstraint("dtInicio", "%/"+m+"/%", "%/"+m+"/%", ConstraintType.MUST);
-        // constraints.push(c5);
-        // var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
-        // this.eventos = dataset.values;
-        // this.htmlC = ''
-
         this.calendarEv = new Array();
         $('#rowEventos').html(this.htmlC);
+        this.recursos();
 
-        $('#calendar').fullCalendar({
-            lang: 'pt',
-            events: null,
-            eventClick: function(calEvent, jsEvent, view) {
-                alert('Event: ' + calEvent.title);
-                alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                alert('View: ' + view.name);
-                $(this).css('border-color', 'red');
-            },
-            viewRender: function(view, element) {
-                $('.fc-content').each(function () {
-                    // var hex = getRandomColor();
-                    $(this).css('background-color', '#0080ff!important');
-                    $(this).find('span').css('color', 'white');
-                });
-            }
-        });
+        $('#porRecurso').on('fluig.autocomplete.itemAdded', function () {
+            alert('fewqwe');
+            console.log($(this).val());
+        })
     },
     bindings: {
         local: {
@@ -66,7 +42,82 @@ var HelloWorld = SuperWidget.extend({
                 alert(errMsg);
             }
         });
-    }
+    },
+    recursos: function () {
+        var filtroRecursos = DatasetFactory.getDataset(
+            "sebrae_cadastra_recursos",
+            null,
+            [DatasetFactory.createConstraint("cdResponsavelRecurso", this.email, this.email, ConstraintType.MUST)],
+            null);
+        console.log(filtroRecursos.values);
+
+        var rec = [];
+        for(var i in filtroRecursos.values) {
+            rec.push(filtroRecursos.values[i]['dsNome']);
+        }
+
+        var myAutocomplete = FLUIGC.autocomplete('#porRecurso', {
+            source: substringMatcher(rec),
+            name: 'recursos',
+            displayKey: 'description',
+            tagClass: 'tag-gray',
+            type: 'tagAutocomplete'
+        });
+
+        var processosAtivos = DatasetFactory.getDataset(
+            "dsReserva_Recursos",
+            null,
+            [DatasetFactory.createConstraint("responsavelAprovacao", "F640", "F640", ConstraintType.MUST)],
+            null);
+        var calendarEventos = new Array();
+        for(var i in processosAtivos.values) {
+            calendarEventos.push({
+                title: processosAtivos.values[i]['recurso'],
+                start: switchMonth(processosAtivos.values[i]['dtInicio']),
+                end: switchMonth(processosAtivos.values[i]['dtFinal'])
+            });
+        }
+
+        $('#calendar').fullCalendar({
+            lang: 'pt',
+            events: calendarEventos,
+            eventClick: function(calEvent, jsEvent, view) {
+                // alert('Event: ' + calEvent.title);
+                // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                // alert('View: ' + view.name);
+                // $(this).css('border-color', 'red');
+                var myModal = FLUIGC.modal({
+                    title: 'Evento',
+                    content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
+                    id: 'fluig-modal',
+                    size:'full',
+                    actions: [{
+                        'label': 'Fechar',
+                        'autoClose': true
+                    }]
+                }, function(err, data) {
+                    if(err) {
+                        // do error handling
+                    } else {
+                        // do something with data
+                    }
+                });
+
+                $('#instanceModal_C').find('.title').val(calEvent.title);
+                $('#instanceModal_C').find('.start').val(transformDate(calEvent.start));
+                $('#instanceModal_C').find('.end').val(transformDate(calEvent.end));
+            },
+            viewRender: function(view, element) {
+                $('.fc-content').each(function () {
+                    // var hex = getRandomColor();
+                    $(this).css('background-color', '#0080ff!important');
+                    $(this).find('span').css('color', 'white');
+                });
+            }
+        });
+
+    },
+    email: "karoline.souza@sebraego.com.br"
 });
 
 function arrangeData(e) {
@@ -146,6 +197,14 @@ function switchMonth(el) {
     return v1[1] + '/' + v1[0] + '/' +v1[2] + ' ' + v[1];
 }
 
+function transformDate(e) {
+    var date = new Date(e);
+    var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    var month = (date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1);
+
+    return  day + '/' + month + '/' + date.getFullYear();
+}
+
 function getDateNow() {
     var today = new Date();
     var year = today.getFullYear();
@@ -160,15 +219,21 @@ function getDateNow() {
     return currentTime;
 }
 
-// function getRandomColor() {
-//     var letters = '0123456789ABCDEF';
-//     var color = '#';
-//     for (var i = 0; i < 6; i++) {
-//         color += letters[Math.floor(Math.random() * 16)];
-//     }
-//     return color;
-// }
-//
-// function getContrast50(hexcolor){
-//     return (parseInt(hexcolor, 16) > 0xffffff/2) ? 'black':'white';
-// }
+function substringMatcher(strs) {
+    return function findMatches(q, cb) {
+        var matches, substrRegex;
+
+        matches = [];
+
+        substrRegex = new RegExp(q, 'i');
+
+        $.each(strs, function(i, str) {
+            if (substrRegex.test(str)) {
+                matches.push({
+                    description: str
+                });
+            }
+        });
+        cb(matches);
+    };
+}

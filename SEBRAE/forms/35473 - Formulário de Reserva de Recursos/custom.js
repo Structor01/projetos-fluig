@@ -6,7 +6,7 @@ $(document).ready(function () {
         // setZoomData('solicitanteInformado', top.WCMAPI.user);
     }
 
-    if(getWKNumState() == 5 || getWKNumState() == 4 || formMode == 'VIEW') {
+    if(getWKNumState() == 5 || getWKNumState() == 4 || formMode == 'VIEW' || getWKNumState() == 9) {
         $('.aprovacao').removeClass('hide');
         $('.horarios').removeClass('hide');
         $('.recursos').removeClass('hide');
