@@ -109,6 +109,9 @@ function createDataset(fields, constraints, sortFields) {
             if (doc && doc.rowsCount > 0) {
                 var process = false;
                 log.info("Entrou no "+ i +"!");
+                log.warn("Agora: " + arrangeData(getDateNow()))
+                log.warn("Final: " + arrangeData(doc.getValue(0, 'dtFinal')))
+
                 if (available.getValue(i, 'codTask') == '6' && arrangeData(getDateNow()) > arrangeData(doc.getValue(0, 'dtFinal'))) {
                     process = atualizaProcessos(
                         dataset.values[i]["processInstanceId"],
