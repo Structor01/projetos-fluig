@@ -8,6 +8,8 @@ var HelloWorld = SuperWidget.extend({
 
         $('#porRecurso').on('fluig.autocomplete.itemAdded', function () {
             alert('fewqwe');
+            // $('#calendar').html('');
+            HelloWorld.recursos($(this).val());
             console.log($(this).val());
         })
     },
@@ -43,31 +45,43 @@ var HelloWorld = SuperWidget.extend({
             }
         });
     },
-    recursos: function () {
-        var filtroRecursos = DatasetFactory.getDataset(
-            "sebrae_cadastra_recursos",
-            null,
-            [DatasetFactory.createConstraint("cdResponsavelRecurso", this.email, this.email, ConstraintType.MUST)],
-            null);
-        console.log(filtroRecursos.values);
+    recursos: function (filtro) {
+        if(!filtro) {
+            var filtroRecursos = DatasetFactory.getDataset(
+                "sebrae_cadastra_recursos",
+                null,
+                [DatasetFactory.createConstraint("cdResponsavelRecurso", this.email, this.email, ConstraintType.MUST)],
+                null);
+            console.log(filtroRecursos.values);
 
-        var rec = [];
-        for(var i in filtroRecursos.values) {
-            rec.push(filtroRecursos.values[i]['dsNome']);
+            var rec = [];
+            for (var i in filtroRecursos.values) {
+                rec.push(filtroRecursos.values[i]['dsNome']);
+            }
+
+            var myAutocomplete = FLUIGC.autocomplete('#porRecurso', {
+                source: substringMatcher(rec),
+                name: 'recursos',
+                displayKey: 'description',
+                tagClass: 'tag-gray',
+                type: 'tagAutocomplete'
+            });
         }
 
-        var myAutocomplete = FLUIGC.autocomplete('#porRecurso', {
-            source: substringMatcher(rec),
-            name: 'recursos',
-            displayKey: 'description',
-            tagClass: 'tag-gray',
-            type: 'tagAutocomplete'
-        });
+        var constraintCA = new Array();
+        constraintCA.push(DatasetFactory.createConstraint("responsavelAprovacao", "F640", "F640", ConstraintType.MUST));
+
+        if(filtro) {
+            var f = filtro.split(',');
+            for(var i in f) {
+                constraintCA.push(DatasetFactory.createConstraint("recurso", f[i], f[i], ConstraintType.MUST));
+            }
+        }
 
         var processosAtivos = DatasetFactory.getDataset(
             "dsReserva_Recursos",
             null,
-            [DatasetFactory.createConstraint("responsavelAprovacao", "F640", "F640", ConstraintType.MUST)],
+            constraintCA,
             null);
         var calendarEventos = new Array();
         for(var i in processosAtivos.values) {
@@ -76,6 +90,11 @@ var HelloWorld = SuperWidget.extend({
                 start: switchMonth(processosAtivos.values[i]['dtInicio']),
                 end: switchMonth(processosAtivos.values[i]['dtFinal'])
             });
+        }
+
+        if(filtro) {
+            $('#calendar').fullCalendar('updateEvents', calendarEventos);
+            return;
         }
 
         $('#calendar').fullCalendar({

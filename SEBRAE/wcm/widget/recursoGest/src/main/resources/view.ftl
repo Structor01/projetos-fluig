@@ -43,7 +43,7 @@
 	<div class="page-content container-fluid">
 		<div class="row">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="background: none !important;">
+				<div class="panel-heading" onclick="$('#filtros').slideToggle()" style="background: none !important;">
 					<h3 class="panel-title" style="color: #0080ff!important;"><span class="fluigicon fluigicon-filter fluigicon-sm"></span> Filtros</h3>
 					<span onclick="$('#filtros').slideToggle()" class="fluigicon fluigicon-pointer-down fluigicon-sm fs-float-right" style="margin-top: -1rem; color: #0080ff!important;"></span>
 				</div>
