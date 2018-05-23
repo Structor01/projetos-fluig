@@ -19,6 +19,14 @@ body .fc {
     /* extra precedence to overcome jqui */
     font-size: 1em; }
 
+.fc-title {
+    color: white !important;
+}
+
+.fc-bg {
+    background: #0A8ECC;
+}
+
 /* Colors
 --------------------------------------------------------------------------------------------------*/
 .fc-highlight {

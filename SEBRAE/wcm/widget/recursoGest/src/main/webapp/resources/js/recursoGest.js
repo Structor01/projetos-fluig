@@ -83,6 +83,7 @@ var HelloWorld = SuperWidget.extend({
             null,
             constraintCA,
             null);
+
         var calendarEventos = new Array();
         for(var i in processosAtivos.values) {
             calendarEventos.push({
@@ -93,13 +94,20 @@ var HelloWorld = SuperWidget.extend({
         }
 
         if(filtro) {
-            $('#calendar').fullCalendar('updateEvents', calendarEventos);
+            $('#calendar').fullCalendar('removeEventSources');
+            $('#calendar').fullCalendar('addEventSource', calendarEventos);
             return;
         }
 
         $('#calendar').fullCalendar({
             lang: 'pt',
             events: calendarEventos,
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,listWeek'
+            },
+            defaultView: 'listWeek',
             eventClick: function(calEvent, jsEvent, view) {
                 // alert('Event: ' + calEvent.title);
                 // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
@@ -127,14 +135,14 @@ var HelloWorld = SuperWidget.extend({
                 $('#instanceModal_C').find('.end').val(transformDate(calEvent.end));
             },
             viewRender: function(view, element) {
-                $('.fc-content').each(function () {
-                    // var hex = getRandomColor();
-                    $(this).css('background-color', '#0080ff!important');
-                    $(this).find('span').css('color', 'white');
-                });
+                $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
+                $('a.fc-time-grid-event').css('padding', '5px');
+                $('a.fc-time-grid-event, .fc-content').css('background-color', 'rgba(0, 0, 0, 0)');
+                $('.fc-day-grid-event').css('border', 'none');
+                $('.fc-list-item').find('td').css('padding','5px');
+                $('.fc-widget-header').css('padding','5px');
             }
         });
-
     },
     email: "karoline.souza@sebraego.com.br"
 });
