@@ -141,7 +141,6 @@ function createDataset(fields, constraints, sortFields) {
     log.warn("--Debbug-- ccusto.getCCUSTO: " +ccusto.getCCUSTO());
 
     try {
-
         var result = service.consultaccusto(ccusto);
         log.warn("--Debbug-- result: " +result);
         //lorg.dir(result);

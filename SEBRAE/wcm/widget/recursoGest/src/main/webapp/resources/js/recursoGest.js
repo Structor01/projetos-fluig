@@ -2,37 +2,24 @@ var HelloWorld = SuperWidget.extend({
     message: null,
     calendarEv: [],
     init: function () {
-        var constraints = new Array();
-        var today = new Date();
-        var m = today.getMonth() + 1 < 10 ? '0'+ parseInt(today.getMonth() + 1) : today.getMonth() + 1;
-        constraints.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
-        constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
-        var c5 = DatasetFactory.createConstraint("dtInicio", "%/"+m+"/%", "%/"+m+"/%", ConstraintType.MUST);
-        constraints.push(c5);
-        var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
-        this.eventos = dataset.values;
-        this.htmlC = ''
+
+        // var constraints = new Array();
+        // var today = new Date();
+        // var m = today.getMonth() + 1 < 10 ? '0'+ parseInt(today.getMonth() + 1) : today.getMonth() + 1;
+        // constraints.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
+        // constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
+        // var c5 = DatasetFactory.createConstraint("dtInicio", "%/"+m+"/%", "%/"+m+"/%", ConstraintType.MUST);
+        // constraints.push(c5);
+        // var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
+        // this.eventos = dataset.values;
+        // this.htmlC = ''
+
         this.calendarEv = new Array();
-        // return sync(this.eventos);
-        for(var i in this.eventos) {
-            this.calendarEv.push({
-                title: this.eventos[i]['nomeEvento'],
-                start: switchMonth(this.eventos[i]['dtInicio']),
-                end: switchMonth(this.eventos[i]['dtFinal'])
-            });
-            this.htmlC += '<tr>' +
-                '<td>' + this.eventos[i]['nomeEvento'] + '</td>' +
-                '<td>' + this.eventos[i]['tipoEvento'] + '</td>' +
-                '<td>' + this.eventos[i]['unidadeVinculada'] + '</td>' +
-                '<td>' + this.eventos[i]['dtInicio'] + '</td>' +
-                '<td>' + this.eventos[i]['dtFinal'] + '</td>' +
-                '<td>' + this.eventos[i]['location'] + '</td>' +
-                '</tr>';
-        }
         $('#rowEventos').html(this.htmlC);
+
         $('#calendar').fullCalendar({
             lang: 'pt',
-            events: this.calendarEv,
+            events: null,
             eventClick: function(calEvent, jsEvent, view) {
                 alert('Event: ' + calEvent.title);
                 alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
@@ -48,7 +35,6 @@ var HelloWorld = SuperWidget.extend({
             }
         });
     },
-
     bindings: {
         local: {
             'show-message': ['click_showMessage']
