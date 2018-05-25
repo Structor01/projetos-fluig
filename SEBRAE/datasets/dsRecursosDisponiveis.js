@@ -4,12 +4,16 @@ function defineStructure() {
     addColumn("sol");
     addColumn("dtInicio");
     addColumn("dtFinal");
+    addColumn("dtSolicitacao");
     addColumn("qtSolicitada");
     addColumn("codigoRecurso");
+    addColumn("cardId");
+    addColumn("resp");
+    addColumn("respNome");
 
     log.info("--OFFLINE-- defineStructure addColumn");
-    setKey(new Array( "sol"));
-    addIndex(new Array( "sol"));
+    setKey(new Array( "cardId"));
+    addIndex(new Array( "cardId"));
 
     log.info("--OFFLINE-- defineStructure FIM");
 }
@@ -37,8 +41,12 @@ function onSync(lastSyncDate){
                 ifNull(newerDataset.getValue(i,"sol"),""),
                 ifNull(newerDataset.getValue(i,"dtInicio"),""),
                 ifNull(newerDataset.getValue(i,"dtFinal"),""),
+                ifNull(newerDataset.getValue(i,"dtSolicitacao"),""),
                 ifNull(newerDataset.getValue(i,"qtSolicitada"),""),
-                ifNull(newerDataset.getValue(i,"codigoRecurso"),"")
+                ifNull(newerDataset.getValue(i,"codigoRecurso"),""),
+                ifNull(newerDataset.getValue(i,"cardId"),""),
+                ifNull(newerDataset.getValue(i,"resp"),""),
+                ifNull(newerDataset.getValue(i,"respNome"),"")
             ));
             updated.push(new Array(newerDataset.getValue(i,"sol")));
             log.info("--OFFLINE-- i: "+ (i + 1) + "/" + newerDataset.rowsCount + " updated: " + updated);
@@ -51,8 +59,12 @@ function onSync(lastSyncDate){
                         ifNull(olderDataset.getValue(i,"sol"),""),
                         ifNull(olderDataset.getValue(i,"dtInicio"),""),
                         ifNull(olderDataset.getValue(i,"dtFinal"),""),
+                        ifNull(olderDataset.getValue(i,"dtSolicitacao"),""),
                         ifNull(olderDataset.getValue(i,"qtSolicitada"),""),
-                        ifNull(olderDataset.getValue(i,"codigoRecurso"),"")
+                        ifNull(olderDataset.getValue(i,"codigoRecurso"),""),
+                        ifNull(olderDataset.getValue(i,"cardId"),""),
+                        ifNull(olderDataset.getValue(i,"resp"),""),
+                        ifNull(olderDataset.getValue(i,"respNome"),"")
                     ));
                 }
             }
@@ -73,8 +85,12 @@ function onMobileSync(user) {
         "sol",
         "dtInicio",
         "dtFinal",
+        "dtSolicitacao",
         "qtSolicitada",
-        "codigoRecurso"
+        "codigoRecurso",
+        "cardId",
+        "resp",
+        "respNome"
     );
 
     var constraints = new Array();
@@ -95,8 +111,12 @@ function createDataset(fields, constraints, sortFields) {
     dataset.addColumn("sol");
     dataset.addColumn("dtInicio");
     dataset.addColumn("dtFinal");
+    dataset.addColumn("dtSolicitacao");
     dataset.addColumn("qtSolicitada");
     dataset.addColumn("codigoRecurso");
+    dataset.addColumn("cardId");
+    dataset.addColumn("resp");
+    dataset.addColumn("respNome");
 
     try {
         var available = getAvailable();
@@ -125,8 +145,12 @@ function createDataset(fields, constraints, sortFields) {
                     doc.getValue(0, 'solicitanteInformado'),
                     doc.getValue(0, 'dtInicio'),
                     doc.getValue(0, 'dtFinal'),
+                    doc.getValue(0, 'dtSolicitacao'),
                     doc.getValue(0, 'qtSolicitada'),
-                    doc.getValue(0, 'codigoRecurso')
+                    doc.getValue(0, 'codigoRecurso'),
+                    available.getValue(i, "cardId"),
+                    doc.getValue(0, 'responsavelAprovacao'),
+                    doc.getValue(0, 'responsavel')
                 ));
             }
         }

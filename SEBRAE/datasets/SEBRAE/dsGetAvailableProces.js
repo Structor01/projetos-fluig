@@ -1,109 +1,109 @@
-function defineStructure() {
-    log.info("--OFFLINE-- defineStructure");
-
-    addColumn("processId");
-    addColumn("processInstanceId");
-    addColumn("requesterId");
-    addColumn("active");
-    addColumn("version");
-    addColumn("expired");
-    addColumn("codTask");
-    addColumn("cardId");
-    addColumn("task");
-
-    log.info("--OFFLINE-- defineStructure addColumn");
-    setKey(new Array( "processInstanceId"));
-    addIndex(new Array( "processInstanceId"));
-
-    log.info("--OFFLINE-- defineStructure FIM");
-}
-
-function onSync(lastSyncDate){
-    log.info("--OFFLINE-- onSync ");
-
-    var dataset = DatasetBuilder.newDataset();
-    log.info("--OFFLINE-- dataset: "+dataset);
-
-    var newerDataset = createDataset();
-    log.info("--OFFLINE-- newerDataset: "+newerDataset);
-
-    var olderDataset = DatasetFactory.getDataset("dsGetAvailableProces", null, null, null);
-    log.info("--OFFLINE-- olderDataset: "+olderDataset);
-
-    var ifNull = function(value, ifNullValue){
-        return value == null || value == "" ? ifNullValue : value;
-    }
-
-    if(newerDataset != null){
-        var updated = new Array();
-        for(var i = 0; i < newerDataset.rowsCount; i++){
-            dataset.addOrUpdateRow(new Array(
-                ifNull(newerDataset.getValue(i,"processId"),""),
-                ifNull(newerDataset.getValue(i,"processInstanceId"),""),
-                ifNull(newerDataset.getValue(i,"requesterId"),""),
-                ifNull(newerDataset.getValue(i,"active"),""),
-                ifNull(newerDataset.getValue(i,"version"),""),
-                ifNull(newerDataset.getValue(i,"expired"),""),
-                ifNull(newerDataset.getValue(i,"codTask"),""),
-                ifNull(newerDataset.getValue(i,"cardId"),""),
-                ifNull(newerDataset.getValue(i,"task"),"")
-            ));
-            updated.push(new Array(newerDataset.getValue(i,"processInstanceId")));
-            log.info("--OFFLINE-- i: "+ (i + 1) + "/" + newerDataset.rowsCount + " updated: " + updated);
-        }
-
-        if(olderDataset != null){
-            for(var i = 0; i < olderDataset.rowsCount; i++){
-                if(updated.indexOf(olderDataset.getValue(i,"processInstanceId") == -1)){
-                    dataset.deleteRow(new Array(
-                        ifNull(olderDataset.getValue(i,"processId"),""),
-                        ifNull(olderDataset.getValue(i,"processInstanceId"),""),
-                        ifNull(olderDataset.getValue(i,"requesterId"),""),
-                        ifNull(olderDataset.getValue(i,"active"),""),
-                        ifNull(olderDataset.getValue(i,"version"),""),
-                        ifNull(olderDataset.getValue(i,"expired"),""),
-                        ifNull(olderDataset.getValue(i,"codTask"),""),
-                        ifNull(olderDataset.getValue(i,"cardId"),""),
-                        ifNull(olderDataset.getValue(i,"task"),"")
-                    ));
-                }
-            }
-        }
-    }
-
-    log.info("--OFFLINE-- return dataset: "+dataset);
-    log.info("--OFFLINE-- onSync FIM");
-    return dataset;
-}
-
-function onMobileSync(user) {
-    log.warn("--MOBILE-- dsCidade.js - onMobileSync");
-
-    var sortingFields = new Array();
-
-    var fields = new Array(
-        "processId",
-        "processInstanceId",
-        "active",
-        "requesterId",
-        "version",
-        "expired",
-        "codTask",
-        "cardId",
-        "task"
-    );
-
-    var constraints = new Array();
-
-    var result = {
-        'fields' : fields,
-        'constraints' : constraints,
-        'sortingFields' : sortingFields
-    };
-
-    log.warn("--MOBILE-- dsCidade.js - fim onMobileSync");
-    return result;
-}
+// function defineStructure() {
+//     log.info("--OFFLINE-- defineStructure");
+//
+//     addColumn("processId");
+//     addColumn("processInstanceId");
+//     addColumn("requesterId");
+//     addColumn("active");
+//     addColumn("version");
+//     addColumn("expired");
+//     addColumn("codTask");
+//     addColumn("cardId");
+//     addColumn("task");
+//
+//     log.info("--OFFLINE-- defineStructure addColumn");
+//     setKey(new Array( "processInstanceId"));
+//     addIndex(new Array( "processInstanceId"));
+//
+//     log.info("--OFFLINE-- defineStructure FIM");
+// }
+//
+// function onSync(lastSyncDate){
+//     log.info("--OFFLINE-- onSync ");
+//
+//     var dataset = DatasetBuilder.newDataset();
+//     log.info("--OFFLINE-- dataset: "+dataset);
+//
+//     var newerDataset = createDataset();
+//     log.info("--OFFLINE-- newerDataset: "+newerDataset);
+//
+//     var olderDataset = DatasetFactory.getDataset("dsGetAvailableProces", null, null, null);
+//     log.info("--OFFLINE-- olderDataset: "+olderDataset);
+//
+//     var ifNull = function(value, ifNullValue){
+//         return value == null || value == "" ? ifNullValue : value;
+//     }
+//
+//     if(newerDataset != null){
+//         var updated = new Array();
+//         for(var i = 0; i < newerDataset.rowsCount; i++){
+//             dataset.addOrUpdateRow(new Array(
+//                 ifNull(newerDataset.getValue(i,"processId"),""),
+//                 ifNull(newerDataset.getValue(i,"processInstanceId"),""),
+//                 ifNull(newerDataset.getValue(i,"requesterId"),""),
+//                 ifNull(newerDataset.getValue(i,"active"),""),
+//                 ifNull(newerDataset.getValue(i,"version"),""),
+//                 ifNull(newerDataset.getValue(i,"expired"),""),
+//                 ifNull(newerDataset.getValue(i,"codTask"),""),
+//                 ifNull(newerDataset.getValue(i,"cardId"),""),
+//                 ifNull(newerDataset.getValue(i,"task"),"")
+//             ));
+//             updated.push(new Array(newerDataset.getValue(i,"processInstanceId")));
+//             log.info("--OFFLINE-- i: "+ (i + 1) + "/" + newerDataset.rowsCount + " updated: " + updated);
+//         }
+//
+//         if(olderDataset != null){
+//             for(var i = 0; i < olderDataset.rowsCount; i++){
+//                 if(updated.indexOf(olderDataset.getValue(i,"processInstanceId") == -1)){
+//                     dataset.deleteRow(new Array(
+//                         ifNull(olderDataset.getValue(i,"processId"),""),
+//                         ifNull(olderDataset.getValue(i,"processInstanceId"),""),
+//                         ifNull(olderDataset.getValue(i,"requesterId"),""),
+//                         ifNull(olderDataset.getValue(i,"active"),""),
+//                         ifNull(olderDataset.getValue(i,"version"),""),
+//                         ifNull(olderDataset.getValue(i,"expired"),""),
+//                         ifNull(olderDataset.getValue(i,"codTask"),""),
+//                         ifNull(olderDataset.getValue(i,"cardId"),""),
+//                         ifNull(olderDataset.getValue(i,"task"),"")
+//                     ));
+//                 }
+//             }
+//         }
+//     }
+//
+//     log.info("--OFFLINE-- return dataset: "+dataset);
+//     log.info("--OFFLINE-- onSync FIM");
+//     return dataset;
+// }
+//
+// function onMobileSync(user) {
+//     log.warn("--MOBILE-- dsCidade.js - onMobileSync");
+//
+//     var sortingFields = new Array();
+//
+//     var fields = new Array(
+//         "processId",
+//         "processInstanceId",
+//         "active",
+//         "requesterId",
+//         "version",
+//         "expired",
+//         "codTask",
+//         "cardId",
+//         "task"
+//     );
+//
+//     var constraints = new Array();
+//
+//     var result = {
+//         'fields' : fields,
+//         'constraints' : constraints,
+//         'sortingFields' : sortingFields
+//     };
+//
+//     log.warn("--MOBILE-- dsCidade.js - fim onMobileSync");
+//     return result;
+// }
 
 function createDataset(fields, constraints, sortFields) {
     log.warn('--Dataset dsGetAvailableProces');
