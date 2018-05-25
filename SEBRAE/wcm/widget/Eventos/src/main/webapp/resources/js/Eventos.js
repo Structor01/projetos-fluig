@@ -32,6 +32,12 @@ var HelloWorld = SuperWidget.extend({
         $('#rowEventos').html(this.htmlC);
         $('#calendar').fullCalendar({
             lang: 'pt',
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,listWeek'
+            },
+            defaultView: 'listWeek',
             events: this.calendarEv,
             eventClick: function(calEvent, jsEvent, view) {
                 alert('Event: ' + calEvent.title);
@@ -40,11 +46,12 @@ var HelloWorld = SuperWidget.extend({
                 $(this).css('border-color', 'red');
             },
             viewRender: function(view, element) {
-                $('.fc-content').each(function () {
-                    // var hex = getRandomColor();
-                    $(this).css('background-color', '#0080ff!important');
-                    $(this).find('span').css('color', 'white');
-                });
+                $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
+                $('a.fc-time-grid-event').css('padding', '5px');
+                $('a.fc-time-grid-event, .fc-content').css('background-color', 'rgba(0, 0, 0, 0)');
+                $('.fc-day-grid-event, .fc-time-grid-event').css('border', 'none');
+                $('.fc-list-item').find('td').css('padding','5px');
+                $('.fc-widget-header').css('padding','5px');
             }
         });
     },

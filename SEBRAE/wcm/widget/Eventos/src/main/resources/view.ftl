@@ -39,16 +39,15 @@
 		}
 	</style>
 	<div class="page-content container-fluid">
-		<div class="row">
-			<button style="margin: 0.5rem" id="btn-calendar" onclick="changeView('calendar')" class="btn btn-primary active fs-float-right">
-				<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>
-			</button>
+		<!--<div class="row">-->
+			<!--<button style="margin: 0.5rem" id="btn-calendar" onclick="changeView('calendar')" class="btn btn-primary active fs-float-right">-->
+				<!--<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>-->
+			<!--</button>-->
 
-			<button style="margin: 0.5rem" id="btn-lista" onclick="changeView('lista')" class="btn fs-float-right">
-				<span class="fluigicon 	fluigicon-list fluigicon-sm"></span>
-			</button>
-		</div>
-
+			<!--<button style="margin: 0.5rem" id="btn-lista" onclick="changeView('lista')" class="btn fs-float-right">-->
+				<!--<span class="fluigicon 	fluigicon-list fluigicon-sm"></span>-->
+			<!--</button>-->
+		<!--</div>-->
 		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-heading">
