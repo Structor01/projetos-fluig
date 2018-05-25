@@ -7,6 +7,7 @@ function defineStructure() {
     addColumn("dtSolicitacao");
     addColumn("qtSolicitada");
     addColumn("codigoRecurso");
+    addColumn("Recurso");
     addColumn("cardId");
     addColumn("resp");
     addColumn("respNome");
@@ -44,6 +45,7 @@ function onSync(lastSyncDate){
                 ifNull(newerDataset.getValue(i,"dtSolicitacao"),""),
                 ifNull(newerDataset.getValue(i,"qtSolicitada"),""),
                 ifNull(newerDataset.getValue(i,"codigoRecurso"),""),
+                ifNull(newerDataset.getValue(i,"Recurso"),""),
                 ifNull(newerDataset.getValue(i,"cardId"),""),
                 ifNull(newerDataset.getValue(i,"resp"),""),
                 ifNull(newerDataset.getValue(i,"respNome"),"")
@@ -62,6 +64,7 @@ function onSync(lastSyncDate){
                         ifNull(olderDataset.getValue(i,"dtSolicitacao"),""),
                         ifNull(olderDataset.getValue(i,"qtSolicitada"),""),
                         ifNull(olderDataset.getValue(i,"codigoRecurso"),""),
+                        ifNull(olderDataset.getValue(i,"Recurso"),""),
                         ifNull(olderDataset.getValue(i,"cardId"),""),
                         ifNull(olderDataset.getValue(i,"resp"),""),
                         ifNull(olderDataset.getValue(i,"respNome"),"")
@@ -88,6 +91,7 @@ function onMobileSync(user) {
         "dtSolicitacao",
         "qtSolicitada",
         "codigoRecurso",
+        "Recurso",
         "cardId",
         "resp",
         "respNome"
@@ -114,6 +118,7 @@ function createDataset(fields, constraints, sortFields) {
     dataset.addColumn("dtSolicitacao");
     dataset.addColumn("qtSolicitada");
     dataset.addColumn("codigoRecurso");
+    dataset.addColumn("Recurso");
     dataset.addColumn("cardId");
     dataset.addColumn("resp");
     dataset.addColumn("respNome");
@@ -148,6 +153,7 @@ function createDataset(fields, constraints, sortFields) {
                     doc.getValue(0, 'dtSolicitacao'),
                     doc.getValue(0, 'qtSolicitada'),
                     doc.getValue(0, 'codigoRecurso'),
+                    doc.getValue(0, 'Recurso'),
                     available.getValue(i, "cardId"),
                     doc.getValue(0, 'responsavelAprovacao'),
                     doc.getValue(0, 'responsavel')

@@ -46,58 +46,43 @@ var HelloWorld = SuperWidget.extend({
         });
     },
     recursos: function (filtro) {
-        if(!filtro) {
-            var filtroRecursos = DatasetFactory.getDataset(
-                "sebrae_cadastra_recursos",
+            var recursos = DatasetFactory.getDataset(
+                "dsRecursosDisponiveis",
                 null,
-                [DatasetFactory.createConstraint("cdResponsavelRecurso", this.email, this.email, ConstraintType.MUST)],
+                [DatasetFactory.createConstraint("resp", top.WCMAPI.userCode, top.WCMAPI.userCode, ConstraintType.MUST)],
                 null);
-            console.log(filtroRecursos.values);
-
-            var rec = [];
-            for (var i in filtroRecursos.values) {
-                rec.push(filtroRecursos.values[i]['dsNome']);
+            console.log(recursos.values);
+            var calendarEventos = new Array();
+            for (var i in recursos.values) {
+                calendarEventos.push({
+                    title: recursos.values[i]['cardId'] + ' - ' + recursos.values[i]['Recurso'],
+                    start: switchMonth(recursos.values[i]['dtInicio']),
+                    end: switchMonth(recursos.values[i]['dtFinal'])
+                });
             }
 
-            var myAutocomplete = FLUIGC.autocomplete('#porRecurso', {
-                source: substringMatcher(rec),
-                name: 'recursos',
-                displayKey: 'description',
-                tagClass: 'tag-gray',
-                type: 'tagAutocomplete'
-            });
-        }
+        //
+        //     var myAutocomplete = FLUIGC.autocomplete('#porRecurso', {
+        //         source: substringMatcher(rec),
+        //         name: 'recursos',
+        //         displayKey: 'description',
+        //         tagClass: 'tag-gray',
+        //         type: 'tagAutocomplete'
+        //     });
+        // var constraintCA = new Array();
+        // constraintCA.push(DatasetFactory.createConstraint("responsavelAprovacao", top.WCMAPI.userCode, top.WCMAPI.userCode, ConstraintType.MUST));
+        // if(filtro) {
+        //     var f = filtro.split(',');
+        //     for(var i in f) {
+        //         constraintCA.push(DatasetFactory.createConstraint("recurso", f[i], f[i], ConstraintType.MUST));
+        //     }
+        // }
 
-        var constraintCA = new Array();
-        constraintCA.push(DatasetFactory.createConstraint("responsavelAprovacao", top.WCMAPI.userCode, top.WCMAPI.userCode, ConstraintType.MUST));
-
-        if(filtro) {
-            var f = filtro.split(',');
-            for(var i in f) {
-                constraintCA.push(DatasetFactory.createConstraint("recurso", f[i], f[i], ConstraintType.MUST));
-            }
-        }
-
-        var processosAtivos = DatasetFactory.getDataset(
-            "dsReserva_Recursos",
-            null,
-            constraintCA,
-            null);
-
-        var calendarEventos = new Array();
-        for(var i in processosAtivos.values) {
-            calendarEventos.push({
-                title: processosAtivos.values[i]['documentid'] + ' - ' + processosAtivos.values[i]['recurso'],
-                start: switchMonth(processosAtivos.values[i]['dtInicio']),
-                end: switchMonth(processosAtivos.values[i]['dtFinal'])
-            });
-        }
-
-        if(filtro) {
-            $('#calendar').fullCalendar('removeEventSources');
-            $('#calendar').fullCalendar('addEventSource', calendarEventos);
-            return;
-        }
+        // if(filtro) {
+        //     $('#calendar').fullCalendar('removeEventSources');
+        //     $('#calendar').fullCalendar('addEventSource', calendarEventos);
+        //     return;
+        // }
 
         $('#calendar').fullCalendar({
             lang: 'pt',
