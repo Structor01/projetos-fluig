@@ -1,6 +1,5 @@
 function createDataset(fields, constraints, sortFields) {
     var dataset = DatasetBuilder.newDataset();
-
     //Cria as colunas
     dataset.addColumn("Sincronizado");
     dataset.addColumn("CodEvento");
@@ -51,14 +50,22 @@ function createDataset(fields, constraints, sortFields) {
             for(var i in result) {
                 var sinc = 'false';
                 var jaCadastrado = DatasetFactory.getDataset("dsEventos", null, [DatasetFactory.createConstraint("codSAS", result[i]['CodEvento'].toString(), result[i]['CodEvento'].toString(), ConstraintType.MUST)], null);
-
-                if(jaCadastrado.rowsCount > 0) {
-                    sinc = 'true';
-                    if(mode == 'edit') {
-                        
-                    }
+                if(jaCadastrado.rowsCount == 0) {
+                    var constraints = new Array();
+                    constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(result[i]['PeriodoFinal']), "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + result[i]['CodEvento'], "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "codCidade;" + result[i]['CodCidade'], "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "dtInicio;" + disarrangeData(result[i]['PeriodoInicial']), "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "endereco;" + result[i]['Local'], "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "location;" + result[i]['Local'], "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "nomeEvento;" + result[i]['TituloEvento'], "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "publicoAlvo;" + result[i]['PublicoEvento'], "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + verificaTipoEv(result[i]['DescProduto']), "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + result[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
+                    constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + result[i]['Preco'], "", ConstraintType.MUST));
+                    salvarForm(constraints);
                 } else {
-
+                    sinc = 'true';
                 }
 
                 dataset.addRow(new Array(
@@ -78,12 +85,41 @@ function createDataset(fields, constraints, sortFields) {
         }
         
         return dataset;
-
     } catch(err) {
         throw err;
     }
 }
 
-function atualizaForm() {
-    
+function criaRegistro(id) {
+    var constraints = new Array();
+    constraints.push(DatasetFactory.createConstraint("Parent Id", id, "", ConstraintType.MUST));
+    return DatasetFactory.getDataset("dsCriaRegistro", null, constraints, null);
+}
+
+function salvarForm(constraints) {
+    var registro = criaRegistro(36117);
+    var cardId = registro.getValue(0, 'Retorno');
+    log.info('Foi gravado um novo registro ' + cardId);
+    constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
+    var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
+    var msg = 'O registro ' + cardId + ' foi alterado!';
+    log.info(msg);
+}
+
+function verificaTipoEv(ev) {
+    var tipoEventos = DatasetFactory.getDataset("dsTipoEvento", null, null, null);
+    if(tipoEventos.values && tipoEventos.values.length) {
+        for(var i in tipoEventos.values) {
+            var rec = tipoEventos.values[i]['Tipo'];
+            if(ev.indexOf(rec) > -1) return rec;
+        }
+    }
+}
+
+function disarrangeData(e) {
+    var date = e.split('T');
+    date = date[0].split('-');
+    var hora = e.split('T')[1];
+    date = date[2]+'/'+date[1]+'/'+date[0] + ' ' + hora;
+    return date;
 }
