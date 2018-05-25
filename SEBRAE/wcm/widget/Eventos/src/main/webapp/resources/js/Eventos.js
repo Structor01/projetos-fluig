@@ -16,7 +16,7 @@ var HelloWorld = SuperWidget.extend({
         // return sync(this.eventos);
         for(var i in this.eventos) {
             this.calendarEv.push({
-                title: this.eventos[i]['nomeEvento'],
+                title: this.eventos[i]['id'] + ' - ' + this.eventos[i]['nomeEvento'],
                 start: switchMonth(this.eventos[i]['dtInicio']),
                 end: switchMonth(this.eventos[i]['dtFinal'])
             });
@@ -40,11 +40,6 @@ var HelloWorld = SuperWidget.extend({
             defaultView: 'listWeek',
             events: this.calendarEv,
             eventClick: function(calEvent, jsEvent, view) {
-                // alert('Event: ' + calEvent.title);
-                // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                // alert('View: ' + view.name);
-                // $(this).css('border-color', 'red');
-
                 var myModal = FLUIGC.modal({
                     title: 'Evento',
                     content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
@@ -59,7 +54,7 @@ var HelloWorld = SuperWidget.extend({
                 var form = DatasetFactory.getDataset(
                     "dsEventos",
                     null,
-                    [DatasetFactory.createConstraint("documentid",
+                    [DatasetFactory.createConstraint("id",
                         calEvent.title.split(' - ')[0],
                         calEvent.title.split(' - ')[0],
                         ConstraintType.MUST)],
@@ -67,30 +62,21 @@ var HelloWorld = SuperWidget.extend({
 
                 for(var i in form.values) {
                     var r = form.values[i];
-                    var algumSelected = false;
                     for(var i in Object.keys(r)) {
-                        if(Object.keys(r)[i].indexOf('rc') > -1 && Object.keys(r)[i].indexOf('Obs') == -1) {
-                            if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
-                                $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
-                                    .attr('checked','true');
-                                algumSelected = true;
-                            } else {
-                                $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']').parent().parent().remove();
-                            }
+                        if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
+                            $('#instanceModal_C').find('[name="'+Object.keys(r)[i]+'"]').val(r[Object.keys(r)[i]]);
                         }
-                    }
-                    if(algumSelected == false) {
-                        $('#instanceModal_C').find('.recursos').remove();
                     }
                 }
 
-                $('#instanceModal_C').find('.title').val(calEvent.title);
-                $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
-                $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
-                $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
-                $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
-                $('#instanceModal_C').find('.start').val(switchMonth(calEvent.start['_i']));
-                $('#instanceModal_C').find('.end').val(switchMonth(calEvent.end['_i']));
+                $('#instanceModal_C').find('input, textarea, select').attr('disabled', true);
+                // $('#instanceModal_C').find('.title').val(calEvent.title);
+                // $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
+                // $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
+                // $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
+                // $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
+                // $('#instanceModal_C').find('.start').val(switchMonth(calEvent.start['_i']));
+                // $('#instanceModal_C').find('.end').val(switchMonth(calEvent.end['_i']));
             },
             viewRender: function(view, element) {
                 $('a.fc-time-grid-event, .fc-content').css('color', 'grey');

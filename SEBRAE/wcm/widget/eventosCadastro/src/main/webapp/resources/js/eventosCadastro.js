@@ -150,7 +150,6 @@ $(document).ready(function() {
     }
 
     html = ''
-
     var unidadeEv = DatasetFactory.getDataset("dsUnidadeEvento", null, null, null);
     if(unidadeEv.values && unidadeEv.values.length) {
         for(var i in unidadeEv.values) {
