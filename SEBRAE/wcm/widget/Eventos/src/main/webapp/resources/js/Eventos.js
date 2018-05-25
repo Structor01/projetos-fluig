@@ -7,8 +7,8 @@ var HelloWorld = SuperWidget.extend({
         var m = today.getMonth() + 1 < 10 ? '0'+ parseInt(today.getMonth() + 1) : today.getMonth() + 1;
         constraints.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
         constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
-        var c5 = DatasetFactory.createConstraint("dtInicio", "%/"+m+"/%", "%/"+m+"/%", ConstraintType.MUST);
-        constraints.push(c5);
+        //var c5 = DatasetFactory.createConstraint("dtInicio", "%/"+m+"/%", "%/"+m+"/%", ConstraintType.MUST);
+        // constraints.push(c5);
         var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
         this.eventos = dataset.values;
         this.htmlC = ''
@@ -40,18 +40,76 @@ var HelloWorld = SuperWidget.extend({
             defaultView: 'listWeek',
             events: this.calendarEv,
             eventClick: function(calEvent, jsEvent, view) {
-                alert('Event: ' + calEvent.title);
-                alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                alert('View: ' + view.name);
-                $(this).css('border-color', 'red');
+                // alert('Event: ' + calEvent.title);
+                // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                // alert('View: ' + view.name);
+                // $(this).css('border-color', 'red');
+
+                var myModal = FLUIGC.modal({
+                    title: 'Evento',
+                    content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
+                    id: 'fluig-modal',
+                    size:'full',
+                    actions: [{
+                        'label': 'Fechar',
+                        'autoClose': true
+                    }]
+                });
+
+                var form = DatasetFactory.getDataset(
+                    "dsEventos",
+                    null,
+                    [DatasetFactory.createConstraint("documentid",
+                        calEvent.title.split(' - ')[0],
+                        calEvent.title.split(' - ')[0],
+                        ConstraintType.MUST)],
+                    null);
+
+                for(var i in form.values) {
+                    var r = form.values[i];
+                    var algumSelected = false;
+                    for(var i in Object.keys(r)) {
+                        if(Object.keys(r)[i].indexOf('rc') > -1 && Object.keys(r)[i].indexOf('Obs') == -1) {
+                            if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
+                                $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
+                                    .attr('checked','true');
+                                algumSelected = true;
+                            } else {
+                                $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']').parent().parent().remove();
+                            }
+                        }
+                    }
+                    if(algumSelected == false) {
+                        $('#instanceModal_C').find('.recursos').remove();
+                    }
+                }
+
+                $('#instanceModal_C').find('.title').val(calEvent.title);
+                $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
+                $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
+                $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
+                $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
+                $('#instanceModal_C').find('.start').val(switchMonth(calEvent.start['_i']));
+                $('#instanceModal_C').find('.end').val(switchMonth(calEvent.end['_i']));
             },
             viewRender: function(view, element) {
                 $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
                 $('a.fc-time-grid-event').css('padding', '5px');
+                $('.fc-time').css('color','rgba(255,255,255,1) !important');
+                // $('.fc-minor, .fc-widget-content').css('background-color','rgba(0,128,255,1) !important');
                 $('a.fc-time-grid-event, .fc-content').css('background-color', 'rgba(0, 0, 0, 0)');
                 $('.fc-day-grid-event, .fc-time-grid-event').css('border', 'none');
                 $('.fc-list-item').find('td').css('padding','5px');
                 $('.fc-widget-header').css('padding','5px');
+                $('.fc-widget-content').css('background-color','rgba(255,255,255,1) !important');
+                $('td.fc-axis.fc-time.fc-widget-content').css('background-color','rgba(0,128,255,1) !important');
+                $('.fc-time-grid-event,.fc-v-event,.fc-event,.fc-start,.fc-end')
+                    .css('background-color','rgba(0,128,255,1) !important');
+                $('hr.fc-divider.fc-widget-header').css('padding','0px');
+                $('td.fc-head-container.fc-widget-header')
+                    .css('padding','0px');
+                $('div.fc-row.fc-widget-header')
+                    .css('padding','0px');
             }
         });
     },

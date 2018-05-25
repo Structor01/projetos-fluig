@@ -92,13 +92,13 @@
                                 <span id="place-address"></span>
                             </div>
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-8">
                             <label for="endereco">Endereço</label>
                             <input type="text" class="form-control" id="endereco" name="endereco">
                         </div>
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-4">
                             <button type="button" onclick="$('#map').toggle()" id="btn-esconder" style="margin: 0.5rem" class="btn btn-primary fs-float-right btn-sm">Esconder/Mostrar Mapa</button>
-                            <a href="#" class="btn btn-info fs-float-right btn-lg fs-float-right hide" style="margin: 0.5rem" target="_blank" id="rotas" role="button"><span class="fluigicon fluigicon-map-marker fluigicon-sm"></span> Rotas</a>
+                            <a href="#" class="btn btn-info fs-float-right fs-float-right hide" style="margin: 0.5rem" target="_blank" id="rotas" role="button"><span class="fluigicon fluigicon-map-marker fluigicon-sm"></span> Rotas</a>
                         </div>
                     </div>
                 </div>

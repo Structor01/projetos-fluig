@@ -50,9 +50,6 @@
 		<!--</div>-->
 		<div class="row">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Eventos</h3>
-				</div>
 				<div class="panel-body">
 					<div class="viewEv" id="calendar"></div>
 					<div class="viewEv hide" id="lista">
