@@ -2,36 +2,26 @@ var HelloWorld = SuperWidget.extend({
     message: null,
     calendarEv: [],
     init: function () {
+        // Esconder o header padrão do Fluig
         $('.fl-header').hide();
         $('#wcm-content').css('margin-top','-7rem');
+
+        // Push dos eventos salvos no formulário.
         var constraints = new Array();
         var today = new Date();
-        var m = today.getMonth() + 1 < 10 ? '0'+ parseInt(today.getMonth() + 1) : today.getMonth() + 1;
         constraints.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
         constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
-        //var c5 = DatasetFactory.createConstraint("dtInicio", "%/"+m+"/%", "%/"+m+"/%", ConstraintType.MUST);
-        // constraints.push(c5);
         var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
         this.eventos = dataset.values;
         this.htmlC = ''
         this.calendarEv = new Array();
-        // return sync(this.eventos);
         for(var i in this.eventos) {
             this.calendarEv.push({
                 title: this.eventos[i]['id'] + ' - ' + this.eventos[i]['nomeEvento'],
                 start: switchMonth(this.eventos[i]['dtInicio']),
                 end: switchMonth(this.eventos[i]['dtFinal'])
             });
-            this.htmlC += '<tr>' +
-                '<td>' + this.eventos[i]['nomeEvento'] + '</td>' +
-                '<td>' + this.eventos[i]['tipoEvento'] + '</td>' +
-                '<td>' + this.eventos[i]['unidadeVinculada'] + '</td>' +
-                '<td>' + this.eventos[i]['dtInicio'] + '</td>' +
-                '<td>' + this.eventos[i]['dtFinal'] + '</td>' +
-                '<td>' + this.eventos[i]['location'] + '</td>' +
-                '</tr>';
         }
-        $('#rowEventos').html(this.htmlC);
         $('#calendar').fullCalendar({
             lang: 'pt',
             header: {
@@ -101,7 +91,6 @@ var HelloWorld = SuperWidget.extend({
             }
         });
     },
-
     bindings: {
         local: {
             'show-message': ['click_showMessage']
@@ -226,16 +215,3 @@ function getDateNow() {
     var currentTime = currentDate + "  " + currentHour;
     return currentTime;
 }
-
-// function getRandomColor() {
-//     var letters = '0123456789ABCDEF';
-//     var color = '#';
-//     for (var i = 0; i < 6; i++) {
-//         color += letters[Math.floor(Math.random() * 16)];
-//     }
-//     return color;
-// }
-//
-// function getContrast50(hexcolor){
-//     return (parseInt(hexcolor, 16) > 0xffffff/2) ? 'black':'white';
-// }
