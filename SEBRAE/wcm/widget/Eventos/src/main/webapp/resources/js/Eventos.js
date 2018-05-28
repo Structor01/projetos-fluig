@@ -5,7 +5,6 @@ var HelloWorld = SuperWidget.extend({
         // Esconder o header padrão do Fluig
         $('.fl-header').hide();
         $('#wcm-content').css('margin-top','-7rem');
-
         // Push dos eventos salvos no formulário.
         var constraints = new Array();
         var today = new Date();
@@ -13,15 +12,22 @@ var HelloWorld = SuperWidget.extend({
         constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
         var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
         this.eventos = dataset.values;
-        this.htmlC = ''
         this.calendarEv = new Array();
+        var calendarEvTitle = new Array();
+        var dictionary = {};
         for(var i in this.eventos) {
+            calendarEvTitle.indexOf(this.eventos[i]['nomeEvento']) == -1 ?
+                calendarEvTitle.push(this.eventos[i]['nomeEvento']) : false;
+
+            dictionary[this.eventos[i]['id']] = this.eventos[i]['codCidade'];
+
             this.calendarEv.push({
                 title: this.eventos[i]['id'] + ' - ' + this.eventos[i]['nomeEvento'],
                 start: switchMonth(this.eventos[i]['dtInicio']),
                 end: switchMonth(this.eventos[i]['dtFinal'])
             });
         }
+        // Widget Calendar
         $('#calendar').fullCalendar({
             lang: 'pt',
             header: {
@@ -89,6 +95,18 @@ var HelloWorld = SuperWidget.extend({
                 $('div.fc-row.fc-widget-header')
                     .css('padding','0px');
             }
+        });
+
+        var myAutocomplete = FLUIGC.autocomplete('#eventTitle', {
+            source: substringMatcher(calendarEvTitle),
+            name: 'titles',
+            displayKey: 'description',
+            tagClass: 'tag-gray',
+            type: 'tagAutocomplete'
+        });
+
+        $('#eventTitle').on('fluig.autocomplete.itemAdded', function () {
+            alert('asdfsa');
         });
     },
     bindings: {
@@ -214,4 +232,23 @@ function getDateNow() {
     var currentDate = day + '/' + month + '/' + year;
     var currentTime = currentDate + "  " + currentHour;
     return currentTime;
+}
+
+function substringMatcher(strs) {
+    return function findMatches(q, cb) {
+        var matches, substrRegex;
+
+        matches = [];
+
+        substrRegex = new RegExp(q, 'i');
+
+        $.each(strs, function(i, str) {
+            if (substrRegex.test(str)) {
+                matches.push({
+                    description: str
+                });
+            }
+        });
+        cb(matches);
+    };
 }

@@ -49,15 +49,15 @@
 					<h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Filtros</h3>
 				</div>
 				<div class="panel-body">
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-6">
 						<label>Título do Evento</label>
-						<input class="form-control" name="eventTitle" value="">
+						<input class="form-control" id="eventTitle" name="eventTitle" value="">
 					</div>
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-3">
 						<label>Tipo do Evento</label>
 						<input class="form-control" name="eventType" value="">
 					</div>
-					<div class="form-group col-md-4">
+					<div class="form-group col-md-3">
 						<label>Cidade</label>
 						<input class="form-control" name="eventCity" value="">
 					</div>
