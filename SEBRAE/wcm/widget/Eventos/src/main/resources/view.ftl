@@ -1,8 +1,10 @@
 <script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
-<div id="HelloWorld_${instanceId}"
-	 class="super-widget wcm-widget-class fluig-style-guide"
-	 data-params="HelloWorld.instance({message: 'Hello world'})"
->
+
+<div
+		id="HelloWorld_${instanceId}"
+		class="super-widget wcm-widget-class fluig-style-guide"
+		data-params="HelloWorld.instance({message: 'Hello world'})">
+
 	<style>
 		.fluig-style-guide .panel-default>.panel-heading {
 			color: #FFF !important;
@@ -38,40 +40,49 @@
 			margin-right: .5rem;
 		}
 	</style>
-	<div class="page-content container-fluid">
-		<!--<div class="row">-->
-			<!--<button style="margin: 0.5rem" id="btn-calendar" onclick="changeView('calendar')" class="btn btn-primary active fs-float-right">-->
-				<!--<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>-->
-			<!--</button>-->
 
-			<!--<button style="margin: 0.5rem" id="btn-lista" onclick="changeView('lista')" class="btn fs-float-right">-->
-				<!--<span class="fluigicon 	fluigicon-list fluigicon-sm"></span>-->
-			<!--</button>-->
-		<!--</div>-->
+	<div class="page-content container-fluid">
+
 		<div class="row">
 			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Filtros</h3>
+				</div>
 				<div class="panel-body">
-					<div class="viewEv" id="calendar"></div>
-					<div class="viewEv hide" id="lista">
-						<table class="table table-striped">
-							<thead>
-							<th>Nome do Evento</th>
-							<th>Tipo Evento</th>
-							<th>Unidade</th>
-							<th>Início</th>
-							<th>Fim</th>
-							<th>Cidade</th>
-							</thead>
-							<tbody id="rowEventos"></tbody>
-						</table>
+					<div class="form-group col-md-4">
+						<label>Título do Evento</label>
+						<input class="form-control" name="eventTitle" value="">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Tipo do Evento</label>
+						<input class="form-control" name="eventType" value="">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Cidade</label>
+						<input class="form-control" name="eventCity" value="">
 					</div>
 				</div>
-				<!--<div style="margin: 1rem" class="btn-group fs-float-right">-->
-				<!--<button type="button" onclick="prevP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-left fluigicon-sm"></span></button>-->
-				<!--<button type="button" onclick="nextP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-right fluigicon-sm"></span></button>-->
-				<!--</div>-->
+			</div>
 
-				<!--<button type="button" onclick="editCad()" style="margin: 1rem" class="btn btn-default fs-float-left">Editar meu ramal</button>-->
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="viewEv" id="calendar"></div>
+						<div class="viewEv hide" id="lista">
+							<table class="table table-striped">
+								<thead>
+								<th>Nome do Evento</th>
+								<th>Tipo Evento</th>
+								<th>Unidade</th>
+								<th>Início</th>
+								<th>Fim</th>
+								<th>Cidade</th>
+								</thead>
+								<tbody id="rowEventos"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -90,24 +101,10 @@
 					<label for="nomeEvento">Nome do Local</label>
 					<input type="text" class="form-control" id="nomeLocal" name="nomeLocal">
 				</div>
-				<!--<div class="form-group col-md-12">-->
-					<!--<input id="pac-input" class="controls" type="text"-->
-						   <!--placeholder="Enter a location">-->
-					<!--<div id="map"></div>-->
-					<!--<div id="infowindow-content">-->
-						<!--<span id="place-name"  class="title"></span><br>-->
-						<!--Place ID <span id="place-id"></span><br>-->
-						<!--<span id="place-address"></span>-->
-					<!--</div>-->
-				<!--</div>-->
 				<div class="form-group col-md-12">
 					<label for="endereco">Endereço</label>
 					<input type="text" class="form-control" id="endereco" name="endereco">
 				</div>
-				<!--<div class="form-group col-md-4">-->
-					<!--<button type="button" onclick="$('#map').toggle()" id="btn-esconder" style="margin: 0.5rem" class="btn btn-primary fs-float-right btn-sm">Esconder/Mostrar Mapa</button>-->
-					<!--<a href="#" class="btn btn-info fs-float-right fs-float-right hide" style="margin: 0.5rem" target="_blank" id="rotas" role="button"><span class="fluigicon fluigicon-map-marker fluigicon-sm"></span> Rotas</a>-->
-				<!--</div>-->
 			</div>
 		</div>
 		<ul class="list-group col-md-8">
@@ -118,16 +115,10 @@
 				<div class="col-md-6" style="padding: 0; padding-right:15px">
 					<label for="tipoEvento">Tipo de Evento</label>
 					<input type="text" class="form-control" id="tipoEvento" name="tipoEvento">
-					<!--<select class="form-control" name="tipoEvento" id="tipoEvento">-->
-						<!--<option value="">Selecione</option>-->
-					<!--</select>-->
 				</div>
 				<div class="col-md-6" style="padding: 0">
 					<label for="unidadeVinculada">Unidade Vinculada</label>
 					<input type="text" class="form-control" id="unidadeVinculada" name="unidadeVinculada">
-					<!--<select class="form-control" name="unidadeVinculada" id="unidadeVinculada">-->
-						<!--<option value="">Selecione</option>-->
-					<!--</select>-->
 				</div>
 			</li>
 			<li class="list-group-item row" style="margin: 0; margin-bottom: -1px">
@@ -167,7 +158,7 @@
 				Horários do Eventos
 			</li>
 			<li class="list-group-item">
-				<label for="dtSolicitacao">Data de Início</label>
+				<label for="dtInicio">Data de Início</label>
 				<div class="input-group date" onclick="dateSet(this)">
 					<input type="text" class="form-control dateReserva" id="dtInicio" name="dtInicio">
 					<div class="input-group-addon">
@@ -176,7 +167,7 @@
 				</div>
 			</li>
 			<li class="list-group-item">
-				<label for="dtSolicitacao">Data de Término</label>
+				<label for="dtFinal">Data de Término</label>
 				<div class="input-group date">
 					<input type="text" class="form-control dateReserva" id="dtFinal" name="dtFinal">
 					<div class="input-group-addon" onclick="dateSet(this)">

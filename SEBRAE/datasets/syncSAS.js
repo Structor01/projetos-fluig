@@ -1,3 +1,97 @@
+function defineStructure() {
+    addColumn("Sincronizado");
+    addColumn("CodEvento");
+    addColumn("CodCidade");
+    addColumn("PeriodoInicial");
+    addColumn("PeriodoFinal");
+    addColumn("localEvento");
+    addColumn("TituloEvento");
+    addColumn("PublicoEvento");
+    addColumn("DescProduto");
+    addColumn("DescUnidadeOrganizacional");
+    addColumn("Preco");
+    setKey(new Array("CodEvento"));
+    addIndex(new Array("CodEvento"));
+}
+
+function onSync(lastSyncDate){
+    var dataset = DatasetBuilder.newDataset();
+    var newerDataset = createDataset();
+    var olderDataset = DatasetFactory.getDataset("dsRecursosDisponiveis", null, null, null);
+    var ifNull = function(value, ifNullValue){
+        return value == null || value == "" ? ifNullValue : value;
+    }
+    if(newerDataset != null){
+        var updated = new Array();
+        for(var i = 0; i < newerDataset.rowsCount; i++){
+            dataset.addOrUpdateRow(new Array(
+                ifNull(newerDataset.getValue(i,"Sincronizado"),""),
+                ifNull(newerDataset.getValue(i,"CodEvento"),""),
+                ifNull(newerDataset.getValue(i,"CodCidade"),""),
+                ifNull(newerDataset.getValue(i,"PeriodoInicial"),""),
+                ifNull(newerDataset.getValue(i,"PeriodoFinal"),""),
+                ifNull(newerDataset.getValue(i,"localEvento"),""),
+                ifNull(newerDataset.getValue(i,"TituloEvento"),""),
+                ifNull(newerDataset.getValue(i,"PublicoEvento"),""),
+                ifNull(newerDataset.getValue(i,"DescProduto"),""),
+                ifNull(newerDataset.getValue(i,"DescUnidadeOrganizacional"),""),
+                ifNull(newerDataset.getValue(i,"Preco"),"")
+            ));
+            updated.push(new Array(newerDataset.getValue(i,"CodEvento")));
+        }
+
+        if(olderDataset != null){
+            for(var i = 0; i < olderDataset.rowsCount; i++){
+                if(updated.indexOf(olderDataset.getValue(i,"CodEvento") == -1)){
+                    dataset.deleteRow(new Array(
+                        ifNull(olderDataset.getValue(i,"Sincronizado"),""),
+                        ifNull(olderDataset.getValue(i,"CodEvento"),""),
+                        ifNull(olderDataset.getValue(i,"CodCidade"),""),
+                        ifNull(olderDataset.getValue(i,"PeriodoInicial"),""),
+                        ifNull(olderDataset.getValue(i,"PeriodoFinal"),""),
+                        ifNull(olderDataset.getValue(i,"localEvento"),""),
+                        ifNull(olderDataset.getValue(i,"TituloEvento"),""),
+                        ifNull(olderDataset.getValue(i,"PublicoEvento"),""),
+                        ifNull(olderDataset.getValue(i,"DescProduto"),""),
+                        ifNull(olderDataset.getValue(i,"DescUnidadeOrganizacional"),""),
+                        ifNull(olderDataset.getValue(i,"Preco"),"")
+                    ));
+                }
+            }
+        }
+    }
+    return dataset;
+}
+
+function onMobileSync(user) {
+    log.warn("--MOBILE-- dsCidade.js - onMobileSync");
+
+    var sortingFields = new Array();
+
+    var fields = new Array(
+        "Sincronizado",
+        "CodEvento",
+        "CodCidade",
+        "PeriodoInicial",
+        "PeriodoFinal",
+        "localEvento",
+        "TituloEvento",
+        "PublicoEvento",
+        "DescProduto",
+        "DescUnidadeOrganizacional",
+        "Preco"
+    );
+
+    var constraints = new Array();
+
+    var result = {
+        'fields' : fields,
+        'constraints' : constraints,
+        'sortingFields' : sortingFields
+    };
+    return result;
+}
+
 function createDataset(fields, constraints, sortFields) {
     var dataset = DatasetBuilder.newDataset();
     //Cria as colunas
@@ -6,7 +100,7 @@ function createDataset(fields, constraints, sortFields) {
     dataset.addColumn("CodCidade");
     dataset.addColumn("PeriodoInicial");
     dataset.addColumn("PeriodoFinal");
-    dataset.addColumn("Local");
+    dataset.addColumn("localEvento");
     dataset.addColumn("TituloEvento");
     dataset.addColumn("PublicoEvento");
     dataset.addColumn("DescProduto");
@@ -83,7 +177,7 @@ function createDataset(fields, constraints, sortFields) {
                 ));
             }
         }
-        
+
         return dataset;
     } catch(err) {
         throw err;
@@ -108,9 +202,9 @@ function salvarForm(constraints) {
 
 function verificaTipoEv(ev) {
     var tipoEventos = DatasetFactory.getDataset("dsTipoEvento", null, null, null);
-    if(tipoEventos.values && tipoEventos.values.length) {
-        for(var i in tipoEventos.values) {
-            var rec = tipoEventos.values[i]['Tipo'];
+    if(tipoEventos && tipoEventos.rowsCount > 0) {
+        for(var i=0; i < tipoEventos.rowsCount; i++) {
+            var rec = tipoEventos.getValue(i, "Tipo");
             if(ev.indexOf(rec) > -1) return rec;
         }
     }

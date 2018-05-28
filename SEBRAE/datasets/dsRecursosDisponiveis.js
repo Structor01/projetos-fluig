@@ -1,6 +1,4 @@
 function defineStructure() {
-    log.info("--OFFLINE-- defineStructure");
-
     addColumn("sol");
     addColumn("dtInicio");
     addColumn("dtFinal");
@@ -11,30 +9,18 @@ function defineStructure() {
     addColumn("cardId");
     addColumn("resp");
     addColumn("respNome");
-
-    log.info("--OFFLINE-- defineStructure addColumn");
     setKey(new Array( "cardId"));
     addIndex(new Array( "cardId"));
 
-    log.info("--OFFLINE-- defineStructure FIM");
 }
 
 function onSync(lastSyncDate){
-    log.info("--OFFLINE-- onSync ");
-
     var dataset = DatasetBuilder.newDataset();
-    log.info("--OFFLINE-- dataset: "+dataset);
-
     var newerDataset = createDataset();
-    log.info("--OFFLINE-- newerDataset: "+newerDataset);
-
     var olderDataset = DatasetFactory.getDataset("dsRecursosDisponiveis", null, null, null);
-    log.info("--OFFLINE-- olderDataset: "+olderDataset);
-
     var ifNull = function(value, ifNullValue){
         return value == null || value == "" ? ifNullValue : value;
     }
-
     if(newerDataset != null){
         var updated = new Array();
         for(var i = 0; i < newerDataset.rowsCount; i++){
@@ -50,13 +36,12 @@ function onSync(lastSyncDate){
                 ifNull(newerDataset.getValue(i,"resp"),""),
                 ifNull(newerDataset.getValue(i,"respNome"),"")
             ));
-            updated.push(new Array(newerDataset.getValue(i,"sol")));
-            log.info("--OFFLINE-- i: "+ (i + 1) + "/" + newerDataset.rowsCount + " updated: " + updated);
+            updated.push(new Array(newerDataset.getValue(i,"cardId")));
         }
 
         if(olderDataset != null){
             for(var i = 0; i < olderDataset.rowsCount; i++){
-                if(updated.indexOf(olderDataset.getValue(i,"sol") == -1)){
+                if(updated.indexOf(olderDataset.getValue(i,"cardId") == -1)){
                     dataset.deleteRow(new Array(
                         ifNull(olderDataset.getValue(i,"sol"),""),
                         ifNull(olderDataset.getValue(i,"dtInicio"),""),
@@ -73,9 +58,6 @@ function onSync(lastSyncDate){
             }
         }
     }
-
-    log.info("--OFFLINE-- return dataset: "+dataset);
-    log.info("--OFFLINE-- onSync FIM");
     return dataset;
 }
 
@@ -104,8 +86,6 @@ function onMobileSync(user) {
         'constraints' : constraints,
         'sortingFields' : sortingFields
     };
-
-    log.warn("--MOBILE-- dsCidade.js - fim onMobileSync");
     return result;
 }
 
@@ -125,18 +105,12 @@ function createDataset(fields, constraints, sortFields) {
 
     try {
         var available = getAvailable();
-        log.info("Vai entrar no for!");
         for (var i = 0; i < available.rowsCount; i++) {
-            log.info("Entrou no "+ i +"!");
             var nconstraints = new Array();
             nconstraints.push(DatasetFactory.createConstraint("metadata#id", available.getValue(i, "cardId").toString(), available.getValue(i, "cardId").toString(), ConstraintType.MUST));
             var doc = DatasetFactory.getDataset("dsReserva_Recursos", null, nconstraints, null);
             if (doc && doc.rowsCount > 0) {
                 var process = false;
-                log.info("Entrou no "+ i +"!");
-                log.warn("Agora: " + arrangeData(getDateNow()))
-                log.warn("Final: " + arrangeData(doc.getValue(0, 'dtFinal')))
-
                 if (available.getValue(i, 'codTask') == '6' && arrangeData(getDateNow()) > arrangeData(doc.getValue(0, 'dtFinal'))) {
                     process = atualizaProcessos(
                         dataset.values[i]["processInstanceId"],

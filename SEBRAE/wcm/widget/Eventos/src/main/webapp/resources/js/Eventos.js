@@ -2,6 +2,8 @@ var HelloWorld = SuperWidget.extend({
     message: null,
     calendarEv: [],
     init: function () {
+        $('.fl-header').hide();
+        $('#wcm-content').css('margin-top','-7rem');
         var constraints = new Array();
         var today = new Date();
         var m = today.getMonth() + 1 < 10 ? '0'+ parseInt(today.getMonth() + 1) : today.getMonth() + 1;
