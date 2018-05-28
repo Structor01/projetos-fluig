@@ -14,15 +14,14 @@ var HelloWorld = SuperWidget.extend({
         this.eventos = dataset.values;
         this.calendarEv = new Array();
         var calendarEvTitle = new Array();
-        var dictionary = {};
+
         for(var i in this.eventos) {
             calendarEvTitle.indexOf(this.eventos[i]['nomeEvento']) == -1 ?
                 calendarEvTitle.push(this.eventos[i]['nomeEvento']) : false;
 
-            dictionary[this.eventos[i]['id']] = this.eventos[i]['codCidade'];
-
             this.calendarEv.push({
                 id: this.eventos[i]['id'],
+                city:this.eventos[i]['local'],
                 title: this.eventos[i]['nomeEvento'],
                 start: switchMonth(this.eventos[i]['dtInicio']),
                 end: switchMonth(this.eventos[i]['dtFinal'])

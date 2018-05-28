@@ -109,15 +109,17 @@ function createDataset(fields, constraints, sortFields) {
 
     var dtInicio = '2018-01-01';
     var dtFinal = '2018-31-12';
-    var mode;
-
+    var mode = 'update';
     if (constraints != null) {
         for (var i = 0; i < constraints.length; i++) {
             if (constraints[i].fieldName == "date") {
                 dtInicio = constraints[i].initialValue;
                 dtFinal = constraints[i].finalValue;
             }
-
+            if (constraints[i].fieldName == "date") {
+                dtInicio = constraints[i].initialValue;
+                dtFinal = constraints[i].finalValue;
+            }
             if (constraints[i].fieldName == "mode") {
                 mode = constraints[i].initialValue;
             }
@@ -144,7 +146,7 @@ function createDataset(fields, constraints, sortFields) {
             for(var i in result) {
                 var sinc = 'false';
                 var jaCadastrado = DatasetFactory.getDataset("dsEventos", null, [DatasetFactory.createConstraint("codSAS", result[i]['CodEvento'].toString(), result[i]['CodEvento'].toString(), ConstraintType.MUST)], null);
-                if(jaCadastrado.rowsCount == 0) {
+                if(jaCadastrado.rowsCount == 0 || mode == 'update') {
                     var constraints = new Array();
                     constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(result[i]['PeriodoFinal']), "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + result[i]['CodEvento'], "", ConstraintType.MUST));
@@ -157,7 +159,12 @@ function createDataset(fields, constraints, sortFields) {
                     constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + verificaTipoEv(result[i]['DescProduto']), "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + result[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + result[i]['Preco'], "", ConstraintType.MUST));
-                    salvarForm(constraints);
+                    if(mode == 'update') {
+                        sinc = 'alterado';
+                        salvarForm(constraints, jaCadastrado.getValue(0, 'metadata#id'));
+                    } else {
+                        salvarForm(constraints, false);
+                    }
                 } else {
                     sinc = 'true';
                 }
@@ -190,10 +197,13 @@ function criaRegistro(id) {
     return DatasetFactory.getDataset("dsCriaRegistro", null, constraints, null);
 }
 
-function salvarForm(constraints) {
-    var registro = criaRegistro(36117);
-    var cardId = registro.getValue(0, 'Retorno');
-    log.info('Foi gravado um novo registro ' + cardId);
+function salvarForm(constraints, cardId) {
+    var registro;
+    if(!cardId) {
+        registro = criaRegistro(36117);
+        cardId = registro.getValue(0, 'Retorno');
+        log.info('Foi gravado um novo registro ' + cardId);
+    }
     constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
     var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
     var msg = 'O registro ' + cardId + ' foi alterado!';
