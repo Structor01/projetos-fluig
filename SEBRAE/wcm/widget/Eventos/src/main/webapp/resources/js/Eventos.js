@@ -22,7 +22,8 @@ var HelloWorld = SuperWidget.extend({
             dictionary[this.eventos[i]['id']] = this.eventos[i]['codCidade'];
 
             this.calendarEv.push({
-                title: this.eventos[i]['id'] + ' - ' + this.eventos[i]['nomeEvento'],
+                id: this.eventos[i]['id'],
+                title: this.eventos[i]['nomeEvento'],
                 start: switchMonth(this.eventos[i]['dtInicio']),
                 end: switchMonth(this.eventos[i]['dtFinal'])
             });
@@ -53,8 +54,8 @@ var HelloWorld = SuperWidget.extend({
                     "dsEventos",
                     null,
                     [DatasetFactory.createConstraint("id",
-                        calEvent.title.split(' - ')[0],
-                        calEvent.title.split(' - ')[0],
+                        calEvent.id,
+                        calEvent.id,
                         ConstraintType.MUST)],
                     null);
 
@@ -107,6 +108,8 @@ var HelloWorld = SuperWidget.extend({
 
         $('#eventTitle').on('fluig.autocomplete.itemAdded', function () {
             alert('asdfsa');
+            this.calendarEv = new Array();
+            $('#calendar').fullCalendar('refetchResources');
         });
     },
     bindings: {
