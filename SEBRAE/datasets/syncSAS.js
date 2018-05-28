@@ -109,7 +109,7 @@ function createDataset(fields, constraints, sortFields) {
 
     var dtInicio = '2018-01-01';
     var dtFinal = '2018-31-12';
-    var mode = 'update';
+    var mode;
     if (constraints != null) {
         for (var i = 0; i < constraints.length; i++) {
             if (constraints[i].fieldName == "date") {
@@ -146,7 +146,7 @@ function createDataset(fields, constraints, sortFields) {
             for(var i in result) {
                 var sinc = 'false';
                 var jaCadastrado = DatasetFactory.getDataset("dsEventos", null, [DatasetFactory.createConstraint("codSAS", result[i]['CodEvento'].toString(), result[i]['CodEvento'].toString(), ConstraintType.MUST)], null);
-                if(jaCadastrado.rowsCount == 0 || mode == 'update') {
+                if(jaCadastrado.rowsCount == 0) {
                     var constraints = new Array();
                     constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(result[i]['PeriodoFinal']), "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + result[i]['CodEvento'], "", ConstraintType.MUST));
@@ -159,12 +159,7 @@ function createDataset(fields, constraints, sortFields) {
                     constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + verificaTipoEv(result[i]['DescProduto']), "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + result[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + result[i]['Preco'], "", ConstraintType.MUST));
-                    if(mode == 'update') {
-                        sinc = 'alterado';
-                        salvarForm(constraints, jaCadastrado.getValue(0, 'metadata#id'));
-                    } else {
-                        salvarForm(constraints, false);
-                    }
+                    salvarForm(constraints, false);
                 } else {
                     sinc = 'true';
                 }
