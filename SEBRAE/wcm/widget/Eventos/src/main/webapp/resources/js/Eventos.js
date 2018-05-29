@@ -254,7 +254,7 @@ function filtrarEv() {
     });
 
     $('[data-clear]').on('click', function () {
-        myAutocomplete.remove();
+        $('#instanceModal_F .eventTitle').remove();
         myModal.remove();
     });
 
