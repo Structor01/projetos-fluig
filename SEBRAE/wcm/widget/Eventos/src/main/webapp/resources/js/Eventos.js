@@ -24,7 +24,8 @@ var HelloWorld = SuperWidget.extend({
                 city:this.eventos[i]['local'],
                 title: this.eventos[i]['nomeEvento'],
                 start: switchMonth(this.eventos[i]['dtInicio']),
-                end: switchMonth(this.eventos[i]['dtFinal'])
+                end: switchMonth(this.eventos[i]['dtFinal']),
+                type: this.eventos[i]['tipoEvento']
             });
         }
         // Widget Calendar
