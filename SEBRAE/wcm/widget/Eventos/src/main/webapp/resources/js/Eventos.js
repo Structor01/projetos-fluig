@@ -18,7 +18,6 @@ var HelloWorld = SuperWidget.extend({
         for(var i in this.eventos) {
             calendarEvTitle.indexOf(this.eventos[i]['nomeEvento']) == -1 ?
                 calendarEvTitle.push(this.eventos[i]['nomeEvento']) : false;
-
             this.calendarEv.push({
                 id: this.eventos[i]['id'],
                 city:this.eventos[i]['local'],
@@ -69,13 +68,6 @@ var HelloWorld = SuperWidget.extend({
                 }
 
                 $('#instanceModal_C').find('input, textarea, select').attr('disabled', true);
-                // $('#instanceModal_C').find('.title').val(calEvent.title);
-                // $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
-                // $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
-                // $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
-                // $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
-                // $('#instanceModal_C').find('.start').val(switchMonth(calEvent.start['_i']));
-                // $('#instanceModal_C').find('.end').val(switchMonth(calEvent.end['_i']));
             },
             viewRender: function(view, element) {
                 $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
@@ -254,4 +246,17 @@ function substringMatcher(strs) {
         });
         cb(matches);
     };
+}
+
+function filtrarEv() {
+    var myModal = FLUIGC.modal({
+        title: 'Filtros',
+        content: '<div id="instanceModal_F">'+$('#modalFiltros').html()+'</div>',
+        id: 'fluig-modal',
+        size:'full',
+        actions: [{
+            'label': 'Fechar',
+            'autoClose': true
+        }]
+    });
 }

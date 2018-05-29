@@ -41,45 +41,17 @@
 		}
 	</style>
 
+	<div class="form-group" style="position:absolute; top: 0; right: 0; margin: 1rem 2rem;">
+		<button class="btn-default btn" onclick="filtrarEv()"><span class="fluigicon fluigicon-filter fluigicon-sm"></span> Filtrar Eventos</button>
+	</div>
+
 	<div class="page-content container-fluid">
-
-		<div class="row">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Filtros</h3>
-				</div>
-				<div class="panel-body">
-					<div class="form-group col-md-12">
-						<label>Título do Evento</label>
-						<div class="input-group">
-							<input class="form-control" id="eventTitle" name="eventTitle" value="">
-							<div class="input-group-addon">
-								<span class="fluigicon fluigicon-search"></span>
-							</div>
-						</div>
-					</div>
-					<div class="form-group col-md-6">
-						<label>Tipo do Evento</label>
-						<!--<input class="form-control" name="eventType" value="">-->
-						<select class="form-control">
-							<option value=""></option>
-						</select>
-					</div>
-					<div class="form-group col-md-6">
-						<label>Cidade</label>
-						<!--<input class="form-control" name="eventCity" value="">-->
-						<select class="form-control">
-							<option value=""></option>
-						</select>
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<div class="row">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<div class="viewEv" id="calendar"></div>
+					<div class="col-md-12">
+						<div class="viewEv" id="calendar"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -174,5 +146,35 @@
 				</div>
 			</li>
 		</ul>
+	</div>
+
+	<div class="hide" id="modalFiltros">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="form-group col-md-12">
+					<label>Título do Evento</label>
+					<div class="input-group">
+						<input class="form-control" id="eventTitle" name="eventTitle" value="">
+						<div class="input-group-addon">
+							<span class="fluigicon fluigicon-search"></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label>Tipo do Evento</label>
+					<!--<input class="form-control" name="eventType" value="">-->
+					<select class="form-control">
+						<option value=""></option>
+					</select>
+				</div>
+				<div class="form-group col-md-6">
+					<label>Cidade</label>
+					<!--<input class="form-control" name="eventCity" value="">-->
+					<select class="form-control">
+						<option value=""></option>
+					</select>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
