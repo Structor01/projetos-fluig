@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
@@ -18,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Eventos.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Eventos.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="266" column="42" selection-start-line="266" selection-start-column="42" selection-end-line="266" selection-end-column="42" />
+            <state relative-caret-position="-372">
+              <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
               <folding>
                 <element signature="n#!!block;n#arrangeData#0" />
                 <element signature="n#!!block;n#disarrangeData#0" />
@@ -39,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="156" column="67" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="67" />
+            <state relative-caret-position="213">
+              <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -55,8 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>valor</find>
-      <find>try</find>
       <find>arrangeda</find>
       <find>disarrangeData</find>
       <find>disarra</find>
@@ -85,6 +84,8 @@
       <find>`</find>
       <find>modal</find>
       <find>calendarEvTitle</find>
+      <find>eventos</find>
+      <find>filtr</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -150,8 +151,8 @@
         <option value="$PROJECT_DIR$/forms/Lista de Eventos/Lista de Eventos.html" />
         <option value="$PROJECT_DIR$/datasets/syncSAS.js" />
         <option value="$PROJECT_DIR$/../UNIMED/forms/6 - Formulário Solicitação de Pagamento/custom.js" />
-        <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" />
+        <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" />
       </list>
     </option>
   </component>
@@ -331,12 +332,12 @@
       <workItem from="1526045927937" duration="6715000" />
       <workItem from="1527515550813" duration="8561000" />
       <workItem from="1527596569756" duration="540000" />
-      <workItem from="1527611020647" duration="4229000" />
+      <workItem from="1527611020647" duration="8179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136461000" />
+    <option name="totallyTimeSpent" value="140411000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,7 +352,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
@@ -676,20 +677,10 @@
         <state relative-caret-position="-2313" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="156" column="67" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="266" column="42" selection-start-line="266" selection-start-column="42" selection-end-line="266" selection-end-column="42" />
+        <state relative-caret-position="-372">
+          <caret line="36" column="41" lean-forward="true" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
           <folding>
             <element signature="n#!!block;n#arrangeData#0" />
             <element signature="n#!!block;n#disarrangeData#0" />
@@ -701,6 +692,16 @@
             <element signature="n#!!block;n#switchMonth#0" />
             <element signature="n#!!block;n#getDateNow#0" />
             <element signature="n#!!block;n#substringMatcher#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

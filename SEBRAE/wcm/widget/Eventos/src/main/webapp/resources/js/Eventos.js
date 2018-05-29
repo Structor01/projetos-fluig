@@ -2,7 +2,10 @@ var HelloWorld = SuperWidget.extend({
     message: null,
     calendarEv: [],
     calendarEvTitle:[],
-    filtros:[],
+    calendarEvType:[],
+    calendarEvCity:[],
+    filtros: {},
+    tempCalendarEv: [],
     init: function () {
         // Esconder o header padrão do Fluig
         $('.fl-header').hide();
@@ -13,22 +16,32 @@ var HelloWorld = SuperWidget.extend({
         constraints.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
         constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
         var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
-        this.eventos = dataset.values;
-        this.calendarEv = new Array();
+        HelloWorld.eventos = dataset.values;
+        HelloWorld.calendarEv = new Array();
         HelloWorld.calendarEvTitle = new Array();
 
-        for(var i in this.eventos) {
+        for(var i in HelloWorld.eventos) {
+            var cidades = '';
+            var tipos = '';
             HelloWorld.calendarEvTitle.indexOf(this.eventos[i]['nomeEvento']) == -1 ?
                 HelloWorld.calendarEvTitle.push(this.eventos[i]['nomeEvento']) : false;
-            this.calendarEv.push({
-                id: this.eventos[i]['id'],
-                city:this.eventos[i]['local'],
-                title: this.eventos[i]['nomeEvento'],
-                start: switchMonth(this.eventos[i]['dtInicio']),
-                end: switchMonth(this.eventos[i]['dtFinal']),
-                type: this.eventos[i]['tipoEvento']
+
+            HelloWorld.calendarEvType.indexOf(this.eventos[i]['tipoEvento']) == -1 ?
+                cidades += '<option value="">'+this.eventos[i]['tipoEvento'] : false;
+            HelloWorld.calendarEvCity.indexOf(this.eventos[i]['codCidade']) == -1 ?
+                this.eventos[i]['codCidade'] : false;
+
+            HelloWorld.calendarEv.push({
+                id: HelloWorld.eventos[i]['id'],
+                city:HelloWorld.eventos[i]['codCidade'],
+                title: HelloWorld.eventos[i]['nomeEvento'],
+                start: switchMonth(HelloWorld.eventos[i]['dtInicio']),
+                end: switchMonth(HelloWorld.eventos[i]['dtFinal']),
+                type: HelloWorld.eventos[i]['tipoEvento']
             });
         }
+
+        $('#modalFiltros').find('.eventTitle');
         // Widget Calendar
         $('#calendar').fullCalendar({
             lang: 'pt',
@@ -38,7 +51,7 @@ var HelloWorld = SuperWidget.extend({
                 right: 'month,agendaWeek,agendaDay,listWeek'
             },
             defaultView: 'listWeek',
-            events: this.calendarEv,
+            events: HelloWorld.calendarEv,
             eventClick: function(calEvent, jsEvent, view) {
                 var myModal = FLUIGC.modal({
                     title: 'Evento',
@@ -55,8 +68,7 @@ var HelloWorld = SuperWidget.extend({
                     "dsEventos",
                     null,
                     [DatasetFactory.createConstraint("id",
-                        calEvent.id,
-                        calEvent.id,
+                        calEvent.id, calEvent.id,
                         ConstraintType.MUST)],
                     null);
 
@@ -262,11 +274,28 @@ function filtrarEv() {
         console.log('Filtro');
         HelloWorld.filtros = [];
         $('#instanceModal_F').find('input').each(function (e) {
-            var fJson = {};
-            fJson[$(this).attr('name')] = $(this).val();
-            HelloWorld.filtros.push(fJson);
+            HelloWorld.filtros[$(this).attr('name')] = $(this).val();
             console.log($(this).val());
         });
+
+        if(HelloWorld.tempCalendarEv && HelloWorld.tempCalendarEv.length > 0)
+            $('#calendar').fullCalendar('removeEventSource', HelloWorld.tempCalendarEv);
+        else
+            $('#calendar').fullCalendar('removeEventSource', HelloWorld.calendarEv);
+
+        HelloWorld.tempCalendarEv = [];
+
+        for(var i in HelloWorld.calendarEv) {
+            if(HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) > -1) {
+                HelloWorld.tempCalendarEv.push(HelloWorld.calendarEv[i]);
+            } else if(HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) > -1) {
+
+            } else if(HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) > -1) {
+
+            }
+        }
+
+        $('#calendar').fullCalendar('addEventSource', HelloWorld.tempCalendarEv);
         myModal.remove();
     });
 
@@ -279,6 +308,10 @@ function filtrarEv() {
         tagClass: 'tag-gray',
         type: 'tagAutocomplete'
     });
+
+    if(HelloWorld.filtros && Object.keys(HelloWorld.filtros).length > 0) {
+        myAutocomplete.add({ description: HelloWorld.filtros['eventTitle'] });
+    }
 
     $('#instanceModal_F .eventTitle').on('fluig.autocomplete.itemAdded', function () {
         // this.calendarEv = new Array();

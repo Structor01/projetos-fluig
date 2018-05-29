@@ -63,11 +63,15 @@
 				<h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Dados do Contato</h3>
 			</div>
 			<div class="panel-body">
+				<div class="form-group col-md-2">
+					<label for="codSAS">Código do Evento</label>
+					<input type="text" class="form-control" id="codSAS" name="codSAS" placeholder="Favor informar o nome do evento.">
+				</div>
 				<div class="form-group col-md-6">
 					<label for="nomeEvento">Nome do Evento</label>
 					<input type="text" class="form-control" id="nomeEvento" name="nomeEvento" placeholder="Favor informar o nome do evento.">
 				</div>
-				<div class="form-group col-md-6">
+				<div class="form-group col-md-4">
 					<label for="nomeEvento">Nome do Local</label>
 					<input type="text" class="form-control" id="nomeLocal" name="nomeLocal">
 				</div>
@@ -163,14 +167,14 @@
 				<div class="form-group col-md-6">
 					<label>Tipo do Evento</label>
 					<!--<input class="form-control" name="eventType" value="">-->
-					<select class="form-control">
+					<select class="form-control eventType">
 						<option value=""></option>
 					</select>
 				</div>
 				<div class="form-group col-md-6">
 					<label>Cidade</label>
 					<!--<input class="form-control" name="eventCity" value="">-->
-					<select class="form-control">
+					<select class="form-control eventCity">
 						<option value=""></option>
 					</select>
 				</div>
