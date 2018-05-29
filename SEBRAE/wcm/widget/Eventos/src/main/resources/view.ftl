@@ -154,7 +154,7 @@
 				<div class="form-group col-md-12">
 					<label>Título do Evento</label>
 					<div class="input-group">
-						<input class="form-control" id="eventTitle" name="eventTitle" value="">
+						<input class="form-control eventTitle" name="eventTitle" value="">
 						<div class="input-group-addon">
 							<span class="fluigicon fluigicon-search"></span>
 						</div>

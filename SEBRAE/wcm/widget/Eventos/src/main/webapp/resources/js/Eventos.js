@@ -247,7 +247,7 @@ function filtrarEv() {
         }]
     });
 
-    var myAutocomplete = FLUIGC.autocomplete('#eventTitle', {
+    var myAutocomplete = FLUIGC.autocomplete('.eventTitle', {
         source: substringMatcher(HelloWorld.calendarEvTitle),
         name: 'titles',
         displayKey: 'description',
@@ -255,9 +255,9 @@ function filtrarEv() {
         type: 'tagAutocomplete'
     });
 
-    $('#eventTitle').on('fluig.autocomplete.itemAdded', function () {
-        alert('asdfsa');
-        this.calendarEv = new Array();
-        $('#calendar').fullCalendar('refetchResources');
+    $('.eventTitle').on('fluig.autocomplete.itemAdded', function () {
+        // this.calendarEv = new Array();
+        // $('#calendar').fullCalendar('refetchResources');
+        console.log('Hey');
     });
 }
