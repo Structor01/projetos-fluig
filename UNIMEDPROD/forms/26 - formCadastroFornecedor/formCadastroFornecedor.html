@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cadastro de Fornecedor">
+<meta name="author" content="Totvs - GO / Unimed Goiânia">
+
+<title>Cadastro de Fornecedor</title>
+
+<link rel="stylesheet" type="text/css"
+	href="/portal/resources/style-guide/css/fluig-style-guide.min.css">
+<link type="text/css" rel="stylesheet" href="unimed.css" />	
+<script
+	src="/portal/resources/js/jquery/jquery.js"></script>
+<script
+	src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+<script
+	src="/portal/resources/js/mustache/mustache-min.js"></script>
+<script
+	src="/portal/resources/style-guide/js/fluig-style-guide.min.js"></script>
+
+
+<!-- CUSTOM -->
+<link
+	href="meucss.css" rel="stylesheet" type="text/css">
+<link
+	href="/portal/resources/style-guide/css/fluig-style-guide-filter.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="/portal/resources/style-guide/css/fluig-style-guide-ratingstars.min.css"
+	rel="stylesheet" type="text/css">
+<script
+	src="/portal/resources/style-guide/js/fluig-style-guide-filter.min.js"></script>
+<script language="javascript" type="text/javascript" src="custom.js"></script>
+<script language="javascript" type="text/javascript" src="zoom.js"></script>
+<script language="javascript" type="text/javascript" src="validacao.js"></script>
+<!-- vcXMLRPC -->
+<script type="text/javascript" src="../vcXMLRPC.js"></script>
+<script type="text/javascript" src="../vcXMLRPC-mobile.js"></script>
+</head>
+
+<body class="fluig-style-guide">
+
+	<div class="page-content container-fluid">
+		<div class="row">
+
+			<div class="col-md-12 col-xs-12">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-4 col-xs-4">
+							<div class="pull-left">
+								<img src="logo-unimed.png" width="150px" height="70px" />
+							</div>
+						</div>
+						<div class="col-md-8 col-xs-8 containerH1">
+							<h1 class="fs-no-margin fs-ellipsis fs-full-width">Cadastro de Fornecedor</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-12 col-xs-12">
+				<form name="form"
+					class="form-horizontal totvs-form grid vertical create-form-components ui-sortable t1"
+					role="form" action="" id="formulario" name="formulario">
+
+					<fieldset id="fsDadosFicha">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Solicitante</h3>
+							</div>
+							<div class="panel-body">
+
+								<div class="form-group fs-clearfix">
+
+									<div class="col-sm-3 col-xs-12" data-type="textbox" data-show-properties="" data-field-name="dataAbertura">
+										<label>Data Abertura</label> <input type="text" class="form-control" name="dataAbertura" id="dataAbertura" readonly>
+									</div>
+
+									<div class="col-sm-4 col-xs-12" data-type="textbox" data-show-properties="" data-field-name="nomeSolicitante" >
+										<label>Nome</label> <input type="text" class="form-control" name="nomeSolicitante" id="nomeSolicitante" readonly>
+										<input type="hidden" id='idSolicitante' name='idSolicitante'>
+									</div>
+
+									<div class="col-sm-4 col-xs-12" data-type="textbox" data-show-properties=""
+										data-field-name="matriculaSolicitante">
+										<label>Matrícula</label> <input type="text" class="form-control" name="matriculaSolicitante" id="matriculaSolicitante" readonly>
+									</div>
+								</div>
+							</div>						
+						</div>
+					</fieldset>
+					<fieldset id="fsDadosPagamento">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Dados para Cadastro</h3>
+							</div>
+							<div class="panel-body" id="divDadosCadastro">
+								<div class="form-group fs-clearfix">
+									<div class="col-sm-3 col-md-3 col-xs-12" data-type="textbox">
+										<label>Unidade</label> 
+										<input style="width: 250px'" type="zoom" class="form-control"
+											name="zoomUnidade" id="zoomUnidade" 
+											data-zoom="{
+										        'displayKey':'CNOMEFIL',
+										        'datasetId':'dsUnidadeUnimed',
+										        'fields':[
+													{
+										              'field':'CEMPRESA',
+										              'label':'Empresa'
+										            },
+													{
+										              'field':'CFILEMP',
+										              'label':'Filial'
+										            },
+										            {
+										              'field':'CNOMEFIL',
+										              'label':'Descrição',
+										              'standard':'true',
+										              'search': 'true'
+										            }           
+										        ]
+										     }" />
+									</div>
+									<div class="col-md-3 col-sm-3 col-xs-12">
+										<label>CPF / CNPJ</label>
+										<input type="text" class="form-control" name="A2CGC" id="A2CGC" onkeydown="return MascaraCpfCnpj(this,event)" onkeyup="return MascaraCpfCnpj(this,event)" placeholder="Digite o CPF / CNPJ">
+									</div>
+									<div class="col-sm-2 col-md-2 col-xs-12" data-type="textbox">
+										<label>Empresa</label> 
+										<input type="text" class="form-control" name="A2COD" id="A2COD" readonly/>
+									</div>
+									<div class="col-sm-2 col-md-2 col-xs-12" data-type="textbox">
+										<label>Filial</label> 
+										<input type="text" class="form-control" name="A2LOJA" id="A2LOJA" readonly/>
+									</div>
+									<div class="col-sm-2 col-md-2 col-xs-12" data-type="textbox">
+										<label>Cód. Fornecedor</label> 
+										<input type="text" class="form-control" name="A2CODFORN" id="A2CODFORN" readonly/>
+									</div>
+								</div>
+								<div id='divDadosForn' style="display: none;">
+									<div class="form-group fs-clearfix">
+										<div class="col-md-4 col-sm-4 col-xs-12">
+											<label>Raz&atilde;o Social</label>
+											<input type="text" class="form-control" name="A2NOME" id="A2NOME"/> 
+										</div>
+										<div class="col-md-4 col-sm-4 col-xs-12" data-type="textbox">
+											<label>Nome Fantasia</label>
+											<input type="text" class="form-control" name="A2NREDUZ" id="A2NREDUZ">
+										</div>
+										<div class="col-sm-2 col-xs-12">
+											<label>Fisíca/Jurídica</label> 
+											<div class="form-field" data-type="radio-inline"
+												data-show-properties="" data-field-name="A2PESSOA">																
+												<label class="radio-inline">
+													<input type="radio" name="A2PESSOA" id="A2PESSOA1" value="F">Física
+												</label> 
+												<label class="radio-inline"> 
+													<input type="radio" name="A2PESSOA" id="A2PESSOA2" value="J">Jurídica
+												</label>
+											</div>		
+										</div>
+									</div>
+									<div class="form-group fs-clearfix">
+										<div class="col-sm-3 col-md-3 col-xs-12" data-type="textbox">
+											<label>CEP</label>
+											<input type="text" class="form-control" name="A2CEP" value="" id="A2CEP" placeholder="Digite o CEP para busca do Endereço" maxlength='9' mask='#9999-999'>
+										</div>
+									</div>
+									<div class="form-group fs-clearfix">
+										<div class="col-sm-4 col-md-4 col-xs-12" data-type="textbox">
+											<label>Endereço</label>
+											<input type="text" class="form-control" name="A2END" maxlength="40" id="A2END" readonly>
+										</div>
+
+										<div class="col-sm-3 col-md-3 col-xs-12" data-type="textbox">
+											<label>Bairro</label>
+											<input type="text" class="form-control" name="A2BAIRRO" maxlength="30" id="A2BAIRRO" readonly>
+										</div>
+										<div class="col-sm-1 col-md-1 col-xs-12" data-type="textbox">
+											<label>Cod.Município</label>
+											<input type="text" class="form-control" name="A2CODMUN" maxlength="5" id="A2CODMUN" readonly>
+										</div>
+										<div class="col-sm-3 col-md-3 col-xs-12" data-type="textbox">
+											<label>Municipio</label>
+											<input type="text" class="form-control" name="A2MUN" maxlength="15" id="A2MUN" readonly>
+										</div>
+										<div class="col-sm-1 col-md-1 col-xs-12" data-type="textbox">
+											<label>Estado</label>
+											<input type="text" class="form-control" name="A2EST" maxlength="2" id="A2EST" readonly>
+										</div>
+									</div>
+									<div class="form-group fs-clearfix">
+										<div class="col-sm-1 col-md-1 col-xs-12" data-type="textbox">
+											<label>DDD</label>
+											<input type="text" class="form-control" maxlength=3 name="A2DDD" maxlength="3" id="A2DDD" mask="#999">
+										</div>
+										<div class="col-sm-2 col-md-2 col-xs-12" data-type="textbox">
+											<label>Telefone</label>
+											<input type="text" class="form-control" name="A2TELEFONE" id="A2TELEFONE" mask="9999-9999">
+										</div>
+										<div class="col-sm-2 col-md-2 col-xs-12" data-type="textbox">
+											<label>Contato</label>
+											<input type="text" class="form-control" name="A2CONTATO" id="A2CONTATO">
+										</div>
+									</div>
+								</div>
+							</div>						
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script language="javascript" type="text/javascript"
+		src="ConsultaCep.js"></script>
+	<script type="text/javascript">
+		//permite digitar somente numeros
+		$('body').on('keypress', '[data-only-numbers]', function(ev) {
+			var k = ev.keyCode || ev.which;
+			//Permite apagar o conteÃºdo do campo usando as teclas 'backspace' ou 'delete' no firefox.
+			//Nos outros navegadores o keypress nÃ£o gera evento.
+			if (k == 8 || k == 46) {
+				return true;
+			}
+			k = String.fromCharCode(k);
+			if (isNaN(k)) {
+				return false;
+			}
+			return true;
+		});
+
+		$('.create-form-components')
+				.on(
+						'keyup',
+						'input[required="required"][type="text"], input[required="required"][type="number"], input[required="required"][type="date"], textarea[required="required"]',
+						function() {
+							validationFieldsForm($(this), $(this).parents(
+									'.form-field').data('type'));
+						});
+
+		$('.create-form-components')
+				.on(
+						'change',
+						'input[required="required"][type="checkbox"], input[required="required"][type="radio"], select[required="required"]',
+						function() {
+							validationFieldsForm($(this), $(this).parents(
+									'.form-field').data('type'));
+						});
+
+		function validationFieldsForm(field, type) {
+			if (type === "checkbox" || type === "radio") {
+				if (!field.is(':checked')) {
+					field.parents('.form-field').addClass('required');
+				} else {
+					field.parents('.form-field').removeClass('required');
+				}
+			} else {
+				if (!field.val().trim()) {
+					field.parents('.form-field').addClass('required');
+				} else {
+					field.parents('.form-field').removeClass('required');
+				}
+			}
+		}
+
+		var $zoomPreview = $(".zoom-preview");
+		if ($zoomPreview.length) {
+			$zoomPreview.parent().removeClass("input-group");
+			$zoomPreview.remove();
+		}
+
+		var ratings = $(".rating");
+		if (ratings.length > 0)
+			ratingStars(ratings);
+		function ratingStars(stars) {
+			$.each(stars, function(i, obj) {
+				var field = $(this).closest(".form-group")
+						.find(".rating-value");
+				var tgt = $(obj);
+				tgt.html("");
+				var rating = FLUIGC.stars(tgt, {
+					value : field.val()
+				});
+				rating.on("click", function(o) {
+					field.val($(this).index() + 1);
+				});
+			});
+		}
+
+		$.each($("[data-date]"), function(i, o) {
+			var id = $(o).parent().attr("id");
+			FLUIGC.calendar("#" + id);
+		});
+	</script>
+
+</body>
+</html>

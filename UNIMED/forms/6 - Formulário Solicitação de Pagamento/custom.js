@@ -557,7 +557,7 @@ function consultaFornecedor(valor) {
         });
 
         $('[data-novoForn]').on('click', function () {
-            window.open("http://http://10.64.60.87:8080/portal/p/3/pageworkflowview?processID=cadastroFornecedor", "_blank");
+            window.open("/portal/p/03/pageworkflowview?processID=cadastroFornecedor", "_blank");
         });
 
         return 3;
