@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
@@ -22,8 +21,8 @@
       <file leaf-file-name="Eventos.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="252" column="25" lean-forward="true" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="25" />
+            <state relative-caret-position="45">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="19" />
               <folding>
                 <element signature="n#!!block;n#arrangeData#0" />
                 <element signature="n#!!block;n#disarrangeData#0" />
@@ -56,7 +55,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pac</find>
       <find>valor</find>
       <find>try</find>
       <find>arrangeda</find>
@@ -86,6 +84,7 @@
       <find>blur</find>
       <find>`</find>
       <find>modal</find>
+      <find>calendarEvTitle</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -332,12 +331,12 @@
       <workItem from="1526045927937" duration="6715000" />
       <workItem from="1527515550813" duration="8561000" />
       <workItem from="1527596569756" duration="540000" />
-      <workItem from="1527611020647" duration="2430000" />
+      <workItem from="1527611020647" duration="2682000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134662000" />
+    <option name="totallyTimeSpent" value="134914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -689,8 +688,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="252" column="25" lean-forward="true" selection-start-line="252" selection-start-column="25" selection-end-line="252" selection-end-column="25" />
+        <state relative-caret-position="45">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="19" />
           <folding>
             <element signature="n#!!block;n#arrangeData#0" />
             <element signature="n#!!block;n#disarrangeData#0" />

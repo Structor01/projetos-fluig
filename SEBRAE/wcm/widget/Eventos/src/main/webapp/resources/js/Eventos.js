@@ -1,6 +1,7 @@
 var HelloWorld = SuperWidget.extend({
     message: null,
     calendarEv: [],
+    calendarEvTitle:[],
     init: function () {
         // Esconder o header padrão do Fluig
         $('.fl-header').hide();
@@ -13,11 +14,11 @@ var HelloWorld = SuperWidget.extend({
         var dataset = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
         this.eventos = dataset.values;
         this.calendarEv = new Array();
-        var calendarEvTitle = new Array();
+        HelloWorld.calendarEvTitle = new Array();
 
         for(var i in this.eventos) {
-            calendarEvTitle.indexOf(this.eventos[i]['nomeEvento']) == -1 ?
-                calendarEvTitle.push(this.eventos[i]['nomeEvento']) : false;
+            HelloWorld.calendarEvTitle.indexOf(this.eventos[i]['nomeEvento']) == -1 ?
+                HelloWorld.calendarEvTitle.push(this.eventos[i]['nomeEvento']) : false;
             this.calendarEv.push({
                 id: this.eventos[i]['id'],
                 city:this.eventos[i]['local'],
@@ -88,20 +89,6 @@ var HelloWorld = SuperWidget.extend({
                 $('div.fc-row.fc-widget-header')
                     .css('padding','0px');
             }
-        });
-
-        var myAutocomplete = FLUIGC.autocomplete('#eventTitle', {
-            source: substringMatcher(calendarEvTitle),
-            name: 'titles',
-            displayKey: 'description',
-            tagClass: 'tag-gray',
-            type: 'tagAutocomplete'
-        });
-
-        $('#eventTitle').on('fluig.autocomplete.itemAdded', function () {
-            alert('asdfsa');
-            this.calendarEv = new Array();
-            $('#calendar').fullCalendar('refetchResources');
         });
     },
     bindings: {
@@ -258,5 +245,19 @@ function filtrarEv() {
             'label': 'Fechar',
             'autoClose': true
         }]
+    });
+
+    var myAutocomplete = FLUIGC.autocomplete('#eventTitle', {
+        source: substringMatcher(HelloWorld.calendarEvTitle),
+        name: 'titles',
+        displayKey: 'description',
+        tagClass: 'tag-gray',
+        type: 'tagAutocomplete'
+    });
+
+    $('#eventTitle').on('fluig.autocomplete.itemAdded', function () {
+        alert('asdfsa');
+        this.calendarEv = new Array();
+        $('#calendar').fullCalendar('refetchResources');
     });
 }
