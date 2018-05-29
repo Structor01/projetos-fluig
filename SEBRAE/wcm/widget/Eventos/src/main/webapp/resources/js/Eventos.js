@@ -254,6 +254,10 @@ function filtrarEv() {
 
     $('[data-filtrar]').on('click', function () {
        console.log('Filtro');
+       $('#instanceModal_F').find('input').each(function (e) {
+           console.log(this.val());
+       });
+       myModal.remove();
     });
 
     var myAutocomplete = FLUIGC.autocomplete('.eventTitle', {
