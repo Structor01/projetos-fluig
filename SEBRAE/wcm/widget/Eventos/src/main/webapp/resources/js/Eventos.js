@@ -241,10 +241,19 @@ function filtrarEv() {
         content: '<div id="instanceModal_F">'+$('#modalFiltros').html()+'</div>',
         id: 'fluig-modal',
         size:'full',
-        actions: [{
-            'label': 'Fechar',
-            'autoClose': true
-        }]
+        actions: [
+            {
+                'label': 'Cancelar',
+                'autoClose': true
+            },{
+                'label': 'Filtrar',
+                'bind':'data-filtrar'
+            }
+        ]
+    });
+
+    $('[data-filtrar]').on('click', function () {
+       console.log('Filtro');
     });
 
     var myAutocomplete = FLUIGC.autocomplete('.eventTitle', {
