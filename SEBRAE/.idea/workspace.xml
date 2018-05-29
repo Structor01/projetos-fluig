@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +21,8 @@
       <file leaf-file-name="Eventos.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="256" column="51" lean-forward="true" selection-start-line="256" selection-start-column="51" selection-end-line="256" selection-end-column="51" />
+            <state relative-caret-position="239">
+              <caret line="266" column="42" selection-start-line="266" selection-start-column="42" selection-end-line="266" selection-end-column="42" />
               <folding>
                 <element signature="n#!!block;n#arrangeData#0" />
                 <element signature="n#!!block;n#disarrangeData#0" />
@@ -41,8 +42,8 @@
       <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="156" column="61" selection-start-line="156" selection-start-column="51" selection-end-line="156" selection-end-column="61" />
+            <state relative-caret-position="122">
+              <caret line="156" column="67" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="67" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -330,12 +331,12 @@
       <workItem from="1526045927937" duration="6715000" />
       <workItem from="1527515550813" duration="8561000" />
       <workItem from="1527596569756" duration="540000" />
-      <workItem from="1527611020647" duration="3865000" />
+      <workItem from="1527611020647" duration="4229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136097000" />
+    <option name="totallyTimeSpent" value="136461000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -677,8 +678,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="156" column="61" selection-start-line="156" selection-start-column="51" selection-end-line="156" selection-end-column="61" />
+        <state relative-caret-position="122">
+          <caret line="156" column="67" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -687,8 +688,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="256" column="51" lean-forward="true" selection-start-line="256" selection-start-column="51" selection-end-line="256" selection-end-column="51" />
+        <state relative-caret-position="239">
+          <caret line="266" column="42" selection-start-line="266" selection-start-column="42" selection-end-line="266" selection-end-column="42" />
           <folding>
             <element signature="n#!!block;n#arrangeData#0" />
             <element signature="n#!!block;n#disarrangeData#0" />

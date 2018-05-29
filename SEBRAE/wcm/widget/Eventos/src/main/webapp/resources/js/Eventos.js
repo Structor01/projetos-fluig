@@ -2,6 +2,7 @@ var HelloWorld = SuperWidget.extend({
     message: null,
     calendarEv: [],
     calendarEvTitle:[],
+    filtros:[],
     init: function () {
         // Esconder o header padrão do Fluig
         $('.fl-header').hide();
@@ -254,19 +255,24 @@ function filtrarEv() {
     });
 
     $('[data-clear]').on('click', function () {
-        $('#instanceModal_F .eventTitle').remove();
         myModal.remove();
     });
 
     $('[data-filtrar]').on('click', function () {
         console.log('Filtro');
+        HelloWorld.filtros = [];
         $('#instanceModal_F').find('input').each(function (e) {
+            var fJson = {};
+            fJson[$(this).attr('name')] = $(this).val();
+            HelloWorld.filtros.push(fJson);
             console.log($(this).val());
         });
         myModal.remove();
     });
 
-    var myAutocomplete = FLUIGC.autocomplete('.eventTitle', {
+    var el = $('#instanceModal_F').find('.eventTitle');
+
+    var myAutocomplete = FLUIGC.autocomplete(el, {
         source: substringMatcher(HelloWorld.calendarEvTitle),
         name: 'titles',
         displayKey: 'description',
