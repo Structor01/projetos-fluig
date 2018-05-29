@@ -122,6 +122,7 @@ $(document).ready(function(){
     $('#valorPagamentoRateio').html($('#valorPagamento').val());
 
     $(".navbar-default").css('background', '#FFF');
+
     //$(".navbar-default").css('color', '#FFF');
 
     // $("#aNavPagamento").hover(function(){
@@ -556,7 +557,7 @@ function consultaFornecedor(valor) {
         });
 
         $('[data-novoForn]').on('click', function () {
-            window.open("http://fluig.unimedgoiania.coop.br/portal/p/3/pageworkflowview?processID=cadastroFornecedor", "_blank");
+            window.open("http://http://10.64.60.87:8080/portal/p/3/pageworkflowview?processID=cadastroFornecedor", "_blank");
         });
 
         return 3;

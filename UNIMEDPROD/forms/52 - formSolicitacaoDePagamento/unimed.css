@@ -1,4 +1,4 @@
-.fluig-style-guide .panel-default>.panel-heading {
+.primaryCl {
 	color: #FFF !important;
 	background-color: #00824a!important;
 	border-color: #00824a!important;
@@ -14,3 +14,8 @@ div.containerH1 h1 {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) }
+
+nav-tabs li:hover {
+    background-color: #00824a;
+    color: white;
+}
