@@ -84,23 +84,7 @@ var HelloWorld = SuperWidget.extend({
                 $('#instanceModal_C').find('input, textarea, select').attr('disabled', true);
             },
             viewRender: function(view, element) {
-                $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
-                $('a.fc-time-grid-event').css('padding', '5px');
-                $('.fc-time').css('color','rgba(255,255,255,1) !important');
-                // $('.fc-minor, .fc-widget-content').css('background-color','rgba(0,128,255,1) !important');
-                $('a.fc-time-grid-event, .fc-content').css('background-color', 'rgba(0, 0, 0, 0)');
-                $('.fc-day-grid-event, .fc-time-grid-event').css('border', 'none');
-                $('.fc-list-item').find('td').css('padding','5px');
-                $('.fc-widget-header').css('padding','5px');
-                $('.fc-widget-content').css('background-color','rgba(255,255,255,1) !important');
-                $('td.fc-axis.fc-time.fc-widget-content').css('background-color','rgba(0,128,255,1) !important');
-                $('.fc-time-grid-event,.fc-v-event,.fc-event,.fc-start,.fc-end')
-                    .css('background-color','rgba(0,128,255,1) !important');
-                $('hr.fc-divider.fc-widget-header').css('padding','0px');
-                $('td.fc-head-container.fc-widget-header')
-                    .css('padding','0px');
-                $('div.fc-row.fc-widget-header')
-                    .css('padding','0px');
+                styleView();
             }
         });
     },
@@ -296,6 +280,7 @@ function filtrarEv() {
         }
 
         $('#calendar').fullCalendar('addEventSource', HelloWorld.tempCalendarEv);
+        styleView();
         myModal.remove();
     });
 
@@ -318,4 +303,24 @@ function filtrarEv() {
         // $('#calendar').fullCalendar('refetchResources');
         console.log('Hey');
     });
+}
+
+function styleView() {
+    $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
+    $('a.fc-time-grid-event').css('padding', '5px');
+    $('.fc-time').css('color','rgba(255,255,255,1) !important');
+    // $('.fc-minor, .fc-widget-content').css('background-color','rgba(0,128,255,1) !important');
+    $('a.fc-time-grid-event, .fc-content').css('background-color', 'rgba(0, 0, 0, 0)');
+    $('.fc-day-grid-event, .fc-time-grid-event').css('border', 'none');
+    $('.fc-list-item').find('td').css('padding','5px');
+    $('.fc-widget-header').css('padding','5px');
+    $('.fc-widget-content').css('background-color','rgba(255,255,255,1) !important');
+    $('td.fc-axis.fc-time.fc-widget-content').css('background-color','rgba(0,128,255,1) !important');
+    $('.fc-time-grid-event,.fc-v-event,.fc-event,.fc-start,.fc-end')
+        .css('background-color','rgba(0,128,255,1) !important');
+    $('hr.fc-divider.fc-widget-header').css('padding','0px');
+    $('td.fc-head-container.fc-widget-header')
+        .css('padding','0px');
+    $('div.fc-row.fc-widget-header')
+        .css('padding','0px');
 }
