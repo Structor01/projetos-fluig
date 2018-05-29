@@ -244,6 +244,7 @@ function filtrarEv() {
         actions: [
             {
                 'label': 'Cancelar',
+                'bind':'data-clear',
                 'autoClose': true
             },{
                 'label': 'Filtrar',
@@ -252,12 +253,17 @@ function filtrarEv() {
         ]
     });
 
+    $('[data-clear]').on('click', function () {
+        myAutocomplete.remove();
+        myModal.remove();
+    });
+
     $('[data-filtrar]').on('click', function () {
-       console.log('Filtro');
-       $('#instanceModal_F').find('input').each(function (e) {
-           console.log(this.val());
-       });
-       myModal.remove();
+        console.log('Filtro');
+        $('#instanceModal_F').find('input').each(function (e) {
+            console.log($(this).val());
+        });
+        myModal.remove();
     });
 
     var myAutocomplete = FLUIGC.autocomplete('.eventTitle', {
@@ -268,7 +274,7 @@ function filtrarEv() {
         type: 'tagAutocomplete'
     });
 
-    $('.eventTitle').on('fluig.autocomplete.itemAdded', function () {
+    $('#instanceModal_F .eventTitle').on('fluig.autocomplete.itemAdded', function () {
         // this.calendarEv = new Array();
         // $('#calendar').fullCalendar('refetchResources');
         console.log('Hey');
