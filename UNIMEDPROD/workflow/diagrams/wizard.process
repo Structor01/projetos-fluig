@@ -1498,7 +1498,7 @@
   <bpmn2:BpmnEndEvent id="endevent57" name="Fim" incoming="flow67" type="60" extendedFields="&lt;list/>" signalId="0"/>
   <bpmn2:BpmnAnnotation id="annotationtask7" name="Cria ambiente no Fluig" outgoing="flow8" type="0"/>
   <bpmn2:BpmnAnnotation id="annotationtask28" name="Parabens, seu Fluig esta pronto para uso" outgoing="flow59" type="0"/>
-  <bpmn2:BpmnProcess id="wizard" name="Assistente de Importacao Rapida" serverId="UNIMED-P" version="1" author="" extendedFields="&lt;list/>" cardIndex="7" formSource="server" managerMechanism="Papel" managerAssignmentController="&lt;org.eclipse.bpmn2.impl.AssignmentControllerRole>&#xA;  &lt;roleId>admin&lt;/roleId>&#xA;  &lt;mechanismName>Papel&lt;/mechanismName>&#xA;&lt;/org.eclipse.bpmn2.impl.AssignmentControllerRole>" category="" volume="Default" expedient="Default"/>
+  <bpmn2:BpmnProcess id="wizard" name="Assistente de Importacao Rapida" serverId="UNIMED-P" version="1" author="" extendedFields="&lt;list/>" cardIndex="7" formSource="server" managerMechanism="Papel" managerAssignmentController="&lt;org.eclipse.bpmn2.impl.AssignmentControllerRole>&#xA;  &lt;roleId>admin&lt;/roleId>&#xA;  &lt;mechanismName>Papel&lt;/mechanismName>&#xA;&lt;/org.eclipse.bpmn2.impl.AssignmentControllerRole>" category="" volume="Default" expedient="Default" instruction=""/>
   <bpmn2:SequenceFlow id="flow52" name="" sourceRef="task48" targetRef="task49" extendedFields="&lt;list/>"/>
   <bpmn2:SequenceFlow id="flow54" name="" sourceRef="task49" targetRef="task53" extendedFields="&lt;list/>"/>
   <bpmn2:SequenceFlow id="flow63" name="" sourceRef="startevent1" targetRef="task44" extendedFields="&lt;list/>"/>

@@ -155,27 +155,41 @@
 	<div class="hide" id="modalFiltros">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<div class="form-group col-md-12">
+				<div class="form-group col-md-8">
 					<label>Título do Evento</label>
 					<div class="input-group">
-						<input class="form-control eventTitle" name="eventTitle" value="">
+						<input class="form-control eventTitle" placeholder="Filtre pelo Título do Evento" name="eventTitle" value="">
 						<div class="input-group-addon">
 							<span class="fluigicon fluigicon-search"></span>
 						</div>
 					</div>
 				</div>
-				<div class="form-group col-md-6">
+				<div class="form-group col-md-4">
 					<label>Tipo do Evento</label>
 					<!--<input class="form-control" name="eventType" value="">-->
-					<select class="form-control eventType">
-						<option value=""></option>
+					<select class="form-control eventType" name="eventType">
+						<option value="">Filtre por Tipo de Evento</option>
 					</select>
 				</div>
-				<div class="form-group col-md-6">
+				<div class="form-group col-md-4">
+					<label>Unidade Vinculada</label>
+					<!--<input class="form-control" name="eventCity" value="">-->
+					<select class="form-control eventUnidade" name="eventUnidade">
+						<option value="">Filtre por Unidade Vinculada</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
+					<label>Estado</label>
+					<!--<input class="form-control" name="eventCity" value="">-->
+					<select class="form-control eventState" name="eventState">
+						<option value="">Filtre por Estado</option>
+					</select>
+				</div>
+				<div class="form-group col-md-4">
 					<label>Cidade</label>
 					<!--<input class="form-control" name="eventCity" value="">-->
-					<select class="form-control eventCity">
-						<option value=""></option>
+					<select class="form-control eventCity" name="eventCity"  disabled>
+						<option value="">Filtre por Cidade</option>
 					</select>
 				</div>
 			</div>

@@ -4,12 +4,16 @@ var HelloWorld = SuperWidget.extend({
     calendarEvTitle:[],
     calendarEvType:[],
     calendarEvCity:[],
+    unidadesVinculadas:[],
     filtros: {},
     tempCalendarEv: [],
     init: function () {
+        getStates();
+        tipoEv();
         // Esconder o header padrão do Fluig
         $('.fl-header').hide();
         $('#wcm-content').css('margin-top','-7rem');
+        
         // Push dos eventos salvos no formulário.
         var constraints = new Array();
         var today = new Date();
@@ -31,17 +35,24 @@ var HelloWorld = SuperWidget.extend({
             HelloWorld.calendarEvCity.indexOf(this.eventos[i]['codCidade']) == -1 ?
                 this.eventos[i]['codCidade'] : false;
 
+            if(HelloWorld.unidadesVinculadas.indexOf(HelloWorld.eventos[i]['unidadeVinculada']) == -1)
+                HelloWorld.unidadesVinculadas.push(HelloWorld.eventos[i]['unidadeVinculada']);
+
             HelloWorld.calendarEv.push({
                 id: HelloWorld.eventos[i]['id'],
                 city:HelloWorld.eventos[i]['codCidade'],
                 title: HelloWorld.eventos[i]['nomeEvento'],
                 start: switchMonth(HelloWorld.eventos[i]['dtInicio']),
                 end: switchMonth(HelloWorld.eventos[i]['dtFinal']),
-                type: HelloWorld.eventos[i]['tipoEvento']
+                type: HelloWorld.eventos[i]['tipoEvento'],
+                unidade: HelloWorld.eventos[i]['unidadeVinculada']
             });
         }
 
+        getUnidadeVinculada();
+
         $('#modalFiltros').find('.eventTitle');
+        
         // Widget Calendar
         $('#calendar').fullCalendar({
             lang: 'pt',
@@ -257,8 +268,9 @@ function filtrarEv() {
     $('[data-filtrar]').on('click', function () {
         console.log('Filtro');
         HelloWorld.filtros = [];
-        $('#instanceModal_F').find('input').each(function (e) {
-            HelloWorld.filtros[$(this).attr('name')] = $(this).val();
+        $('#instanceModal_F').find('input, select').each(function (e) {
+            if($(this).attr('name') != undefined)
+                HelloWorld.filtros[$(this).attr('name')] = $(this).val();
             console.log($(this).val());
         });
 
@@ -270,11 +282,25 @@ function filtrarEv() {
         HelloWorld.tempCalendarEv = [];
 
         for(var i in HelloWorld.calendarEv) {
-            if(HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) > -1) {
-                HelloWorld.tempCalendarEv.push(HelloWorld.calendarEv[i]);
-            } else if(HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) > -1) {
-
-            } else if(HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) > -1) {
+            if(
+                ($('#instanceModal_F').find('.eventTitle').val() != "" &&
+                    HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) > -1) ||
+                ($('#instanceModal_F').find('.eventType').val() != "" &&
+                    HelloWorld.calendarEv[i]['type'].indexOf($('#instanceModal_F').find('.eventType').val()) > -1) ||
+                ($('#instanceModal_F').find('.eventCity').val() != "" &&
+                    HelloWorld.calendarEv[i]['city'].indexOf($('#instanceModal_F').find('.eventCity').val()) > -1) ||
+                ($('#instanceModal_F').find('.eventUnidade').val() != "" &&
+                    HelloWorld.calendarEv[i]['unidade'].indexOf($('#instanceModal_F').find('.eventUnidade').val()) > -1)
+            ) {
+                if($('#instanceModal_F').find('.eventTitle').val() != "" && HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) == -1) continue;
+                if($('#instanceModal_F').find('.eventType').val() != "" && HelloWorld.calendarEv[i]['type'].indexOf($('#instanceModal_F').find('.eventType').val()) == -1) continue;
+                if($('#instanceModal_F').find('.eventUnidade').val() != "" && HelloWorld.calendarEv[i]['unidade'].indexOf($('#instanceModal_F').find('.eventUnidade').val()) == -1) continue;
+                    HelloWorld.tempCalendarEv.push(HelloWorld.calendarEv[i]);
+            } else
+            if(
+                $('#instanceModal_F').find('.eventState').val() != "" &&
+                HelloWorld.calendarEv[i]['title'].indexOf($('#instanceModal_F').find('.eventTitle').val()) > -1
+            ) {
 
             }
         }
@@ -289,19 +315,39 @@ function filtrarEv() {
     var myAutocomplete = FLUIGC.autocomplete(el, {
         source: substringMatcher(HelloWorld.calendarEvTitle),
         name: 'titles',
+        placeholder:'Filtre pelo Título do Evento',
         displayKey: 'description',
         tagClass: 'tag-gray',
         type: 'tagAutocomplete'
     });
 
     if(HelloWorld.filtros && Object.keys(HelloWorld.filtros).length > 0) {
-        myAutocomplete.add({ description: HelloWorld.filtros['eventTitle'] });
+        for(var i in HelloWorld.filtros) {
+            if(i != 'eventTitle') {
+                $('#instanceModal_F .'+i).val(HelloWorld.filtros[i]);
+            }
+        }
+        if(HelloWorld.filtros['eventTitle'] != "") myAutocomplete.add({ description: HelloWorld.filtros['eventTitle'] });
     }
 
     $('#instanceModal_F .eventTitle').on('fluig.autocomplete.itemAdded', function () {
         // this.calendarEv = new Array();
         // $('#calendar').fullCalendar('refetchResources');
         console.log('Hey');
+    });
+
+    $('#instanceModal_F .eventState').on('change', function () {
+        // Push dos estados salvos no SAS.
+        var constraints = new Array();
+        var dataset = DatasetFactory.getDataset("dsCidadesSAS", null, [DatasetFactory.createConstraint("codEstado", $(this).val(), $(this).val(), ConstraintType.MUST)  ], ["descricaoCidade"]);
+        if(dataset && dataset.values.length > 0) {
+            var html = '';
+            for(var i in dataset.values) {
+                html += '<option value="'+ dataset.values[i]['codCidade'] +'">'+ dataset.values[i]['descricaoCidade'] +'</option>';
+            }
+            $('.eventCity').prop('disabled', false)
+            $('.eventCity').html(html);
+        }
     });
 }
 
@@ -323,4 +369,38 @@ function styleView() {
         .css('padding','0px');
     $('div.fc-row.fc-widget-header')
         .css('padding','0px');
+}
+
+function getStates() {
+    // Push dos estados salvos no SAS.
+    var constraints = new Array();
+    var dataset = DatasetFactory.getDataset("dsEstadosSAS", null, constraints, ["descEstado"]);
+    if(dataset && dataset.values.length > 0) {
+        var html = '';
+        for(var i in dataset.values) {
+            html += '<option value="'+ dataset.values[i]['codEstado'] +'">'+ dataset.values[i]['descEstado'] +'</option>';
+        }
+
+        $('.eventState').append(html);
+    }
+}
+
+function getUnidadeVinculada() {
+    var html = '';
+    for(var i in HelloWorld.unidadesVinculadas) {
+        html += '<option>'+ HelloWorld.unidadesVinculadas[i] +'</option>'
+    }
+    $('.eventUnidade').append(html);
+}
+
+function tipoEv() {
+    var html = '';
+    var tipoEventos = DatasetFactory.getDataset("dsTipoEvento", null, null, null);
+    if(tipoEventos.values && tipoEventos.values.length) {
+        for(var i in tipoEventos.values) {
+            var rec = tipoEventos.values[i];
+            html += '<option value"' + rec['Tipo'] + '">' + rec['Tipo'] + '</option>';
+        }
+        $('.eventType').append(html);
+    }
 }
