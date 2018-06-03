@@ -244,8 +244,8 @@ function salvarForm() {
     $('#masterWrap').find('input, select').each(function () {
         var name = $(this).attr('name');
         var val = $(this).val();
-
-        console.log();
+        console.log(name,val);
+        constraints.push(DatasetFactory.createConstraint("CardData",  name+";"+val, "", ConstraintType.MUST));
     });
     constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
     var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
