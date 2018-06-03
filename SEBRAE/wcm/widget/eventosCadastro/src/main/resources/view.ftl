@@ -29,10 +29,10 @@
             margin-right: .5rem;
         }
 
-        #pac-input {
-            margin-right: 17px;
-            margin-top: 10px;
-        }
+        /*#pac-input {*/
+            /*margin-right: 17px;*/
+            /*margin-top: 10px;*/
+        /*}*/
         .controls {
             background-color: #fff;
             border-radius: 2px;
@@ -67,7 +67,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTJSJx5RHWfAOsZnpHVn2gONfACdSxHno&libraries=places&callback=initMap"
             async defer></script>
     <div class="fluig-style-guide">
-        <div class="container-fluid">
+        <div class="container-fluid" id="masterWrap">
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -80,25 +80,26 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="nomeEvento">Nome do Local</label>
-                            <input type="text" class="form-control" id="nomeLocal" name="nomeLocal">
+                            <input type="text" class="form-control" id="nomeLocal" name="nomeLocal" placeholder="Favor informar o nome do local.">
                         </div>
-                        <div class="form-group col-md-12">
-                            <input id="pac-input" class="controls" type="text"
-                                   placeholder="Enter a location">
-                            <div id="map"></div>
+                        <div class="row" id="mapWrap">
+                            <!--<input id="pac-input" class="controls col-md-12" type="text"-->
+                                   <!--placeholder="Pesquise um local" style="font-size: medium">-->
+                            <div class="col-md-12" id="map"></div>
                             <div id="infowindow-content">
                                 <span id="place-name"  class="title"></span><br>
                                 Place ID <span id="place-id"></span><br>
                                 <span id="place-address"></span>
                             </div>
                         </div>
-                        <div class="form-group col-md-8">
+                        <!--<div class="form-group col-md-2">-->
+                            <!--<label>&nbsp;</label>-->
+                            <!--<button type="button" onclick="$('#mapWrap').slideToggle()" id="btn-esconder" class="btn btn-primary btn-sm">Esconder/Mostrar Mapa</button>-->
+                            <!--<a href="#" class="btn btn-info hide" target="_blank" id="rotas" role="button"><span class="fluigicon fluigicon-map-marker fluigicon-sm"></span> Rotas</a>-->
+                        <!--</div>-->
+                        <div class="form-group col-md-12">
                             <label for="endereco">Endereço</label>
-                            <input type="text" class="form-control" id="endereco" name="endereco">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <button type="button" onclick="$('#map').toggle()" id="btn-esconder" style="margin: 0.5rem" class="btn btn-primary fs-float-right btn-sm">Esconder/Mostrar Mapa</button>
-                            <a href="#" class="btn btn-info fs-float-right fs-float-right hide" style="margin: 0.5rem" target="_blank" id="rotas" role="button"><span class="fluigicon fluigicon-map-marker fluigicon-sm"></span> Rotas</a>
+                            <input type="text" class="form-control" placeholder="Favor informar o Endereço" id="pac-input" name="endereco">
                         </div>
                     </div>
                 </div>
@@ -175,7 +176,7 @@
                         </div>
                     </li>
                     <li class="list-group-item fs-float-right" style="border: none; margin: .5rem">
-                        <button class="btn btn-success">Salvar</button>
+                        <button onclick="salvarForm()" class="btn btn-success">Salvar</button>
                     </li>
                 </ul>
             </div>

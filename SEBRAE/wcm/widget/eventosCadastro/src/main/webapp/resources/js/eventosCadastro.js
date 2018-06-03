@@ -50,7 +50,7 @@ function initMap() {
 
     autocomplete.bindTo('bounds', map);
 
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     var infowindow = new google.maps.InfoWindow();
     var infowindowContent = document.getElementById('infowindow-content');
@@ -93,6 +93,20 @@ function initMap() {
     });
 
     $('#map').css('height', '300px');
+    $('#mapWrap').hide();
+
+    $('#pac-input').on('focus', function () {
+        $('#mapWrap').slideDown(500, function () {
+            window.scrollTo({
+                top: $(this).offset().top,
+                behavior: "smooth"
+            });
+        });
+    });
+
+    $('#pac-input').on('blur', function () {
+        $('#mapWrap').slideUp();
+    });
 }
 
 function tryCon() {
@@ -118,8 +132,11 @@ function tryCon() {
 }
 
 $(document).ready(function() {
-    $(this).mask('(00) 0000-0000#');
+    // $(this).mask('(00) 0000-0000#');
 
+    // Esconder o header padrão do Fluig
+    $('.fl-header').hide();
+    $('#wcm-content').css('margin-top','-7rem');
     FLUIGC.calendar('.date', {
         pickDate: true,
         pickTime: true,
@@ -216,4 +233,28 @@ function getSASdata() {
             alert(errMsg);
         }
     });
+}
+
+function salvarForm() {
+    FLUIGC.loading(window).show();
+    var constraints = new Array();
+    var registro = criaRegistro(36117);
+    var cardId = registro.values[0]['Retorno'];
+    console.log('Foi gravado um novo registro ' + cardId);
+    $('#masterWrap').find('input, select').each(function () {
+        var name = $(this).attr('name');
+        var val = $(this).val();
+
+        console.log();
+    });
+    constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
+    var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
+    var msg = 'O registro ' + cardId + ' foi alterado!';
+    console.log(msg);
+}
+
+function criaRegistro(id) {
+    var constraints = new Array();
+    constraints.push(DatasetFactory.createConstraint("Parent Id", id, "", ConstraintType.MUST));
+    return DatasetFactory.getDataset("dsCriaRegistro", null, constraints, null);
 }

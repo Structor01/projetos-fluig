@@ -10,6 +10,7 @@ var HelloWorld = SuperWidget.extend({
     init: function () {
         getStates();
         tipoEv();
+
         // Esconder o header padrão do Fluig
         $('.fl-header').hide();
         $('#wcm-content').css('margin-top','-7rem');
