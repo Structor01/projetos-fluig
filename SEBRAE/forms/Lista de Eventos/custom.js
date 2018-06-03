@@ -17,10 +17,7 @@ function getMapDetails(vPlace, map) {
 
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-            lat: -16.696341,
-            lng: -49.281054
-        },
+        center: {lat: -16.696341, lng: -49.281054},
         zoom: 14
     });
 
@@ -28,6 +25,9 @@ function initMap() {
 
     var autocomplete = new google.maps.places.Autocomplete(input);
     var geocoder = new google.maps.Geocoder();
+    var marker = new google.maps.Marker({
+        map: map
+    });
 
     google.maps.event.addListener(map, 'click', function(event) {
         geocoder.geocode({
@@ -37,20 +37,25 @@ function initMap() {
                 if (results[0]) {
                     console.log(results[0].formatted_address);
                 }
+
+                marker.setPlace({
+                    location: event.geometry.location,
+                    placeId: event.place_id
+                });
+
+                marker.setVisible(true);
             }
         });
     });
 
     autocomplete.bindTo('bounds', map);
 
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     var infowindow = new google.maps.InfoWindow();
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
-    var marker = new google.maps.Marker({
-        map: map
-    });
+
     marker.addListener('click', function () {
         infowindow.open(map, marker);
     });
@@ -88,11 +93,50 @@ function initMap() {
     });
 
     $('#map').css('height', '300px');
+    $('#mapWrap').hide();
+
+    $('#pac-input').on('focus', function () {
+        $('#mapWrap').slideDown(500, function () {
+            window.scrollTo({
+                top: $(this).offset().top,
+                behavior: "smooth"
+            });
+        });
+    });
+
+    $('#pac-input').on('blur', function () {
+        $('#mapWrap').slideUp();
+    });
+}
+
+function tryCon() {
+    $.ajax({
+        type: 'GET',
+        url: 'http://sashomolog.sebraego.com.br/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial=2018-05-03&PeriodoFinal=2018-05-03',
+        contentType: 'application/json',
+        xhrFields: {
+            withCredentials: true
+        },
+
+        headers: {
+            'x-req': '7Q5BupbP1iAH7LkWIn4jgJeE1bdJBkE4Xn0HZFs3SfixVXB8I7xZcjI3+pmHWVVoS9FuHclSxCGkwpI4pHtPuRdPa52G973JU6JLqLFTx4s='
+        },
+        success: function() {
+            // Here's where you handle a successful response.
+        },
+
+        error: function() {
+            alert('fqwefqw');
+        }
+    });
 }
 
 $(document).ready(function() {
-    $(this).mask('(00) 0000-0000#');
+    // $(this).mask('(00) 0000-0000#');
 
+    // Esconder o header padrão do Fluig
+    $('.fl-header').hide();
+    $('#wcm-content').css('margin-top','-7rem');
     FLUIGC.calendar('.date', {
         pickDate: true,
         pickTime: true,
@@ -123,7 +167,6 @@ $(document).ready(function() {
     }
 
     html = ''
-
     var unidadeEv = DatasetFactory.getDataset("dsUnidadeEvento", null, null, null);
     if(unidadeEv.values && unidadeEv.values.length) {
         for(var i in unidadeEv.values) {
@@ -169,4 +212,49 @@ function substringMatcher(strs) {
         });
         cb(matches);
     };
+}
+
+function getSASdata() {
+    $.ajax({
+        type: "post",
+        url: "/api/public/2.0/authorize/client/invoke",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            serviceCode: 'SAS',
+            tenantCode: '1',
+            endpoint: '/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial=2017-05-03&PeriodoFinal=2018-05-03',
+            method: 'get'
+        }),
+        dataType: "json",
+        success: function(data){
+            console.log(JSON.parse(data.content.result));
+        },
+        failure: function(errMsg) {
+            alert(errMsg);
+        }
+    });
+}
+
+function salvarForm() {
+    FLUIGC.loading(window).show();
+    var constraints = new Array();
+    var registro = criaRegistro(36117);
+    var cardId = registro.values[0]['Retorno'];
+    console.log('Foi gravado um novo registro ' + cardId);
+    $('#masterWrap').find('input, select').each(function () {
+        var name = $(this).attr('name');
+        var val = $(this).val();
+        console.log(name,val);
+        constraints.push(DatasetFactory.createConstraint("CardData",  name+";"+val, "", ConstraintType.MUST));
+    });
+    constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
+    var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
+    var msg = 'O registro ' + cardId + ' foi alterado!';
+    console.log(msg);
+}
+
+function criaRegistro(id) {
+    var constraints = new Array();
+    constraints.push(DatasetFactory.createConstraint("Parent Id", id, "", ConstraintType.MUST));
+    return DatasetFactory.getDataset("dsCriaRegistro", null, constraints, null);
 }
