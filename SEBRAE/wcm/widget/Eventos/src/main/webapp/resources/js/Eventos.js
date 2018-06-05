@@ -256,15 +256,18 @@ function filtrarEv() {
                 'bind':'data-clean',
                 'classType':'btn-link'
             },{
-                'label': 'Cancelar',
-                'bind':'data-clear',
-                'autoClose': true
-            },{
                 'label': 'Filtrar',
                 'bind':'data-filtrar'
+            },{
+                'label': 'Cancelar',
+                'bind':'data-clear',
+                'autoClose': true,
+                'classType':'btn-danger'
             }
         ]
     });
+
+    var myAutocomplete;
 
     $('[data-clear]').on('click', function () {
         myModal.remove();
@@ -272,8 +275,16 @@ function filtrarEv() {
 
     $('[data-clean]').on('click', function () {
         $('#instanceModal_F').find('input, select').each(function () {
+            if($(this).attr('name') == 'eventTitle') myAutocomplete.removeAll();
+            if($(this).attr('name') == 'eventCity') $(this).prop('disabled', true);
             $(this).val('');
         });
+
+        myModal.remove();
+
+        $('#calendar').fullCalendar('removeEventSource', HelloWorld.tempCalendarEv);
+        $('#calendar').fullCalendar('addEventSource', HelloWorld.calendarEv);
+        styleView();
     });
 
     $('[data-filtrar]').on('click', function () {
@@ -323,7 +334,7 @@ function filtrarEv() {
 
     var el = $('#instanceModal_F').find('.eventTitle');
 
-    var myAutocomplete = FLUIGC.autocomplete(el, {
+    myAutocomplete = FLUIGC.autocomplete(el, {
         source: substringMatcher(HelloWorld.calendarEvTitle),
         name: 'titles',
         placeholder:'Filtre pelo Título do Evento',
