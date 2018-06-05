@@ -252,16 +252,16 @@ function filtrarEv() {
         size:'full',
         actions: [
             {
+                'label': 'Limpar Filtros',
+                'bind':'data-clean',
+                'classType':'btn-link'
+            },{
                 'label': 'Cancelar',
                 'bind':'data-clear',
                 'autoClose': true
             },{
                 'label': 'Filtrar',
                 'bind':'data-filtrar'
-            },{
-                'label': 'Limpar Filtros',
-                'bind':'data-clean',
-                'classType':'btn-link'
             }
         ]
     });
