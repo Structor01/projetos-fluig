@@ -192,6 +192,9 @@
 						<option value="">Filtre por Cidade</option>
 					</select>
 				</div>
+				<!--<div class="form-group fs-float-right">-->
+					<!--<button class="btn btn-default" onclick="limpaFiltro()">Limpar Filtros</button>-->
+				<!--</div>-->
 			</div>
 		</div>
 	</div>

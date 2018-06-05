@@ -25,13 +25,11 @@ function createDataset(fields, constraints, sortFields) {
     cardDtoArray.getItem().add(cardDto);
 
     var result = service.create(
-        1,
-        'arthur.barros',
-        'remedio',
+        2,
+        'adm',
+        'adm',
         cardDtoArray
     );
-
-    log.info(result);
 
     if(parentId != '')
         dataset.addRow(new Array(result.getItem().get(0).getDocumentId().toString()));

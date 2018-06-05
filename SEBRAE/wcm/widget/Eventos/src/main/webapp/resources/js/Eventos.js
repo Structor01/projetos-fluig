@@ -258,12 +258,22 @@ function filtrarEv() {
             },{
                 'label': 'Filtrar',
                 'bind':'data-filtrar'
+            },{
+                'label': 'Limpar Filtros',
+                'bind':'data-clean',
+                'classType':'btn-link'
             }
         ]
     });
 
     $('[data-clear]').on('click', function () {
         myModal.remove();
+    });
+
+    $('[data-clean]').on('click', function () {
+        $('#instanceModal_F').find('input, select').each(function () {
+            $(this).val('');
+        });
     });
 
     $('[data-filtrar]').on('click', function () {
@@ -340,6 +350,14 @@ function filtrarEv() {
     $('#instanceModal_F .eventState').on('change', function () {
         // Push dos estados salvos no SAS.
         var constraints = new Array();
+        $('.eventCity').find('option').each(function () {
+            if($(this).val() != '') {
+                $(this).remove();
+            }
+            if($(this).attr('name') == 'eventCity') {
+                $(this).prop('readonly', true);
+            }
+        });
         var dataset = DatasetFactory.getDataset("dsCidadesSAS", null, [DatasetFactory.createConstraint("codEstado", $(this).val(), $(this).val(), ConstraintType.MUST)  ], ["descricaoCidade"]);
         if(dataset && dataset.values.length > 0) {
             var html = '';
@@ -347,7 +365,7 @@ function filtrarEv() {
                 html += '<option value="'+ dataset.values[i]['codCidade'] +'">'+ dataset.values[i]['descricaoCidade'] +'</option>';
             }
             $('.eventCity').prop('disabled', false)
-            $('.eventCity').html(html);
+            $('.eventCity').append(html);
         }
     });
 }

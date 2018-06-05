@@ -1,3 +1,72 @@
+$(document).ready(function() {
+    // $(this).mask('(00) 0000-0000#');
+
+    // Esconder o header padrão do Fluig
+    $('.fl-header').hide();
+    $('#wcm-content').css('margin-top','-7rem');
+
+    $('.ob').each(function () {
+        $(this).find('label').append(' *');
+    });
+
+    FLUIGC.calendar('.date', {
+        pickDate: true,
+        pickTime: true,
+        sideBySide: true
+    });
+
+    $('.money').mask('000.000.000.000.000,00', {reverse: true});
+    $('.dateReserva').mask('00/00/0000 00:00');
+
+    $('.telefone').on('focus', function () {
+        $(this).val().length == 15 ?
+            $(this).mask('(00) 0 0000-0000') : $(this).mask('(00) 0000-0000#')
+    });
+
+    $('.telefone').on('blur', function () {
+        $(this).val().length == 15 ?
+            $(this).mask('(00) 0 0000-0000') : $(this).mask('(00) 0000-0000')
+    });
+
+    var html = '';
+    var tipoEventos = DatasetFactory.getDataset("dsTipoEvento", null, null, null);
+    if(tipoEventos.values && tipoEventos.values.length) {
+        for(var i in tipoEventos.values) {
+            var rec = tipoEventos.values[i];
+            html += '<option value"' + rec['Tipo'] + '">' + rec['Tipo'] + '</option>';
+        }
+        $('#tipoEvento').append(html);
+    }
+
+    html = ''
+    var unidadeEv = DatasetFactory.getDataset("dsUnidadeEvento", null, null, null);
+    if(unidadeEv.values && unidadeEv.values.length) {
+        for(var i in unidadeEv.values) {
+            var rec = unidadeEv.values[i];
+            html += '<option value"' + rec['Unidade'] + '">' + rec['Unidade'] + '</option>';
+        }
+        $('#unidadeVinculada').append(html);
+    }
+
+    var states = new Array();
+    var resp = DatasetFactory.getDataset("colleague", null, null, null);
+    if(resp.values && resp.values.length) {
+        for(var i in resp.values) {
+            var rec = resp.values[i];
+            states.push(rec['colleagueName']);
+        }
+    }
+
+    var myAutocomplete = FLUIGC.autocomplete('#responsavel', {
+        source: substringMatcher(states),
+        name: 'responsavel',
+        limit:1,
+        displayKey: 'description',
+        tagClass: 'tag-gray',
+        type: 'tagAutocomplete'
+    });
+});
+
 function reqListener () {
     console.log(this.responseText);
 }
@@ -131,70 +200,6 @@ function tryCon() {
     });
 }
 
-$(document).ready(function() {
-    // $(this).mask('(00) 0000-0000#');
-
-    // Esconder o header padrão do Fluig
-    $('.fl-header').hide();
-    $('#wcm-content').css('margin-top','-7rem');
-    FLUIGC.calendar('.date', {
-        pickDate: true,
-        pickTime: true,
-        sideBySide: true
-    });
-
-    $('.money').mask('000.000.000.000.000,00', {reverse: true});
-    $('.dateReserva').mask('00/00/0000 00:00');
-
-    $('.telefone').on('focus', function () {
-        $(this).val().length == 15 ?
-            $(this).mask('(00) 0 0000-0000') : $(this).mask('(00) 0000-0000#')
-    });
-
-    $('.telefone').on('blur', function () {
-        $(this).val().length == 15 ?
-            $(this).mask('(00) 0 0000-0000') : $(this).mask('(00) 0000-0000')
-    });
-
-    var html = '';
-    var tipoEventos = DatasetFactory.getDataset("dsTipoEvento", null, null, null);
-    if(tipoEventos.values && tipoEventos.values.length) {
-        for(var i in tipoEventos.values) {
-            var rec = tipoEventos.values[i];
-            html += '<option value"' + rec['Tipo'] + '">' + rec['Tipo'] + '</option>';
-        }
-        $('#tipoEvento').append(html);
-    }
-
-    html = ''
-    var unidadeEv = DatasetFactory.getDataset("dsUnidadeEvento", null, null, null);
-    if(unidadeEv.values && unidadeEv.values.length) {
-        for(var i in unidadeEv.values) {
-            var rec = unidadeEv.values[i];
-            html += '<option value"' + rec['Unidade'] + '">' + rec['Unidade'] + '</option>';
-        }
-        $('#unidadeVinculada').append(html);
-    }
-
-    var states = new Array();
-    var resp = DatasetFactory.getDataset("colleague", null, null, null);
-    if(resp.values && resp.values.length) {
-        for(var i in resp.values) {
-            var rec = resp.values[i];
-            states.push(rec['colleagueName']);
-        }
-    }
-
-    var myAutocomplete = FLUIGC.autocomplete('#responsavel', {
-        source: substringMatcher(states),
-        name: 'responsavel',
-        limit:1,
-        displayKey: 'description',
-        tagClass: 'tag-gray',
-        type: 'tagAutocomplete'
-    });
-});
-
 function substringMatcher(strs) {
     return function findMatches(q, cb) {
         var matches, substrRegex;
@@ -236,21 +241,31 @@ function getSASdata() {
 }
 
 function salvarForm() {
-    FLUIGC.loading(window).show();
-    var constraints = new Array();
-    var registro = criaRegistro(36117);
-    var cardId = registro.values[0]['Retorno'];
-    console.log('Foi gravado um novo registro ' + cardId);
-    $('#masterWrap').find('input, select').each(function () {
-        var name = $(this).attr('name');
-        var val = $(this).val();
-        console.log(name,val);
-        constraints.push(DatasetFactory.createConstraint("CardData",  name+";"+val, "", ConstraintType.MUST));
+    var validacao = true;
+    $('.ob').each(function () {
+        if($(this).find('.form-control').val() == '') {
+            validacao = false;
+        }
     });
-    constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
-    var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
-    var msg = 'O registro ' + cardId + ' foi alterado!';
-    console.log(msg);
+
+    if(validacao) {
+        FLUIGC.loading(window).show();
+        var constraints = new Array();
+        var registro = criaRegistro(36117);
+        var cardId = registro.values[0]['Retorno'];
+        console.log('Foi gravado um novo registro ' + cardId);
+        $('#masterWrap').find('input, select').each(function () {
+            var name = $(this).attr('name');
+            var val = $(this).val();
+            console.log(name,val);
+            constraints.push(DatasetFactory.createConstraint("CardData",  name+";"+val, "", ConstraintType.MUST));
+        });
+        constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
+        var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
+        var msg = 'O registro ' + cardId + ' foi alterado!';
+        console.log(msg);
+        location.assign('http://fluig.sebraego.com.br/portal/p/1/listaEventos');
+    } else alert('Por favor, preencha todos os campos obrigatórios');
 }
 
 function criaRegistro(id) {

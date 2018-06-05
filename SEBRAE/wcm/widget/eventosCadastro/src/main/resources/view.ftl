@@ -74,7 +74,7 @@
                         <h3 class="panel-title"><span class="fluigicon fluigicon-flag fluigicon-sm"></span> Dados do Contato</h3>
                     </div>
                     <div class="panel-body">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 ob">
                             <label for="nomeEvento">Nome do Evento</label>
                             <input type="text" class="form-control" id="nomeEvento" name="nomeEvento" placeholder="Favor informar o nome do evento.">
                         </div>
@@ -97,7 +97,7 @@
                             <!--<button type="button" onclick="$('#mapWrap').slideToggle()" id="btn-esconder" class="btn btn-primary btn-sm">Esconder/Mostrar Mapa</button>-->
                             <!--<a href="#" class="btn btn-info hide" target="_blank" id="rotas" role="button"><span class="fluigicon fluigicon-map-marker fluigicon-sm"></span> Rotas</a>-->
                         <!--</div>-->
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 ob">
                             <label for="endereco">Endereço</label>
                             <input type="text" class="form-control" placeholder="Favor informar o Endereço" id="pac-input" name="endereco">
                         </div>
@@ -157,19 +157,19 @@
                     <li class="list-group-item disabled">
                         Horários do Eventos
                     </li>
-                    <li class="list-group-item">
-                        <label for="dtSolicitacao">Data de Início</label>
+                    <li class="list-group-item ob">
+                        <label for="dtInicio">Data de Início</label>
                         <div class="input-group date" onclick="dateSet(this)">
-                            <input type="text" class="form-control dateReserva" id="dtInicio" name="dtInicio">
+                            <input type="text" class="form-control dateReserva" id="dtInicio" name="dtInicio" readonly>
                             <div class="input-group-addon">
                                 <span class="fluigicon fluigicon-calendar" onclick="dateSet(this)"></span>
                             </div>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item ob">
                         <label for="dtSolicitacao">Data de Término</label>
                         <div class="input-group date">
-                            <input type="text" class="form-control dateReserva" id="dtFinal" name="dtFinal">
+                            <input type="text" class="form-control dateReserva" id="dtFinal" name="dtFinal" readonly>
                             <div class="input-group-addon" onclick="dateSet(this)">
                                 <span class="fluigicon fluigicon-calendar"></span>
                             </div>
