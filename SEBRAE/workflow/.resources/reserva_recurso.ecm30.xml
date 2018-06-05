@@ -9,7 +9,7 @@
     <active>true</active>
     <publicProcess>false</publicProcess>
     <volumeId>Default</volumeId>
-    <categoryId></categoryId>
+    <categoryId>Reserva de Recursos</categoryId>
     <managerEngineAllocationId></managerEngineAllocationId>
     <snapshotFrequency>0</snapshotFrequency>
     <baseDay>0</baseDay>
@@ -231,7 +231,7 @@
       <notifyRequisitionerFollowUp>true</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>580</positionX>
-      <positionY>210</positionY>
+      <positionY>190</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>true</notifyManagerFollowUp>
@@ -269,6 +269,31 @@
       <automatic>true</automatic>
       <positionX>370</positionX>
       <positionY>183</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <version>1</version>
+        <sequence>22</sequence>
+      </processStatePK>
+      <stateName>Exclusive</stateName>
+      <stateDescription>Exclusive</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>137</positionX>
+      <positionY>200</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -365,25 +390,30 @@
       <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;4&lt;/BaseActivity&gt;&lt;Returns&gt;Last&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <engineAllocationId>Executor Atividade</engineAllocationId>
     </ConditionProcessState>
-  </list>
-  <list>
-    <ProcessLink>
-      <processLinkPK>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>1</version>
-        <linkSequence>11</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>4</initialStateSequence>
-      <finalStateSequence>5</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
+        <expressionOrder>1</expressionOrder>
+        <version>5</version>
+        <sequence>22</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&quot;respostaAprovacao&quot;)  ==  &quot;&quot;</condition>
+      <destinationSequenceId>6</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>5</version>
+        <sequence>22</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&quot;respostaAprovacao&quot;)  !=  &quot;&quot;</condition>
+      <destinationSequenceId>5</destinationSequenceId>
+    </ConditionProcessState>
+  </list>
+  <list>
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
@@ -503,6 +533,57 @@
       <defaultLink>false</defaultLink>
       <type>0</type>
     </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <version>1</version>
+        <linkSequence>23</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>4</initialStateSequence>
+      <finalStateSequence>22</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <version>1</version>
+        <linkSequence>24</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>22</initialStateSequence>
+      <finalStateSequence>5</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <version>1</version>
+        <linkSequence>25</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>22</initialStateSequence>
+      <finalStateSequence>6</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
   </list>
   <list/>
   <list/>
@@ -589,17 +670,6 @@
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
         <version>5</version>
-        <linkSequence>11</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>167</positionX>
-      <positionY>237</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>reserva_recurso</processId>
-        <version>5</version>
         <linkSequence>14</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -614,7 +684,7 @@
         <linkSequence>14</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>666</positionX>
+      <positionX>757</positionX>
       <positionY>29</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
@@ -637,7 +707,7 @@
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>757</positionX>
-      <positionY>238</positionY>
+      <positionY>222</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -647,7 +717,7 @@
         <linkSequence>18</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>317</positionX>
+      <positionX>334</positionX>
       <positionY>289</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
@@ -681,7 +751,7 @@
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>473</positionX>
-      <positionY>215</positionY>
+      <positionY>237</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -727,10 +797,64 @@
       <positionX>167</positionX>
       <positionY>48</positionY>
     </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <version>5</version>
+        <linkSequence>23</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>88</positionX>
+      <positionY>85</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <version>5</version>
+        <linkSequence>23</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>88</positionX>
+      <positionY>248</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <version>5</version>
+        <linkSequence>25</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>167</positionX>
+      <positionY>130</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <version>5</version>
+        <linkSequence>25</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>436</positionX>
+      <positionY>130</positionY>
+    </ProcessLinkBend>
   </list>
   <list/>
   <list/>
-  <list/>
+  <list>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <fieldId>descricaoRecurso</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Descrição</fieldDescription>
+      <slotId>1</slotId>
+    </ProcessFormField>
+  </list>
   <list/>
   <list/>
   <list>

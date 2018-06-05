@@ -1,1 +1,0 @@
-function validateForm(form){	if (form.getValue('msgError') != ""){ 		throw form.getValue('msgError');	}}

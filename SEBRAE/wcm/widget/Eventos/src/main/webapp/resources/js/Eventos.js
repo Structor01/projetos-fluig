@@ -280,11 +280,12 @@ function filtrarEv() {
             $(this).val('');
         });
 
-        myModal.remove();
+        $('[data-filtrar]').click();
 
         $('#calendar').fullCalendar('removeEventSource', HelloWorld.tempCalendarEv);
         $('#calendar').fullCalendar('addEventSource', HelloWorld.calendarEv);
         styleView();
+
     });
 
     $('[data-filtrar]').on('click', function () {

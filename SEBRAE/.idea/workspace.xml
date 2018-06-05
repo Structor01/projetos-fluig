@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/Lista de Recursos/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/forms/Lista de Recursos/.metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" beforeDir="false" afterPath="$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflow/.resources/SEBRAE.ws.cache" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/SEBRAE.ws.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflow/.resources/cadastro_evento.png" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/cadastro_evento.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.ecm30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.ecm30.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.png" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,43 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl">
+      <file leaf-file-name="Lista de Recursos.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="194" column="16" selection-start-line="194" selection-start-column="20" selection-end-line="196" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="252">
+              <caret line="56" column="321" selection-start-line="56" selection-start-column="321" selection-end-line="56" selection-end-column="321" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Eventos.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
+      <file leaf-file-name="Reserva de Recurso.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="286" column="20" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="20" />
-              <folding>
-                <element signature="n#!!block;n#arrangeData#0" />
-                <element signature="n#!!block;n#disarrangeData#0" />
-                <element signature="n#!!block;n#changeView#0" />
-                <element signature="n#!!block;n#sync#0" />
-                <element signature="n#!!block;n#criaRegistro#0" />
-                <element signature="n#!!block;n#salvarForm#0" />
-                <element signature="n#!!block;n#verificaTipoEv#0" />
-                <element signature="n#!!block;n#switchMonth#0" />
-                <element signature="n#!!block;n#getDateNow#0" />
-                <element signature="n#!!block;n#substringMatcher#0" />
-                <element signature="n#!!block;n#styleView#0" />
-                <element signature="n#!!block;n#getStates#0" />
-                <element signature="n#!!block;n#getUnidadeVinculada#0" />
-                <element signature="n#!!block;n#tipoEv#0" />
-              </folding>
+            <state relative-caret-position="-434">
+              <caret line="63" column="93" lean-forward="true" selection-start-line="63" selection-start-column="93" selection-end-line="63" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -161,6 +145,7 @@
         <option value="$PROJECT_DIR$/wcm/widget/eventosCadastro/src/main/webapp/resources/js/eventosCadastro.js" />
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" />
+        <option value="$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" />
       </list>
     </option>
   </component>
@@ -189,6 +174,17 @@
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="Lista de Recursos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
@@ -422,12 +418,12 @@
       <workItem from="1527611020647" duration="8517000" />
       <workItem from="1527634672492" duration="59000" />
       <workItem from="1528050213738" duration="4329000" />
-      <workItem from="1528210167379" duration="1816000" />
+      <workItem from="1528210167379" duration="3843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146953000" />
+    <option name="totallyTimeSpent" value="148980000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -594,13 +590,6 @@
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_7.html" />
-    <entry file="file://$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../BULLA/wcm/widget/listaResp/src/main/webapp/resources/js/listaResp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-125" />
@@ -723,13 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="179" column="79" selection-start-line="179" selection-start-column="79" selection-end-line="179" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Arquivos Uteis/getDataset.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -828,9 +810,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="286" column="20" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="20" />
+        <state relative-caret-position="765">
+          <caret line="275" column="46" selection-start-line="275" selection-start-column="46" selection-end-line="275" selection-end-column="46" />
           <folding>
+            <element signature="e#36#5155#0" />
             <element signature="n#!!block;n#arrangeData#0" />
             <element signature="n#!!block;n#disarrangeData#0" />
             <element signature="n#!!block;n#changeView#0" />
@@ -841,11 +824,27 @@
             <element signature="n#!!block;n#switchMonth#0" />
             <element signature="n#!!block;n#getDateNow#0" />
             <element signature="n#!!block;n#substringMatcher#0" />
+            <element signature="e#10724#10843#0" />
+            <element signature="e#10629#13131#0" />
             <element signature="n#!!block;n#styleView#0" />
             <element signature="n#!!block;n#getStates#0" />
             <element signature="n#!!block;n#getUnidadeVinculada#0" />
             <element signature="n#!!block;n#tipoEv#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="56" column="321" selection-start-line="56" selection-start-column="321" selection-end-line="56" selection-end-column="321" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-434">
+          <caret line="63" column="93" lean-forward="true" selection-start-line="63" selection-start-column="93" selection-end-line="63" selection-end-column="93" />
         </state>
       </provider>
     </entry>
