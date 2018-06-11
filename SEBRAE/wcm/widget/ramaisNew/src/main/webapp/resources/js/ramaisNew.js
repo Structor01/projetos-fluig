@@ -18,15 +18,15 @@ $(document).ready(function () {
                 var dtNascimento = rec.DatedeNascimento == 'undefined' || rec.DatedeNascimento == null  ? '' : rec.DatedeNascimento;
 
                 var link = '';
-
+                var busca = $(this).val();
 
                 if(
-                    nome.toUpperCase().indexOf($(this).val().toUpperCase()) > -1 ||
-                    email.toUpperCase().indexOf($(this).val().toUpperCase()) > -1 ||
-                    cargo.toUpperCase().indexOf($(this).val().toUpperCase()) > -1 ||
-                    unidade.toUpperCase().indexOf($(this).val().toUpperCase()) > -1 ||
-                    celular.toUpperCase().indexOf($(this).val().toUpperCase()) > -1 ||
-                    ramal.toUpperCase().indexOf($(this).val().toUpperCase()) > -1
+                    limpaAcento(nome).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
+                    limpaAcento(email).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
+                    limpaAcento(cargo).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
+                    limpaAcento(unidade).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
+                    limpaAcento(celular).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
+                    limpaAcento(ramal).toUpperCase().indexOf(busca.toUpperCase()) > -1
                 ) {
 
                     html += '<tr onclick="goToUser(this)" style="cursor: pointer">' +
@@ -49,6 +49,16 @@ $(document).ready(function () {
 
     });
 });
+
+function limpaAcento(busca) {
+    busca = busca.replace(/[ÀÁÂÃÄÅ]/,"A");
+    busca = busca.replace(/[àáâãäå]/,"a");
+    busca = busca.replace(/[ÈÉÊË]/,"E");
+    busca = busca.replace(/[Ç]/,"C");
+    busca = busca.replace(/[ç]/,"c");
+    busca = busca.replace(/[^a-z0-9]/gi,'');
+    return busca;
+}
 
 RAMAIS = {};
 PAGE = [];
@@ -99,7 +109,7 @@ function goToUser(e) {
     constraints.push(DatasetFactory.createConstraint("mail", email, email, ConstraintType.MUST));
     var colleague = DatasetFactory.getDataset("colleague", null, constraints, null);
     colleague.values.length > 0 ?
-    window.open('http://fluig.sebraego.com.br/portal/p/1/social/'+colleague['values'][0]['login'],'_blank') :
+        window.open('http://fluig.sebraego.com.br/portal/p/1/social/'+colleague['values'][0]['login'],'_blank') :
         false;
 }
 
