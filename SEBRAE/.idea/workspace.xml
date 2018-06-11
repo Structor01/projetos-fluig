@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.png" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UNI EVANGELICA/MIT e MIF/MIF910+-+Validação+de++Processos.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../UNI EVANGELICA/MIT e MIF/MIF910+-+Validação+de++Processos.docx" afterDir="false" />
     </list>
@@ -24,16 +20,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="recursoGest.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+            <state relative-caret-position="281">
+              <caret line="174" column="18" selection-start-line="174" selection-start-column="18" selection-end-line="174" selection-end-column="18" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,7 +36,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this.s</find>
       <find>ver</find>
       <find>lo</find>
       <find>sync</find>
@@ -72,6 +65,7 @@
       <find>instan</find>
       <find>cidade</find>
       <find>$(this).attr('name')</find>
+      <find>solicita</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -89,7 +83,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wcm/widget/cadastro_ramais/src/main/resources/application.info" />
         <option value="$PROJECT_DIR$/forms/Cargos/Cargos.html" />
         <option value="$PROJECT_DIR$/forms/Unidades/Unidades.html" />
         <option value="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/view.ftl" />
@@ -140,6 +133,7 @@
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" />
         <option value="$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" />
         <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" />
+        <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" />
       </list>
     </option>
   </component>
@@ -331,12 +325,12 @@
       <workItem from="1527634672492" duration="59000" />
       <workItem from="1528050213738" duration="4329000" />
       <workItem from="1528210167379" duration="4596000" />
-      <workItem from="1528736714100" duration="175000" />
+      <workItem from="1528736714100" duration="670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149908000" />
+    <option name="totallyTimeSpent" value="150403000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,14 +345,14 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.32905984" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -687,13 +681,20 @@
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
+        <state relative-caret-position="288">
+          <caret line="127" column="29" lean-forward="true" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="174" column="18" selection-start-line="174" selection-start-column="18" selection-end-line="174" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

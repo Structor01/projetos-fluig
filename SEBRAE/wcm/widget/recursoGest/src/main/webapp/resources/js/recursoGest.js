@@ -120,18 +120,13 @@ var HelloWorld = SuperWidget.extend({
 
                 for(var i in form.values) {
                     var r = form.values[i];
-                    var algumSelected = false;
                     for(var i in Object.keys(r)) {
                         if(Object.keys(r)[i].indexOf('rc') > -1 && Object.keys(r)[i].indexOf('Obs') == -1) {
                             if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
                                 $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
                                     .attr('checked','true');
-                                algumSelected = true;
                             }
                         }
-                    }
-                    if(algumSelected == false) {
-                        $('#instanceModal_C').find('.recursos').remove();
                     }
                 }
 
