@@ -1,0 +1,384 @@
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulários de Ramais no Sebrae-GO">
+    <meta name="author" content="Luvânio Lopes">
+	<title>Solicitação de Recursos - Sebrae-GO</title>
+	
+	<!-- 	validate -->
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="/webdesk/vcXMLRPC-mobile.js"></script>
+	
+	<!-- 	padrao form -->
+	<link type="text/css" rel="stylesheet" href="/portal/resources/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	
+	<!-- 	customizado -->
+	<link type="text/css" rel="stylesheet" href="assets/css/formRecursos.css" />
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<script type="text/javascript" src="assets/js/loadPaiFilho.js"></script>
+	<script src="assets/js/zoom.js" type="text/javascript"></script>
+	<script type="text/javascript" src="assets/js/active.js"></script>
+	<script type="text/javascript" src="assets/js/paiFilhoExtra.js"></script>
+<!-- 	<script type="text/javascript" src="assets/js/moment.min.js"></script> -->
+	<script type="text/javascript" language="javascript" src="assets/js/importLibs.js"></script>
+	
+	
+	
+	
+	
+</head>
+<body>
+<div class="fluig-style-guide">
+<form name="form" role="form">
+<body id="KitRecursos">
+<div class="fluig-style-guide">
+	<!-- Container -->
+	<div class="page-content container-fluid">
+		<div class="row">
+			<!-- Header Form -->
+			<div class="col-md-12 col-xs-12">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-md-8 col-xs-8">
+							<h1 class="fs-no-margin fs-ellipsis fs-full-width">Solicitação de Recursos</h1>
+						</div>
+						<div class="col-md-4 col-xs-4">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 col-xs-12">
+				<form class="form-horizontal" role="form" action="">
+					<!-- Aprovacao -->
+					<fieldset id="fdAprovacao" style="display:none">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Aprovação Recurso</h3>
+							</div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-2 col-xs-12">
+										<label for="slAprova" class="control-label">Aprovado?</label>
+										<select id="slAprova" name="slAprova" class="form-control" onchange="validaAprovacao();">
+										    <option value="Aprovado">Aprovado</option>
+										    <option value="Reprovado">Reprovado</option>
+										    <option value="Refazer">Refazer</option>
+										</select>
+									</div>
+									<div class="col-sm-12 col-xs-12" id="dsObsAprovaTop" style="display:none">
+										<label for="dsObsAprova" class="control-label">Motivo</label>
+										<textarea class="form-control"id="dsObsAprova" name="dsObsAprova" rows="3" onblur="validaAprovacao('S');"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>	
+				
+					<!-- Cabeçalho Formulário -->
+					<fieldset id="fdDadosGerais">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Dados Gerais</h3>
+							</div>
+							<div class="panel-body">
+								<div class="form-group">
+									<div class="col-sm-2 col-xs-12">
+										<label for="dataSolicitacao" class="control-label">Data Solicitação</label>
+										<input type="text" name="dataSolicitacao"
+											class="form-control" id="dataSolicitacao" readonly />
+									</div>
+									<div class="col-sm-5 col-xs-12">
+										<label for="dsSolicitante" class="control-label">Solicitante</label>
+										<input type="text" name="dsSolicitante"
+											class="form-control" id="dsSolicitante" readonly />
+									</div>
+									<div class="col-sm-5 col-xs-12">
+										<label for="dsSolicitanteCarregado" class="control-label">Solicitante Informado</label>
+										<input type="zoom"
+											class="form-control" name="dsSolicitanteCarregado" id="dsSolicitanteCarregado"
+											dataset="colleague" datasetvalue="coleagueName"
+											data-zoom="{
+												'datasetId':'colleague',
+												'displayKey':'colleagueName',
+												'filterValues':'active,true',
+															'fields':[
+																	{'field':'colleagueName','label':'Nome','standard':true,'search':true},
+																	{'field':'mail','label':'E-mail'}]}"
+																	 
+										 />
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					
+					
+					
+					
+					<fieldset id="fdSolicitacao">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">Recurso</h3>
+							</div>
+							<div class="panel-body">
+								<div class="form-group">
+
+									<!--conteudo de solicitacao em recursos-->
+									<div class="form-group">
+										<div class="col-sm-6 col-xs-12">
+											<label for="zoom">Recurso</label>
+											<input type='hidden' name='cdRecurso' id='cdRecurso' />
+											<input type="zoom"
+												class="form-control" name="dsRecurso" id="dsRecurso"
+												dataset="sebrae_cadastra_recursos" datasetvalue="dsNome"
+												data-zoom="{
+													'datasetId':'sebrae_cadastra_recursos',
+													'displayKey':'dsNome',
+													'filterValues':'dsAtivo,S',
+																'fields':[
+																		{'field':'id','label':'Id'},
+																		{'field':'dsNome','label':'Nome','standard':true,'search':true},
+																		{'field':'dsQuantidade','label':'Quantidade'}]}"
+																		 
+											 />
+											<div class="input-group-addon zoom-preview" style="display:none"></div>
+										</div>
+										
+									</div>
+									<div class="form-group">
+										<div class="infoRecurso" id="rec0"  style="display:none">
+											<div class="form-group">
+												<div class="col-sm-12 col-xs-12">
+													<label for="nmRecurso" class="control-label" >Descrição do Recurso</label> 
+													<textarea class="form-control"id="nmRecurso" name="nmRecurso" rows="3" readonly></textarea>
+												</div>
+											</div>
+											<div class="form-group" id="rec3">
+												<!--horario e data -->
+												<div class="col-sm-12 col-xs-12">
+													<fieldset id="fdDadosGerais">
+														<div class="panel panel-default">
+															<div class="panel-heading">
+																<h3 class="panel-title">Horários</h3>
+															</div>
+															<div class="panel-body">
+																<div class="form-group" id="rec7">
+																	<div class="col-sm-12 col-xs-12">
+																		<fieldset id="fdPeriodo">
+																			<div class="panel panel-default">
+																				<div class="panel-heading">
+																					<h3 class="panel-title">Per&iacute;odo da Reserva</h3>
+																				</div>
+																				<div class="panel-body">
+																					<div class="form-group">
+																						<div class="col-sm-3 col-xs-12">
+																							<label for="dtInicio" class="control-label">Data Inicio</label> 
+																							<input type="date" name="dtInicio" id="dtInicio" class="form-control" onblur="calculeReserva()"/>
+																						</div>
+																						<div class="col-sm-3 col-xs-12">
+																							<label for="hrInicio" class="control-label">Hora Início</label> 
+																							<input type="time" name="hrInicio" id="hrInicio" class="form-control" onblur="calculeReserva()" />
+																						</div>
+																						<div class="col-sm-3 col-xs-12">
+																							<label for="dtFim" class="control-label">Data Fim</label> 
+																							<input type="date" name="dtFim" id="dtFim" class="form-control" onblur="calculeReserva()"/>
+																						</div>
+																						<div class="col-sm-3 col-xs-12">
+																							<label for="hrFim" class="control-label">Hora Fim</label> 
+																							<input type="time" name="hrFim"	id="hrFim" class="form-control" onblur="calculeReserva()"/>
+																						</div>
+																						<input type="text" name="periodoFim" id="periodoFim" class="form-control" style="display:none" />
+																						<input type="text" name="periodoInicio" id="periodoInicio" class="form-control" style="display:none" />
+																					</div>
+																			</div>
+																		</fieldset>
+																	</div>
+																</div>
+																<div class="form-group" id="rec71">
+																	<div class="col-sm-12 col-xs-12">
+																		<fieldset id="fdReservados">
+																			<div class="panel panel-default">
+																				<div class="panel-heading">
+																					<h3 class="panel-title">Recursos Reservados</h3>
+																				</div>
+																				<div class="panel-body">
+																					<div class="form-group">
+																						<div class="col-sm-12 col-xs-12" id="informeReserva">
+																							É necessário Informar o período inicial e final para validar disponibilidade. 
+																						</div>
+																						<div class="col-sm-12 col-xs-12" id="naoReserva" style="display:none" >
+																							Não Possui Recursos Reservados no Período Informado
+																						</div>
+																						<div class="col-sm-12 col-xs-12" id="existeReserva" style="display:none">
+																							Possui Recursos Reservados:
+																							<div class="form-group">
+																								<div clas="col-sm-12 col-xs-12">
+																									<div class="row form-group clear-fix" id="divTabela">
+																										<div class="col-sm-12 col-xs-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+																											<br></br>
+																											<div id="tabela" class="table-responsive">
+																												<table class="table table-hover table-bordered table-stripped">
+																													<thead>
+																														<th>Id Solicitação</th>
+																														<th>Solicitante</th>
+																														<th>Solicitante Informado</th>
+																														<th>Data Inicial</th>
+																														<th>Hora Inicial</th>  
+																														<th>Data Final</th>
+																														<th>Hora Final</th>
+																													</thead>
+																													<tbody>
+																													</tbody>
+																						
+																													<tfoot>
+																													</tfoot>
+																						
+																												</table>
+																											</div>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</fieldset>
+																	</div>
+																</div>
+																<div class="form-group" id="rec8">
+																	<div class="col-sm-12 col-xs-12">
+																		<fieldset id="fdDisponibilidade">
+																			<div class="panel panel-default">
+																				<div class="panel-heading">
+																					<h3 class="panel-title">Disponibilidade</h3>
+																				</div>
+																				<div class="panel-body">
+																					<div class="form-group">
+																						<div class="col-sm-12 col-xs-12">
+																							<div class="col-sm-4 col-xs-12">
+																								<label for="dsQuantidadeDisponivel" class="control-label">Qtd. Disponível</label> 
+																								<input type="text" name="dsQuantidadeDisponivel" id="dsQuantidadeDisponivel" class="form-control" readonly/>
+																								<input type="hidden" name="dsQuantidadeReal" id="dsQuantidadeReal" class="form-control" readonly/>
+																							</div>
+																							<div class="col-sm-4 col-xs-12">
+																								<label for="dsQuantidadeSolicitacao" class="control-label">Qtd. Solicitada</label> 
+																								<input type="number" name="dsQuantidadeSolicitacao" id="dsQuantidadeSolicitacao" class="form-control" readonly onblur="calculeReserva('1')"/>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</fieldset>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</fieldset>
+												</div>
+											</div>
+											<div class="form-group" id="rec1">
+												<div class="col-sm-6 col-xs-12">
+													<label for="dsResponsavelAprovacao" class="control-label">Responsável</label> 
+													<input type="text" name="dsResponsavelAprovacao" id="dsResponsavelAprovacao" class="form-control" readonly/>
+													<input type="hidden" name="cdResponsavelAprovacao" id="cdResponsavelAprovacao" class="form-control"/>
+												</div>
+											</div>
+											<div class="form-group" id="rec2">
+												<div class="col-sm-12 col-xs-12">
+													<label for="dsTermoAceite" class="control-label" >Termo de Aceite</label> 
+													<textarea class="form-control"id="dsTermoAceite" name="dsTermoAceite" rows="5" readonly></textarea>
+												</div>
+											</div>
+											<div class="form-group" id="recExt">
+												<div class="col-sm-12 col-xs-12">
+													<fieldset id="fdNecessidade">
+														<div class="panel panel-default">
+															<div class="panel-heading">
+																<h3 class="panel-title">Necessidades no Recurso</h3>
+															</div>
+															<div class="panel-body">
+																<div class="form-group">
+																	<div class="col-sm-12 col-xs-12">
+																		<label class="checkbox-inline" id="rcBolachaII">
+																		    <input type="checkbox" id="rcBolacha" name="rcBolacha" value="bolacha"> Bolachas (sal/doce)
+																		</label>
+																		<label class="checkbox-inline" id="rcEquipamentosII">
+																		    <input type="checkbox" id="rcEquipamentos" name="rcEquipamentos" value="equipamentos"> Equipamentos
+																		</label>
+																		<label class="checkbox-inline" id="rcFilmeII">
+																		    <input type="checkbox" id="rcFilme" name="rcFilme" value="filme"> Exibirá Filme
+																		</label>
+																		<label class="checkbox-inline" id="rcSalaII">
+																		    <input type="checkbox" id="rcSala" name="rcSala" value="sala"> Formato de Salas
+																		</label>
+																		<label class="checkbox-inline" id="rcCafeII" >
+																		    <input type="checkbox" id="rcCafe" name="rcCafe" value="cafe"> Garrafa de Café
+																		</label>
+																	</div>
+																	<div class="col-sm-12 col-xs-12">	
+																		<label class="checkbox-inline" id="rcChaII">
+																		    <input type="checkbox" id="rcCha" name="rcCha" value="cha"> Garrafa de Chá 
+																		</label>
+																		<label class="checkbox-inline" id="rcParticipanteII">
+																		    <input type="checkbox" id="rcParticipante" name="rcParticipante" value="participante" onclick="ativaRec(this)"> Número de Participante
+																		</label>
+																		<label class="checkbox-inline" id="rcFinalidadeII">
+																		    <input type="checkbox" id="rcFinalidade" name="rcFinalidade" value="finalidade" onclick="ativaRec(this)"> Finalidade
+																		</label>
+																		<label class="checkbox-inline" id="rcObservacaoII">
+																		    <input type="checkbox" id="rcObservacao" name="rcObservacao" value="observacao" onclick="ativaRec()"> Observação
+																		</label>
+																	</div>
+																	<div class="col-sm-12 col-xs-12" id="rcParticipanteObsII">
+																		<label for="rcParticipanteObs" class="control-label">Participante</label>
+																		<textarea class="form-control"id="rcParticipanteObs" name="rcParticipanteObs" rows="3" readonly></textarea>
+																	</div>
+																	<div class="col-sm-12 col-xs-12" id="rcFinalidadeObsII">
+																		<label for="rcFinalidadeObs" class="control-label" >Finalidade</label>
+																		<textarea class="form-control"id="rcFinalidadeObs" name="rcFinalidadeObs" rows="3" readonly></textarea>
+																	</div>
+																	<div class="col-sm-12 col-xs-12" id="rcObservacaoObsII">
+																		<label for="rcObservacaoObs" class="control-label" >Observação</label>
+																		<textarea class="form-control"id="rcObservacaoObs" name="rcObservacaoObs" rows="3" readonly></textarea>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</fieldset>
+												</div>	
+											</div>
+												
+										</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					
+					
+</form>
+</div>
+</body>
+</html>
+<script type="text/template" class="template-upload">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="texto-upload">Enviando arquivo...</h2>
+		</div>
+	</div>
+	<div class="row linha-progresso-upload">
+		<div class="col-md-12">
+			<div class="progress">
+    			<div class="progress-bar progress-bar-success progresso-upload" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+        			<span class="sr-only">0% Completo</span>
+    			</div>
+			</div>
+		</div>
+	</div>
+</script>

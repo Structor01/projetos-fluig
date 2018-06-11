@@ -127,8 +127,6 @@ var HelloWorld = SuperWidget.extend({
                                 $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
                                     .attr('checked','true');
                                 algumSelected = true;
-                            } else {
-                                $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']').parent().parent().remove();
                             }
                         }
                     }
@@ -139,6 +137,9 @@ var HelloWorld = SuperWidget.extend({
 
                 $('#instanceModal_C').find('.title').val(calEvent.title);
                 $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
+                $('#instanceModal_C').find('.dtSolicitacao').val(form.values[0]['dtSolicitacao']);
+                $('#instanceModal_C').find('.solicitante').val(form.values[0]['solicitante']);
+                $('#instanceModal_C').find('.solicitanteInformado').val(form.values[0]['solicitanteInformado']);
                 $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
                 $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
                 $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);

@@ -41,35 +41,6 @@
 	</style>
 
 	<div class="page-content container-fluid">
-		<!--<div class="row">-->
-			<!--<div class="panel panel-default">-->
-				<!--<div class="panel-heading" onclick="$('#filtros').slideToggle()" style="background: none !important;">-->
-					<!--<h3 class="panel-title" style="color: #0080ff!important;"><span class="fluigicon fluigicon-filter fluigicon-sm"></span> Filtros</h3>-->
-					<!--<span onclick="$('#filtros').slideToggle()" class="fluigicon fluigicon-pointer-down fluigicon-sm fs-float-right" style="margin-top: -1rem; color: #0080ff!important;"></span>-->
-				<!--</div>-->
-				<!--<div class="panel-body" id="filtros" style="display: none;">-->
-					<!--<div class="form-group col-md-12">-->
-						<!--<label for="porRecurso">Recurso</label>-->
-						<!--<div class="input-group">-->
-							<!--<input type="text" class="form-control" id="porRecurso" placeholder="Digite o nome do recurso pelo qual deseja filtrar.">-->
-							<!--<span class="input-group-addon">-->
-            					<!--<span class="fluigicon fluigicon-search"></span>-->
-        					<!--</span>-->
-						<!--</div>-->
-					<!--</div>-->
-				<!--</div>-->
-			<!--</div>-->
-		<!--</div>-->
-
-		<!--<div class="row">-->
-			<!--<button style="margin: 0.5rem" id="btn-calendar" onclick="changeView('calendar')" class="btn btn-primary active fs-float-right">-->
-				<!--<span class="fluigicon fluigicon-calendar fluigicon-sm"></span>-->
-			<!--</button>-->
-
-			<!--<button style="margin: 0.5rem" id="btn-lista" onclick="changeView('lista')" class="btn fs-float-right">-->
-				<!--<span class="fluigicon 	fluigicon-list fluigicon-sm"></span>-->
-			<!--</button>-->
-		<!--</div>-->
 
 		<div class="row">
 			<div class="panel panel-default">
@@ -89,15 +60,29 @@
 						</table>
 					</div>
 				</div>
-				<!--<div style="margin: 1rem" class="btn-group fs-float-right">-->
-				<!--<button type="button" onclick="prevP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-left fluigicon-sm"></span></button>-->
-				<!--<button type="button" onclick="nextP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-right fluigicon-sm"></span></button>-->
-				<!--</div>-->
 			</div>
 		</div>
 	</div>
 	<div id="modalEventos" class="hide">
 		<div class="row">
+			<div class="form-group col-md-3">
+				<label>Data Solicitação</label>
+				<div class="input-group">
+					<input type="text" class="form-control dtSolicitacao" readonly>
+					<div class="input-group-addon">
+						<span class="fluigicon fluigicon-calendar"></span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-md-4">
+				<label>Solicitante</label>
+				<input type="text" class="form-control solicitante" readonly>
+				<input type="hidden" class="form-control solicitanteId" readonly>
+			</div>
+			<div class="form-group col-md-5">
+				<label>Solicitante Informado</label>
+				<input type="text" class="form-control solicitanteInformado" />
+			</div>
 			<div class="form-group col-md-5">
 				<label>Recurso</label>
 				<input type="text" class="form-control title" value="" readonly>

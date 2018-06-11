@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/forms/Lista de Recursos/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/forms/Lista de Recursos/.metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" beforeDir="false" afterPath="$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/.resources/SEBRAE.ws.cache" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/SEBRAE.ws.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/.resources/cadastro_evento.png" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/cadastro_evento.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.ecm30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.ecm30.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.png" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UNI EVANGELICA/MIT e MIF/MIF910+-+Validação+de++Processos.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../UNI EVANGELICA/MIT e MIF/MIF910+-+Validação+de++Processos.docx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,20 +24,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Lista de Recursos.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="56" column="321" selection-start-line="56" selection-start-column="321" selection-end-line="56" selection-end-column="321" />
-            </state>
-          </provider>
+      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="Reserva de Recurso.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
+      <file leaf-file-name="recursoGest.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-434">
-              <caret line="63" column="93" lean-forward="true" selection-start-line="63" selection-start-column="93" selection-end-line="63" selection-end-column="93" />
+            <state relative-caret-position="141">
+              <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -95,7 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wcm/widget/cadastro_ramais/src/main/webapp/resources/js/mask.js" />
         <option value="$PROJECT_DIR$/wcm/widget/cadastro_ramais/src/main/resources/application.info" />
         <option value="$PROJECT_DIR$/forms/Cargos/Cargos.html" />
         <option value="$PROJECT_DIR$/forms/Unidades/Unidades.html" />
@@ -146,6 +139,7 @@
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" />
         <option value="$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" />
+        <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" />
       </list>
     </option>
   </component>
@@ -158,7 +152,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -168,6 +162,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -178,17 +173,6 @@
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-              <item name="Lista de Recursos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -202,14 +186,14 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -217,7 +201,7 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -226,7 +210,7 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -236,7 +220,7 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
@@ -246,7 +230,7 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
@@ -257,7 +241,7 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="Eventos" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
@@ -269,85 +253,13 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="eventosCadastro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="eventosCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="eventosCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="eventosCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="eventosCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="eventosCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="eventosCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="eventosCadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -418,12 +330,13 @@
       <workItem from="1527611020647" duration="8517000" />
       <workItem from="1527634672492" duration="59000" />
       <workItem from="1528050213738" duration="4329000" />
-      <workItem from="1528210167379" duration="3843000" />
+      <workItem from="1528210167379" duration="4596000" />
+      <workItem from="1528736714100" duration="175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148980000" />
+    <option name="totallyTimeSpent" value="149908000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -438,14 +351,14 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -460,19 +373,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -488,42 +401,8 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wcm/widget/eventosCadastro/src/main/webapp/resources/js/eventosCadastro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3990">
-          <caret line="266" column="80" selection-start-line="266" selection-start-column="80" selection-end-line="266" selection-end-column="80" />
-          <folding>
-            <element signature="e#29#2165#0" />
-            <element signature="n#!!block;n#reqListener#0" />
-            <element signature="n#!!block;n#getMapDetails#0" />
-            <element signature="n#!!block;n#initMap#0" />
-            <element signature="n#!!block;n#tryCon#0" />
-            <element signature="n#!!block;n#substringMatcher#0" />
-            <element signature="n#!!block;n#getSASdata#0" />
-            <element signature="n#!!block;n#salvarForm#0" />
-            <element signature="n#!!block;n#criaRegistro#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/eventosCadastro/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="162" column="118" selection-start-line="162" selection-start-column="118" selection-end-line="162" selection-end-column="118" />
-          <folding>
-            <element signature="n#style#0;n#li#3;n#ul#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_5.html" />
-    <entry file="file://$PROJECT_DIR$/forms/35442 - Reserva de Recurso/Reserva de Recurso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="162" selection-start-line="162" selection-end-line="162" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/35442 - Reserva de Recurso/Reserva de Recurso.html" />
     <entry file="file://$USER_HOME$/Downloads/zoom.html" />
     <entry file="file://$PROJECT_DIR$/forms/33790 - Recursos New/zoom.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -733,39 +612,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2313" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/Lista de Eventos/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="260" lean-forward="true" selection-start-line="260" selection-end-line="260" />
-          <folding>
-            <element signature="n#!!block;n#criaRegistro#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/Lista de Eventos/Lista de Eventos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="973">
-          <caret line="194" column="14" selection-start-line="194" selection-start-column="14" selection-end-line="194" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#li#3;n#ul#1;n#div#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/31394 - Criação de Eventos/eventos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="232" column="44" selection-start-line="232" selection-start-column="44" selection-end-line="235" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/Lista de Eventos/custom.js" />
+    <entry file="file://$PROJECT_DIR$/forms/Lista de Eventos/Lista de Eventos.html" />
+    <entry file="file://$PROJECT_DIR$/forms/31394 - Criação de Eventos/eventos.html" />
     <entry file="file://$PROJECT_DIR$/wcm/widget/eventosCadastro/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2430">
@@ -798,13 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="194" column="16" selection-start-line="194" selection-start-column="20" selection-end-line="196" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#3;n#div#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -834,17 +676,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="56" column="321" selection-start-line="56" selection-start-column="321" selection-end-line="56" selection-end-column="321" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" />
     <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-434">
           <caret line="63" column="93" lean-forward="true" selection-start-line="63" selection-start-column="93" selection-end-line="63" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="129" column="29" selection-start-line="129" selection-start-column="29" selection-end-line="129" selection-end-column="29" />
         </state>
       </provider>
     </entry>
