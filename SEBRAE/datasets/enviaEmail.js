@@ -1,50 +1,25 @@
 function createDataset(fields, constraints, sortFields) {
     var dataset = DatasetBuilder.newDataset();
-    dataset.addColumn("Response");
+    dataset.addColumn("EnviouEmail");
+    try{
+        //Monta mapa com parâmetros do template
+        var parametros = new java.util.HashMap();
+        parametros.put("TODAY_DATE", "Teste");
+        parametros.put("BODY_EMAIL", "Teste");
 
-    var obj = {
-        "to" : "artfbgyn@gmail.com",
-        "from" : "intra@sebraego.com.br",
-        "subject" : "Bem vindo!",
-        "templateId" : "eventoDia",
-        "dialectId"  : "pt_BR",
-        "param" : {
-            "TODAY_DATE": "Teste",
-            "BODY_EMAIL": "Teste",
-        }
+        //Este parâmetro é obrigatório e representa o assunto do e-mail
+        parametros.put("subject", "Acontece hoje!");
+
+        //Monta lista de destinatários
+        var destinatarios = new java.util.ArrayList();
+        destinatarios.add("1busy9shy78nqwqx1528812081880");
+
+        //Envia e-mail
+        notifier.notify("xuku1xhwrsq2n8jj1505395346785", "eventoDia", parametros, destinatarios, "text/html");
+        dataset.addRow(new Array("sim"));
+    } catch(e) {
+        log.info(e);
+        dataset.addRow(new Array(e));
     }
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "http://fluig.sebraego.com.br/api/public/alert/customEmailSender", true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send(obj);
-
-    dataset.addRow(new Array(xhttp.responseText));
-
-    // var response = JSON.parse(xhttp.responseText);
+    return dataset;
 }
-
-// function EnviarEmail() {
-//     var api = "/api/public/alert/customEmailSender";
-//     var obj = {
-//         "to" : "artfbgyn@gmail.com",
-//         "from" : "intra@sebraego.com.br",
-//         "subject" : "Bem vindo!",
-//         "templateId" : "eventoDia",
-//         "dialectId"  : "pt_BR",
-//         "param" : {
-//             "TODAY_DATE": "Teste",
-//             "BODY_EMAIL": "Teste",
-//         }
-//     }
-//     var email = $.ajax({
-//         async : false,
-//         contentType: "application/json",
-//         type : "post",
-//         dataType : "json",
-//         url : api,
-//         data : JSON.stringify(obj),
-//         success:function(obj){
-//             console.log(obj)
-//         }
-//     });
-// }

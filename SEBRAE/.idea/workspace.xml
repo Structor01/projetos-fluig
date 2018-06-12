@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/syncSAS.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/syncSAS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/ramaisNew/target/ramaisNew.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/ramaisNew/target/ramaisNew.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/enviaEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/enviaEmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email.html" beforeDir="false" afterPath="$PROJECT_DIR$/email.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UNI EVANGELICA/MIT e MIF/MIF910+-+Validação+de++Processos.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../UNI EVANGELICA/MIT e MIF/MIF910+-+Validação+de++Processos.docx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,58 +17,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="syncSAS.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datasets/syncSAS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="136" column="33" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!block;n#defineStructure#0" />
-                <element signature="n#!!block;n#onSync#0" />
-                <element signature="n#!!block;n#onMobileSync#0" />
-                <element signature="n#!!block;n#criaRegistro#0" />
-                <element signature="n#!!block;n#salvarForm#0" />
-                <element signature="n#!!block;n#verificaTipoEv#0" />
-                <element signature="n#!!block;n#disarrangeData#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="enviaEmail.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/datasets/enviaEmail.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-              <folding>
-                <element signature="e#635#662#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dataset builder.js" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/dataset builder.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="22" selection-start-line="22" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -80,8 +26,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rowEv</find>
-      <find>today</find>
       <find>substringMatcher</find>
       <find>codCidade</find>
       <find>endere</find>
@@ -110,6 +54,8 @@
       <find>$(this).val()</find>
       <find>busca</find>
       <find>mail</find>
+      <find>rem</find>
+      <find>back</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -118,6 +64,7 @@
       <replace>ev</replace>
       <replace>busca</replace>
       <replace>limpaAcento(busca)</replace>
+      <replace>5px</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos</dir>
@@ -176,9 +123,9 @@
         <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" />
         <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js" />
-        <option value="$PROJECT_DIR$/email.html" />
         <option value="$PROJECT_DIR$/datasets/syncSAS.js" />
         <option value="$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/dataset builder.js" />
+        <option value="$PROJECT_DIR$/email.html" />
         <option value="$PROJECT_DIR$/datasets/enviaEmail.js" />
       </list>
     </option>
@@ -221,22 +168,6 @@
               <item name="datasets" type="462c0819:PsiDirectoryNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="workflow" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -275,11 +206,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.email.html">
     <configuration name="email.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SEBRAE/email.html" />
+    <configuration name="enviaEmail.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="enviaEmail.js" working-dir="$PROJECT_DIR$/datasets" />
+    <list>
+      <item itemvalue="JavaScript Debug.email.html" />
+      <item itemvalue="Node.js.enviaEmail.js" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.email.html" />
+        <item itemvalue="Node.js.enviaEmail.js" />
       </list>
     </recent_temporary>
   </component>
@@ -322,12 +259,13 @@
       <workItem from="1528050213738" duration="4329000" />
       <workItem from="1528210167379" duration="4596000" />
       <workItem from="1528736714100" duration="8258000" />
-      <workItem from="1528806079030" duration="318000" />
+      <workItem from="1528806079030" duration="4462000" />
+      <workItem from="1528813685161" duration="1471000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158309000" />
+    <option name="totallyTimeSpent" value="163924000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -340,16 +278,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -364,19 +301,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -558,9 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2430">
           <caret line="162" column="118" selection-start-line="162" selection-start-column="118" selection-end-line="162" selection-end-column="118" />
-          <folding>
-            <element signature="n#style#0;n#li#3;n#ul#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -568,17 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#29#2165#0" />
-            <element signature="n#!!block;n#reqListener#0" />
-            <element signature="n#!!block;n#getMapDetails#0" />
-            <element signature="n#!!block;n#initMap#0" />
-            <element signature="n#!!block;n#tryCon#0" />
-            <element signature="n#!!block;n#substringMatcher#0" />
-            <element signature="n#!!block;n#getSASdata#0" />
-            <element signature="n#!!block;n#salvarForm#0" />
-            <element signature="n#!!block;n#criaRegistro#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -644,23 +567,9 @@
         <state relative-caret-position="-246" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Templates de email/tpl056-pt.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-164" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="42" column="66" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../BULLA/forms/32449 - Consultoria Bulla Presencial/custom.js">
@@ -670,36 +579,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/syncSAS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="136" column="33" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#defineStructure#0" />
-            <element signature="n#!!block;n#onSync#0" />
-            <element signature="n#!!block;n#onMobileSync#0" />
-            <element signature="n#!!block;n#criaRegistro#0" />
-            <element signature="n#!!block;n#salvarForm#0" />
-            <element signature="n#!!block;n#verificaTipoEv#0" />
-            <element signature="n#!!block;n#disarrangeData#0" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="140" column="24" selection-start-line="140" selection-start-column="11" selection-end-line="140" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/dataset builder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="330">
           <caret line="22" selection-start-line="22" selection-end-line="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/enviaEmail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="50" lean-forward="true" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
-          <folding>
-            <element signature="e#635#662#0" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
         </state>
       </provider>
     </entry>
