@@ -1,0 +1,16 @@
+application.type=widget
+application.code=analyticsFluigW
+application.title=Widget Analytics
+application.description=Integração Google Analytics x Fluig
+application.category=Structor
+application.renderer=freemarker
+developer.code=arthurs-mbp-97.go.sebrae.corp
+developer.name=arthurbarros
+developer.url=http://www.fluig.com
+application.uiwidget=true
+application.mobileapp=false
+view.file=view.ftl
+edit.file=edit.ftl
+locale.file.base.name=analyticsFluigW
+application.resource.js.1=/resources/js/analyticsFluigW.js
+application.resource.css.2=/resources/css/analyticsFluigW.css
