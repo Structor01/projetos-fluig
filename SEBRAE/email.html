@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            /*font-family: ;*/
+        }
+        #wrap {
+            background: #0080ff;
+            padding: 1rem;
+        }
+        #header {
+            text-align: center;
+            padding: 1rem;
+        }
+        #logo {
+            margin: .5rem;
+        }
+        img {
+            text-align: center;
+        }
+        #inner {
+            background: white;
+            margin: 0 1rem;
+            padding: 1rem;
+        }
+        #news {
+            background: lightgoldenrodyellow;
+            padding: 1rem;
+        }
+        h1,h3 {
+            padding: 0;
+            margin: 0;
+        }
+        #footer {
+            color: grey;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: #0080ff !important; padding: 1rem;">
+<div style="text-align: center;
+            padding: 1rem;" id="header">
+    <img height="60px" id="logo" src="https://s33.postimg.cc/pge07ywgv/logo_branca.png">
+    <img height="75px" src="http://www.pngmart.com/files/3/Sun-PNG-Transparent-Image.png">
+</div>
+<div id="inner" style="background: white;
+            margin: 0 1rem;
+            padding: 1rem;">
+    <h1>Bom dia, SEBRAE!</h1>
+    <h3>Acontece hoje, ${TODAY_DATE!""}</h3>
+    <p>Vamos ao(s) eventos programados:</p>
+    <div id="news" style="background: lightgoldenrodyellow;
+            padding: 1rem;">
+        ${BODY_EMAIL!""}
+    </div>
+    <div id="footer">
+        <p>
+            <small>
+                Este(s) evento(s) foi(ram) cadastrado(s) por seu(s) responsável(is) no SAS. Lembramos que os eventos que não forem cadastrados no SAS devem ser cadastrados diretamente no Fluig, no caminho:<br>Processos > Iniciar solicitações > Eventos > Cadastro de eventos.
+            </small>
+        </p>
+        <p>
+            <small>
+                - Para utilizar os serviços do Fluig, ligue no ramal 2268 ou envie e-mail para suporte@sebraego.com.br.
+            </small>
+        </p>
+    </div>
+</div>
+</body>
+</html>

@@ -21,12 +21,12 @@ $(document).ready(function () {
                 var busca = $(this).val();
 
                 if(
-                    limpaAcento(nome).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
-                    limpaAcento(email).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
-                    limpaAcento(cargo).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
-                    limpaAcento(unidade).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
-                    limpaAcento(celular).toUpperCase().indexOf(busca.toUpperCase()) > -1 ||
-                    limpaAcento(ramal).toUpperCase().indexOf(busca.toUpperCase()) > -1
+                    limpaAcento(nome).toUpperCase().indexOf(limpaAcento(limpaAcento(busca)).toUpperCase()) > -1 ||
+                    limpaAcento(email).toUpperCase().indexOf(limpaAcento(busca).toUpperCase()) > -1 ||
+                    limpaAcento(cargo).toUpperCase().indexOf(limpaAcento(busca).toUpperCase()) > -1 ||
+                    limpaAcento(unidade).toUpperCase().indexOf(limpaAcento(busca).toUpperCase()) > -1 ||
+                    limpaAcento(celular).toUpperCase().indexOf(limpaAcento(busca).toUpperCase()) > -1 ||
+                    limpaAcento(ramal).toUpperCase().indexOf(limpaAcento(busca).toUpperCase()) > -1
                 ) {
 
                     html += '<tr onclick="goToUser(this)" style="cursor: pointer">' +

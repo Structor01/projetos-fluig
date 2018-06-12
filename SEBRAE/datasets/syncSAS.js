@@ -130,11 +130,11 @@ function createDataset(fields, constraints, sortFields) {
         var clientService = fluigAPI.getAuthorizeClientService();
 
         var data = {
-            companyId : getValue("WKCompany") + '',
+            companyId : getValue("WKCompany"),
             serviceCode : 'SAS',
             endpoint : '/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial='+dtInicio+'&PeriodoFinal='+dtFinal,
             method : 'get',
-            timeoutService: '100' // segundos
+            timeoutService: '100'
         }
 
         var vo = clientService.invoke(JSON.stringify(data));
