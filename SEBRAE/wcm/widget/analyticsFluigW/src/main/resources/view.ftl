@@ -17,14 +17,14 @@
                 <div class="form-group col-md-3">
                     <label>Data Inicial</label>
                     <div class="input-group date">
-                        <input class="form-control" id="dataInicial">
+                        <input class="form-control" onchange="filtra()" id="dataInicial">
                         <span class="input-group-addon"><span class="fluigicon fluigicon-calendar"></span></span>
                     </div>
                 </div>
                 <div class="form-group col-md-3">
                     <label>Data Final</label>
                     <div class="input-group date">
-                        <input class="form-control" id="dataFinal">
+                        <input class="form-control" onchange="filtra()" id="dataFinal">
                         <span class="input-group-addon"><span class="fluigicon fluigicon-calendar"></span></span>
                     </div>
                 </div>

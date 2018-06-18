@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/target/analyticsFluigW.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/target/analyticsFluigW.war" afterDir="false" />
@@ -20,22 +19,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="26" column="65" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="65" />
+            <state relative-caret-position="253">
+              <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="analyticsFluigW.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="analyticsFluigW.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="290" column="34" lean-forward="true" selection-start-line="290" selection-start-column="34" selection-end-line="290" selection-end-column="34" />
+            <state relative-caret-position="166">
+              <caret line="273" column="33" selection-start-line="273" selection-start-column="33" selection-end-line="273" selection-end-column="33" />
               <folding>
-                <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#!!block;n#renderWeekOverWeekChart#0" />
+                <element signature="n#!!block;n#renderYearOverYearChart#0" />
+                <element signature="n#!!block;n#renderTopBrowsersChart#0" />
+                <element signature="n#!!block;n#query#0" />
+                <element signature="n#!!block;n#makeCanvas#0" />
+                <element signature="n#!!block;n#generateLegend#0" />
               </folding>
             </state>
           </provider>
@@ -52,9 +56,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pac-input</find>
-      <find>input</find>
-      <find>salvarForm</find>
       <find>cria</find>
       <find>salvar</find>
       <find>data</find>
@@ -82,6 +83,9 @@
       <find>perda</find>
       <find>renderPerDay</find>
       <find>moment</find>
+      <find>view</find>
+      <find>GLOBAL_PARAMS</find>
+      <find>start</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -155,8 +159,8 @@
         <option value="$PROJECT_DIR$/datasets/enviaEmail.js" />
         <option value="$PROJECT_DIR$/email.html" />
         <option value="$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Formulário/Data/campo_fluig_data.html" />
-        <option value="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js" />
+        <option value="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl" />
       </list>
     </option>
   </component>
@@ -382,12 +386,12 @@
       <workItem from="1528813685161" duration="1471000" />
       <workItem from="1528817170589" duration="10317000" />
       <workItem from="1528888319192" duration="45000" />
-      <workItem from="1529327320878" duration="2074000" />
+      <workItem from="1529327320878" duration="4559000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176360000" />
+    <option name="totallyTimeSpent" value="178845000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -448,7 +452,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -723,20 +727,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl">
+    <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="26" column="65" selection-start-line="26" selection-start-column="56" selection-end-line="26" selection-end-column="65" />
+        <state relative-caret-position="166">
+          <caret line="273" column="33" selection-start-line="273" selection-start-column="33" selection-end-line="273" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!block;n#renderWeekOverWeekChart#0" />
+            <element signature="n#!!block;n#renderYearOverYearChart#0" />
+            <element signature="n#!!block;n#renderTopBrowsersChart#0" />
+            <element signature="n#!!block;n#query#0" />
+            <element signature="n#!!block;n#makeCanvas#0" />
+            <element signature="n#!!block;n#generateLegend#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js">
+    <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="290" column="34" lean-forward="true" selection-start-line="290" selection-start-column="34" selection-end-line="290" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="253">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
         </state>
       </provider>
     </entry>
