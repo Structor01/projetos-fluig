@@ -10,6 +10,10 @@ var HelloWorld = SuperWidget.extend({
             pickDate: true,
             pickTime: false
         })
+
+        $('.date').on('click', function () {
+            $(this).find('input').blur();
+        });
     },
 
     bindings: {
@@ -60,10 +64,14 @@ var HelloWorld = SuperWidget.extend({
                 var title = document.getElementById('view-name');
                 title.textContent = data.property.name + ' (' + data.view.name + ')';
                 activeUsers.set(data).execute();
+                // All calls
+                renderPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end']);
                 renderWeekOverWeekChart(data.ids);
                 renderYearOverYearChart(data.ids);
-                renderPerDay(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end']);
+                renderPerDay(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'], GLOBAL_PARAMS['filter']);
                 GLOBAL_PARAMS['data'] = data;
+                renderViews(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
+                renderTopPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
             });
 
             Chart.defaults.global.animationSteps = 60;
@@ -125,6 +133,20 @@ function renderWeekOverWeekChart(ids) {
         generateLegend('legend-1-container', data.datasets);
     });
 }
+function renderViews(ids, start, end, filter) {
+    var thisYear = query({
+        'ids': ids,
+        'filter':filter,
+        'metrics': 'ga:uniquePageviews,ga:pageviews, ga:entrances',
+        'start-date': start,
+        'end-date': end
+    });
+    Promise.all([thisYear]).then(function (res) {
+        document.getElementById('view-container-views').innerText = res[0].rows[0][1];
+        document.getElementById('view-container-unique').innerText = res[0].rows[0][0];
+        document.getElementById('view-container-entradas').innerText = res[0].rows[0][2];
+    });
+}
 function renderYearOverYearChart(ids) {
     var now = moment();
     var thisYear = query({
@@ -181,27 +203,66 @@ function renderYearOverYearChart(ids) {
             console.error(err.stack);
         });
 }
-function renderPerDay(ids, start, end) {
+function renderPages(ids, start, end) {
     var thisYear = query({
         'ids': ids,
-        'dimensions': 'ga:day,ga:nthDay',
+        'metrics': 'ga:entrances',
+        'dimensions':'ga:pagePath',
+        'start-date': start,
+        'end-date': end
+    });
+    Promise.all([thisYear]).then(function (res) {
+        var states = res[0].rows.map(function(row) { return row[0]; })
+        var myAutocomplete = FLUIGC.autocomplete('#filtraPage', {
+            source: substringMatcher(states),
+            name: 'cities',
+            displayKey: 'description',
+            tagClass: 'tag-gray',
+            type: 'tagAutocomplete'
+        });
+    });
+}
+
+function substringMatcher(strs) {
+    return function findMatches(q, cb) {
+        var matches, substrRegex;
+
+        matches = [];
+
+        substrRegex = new RegExp(q, 'i');
+
+        $.each(strs, function(i, str) {
+            if (substrRegex.test(str)) {
+                matches.push({
+                    description: str
+                });
+            }
+        });
+        cb(matches);
+    };
+}
+function renderPerDay(ids, start, end, filter) {
+    var thisYear = query({
+        'ids': ids,
+        'dimensions': 'ga:month,ga:day,ga:dayOfWeek,ga:dayOfWeekName,ga:nthDay',
         'metrics': 'ga:entrances',
         'sort':'ga:nthDay',
+        'filter':'ga:pagePath==/portal/p/1/home',
         'start-date': start,
         'end-date': end
     });
 
     Promise.all([thisYear]).then(function(results) {
-        var labels = results[0].rows.map(function(row) { return +row[0]; });
-        var data1 = results[0].rows.map(function(row) { return +row[2]; });
+        var labels = results[0].rows.map(function(row) { return +row[1]+'/'+row[0]; });
+        var data1 = results[0].rows.map(function(row) { return +row[5]; });
         var data = {
             labels : labels,
             datasets : [
                 {
-                    label: 'Últimos',
-                    fillColor : 'rgba(220,220,220,0.5)',
-                    strokeColor : 'rgba(220,220,220,1)',
-                    pointColor : 'rgba(220,220,220,1)',
+                    label: 'Acessos',
+                    fillColor : 'rgba(151,187,205,0.5)',
+                    strokeColor : 'rgba(151,187,205,1)',
+                    pointColor : 'rgba(151,187,205,1)',
                     pointStrokeColor : '#fff',
                     data : data1
                 }
@@ -214,6 +275,28 @@ function renderPerDay(ids, start, end) {
         .catch(function(err) {
             console.error(err.stack);
         });
+}
+function renderTopPages(ids, start, end, filter) {
+    query({
+        'ids': ids,
+        'dimensions': 'ga:pagePath',
+        'metrics': 'ga:pageviews',
+        'sort': '-ga:pageviews',
+        'filter':'ga:pagePath==/portal/p/1/home',
+        'max-results': 10,
+        'start-date': start,
+        'end-date': end
+    }).then(function(response) {
+        var data = [];
+        var colors = ['#4D5360','#949FB1','#D4CCC5','#E2EAE9','#F7464A','#4D5F60','#949CB1','#D4ACC5','#E22AE9','#F7C64A'];
+
+        response.rows.forEach(function(row, i) {
+            data.push({ value: +row[1], color: colors[i], label: row[0] });
+        });
+
+        new Chart(makeCanvas('chart-4-container')).Doughnut(data);
+        generateLegend('legend-4-container', data);
+    });
 }
 function renderTopBrowsersChart(ids) {
     query({
@@ -281,6 +364,14 @@ function filtra() {
         el.val() != '' && el.attr('id') == 'dataInicial' ? GLOBAL_PARAMS['start'] = adjustDate(el.val()) : 'false';
         el.val() != '' && el.attr('id') == 'dataFinal' ? GLOBAL_PARAMS['end'] = adjustDate(el.val()) : 'false';
     });
+
+    if($('#filtraPage').val() != '') {
+        var values = $('#filtraPage').val().indexOf(',') > -1 ? $('#filtraPage').val().split(',') :
+            [$('#filtraPage').val()];
+
+
+        GLOBAL_PARAMS['filter'] = 'ga:pagePath==' + values.toString();
+    }
 
     return HelloWorld.execute(window.gapi);
 }

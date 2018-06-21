@@ -8,30 +8,39 @@
             fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
         }(window,document,'script'));
     </script>
+    <div class="row" style="margin-bottom: 1rem">
+        <div class="col-md-9">
+            <div id="embed-api-auth-container"></div>
+        </div>
+        <div class="col-md-3">
+            <div id="active-users-container"></div>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-md-12 panel-default">
-            <div class="panel-heading">
-                Filtros
-            </div>
-            <div class="panel-body">
-                <div class="form-group col-md-3">
-                    <label>Data Inicial</label>
-                    <div class="input-group date">
-                        <input class="form-control" onchange="filtra()" id="dataInicial">
-                        <span class="input-group-addon"><span class="fluigicon fluigicon-calendar"></span></span>
-                    </div>
-                </div>
-                <div class="form-group col-md-3">
-                    <label>Data Final</label>
-                    <div class="input-group date">
-                        <input class="form-control" onchange="filtra()" id="dataFinal">
-                        <span class="input-group-addon"><span class="fluigicon fluigicon-calendar"></span></span>
-                    </div>
-                </div>
+        <div class="form-group col-md-3">
+            <label>Data Inicial</label>
+            <div class="input-group date">
+                <input class="form-control" readonly id="dataInicial">
+                <span class="input-group-addon"><span class="fluigicon fluigicon-calendar"></span></span>
             </div>
         </div>
-        <div class="hide col-md-6">
-            <div id="embed-api-auth-container"></div>
+        <div class="form-group col-md-3">
+            <label>Data Final</label>
+            <div class="input-group date">
+                <input class="form-control" readonly id="dataFinal">
+                <span class="input-group-addon"><span class="fluigicon fluigicon-calendar"></span></span>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label>&nbsp;</label>
+            <div class="input-group">
+                <span class="input-group-addon">Página</span>
+                <input class="form-control" id="filtraPage">
+            </div>
+        </div>
+        <div class="form-group col-md-2">
+            <label>&nbsp;</label>
+            <button class="form-control btn btn-primary" onclick="filtra()">Aplicar</button>
         </div>
         <div class="hide col-md-6">
             <div id="view-selector-container"></div>
@@ -40,13 +49,47 @@
             <div id="view-name"></div>
         </div>
         <div class="col-md-12">
-            <div id="active-users-container"></div>
+            <table class="table">
+                <th>
+                    Entradas
+                </th>
+                <th>
+                    Views
+                </th>
+                <th>
+                    Views Únicas
+                </th>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <div id="view-container-entradas"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div id="view-container-views"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div id="view-container-unique"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="col-md-12">
             <div class="Chartjs">
                 <h3>Usuários por dia</h3>
                 <figure class="Chartjs-figure" id="chart-3-container"></figure>
                 <ol class="Chartjs-legend" id="legend-3-container"></ol>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="Chartjs">
+                <h3>Top Páginas</h3>
+                <figure class="Chartjs-figure" id="chart-4-container"></figure>
+                <ol class="Chartjs-legend" id="legend-4-container"></ol>
             </div>
         </div>
         <div class="col-md-6">
