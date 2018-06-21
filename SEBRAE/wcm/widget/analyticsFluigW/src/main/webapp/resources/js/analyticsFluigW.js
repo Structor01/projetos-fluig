@@ -133,6 +133,7 @@ function renderWeekOverWeekChart(ids) {
         generateLegend('legend-1-container', data.datasets);
     });
 }
+
 function renderViews(ids, start, end, filter) {
     var thisYear = query({
         'ids': ids,
@@ -147,6 +148,7 @@ function renderViews(ids, start, end, filter) {
         document.getElementById('view-container-entradas').innerText = res[0].rows[0][2];
     });
 }
+
 function renderYearOverYearChart(ids) {
     var now = moment();
     var thisYear = query({
@@ -203,6 +205,7 @@ function renderYearOverYearChart(ids) {
             console.error(err.stack);
         });
 }
+
 function renderPages(ids, start, end) {
     var thisYear = query({
         'ids': ids,
@@ -241,6 +244,7 @@ function substringMatcher(strs) {
         cb(matches);
     };
 }
+
 function renderPerDay(ids, start, end, filter) {
     var thisYear = query({
         'ids': ids,
@@ -276,6 +280,7 @@ function renderPerDay(ids, start, end, filter) {
             console.error(err.stack);
         });
 }
+
 function renderTopPages(ids, start, end, filter) {
     query({
         'ids': ids,
@@ -298,6 +303,7 @@ function renderTopPages(ids, start, end, filter) {
         generateLegend('legend-4-container', data);
     });
 }
+
 function renderTopBrowsersChart(ids) {
     query({
         'ids': ids,
@@ -318,6 +324,7 @@ function renderTopBrowsersChart(ids) {
         generateLegend('legend-3-container', data);
     });
 }
+
 function query(params) {
     return new Promise(function(resolve, reject) {
         var data = new gapi.analytics.report.Data({query: params});
@@ -326,6 +333,7 @@ function query(params) {
             .execute();
     });
 }
+
 function makeCanvas(id) {
     var container = document.getElementById(id);
     var canvas = document.createElement('canvas');
@@ -338,6 +346,7 @@ function makeCanvas(id) {
 
     return ctx;
 }
+
 function generateLegend(id, items) {
     var legend = document.getElementById(id);
     legend.innerHTML = items.map(function(item) {
@@ -347,11 +356,13 @@ function generateLegend(id, items) {
             escapeHtml(label) + '</li>';
     }).join('');
 }
+
 function escapeHtml(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
 }
+
 function adjustDate(e) {
     var v1 = e.split('/');
     return v1[2]+'-'+v1[1]+'-'+v1[0]
