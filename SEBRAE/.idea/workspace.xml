@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/target/analyticsFluigW.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/target/analyticsFluigW.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/eventosCadastro/target/eventosCadastro.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/eventosCadastro/target/eventosCadastro.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,42 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="58" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="analyticsFluigW.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
-              <folding>
-                <element signature="n#!!block;n#renderWeekOverWeekChart#0" />
-                <element signature="n#!!block;n#renderViews#0" />
-                <element signature="n#!!block;n#renderYearOverYearChart#0" />
-                <element signature="n#!!block;n#renderPages#0" />
-                <element signature="n#!!block;n#substringMatcher#0" />
-                <element signature="n#!!block;n#renderPerDay#0" />
-                <element signature="n#!!block;n#renderTopPages#0" />
-                <element signature="n#!!block;n#renderTopBrowsersChart#0" />
-                <element signature="n#!!block;n#query#0" />
-                <element signature="n#!!block;n#makeCanvas#0" />
-                <element signature="n#!!block;n#generateLegend#0" />
-                <element signature="n#!!block;n#escapeHtml#0" />
-                <element signature="n#!!block;n#adjustDate#0" />
-                <element signature="n#!!block;n#filtra#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,9 +29,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mail</find>
-      <find>rem</find>
-      <find>back</find>
       <find>clien</find>
       <find>initClient</find>
       <find>ids</find>
@@ -95,6 +56,9 @@
       <find>thisYear</find>
       <find>renderPages</find>
       <find>GLOBAL_PARAMS</find>
+      <find>filter</find>
+      <find>'filter'</find>
+      <find>'filters'</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -108,6 +72,7 @@
       <replace>Última Semana</replace>
       <replace>Este Ano</replace>
       <replace>Último Ano</replace>
+      <replace>filters</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos</dir>
@@ -192,7 +157,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,17 +167,6 @@
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="datasets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="datasets" type="462c0819:PsiDirectoryNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -245,16 +198,6 @@
               <item name="analyticsFluigW" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="analyticsFluigW" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
@@ -304,6 +247,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,12 +341,13 @@
       <workItem from="1528888319192" duration="45000" />
       <workItem from="1529327320878" duration="12609000" />
       <workItem from="1529434737683" duration="1495000" />
-      <workItem from="1529601932413" duration="1636000" />
+      <workItem from="1529601932413" duration="2046000" />
+      <workItem from="1529610012374" duration="692000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190026000" />
+    <option name="totallyTimeSpent" value="191128000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,16 +360,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -439,19 +383,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -738,17 +682,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="58" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="84" column="38" selection-start-line="84" selection-start-column="38" selection-end-line="84" selection-end-column="38" />
+        <state relative-caret-position="-1028">
+          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
           <folding>
             <element signature="n#!!block;n#renderWeekOverWeekChart#0" />
             <element signature="n#!!block;n#renderViews#0" />
@@ -756,15 +693,22 @@
             <element signature="n#!!block;n#renderPages#0" />
             <element signature="n#!!block;n#substringMatcher#0" />
             <element signature="n#!!block;n#renderPerDay#0" />
-            <element signature="n#!!block;n#renderTopPages#0" />
             <element signature="n#!!block;n#renderTopBrowsersChart#0" />
             <element signature="n#!!block;n#query#0" />
             <element signature="n#!!block;n#makeCanvas#0" />
             <element signature="n#!!block;n#generateLegend#0" />
+            <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#!!block;n#escapeHtml#0" />
             <element signature="n#!!block;n#adjustDate#0" />
             <element signature="n#!!block;n#filtra#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="37" column="58" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="58" />
         </state>
       </provider>
     </entry>

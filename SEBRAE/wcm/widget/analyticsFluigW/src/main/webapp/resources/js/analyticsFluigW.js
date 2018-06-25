@@ -14,6 +14,10 @@ var HelloWorld = SuperWidget.extend({
         $('.date').on('click', function () {
             $(this).find('input').blur();
         });
+
+        $('#filtraPage').on('fluig.autocomplete.itemRemoved', function () {
+            console.log('Removido');
+        })
     },
 
     bindings: {
@@ -137,7 +141,7 @@ function renderWeekOverWeekChart(ids) {
 function renderViews(ids, start, end, filter) {
     var thisYear = query({
         'ids': ids,
-        'filter':filter,
+        'filters':filter,
         'metrics': 'ga:uniquePageviews,ga:pageviews, ga:entrances',
         'start-date': start,
         'end-date': end
@@ -251,7 +255,7 @@ function renderPerDay(ids, start, end, filter) {
         'dimensions': 'ga:month,ga:day,ga:dayOfWeek,ga:dayOfWeekName,ga:nthDay',
         'metrics': 'ga:entrances',
         'sort':'ga:nthDay',
-        'filter':'ga:pagePath==/portal/p/1/home',
+        'filters':filter,
         'start-date': start,
         'end-date': end
     });
@@ -287,7 +291,7 @@ function renderTopPages(ids, start, end, filter) {
         'dimensions': 'ga:pagePath',
         'metrics': 'ga:pageviews',
         'sort': '-ga:pageviews',
-        'filter':'ga:pagePath==/portal/p/1/home',
+        'filters':filter,
         'max-results': 10,
         'start-date': start,
         'end-date': end
