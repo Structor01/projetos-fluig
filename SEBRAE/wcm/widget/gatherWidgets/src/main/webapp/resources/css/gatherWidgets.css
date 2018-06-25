@@ -1,4 +1,11 @@
 /* Coloque aqui seu codigo CSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+.page-header {
+    border-bottom: 1px solid #eee;
+}
 .message{
     margin-top: 10px;
 }
