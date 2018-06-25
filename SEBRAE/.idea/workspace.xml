@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/active.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/formRecursos.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/imagem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/zoom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html" beforeDir="false" afterPath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/_metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,17 +24,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="scratch.html" pinned="false" current-in-tab="true">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Lista de Recursos.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="237" column="137" selection-start-line="237" selection-start-column="137" selection-end-line="237" selection-end-column="137" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#fieldset#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#1;n#div#0;n#fieldset#0;n#fieldset#0;n#div#1;n#div#0;n#fieldset#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#fieldset#2;n#fieldset#0;n#div#1;n#div#0;n#fieldset#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="296">
+              <caret line="196" column="55" lean-forward="true" selection-start-line="196" selection-start-column="55" selection-end-line="196" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getDataset.js" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/getDataset.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -42,8 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ids</find>
-      <find>by s</find>
       <find>por se</find>
       <find>hart-1-container</find>
       <find>active</find>
@@ -67,11 +77,13 @@
       <find>thisYear</find>
       <find>renderPages</find>
       <find>GLOBAL_PARAMS</find>
-      <find>filter</find>
       <find>'filter'</find>
       <find>'filters'</find>
       <find>span</find>
       <find>disabled=&quot;disabled&quot;</find>
+      <find>filterValues</find>
+      <find>resp</find>
+      <find>filter</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -99,14 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.html" />
-        <option value="$PROJECT_DIR$/forms/33980 - Cadastro de Ramais/Cadastro de Ramais.html" />
-        <option value="$PROJECT_DIR$/wcm/widget/cadastro_ramais/src/main/resources/view.ftl" />
-        <option value="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl" />
-        <option value="$PROJECT_DIR$/wcm/widget/cadastro_ramais/src/main/webapp/resources/js/cadastro_ramais.js" />
-        <option value="$PROJECT_DIR$/wcm/widget/linkexterno_sebrae/src/main/resources/view.ftl" />
-        <option value="$PROJECT_DIR$/forms/Histórico/Histórico.html" />
-        <option value="$PROJECT_DIR$/forms/Reserva de Recurso/Reserva de Recurso.html" />
         <option value="$PROJECT_DIR$/forms/Reserva de Recurso/custom.js" />
         <option value="$PROJECT_DIR$/datasets/SEBRAE/dsGetAvailableProces.js" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_4.html" />
@@ -150,6 +154,14 @@
         <option value="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/css/gatherWidgets.css" />
         <option value="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.html" />
+        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/active.js" />
+        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js" />
+        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/formRecursos.css" />
+        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/imagem.js" />
+        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/events/displayFields.js" />
+        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/zoom.js" />
+        <option value="$PROJECT_DIR$/datasets/recursosGrupos.js" />
+        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html" />
       </list>
     </option>
   </component>
@@ -162,7 +174,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -184,6 +196,12 @@
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="forms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="32074 - Lista de Recursos" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -284,12 +302,13 @@
       <workItem from="1529434737683" duration="1495000" />
       <workItem from="1529601932413" duration="2046000" />
       <workItem from="1529610012374" duration="692000" />
-      <workItem from="1529930998944" duration="2443000" />
+      <workItem from="1529930998944" duration="4761000" />
+      <workItem from="1529943854968" duration="1775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193571000" />
+    <option name="totallyTimeSpent" value="197664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -301,7 +320,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
@@ -325,19 +345,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -353,40 +373,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../BULLA/wcm/widget/listaResp/src/main/webapp/resources/js/listaResp.js">
+    <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/getDataset.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../BULLA/wcm/widget/listaResp/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="214" column="4" selection-start-line="214" selection-start-column="4" selection-end-line="217" selection-end-column="83" />
+        <state relative-caret-position="105">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Containers/com.evernote.Evernote/Data/Documents/.evernote/118763066-personal-www.evernote.com/external-edits/7F9088A8-3A1C-4CF4-8E2A-2D5647668C1C/novoForm.html" />
-    <entry file="file://$PROJECT_DIR$/wcm/widget/cadastraEventos/src/main/resources/application.info" />
-    <entry file="file://$PROJECT_DIR$/wcm/widget/cadastraEventos/src/main/webapp/resources/js/cadastraEventos.js" />
-    <entry file="file://$PROJECT_DIR$/wcm/widget/cadastraEventos/src/main/resources/view.ftl" />
-    <entry file="file://$PROJECT_DIR$/wcm/widget/cadastroDeEventos/src/main/webapp/resources/js/cadastroDeEventos.js">
+    <entry file="file://$PROJECT_DIR$/datasets/recursosGrupos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="29" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/cadastroDeEventos/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="83" column="91" selection-start-line="83" selection-start-column="91" selection-end-line="83" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="15134" lean-forward="true" selection-start-line="15134" selection-end-line="15134" />
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -423,13 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="51" selection-start-line="51" selection-end-line="62" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -622,9 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/css/gatherWidgets.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -643,11 +630,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="237" column="137" selection-start-line="237" selection-start-column="137" selection-end-line="237" selection-end-column="137" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#fieldset#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#1;n#div#0;n#fieldset#0;n#fieldset#0;n#div#1;n#div#0;n#fieldset#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#fieldset#2;n#fieldset#0;n#div#1;n#div#0;n#fieldset#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/active.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/formRecursos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/imagem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="92" column="1" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/zoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/events/displayFields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-53">
+          <caret line="488" column="14" selection-start-line="488" selection-start-column="8" selection-end-line="488" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/getDataset.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/recursosGrupos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="196" column="55" lean-forward="true" selection-start-line="196" selection-start-column="55" selection-end-line="196" selection-end-column="55" />
         </state>
       </provider>
     </entry>
