@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,26 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cadastroCliente.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../BULLA/wcm/widget/cadastroCliente/src/main/webapp/resources/js/cadastroCliente.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="63" column="28" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -190,12 +169,6 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="forms" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-              <item name="32074 - Lista de Recursos" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -296,12 +269,12 @@
       <workItem from="1529601932413" duration="2046000" />
       <workItem from="1529610012374" duration="692000" />
       <workItem from="1529930998944" duration="4761000" />
-      <workItem from="1529943854968" duration="7239000" />
+      <workItem from="1529943854968" duration="7589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203128000" />
+    <option name="totallyTimeSpent" value="203478000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -314,7 +287,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
@@ -323,7 +295,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" weight="0.30769232" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -692,8 +664,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
