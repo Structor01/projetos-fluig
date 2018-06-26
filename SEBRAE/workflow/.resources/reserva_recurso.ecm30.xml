@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Reserva de Recursos</processId>
-      <version>5</version>
+      <version>7</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>35473</formId>
@@ -356,7 +356,7 @@
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
         <expressionOrder>1</expressionOrder>
-        <version>5</version>
+        <version>7</version>
         <sequence>9</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;slAprova&quot;)  ==  &quot;Refazer&quot;</condition>
@@ -369,7 +369,7 @@
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
         <expressionOrder>2</expressionOrder>
-        <version>5</version>
+        <version>7</version>
         <sequence>9</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;slAprova&quot;)  ==  &quot;Aprovado&quot;</condition>
@@ -382,7 +382,7 @@
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
         <expressionOrder>3</expressionOrder>
-        <version>5</version>
+        <version>7</version>
         <sequence>9</sequence>
       </conditionProcessStatePK>
       <condition>hAPI.getCardValue(&quot;slAprova&quot;)  ==  &quot;Reprovado&quot;</condition>
@@ -395,10 +395,10 @@
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
         <expressionOrder>1</expressionOrder>
-        <version>5</version>
+        <version>7</version>
         <sequence>22</sequence>
       </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;cdResponsavelRecurso&quot;)  ==  &quot;&quot;</condition>
+      <condition>hAPI.getCardValue(&quot;responsavelAprovacao&quot;)  ==  &quot;&quot;</condition>
       <destinationSequenceId>6</destinationSequenceId>
     </ConditionProcessState>
     <ConditionProcessState>
@@ -406,10 +406,10 @@
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
         <expressionOrder>2</expressionOrder>
-        <version>5</version>
+        <version>7</version>
         <sequence>22</sequence>
       </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;cdResponsavelRecurso&quot;)  !=  &quot;&quot;</condition>
+      <condition>hAPI.getCardValue(&quot;responsavelAprovacao&quot;)  !=  &quot;&quot;</condition>
       <destinationSequenceId>5</destinationSequenceId>
     </ConditionProcessState>
   </list>
@@ -669,7 +669,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>14</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -680,7 +680,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>14</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -691,7 +691,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>15</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -702,7 +702,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>16</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -713,18 +713,18 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>18</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>317</positionX>
+      <positionX>336</positionX>
       <positionY>289</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>18</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -735,7 +735,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>18</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -746,7 +746,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>19</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -757,7 +757,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>20</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -768,7 +768,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>20</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -779,7 +779,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>20</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -790,7 +790,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>21</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -801,7 +801,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>25</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -812,7 +812,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
-        <version>5</version>
+        <version>7</version>
         <linkSequence>25</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -830,7 +830,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>reserva_recurso</processId>
-      <processVersion>5</processVersion>
+      <processVersion>7</processVersion>
       <stateSequence>6</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -840,7 +840,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>reserva_recurso</processId>
-      <processVersion>5</processVersion>
+      <processVersion>7</processVersion>
       <stateSequence>6</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -850,7 +850,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>reserva_recurso</processId>
-      <processVersion>5</processVersion>
+      <processVersion>7</processVersion>
       <stateSequence>6</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -860,7 +860,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>reserva_recurso</processId>
-      <processVersion>5</processVersion>
+      <processVersion>7</processVersion>
       <stateSequence>6</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -870,7 +870,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>reserva_recurso</processId>
-      <processVersion>5</processVersion>
+      <processVersion>7</processVersion>
       <stateSequence>6</stateSequence>
       <appKey>approval</appKey>
       <appField>reject</appField>

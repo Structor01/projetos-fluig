@@ -60,6 +60,7 @@ function onChangeDate(ev) {
 var beforeSendValidate = function(numState,nextState) {
     if(numState == 0 || numState == 4) {
         getData($('#codigoRecurso').val());
+        if($('#codigoRecurso').val() == '') throw 'Por favor, escolha o recurso.';
         var v = verificaDisponibildade($('#dtInicio').val(), $('#dtFinal').val());
         if (v === false) {
             throw 'Datas indisponíveis!';
@@ -281,7 +282,7 @@ function setSelectedZoomItem(selectObject) {
         var cst1 = DatasetFactory.createConstraint('id', selectObject['Id'], selectObject['Id'], ConstraintType.MUST);
         var cst2 = DatasetFactory.createConstraint('metadata#active', '1', '1', ConstraintType.MUST);
         var cnst = new Array(cst1,cst2)
-        var dataset = DatasetFactory.getDataset('sebrae_cadastra_recursos', null, cnst, null);
+        var dataset = DatasetFactory.getDataset('recursosCadastrados', null, cnst, null);
 
         console.log(dataset.values.length);
         if(dataset.values.length > 0){
@@ -290,15 +291,14 @@ function setSelectedZoomItem(selectObject) {
             console.log(dataset.values[0]);
             console.log(dataset.values);
 
-            var cst3 = DatasetFactory.createConstraint('mail', dataset.values[0]['cdResponsavelRecurso'], dataset.values[0]['cdResponsavelRecurso'], ConstraintType.MUST);
-            var cst4 = DatasetFactory.createConstraint('active', 'true', 'true', ConstraintType.MUST);
-            var cnst2 = new Array(cst3,cst4)
-            var datasetUser = DatasetFactory.getDataset('colleague', null, cnst2, null);
+            var cst3 = DatasetFactory.createConstraint('groupPK.groupId', dataset.values[0]['cdResponsavelRecurso'], dataset.values[0]['cdResponsavelRecurso'], ConstraintType.MUST);
+            var cnst2 = new Array(cst3)
+            var datasetUser = DatasetFactory.getDataset('group', null, cnst2, null);
 
             document.getElementById("descricaoRecurso").value = dataset.values[0]['dsRecurso'];
             document.getElementById("codigoRecurso").value = selectObject['Id'];
-            document.getElementById("responsavel").value = dataset.values[0]['dsResponsavelRecurso'];
-            document.getElementById("responsavelAprovacao").value = datasetUser.values[0]['colleaguePK.colleagueId'];
+            document.getElementById("responsavel").value = datasetUser.values[0]['groupDescription'];
+            document.getElementById("responsavelAprovacao").value = datasetUser.values[0]['groupPK.groupId'];
             document.getElementById("quantidade").value = dataset.values[0]['dsQuantidade'];
             document.getElementById("quantidade").value = dataset.values[0]['dsQuantidade'];
             // document.getElementById("dsTermoAceite").value = dataset.values[0]['dsTermoAceite'];
