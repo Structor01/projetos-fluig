@@ -75,7 +75,7 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>true</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>150</positionX>
+      <positionX>142</positionX>
       <positionY>68</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
@@ -231,7 +231,7 @@
       <notifyRequisitionerFollowUp>true</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>580</positionX>
-      <positionY>190</positionY>
+      <positionY>210</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>true</notifyManagerFollowUp>
@@ -284,16 +284,16 @@
         <version>1</version>
         <sequence>22</sequence>
       </processStatePK>
-      <stateName>Exclusive</stateName>
-      <stateDescription>Exclusive</stateDescription>
+      <stateName>Aprovação?</stateName>
+      <stateDescription>Aprovação?</stateDescription>
       <joint>false</joint>
       <initialState>false</initialState>
       <transferAttachments>false</transferAttachments>
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <automatic>true</automatic>
-      <positionX>137</positionX>
-      <positionY>200</positionY>
+      <positionX>130</positionX>
+      <positionY>198</positionY>
       <inhibitTransfer>false</inhibitTransfer>
       <stateType>1</stateType>
       <bpmnType>120</bpmnType>
@@ -398,18 +398,7 @@
         <version>5</version>
         <sequence>22</sequence>
       </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;respostaAprovacao&quot;)  ==  &quot;&quot;</condition>
-      <destinationSequenceId>6</destinationSequenceId>
-    </ConditionProcessState>
-    <ConditionProcessState>
-      <conditionProcessStatePK>
-        <companyId>1</companyId>
-        <processId>reserva_recurso</processId>
-        <expressionOrder>2</expressionOrder>
-        <version>5</version>
-        <sequence>22</sequence>
-      </conditionProcessStatePK>
-      <condition>hAPI.getCardValue(&quot;respostaAprovacao&quot;)  !=  &quot;&quot;</condition>
+      <condition>true</condition>
       <destinationSequenceId>5</destinationSequenceId>
     </ConditionProcessState>
   </list>
@@ -684,7 +673,7 @@
         <linkSequence>14</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>757</positionX>
+      <positionX>666</positionX>
       <positionY>29</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
@@ -707,7 +696,7 @@
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>757</positionX>
-      <positionY>222</positionY>
+      <positionY>238</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -717,7 +706,7 @@
         <linkSequence>18</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>334</positionX>
+      <positionX>317</positionX>
       <positionY>289</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
@@ -751,7 +740,7 @@
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
       <positionX>473</positionX>
-      <positionY>237</positionY>
+      <positionY>215</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -802,33 +791,11 @@
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
         <version>5</version>
-        <linkSequence>23</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>88</positionX>
-      <positionY>85</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>reserva_recurso</processId>
-        <version>5</version>
-        <linkSequence>23</linkSequence>
-        <bendSequence>2</bendSequence>
-      </processLinkBendPK>
-      <positionX>88</positionX>
-      <positionY>248</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>reserva_recurso</processId>
-        <version>5</version>
         <linkSequence>25</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>167</positionX>
-      <positionY>130</positionY>
+      <positionX>160</positionX>
+      <positionY>156</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
@@ -838,23 +805,13 @@
         <linkSequence>25</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>436</positionX>
-      <positionY>130</positionY>
+      <positionX>472</positionX>
+      <positionY>156</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
   <list/>
-  <list>
-    <ProcessFormField>
-      <processFormFieldPK>
-        <companyId>1</companyId>
-        <processId>reserva_recurso</processId>
-        <fieldId>descricaoRecurso</fieldId>
-      </processFormFieldPK>
-      <fieldDescription>Descrição</fieldDescription>
-      <slotId>1</slotId>
-    </ProcessFormField>
-  </list>
+  <list/>
   <list/>
   <list/>
   <list>
