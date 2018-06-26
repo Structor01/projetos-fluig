@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/css/recursoGest.css" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/css/recursoGest.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,11 +22,8 @@
       <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="70" column="64" lean-forward="true" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
-              <folding>
-                <element signature="n#div#1;n#div#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="-1129">
+              <caret line="80" column="18" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -47,10 +40,10 @@
       <file leaf-file-name="recursoGest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="104" column="41" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
+            <state relative-caret-position="75">
+              <caret line="174" column="34" selection-start-line="174" selection-start-column="34" selection-end-line="174" selection-end-column="34" />
               <folding>
-                <marker date="1530046297652" expanded="false" signature="5134:5389" ph="..." />
+                <marker date="1530046858689" expanded="false" signature="5134:5389" ph="..." />
               </folding>
             </state>
           </provider>
@@ -67,9 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>filtr</find>
-      <find>renderViews</find>
-      <find>renderpa</find>
       <find>thisYear</find>
       <find>renderPages</find>
       <find>GLOBAL_PARAMS</find>
@@ -97,6 +87,9 @@
       <find>WCMAPI</find>
       <find>dtInicial</find>
       <find>aprova</find>
+      <find>modal</find>
+      <find>moda</find>
+      <find>bind</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -395,12 +388,12 @@
       <workItem from="1529601932413" duration="2046000" />
       <workItem from="1529610012374" duration="692000" />
       <workItem from="1529930998944" duration="4761000" />
-      <workItem from="1529943854968" duration="24252000" />
+      <workItem from="1529943854968" duration="24812000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220141000" />
+    <option name="totallyTimeSpent" value="220701000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,7 +408,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
@@ -423,7 +416,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -657,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../BULLA/wcm/widget/cadastroCliente/src/main/webapp/resources/js/cadastroCliente.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="63" column="28" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -800,22 +786,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../BULLA/wcm/widget/cadastroCliente/src/main/webapp/resources/js/cadastroCliente.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="112" column="17" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="70" column="64" lean-forward="true" selection-start-line="70" selection-start-column="64" selection-end-line="70" selection-end-column="64" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="-1129">
+          <caret line="80" column="18" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="104" column="41" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
+        <state relative-caret-position="75">
+          <caret line="174" column="34" selection-start-line="174" selection-start-column="34" selection-end-line="174" selection-end-column="34" />
           <folding>
-            <marker date="1530046297652" expanded="false" signature="5134:5389" ph="..." />
+            <marker date="1530046858689" expanded="false" signature="5134:5389" ph="..." />
           </folding>
         </state>
       </provider>

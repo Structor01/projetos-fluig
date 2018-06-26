@@ -149,16 +149,6 @@ var HelloWorld = SuperWidget.extend({
 });
 
 function abreInfo(e) {
-    var myModal = FLUIGC.modal({
-        title: 'Evento',
-        content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
-        id: 'fluig-modal',
-        size:'full',
-        actions: [{
-            'label': 'Fechar',
-            'autoClose': true
-        }]
-    });
 
     var form =  DatasetFactory.getDataset(
         "dsReserva_Recursos",
@@ -180,6 +170,49 @@ function abreInfo(e) {
             }
         }
     }
+
+    var actions = [];
+    if(form.values[0]['task'] == 5) {
+        actions = [{
+            'label': 'Save',
+            'bind': 'data-approve',
+            'autoClose': true
+        },{
+            'label': 'Fechar',
+            'autoClose': true
+        }];
+    } else {
+        actions = [{
+            'label': 'Fechar',
+            'autoClose': true
+        }];
+    }
+
+    var myModal = FLUIGC.modal({
+        title: 'Recurso',
+        content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
+        id: 'fluig-modal',
+        size:'full',
+        actions:actions
+    });
+
+    $('[data-approve]').on('click', function () {
+        setTimeout(function () {
+            var myModal = FLUIGC.modal({
+                title: 'Recurso',
+                content: 'Esta acão autorizará o uso do recurso e moverá a atividade.',
+                id: 'fluig-modal',
+                size:'full',
+                actions:[{
+                    'label': 'Cancelar',
+                    'autoClose': true
+                },{
+                    'label': 'Confirmar',
+                    'autoClose': true
+                }]
+            });
+        },500);
+    });
 
     $('#instanceModal_C').find('.title').val(form.values[0]['recurso']);
     $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);

@@ -65,7 +65,7 @@
 				</div>
 				<div class="fs-clear-both panel panel-success">
 					<div class="panel-heading">
-						<span class="fluigicon fluigicon-warning-sign fluigicon-sm"></span> Aprovações Pendentes
+						<span class="fluigicon fluigicon-check-circle-on fluigicon-sm"></span> Aguardando Uso
 					</div>
 					<div class="panel-body">
 						<table class="table" id="tableAprovado">
