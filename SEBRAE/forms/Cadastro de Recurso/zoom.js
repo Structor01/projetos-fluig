@@ -7,7 +7,7 @@ function setSelectedZoomItem(selectObject) {
     indexProduto = getIndex(selectObject['inputId']);
 
     if (obj == 'dsResponsavelRecurso'){
-        document.getElementById("cdResponsavelRecurso").value = selectObject['mail'];
+        document.getElementById("cdResponsavelRecurso").value = selectObject['groupId'];
     }
     if (obj == 'Unidade'){
         document.getElementById("Codigo").value = selectObject['Codigo'];
@@ -55,6 +55,13 @@ function openFornecedor() {
         "&filterValues=" + filterValues+
         "&title="+title, "zoom" , "status , scrollbars=no ,width=600, height=350 , position:absolute,top:50%,left:50%");
 
+}
+
+function removedZoomItem(removedItem) {
+    var NAME = "dsResponsavelRecurso";
+    if (removedItem.inputId === NAME) {
+        $('#cdResponsavelRecurso').val('');
+    }
 }
 
 function removeValeuZoomData(inputObj){
