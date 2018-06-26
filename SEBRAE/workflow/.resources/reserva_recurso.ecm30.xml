@@ -398,7 +398,18 @@
         <version>5</version>
         <sequence>22</sequence>
       </conditionProcessStatePK>
-      <condition>true</condition>
+      <condition>hAPI.getCardValue(&quot;cdResponsavelRecurso&quot;)  ==  &quot;&quot;</condition>
+      <destinationSequenceId>6</destinationSequenceId>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>reserva_recurso</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>5</version>
+        <sequence>22</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&quot;cdResponsavelRecurso&quot;)  !=  &quot;&quot;</condition>
       <destinationSequenceId>5</destinationSequenceId>
     </ConditionProcessState>
   </list>
@@ -630,8 +641,8 @@
   <list>
     <ProcessComponGraf>
       <componType>1</componType>
-      <positionX>210</positionX>
-      <positionY>14</positionY>
+      <positionX>200</positionX>
+      <positionY>24</positionY>
       <processComponGrafPK>
         <companyId>1</companyId>
         <processId>reserva_recurso</processId>
