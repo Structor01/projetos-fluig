@@ -11,6 +11,10 @@
 						    <img src="http://fluig.sebraego.com.br/externo/resources/images/Sebrae.png" width="62" height="30" alt="">
 					    </a>
 					</div>
+					<div style="margin:1rem; margin-left:2rem;float:right">
+						<a onclick="WCMAPI.logoff()">Sair</a>
+					</div>
+
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
 						<p class="navbar-text navbar-right">Portal de Notícias <a href="http://www.sebrae.com.br/sites/PortalSebrae/ufs/go?codUf=10" class="navbar-link"> Sebrae </a></p>
 					</div>

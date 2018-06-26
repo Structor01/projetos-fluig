@@ -3,28 +3,60 @@
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reserva.process" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reserva.process.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/.metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/Recurso New.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/active.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/events/displayFields.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/events/enableFields.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/events/validateForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/formRecursos.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/importLibs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/loadPaiFilho.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/paiFilhoExtra.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/sebrae.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/33790 - Recursos New/zoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/.metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html" beforeDir="false" afterPath="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.ecm30.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.ecm30.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.png" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.processimage.svg" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/.resources/reserva_recurso.processimage.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" beforeDir="false" afterPath="$PROJECT_DIR$/workflow/diagrams/reserva_recurso.process" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/controle_acesso/src/main/webapp/WEB-INF/jboss-web (1).xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/controle_acesso/src/main/webapp/WEB-INF/web (1).xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/controle_acesso/src/main/webapp/resources/js/controle_acesso (1).js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/controle_acesso/target/controle_acesso.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/controle_acesso/target/controle_acesso.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/application (1).info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/edit (1).ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/externo (1).properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/externo_en_US (1).properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/externo_es (1).properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/externo_pt_BR (1).properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view (1).ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view (2).ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view (3).ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view(1).ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view(2).ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/jboss-web (1).xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/web (1).xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/Sebrae (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/capa (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/facebook-04 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/icon (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/img1 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/img2 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/img3 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/img4 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/img5 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/img6 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/instagram-03 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/telefone (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/twitter-05 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/images/youtube-02 (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/js/carousel (1).js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/resources/js/externo (1).js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/target/externo (1).war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externo/target/externo.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/externo/target/externo.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/application (1).info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/edit (1).ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/externoTop (1).properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/externoTop_en_US (1).properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/externoTop_es (1).properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/externoTop_pt_BR (1).properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/view (1).ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/view.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/jboss-web (1).xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/web (1).xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/_DS_Store" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/externoTop/target/externoTop.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/externoTop/target/externoTop.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/ramaisNew/target/ramaisNew.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/ramaisNew/target/ramaisNew.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -39,20 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Reserva de Recurso.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
+      <file leaf-file-name="recursoGest.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="128" column="47" lean-forward="true" selection-start-line="128" selection-start-column="47" selection-end-line="128" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
+            <state relative-caret-position="226">
+              <caret line="77" column="108" selection-start-line="77" selection-start-column="108" selection-end-line="77" selection-end-column="108" />
             </state>
           </provider>
         </entry>
@@ -68,13 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>legen</find>
-      <find>generateLegend</find>
-      <find>perda</find>
-      <find>view</find>
-      <find>select</find>
-      <find>top</find>
-      <find>renderPerDay</find>
       <find>render</find>
       <find>perd</find>
       <find>filtr</find>
@@ -98,6 +114,13 @@
       <find>rec</find>
       <find>sebra</find>
       <find>before</find>
+      <find>codigoRecurso</find>
+      <find>dsrese</find>
+      <find>dsReserva_Recursos</find>
+      <find>respo</find>
+      <find>aja</find>
+      <find>sebrae</find>
+      <find>WCMAPI</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -125,9 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_5.html" />
-        <option value="$PROJECT_DIR$/forms/33790 - Recursos New/Recurso New.html" />
-        <option value="$PROJECT_DIR$/forms/35442 - Reserva de Recurso/Reserva de Recurso.html" />
         <option value="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/events/enableFields.js" />
         <option value="$PROJECT_DIR$/forms/33790 - Recursos New/zoom.js" />
         <option value="$PROJECT_DIR$/forms/33790 - Recursos New/events/displayFields.js" />
@@ -149,9 +169,7 @@
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js" />
         <option value="$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" />
-        <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" />
         <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" />
-        <option value="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js" />
         <option value="$PROJECT_DIR$/datasets/syncSAS.js" />
         <option value="$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/dataset builder.js" />
         <option value="$PROJECT_DIR$/datasets/enviaEmail.js" />
@@ -176,6 +194,11 @@
         <option value="$PROJECT_DIR$/forms/39224 - Cadastro de Recurso/Lista de Recursos.html" />
         <option value="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html" />
         <option value="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/custom.js" />
+        <option value="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl" />
+        <option value="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js" />
+        <option value="$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/view.ftl" />
+        <option value="$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view.ftl" />
+        <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" />
       </list>
     </option>
   </component>
@@ -209,13 +232,70 @@
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-              <item name="35473 - Formulário de Reserva de Recursos" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -317,12 +397,12 @@
       <workItem from="1529601932413" duration="2046000" />
       <workItem from="1529610012374" duration="692000" />
       <workItem from="1529930998944" duration="4761000" />
-      <workItem from="1529943854968" duration="13006000" />
+      <workItem from="1529943854968" duration="19425000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208895000" />
+    <option name="totallyTimeSpent" value="215314000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -341,6 +421,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -353,7 +434,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -383,38 +463,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/css/Eventos.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="376" column="16" selection-start-line="376" selection-start-column="16" selection-end-line="376" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/application.info">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SENAR/wcm/widget/gestaoRelacionamento/src/main/webapp/resources/js/gestaoRelacionamento.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="426" selection-start-line="426" selection-end-line="427" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../UNIMED/forms/6 - Formulário Solicitação de Pagamento/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="182" column="34" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forms/Lista de Eventos/custom.js" />
     <entry file="file://$PROJECT_DIR$/forms/Lista de Eventos/Lista de Eventos.html" />
     <entry file="file://$PROJECT_DIR$/forms/31394 - Criação de Eventos/eventos.html" />
@@ -447,27 +499,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forms/Lista de Recursos/Lista de Recursos.html" />
-    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="127" column="29" lean-forward="true" selection-start-line="127" selection-start-column="29" selection-end-line="127" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="175" column="14" lean-forward="true" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Templates de email/TPLLIKE_HTML/pt_BR/default_email_notification_pt_BR.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -482,11 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Templates de email/tpl056-pt.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-164" />
@@ -496,13 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="222" column="37" selection-start-line="222" selection-start-column="24" selection-end-line="222" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
         </state>
       </provider>
     </entry>
@@ -648,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/getDataset.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="2" column="99" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -712,17 +724,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
+    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="128" column="47" lean-forward="true" selection-start-line="128" selection-start-column="47" selection-end-line="128" selection-end-column="47" />
+        <state relative-caret-position="233">
+          <caret line="295" column="84" lean-forward="true" selection-start-line="295" selection-start-column="84" selection-end-line="295" selection-end-column="84" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/custom.js">
+    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="62" column="82" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="82" />
+        <state relative-caret-position="164">
+          <caret line="125" column="87" selection-start-line="125" selection-start-column="87" selection-end-line="125" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/pt-br.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/getDataset.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="161" column="82" selection-start-line="161" selection-start-column="67" selection-end-line="161" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/externo/WEB-INF/classes/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/externoTop/WEB-INF/classes/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="69" column="75" lean-forward="true" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1183">
+          <caret line="175" column="14" lean-forward="true" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" column="63" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="63" />
+          <folding>
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="77" column="108" selection-start-line="77" selection-start-column="108" selection-end-line="77" selection-end-column="108" />
         </state>
       </provider>
     </entry>

@@ -298,7 +298,7 @@ function setSelectedZoomItem(selectObject) {
             document.getElementById("descricaoRecurso").value = dataset.values[0]['dsRecurso'];
             document.getElementById("codigoRecurso").value = selectObject['Id'];
             document.getElementById("responsavel").value = datasetUser.values[0]['groupDescription'];
-            document.getElementById("responsavelAprovacao").value = datasetUser.values[0]['groupPK.groupId'];
+            document.getElementById("responsavelAprovacao").value = "Pool:Group:"+datasetUser.values[0]['groupPK.groupId'];
             document.getElementById("quantidade").value = dataset.values[0]['dsQuantidade'];
             document.getElementById("quantidade").value = dataset.values[0]['dsQuantidade'];
             // document.getElementById("dsTermoAceite").value = dataset.values[0]['dsTermoAceite'];

@@ -46,108 +46,122 @@ var HelloWorld = SuperWidget.extend({
         });
     },
     recursos: function (filtro) {
-            var recursos = DatasetFactory.getDataset(
-                "dsRecursosDisponiveis",
-                null,
-                [DatasetFactory.createConstraint("resp", top.WCMAPI.userCode, top.WCMAPI.userCode, ConstraintType.MUST)],
-                null);
-            console.log(recursos.values);
-            var calendarEventos = new Array();
-            for (var i in recursos.values) {
-                calendarEventos.push({
-                    title: recursos.values[i]['cardId'] + ' - ' + recursos.values[i]['Recurso'],
-                    start: switchMonth(recursos.values[i]['dtInicio']),
-                    end: switchMonth(recursos.values[i]['dtFinal'])
-                });
-            }
-
-        //
-        //     var myAutocomplete = FLUIGC.autocomplete('#porRecurso', {
-        //         source: substringMatcher(rec),
-        //         name: 'recursos',
-        //         displayKey: 'description',
-        //         tagClass: 'tag-gray',
-        //         type: 'tagAutocomplete'
-        //     });
-        // var constraintCA = new Array();
-        // constraintCA.push(DatasetFactory.createConstraint("responsavelAprovacao", top.WCMAPI.userCode, top.WCMAPI.userCode, ConstraintType.MUST));
-        // if(filtro) {
-        //     var f = filtro.split(',');
-        //     for(var i in f) {
-        //         constraintCA.push(DatasetFactory.createConstraint("recurso", f[i], f[i], ConstraintType.MUST));
-        //     }
-        // }
-
-        // if(filtro) {
-        //     $('#calendar').fullCalendar('removeEventSources');
-        //     $('#calendar').fullCalendar('addEventSource', calendarEventos);
-        //     return;
-        // }
-
-        $('#calendar').fullCalendar({
-            lang: 'pt',
-            events: calendarEventos,
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,agendaWeek,agendaDay,listWeek'
-            },
-            defaultView: 'listWeek',
-            eventClick: function(calEvent, jsEvent, view) {
-                // alert('Event: ' + calEvent.title);
-                // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-                // alert('View: ' + view.name);
-                // $(this).css('border-color', 'red');
-                var myModal = FLUIGC.modal({
-                    title: 'Evento',
-                    content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
-                    id: 'fluig-modal',
-                    size:'full',
-                    actions: [{
-                        'label': 'Fechar',
-                        'autoClose': true
-                    }]
-                });
-
-                var form = DatasetFactory.getDataset(
-                    "dsReserva_Recursos",
+        var calendarEventos;
+        $.ajax({
+            type: "post",
+            url: "/api/public/ecm/dataset/datasets",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                "name" : "colleagueGroup",
+                "fields" : ["groupId", "colleagueId"],
+                "constraints" :
+                    [{
+                        "_field" : "groupId",
+                        "_initialValue": "%REC-%",
+                        "_finalValue" : "%REC-%",
+                        "_type": 1,
+                        "_likeSearch": true
+                    },{
+                        "_field" : "colleagueId",
+                        "_initialValue": top.WCMAPI.userCode,
+                        "_finalValue" : top.WCMAPI.userCode,
+                        "_type": 1,
+                        "_likeSearch": true
+                    }],
+                "order" : []
+            }),
+            dataType: "json",
+            success: function(data){
+                var constraint = new Array();
+                for(var i in data.content.values) {
+                    var v = data.content.values[i]['groupId'];
+                    constraint.push(DatasetFactory.createConstraint("resp", 'Pool:Group:'+v, 'Pool:Group:'+v, ConstraintType.MUST));
+                }
+                constraint.push(DatasetFactory.createConstraint("resp", top.WCMAPI.userCode, v, ConstraintType.SHOULD));
+                var recursos = DatasetFactory.getDataset(
+                    "dsRecursosDisponiveis",
                     null,
-                    [DatasetFactory.createConstraint("documentid",
-                        calEvent.title.split(' - ')[0],
-                        calEvent.title.split(' - ')[0],
-                        ConstraintType.MUST)],
+                    constraint,
                     null);
-
-                for(var i in form.values) {
-                    var r = form.values[i];
-                    for(var i in Object.keys(r)) {
-                        if(Object.keys(r)[i].indexOf('rc') > -1 && Object.keys(r)[i].indexOf('Obs') == -1) {
-                            if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
-                                $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
-                                    .attr('checked','true');
-                            }
-                        }
-                    }
+                console.log(recursos.values);
+                calendarEventos = new Array();
+                for (var i in recursos.values) {
+                    calendarEventos.push({
+                        title: recursos.values[i]['cardId'] + ' - ' + recursos.values[i]['Recurso'],
+                        start: switchMonth(recursos.values[i]['dtInicio']),
+                        end: switchMonth(recursos.values[i]['dtFinal'])
+                    });
                 }
 
-                $('#instanceModal_C').find('.title').val(calEvent.title);
-                $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
-                $('#instanceModal_C').find('.dtSolicitacao').val(form.values[0]['dtSolicitacao']);
-                $('#instanceModal_C').find('.solicitante').val(form.values[0]['solicitante']);
-                $('#instanceModal_C').find('.solicitanteInformado').val(form.values[0]['solicitanteInformado']);
-                $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
-                $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
-                $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
-                $('#instanceModal_C').find('.start').val(switchMonth(calEvent.start['_i']));
-                $('#instanceModal_C').find('.end').val(switchMonth(calEvent.end['_i']));
+                $('#calendar').fullCalendar({
+                    lang: 'pt',
+                    events: calendarEventos,
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,agendaWeek,agendaDay,listWeek'
+                    },
+                    defaultView: 'listWeek',
+                    eventClick: function(calEvent, jsEvent, view) {
+                        // alert('Event: ' + calEvent.title);
+                        // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+                        // alert('View: ' + view.name);
+                        // $(this).css('border-color', 'red');
+                        var myModal = FLUIGC.modal({
+                            title: 'Evento',
+                            content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
+                            id: 'fluig-modal',
+                            size:'full',
+                            actions: [{
+                                'label': 'Fechar',
+                                'autoClose': true
+                            }]
+                        });
+
+                        var form = DatasetFactory.getDataset(
+                            "dsReserva_Recursos",
+                            null,
+                            [DatasetFactory.createConstraint("documentid",
+                                calEvent.title.split(' - ')[0],
+                                calEvent.title.split(' - ')[0],
+                                ConstraintType.MUST)],
+                            null);
+
+                        for(var i in form.values) {
+                            var r = form.values[i];
+                            for(var i in Object.keys(r)) {
+                                if(Object.keys(r)[i].indexOf('rc') > -1 && Object.keys(r)[i].indexOf('Obs') == -1) {
+                                    if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
+                                        $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
+                                            .attr('checked','true');
+                                    }
+                                }
+                            }
+                        }
+
+                        $('#instanceModal_C').find('.title').val(calEvent.title);
+                        $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
+                        $('#instanceModal_C').find('.dtSolicitacao').val(form.values[0]['dtSolicitacao']);
+                        $('#instanceModal_C').find('.solicitante').val(form.values[0]['solicitante']);
+                        $('#instanceModal_C').find('.solicitanteInformado').val(form.values[0]['solicitanteInformado']);
+                        $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
+                        $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
+                        $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
+                        $('#instanceModal_C').find('.start').val(switchMonth(calEvent.start['_i']));
+                        $('#instanceModal_C').find('.end').val(switchMonth(calEvent.end['_i']));
+                    },
+                    viewRender: function(view, element) {
+                        $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
+                        $('a.fc-time-grid-event').css('padding', '5px');
+                        $('a.fc-time-grid-event, .fc-content').css('background-color', 'rgba(0, 0, 0, 0)');
+                        $('.fc-day-grid-event, .fc-time-grid-event').css('border', 'none');
+                        $('.fc-list-item').find('td').css('padding','5px');
+                        $('.fc-widget-header').css('padding','5px');
+                    }
+                });
             },
-            viewRender: function(view, element) {
-                $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
-                $('a.fc-time-grid-event').css('padding', '5px');
-                $('a.fc-time-grid-event, .fc-content').css('background-color', 'rgba(0, 0, 0, 0)');
-                $('.fc-day-grid-event, .fc-time-grid-event').css('border', 'none');
-                $('.fc-list-item').find('td').css('padding','5px');
-                $('.fc-widget-header').css('padding','5px');
+            failure: function(errMsg) {
+                alert(errMsg);
             }
         });
     },
@@ -175,27 +189,6 @@ function changeView(e) {
     $('#'+e).removeClass('hide');
 }
 
-function sync(ev) {
-    console.log('start');
-    for(var i in ev) {
-        var constraints = new Array();
-        constraints.push(DatasetFactory.createConstraint("codSAS", ev[i]['CodEvento'], ev[i]['CodEvento'], ConstraintType.MUST));
-        var checkev = DatasetFactory.getDataset("dsEventos", null, constraints, null);
-        if(checkev && checkev.values.length > 0) continue; else constraints = new Array();
-        constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(ev[i]['PeriodoFinal']), "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + ev[i]['CodEvento'], "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "codCidade;" + ev[i]['CodCidade'], "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "dtInicio;" + disarrangeData(ev[i]['PeriodoInicial']), "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "endereco;" + ev[i]['Local'], "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "location;" + ev[i]['Local'], "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "nomeEvento;" + ev[i]['TituloEvento'], "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "publicoAlvo;" + ev[i]['PublicoEvento'], "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + verificaTipoEv(ev[i]['DescProduto']), "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + ev[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
-        constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + ev[i]['Preco'], "", ConstraintType.MUST));
-        salvarForm(constraints);
-    }
-}
 
 function criaRegistro(id) {
     var constraints = new Array();

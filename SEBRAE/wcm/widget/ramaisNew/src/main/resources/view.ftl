@@ -72,7 +72,7 @@
                     <button type="button" onclick="nextP()" class="btn btn-default"><span class="fluigicon fluigicon-arrow-right fluigicon-sm"></span></button>
                 </div>
 
-                <button type="button" onclick="editCad()" style="margin: 1rem" class="btn btn-default fs-float-left">Editar meu ramal</button>
+                <button type="button" onclick="editCad()" id="editRamal" style="margin: 1rem" class="btn btn-default fs-float-left">Editar meu ramal</button>
             </div>
         </div>
     </div>

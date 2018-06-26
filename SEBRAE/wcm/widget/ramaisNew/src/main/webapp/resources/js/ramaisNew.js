@@ -1,6 +1,6 @@
 $(document).ready(function () {
     getRamais();
-
+    if(top.WCMAPI.userCode =='Publico') $('#editRamal').hide();
     $('#buscaRamal').on('keypress keyup blur focus', function () {
         if($(this).val() != '') {
             $('#rowsRamais').html('');
