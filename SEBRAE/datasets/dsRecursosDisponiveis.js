@@ -9,6 +9,7 @@ function defineStructure() {
     addColumn("cardId");
     addColumn("resp");
     addColumn("respNome");
+    addColumn("task");
     setKey(new Array( "cardId"));
     addIndex(new Array( "cardId"));
 
@@ -34,7 +35,8 @@ function onSync(lastSyncDate){
                 ifNull(newerDataset.getValue(i,"Recurso"),""),
                 ifNull(newerDataset.getValue(i,"cardId"),""),
                 ifNull(newerDataset.getValue(i,"resp"),""),
-                ifNull(newerDataset.getValue(i,"respNome"),"")
+                ifNull(newerDataset.getValue(i,"respNome"),""),
+                ifNull(newerDataset.getValue(i,"task"),"")
             ));
             updated.push(new Array(newerDataset.getValue(i,"cardId")));
         }
@@ -52,7 +54,8 @@ function onSync(lastSyncDate){
                         ifNull(olderDataset.getValue(i,"Recurso"),""),
                         ifNull(olderDataset.getValue(i,"cardId"),""),
                         ifNull(olderDataset.getValue(i,"resp"),""),
-                        ifNull(olderDataset.getValue(i,"respNome"),"")
+                        ifNull(olderDataset.getValue(i,"respNome"),""),
+                        ifNull(olderDataset.getValue(i,"task"),"")
                     ));
                 }
             }
@@ -76,7 +79,8 @@ function onMobileSync(user) {
         "Recurso",
         "cardId",
         "resp",
-        "respNome"
+        "respNome",
+        "task"
     );
 
     var constraints = new Array();
@@ -102,6 +106,7 @@ function createDataset(fields, constraints, sortFields) {
     dataset.addColumn("cardId");
     dataset.addColumn("resp");
     dataset.addColumn("respNome");
+    dataset.addColumn("task");
 
     try {
         var available = getAvailable();
@@ -130,7 +135,8 @@ function createDataset(fields, constraints, sortFields) {
                     doc.getValue(0, 'Recurso'),
                     available.getValue(i, "cardId"),
                     doc.getValue(0, 'responsavelAprovacao'),
-                    doc.getValue(0, 'responsavel')
+                    doc.getValue(0, 'responsavel'),
+                    available.getValue(i, 'codTask')
                 ));
             }
         }

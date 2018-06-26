@@ -86,12 +86,32 @@ var HelloWorld = SuperWidget.extend({
                 console.log(recursos.values);
                 calendarEventos = new Array();
                 for (var i in recursos.values) {
+                    var html = '';
+                    if(recursos.values[i]['task'] == 5) {
+                        html = '<tr onclick="abreInfo('+recursos.values[i]['cardId']+')">' +
+                            '<td>'+ recursos.values[i]['Recurso'] +'</td>' +
+                            '<td>'+ recursos.values[i]['dtInicio'] +'</td>' +
+                            '<td>'+ recursos.values[i]['dtFinal'] +'</td>' +
+                            '</tr>';
+                        $('#tableAprova').append(html);
+                    }
+
+                    if(recursos.values[i]['task'] == 6) {
+                        html = '<tr onclick="abreInfo('+recursos.values[i]['cardId']+')">' +
+                            '<td>'+ recursos.values[i]['Recurso'] +'</td>' +
+                            '<td>'+ recursos.values[i]['dtInicio'] +'</td>' +
+                            '<td>'+ recursos.values[i]['dtFinal'] +'</td>' +
+                            '</tr>';
+                        $('#tableAprovado').append(html);
+                    }
+
                     calendarEventos.push({
                         title: recursos.values[i]['cardId'] + ' - ' + recursos.values[i]['Recurso'],
                         start: switchMonth(recursos.values[i]['dtInicio']),
                         end: switchMonth(recursos.values[i]['dtFinal'])
                     });
                 }
+
 
                 $('#calendar').fullCalendar({
                     lang: 'pt',
@@ -107,48 +127,8 @@ var HelloWorld = SuperWidget.extend({
                         // alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
                         // alert('View: ' + view.name);
                         // $(this).css('border-color', 'red');
-                        var myModal = FLUIGC.modal({
-                            title: 'Evento',
-                            content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
-                            id: 'fluig-modal',
-                            size:'full',
-                            actions: [{
-                                'label': 'Fechar',
-                                'autoClose': true
-                            }]
-                        });
+                        abreInfo(calEvent.title.split(' - ')[0], calEvent);
 
-                        var form = DatasetFactory.getDataset(
-                            "dsReserva_Recursos",
-                            null,
-                            [DatasetFactory.createConstraint("documentid",
-                                calEvent.title.split(' - ')[0],
-                                calEvent.title.split(' - ')[0],
-                                ConstraintType.MUST)],
-                            null);
-
-                        for(var i in form.values) {
-                            var r = form.values[i];
-                            for(var i in Object.keys(r)) {
-                                if(Object.keys(r)[i].indexOf('rc') > -1 && Object.keys(r)[i].indexOf('Obs') == -1) {
-                                    if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
-                                        $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
-                                            .attr('checked','true');
-                                    }
-                                }
-                            }
-                        }
-
-                        $('#instanceModal_C').find('.title').val(calEvent.title);
-                        $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
-                        $('#instanceModal_C').find('.dtSolicitacao').val(form.values[0]['dtSolicitacao']);
-                        $('#instanceModal_C').find('.solicitante').val(form.values[0]['solicitante']);
-                        $('#instanceModal_C').find('.solicitanteInformado').val(form.values[0]['solicitanteInformado']);
-                        $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
-                        $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
-                        $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
-                        $('#instanceModal_C').find('.start').val(switchMonth(calEvent.start['_i']));
-                        $('#instanceModal_C').find('.end').val(switchMonth(calEvent.end['_i']));
                     },
                     viewRender: function(view, element) {
                         $('a.fc-time-grid-event, .fc-content').css('color', 'grey');
@@ -167,6 +147,51 @@ var HelloWorld = SuperWidget.extend({
     },
     email: top.WCMAPI.userEmail
 });
+
+function abreInfo(e) {
+    var myModal = FLUIGC.modal({
+        title: 'Evento',
+        content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
+        id: 'fluig-modal',
+        size:'full',
+        actions: [{
+            'label': 'Fechar',
+            'autoClose': true
+        }]
+    });
+
+    var form =  DatasetFactory.getDataset(
+        "dsReserva_Recursos",
+        null,
+        [DatasetFactory.createConstraint("documentid",
+            e,
+            e,
+            ConstraintType.MUST)],
+        null);
+
+    for(var i in form.values) {
+        var r = form.values[i];
+        for(var i in Object.keys(r)) {
+            if(Object.keys(r)[i].indexOf('rc') > -1 && Object.keys(r)[i].indexOf('Obs') == -1) {
+                if(r[Object.keys(r)[i]] != '' && r[Object.keys(r)[i]] != undefined) {
+                    $('#instanceModal_C').find('[name=' + Object.keys(r)[i] + ']')
+                        .attr('checked','true');
+                }
+            }
+        }
+    }
+
+    $('#instanceModal_C').find('.title').val(form.values[0]['recurso']);
+    $('#instanceModal_C').find('.qtd').val(form.values[0]['qtSolicitada']);
+    $('#instanceModal_C').find('.dtSolicitacao').val(form.values[0]['dtSolicitacao']);
+    $('#instanceModal_C').find('.solicitante').val(form.values[0]['solicitante']);
+    $('#instanceModal_C').find('.solicitanteInformado').val(form.values[0]['solicitanteInformado']);
+    $('#instanceModal_C').find('[name=rcParticipanteObs]').val(form.values[0]['rcParticipanteObs']);
+    $('#instanceModal_C').find('[name=rcFinalidadeObs]').val(form.values[0]['rcFinalidadeObs']);
+    $('#instanceModal_C').find('[name=rcObservacaoObs]').val(form.values[0]['rcObservacaoObs']);
+    $('#instanceModal_C').find('.start').val(form.values[0]['dtInicio']);
+    $('#instanceModal_C').find('.end').val(form.values[0]['dtFinal']);
+}
 
 function arrangeData(e) {
     var date = e.split('/');

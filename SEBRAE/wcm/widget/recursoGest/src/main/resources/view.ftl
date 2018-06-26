@@ -43,20 +43,35 @@
 	<div class="page-content container-fluid">
 
 		<div class="row">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<div class="viewEv" id="calendar"></div>
-					<div class="viewEv hide" id="lista">
-						<table class="table table-striped">
-							<thead>
-							<th>Nome do Evento</th>
-							<th>Tipo Evento</th>
-							<th>Unidade</th>
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="viewEv" id="calendar"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<span class="fluigicon fluigicon-warning-sign fluigicon-sm"></span> Aprovações Pendentes
+					</div>
+					<div class="panel-body">
+						<table class="table" id="tableAprova">
+							<th>Recurso</th>
 							<th>Início</th>
 							<th>Fim</th>
-							<th>Cidade</th>
-							</thead>
-							<tbody id="rowEventos"></tbody>
+						</table>
+					</div>
+				</div>
+				<div class="fs-clear-both panel panel-success">
+					<div class="panel-heading">
+						<span class="fluigicon fluigicon-warning-sign fluigicon-sm"></span> Aprovações Pendentes
+					</div>
+					<div class="panel-body">
+						<table class="table" id="tableAprovado">
+							<th>Recurso</th>
+							<th>Início</th>
+							<th>Fim</th>
 						</table>
 					</div>
 				</div>

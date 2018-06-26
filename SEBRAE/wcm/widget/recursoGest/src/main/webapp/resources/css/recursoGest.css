@@ -3,6 +3,11 @@
     margin-top: 10px;
 }
 
+#tableAprova tr:hover td {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /*!
  * FullCalendar v3.9.0
  * Docs & License: https://fullcalendar.io/
