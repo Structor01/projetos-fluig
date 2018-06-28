@@ -47,6 +47,8 @@ var HelloWorld = SuperWidget.extend({
     },
     recursos: function (filtro) {
         var calendarEventos;
+        var id = top.WCMAPI.userCode;
+        // var id = "E7458";
         $.ajax({
             type: "post",
             url: "/api/public/ecm/dataset/datasets",
@@ -63,8 +65,8 @@ var HelloWorld = SuperWidget.extend({
                         "_likeSearch": true
                     },{
                         "_field" : "colleagueId",
-                        "_initialValue": top.WCMAPI.userCode,
-                        "_finalValue" : top.WCMAPI.userCode,
+                        "_initialValue": id,
+                        "_finalValue" : id,
                         "_type": 1,
                         "_likeSearch": true
                     }],
@@ -73,16 +75,21 @@ var HelloWorld = SuperWidget.extend({
             dataType: "json",
             success: function(data){
                 var constraint = new Array();
-                for(var i in data.content.values) {
-                    var v = data.content.values[i]['groupId'];
-                    constraint.push(DatasetFactory.createConstraint("resp", 'Pool:Group:'+v, 'Pool:Group:'+v, ConstraintType.MUST));
+                if(data.content.values.length == 0) {
+                    constraint.push(DatasetFactory.createConstraint("resp", id, id, ConstraintType.MUST));
+                } else {
+                    for(var i in data.content.values) {
+                        var v = data.content.values[i]['groupId'];
+                        constraint.push(DatasetFactory.createConstraint("resp", 'Pool:Group:'+v, 'Pool:Group:'+v, ConstraintType.SHOULD));
+                    }
+                    constraint.push(DatasetFactory.createConstraint("resp", id, id, ConstraintType.SHOULD));
                 }
-                constraint.push(DatasetFactory.createConstraint("resp", top.WCMAPI.userCode, v, ConstraintType.SHOULD));
+                var sortingFields = new Array("dtInicio");
                 var recursos = DatasetFactory.getDataset(
                     "dsRecursosDisponiveis",
                     null,
                     constraint,
-                    null);
+                    sortingFields);
                 console.log(recursos.values);
                 calendarEventos = new Array();
                 for (var i in recursos.values) {
@@ -149,7 +156,6 @@ var HelloWorld = SuperWidget.extend({
 });
 
 function abreInfo(e) {
-
     var form =  DatasetFactory.getDataset(
         "dsReserva_Recursos",
         null,

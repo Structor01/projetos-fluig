@@ -118,9 +118,9 @@ function createDataset(fields, constraints, sortFields) {
                 var process = false;
                 if (available.getValue(i, 'codTask') == '6' && arrangeData(getDateNow()) > arrangeData(doc.getValue(0, 'dtFinal'))) {
                     process = atualizaProcessos(
-                        dataset.values[i]["processInstanceId"],
+                        available.getValue(i, 'processInstanceId'),
                         7,
-                        dataset.values[i]["requesterId"],
+                        available.getValue(i, "requesterId"),
                         'Movimentado Automáticamente'
                     );
                 }
@@ -148,6 +148,7 @@ function createDataset(fields, constraints, sortFields) {
 }
 
 function atualizaProcessos(sol, atv, colab, comment) {
+    log.info('--Atualiza Processo: ');
     var c1 = DatasetFactory.createConstraint("Solicitação", sol, sol, ConstraintType.MUST);
     var c2 = DatasetFactory.createConstraint("Atividade", atv, atv, ConstraintType.MUST);
     var c3 = DatasetFactory.createConstraint("Usuário Executor", colab, colab, ConstraintType.MUST);
@@ -184,8 +185,12 @@ function getDateNow() {
 }
 
 function arrangeData(e) {
+    log.info("--Arrange Data " + e);
     var t = e.split(' ');
+    log.info("--Arrange Data " + t);
     var date = t[0].split('/');
+    log.info("--Arrange Data " + date);
     var newDate = date[2] + '-' + date[1] + '-' + date[0] + 'T' + t[1] + ':00';
-    return new Date(newDate);
+    log.info("--Arrange Data " + newDate);
+    return newDate;
 }
