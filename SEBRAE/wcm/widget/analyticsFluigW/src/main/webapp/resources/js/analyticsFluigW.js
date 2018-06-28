@@ -2,6 +2,7 @@ var now = moment();
 var GLOBAL_PARAMS = {};
 GLOBAL_PARAMS['start'] = moment(now).subtract(30, 'days').format('YYYY-MM-DD');
 GLOBAL_PARAMS['end'] = moment(now).format('YYYY-MM-DD');
+GLOBAL_PARAMS['listPages'] = {};
 var HelloWorld = SuperWidget.extend({
     message: null,
 
@@ -76,6 +77,7 @@ var HelloWorld = SuperWidget.extend({
                 GLOBAL_PARAMS['data'] = data;
                 renderViews(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
                 renderTopPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
+                renderList(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
             });
 
             Chart.defaults.global.animationSteps = 60;
@@ -85,6 +87,20 @@ var HelloWorld = SuperWidget.extend({
         });
     }
 });
+
+function renderList(ids, start, end, filter) {
+    var now = moment();
+    var q = query({
+        'ids': ids,
+        'dimensions': 'ga:date,ga:nthDay',
+        'metrics': 'ga:sessions',
+        'start-date': moment(now).subtract(1, 'day').day(0).format('YYYY-MM-DD'),
+        'end-date': moment(now).format('YYYY-MM-DD')
+    });
+    Promise.all([q]).then(function (res) {
+        console.log(res);
+    });
+}
 
 function renderWeekOverWeekChart(ids) {
     var now = moment();
@@ -392,5 +408,5 @@ function filtra() {
 }
 
 function listPages() {
-    
+
 }
