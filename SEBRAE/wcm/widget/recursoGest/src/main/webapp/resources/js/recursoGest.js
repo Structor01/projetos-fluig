@@ -165,6 +165,14 @@ function abreInfo(e) {
             ConstraintType.MUST)],
         null);
 
+    var recurso =  DatasetFactory.getDataset(
+        "dsRecursosDisponiveis",
+        null,
+        [DatasetFactory.createConstraint("cardId",
+            e,
+            e,
+            ConstraintType.MUST)],
+        null);
     for(var i in form.values) {
         var r = form.values[i];
         for(var i in Object.keys(r)) {
@@ -178,24 +186,28 @@ function abreInfo(e) {
     }
 
     var actions = [];
-    if(form.values[0]['task'] == 5) {
+    var title = 'Recurso';
+    if(recurso.values[0]['task'] == 5) {
         actions = [{
-            'label': 'Save',
+            'label': 'Aprovar Uso',
             'bind': 'data-approve',
+            'classType':'btn-success',
             'autoClose': true
         },{
             'label': 'Fechar',
             'autoClose': true
         }];
+        title = 'Recurso - Aguardando Aprovação'
     } else {
         actions = [{
             'label': 'Fechar',
             'autoClose': true
         }];
+        title = 'Recurso - Aguardando Uso'
     }
 
     var myModal = FLUIGC.modal({
-        title: 'Recurso',
+        title: title,
         content: '<div id="instanceModal_C">'+$('#modalEventos').html()+'</div>',
         id: 'fluig-modal',
         size:'full',
@@ -208,14 +220,19 @@ function abreInfo(e) {
                 title: 'Recurso',
                 content: 'Esta acão autorizará o uso do recurso e moverá a atividade.',
                 id: 'fluig-modal',
-                size:'full',
                 actions:[{
                     'label': 'Cancelar',
                     'autoClose': true
                 },{
                     'label': 'Confirmar',
+                    'bind':'data-confirma',
                     'autoClose': true
                 }]
+            });
+            
+            $('[data-confirma]').on('click',function () {
+                console.log('confirma');
+                atualizaProcessos(recurso.values[0]['processInstance'], 9, form.values[0]['solicitanteId'], "Gestor aprovou pelo painel de gestão.");
             });
         },500);
     });
@@ -329,4 +346,22 @@ function substringMatcher(strs) {
         });
         cb(matches);
     };
+}
+
+function atualizaProcessos(sol, atv, colab, comment) {
+    console.log('--Atualiza Processo: ');
+    var c1 = DatasetFactory.createConstraint("Solicitação", sol, sol, ConstraintType.MUST);
+    var c2 = DatasetFactory.createConstraint("Atividade", atv, atv, ConstraintType.MUST);
+    var c3 = DatasetFactory.createConstraint("Usuário Executor", colab, colab, ConstraintType.MUST);
+    var c4 = DatasetFactory.createConstraint("Comentário", comment, comment, ConstraintType.MUST);
+    var c5 = DatasetFactory.createConstraint("Usuário Destino", "System:Auto", "System:Auto", ConstraintType.MUST);
+    var constraints = new Array(c1, c2, c3, c4, c5);
+    try {
+        console.log("Tentando mover " + sol);
+        var mov = DatasetFactory.getDataset("dsMoverAtiv", null, constraints, null);
+    } catch (e) {
+        log.error(sol + "Erro!");
+    } finally {
+        console.log("Moveu " + sol);
+    }
 }

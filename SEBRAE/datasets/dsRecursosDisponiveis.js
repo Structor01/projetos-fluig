@@ -7,6 +7,7 @@ function defineStructure() {
     addColumn("codigoRecurso");
     addColumn("Recurso");
     addColumn("cardId");
+    addColumn("processInstance");
     addColumn("resp");
     addColumn("respNome");
     addColumn("task");
@@ -34,6 +35,7 @@ function onSync(lastSyncDate){
                 ifNull(newerDataset.getValue(i,"codigoRecurso"),""),
                 ifNull(newerDataset.getValue(i,"Recurso"),""),
                 ifNull(newerDataset.getValue(i,"cardId"),""),
+                ifNull(newerDataset.getValue(i,"processInstance"),""),
                 ifNull(newerDataset.getValue(i,"resp"),""),
                 ifNull(newerDataset.getValue(i,"respNome"),""),
                 ifNull(newerDataset.getValue(i,"task"),"")
@@ -53,6 +55,7 @@ function onSync(lastSyncDate){
                         ifNull(olderDataset.getValue(i,"codigoRecurso"),""),
                         ifNull(olderDataset.getValue(i,"Recurso"),""),
                         ifNull(olderDataset.getValue(i,"cardId"),""),
+                        ifNull(olderDataset.getValue(i,"processInstance"),""),
                         ifNull(olderDataset.getValue(i,"resp"),""),
                         ifNull(olderDataset.getValue(i,"respNome"),""),
                         ifNull(olderDataset.getValue(i,"task"),"")
@@ -78,6 +81,7 @@ function onMobileSync(user) {
         "codigoRecurso",
         "Recurso",
         "cardId",
+        "processInstance",
         "resp",
         "respNome",
         "task"
@@ -104,6 +108,7 @@ function createDataset(fields, constraints, sortFields) {
     dataset.addColumn("codigoRecurso");
     dataset.addColumn("Recurso");
     dataset.addColumn("cardId");
+    dataset.addColumn("processInstance");
     dataset.addColumn("resp");
     dataset.addColumn("respNome");
     dataset.addColumn("task");
@@ -134,6 +139,7 @@ function createDataset(fields, constraints, sortFields) {
                     doc.getValue(0, 'codigoRecurso'),
                     doc.getValue(0, 'Recurso'),
                     available.getValue(i, "cardId"),
+                    available.getValue(i, "processInstanceId"),
                     doc.getValue(0, 'responsavelAprovacao'),
                     doc.getValue(0, 'responsavel'),
                     available.getValue(i, 'codTask')
