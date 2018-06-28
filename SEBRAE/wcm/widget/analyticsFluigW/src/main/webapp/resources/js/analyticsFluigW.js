@@ -390,3 +390,7 @@ function filtra() {
 
     return HelloWorld.execute(window.gapi);
 }
+
+function listPages() {
+    
+}

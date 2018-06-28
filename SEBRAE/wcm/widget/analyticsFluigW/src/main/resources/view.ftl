@@ -31,16 +31,16 @@
                 <span class="input-group-addon"><span class="fluigicon fluigicon-calendar"></span></span>
             </div>
         </div>
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
             <label>&nbsp;</label>
             <div class="input-group">
                 <span class="input-group-addon">Página</span>
                 <input class="form-control" id="filtraPage">
             </div>
         </div>
-        <div class="form-group col-md-2">
-            <label>&nbsp;</label>
-            <button class="form-control btn btn-primary" onclick="filtra()">Aplicar</button>
+        <div class="form-group col-md-12">
+            <button class="fs-float-right btn btn-primary" onclick="filtra()">Aplicar Filtro</button>
+            <button class="fs-float-left btn btn-clear" onclick="listPages()">Listar todas as páginas</button>
         </div>
         <div class="hide col-md-6">
             <div id="view-selector-container"></div>
@@ -49,14 +49,14 @@
             <div id="view-name"></div>
         </div>
         <div class="col-md-12">
-            <table class="table">
-                <th>
+            <table class="table text-center">
+                <th class="text-center">
                     Entradas
                 </th>
-                <th>
+                <th class="text-center">
                     Views
                 </th>
-                <th>
+                <th class="text-center">
                     Views Únicas
                 </th>
                 <tr>
