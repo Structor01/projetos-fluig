@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/target/analyticsFluigW.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/target/analyticsFluigW.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/cadastro_ramais/target/cadastro_ramais.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/cadastro_ramais/target/cadastro_ramais.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/eventosCadastro/target/eventosCadastro.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/eventosCadastro/target/eventosCadastro.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/ramaisNew/target/ramaisNew.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/ramaisNew/target/ramaisNew.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -37,7 +28,7 @@
       <file leaf-file-name="recursoGest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="-3266">
               <caret line="91" column="35" lean-forward="true" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
               <folding>
                 <marker date="1530191782969" expanded="false" signature="5445:5700" ph="..." />
@@ -205,91 +196,6 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -392,12 +298,12 @@
       <workItem from="1529610012374" duration="692000" />
       <workItem from="1529930998944" duration="4761000" />
       <workItem from="1529943854968" duration="25398000" />
-      <workItem from="1530186913012" duration="3640000" />
+      <workItem from="1530186913012" duration="3867000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224927000" />
+    <option name="totallyTimeSpent" value="225154000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,7 +325,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" weight="0.30769232" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -689,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="80" column="18" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -710,9 +609,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="80" column="18" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="-3266">
           <caret line="91" column="35" lean-forward="true" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
           <folding>
             <marker date="1530191782969" expanded="false" signature="5445:5700" ph="..." />
