@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/edit.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/edit.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/ramaisNew/target/ramaisNew.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/ramaisNew/target/ramaisNew.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/edit.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/edit.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,13 +23,13 @@
       <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="1200">
               <caret line="80" column="18" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recursoGest.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recursoGest.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-3266">
@@ -33,6 +37,33 @@
               <folding>
                 <marker date="1530191782969" expanded="false" signature="5445:5700" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/edit.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="69" column="75" lean-forward="true" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.ftl" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/edit.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -106,8 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/forms/33790 - Recursos New/events/displayFields.js" />
-        <option value="$PROJECT_DIR$/../BULLA/workflow/scripts/ConsultoriaBullaPresencial.beforeTaskSave.js" />
         <option value="$PROJECT_DIR$/../BULLA/forms/32449 - Consultoria Bulla Presencial/custom.js" />
         <option value="$PROJECT_DIR$/../BULLA/forms/32449 - Consultoria Bulla Presencial/Consultoria Bulla Presencial.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_7.html" />
@@ -157,6 +186,8 @@
         <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js" />
         <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js" />
+        <option value="$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/edit.ftl" />
+        <option value="$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/edit.ftl" />
       </list>
     </option>
   </component>
@@ -195,6 +226,68 @@
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="ramaisNew" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="ramaisNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="ramaisNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="ramaisNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="ramaisNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="ramaisNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -298,12 +391,12 @@
       <workItem from="1529610012374" duration="692000" />
       <workItem from="1529930998944" duration="4761000" />
       <workItem from="1529943854968" duration="25398000" />
-      <workItem from="1530186913012" duration="3867000" />
+      <workItem from="1530186913012" duration="4468000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225154000" />
+    <option name="totallyTimeSpent" value="225755000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -316,7 +409,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
@@ -539,13 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="69" column="75" lean-forward="true" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/webapp/resources/js/ramaisNew.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -609,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="80" column="18" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/webapp/resources/js/recursoGest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3266">
@@ -623,6 +701,37 @@
           <folding>
             <marker date="1530191782969" expanded="false" signature="5445:5700" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="80" column="18" selection-start-line="80" selection-start-column="13" selection-end-line="80" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/application.info">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/edit.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="69" column="75" lean-forward="true" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/edit.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
