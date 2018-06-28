@@ -2,7 +2,7 @@ var now = moment();
 var GLOBAL_PARAMS = {};
 GLOBAL_PARAMS['start'] = moment(now).subtract(30, 'days').format('YYYY-MM-DD');
 GLOBAL_PARAMS['end'] = moment(now).format('YYYY-MM-DD');
-GLOBAL_PARAMS['listPages'] = {};
+GLOBAL_PARAMS['listPages'] = [];
 var HelloWorld = SuperWidget.extend({
     message: null,
 
@@ -92,24 +92,28 @@ function renderList(ids, start, end, filter) {
     var now = moment();
     var q = query({
         'ids': ids,
-        'dimensions': 'ga:date,ga:nthDay',
-        'metrics': 'ga:sessions',
-        'start-date': moment(now).subtract(1, 'day').day(0).format('YYYY-MM-DD'),
-        'end-date': moment(now).format('YYYY-MM-DD')
+        'dimensions': 'ga:pagePath,ga:pageTitle',
+        'metrics': 'ga:pageViews',
+        'filters':filter,
+        'start-date': start,
+        'end-date': end,
+        'sort':'-ga:pageViews'
     });
     Promise.all([q]).then(function (res) {
         console.log(res);
+        GLOBAL_PARAMS['listPages'] = res[0].rows;
     });
 }
 
-function renderWeekOverWeekChart(ids) {
+function renderWeekOverWeekChart(ids, filter) {
     var now = moment();
     var thisWeek = query({
         'ids': ids,
         'dimensions': 'ga:date,ga:nthDay',
         'metrics': 'ga:sessions',
         'start-date': moment(now).subtract(1, 'day').day(0).format('YYYY-MM-DD'),
-        'end-date': moment(now).format('YYYY-MM-DD')
+        'end-date': moment(now).format('YYYY-MM-DD'),
+        'filters':filter,
     });
 
     var lastWeek = query({
@@ -119,7 +123,8 @@ function renderWeekOverWeekChart(ids) {
         'start-date': moment(now).subtract(1, 'day').day(0).subtract(1, 'week')
             .format('YYYY-MM-DD'),
         'end-date': moment(now).subtract(1, 'day').day(6).subtract(1, 'week')
-            .format('YYYY-MM-DD')
+            .format('YYYY-MM-DD'),
+        'filters':filter
     });
 
     Promise.all([thisWeek, lastWeek]).then(function(results) {
@@ -148,7 +153,6 @@ function renderWeekOverWeekChart(ids) {
                 }
             ]
         };
-
         new Chart(makeCanvas('chart-1-container')).Line(data);
         generateLegend('legend-1-container', data.datasets);
     });
@@ -157,8 +161,8 @@ function renderWeekOverWeekChart(ids) {
 function renderViews(ids, start, end, filter) {
     var thisYear = query({
         'ids': ids,
-        'filters':filter,
         'metrics': 'ga:uniquePageviews,ga:pageviews, ga:entrances',
+        'filters':filter,
         'start-date': start,
         'end-date': end
     });
@@ -169,7 +173,7 @@ function renderViews(ids, start, end, filter) {
     });
 }
 
-function renderYearOverYearChart(ids) {
+function renderYearOverYearChart(ids, filter) {
     var now = moment();
     var thisYear = query({
         'ids': ids,
@@ -408,5 +412,71 @@ function filtra() {
 }
 
 function listPages() {
+    var actions = [];
+    var title = 'Recurso';
+    actions = [{
+        'label': 'Fechar',
+        'autoClose': true
+    }];
+    title = 'Páginas';
+    var myModal = FLUIGC.modal({
+        title: title,
+        content: '<div id="instanceModal_C">'+$('#modalPages').html()+'</div>',
+        id: 'fluig-modal',
+        size:'full',
+        actions:actions
+    });
 
+    $('[data-show-col]').on('change', function () {
+       var t = $(this);
+        var isChecked = t.prop('checked');
+        var v = t.val();
+
+        if(v == 'caminho' && !isChecked) {
+            appendToTable(true);
+        } else if(v == 'titulo') {
+            isChecked ? $('.titulo').show() : $('.titulo').hide();
+        } else {
+            appendToTable(false);
+        }
+    });
+
+    appendToTable(false);
+
+}
+
+function appendToTable(hideColumn) {
+    var table = $('#instanceModal_C').find('.table');
+    var tr = table.children('tr').remove();
+    var title = {};
+
+    GLOBAL_PARAMS['listPages'].map(res=>{
+        var r0 = res[0];
+        if(!hideColumn) {
+            if(r0.indexOf('?') > -1 && r0.indexOf('&') > -1) {
+                var r0a = r0.split('?');
+                var r0b = r0a[1].split('&');
+                r0 = r0a[0] + r0b[1];
+            }
+            $('#instanceModal_C').find('.table').append('<tr>' +
+                '<td class="titulo" width="20%">'+ res[1]+'</td>' +
+                '<td class="caminho" width="70%">'+ r0 +'</td>' +
+                '<td width="10%">'+ res[2]+'</td>' +
+                '</tr>');
+        } else {
+            if(title.indexOf(res[1]) > -1) {
+                title[res[1]] = parseInt(title[res[1]]) + parseInt(res[2]);
+            } else {
+                title[res[1]] = parseInt(res[2]);
+            }
+
+            $('#instanceModal_C').find('.table').append(
+                '<tr>' +
+                    '<td class="titulo" width="20%">'+ res[1]+'</td>' +
+                    '<td class="caminho" width="70%">'+ r0 +'</td>' +
+                    '<td width="10%">'+ res[2]+'</td>' +
+                '</tr>'
+            );
+        }
+    });
 }

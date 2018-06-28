@@ -107,22 +107,45 @@
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 
-    <!-- Include the ViewSelector2 component script. -->
-    <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/view-selector2.js"></script>
+    <div id="modalPages">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" data-show-col value="titulos" checked> Títulos
+                        </label>
+                        <label class="checkbox-inline">
+                            <input type="checkbox" data-show-col value="caminhos" checked> Caminhos
+                        </label>
+                    </div>
+                    <table class="table">
+                        <th class="titulo" width="20%">Título</th>
+                        <th class="caminho" width="70%">Caminho</th>
+                        <th width="10%">Views</th>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Include the DateRangeSelector component script. -->
-    <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/date-range-selector.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 
-    <!-- Include the ActiveUsers component script. -->
-    <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/active-users.js"></script>
+<!-- Include the ViewSelector2 component script. -->
+<script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/view-selector2.js"></script>
 
-    <!-- Include the CSS that styles the charts. -->
-    <link rel="stylesheet" href="https://ga-dev-tools.appspot.com/public/css/chartjs-visualizations.css">
+<!-- Include the DateRangeSelector component script. -->
+<script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/date-range-selector.js"></script>
 
-    <script>
-        HelloWorld.execute(gapi);
-    </script>
+<!-- Include the ActiveUsers component script. -->
+<script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/active-users.js"></script>
+
+<!-- Include the CSS that styles the charts. -->
+<link rel="stylesheet" href="https://ga-dev-tools.appspot.com/public/css/chartjs-visualizations.css">
+
+<script>
+    HelloWorld.execute(gapi);
+</script>
 </div>
