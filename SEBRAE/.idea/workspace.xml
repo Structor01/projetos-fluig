@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/email.html" beforeDir="false" afterPath="$PROJECT_DIR$/email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -52,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="enviaEmailAconteceHoje.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="enviaEmailAconteceHoje.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
@@ -100,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="email.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/email.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+            <state relative-caret-position="146">
+              <caret line="64" column="107" selection-start-line="64" selection-start-column="107" selection-end-line="64" selection-end-column="107" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#div#0;n#td#0;n#tr#4;n#tbody#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -231,8 +228,8 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.html" />
         <option value="$PROJECT_DIR$/datasets/enviaEmail.js" />
         <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl" />
-        <option value="$PROJECT_DIR$/email.html" />
         <option value="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" />
+        <option value="$PROJECT_DIR$/email.html" />
       </list>
     </option>
   </component>
@@ -448,12 +445,12 @@
       <workItem from="1529930998944" duration="4761000" />
       <workItem from="1529943854968" duration="25398000" />
       <workItem from="1530186913012" duration="11138000" />
-      <workItem from="1530207873774" duration="19106000" />
+      <workItem from="1530207873774" duration="19207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251531000" />
+    <option name="totallyTimeSpent" value="251632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,7 +472,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" weight="0.30769232" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -822,22 +819,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#td#0;n#tr#4;n#tbody#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#small#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/email.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="64" column="107" selection-start-line="64" selection-start-column="107" selection-end-line="64" selection-end-column="107" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#td#0;n#tr#4;n#tbody#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
