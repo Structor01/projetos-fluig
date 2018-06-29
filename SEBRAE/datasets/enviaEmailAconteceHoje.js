@@ -12,9 +12,14 @@ function createDataset(fields, constraints, sortFields) {
 
         //Monta lista de destinatários
         var destinatarios = new java.util.ArrayList();
-        destinatarios.add("1busy9shy78nqwqx1528812081880");
 
-        //Envia e-mail
+        if (constraints != null) {
+            for (var i = 0; i < constraints.length; i++) {
+                if (constraints[i].fieldName == "to") {
+                    destinatarios.add(constraints[i].initialValue);
+                }
+            }
+        }
         notifier.notify("xuku1xhwrsq2n8jj1505395346785", "eventoDia", parametros, destinatarios, "text/html");
         dataset.addRow(new Array("sim"));
     } catch(e) {

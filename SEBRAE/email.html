@@ -1,32 +1,81 @@
-<!DOCTYPE html>
-<html lang="br">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fluig</title>
+    <style type="text/css">
+        * {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        #content {
+            background-color: #ffffff;
+            margin: 0 15px;
+            padding: 15px;
+        }
+        #news {
+            background: #fafad2;
+            padding: 15px;
+        }
+    </style>
 </head>
-<body style="background: #0080ff !important; padding: 15px;">
-<div style="text-align: center; padding: 15px;">
-    <img style="padding:10px" src="https://s33.postimg.cc/u4zz2s57j/sebrae.png">
-    <img style="padding:10px" src="https://s33.postimg.cc/nbv0t4zen/sol.png">
+
+<body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<br />
+<div align="center">
+    <table width="100%" bgcolor="#0080ff" cellspacing="0" cellpadding="10" border="0">
+        <tbody>
+        <tr>
+            <td>
+                <img width="100" align="right" src="https://s33.postimg.cc/u4zz2s57j/sebrae.png">
+            </td>
+            <td>
+                <img width="100" align="left" src="https://s33.postimg.cc/nbv0t4zen/sol.png">
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<div style="background: #ffffff;margin: 0 15px;padding: 15px;">
-    <h1>Bom dia, SEBRAE!</h1>
-    <h3>Acontece hoje, ${TODAY_DATE!""}</h3>
-    <p>Vamos ao(s) eventos programados:</p>
-    <div id="news" style="background: #fafad2;padding: 15px;">
-        ${BODY_EMAIL!""}
-    </div>
-    <div>
-        <p>
-            <small>
-                Este(s) evento(s) foi(ram) cadastrado(s) por seu(s) responsável(is) no SAS. Lembramos que os eventos que não forem cadastrados no SAS devem ser cadastrados diretamente no Fluig, no caminho:<br>Processos > Iniciar solicitações > Eventos > Cadastro de eventos.
-            </small>
-        </p>
-        <p>
-            <small>
-                - Para utilizar os serviços do Fluig, ligue no ramal 2268 ou envie e-mail para suporte@sebraego.com.br.
-            </small>
-        </p>
-    </div>
+<div id="content">
+    <table cellspacing="10">
+        <tbody>
+        <tr>
+            <td>
+                <h1>Bom dia, SEBRAE!</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>Acontece hoje, ${TODAY_DATE!""}</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Vamos ao(s) eventos programados:</p>
+            </td>
+        </tr>
+        <tr>
+            <td id="news">
+                ${BODY_EMAIL!""}
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <div>
+                    <p style="color: grey">
+                        <small>
+                            Este(s) evento(s) foi(ram) cadastrado(s) por seu(s) responsável(is) no SAS. Lembramos que os eventos que não forem cadastrados no SAS devem ser cadastrados diretamente no Fluig, no caminho:<br>Processos > Iniciar solicitações > Eventos > Cadastro de eventos.
+                        </small>
+                    </p>
+                    <p>
+                        <small>
+                            - Para utilizar os serviços do Fluig, ligue no ramal 2268 ou envie e-mail para suporte@sebraego.com.br.
+                        </small>
+                    </p>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>
+<br />
 </body>
 </html>
