@@ -124,8 +124,10 @@
                     <table class="table">
                         <thead>
                         <th class="titulo" width="20%">Título</th>
-                        <th class="caminho" width="70%">Caminho</th>
+                        <th class="caminho" width="45%">Caminho</th>
                         <th width="10%">Views</th>
+                        <th width="10%">Entradas</th>
+                        <th width="15%">Acessos Únicos</th>
                         </thead>
                         <tbody>
 

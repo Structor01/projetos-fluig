@@ -3,6 +3,8 @@ var GLOBAL_PARAMS = {};
 GLOBAL_PARAMS['start'] = moment(now).subtract(30, 'days').format('YYYY-MM-DD');
 GLOBAL_PARAMS['end'] = moment(now).format('YYYY-MM-DD');
 GLOBAL_PARAMS['listPages'] = [];
+GLOBAL_PARAMS['dimensions'] = 'ga:pagePath,ga:pageTitle';
+
 var HelloWorld = SuperWidget.extend({
     message: null,
 
@@ -38,84 +40,92 @@ var HelloWorld = SuperWidget.extend({
         $div.append($message);
     },
     execute:function (gapi) {
-        gapi.analytics.ready(function() {
-            try {
-                gapi.analytics.auth.authorize({
-                    container: 'embed-api-auth-container',
-                    clientid: '495696357922-bmr7f91euvdengak62mh6segkcr2ha46.apps.googleusercontent.com'
-                });
-
-            }catch (e) {
-
-            } finally {
-                var activeUsers = new gapi.analytics.ext.ActiveUsers({
-                    container: 'active-users-container',
-                    pollingInterval: 5
-                });
-
-                activeUsers.once('success', function() {
-                    if(gapi.analytics.auth.isAuthorized()) {
-                        $('#activeUser, #logOut').removeClass('hide');
-                    }
-
-                    var element = this.container.firstChild;
-                    var timeout;
-
-                    this.on('change', function(data) {
-                        var element = this.container.firstChild;
-                        var animationClass = data.delta > 0 ? 'is-increasing' : 'is-decreasing';
-                        element.className += (' ' + animationClass);
-
-                        clearTimeout(timeout);
-                        timeout = setTimeout(function() {
-                            element.className =
-                                element.className.replace(/ is-(increasing|decreasing)/g, '');
-                        }, 3000);
+        return new Promise((resolve, reject)=>{
+            gapi.analytics.ready(function() {
+                try {
+                    gapi.analytics.auth.authorize({
+                        container: 'embed-api-auth-container',
+                        clientid: '495696357922-bmr7f91euvdengak62mh6segkcr2ha46.apps.googleusercontent.com'
                     });
-                });
 
-                var viewSelector = new gapi.analytics.ext.ViewSelector2({
-                    container: 'view-selector-container',
-                }).execute();
+                }catch (e) {
 
-                viewSelector.on('viewChange', function(data) {
-                    var title = document.getElementById('view-name');
-                    title.textContent = data.property.name + ' (' + data.view.name + ')';
-                    activeUsers.set(data).execute();
-                    // All calls
-                    renderPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end']);
-                    renderWeekOverWeekChart(data.ids);
-                    renderYearOverYearChart(data.ids);
-                    renderPerDay(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'], GLOBAL_PARAMS['filter']);
-                    GLOBAL_PARAMS['data'] = data;
-                    renderViews(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
-                    renderTopPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
-                    renderList(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
-                });
+                } finally {
+                    var activeUsers = new gapi.analytics.ext.ActiveUsers({
+                        container: 'active-users-container',
+                        pollingInterval: 5
+                    });
 
-                Chart.defaults.global.animationSteps = 60;
-                Chart.defaults.global.animationEasing = 'easeInOutQuart';
-                Chart.defaults.global.responsive = true;
-                Chart.defaults.global.maintainAspectRatio = false;
-            }
-        });
+                    activeUsers.once('success', function() {
+                        if(gapi.analytics.auth.isAuthorized()) {
+                            $('#activeUser, #logOut').removeClass('hide');
+                        }
+
+                        var element = this.container.firstChild;
+                        var timeout;
+
+                        this.on('change', function(data) {
+                            var element = this.container.firstChild;
+                            var animationClass = data.delta > 0 ? 'is-increasing' : 'is-decreasing';
+                            element.className += (' ' + animationClass);
+
+                            clearTimeout(timeout);
+                            timeout = setTimeout(function() {
+                                element.className =
+                                    element.className.replace(/ is-(increasing|decreasing)/g, '');
+                            }, 3000);
+                        });
+                    });
+
+                    var viewSelector = new gapi.analytics.ext.ViewSelector2({
+                        container: 'view-selector-container',
+                    }).execute();
+
+                    viewSelector.on('viewChange', function(data) {
+                        var title = document.getElementById('view-name');
+                        title.textContent = data.property.name + ' (' + data.view.name + ')';
+                        activeUsers.set(data).execute();
+                        // All calls
+                        renderPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end']);
+                        renderWeekOverWeekChart(data.ids);
+                        renderYearOverYearChart(data.ids);
+                        renderPerDay(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'], GLOBAL_PARAMS['filter']);
+                        GLOBAL_PARAMS['data'] = data;
+                        renderViews(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
+                        renderTopPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
+                        renderList(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter'], GLOBAL_PARAMS['dimensions']).then(e=>{
+                            resolve(true);
+                        })
+                    });
+
+                    Chart.defaults.global.animationSteps = 60;
+                    Chart.defaults.global.animationEasing = 'easeInOutQuart';
+                    Chart.defaults.global.responsive = true;
+                    Chart.defaults.global.maintainAspectRatio = false;
+                }
+            });
+        })
+
     }
 });
 
-function renderList(ids, start, end, filter) {
-    var now = moment();
-    var q = query({
-        'ids': ids,
-        'dimensions': 'ga:pagePath,ga:pageTitle',
-        'metrics': 'ga:pageViews',
-        'filters':filter,
-        'start-date': start,
-        'end-date': end,
-        'sort':'-ga:pageViews'
-    });
-    Promise.all([q]).then(function (res) {
-        GLOBAL_PARAMS['listPages'] = res[0].rows;
-    });
+function renderList(ids, start, end, filter, dimensions) {
+    return new Promise(resolve => {
+        var now = moment();
+        var q = query({
+            'ids': ids,
+            'dimensions': dimensions,
+            'metrics': 'ga:pageViews,ga:entrances,ga:uniquePageviews',
+            'filters':filter,
+            'start-date': start,
+            'end-date': end,
+            'sort':'-ga:pageViews'
+        });
+        Promise.all([q]).then(function (res) {
+            GLOBAL_PARAMS['listPages'] = res[0].rows;
+            resolve(true);
+        });
+    })
 }
 
 function renderWeekOverWeekChart(ids, filter) {
@@ -432,16 +442,25 @@ function listPages() {
         'autoClose': true
     }];
     title = 'Páginas';
-    var myModal = FLUIGC.modal({
-        title: title,
-        content: '<div id="instanceModal_C">'+$('#modalPages').html()+'</div>',
-        id: 'fluig-modal',
-        size:'full',
-        actions:actions
-    });
+    var myModal;
+
+    GLOBAL_PARAMS['TEMPPATH'] = '';
+    GLOBAL_PARAMS['TEMPTITLE'] = '';
+    GLOBAL_PARAMS['dimensions'] = 'ga:pagePath,ga:pageTitle';
+
+    HelloWorld.execute(window.gapi).then((e) => {
+        GLOBAL_PARAMS['TEMPTITLE'] = GLOBAL_PARAMS['listPages'];
+        myModal = FLUIGC.modal({
+            title: title,
+            content: '<div id="instanceModal_C">'+$('#modalPages').html()+'</div>',
+            id: 'fluig-modal',
+            size:'full',
+            actions:actions
+        });
+    })
 
     $('[data-show-col]').on('change', function () {
-       var t = $(this);
+        var t = $(this);
         var isChecked = t.prop('checked');
         var v = t.val();
 
@@ -453,9 +472,24 @@ function listPages() {
             appendToTable(false);
         }
     });
-
     appendToTable(false);
+}
 
+GLOBAL_PARAMS['TEMPPATH'] = '';
+GLOBAL_PARAMS['TEMPTITLE'] = '';
+
+function tempTitle() {
+    GLOBAL_PARAMS['TEMPTITLE'].map(res=>{
+        $('#instanceModal_C').find('.table').children('tbody').append(
+            '<tr>' +
+            '<td class="titulo" width="20%">'+ res[0]+'</td>' +
+            '<td class="caminho" width="50%"></td>' +
+            '<td>' + res[1] + '</td>' +
+            '<td>' + res[2] + '</td>' +
+            '<td>' + res[3]+'</td>' +
+            '</tr>');
+        $('.caminho').hide();
+    });
 }
 
 function appendToTable(hideColumn) {
@@ -463,32 +497,38 @@ function appendToTable(hideColumn) {
     var tr = table.children('tbody').children('tr').remove();
     var title = {};
 
-    GLOBAL_PARAMS['listPages'].map(res=>{
-        var r0 = res[0];
-        if(!hideColumn) {
-            if(r0.indexOf('?') > -1 && r0.indexOf('&') > -1) {
+
+    if(hideColumn) {
+        GLOBAL_PARAMS['dimensions'] = 'ga:pageTitle';
+        if(GLOBAL_PARAMS['TEMPTITLE'] == '') {
+            HelloWorld.execute(window.gapi).then((e) => {
+                GLOBAL_PARAMS['TEMPTITLE'] = GLOBAL_PARAMS['listPages'];
+                tempTitle();
+            })
+        } else {
+            GLOBAL_PARAMS['TEMPTITLE'] = GLOBAL_PARAMS['listPages'];
+            tempTitle();
+        }
+    } else {
+        $('.caminho').show();
+
+        GLOBAL_PARAMS['TEMPPATH'] == '' ? GLOBAL_PARAMS['TEMPPATH'] = GLOBAL_PARAMS['listPages'] : false;
+
+        GLOBAL_PARAMS['TEMPPATH'].map(res=> {
+            var r0 = res[0];
+            if (r0.indexOf('?') > -1 && r0.indexOf('&') > -1) {
                 var r0a = r0.split('?');
                 var r0b = r0a[1].split('&');
                 r0 = r0a[0] + r0b[1];
             }
-            $('#instanceModal_C').find('.table').children('tbody').append('<tr>' +
-                '<td class="titulo" width="20%">'+ res[1]+'</td>' +
-                '<td class="caminho" width="70%">'+ r0 +'</td>' +
-                '<td width="10%">'+ res[2]+'</td>' +
+            $('#instanceModal_C').find('.table').children('tbody').append(
+                '<tr>' +
+                '<td class="titulo" width="20%">' + res[1] + '</td>' +
+                '<td class="caminho" width="50%">' + r0 + '</td>' +
+                '<td>' + res[2] + '</td>' +
+                '<td>' + res[3] + '</td>' +
+                '<td>' + res[4] + '</td>' +
                 '</tr>');
-        } else {
-            if(title[res[1]]) {
-                $('[data-path='+res[0]+']').html(parseInt(title[res[1]]) + parseInt(res[2]));
-            } else {
-                title[res[1]] = parseInt(res[2]);
-                $('#instanceModal_C').find('.table').append(
-                    '<tr>' +
-                    '<td class="titulo" width="20%">'+ res[1] +'</td>' +
-                    '<td class="caminho" width="70%">'+ r0 +'</td>' +
-                    '<td data-path="'+ res[0] +'" width="10%">'+ res[2]+'</td>' +
-                    '</tr>'
-                );
-            }
-        }
-    });
+        });
+    }
 }

@@ -64,7 +64,7 @@ function onSync(lastSyncDate){
 }
 
 function onMobileSync(user) {
-    log.warn("--MOBILE-- dsCidade.js - onMobileSync");
+    // log.warn("--MOBILE-- dsCidade.js - onMobileSync");
 
     var sortingFields = new Array();
 
@@ -142,7 +142,7 @@ function createDataset(fields, constraints, sortFields) {
             throw "Retorno está vazio";
         } else {
             var result = JSON.parse(vo.getResult());
-            log.info(result[0]);
+            // log.info(result[0]);
             for(var i in result) {
                 var sinc = 'false';
                 var jaCadastrado = DatasetFactory.getDataset("dsEventos", null, [DatasetFactory.createConstraint("codSAS", result[i]['CodEvento'].toString(), result[i]['CodEvento'].toString(), ConstraintType.MUST)], null);
@@ -197,12 +197,12 @@ function salvarForm(constraints, cardId) {
     if(!cardId) {
         registro = criaRegistro(36117);
         cardId = registro.getValue(0, 'Retorno');
-        log.info('Foi gravado um novo registro ' + cardId);
+        // log.info('Foi gravado um novo registro ' + cardId);
     }
     constraints.push(DatasetFactory.createConstraint("CardId", parseInt(cardId), "", ConstraintType.MUST));
     var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
     var msg = 'O registro ' + cardId + ' foi alterado!';
-    log.info(msg);
+    // log.info(msg);
 }
 
 function verificaTipoEv(ev) {
