@@ -166,14 +166,12 @@
 				</div>
 				<div class="form-group col-md-4">
 					<label>Tipo do Evento</label>
-					<!--<input class="form-control" name="eventType" value="">-->
 					<select class="form-control eventType" name="eventType">
 						<option value="">Filtre por Tipo de Evento</option>
 					</select>
 				</div>
 				<div class="form-group col-md-4">
 					<label>Unidade Vinculada</label>
-					<!--<input class="form-control" name="eventCity" value="">-->
 					<select class="form-control eventUnidade" name="eventUnidade">
 						<option value="">Filtre por Unidade Vinculada</option>
 					</select>
