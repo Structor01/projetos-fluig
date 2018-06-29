@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/view.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/target/analyticsFluigW.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/analyticsFluigW/target/analyticsFluigW.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -32,8 +29,8 @@
       <file leaf-file-name="analyticsFluigW.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="452" column="41" selection-start-line="452" selection-start-column="41" selection-end-line="452" selection-end-column="41" />
+            <state relative-caret-position="154">
+              <caret line="454" column="25" lean-forward="true" selection-start-line="454" selection-start-column="25" selection-end-line="454" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
               </folding>
@@ -404,12 +401,12 @@
       <workItem from="1529930998944" duration="4761000" />
       <workItem from="1529943854968" duration="25398000" />
       <workItem from="1530186913012" duration="11138000" />
-      <workItem from="1530207873774" duration="4461000" />
+      <workItem from="1530207873774" duration="5105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236886000" />
+    <option name="totallyTimeSpent" value="237530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,16 +419,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -758,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/webapp/resources/js/analyticsFluigW.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="452" column="41" selection-start-line="452" selection-start-column="41" selection-end-line="452" selection-end-column="41" />
+        <state relative-caret-position="154">
+          <caret line="454" column="25" lean-forward="true" selection-start-line="454" selection-start-column="25" selection-end-line="454" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#i#0;n#li#0;n#!!top" expanded="true" />
           </folding>

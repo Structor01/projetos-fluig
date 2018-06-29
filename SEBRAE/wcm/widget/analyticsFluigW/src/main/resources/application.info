@@ -14,3 +14,4 @@ edit.file=edit.ftl
 locale.file.base.name=analyticsFluigW
 application.resource.js.1=/resources/js/analyticsFluigW.js
 application.resource.css.2=/resources/css/analyticsFluigW.css
+application.tenant.code=1

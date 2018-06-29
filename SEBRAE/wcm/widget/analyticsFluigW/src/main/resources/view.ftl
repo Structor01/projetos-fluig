@@ -11,12 +11,13 @@
     <div class="row" style="margin-bottom: 1rem">
         <div class="col-md-9">
             <div id="embed-api-auth-container"></div>
+            <div id="logOut" class="hide"><a href="#">Sair</a></div>
         </div>
         <div class="col-md-3">
             <div id="active-users-container"></div>
         </div>
     </div>
-    <div class="row">
+    <div class="row hide" id="activeUser">
         <div class="form-group col-md-3">
             <label>Data Inicial</label>
             <div class="input-group date">
@@ -85,7 +86,7 @@
                 <ol class="Chartjs-legend" id="legend-3-container"></ol>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="Chartjs">
                 <h3>Top Páginas</h3>
                 <figure class="Chartjs-figure" id="chart-4-container"></figure>
@@ -108,7 +109,7 @@
         </div>
     </div>
 
-    <div id="modalPages">
+    <div id="modalPages" class="hide">
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
@@ -121,31 +122,36 @@
                         </label>
                     </div>
                     <table class="table">
+                        <thead>
                         <th class="titulo" width="20%">Título</th>
                         <th class="caminho" width="70%">Caminho</th>
                         <th width="10%">Views</th>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 
-<!-- Include the ViewSelector2 component script. -->
-<script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/view-selector2.js"></script>
+    <!-- Include the ViewSelector2 component script. -->
+    <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/view-selector2.js"></script>
 
-<!-- Include the DateRangeSelector component script. -->
-<script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/date-range-selector.js"></script>
+    <!-- Include the DateRangeSelector component script. -->
+    <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/date-range-selector.js"></script>
 
-<!-- Include the ActiveUsers component script. -->
-<script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/active-users.js"></script>
+    <!-- Include the ActiveUsers component script. -->
+    <script src="https://ga-dev-tools.appspot.com/public/javascript/embed-api/components/active-users.js"></script>
 
-<!-- Include the CSS that styles the charts. -->
-<link rel="stylesheet" href="https://ga-dev-tools.appspot.com/public/css/chartjs-visualizations.css">
+    <!-- Include the CSS that styles the charts. -->
+    <link rel="stylesheet" href="https://ga-dev-tools.appspot.com/public/css/chartjs-visualizations.css">
 
-<script>
-    HelloWorld.execute(gapi);
-</script>
+    <script>
+        HelloWorld.execute(gapi);
+    </script>
 </div>

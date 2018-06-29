@@ -18,7 +18,12 @@ var HelloWorld = SuperWidget.extend({
 
         $('#filtraPage').on('fluig.autocomplete.itemRemoved', function () {
             console.log('Removido');
-        })
+        });
+
+        $('#logOut').on('click', function () {
+            gapi.analytics.auth.signOut();
+            window.location.reload();
+        });
     },
 
     bindings: {
@@ -34,56 +39,65 @@ var HelloWorld = SuperWidget.extend({
     },
     execute:function (gapi) {
         gapi.analytics.ready(function() {
-            gapi.analytics.auth.authorize({
-                container: 'embed-api-auth-container',
-                clientid: '495696357922-bmr7f91euvdengak62mh6segkcr2ha46.apps.googleusercontent.com'
-            });
-
-            var activeUsers = new gapi.analytics.ext.ActiveUsers({
-                container: 'active-users-container',
-                pollingInterval: 5
-            });
-
-            activeUsers.once('success', function() {
-                var element = this.container.firstChild;
-                var timeout;
-
-                this.on('change', function(data) {
-                    var element = this.container.firstChild;
-                    var animationClass = data.delta > 0 ? 'is-increasing' : 'is-decreasing';
-                    element.className += (' ' + animationClass);
-
-                    clearTimeout(timeout);
-                    timeout = setTimeout(function() {
-                        element.className =
-                            element.className.replace(/ is-(increasing|decreasing)/g, '');
-                    }, 3000);
+            try {
+                gapi.analytics.auth.authorize({
+                    container: 'embed-api-auth-container',
+                    clientid: '495696357922-bmr7f91euvdengak62mh6segkcr2ha46.apps.googleusercontent.com'
                 });
-            });
 
-            var viewSelector = new gapi.analytics.ext.ViewSelector2({
-                container: 'view-selector-container',
-            }).execute();
+            }catch (e) {
 
-            viewSelector.on('viewChange', function(data) {
-                var title = document.getElementById('view-name');
-                title.textContent = data.property.name + ' (' + data.view.name + ')';
-                activeUsers.set(data).execute();
-                // All calls
-                renderPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end']);
-                renderWeekOverWeekChart(data.ids);
-                renderYearOverYearChart(data.ids);
-                renderPerDay(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'], GLOBAL_PARAMS['filter']);
-                GLOBAL_PARAMS['data'] = data;
-                renderViews(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
-                renderTopPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
-                renderList(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
-            });
+            } finally {
+                var activeUsers = new gapi.analytics.ext.ActiveUsers({
+                    container: 'active-users-container',
+                    pollingInterval: 5
+                });
 
-            Chart.defaults.global.animationSteps = 60;
-            Chart.defaults.global.animationEasing = 'easeInOutQuart';
-            Chart.defaults.global.responsive = true;
-            Chart.defaults.global.maintainAspectRatio = false;
+                activeUsers.once('success', function() {
+                    if(gapi.analytics.auth.isAuthorized()) {
+                        $('#activeUser, #logOut').removeClass('hide');
+                    }
+
+                    var element = this.container.firstChild;
+                    var timeout;
+
+                    this.on('change', function(data) {
+                        var element = this.container.firstChild;
+                        var animationClass = data.delta > 0 ? 'is-increasing' : 'is-decreasing';
+                        element.className += (' ' + animationClass);
+
+                        clearTimeout(timeout);
+                        timeout = setTimeout(function() {
+                            element.className =
+                                element.className.replace(/ is-(increasing|decreasing)/g, '');
+                        }, 3000);
+                    });
+                });
+
+                var viewSelector = new gapi.analytics.ext.ViewSelector2({
+                    container: 'view-selector-container',
+                }).execute();
+
+                viewSelector.on('viewChange', function(data) {
+                    var title = document.getElementById('view-name');
+                    title.textContent = data.property.name + ' (' + data.view.name + ')';
+                    activeUsers.set(data).execute();
+                    // All calls
+                    renderPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end']);
+                    renderWeekOverWeekChart(data.ids);
+                    renderYearOverYearChart(data.ids);
+                    renderPerDay(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'], GLOBAL_PARAMS['filter']);
+                    GLOBAL_PARAMS['data'] = data;
+                    renderViews(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
+                    renderTopPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
+                    renderList(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
+                });
+
+                Chart.defaults.global.animationSteps = 60;
+                Chart.defaults.global.animationEasing = 'easeInOutQuart';
+                Chart.defaults.global.responsive = true;
+                Chart.defaults.global.maintainAspectRatio = false;
+            }
         });
     }
 });
@@ -100,7 +114,6 @@ function renderList(ids, start, end, filter) {
         'sort':'-ga:pageViews'
     });
     Promise.all([q]).then(function (res) {
-        console.log(res);
         GLOBAL_PARAMS['listPages'] = res[0].rows;
     });
 }
@@ -432,9 +445,9 @@ function listPages() {
         var isChecked = t.prop('checked');
         var v = t.val();
 
-        if(v == 'caminho' && !isChecked) {
+        if(v == 'caminhos' && !isChecked) {
             appendToTable(true);
-        } else if(v == 'titulo') {
+        } else if(v == 'titulos') {
             isChecked ? $('.titulo').show() : $('.titulo').hide();
         } else {
             appendToTable(false);
@@ -447,7 +460,7 @@ function listPages() {
 
 function appendToTable(hideColumn) {
     var table = $('#instanceModal_C').find('.table');
-    var tr = table.children('tr').remove();
+    var tr = table.children('tbody').children('tr').remove();
     var title = {};
 
     GLOBAL_PARAMS['listPages'].map(res=>{
@@ -458,25 +471,24 @@ function appendToTable(hideColumn) {
                 var r0b = r0a[1].split('&');
                 r0 = r0a[0] + r0b[1];
             }
-            $('#instanceModal_C').find('.table').append('<tr>' +
+            $('#instanceModal_C').find('.table').children('tbody').append('<tr>' +
                 '<td class="titulo" width="20%">'+ res[1]+'</td>' +
                 '<td class="caminho" width="70%">'+ r0 +'</td>' +
                 '<td width="10%">'+ res[2]+'</td>' +
                 '</tr>');
         } else {
-            if(title.indexOf(res[1]) > -1) {
-                title[res[1]] = parseInt(title[res[1]]) + parseInt(res[2]);
+            if(title[res[1]]) {
+                $('[data-path='+res[0]+']').html(parseInt(title[res[1]]) + parseInt(res[2]));
             } else {
                 title[res[1]] = parseInt(res[2]);
-            }
-
-            $('#instanceModal_C').find('.table').append(
-                '<tr>' +
-                    '<td class="titulo" width="20%">'+ res[1]+'</td>' +
+                $('#instanceModal_C').find('.table').append(
+                    '<tr>' +
+                    '<td class="titulo" width="20%">'+ res[1] +'</td>' +
                     '<td class="caminho" width="70%">'+ r0 +'</td>' +
-                    '<td width="10%">'+ res[2]+'</td>' +
-                '</tr>'
-            );
+                    '<td data-path="'+ res[0] +'" width="10%">'+ res[2]+'</td>' +
+                    '</tr>'
+                );
+            }
         }
     });
 }
