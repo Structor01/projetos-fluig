@@ -49,7 +49,7 @@ function createDataset(fields, constraints, sortFields) {
         var d = new Date();
         var n = d.getHours();
 
-        if(n > 8 && n < 9) {
+        if(n == 9) {
             travaSeguranca = true;
         }
 

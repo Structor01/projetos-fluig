@@ -10,6 +10,8 @@ var HelloWorld = SuperWidget.extend({
     message: null,
 
     init: function () {
+        $('.fl-header').remove();
+        $('#visualizacaoPagina').css('margin-top','-6rem');
         FLUIGC.calendar('.date', {
             pickDate: true,
             pickTime: false
@@ -509,7 +511,7 @@ function appendToTable(hideColumn) {
         });
     } else {
         $('.caminho').show();
-        GLOBAL_PARAMS['lispages'].map(res=> {
+        GLOBAL_PARAMS['listPages'].map(res=> {
             var r0 = res[0];
             if (r0.indexOf('?') > -1 && r0.indexOf('&') > -1) {
                 var r0a = r0.split('?');
