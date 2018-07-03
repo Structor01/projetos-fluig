@@ -1,7 +1,18 @@
+function defineStructure() {
+    addColumn("Date");
+    addColumn("Cidade");
+    addColumn("Número de Envios");
+    addColumn("Trava Segurança");
+    setKey(new Array("Date"));
+    addIndex(new Array("Date"));
+}
+
 function createDataset(fields, constraints, sortFields) {
     var dataset = DatasetBuilder.newDataset();
-    dataset.addColumn("Data");
+    dataset.addColumn("Date");
     dataset.addColumn("Cidade");
+    dataset.addColumn("Número de Envios");
+    dataset.addColumn("Trava Segurança");
 
     try{
         //Monta mapa com parâmetros do template
@@ -10,30 +21,52 @@ function createDataset(fields, constraints, sortFields) {
         var date = getDateNow();
         parametros.put("TODAY_DATE", date);
         // Push dos eventos salvos no formulário.
-        var constraints = new Array();
-        constraints.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
-        constraints.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
-        constraints.push(DatasetFactory.createConstraint("dtInicio", date, date, ConstraintType.MUST));
-        constraints[2].setLikeSearch(true);
-        var eventos = DatasetFactory.getDataset("dsEventos", null, constraints, ["dtInicio"]);
+        var constraints1 = new Array();
+        constraints1.push(DatasetFactory.createConstraint("nomeEvento", "", "", ConstraintType.MUST_NOT));
+        constraints1.push(DatasetFactory.createConstraint("nomeEvento", "undefined", "undefined", ConstraintType.MUST_NOT));
+        constraints1.push(DatasetFactory.createConstraint("dtInicio", date, date, ConstraintType.MUST));
+        constraints1[2].setLikeSearch(true);
+        var eventos = DatasetFactory.getDataset("dsEventos", null, constraints1, ["dtInicio"]);
 
         //Este parâmetro é obrigatório e representa o assunto do e-mail
         parametros.put("subject", "Acontece hoje!");
 
         //Monta lista de destinatários
         var destinatarios = new java.util.ArrayList();
+        var travaSeguranca = false;
 
+        log.info("--CONSTRAINTS " + constraints.toString());
         if (constraints != null) {
+            log.info("--CONSTRAINTS " + constraints.toString());
             for (var i = 0; i < constraints.length; i++) {
-                if (constraints[i].fieldName == "to") {
-                    destinatarios.add(constraints[i].initialValue);
+                if (constraints[i].fieldName == "travaSeguranca") {
+                    travaSeguranca = true;
+                    log.info('-- Trava Segurança TRUE')
                 }
             }
         }
-        destinatarios.add("1busy9shy78nqwqx1528812081880");
 
-        log.info('--ENVIOU EMAIL--');
+        var d = new Date();
+        var n = d.getHours();
+
+        if(n > 8 && n < 9) {
+            travaSeguranca = true;
+        }
+
+        destinatarios.add("1busy9shy78nqwqx1528812081880");
         log.info('--EVENTOS-- ' + eventos.rowsCount);
+        var nEnvios = 0;
+
+        var active = DatasetFactory.createConstraint("active", 'true', 'true', ConstraintType.MUST);
+        active = new Array(active);
+        var colleague = DatasetFactory.getDataset("colleague", null, active, null);
+
+        for(var j=0; j < colleague.rowsCount; j++) {
+            destinatarios.add(colleague.getValue(j, "colleaguePK.colleagueId"));
+            log.info('envio email: ' + colleague.getValue(j, "colleaguePK.colleagueId"));
+            nEnvios++;
+        }
+
         if(eventos.rowsCount > 0) {
             var html = '<table>';
             for(var i=0; i < eventos.rowsCount; i++) {
@@ -55,13 +88,20 @@ function createDataset(fields, constraints, sortFields) {
 
                 dataset.addRow(new Array(
                     eventos.getValue(i, "dtInicio"),
-                    cidade.getValue(0,"descricaoCidade")
+                    cidade.getValue(0,"descricaoCidade"),
+                    nEnvios,
+                    travaSeguranca.toString()
                 ));
             }
             html += '</table>';
             parametros.put("BODY_EMAIL", html);
 
-            notifier.notify("xuku1xhwrsq2n8jj1505395346785", "eventoDia", parametros, destinatarios, "text/html");
+            if(travaSeguranca == true) {
+                log.info('--ENVIOU EMAIL--');
+                notifier.notify("xuku1xhwrsq2n8jj1505395346785", "eventoDia", parametros, destinatarios, "text/html");
+            } else {
+                log.info('--NAO ENVIOU EMAIL--');
+            }
         }
     } catch(e) {
         log.info(e);

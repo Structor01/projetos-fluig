@@ -3,6 +3,7 @@ var GLOBAL_PARAMS = {};
 GLOBAL_PARAMS['start'] = moment(now).subtract(30, 'days').format('YYYY-MM-DD');
 GLOBAL_PARAMS['end'] = moment(now).format('YYYY-MM-DD');
 GLOBAL_PARAMS['listPages'] = [];
+GLOBAL_PARAMS['listPages2'] = [];
 GLOBAL_PARAMS['dimensions'] = 'ga:pagePath,ga:pageTitle';
 
 var HelloWorld = SuperWidget.extend({
@@ -93,9 +94,10 @@ var HelloWorld = SuperWidget.extend({
                         GLOBAL_PARAMS['data'] = data;
                         renderViews(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
                         renderTopPages(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter']);
-                        renderList(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter'], GLOBAL_PARAMS['dimensions']).then(e=>{
+                        renderList(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter'], GLOBAL_PARAMS['dimensions']);
+                        renderList2(data.ids, GLOBAL_PARAMS['start'], GLOBAL_PARAMS['end'],GLOBAL_PARAMS['filter'], GLOBAL_PARAMS['dimensions']).then(e=>{
                             resolve(true);
-                        })
+                        });
                     });
 
                     Chart.defaults.global.animationSteps = 60;
@@ -123,6 +125,25 @@ function renderList(ids, start, end, filter, dimensions) {
         });
         Promise.all([q]).then(function (res) {
             GLOBAL_PARAMS['listPages'] = res[0].rows;
+            resolve(true);
+        });
+    })
+}
+
+function renderList2(ids, start, end, filter, dimensions) {
+    return new Promise(resolve => {
+        var now = moment();
+        var q = query({
+            'ids': ids,
+            'dimensions': 'ga:pageTitle',
+            'metrics': 'ga:pageViews,ga:entrances,ga:uniquePageviews',
+            'filters':filter,
+            'start-date': start,
+            'end-date': end,
+            'sort':'-ga:pageViews'
+        });
+        Promise.all([q]).then(function (res) {
+            GLOBAL_PARAMS['listPages2'] = res[0].rows;
             resolve(true);
         });
     })
@@ -444,20 +465,13 @@ function listPages() {
     title = 'Páginas';
     var myModal;
 
-    GLOBAL_PARAMS['TEMPPATH'] = '';
-    GLOBAL_PARAMS['TEMPTITLE'] = '';
-    GLOBAL_PARAMS['dimensions'] = 'ga:pagePath,ga:pageTitle';
-
-    HelloWorld.execute(window.gapi).then((e) => {
-        GLOBAL_PARAMS['TEMPTITLE'] = GLOBAL_PARAMS['listPages'];
-        myModal = FLUIGC.modal({
-            title: title,
-            content: '<div id="instanceModal_C">'+$('#modalPages').html()+'</div>',
-            id: 'fluig-modal',
-            size:'full',
-            actions:actions
-        });
-    })
+    myModal = FLUIGC.modal({
+        title: title,
+        content: '<div id="instanceModal_C">'+$('#modalPages').html()+'</div>',
+        id: 'fluig-modal',
+        size:'full',
+        actions:actions
+    });
 
     $('[data-show-col]').on('change', function () {
         var t = $(this);
@@ -475,23 +489,6 @@ function listPages() {
     appendToTable(false);
 }
 
-GLOBAL_PARAMS['TEMPPATH'] = '';
-GLOBAL_PARAMS['TEMPTITLE'] = '';
-
-function tempTitle() {
-    GLOBAL_PARAMS['TEMPTITLE'].map(res=>{
-        $('#instanceModal_C').find('.table').children('tbody').append(
-            '<tr>' +
-            '<td class="titulo" width="20%">'+ res[0]+'</td>' +
-            '<td class="caminho" width="50%"></td>' +
-            '<td>' + res[1] + '</td>' +
-            '<td>' + res[2] + '</td>' +
-            '<td>' + res[3]+'</td>' +
-            '</tr>');
-        $('.caminho').hide();
-    });
-}
-
 function appendToTable(hideColumn) {
     var table = $('#instanceModal_C').find('.table');
     var tr = table.children('tbody').children('tr').remove();
@@ -499,22 +496,20 @@ function appendToTable(hideColumn) {
 
 
     if(hideColumn) {
-        GLOBAL_PARAMS['dimensions'] = 'ga:pageTitle';
-        if(GLOBAL_PARAMS['TEMPTITLE'] == '') {
-            HelloWorld.execute(window.gapi).then((e) => {
-                GLOBAL_PARAMS['TEMPTITLE'] = GLOBAL_PARAMS['listPages'];
-                tempTitle();
-            })
-        } else {
-            GLOBAL_PARAMS['TEMPTITLE'] = GLOBAL_PARAMS['listPages'];
-            tempTitle();
-        }
+        GLOBAL_PARAMS['listPages2'].map(res=>{
+            $('#instanceModal_C').find('.table').children('tbody').append(
+                '<tr>' +
+                '<td class="titulo" width="20%">'+ res[1]+'</td>' +
+                '<td class="caminho" width="50%"></td>' +
+                '<td>' + res[2] + '</td>' +
+                '<td>' + res[3] + '</td>' +
+                '<td>' + res[4]+'</td>' +
+                '</tr>');
+            $('.caminho').hide();
+        });
     } else {
         $('.caminho').show();
-
-        GLOBAL_PARAMS['TEMPPATH'] == '' ? GLOBAL_PARAMS['TEMPPATH'] = GLOBAL_PARAMS['listPages'] : false;
-
-        GLOBAL_PARAMS['TEMPPATH'].map(res=> {
+        GLOBAL_PARAMS['lispages'].map(res=> {
             var r0 = res[0];
             if (r0.indexOf('?') > -1 && r0.indexOf('&') > -1) {
                 var r0a = r0.split('?');
