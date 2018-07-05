@@ -37,8 +37,9 @@ function createDataset(fields, constraints, sortFields) {
             log.info(result[0]);
             for(var i in result) {
                 if(codCidade != '') {
-                    if(result[i]['CodCid'] != codCidade) continue;
-				}
+                    if (result[i]['CodCid'] != codCidade) continue;
+                }
+
                 dataset.addRow(new Array(
                     result[i]['CodEst'].toString(),
                     result[i]['CodCid'].toString(),

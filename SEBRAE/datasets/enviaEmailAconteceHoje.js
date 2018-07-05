@@ -1,18 +1,18 @@
 function defineStructure() {
-    addColumn("Date");
+    addColumn("DataEv");
     addColumn("Cidade");
-    addColumn("Número de Envios");
-    addColumn("Trava Segurança");
-    setKey(new Array("Date"));
-    addIndex(new Array("Date"));
+    addColumn("nEnvios");
+    addColumn("travaSeguranca");
+    setKey(new Array("DataEv"));
+    addIndex(new Array("DataEv"));
 }
 
 function createDataset(fields, constraints, sortFields) {
     var dataset = DatasetBuilder.newDataset();
-    dataset.addColumn("Date");
+    dataset.addColumn("DataEv");
     dataset.addColumn("Cidade");
-    dataset.addColumn("Número de Envios");
-    dataset.addColumn("Trava Segurança");
+    dataset.addColumn("nEnvios");
+    dataset.addColumn("travaSeguranca");
 
     try{
         //Monta mapa com parâmetros do template
@@ -35,9 +35,9 @@ function createDataset(fields, constraints, sortFields) {
         var destinatarios = new java.util.ArrayList();
         var travaSeguranca = false;
 
-        log.info("--CONSTRAINTS " + constraints.toString());
+        // log.info("--CONSTRAINTS " + constraints.toString());
         if (constraints != null) {
-            log.info("--CONSTRAINTS " + constraints.toString());
+            // log.info("--CONSTRAINTS " + constraints.toString());
             for (var i = 0; i < constraints.length; i++) {
                 if (constraints[i].fieldName == "travaSeguranca") {
                     travaSeguranca = true;
@@ -46,8 +46,7 @@ function createDataset(fields, constraints, sortFields) {
             }
         }
 
-        var d = new Date();
-        var n = d.getHours();
+        var n = getHourNow();
 
         if(n == 9) {
             travaSeguranca = true;
@@ -62,33 +61,41 @@ function createDataset(fields, constraints, sortFields) {
         var colleague = DatasetFactory.getDataset("colleague", null, active, null);
 
         for(var j=0; j < colleague.rowsCount; j++) {
-            destinatarios.add(colleague.getValue(j, "colleaguePK.colleagueId"));
+            // destinatarios.add(colleague.getValue(j, "colleaguePK.colleagueId"));
             log.info('envio email: ' + colleague.getValue(j, "colleaguePK.colleagueId"));
             nEnvios++;
         }
 
         if(eventos.rowsCount > 0) {
+            log.info('--Tem Eventos');
+
             var html = '<table>';
             for(var i=0; i < eventos.rowsCount; i++) {
-                log.info('--CODCIDADE-- ' + eventos.getValue(i, "codCidade"));
-                var c1 = DatasetFactory.createConstraint("codCidade", eventos.getValue(i, "codCidade"), eventos.getValue(i, "codCidade"), ConstraintType.MUST)
-                var c = new Array(c1);
-                var cidade = DatasetFactory.getDataset("dsCidadesSAS", null, c, null);
-                log.info('--CIDADE-- ' + cidade.getValue(0,"descricaoCidade"));
+                var codCidade = eventos.getValue(i, "codCidade");
+                log.info('--CODCIDADE-- ' + codCidade);
+                var descCidade = 'GOIANIA';
+                log.info('--CIDADE-- ' + descCidade);
+                var c1 = DatasetFactory.createConstraint("codCidade", parseInt(codCidade), parseInt(codCidade), ConstraintType.MUST);
+                c1 = new Array(c1);
+                var cidades = DatasetFactory.getDataset("dsCidades", null, c1, null);
+                var cid = cidades.getValue(0, "descricaoCidade");
+                var nomeEvento = cidades.getValue(i,"nomeEvento");
+                var dtInicio = eventos.getValue(i,"dtInicio");
+                var dtFinal = eventos.getValue(i,"dtFinal");
                 html +=
                     '<tr>' +
                     '<td>' +
-                    '   <small style="color: grey">'+ eventos.getValue(i,"dtInicio") + ' - ' + eventos.getValue(i,"dtFinal") + '</small>' +
+                    '   <small style="color: grey">'+ dtInicio + ' - ' + dtFinal + '</small>' +
                     '</td>' +
                     '</tr>' +
                     '<tr>' +
-                        '<td><h3><a href="http://fluig.sebraego.com.br/portal/p/1/listaEventos">'+ cidade.getValue(0,"descricaoCidade") +
-                        ' | '+ eventos.getValue(i,"nomeEvento") +'</td>' +
+                        '<td><h3><a href="http://fluig.sebraego.com.br/portal/p/1/listaEventos">'+ cid +
+                        ' | '+ nomeEvento +'</td>' +
                     '</a></h3></tr>';
 
                 dataset.addRow(new Array(
-                    eventos.getValue(i, "dtInicio"),
-                    cidade.getValue(0,"descricaoCidade"),
+                    dtInicio,
+                    cid,
                     nEnvios,
                     travaSeguranca.toString()
                 ));
@@ -124,6 +131,23 @@ function getDateNow() {
     return currentDate;
 }
 
-function arrangeDate() {
+function getHourNow() {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = (today.getMonth() + 1) < 10 ? '0' + (today.getMonth() + 1)	: (today.getMonth() + 1);
+    var day = today.getDate() < 10 ? '0' + today.getDate() : today.getDate();
+    var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+    var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+    var second = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+    var currentHour = hour + ":" + minute + ":" + second;
+    var currentDate = day + '/' + month + '/' + year;
+    // var currentTime = currentDate + "  " + currentHour;
+    return hour;
+}
 
+function getCidade(e) {
+    var c1 = DatasetFactory.createConstraint("codCidade", parseInt(e), parseInt(e), ConstraintType.MUST)
+    var cidadeCo = new Array();
+    cidadeCo.push(c1);
+    return DatasetFactory.getDataset("dsCidadesSAS", null, cidadeCo, null);
 }
