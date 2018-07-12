@@ -20,8 +20,6 @@ var HelloWorld = SuperWidget.extend({
 });
 
 $(document).ready(function () {
-    if(top.WCMAPI.userCode == "fuwnxqevumx0iq0h1499102481466") {
-        $('#all-slots-right').css('width', '50%');
-        $('#divSlot1').css('width', '50%');
-    }
+    $('#all-slots-right').css('width', '50%');
+    $('#divSlot1').css('width', '50%');
 });

@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/controle_acesso/target/controle_acesso.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/controle_acesso/target/controle_acesso.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/gatherWidgets/target/gatherWidgets.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/gatherWidgets/target/gatherWidgets.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
@@ -21,20 +20,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gatherWidgets.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gatherWidgets.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
+              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl">
+      <file leaf-file-name="enviaEmailAconteceHoje.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+            <state relative-caret-position="700">
+              <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+              <folding>
+                <element signature="n#style#0;n#small#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,7 +59,6 @@
       <find>listpa</find>
       <find>log.</find>
       <find>enviae</find>
-      <find>enviaEmailNotificacao</find>
       <find>getdate</find>
       <find>dataset</find>
       <find>evento</find>
@@ -80,6 +81,7 @@
       <find>ds</find>
       <find>salvar</find>
       <find>salvarForm</find>
+      <find>enviaEmailNotificacao</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -159,9 +161,9 @@
         <option value="$PROJECT_DIR$/datasets/syncEnviaEmail.js" />
         <option value="$PROJECT_DIR$/forms/cidades/cidades.html" />
         <option value="$PROJECT_DIR$/datasets/SEBRAE/dsCidadesSAS.js" />
-        <option value="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" />
         <option value="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js" />
+        <option value="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" />
       </list>
     </option>
   </component>
@@ -190,6 +192,11 @@
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="datasets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
@@ -377,12 +384,14 @@
       <workItem from="1530621094368" duration="11024000" />
       <workItem from="1530708247114" duration="4000" />
       <workItem from="1530728204103" duration="8031000" />
-      <workItem from="1530819815122" duration="2874000" />
+      <workItem from="1530819815122" duration="4497000" />
+      <workItem from="1531311054120" duration="1074000" />
+      <workItem from="1531320611435" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274314000" />
+    <option name="totallyTimeSpent" value="277017000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,16 +404,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" weight="0.30769232" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -447,13 +455,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Formulário/Data/campo_fluig_data.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/css/gatherWidgets.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -480,13 +481,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../bk.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret column="105642" lean-forward="true" selection-start-column="105642" selection-end-column="105642" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../bk.json" />
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html" />
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js" />
     <entry file="file://$PROJECT_DIR$/forms/Cadastro de Recurso/Lista de Recursos.html" />
@@ -597,13 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../UNI EVANGELICA/forms/1065 - solicitacaoCompras/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="59" selection-start-line="59" selection-end-line="71" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../BULLA/forms/32449 - Consultoria Bulla Presencial/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -657,16 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="46" column="78" selection-start-line="46" selection-start-column="78" selection-end-line="46" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="9" column="57" lean-forward="true" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#small#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,6 +717,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../UNI EVANGELICA/forms/1065 - solicitacaoCompras/enviaEmailNotificacao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="126" column="37" lean-forward="true" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../UNI EVANGELICA/forms/1065 - solicitacaoCompras/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -749,7 +741,17 @@
     <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#small#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

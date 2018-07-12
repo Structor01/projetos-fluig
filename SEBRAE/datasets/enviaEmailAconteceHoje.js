@@ -1,6 +1,7 @@
 function defineStructure() {
     addColumn("DataEv");
     addColumn("Cidade");
+    addColumn("Evento");
     addColumn("nEnvios");
     addColumn("travaSeguranca");
     setKey(new Array("DataEv"));
@@ -11,6 +12,7 @@ function createDataset(fields, constraints, sortFields) {
     var dataset = DatasetBuilder.newDataset();
     dataset.addColumn("DataEv");
     dataset.addColumn("Cidade");
+    dataset.addColumn("Evento");
     dataset.addColumn("nEnvios");
     dataset.addColumn("travaSeguranca");
 
@@ -61,7 +63,7 @@ function createDataset(fields, constraints, sortFields) {
         var colleague = DatasetFactory.getDataset("colleague", null, active, null);
 
         for(var j=0; j < colleague.rowsCount; j++) {
-            // destinatarios.add(colleague.getValue(j, "colleaguePK.colleagueId"));
+            destinatarios.add(colleague.getValue(j, "colleaguePK.colleagueId"));
             log.info('envio email: ' + colleague.getValue(j, "colleaguePK.colleagueId"));
             nEnvios++;
         }
@@ -79,7 +81,7 @@ function createDataset(fields, constraints, sortFields) {
                 c1 = new Array(c1);
                 var cidades = DatasetFactory.getDataset("dsCidades", null, c1, null);
                 var cid = cidades.getValue(0, "descricaoCidade");
-                var nomeEvento = cidades.getValue(i,"nomeEvento");
+                var nomeEvento = eventos.getValue(i,"nomeEvento");
                 var dtInicio = eventos.getValue(i,"dtInicio");
                 var dtFinal = eventos.getValue(i,"dtFinal");
                 html +=
@@ -96,6 +98,7 @@ function createDataset(fields, constraints, sortFields) {
                 dataset.addRow(new Array(
                     dtInicio,
                     cid,
+                    nomeEvento,
                     nEnvios,
                     travaSeguranca.toString()
                 ));
