@@ -2,10 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wcm/widget/gatherWidgets/target/gatherWidgets.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/gatherWidgets/target/gatherWidgets.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/SEBRAE/dsSqlConsulta.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/SEBRAE/dsSqlConsulta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/public/lang-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/public/node.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/public/stylesheets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/views/pages/db.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/views/pages/index.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/views/partials/header.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migracao/views/partials/nav.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/Archive.zip" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Archive.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/Eventos/target/Eventos.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/eventosCadastro/target/eventosCadastro.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/eventosCadastro/target/eventosCadastro.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/recursoGest/target/recursoGest.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,29 +36,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gatherWidgets.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="enviaEmailAconteceHoje.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
-              <folding>
-                <element signature="n#style#0;n#small#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -113,9 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/application.info" />
-        <option value="$PROJECT_DIR$/../UNIMED/forms/6 - Formulário Solicitação de Pagamento/custom.js" />
-        <option value="$PROJECT_DIR$/forms/Lista de Eventos/Lista de Eventos.html" />
         <option value="$PROJECT_DIR$/forms/Lista de Eventos/custom.js" />
         <option value="$PROJECT_DIR$/wcm/widget/eventosCadastro/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/eventosCadastro/src/main/webapp/resources/js/eventosCadastro.js" />
@@ -164,6 +156,9 @@
         <option value="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/resources/view.ftl" />
         <option value="$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js" />
         <option value="$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" />
+        <option value="$PROJECT_DIR$/datasets/SEBRAE/dsSqlConsulta.js" />
+        <option value="$PROJECT_DIR$/sebrae-migracao/index.js" />
+        <option value="$PROJECT_DIR$/migracao/index.js" />
       </list>
     </option>
   </component>
@@ -176,9 +171,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="394" />
+    <option name="y" value="140" />
     <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -186,6 +183,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,94 +191,10 @@
               <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="datasets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="gatherWidgets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="gatherWidgets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="gatherWidgets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="gatherWidgets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="gatherWidgets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="gatherWidgets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
-              <item name="wcm" type="462c0819:PsiDirectoryNode" />
-              <item name="widget" type="462c0819:PsiDirectoryNode" />
-              <item name="gatherWidgets" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,6 +209,10 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/migracao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/forms/32074 - Lista de Recursos" />
       <recent name="$PROJECT_DIR$/../.." />
@@ -387,11 +305,15 @@
       <workItem from="1530819815122" duration="4497000" />
       <workItem from="1531311054120" duration="1074000" />
       <workItem from="1531320611435" duration="6000" />
+      <workItem from="1531416176836" duration="5394000" />
+      <workItem from="1531424811730" duration="130000" />
+      <workItem from="1531424985023" duration="71000" />
+      <workItem from="1531916867852" duration="589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277017000" />
+    <option name="totallyTimeSpent" value="283201000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,16 +325,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32905984" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" visible="true" weight="0.30769232" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.31623933" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -423,25 +346,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32905984" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" weight="0.30769232" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -455,21 +359,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/css/gatherWidgets.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="237" column="137" selection-start-line="237" selection-start-column="137" selection-end-line="237" selection-end-column="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/active.js" />
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/formRecursos.css" />
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/imagem.js" />
     <entry file="file://$PROJECT_DIR$/forms/32074 - Lista de Recursos/zoom.js" />
@@ -570,13 +459,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/syncSAS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/syncSAS.js" />
     <entry file="file://$PROJECT_DIR$/datasets/enviaEmail.js" />
     <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
@@ -690,33 +573,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/syncEnviaEmail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="42" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#onSync#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/recursosGrupos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="18" selection-start-line="18" selection-end-line="67" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#onSync#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/syncEnviaEmail.js" />
+    <entry file="file://$PROJECT_DIR$/datasets/recursosGrupos.js" />
+    <entry file="file://$PROJECT_DIR$/datasets/dsRecursosDisponiveis.js" />
     <entry file="file://$PROJECT_DIR$/../UNI EVANGELICA/forms/1065 - solicitacaoCompras/enviaEmailNotificacao.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -738,6 +597,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js" />
     <entry file="file://$PROJECT_DIR$/wcm/widget/gatherWidgets/src/main/webapp/resources/js/gatherWidgets.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -745,15 +605,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/enviaEmailAconteceHoje.js">
+    <entry file="file://$PROJECT_DIR$/datasets/SEBRAE/dsSqlConsulta.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
-          <folding>
-            <element signature="n#style#0;n#small#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/migracao/index.js" />
   </component>
 </project>

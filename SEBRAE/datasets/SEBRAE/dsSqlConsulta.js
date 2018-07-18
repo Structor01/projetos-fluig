@@ -4,13 +4,17 @@ function createDataset(fields, constraints, sortFields) {
     var ic = new javax.naming.InitialContext();
     var ds = ic.lookup(dataSource);
     var created = false;
-    var myQuery = "select * from pessoas";
+    var myQuery = "SELECT * FROM `view_blog_post`";
     log.info("QUERY: " + myQuery);
     try {
         var conn = ds.getConnection();
+        log.info('--Conn ' + conn);
         var stmt = conn.createStatement();
+        log.info('--stmt ' + stmt);
         var rs = stmt.executeQuery(myQuery);
+        log.info('--rs ' + rs);
         var columnCount = rs.getMetaData().getColumnCount();
+        log.info('--columnCount ' + columnCount);
         while (rs.next()) {
             if (!created) {
                 for (var i = 1; i <= columnCount; i++) {
