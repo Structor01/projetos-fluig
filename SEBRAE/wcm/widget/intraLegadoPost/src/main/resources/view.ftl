@@ -17,14 +17,17 @@
                 <div class="tab-pane" id="videos">
                     <div class="row" ng-app="videos" ng-controller="myCtrl">
                         <!--<h1 ng-repeat="x in records">{{x}}</h1>-->
-                        <div class="col-md-4">
-                            <video src="/socialmedia/api/rest/media/mediafile/intranet-legado/VIDEO/40816?.mp4" controls type="video/mp4" class="fp-engine" autoplay="autoplay" preload="none" x-webkit-airplay="allow"></video>
+                        <div class="col-md-12">
+                            
                         </div>
                         <div class="col-md-4">
-                            <video src="/socialmedia/api/rest/media/mediafile/intranet-legado/VIDEO/40816?.mp4" controls type="video/mp4" class="fp-engine" autoplay="autoplay" preload="none" x-webkit-airplay="allow"></video>
+                            <video width="100%" src="/socialmedia/api/rest/media/mediafile/intranet-legado/VIDEO/40816?.mp4" controls type="video/mp4" class="fp-engine" preload="none" x-webkit-airplay="allow"></video>
                         </div>
                         <div class="col-md-4">
-                            <video src="/socialmedia/api/rest/media/mediafile/intranet-legado/VIDEO/40816?.mp4" controls type="video/mp4" class="fp-engine" autoplay="autoplay" preload="none" x-webkit-airplay="allow"></video>
+                            <video width="100%" src="/socialmedia/api/rest/media/mediafile/intranet-legado/VIDEO/40816?.mp4" controls type="video/mp4" class="fp-engine"  preload="none" x-webkit-airplay="allow"></video>
+                        </div>
+                        <div class="col-md-4">
+                            <video width="100%" src="/socialmedia/api/rest/media/mediafile/intranet-legado/VIDEO/40816?.mp4" controls type="video/mp4" class="fp-engine"  preload="none" x-webkit-airplay="allow"></video>
                         </div>
                     </div>
                 </div>
