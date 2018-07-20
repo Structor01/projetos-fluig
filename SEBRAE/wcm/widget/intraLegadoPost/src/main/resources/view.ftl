@@ -1,4 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <div id="Legado_${instanceId}" class="super-widget wcm-widget-class fluig-style-guide" data-params="Legado.instance({message: 'Hello world'})">
     <div class="fluig-style-guide">
         <div class="container-fluid">
@@ -20,11 +22,12 @@
 
                         </div>
                         <div class="videosW col-md-4" ng-repeat="x in records">
-                            <!--<div class="fadeOutVideo">-->
-                                <!--play-->
-                            <!--</div>-->
+                            <div class="fadeOutVideo">
+                                <h5>{{ x['nmTitulo'] }}</h5>
+                                <span><i class="material-icons">play_arrow</i></span>
+                            </div>
                             <video src="/socialmedia/api/rest/media/mediafile/intranet-legado/VIDEO/{{x['docId']}}?.mp4" type="video/mp4" class="fp-engine" preload="metadata" x-webkit-airplay="allow"></video>
-                            <h5>{{ x['nmTitulo'].length > 50 ? x['nmTitulo'].substring(0,50) + '...' :  x['nmTitulo'] }}</h5>
+                            <h5 class="title">{{ x['nmTitulo'].length > 50 ? x['nmTitulo'].substring(0,50) + '...' :  x['nmTitulo'] }}</h5>
                         </div>
                     </div>
                 </div>
@@ -52,7 +55,7 @@
             cursor: pointer;
         }
 
-        .videosW h5 {
+        .videosW .title {
             background: rgba(0,0,0,0.8);
             padding: 10px;
             position: absolute;
@@ -61,14 +64,17 @@
         }
 
         .fadeOutVideo {
-            display: none;
             position: absolute;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,.5);
+            background: rgba(0,0,0,.9);
             margin: 1rem;
             margin-top: -.5rem;
             margin-left: -.5rem;
+            padding-top: .5rem;
+            padding-left: .5rem;
+            z-index: 1000;
+            color: white;
         }
     </style>
 
