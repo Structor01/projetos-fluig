@@ -1,6 +1,11 @@
 var Legado = SuperWidget.extend({
     message: null,
     init: function () {
+
+    },
+    videos: function() {
+        var dt = DatasetFactory.getDataset("dsVideosLegado", null, null, null);
+        return dt.values;
     },
     bindings: {
         local: {
