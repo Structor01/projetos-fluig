@@ -3,8 +3,17 @@ var Legado = SuperWidget.extend({
     init: function () {
 
     },
+    categoriaVideos: [],
     videos: function() {
         var dt = DatasetFactory.getDataset("dsVideosLegado", null, null, null);
+        var categorias = [];
+        for(var i in dt.values) {
+            if(categorias.indexOf(dt.values[i]['nmCategoria']) == -1) {
+                categorias.push(dt.values[i]['nmCategoria']);
+            }
+        }
+
+        Legado.categoriaVideos = categorias;
         return dt.values;
     },
     bindings: {
@@ -18,6 +27,16 @@ var Legado = SuperWidget.extend({
         $div.append($message);
     }
 });
+
+function filtraVideos(e) {
+    var value = $(e).val();
+    $('.videosW').show();
+    if(value != 'Categoria')
+    $('.videosW').each(function () {
+       var cat = $(this).find('.subtitle').html();
+       if(cat != value) $(this).hide();
+    });
+}
 
 $(document).ready(function () {
     $('.pageTitle').parent().css('display', 'none');
