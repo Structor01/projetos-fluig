@@ -16,6 +16,37 @@ var Legado = SuperWidget.extend({
         Legado.categoriaVideos = categorias;
         return dt.values;
     },
+    noticias: function() {
+        var dt = DatasetFactory.getDataset("dsNoticiasLegado", null, null, null);
+        for(var i in dt.values) {
+            var v = dt.values[i];
+            var pasta = DatasetFactory.getDataset("dsNoticiasCategoriaLegado", null, [
+                DatasetFactory.createConstraint("idCategoria", v['idCategoria'], v['idCategoria'], ConstraintType.MUST_NOT)
+            ], null);
+            pasta = pasta.values[0]['pasta'];
+            console.log(v,pasta);
+        }
+    },
+    updateNoticia:function(idNoticia,idFluig) {
+        $.ajax({
+            type: "post",
+            url: "/api/public/2.0/authorize/client/invoke",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                serviceCode: 'Migracao',
+                tenantCode: '1',
+                endpoint: '/update?c=noticias&f={"idNoticia":'+idNoticia+'}&u={"idFluig":'+idFluig+'}',
+                method: 'get'
+            }),
+            dataType: "json",
+            success: function(data){
+                return true;
+            },
+            failure: function(errMsg) {
+                return false;
+            }
+        });
+    },
     bindings: {
         local: {
             'show-message': ['click_showMessage']
