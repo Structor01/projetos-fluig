@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/dsNoticiasLegado.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/dsNoticiasLegado.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/target/intraLegadoPost.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/target/intraLegadoPost.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SENAR" beforeDir="false" afterPath="$PROJECT_DIR$/../SENAR" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,74 +20,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dsVideosLegado.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datasets/dsVideosLegado.js">
+    <leaf>
+      <file leaf-file-name="scratch.js" pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dsNoticiasLegado.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/datasets/dsNoticiasLegado.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="155" column="17" lean-forward="true" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Eventos.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4005">
-              <caret line="267" column="7" selection-start-line="247" selection-start-column="4" selection-end-line="267" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getDataset.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Arquivos Uteis/getDataset.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.ftl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="111" column="25" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
-              <folding>
-                <element signature="e#3448#3454#0" expanded="true" />
-                <element signature="e#5937#5943#0" expanded="true" />
-                <element signature="e#7035#7041#0" expanded="true" />
-                <element signature="e#7160#7166#0" expanded="true" />
-                <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                <element signature="n#style#0;n#video#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getDataset.js" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/getDataset.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="intraLegadoPost.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+            <state relative-caret-position="376">
+              <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -100,8 +42,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>constraints</find>
-      <find>Data</find>
       <find>appendToTable</find>
       <find>execu</find>
       <find>GLOBAL_PARAMS['listPages']</find>
@@ -130,6 +70,8 @@
       <find>modal</find>
       <find>videop</find>
       <find>ng-cl</find>
+      <find>.containerVideo &gt;</find>
+      <find>cidade</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -161,8 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/events/displayFields.js" />
-        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/zoom.js" />
         <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/Lista de Recursos.html" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.html" />
         <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js" />
@@ -209,9 +149,11 @@
         <option value="$PROJECT_DIR$/datasets/dsConsultaApiLegado.js" />
         <option value="$PROJECT_DIR$/../Arquivos Uteis/getDataset.js" />
         <option value="$PROJECT_DIR$/datasets/dsVideosLegado.js" />
-        <option value="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js" />
-        <option value="$PROJECT_DIR$/datasets/dsNoticiasLegado.js" />
         <option value="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl" />
+        <option value="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.es6" />
+        <option value="$PROJECT_DIR$/datasets/dsNoticiasLegado.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
       </list>
     </option>
   </component>
@@ -225,10 +167,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-1" />
-    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="777" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -265,6 +205,13 @@
               <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
               <item name="wcm" type="462c0819:PsiDirectoryNode" />
               <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="intraLegadoPost" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
               <item name="recursoGest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -276,7 +223,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="HTML" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JavaScript&#10;HTML" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
@@ -391,12 +338,16 @@
       <workItem from="1532035947245" duration="232000" />
       <workItem from="1532089962051" duration="17231000" />
       <workItem from="1532193682204" duration="6000" />
-      <workItem from="1532435923391" duration="5259000" />
+      <workItem from="1532435923391" duration="6092000" />
+      <workItem from="1532455267520" duration="2097000" />
+      <workItem from="1532520760671" duration="4813000" />
+      <workItem from="1532611420361" duration="25000" />
+      <workItem from="1532699795050" duration="711000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="318072000" />
+    <option name="totallyTimeSpent" value="326551000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,14 +362,14 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.31623933" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.2948718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -445,34 +396,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/ramaisNew/src/main/resources/view.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="69" column="75" lean-forward="true" selection-start-line="69" selection-start-column="75" selection-end-line="69" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/analyticsFluigW/src/main/resources/edit.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="65" selection-start-line="1" selection-start-column="65" selection-end-line="1" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/recursoGest/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -681,27 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4005">
-          <caret line="267" column="7" selection-start-line="247" selection-start-column="4" selection-end-line="267" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Arquivos Uteis/getDataset.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Google Drive/TOTVS/FLUIG/Exemplos/Dataset/getDataset.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -709,32 +611,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/dsVideosLegado.js">
+    <entry file="file://$PROJECT_DIR$/../../widget-social_application-socialtimeline-0/src/main/webapp/resources/socialtimeline.js" />
+    <entry file="file://$PROJECT_DIR$/../../widget-social_application-socialtimeline-0/src/main/resources/view.ftl" />
+    <entry file="file://$PROJECT_DIR$/../Arquivos Uteis/getDataset.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/dsNoticiasLegado.js">
+    <entry file="file://$PROJECT_DIR$/datasets/dsVideosLegado.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="155" column="17" lean-forward="true" selection-start-line="155" selection-start-column="17" selection-end-line="155" selection-end-column="17" />
+        <state relative-caret-position="150">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="111" column="25" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
-          <folding>
-            <element signature="e#3448#3454#0" expanded="true" />
-            <element signature="e#5937#5943#0" expanded="true" />
-            <element signature="e#7035#7041#0" expanded="true" />
-            <element signature="e#7160#7166#0" expanded="true" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#video#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="425">
+          <caret line="139" column="62" selection-start-line="139" selection-start-column="62" selection-end-line="139" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/Eventos/src/main/webapp/resources/js/Eventos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="79" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/dsNoticiasLegado.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="129" column="49" lean-forward="true" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
         </state>
       </provider>
     </entry>

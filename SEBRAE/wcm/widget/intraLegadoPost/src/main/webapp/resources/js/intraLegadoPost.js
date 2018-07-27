@@ -32,14 +32,33 @@ function filtraVideos(e) {
     var value = $(e).val();
     $('.videosW').show();
     if(value != 'Categoria')
-    $('.videosW').each(function () {
-       var cat = $(this).find('.subtitle').html();
-       if(cat != value) $(this).hide();
-    });
+        $('.videosW').each(function () {
+            var cat = $(this).find('.subtitle').html();
+            if(cat != value) $(this).hide();
+        });
 }
 
 $(document).ready(function () {
-    $('.pageTitle').parent().css('display', 'none');
-    $('.fl-header').css('display', 'none');
-    $('#visualizacaoPagina').css('margin-top','-100px');
+    // $('.pageTitle').parent().css('display', 'none');
+    // $('.fl-header').css('display', 'none');
+    // $('#visualizacaoPagina').css('margin-top','-100px');
+    $('.videosW').mouseenter(function (el) {
+        $(this).find('.fadeOutVideo').fadeIn('fast');
+    });
+    $('.videosW').mouseleave(function (el) {
+        $(this).find('.fadeOutVideo').fadeOut('fast');
+    });
+
+    // if($('#home').hasClass('active')) {
+    //     $('#_instance_8311_').hide();
+    //     setTimeout(()=>{
+    //         var html = '<div id="_instance_8311_" appcode="socialtimeline">'+$('#_instance_8311_').html()+'</div>';
+    //         $('#_instance_8311_').remove();
+    //         $('#home').html(html);
+    //     },2000);
+    // }
 });
+
+function postArticles() {
+
+}

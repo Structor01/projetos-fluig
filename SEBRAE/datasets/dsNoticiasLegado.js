@@ -126,7 +126,8 @@ function createDataset(fields, constraints, sortFields) {
                 if(result[i]['nmDestinoRelativoMidia'] != null) {
                     mediaName = result[i]['nmDestinoRelativoMidia'].toString().replace('/uploads/sebrae/noticia/', '');
                     var c1 = DatasetFactory.createConstraint("phisicalFile", mediaName, mediaName, ConstraintType.MUST);
-                    var cDoc = new Array(c1);
+                    var c2 = DatasetFactory.createConstraint("activeVersion", true, true, ConstraintType.MUST);
+                    var cDoc = new Array(c1, c2);
                     var docId = DatasetFactory.getDataset("document", null, cDoc, null);
                     log.info('--Doc Count: ' + docId.rowsCount);
                     if(docId.rowsCount > 0) {
