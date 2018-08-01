@@ -16,18 +16,24 @@ var Legado = SuperWidget.extend({
         Legado.categoriaVideos = categorias;
         return dt.values;
     },
-    noticias: function() {
-        var dt = DatasetFactory.getDataset("dsNoticiasLegado", null, null, null);
-        for(var i in dt.values) {
-            var v = dt.values[i];
-            var pasta = DatasetFactory.getDataset("dsNoticiasCategoriaLegado", null, [
-                DatasetFactory.createConstraint("idCategoria", v['idCategoria'], v['idCategoria'], ConstraintType.MUST_NOT)
-            ], null);
-            pasta = pasta.values[0]['pasta'];
-            console.log(v,pasta);
-        }
+    updateCover: function() {
+        return new Promise(resolve => {
+            var options = {
+                url: '/api/public/2.0/communities/articles/changeCover',
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'POST'
+            };
+
+            options.data ={}
+
+            options.data = JSON.stringify(options.data);
+            $.ajax(options).done(function(data) {
+                resolve(data);
+            })
+        })
     },
-    updateNoticia:function(idNoticia,idFluig) {
+    noticias: function() {
         $.ajax({
             type: "post",
             url: "/api/public/2.0/authorize/client/invoke",
@@ -35,17 +41,154 @@ var Legado = SuperWidget.extend({
             data: JSON.stringify({
                 serviceCode: 'Migracao',
                 tenantCode: '1',
-                endpoint: '/update?c=noticias&f={"idNoticia":'+idNoticia+'}&u={"idFluig":'+idFluig+'}',
+                endpoint: '/select?c=noticias&f=%7B%22idCategoria%22:2%7D&s=idNoticia&o=1',
                 method: 'get'
             }),
             dataType: "json",
             success: function(data){
-                return true;
+                var len = JSON.parse(data.content.result).length;
+                var idx = 0;
+                for(var i in JSON.parse(data.content.result)) {
+                    var v = JSON.parse(data.content.result);
+                    v = v[i];
+
+                    var c = [{
+                        "_field" : "documentDescription",
+                        "_initialValue": v['nmTitulo'],
+                        "_finalValue" :v['nmTitulo'],
+                        "_type": 1, "_likeSearch": true
+                    },{
+                        "_field" : "deleted",
+                        "_initialValue": false,
+                        "_finalValue" :false,
+                        "_type": 1, "_likeSearch": false
+                    }];
+
+                    Legado.getDataset(c,"document",['documentDescription','documentPK.documentId'], v).then(r=>{
+                        if(r[0].content.values.length == 0) {
+                            var pasta = DatasetFactory.getDataset("dsNoticiasCategoriaLegado", null, [
+                                DatasetFactory.createConstraint("idCategoria", r[1]['idCategoria'], r[1]['idCategoria'], ConstraintType.MUST)
+                            ], null);
+                            pasta = pasta.values[0]['pasta'];
+
+                            Legado.createNoticia(pasta, r[1]['txConteudo'], r[1]['nmTitulo'], r[1]['dataPublicacao']).then(r => {
+                            }).catch(err => {
+                                console.log(err)
+                            });
+                        } else {
+                            for(var el in r[0].content.values) {
+                                Legado.deleteNoticia(r[0].content.values[el]['documentPK.documentId']);
+                            }
+                        }
+
+                        console.log(v,pasta);
+                    });
+
+                    idx++;
+                    console.log('progresso', (idx*100)/len);
+                }
             },
             failure: function(errMsg) {
-                return false;
+                resolve(errMsg);
             }
         });
+    },
+    getDataset(constraints, name, fields,v) {
+        return new Promise(resolve => {
+            var options = {
+                url: '/api/public/ecm/dataset/datasets',
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'POST'
+            };
+
+            options.data ={
+                name:name,
+                "fields" : fields,
+                constraints:constraints
+            }
+
+            options.data = JSON.stringify(options.data);
+            $.ajax(options).done(function(data) {
+                resolve([data , v]);
+            })
+        })
+    },
+    deleteNoticia(documentId) {
+        return new Promise(resolve => {
+            var options = {
+                url: '/api/public/2.0/documents/deleteDocument/'+documentId,
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'POST'
+            };
+
+            options.data ={}
+
+            options.data = JSON.stringify(options.data);
+            $.ajax(options).done(function(data) {
+                resolve(data);
+            })
+        })
+    },
+    createNoticia: function(categoriaId,body,title,date) {
+        return new Promise(resolve => {
+            var options = {
+                url: '/api/public/2.0/communities/articles/createDraft',
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'POST'
+            };
+
+            options.data ={
+                "id":"",
+                "description":title + ' [' +disarrangeData(date)+']',
+                "keyWord":"",
+                "version":null,
+                "content":
+                "<html>\n<head>\n\t<title>"+title+"</title>\n\t<style type=\"text/css\">" +
+                "body{padding: 10px !important; word-wrap: break-word !important;}\n\t</style>\n\t<link href=\"/style-guide/css/fluig-style-guide.min.css\" " +
+                "rel=\"stylesheet\" type=\"text/css\" />\n\t<link href=\"/style-guide/css/fluig-style-guide-player.min.css\" rel=\"stylesheet\" type=\"text/css\" />" +
+                "<script src=\"/portal/resources/js/jquery/jquery.js\"></script><script src=\"/portal/resources/js/jquery/jquery-ui.min.js\"></script>" +
+                "<script src=\"/portal/resources/js/mustache/mustache-min.js\"></script><script src=\"/portal/resources/style-guide/js/fluig-style-guide.min.js\">" +
+                "</script>\n</head>\n<body class=\"fluig-style-guide\">"+body+"</body>\n</html>\n",
+                "alias":"intranet-legado",
+                "categoryId":categoriaId,
+                "expires":false,
+                "articleCoverVO":
+                    {"pictureName":null,"pictureId":null},
+                "draft":true,"topicId":"1",
+                "userNotify":false,
+                "attachments":[]
+            }
+
+            options.data = JSON.stringify(options.data);
+            $.ajax(options).done(function(data) {
+                resolve(data);
+            })
+        })
+    },
+    updateNoticia:function(idNoticia,idFluig) {
+        return new Promise(resolve => {
+            $.ajax({
+                type: "post",
+                url: "/api/public/2.0/authorize/client/invoke",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({
+                    serviceCode: 'Migracao',
+                    tenantCode: '1',
+                    endpoint: '/update?c=noticias&f=%7B%22idNoticia%22:'+idNoticia+'%7D&u=%7B%22idFluig%22:'+idFluig+'%7D',
+                    method: 'get'
+                }),
+                dataType: "json",
+                success: function(data){
+                    resolve(data)
+                },
+                failure: function(errMsg) {
+                    resolve(errMsg);
+                }
+            });
+        })
     },
     bindings: {
         local: {
@@ -79,16 +222,15 @@ $(document).ready(function () {
     $('.videosW').mouseleave(function (el) {
         $(this).find('.fadeOutVideo').fadeOut('fast');
     });
-
-    // if($('#home').hasClass('active')) {
-    //     $('#_instance_8311_').hide();
-    //     setTimeout(()=>{
-    //         var html = '<div id="_instance_8311_" appcode="socialtimeline">'+$('#_instance_8311_').html()+'</div>';
-    //         $('#_instance_8311_').remove();
-    //         $('#home').html(html);
-    //     },2000);
-    // }
 });
+
+function disarrangeData(e) {
+    var date = e.split('T');
+    date = date[0].split('-');
+    var hora = e.split('T')[1];
+    date = date[2]+'/'+date[1]+'/'+date[0];
+    return date;
+}
 
 function postArticles() {
 
