@@ -16,24 +16,134 @@ var Legado = SuperWidget.extend({
         Legado.categoriaVideos = categorias;
         return dt.values;
     },
-    updateCover: function() {
-        return new Promise(resolve => {
+    img: [],
+    updateNoticia: function(data) {
+        return new Promise(resolve=>{
             var options = {
-                url: '/api/public/2.0/communities/articles/changeCover',
+                url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/update',
                 contentType: 'application/json',
                 dataType: 'json',
                 type: 'POST'
             };
 
-            options.data ={}
-
+            options.data = {
+                "id": data.content['id'],
+                "description": data.content['description'],
+                "keyWord":"",
+                "version":data.content['version'],
+                "content":data.content['content'],
+                "alias":"intranet-legado",
+                "categoryId":data.content['categoryId'],
+                "expires":false,
+                "articleCoverVO":data.content['articleCoverVO'],
+                "draft":true,
+                "topicId":"1",
+                "userNotify":false,
+                "attachments":[]
+            };
             options.data = JSON.stringify(options.data);
             $.ajax(options).done(function(data) {
                 resolve(data);
+            });
+        });
+    },
+    updateCover: function(r,v) {
+        Legado.img.push(v['nmMidiaOriginal']);
+        return new Promise(resolve => {
+            var options = {
+                url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/get/intranet-legado/'+r,
+                contentType: 'application/json',
+                dataType: 'json',
+                type: 'GET'
+            };
+
+            $.ajax(options).done(function(data) {
+                data.content['img'] = Legado.img[0];
+                Legado.img.shift();
+
+                var c = [{
+                    "_field" : "documentDescription",
+                    "_initialValue": data.content['img'],
+                    "_finalValue" : data.content['img'],
+                    "_type": 1, "_likeSearch": false
+                },{
+                    "_field" : "activeVersion",
+                    "_initialValue": true,
+                    "_finalValue" :true,
+                    "_type": 1, "_likeSearch": false
+                }];
+
+                if(data.content['img'] != null) {
+                    Legado.getDataset(c, 'document', ['documentDescription','documentPK.documentId'], data).then(r=>{
+                        if(r[0]['content']['values']['length'] > 0) {
+                            Legado.updateNoticia(data).then(data=>{
+                                var options = {
+                                    url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/changeCover',
+                                    contentType: 'application/json',
+                                    dataType: 'json',
+                                    type: 'POST'
+                                };
+                                options.data = {
+                                    "id": data.content['id'],
+                                    "description": data.content['description'],
+                                    "keyWord":"",
+                                    "version":data.content['version'],
+                                    "content":data.content['content'],
+                                    "alias":"intranet-legado",
+                                    "categoryId":data.content['categoryId'],
+                                    "expires":false,
+                                    "articleCoverVO":{"pictureName":null,"pictureId":r[0]['content']['values'][0]['documentPK.documentId']},
+                                    "draft":true,
+                                    "topicId":"1",
+                                    "userNotify":false,
+                                    "attachments":[]
+                                };
+                                options.data = JSON.stringify(options.data);
+                                $.ajax(options).done(function(data) {
+                                    var img = new Image();
+                                    img.src = "http://fluig.sebraego.com.br"+data.content.covers.cover_image_original;
+                                    img.onload = function() {
+                                        var obj = {};
+                                        obj['h'] = img.height;
+                                        obj['w'] = img.width;
+                                        obj['type'] = img.src.split('.').pop();
+                                        var options = {
+                                            url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/changeCover',
+                                            contentType: 'application/json',
+                                            dataType: 'json',
+                                            type: 'POST'
+                                        };
+                                        options.data = {
+                                            "id": data.content['id'],
+                                            "description": data.content['description'],
+                                            "keyWord":"",
+                                            "version":data.content['version'],
+                                            "content":data.content['content'],
+                                            "alias":"intranet-legado",
+                                            "categoryId":data.content['categoryId'],
+                                            "expires":false,
+                                            "articleCoverVO":data.content['articleCoverVO'],
+                                            "draft":true,
+                                            "topicId":"1",
+                                            "userNotify":false,
+                                            "attachments":[]
+                                        };
+                                        resolve(obj);
+                                    };
+                                });
+                            });
+                        } else {
+                            resolve('Não há imagem');
+                        }
+                    });
+                } else {
+                    resolve('Não há imagem');
+                }
+
             })
         })
     },
-    noticias: function() {
+    noticias: function(categoria) {
         $.ajax({
             type: "post",
             url: "/api/public/2.0/authorize/client/invoke",
@@ -41,7 +151,7 @@ var Legado = SuperWidget.extend({
             data: JSON.stringify({
                 serviceCode: 'Migracao',
                 tenantCode: '1',
-                endpoint: '/select?c=noticias&f=%7B%22idCategoria%22:2%7D&s=idNoticia&o=1',
+                endpoint: '/select?c=noticias&f=%7B%22idCategoria%22:' + categoria + '%7D&s=idNoticia&o=1',
                 method: 'get'
             }),
             dataType: "json",
@@ -58,10 +168,10 @@ var Legado = SuperWidget.extend({
                         "_finalValue" :v['nmTitulo'],
                         "_type": 1, "_likeSearch": true
                     },{
-                        "_field" : "deleted",
+                        "_field" : "activeVersion",
                         "_initialValue": false,
                         "_finalValue" :false,
-                        "_type": 1, "_likeSearch": false
+                        "_type": 1, "_likeSearch": true
                     }];
 
                     Legado.getDataset(c,"document",['documentDescription','documentPK.documentId'], v).then(r=>{
@@ -76,12 +186,12 @@ var Legado = SuperWidget.extend({
                                 console.log(err)
                             });
                         } else {
-                            for(var el in r[0].content.values) {
-                                Legado.deleteNoticia(r[0].content.values[el]['documentPK.documentId']);
-                            }
+                            Legado.updateCover(r[0].content.values[0]['documentPK.documentId'], r[1]).then(r=>{
+                                console.log(r);
+                            });
                         }
 
-                        console.log(v,pasta);
+                        console.log(r[1]['nmTitulo'], pasta);
                     });
 
                     idx++;
@@ -117,7 +227,7 @@ var Legado = SuperWidget.extend({
     deleteNoticia(documentId) {
         return new Promise(resolve => {
             var options = {
-                url: '/api/public/2.0/documents/deleteDocument/'+documentId,
+                url: '/api/public/2.0/communities/articles/get/intranet-legado/53406',
                 contentType: 'application/json',
                 dataType: 'json',
                 type: 'POST'
@@ -168,28 +278,28 @@ var Legado = SuperWidget.extend({
             })
         })
     },
-    updateNoticia:function(idNoticia,idFluig) {
-        return new Promise(resolve => {
-            $.ajax({
-                type: "post",
-                url: "/api/public/2.0/authorize/client/invoke",
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify({
-                    serviceCode: 'Migracao',
-                    tenantCode: '1',
-                    endpoint: '/update?c=noticias&f=%7B%22idNoticia%22:'+idNoticia+'%7D&u=%7B%22idFluig%22:'+idFluig+'%7D',
-                    method: 'get'
-                }),
-                dataType: "json",
-                success: function(data){
-                    resolve(data)
-                },
-                failure: function(errMsg) {
-                    resolve(errMsg);
-                }
-            });
-        })
-    },
+    // updateNoticia:function(idNoticia,idFluig) {
+    //     return new Promise(resolve => {
+    //         $.ajax({
+    //             type: "post",
+    //             url: "/api/public/2.0/authorize/client/invoke",
+    //             contentType: "application/json; charset=utf-8",
+    //             data: JSON.stringify({
+    //                 serviceCode: 'Migracao',
+    //                 tenantCode: '1',
+    //                 endpoint: '/update?c=noticias&f=%7B%22idNoticia%22:'+idNoticia+'%7D&u=%7B%22idFluig%22:'+idFluig+'%7D',
+    //                 method: 'get'
+    //             }),
+    //             dataType: "json",
+    //             success: function(data){
+    //                 resolve(data)
+    //             },
+    //             failure: function(errMsg) {
+    //                 resolve(errMsg);
+    //             }
+    //         });
+    //     })
+    // },
     bindings: {
         local: {
             'show-message': ['click_showMessage']

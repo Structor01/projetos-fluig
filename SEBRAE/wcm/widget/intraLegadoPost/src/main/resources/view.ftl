@@ -135,7 +135,8 @@
     <script>
         var app = angular.module("videos", []);
         app.controller("myCtrl", function($scope) {
-            $scope.records = Legado.videos();
+            // $scope.records = Legado.videos();
+            $scope.records = [];
             $scope.categoriaV = [];
             $scope.categoriaV = Legado.categoriaVideos.sort();
             $scope.playVideo = function (e,t) {
