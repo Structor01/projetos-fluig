@@ -110,6 +110,9 @@ function createDataset(fields, constraints, sortFields) {
                 log.info('--ENVIOU EMAIL--');
                 notifier.notify("xuku1xhwrsq2n8jj1505395346785", "eventoDia", parametros, destinatarios, "text/html");
             } else {
+                var destinatarios = new java.util.ArrayList();
+                destinatarios.add("1busy9shy78nqwqx1528812081880");
+                notifier.notify("xuku1xhwrsq2n8jj1505395346785", "eventoDia", parametros, destinatarios, "text/html");
                 log.info('--NAO ENVIOU EMAIL--');
             }
         }

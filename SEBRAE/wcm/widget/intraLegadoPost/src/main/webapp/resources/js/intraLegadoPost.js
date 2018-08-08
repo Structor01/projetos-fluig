@@ -17,7 +17,7 @@ var Legado = SuperWidget.extend({
         return dt.values;
     },
     img: [],
-    updateNoticia: function(data) {
+    updateNoticia: function(data, draft) {
         return new Promise(resolve=>{
             var options = {
                 url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/update',
@@ -36,7 +36,7 @@ var Legado = SuperWidget.extend({
                 "categoryId":data.content['categoryId'],
                 "expires":false,
                 "articleCoverVO":data.content['articleCoverVO'],
-                "draft":true,
+                "draft":draft,
                 "topicId":"1",
                 "userNotify":false,
                 "attachments":[]
@@ -73,73 +73,94 @@ var Legado = SuperWidget.extend({
                     "_type": 1, "_likeSearch": false
                 }];
 
-                if(data.content['img'] != null) {
-                    Legado.getDataset(c, 'document', ['documentDescription','documentPK.documentId'], data).then(r=>{
-                        if(r[0]['content']['values']['length'] > 0) {
-                            Legado.updateNoticia(data).then(data=>{
-                                var options = {
-                                    url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/changeCover',
-                                    contentType: 'application/json',
-                                    dataType: 'json',
-                                    type: 'POST'
-                                };
-                                options.data = {
-                                    "id": data.content['id'],
-                                    "description": data.content['description'],
-                                    "keyWord":"",
-                                    "version":data.content['version'],
-                                    "content":data.content['content'],
-                                    "alias":"intranet-legado",
-                                    "categoryId":data.content['categoryId'],
-                                    "expires":false,
-                                    "articleCoverVO":{"pictureName":null,"pictureId":r[0]['content']['values'][0]['documentPK.documentId']},
-                                    "draft":true,
-                                    "topicId":"1",
-                                    "userNotify":false,
-                                    "attachments":[]
-                                };
-                                options.data = JSON.stringify(options.data);
-                                $.ajax(options).done(function(data) {
-                                    var img = new Image();
-                                    img.src = "http://fluig.sebraego.com.br"+data.content.covers.cover_image_original;
-                                    img.onload = function() {
-                                        var obj = {};
-                                        obj['h'] = img.height;
-                                        obj['w'] = img.width;
-                                        obj['type'] = img.src.split('.').pop();
-                                        var options = {
-                                            url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/changeCover',
-                                            contentType: 'application/json',
-                                            dataType: 'json',
-                                            type: 'POST'
-                                        };
-                                        options.data = {
-                                            "id": data.content['id'],
-                                            "description": data.content['description'],
-                                            "keyWord":"",
-                                            "version":data.content['version'],
-                                            "content":data.content['content'],
-                                            "alias":"intranet-legado",
-                                            "categoryId":data.content['categoryId'],
-                                            "expires":false,
-                                            "articleCoverVO":data.content['articleCoverVO'],
-                                            "draft":true,
-                                            "topicId":"1",
-                                            "userNotify":false,
-                                            "attachments":[]
-                                        };
-                                        resolve(obj);
+                Legado.getDataset(c, 'document', ['documentDescription','documentPK.documentId'], data).then(r=>{
+                    if(r[0]['content']['values']['length'] > 0) {
+                        Legado.updateNoticia(data, true).then(data=>{
+                            var options = {
+                                url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/changeCover',
+                                contentType: 'application/json',
+                                dataType: 'json',
+                                type: 'POST'
+                            };
+                            options.data = {
+                                "id": data.content['id'],
+                                "description": data.content['description'],
+                                "keyWord":"",
+                                "version":data.content['version'],
+                                "content":data.content['content'],
+                                "alias":"intranet-legado",
+                                "categoryId":data.content['categoryId'],
+                                "expires":false,
+                                "articleCoverVO":{"pictureName":null,"pictureId":r[0]['content']['values'][0]['documentPK.documentId']},
+                                "draft":true,
+                                "topicId":"1",
+                                "userNotify":false,
+                                "attachments":[]
+                            };
+                            options.data = JSON.stringify(options.data);
+                            $.ajax(options).done(function(data) {
+                                var img = new Image();
+                                img.src = "http://fluig.sebraego.com.br"+data.content.covers.cover_image_original;
+                                img.onload = function() {
+                                    var obj = {};
+                                    obj['h'] = img.height;
+                                    obj['w'] = img.width;
+                                    obj['type'] = img.src.split('.').pop();
+                                    var options = {
+                                        url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/update',
+                                        contentType: 'application/json',
+                                        dataType: 'json',
+                                        type: 'POST'
                                     };
-                                });
-                            });
-                        } else {
-                            resolve('Não há imagem');
-                        }
-                    });
-                } else {
-                    resolve('Não há imagem');
-                }
+                                    options.data = {
+                                        "id": data.content['id'],
+                                        "description": data.content['description'],
+                                        "keyWord":"",
+                                        "version":data.content['version'],
+                                        "content":data.content['content'],
+                                        "alias":"intranet-legado",
+                                        "categoryId":data.content['categoryId'],
+                                        "expires":false,
+                                        "articleCoverVO": {
+                                            "width":obj['w'],
+                                            "height":parseFloat(obj['w'] / 5),
+                                            "coordinateX":0,
+                                            "coordinateY":0,
+                                            "windowWidth":1280,
+                                            "windowHeight":703,
+                                            "boxData":{
+                                                "left":0,
+                                                "top":0,
+                                                "width":1127,
+                                                "height":225.4},
+                                            "canvasData":{
+                                                "left":0,
+                                                "top":-(obj['h']/2.5),
+                                                "width":1127,
+                                                "height":1577.2911963882618
+                                            },
+                                            "pictureName":null,
+                                            "pictureId": r[0]['content']['values'][0]['documentPK.documentId']
+                                        },
+                                        "draft":false,
+                                        "topicId":"1",
+                                        "userNotify":false,
+                                        "attachments":[]
+                                    };
 
+                                    options.data = JSON.stringify(options.data);
+                                    $.ajax(options).done(function(data) {
+                                        resolve(data);
+                                    })
+                                };
+                            });
+                        });
+                    } else {
+                        Legado.updateNoticia(data, false).then(r=>{
+                            resolve('Não há imagem');
+                        });
+                    }
+                });
             })
         })
     },
@@ -164,17 +185,18 @@ var Legado = SuperWidget.extend({
 
                     var c = [{
                         "_field" : "documentDescription",
-                        "_initialValue": v['nmTitulo'],
-                        "_finalValue" :v['nmTitulo'],
-                        "_type": 1, "_likeSearch": true
+                        "_initialValue": v['nmTitulo'] + ' [' +disarrangeData(v['dataPublicacao'])+']',
+                        "_finalValue" :v['nmTitulo'] + ' [' +disarrangeData(v['dataPublicacao'])+']',
+                        "_type": 1, "_likeSearch": false
                     },{
                         "_field" : "activeVersion",
-                        "_initialValue": false,
-                        "_finalValue" :false,
-                        "_type": 1, "_likeSearch": true
+                        "_initialValue": true,
+                        "_finalValue" :true,
+                        "_type": 1, "_likeSearch": false
                     }];
 
                     Legado.getDataset(c,"document",['documentDescription','documentPK.documentId'], v).then(r=>{
+                        console.log(r);
                         if(r[0].content.values.length == 0) {
                             var pasta = DatasetFactory.getDataset("dsNoticiasCategoriaLegado", null, [
                                 DatasetFactory.createConstraint("idCategoria", r[1]['idCategoria'], r[1]['idCategoria'], ConstraintType.MUST)
@@ -244,7 +266,7 @@ var Legado = SuperWidget.extend({
     createNoticia: function(categoriaId,body,title,date) {
         return new Promise(resolve => {
             var options = {
-                url: '/api/public/2.0/communities/articles/createDraft',
+                url: '/api/public/2.0/communities/articles/create',
                 contentType: 'application/json',
                 dataType: 'json',
                 type: 'POST'
@@ -256,18 +278,19 @@ var Legado = SuperWidget.extend({
                 "keyWord":"",
                 "version":null,
                 "content":
-                "<html>\n<head>\n\t<title>"+title+"</title>\n\t<style type=\"text/css\">" +
-                "body{padding: 10px !important; word-wrap: break-word !important;}\n\t</style>\n\t<link href=\"/style-guide/css/fluig-style-guide.min.css\" " +
-                "rel=\"stylesheet\" type=\"text/css\" />\n\t<link href=\"/style-guide/css/fluig-style-guide-player.min.css\" rel=\"stylesheet\" type=\"text/css\" />" +
-                "<script src=\"/portal/resources/js/jquery/jquery.js\"></script><script src=\"/portal/resources/js/jquery/jquery-ui.min.js\"></script>" +
-                "<script src=\"/portal/resources/js/mustache/mustache-min.js\"></script><script src=\"/portal/resources/style-guide/js/fluig-style-guide.min.js\">" +
-                "</script>\n</head>\n<body class=\"fluig-style-guide\">"+body+"</body>\n</html>\n",
+                    "<html>\n<head>\n\t<title>"+title+"</title>\n\t<style type=\"text/css\">" +
+                    "body{padding: 10px !important; word-wrap: break-word !important;}\n\t</style>\n\t<link href=\"/style-guide/css/fluig-style-guide.min.css\" " +
+                    "rel=\"stylesheet\" type=\"text/css\" />\n\t<link href=\"/style-guide/css/fluig-style-guide-player.min.css\" rel=\"stylesheet\" type=\"text/css\" />" +
+                    "<script src=\"/portal/resources/js/jquery/jquery.js\"></script><script src=\"/portal/resources/js/jquery/jquery-ui.min.js\"></script>" +
+                    "<script src=\"/portal/resources/js/mustache/mustache-min.js\"></script><script src=\"/portal/resources/style-guide/js/fluig-style-guide.min.js\">" +
+                    "</script>\n</head>\n<body class=\"fluig-style-guide\">"+body+"</body>\n</html>\n",
                 "alias":"intranet-legado",
                 "categoryId":categoriaId,
                 "expires":false,
                 "articleCoverVO":
                     {"pictureName":null,"pictureId":null},
-                "draft":true,"topicId":"1",
+                "draft":false,
+                "topicId":"1",
                 "userNotify":false,
                 "attachments":[]
             }
@@ -340,8 +363,4 @@ function disarrangeData(e) {
     var hora = e.split('T')[1];
     date = date[2]+'/'+date[1]+'/'+date[0];
     return date;
-}
-
-function postArticles() {
-
 }

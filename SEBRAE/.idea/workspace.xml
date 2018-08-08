@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6563e3bf-2986-4749-8f49-5ed8f81e11cd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/SEBRAE/enviaEmailAconteceHoje.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/SEBRAE/enviaEmailAconteceHoje.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/SEBRAE/syncSAS.js" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/SEBRAE/syncSAS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/eventosCadastro/src/main/webapp/resources/js/eventosCadastro.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/eventosCadastro/src/main/webapp/resources/js/eventosCadastro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wcm/widget/eventosCadastro/target/eventosCadastro.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/eventosCadastro/target/eventosCadastro.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/target/intraLegadoPost.war" beforeDir="false" afterPath="$PROJECT_DIR$/wcm/widget/intraLegadoPost/target/intraLegadoPost.war" afterDir="false" />
@@ -21,18 +25,34 @@
     <session id="-1396254965">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="21" />
+          <entry key="js" value="493" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="21" />
+          <entry key="JavaScript" value="493" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="cover_image_original" value="1" />
+          <entry key="ftl" value="1" />
+          <entry key="js" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="1" />
+          <entry key="JavaScript" value="6" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -42,17 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="71" column="39" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="138" column="32" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
+            <state relative-caret-position="480">
+              <caret line="291" column="30" lean-forward="true" selection-start-line="291" selection-start-column="30" selection-end-line="291" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -69,16 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>enviaEmailNotificacao</find>
-      <find>invoke</find>
-      <find>alterafo</find>
-      <find>salva</find>
-      <find>cardData</find>
-      <find>salvar</find>
-      <find>salvarForm</find>
-      <find>clear</find>
-      <find>controlV</find>
-      <find>playVideo</find>
       <find>modal</find>
       <find>videop</find>
       <find>ng-cl</find>
@@ -94,11 +95,21 @@
       <find>options.da</find>
       <find>social</find>
       <find>getImgInfo</find>
-      <find>img</find>
-      <find>update</find>
       <find>updateNoticia</find>
       <find>videos</find>
       <find>updatec</find>
+      <find>active</find>
+      <find>changeco</find>
+      <find>playVideo</find>
+      <find>img</find>
+      <find>salvarForm</find>
+      <find>dtInicio</find>
+      <find>data</find>
+      <find>daten</find>
+      <find>destinatarios</find>
+      <find>update</find>
+      <find>vers</find>
+      <find>createn</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;thumbnail&quot; target=&quot;_blank&quot;</replace>
@@ -130,8 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.html" />
-        <option value="$PROJECT_DIR$/forms/32074 - Lista de Recursos/custom.js" />
         <option value="$PROJECT_DIR$/forms/Cadastro de Recurso/zoom.js" />
         <option value="$PROJECT_DIR$/forms/39224 - Cadastro de Recurso/Lista de Recursos.html" />
         <option value="$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html" />
@@ -180,6 +189,8 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
         <option value="$PROJECT_DIR$/datasets/dsNoticiasCategoriaLegado.js" />
         <option value="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl" />
+        <option value="$PROJECT_DIR$/datasets/SEBRAE/syncSAS.js" />
+        <option value="$PROJECT_DIR$/datasets/SEBRAE/enviaEmailAconteceHoje.js" />
         <option value="$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js" />
       </list>
     </option>
@@ -200,7 +211,85 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="intraLegadoPost" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="intraLegadoPost" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="intraLegadoPost" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="intraLegadoPost" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="intraLegadoPost" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEBRAE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SEBRAE" type="462c0819:PsiDirectoryNode" />
+              <item name="wcm" type="462c0819:PsiDirectoryNode" />
+              <item name="widget" type="462c0819:PsiDirectoryNode" />
+              <item name="intraLegadoPost" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -340,12 +429,13 @@
       <workItem from="1533296901810" duration="11214000" />
       <workItem from="1533326169580" duration="236000" />
       <workItem from="1533326548931" duration="1245000" />
-      <workItem from="1533561158526" duration="52000" />
+      <workItem from="1533561158526" duration="5323000" />
+      <workItem from="1533730648143" duration="5367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="361573000" />
+    <option name="totallyTimeSpent" value="372211000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,7 +450,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27164418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23272438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -371,7 +461,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32905984" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.29420084" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" weight="0.29278642" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32905984" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039715" side_tool="true" weight="0.32905984" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -389,22 +479,6 @@
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/datasets/syncSAS.js" />
-    <entry file="file://$PROJECT_DIR$/datasets/enviaEmail.js" />
-    <entry file="file://$PROJECT_DIR$/../BULLA/forms/32449 - Consultoria Bulla Presencial/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="236" column="28" selection-start-line="236" selection-start-column="28" selection-end-line="236" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/35473 - Formulário de Reserva de Recursos/Reserva de Recurso.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
@@ -461,13 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="126" column="37" lean-forward="true" selection-start-line="126" selection-start-column="37" selection-end-line="126" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../UNI EVANGELICA/forms/1065 - solicitacaoCompras/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -556,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/SEBRAE/dsCidadesSAS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/datasets/dsConsultaApiLegado.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -642,17 +702,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="71" column="39" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/resources/view.ftl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2070">
-          <caret line="138" column="32" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
+          <caret line="138" column="35" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../UNI EVANGELICA/forms/1065 - solicitacaoCompras/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="71" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/SEBRAE/ds_envia_email.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/SEBRAE/dsCidadesSAS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="3" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/SEBRAE/syncSAS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="144" column="16" lean-forward="true" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/SEBRAE/enviaEmailAconteceHoje.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1148">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../cover_image_original">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wcm/widget/intraLegadoPost/src/main/webapp/resources/js/intraLegadoPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="291" column="30" lean-forward="true" selection-start-line="291" selection-start-column="30" selection-end-line="291" selection-end-column="30" />
         </state>
       </provider>
     </entry>

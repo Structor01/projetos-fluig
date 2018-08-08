@@ -107,7 +107,8 @@ function createDataset(fields, constraints, sortFields) {
     dataset.addColumn("DescUnidadeOrganizacional");
     dataset.addColumn("Preco");
 
-    var dtInicio = '2018-01-01';
+
+    var dtInicio = getDateNow();
     var dtFinal = '2018-31-12';
     var mode;
     if (constraints != null) {
@@ -128,25 +129,24 @@ function createDataset(fields, constraints, sortFields) {
 
     try {
         var clientService = fluigAPI.getAuthorizeClientService();
+        log.info('/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial='+dtInicio+'&PeriodoFinal='+dtFinal);
+        var data = {};
+        data.companyId = "" + getValue("WKCompany");
+        data.serviceCode  = "" + 'SAS'
+        data.endpoint  = "" + '/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial='+dtInicio+'&PeriodoFinal='+dtFinal;
+        data.method  = "" + 'get';
+        data.timeoutService = "" + '100';
 
-        var data = {
-            companyId : getValue("WKCompany"),
-            serviceCode : 'SAS',
-            endpoint : '/Service/Evento/Consultar?CodSebrae=17&PeriodoInicial='+dtInicio+'&PeriodoFinal='+dtFinal,
-            method : 'get',
-            timeoutService: '100'
-        }
-
+        // var jsonS = JSON.stringify(data);
+        log.info(JSON.stringify(data));
         var vo = clientService.invoke(JSON.stringify(data));
         if(vo.getResult()== null || vo.getResult().isEmpty()){
             throw "Retorno está vazio";
         } else {
             var result = JSON.parse(vo.getResult());
-            // log.info(result[0]);
             for(var i in result) {
                 var sinc = 'false';
                 var jaCadastrado = DatasetFactory.getDataset("dsEventos", null, [DatasetFactory.createConstraint("codSAS", result[i]['CodEvento'].toString(), result[i]['CodEvento'].toString(), ConstraintType.MUST)], null);
-                if(jaCadastrado.rowsCount == 0) {
                     var constraints = new Array();
                     constraints.push(DatasetFactory.createConstraint("CardData", "dtFinal;" + disarrangeData(result[i]['PeriodoFinal']), "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "codSAS;" + result[i]['CodEvento'], "", ConstraintType.MUST));
@@ -159,9 +159,10 @@ function createDataset(fields, constraints, sortFields) {
                     constraints.push(DatasetFactory.createConstraint("CardData", "tipoEvento;" + verificaTipoEv(result[i]['DescProduto']), "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "unidadeVinculada;" + result[i]['DescUnidadeOrganizacional'], "", ConstraintType.MUST));
                     constraints.push(DatasetFactory.createConstraint("CardData", "valorInscricao;" + result[i]['Preco'], "", ConstraintType.MUST));
+                if(jaCadastrado.rowsCount == 0) {
                     salvarForm(constraints, false);
                 } else {
-                    sinc = 'true';
+                    salvarForm(constraints, jaCadastrado.getValue(0,'documentId'));
                 }
 
                 dataset.addRow(new Array(
@@ -213,6 +214,21 @@ function verificaTipoEv(ev) {
             if(ev.indexOf(rec) > -1) return rec;
         }
     }
+}
+
+
+function getDateNow() {
+    var today = new Date();
+    var year = today.getFullYear();
+    var month = (today.getMonth() + 1) < 10 ? '0' + (today.getMonth() + 1)	: (today.getMonth() + 1);
+    var day = today.getDate() < 10 ? '0' + today.getDate() : today.getDate();
+    var hour = today.getHours() < 10 ? '0' + today.getHours() : today.getHours();
+    var minute = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
+    var second = today.getSeconds() < 10 ? '0' + today.getSeconds() : today.getSeconds();
+    var currentHour = hour + ":" + minute + ":" + second;
+    var currentDate = year+'-'+month+'-'+day;
+    var currentTime = currentDate + "  " + currentHour;
+    return currentDate;
 }
 
 function disarrangeData(e) {

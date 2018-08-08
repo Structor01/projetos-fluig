@@ -264,7 +264,7 @@ function salvarForm() {
         var insere = DatasetFactory.getDataset("dsAlteraForm", null, constraints, null);
         var msg = 'O registro ' + cardId + ' foi alterado!';
         console.log(msg);
-        location.assign('http://fluig.sebraego.com.br/portal/p/1/listaEventos');
+        location.assign('http://fluig.sebraego.com.br/portal/p/1/eventosLista');
     } else alert('Por favor, preencha todos os campos obrigatórios');
 }
 
