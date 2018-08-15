@@ -47,6 +47,94 @@ var Legado = SuperWidget.extend({
             });
         });
     },
+    shareContent:function() {
+        $.ajax({
+            type: "post",
+            url: "/api/public/2.0/authorize/client/invoke",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                serviceCode: 'Migracao',
+                tenantCode: '1',
+                endpoint: encodeURI('/select?c=noticias&f={"posted":{"$ne":1}}&s=idNoticia&o=1&limit=100'),
+                method: 'get'
+            }),
+            dataType: "json",
+            success: function(data){
+                var len = JSON.parse(data.content.result).length;
+                var idx = 0;
+                for(var i in JSON.parse(data.content.result)) {
+                    var v = JSON.parse(data.content.result);
+                    v = v[i];
+
+                    $.ajax({
+                        type: "post",
+                        url: "/api/public/2.0/authorize/client/invoke",
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify({
+                            serviceCode: 'Migracao',
+                            tenantCode: '1',
+                            endpoint: encodeURI('/update?c=noticias&f={"idNoticia":'+v['idNoticia']+',"posted":{"$ne":1}}&u={"posted":1}&s=idNoticia&o=1&limit=100'),
+                            method: 'get'
+                        }),
+                        dataType: "json",
+                        success: function (data) {
+                            console.log(data);
+                        },
+                        failure: function(errMsg) {
+                            resolve(errMsg);
+                        }
+                    });
+
+                    var c = [{
+                        "_field" : "documentDescription",
+                        "_initialValue": v['nmTitulo'] + ' [' +disarrangeData(v['dataPublicacao'])+']',
+                        "_finalValue" :v['nmTitulo'] + ' [' +disarrangeData(v['dataPublicacao'])+']',
+                        "_type": 1, "_likeSearch": false
+                    },{
+                        "_field" : "activeVersion",
+                        "_initialValue": true,
+                        "_finalValue" :true,
+                        "_type": 1, "_likeSearch": false
+                    }];
+
+                    Legado.getDataset(c,"document",['documentDescription','documentPK.documentId'], v).then(r=>{
+                        var id = r[0].content['values'][0]['documentPK.documentId'];
+                        var options = {
+                            url: 'http://fluig.sebraego.com.br/api/public/2.0/communities/articles/get/intranet-legado/'+id,
+                            contentType: 'application/json',
+                            dataType: 'json',
+                            type: 'GET'
+                        };
+                        $.ajax(options).done(function(data) {
+                            if(Object.keys(data.content).length > 0) {
+                                var options = {
+                                    url: 'http://fluig.sebraego.com.br/api/public/social/share/shareContent',
+                                    contentType: 'application/json',
+                                    dataType: 'json',
+                                    type: 'POST'
+                                };
+                                options.data = {
+                                    "contentId": data.content['socialObjectId'],
+                                    "text":"",
+                                    "aliasTargets":["intranet-legado"],
+                                    "shareType":"SOCIABLE",
+                                    "originUrl":"articleview/arthur.barros.totvs.com.br.1/"+data.content['id']
+                                };
+                                options.data = JSON.stringify(options.data);
+                                $.ajax(options).done(function(data) {
+                                    idx++;
+                                    console.log('progresso', (idx*100)/len);
+                                });
+                            }
+                        });
+                    });
+                }
+            },
+            failure: function(errMsg) {
+                resolve(errMsg);
+            }
+        });
+    },
     updateCover: function(r,v) {
         Legado.img.push(v['nmMidiaOriginal']);
         return new Promise(resolve => {

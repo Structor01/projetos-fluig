@@ -116,20 +116,20 @@
             display: none;
         }
 
-        .modal-body {
-            text-align: center;
-            max-height: 100% !important;
-        }
-        .modal-header {
-            color: white;
-        }
-        .modal {
-            box-shadow: none !important;
-        }
-        .modal-content {
-            background: none !important;
-            border: none !important;
-        }
+        /*.modal-body {*/
+            /*text-align: center;*/
+            /*max-height: 100% !important;*/
+        /*}*/
+        /*.modal-header {*/
+            /*color: white;*/
+        /*}*/
+        /*.modal {*/
+            /*box-shadow: none !important;*/
+        /*}*/
+        /*.modal-content {*/
+            /*background: none !important;*/
+            /*border: none !important;*/
+        /*}*/
     </style>
 
     <script>
