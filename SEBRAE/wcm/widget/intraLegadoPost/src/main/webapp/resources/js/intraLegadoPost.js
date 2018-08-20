@@ -55,7 +55,7 @@ var Legado = SuperWidget.extend({
             data: JSON.stringify({
                 serviceCode: 'Migracao',
                 tenantCode: '1',
-                endpoint: encodeURI('/select?c=noticias&f={"posted":{"$ne":1}}&s=idNoticia&o=1&limit=100'),
+                endpoint: encodeURI('/select?c=noticias&f={"posted":{"$ne":1}}&s=idNoticia&o=1&limit=500'),
                 method: 'get'
             }),
             dataType: "json",
@@ -73,7 +73,7 @@ var Legado = SuperWidget.extend({
                         data: JSON.stringify({
                             serviceCode: 'Migracao',
                             tenantCode: '1',
-                            endpoint: encodeURI('/update?c=noticias&f={"idNoticia":'+v['idNoticia']+',"posted":{"$ne":1}}&u={"posted":1}&s=idNoticia&o=1&limit=100'),
+                            endpoint: encodeURI('/update?c=noticias&f={"idNoticia":'+v['idNoticia']+',"posted":{"$ne":1}}&u={"posted":1}'),
                             method: 'get'
                         }),
                         dataType: "json",
@@ -122,8 +122,8 @@ var Legado = SuperWidget.extend({
                                 };
                                 options.data = JSON.stringify(options.data);
                                 $.ajax(options).done(function(data) {
-                                    idx++;
                                     console.log('progresso', (idx*100)/len);
+                                    idx++;
                                 });
                             }
                         });
@@ -432,18 +432,6 @@ function filtraVideos(e) {
             if(cat != value) $(this).hide();
         });
 }
-
-$(document).ready(function () {
-    // $('.pageTitle').parent().css('display', 'none');
-    // $('.fl-header').css('display', 'none');
-    // $('#visualizacaoPagina').css('margin-top','-100px');
-    $('.videosW').mouseenter(function (el) {
-        $(this).find('.fadeOutVideo').fadeIn('fast');
-    });
-    $('.videosW').mouseleave(function (el) {
-        $(this).find('.fadeOutVideo').fadeOut('fast');
-    });
-});
 
 function disarrangeData(e) {
     var date = e.split('T');
