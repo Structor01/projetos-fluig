@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<jboss-web>
-    <context-root>/intraLegadoPost</context-root>
-    <disable-cross-context>false</disable-cross-context>
+<?xml version="1.0" encoding="UTF-8"?><jboss-web>
+<context-root>/socialtimeline</context-root>
+<disable-cross-context>false</disable-cross-context>
 </jboss-web>
